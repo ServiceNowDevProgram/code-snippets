@@ -1,0 +1,12 @@
+- name: HTTP Request Action
+  uses: fjogeleit/http-request-action@v1.8.1
+on: [push]
+jobs:
+  deployment:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Deploy Stage
+      uses: fjogeleit/http-request-action@master
+      with:
+        url: 'https://devprogramresourcesdev.service-now.com/api/x_snc_code_snippet/code_snippets/lightning'
+        method: 'GET'
