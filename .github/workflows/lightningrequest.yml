@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Log payload
-      run: echo ${{ toJson(github.event) }}
+      run: echo ${{ toJson(github) }}
     - name: Contact DPR
       id: myRequest
       uses: fjogeleit/http-request-action@v1.8.1
