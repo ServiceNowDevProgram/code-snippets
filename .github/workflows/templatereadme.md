@@ -12,14 +12,14 @@ To contribute, just follow these steps:
 
 1. Fork this repo
 2. Add, edit, or re-organize Code Snippets by editing folders and files and commiting them to your forked repository
-4. Submit a pull request to main branch of `ServiceNowDevProgram / code-snippets`
+4. Submit a pull request to the main branch of `ServiceNowDevProgram / code-snippets`
 
-That's it! A developer advocate or a sndevs designated approver will review your pull request and if approved, merge it into this repo for everyone's benefit!
+That's it! A developer advocate or an sndevs designated approver will review your pull request and if approved, merge it into this repo for everyone's benefit!
 
 ## Follow this structure
 
 - **Top level folders** (besides the .github folder) are `CATEGORIES` of snippets.
-- Within each top level folder/category, will be a **sub-folder** of `EACH CODE SNIPPET`
+- Within each top level folder/category, will be a **sub-folder** for `EACH CODE SNIPPET`
 - Within each sub-folder/code snippet folder, will be one readme.md file to describe the code snippet and then all variants of that code snippet as their own file.
 
 Here is an example structure that is correct.
