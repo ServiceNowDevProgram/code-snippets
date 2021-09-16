@@ -1,3 +1,5 @@
+#This file should not be edited by Code-Snippets contributors. Any edits to this page will result in a rejected pull request.
+
 name: HTTP Request Action
 on:
   push:
