@@ -37,5 +37,5 @@ To participate in moderation, join the sndevs slack at https://sndevs.com/ and j
 Leaderboard:
 
 - testuser - 400 points
-- earlduque - 123 points
+- earlduque - 124 points
 - eizzledizzle - 6 points
