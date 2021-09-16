@@ -26,7 +26,6 @@ jobs:
         data: >
           {"title":"${{ github.event_name }} by ${{ github.actor }}",
           "username": "${{ github.actor }}",
-        # "event": "${{ github.event }}",
           "event_name": "${{ github.event_name }}",
           "commit_sha": "${{ github.sha }}"}
         username: ${{ secrets.DPRD_USERNAME }}
