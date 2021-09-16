@@ -4,6 +4,7 @@ name: Get leaderboard
 on:
   schedule:
     - cron: '0,30 0-23 * * *'
+  workflow_dispatch:
 jobs:
   deployment:
     runs-on: ubuntu-latest
