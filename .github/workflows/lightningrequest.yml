@@ -14,6 +14,8 @@ jobs:
   deployment:
     runs-on: ubuntu-latest
     steps:
+    - name: Log payload
+      run: echo ${{ github.event }}
     - name: Contact DPR
       id: myRequest
       uses: fjogeleit/http-request-action@v1.8.1
@@ -24,7 +26,7 @@ jobs:
         data: >
           {"title":"${{ github.event_name }} by ${{ github.actor }}",
           "username": "${{ github.actor }}",
-          "event": "${{ github.event }}",
+          # "event": "${{ github.event }}",
           "event_name": "${{ github.event_name }}",
           "commit_sha": "${{ github.sha }}"}
         username: ${{ secrets.DPRD_USERNAME }}
