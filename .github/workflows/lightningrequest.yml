@@ -11,7 +11,11 @@ jobs:
         url: 'https://devprogramresourcesdev.service-now.com/api/x_snc_code_snippet/code_snippets/event'
         method: 'POST'
         contentType: application/json
-        data: '{alpha:"bravo"}'
+        data:
+          alpha: bravo
+          usernam: ${{ github.actor }}
+          event: ${{ github.event }}
+          event_name: ${{ github.event_name }}
         username: ${{ secrets.DPRD_USERNAME }}
         password: ${{ secrets.DPRD_PASSWORD }}
     - name: Show Response
