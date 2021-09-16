@@ -1,5 +1,15 @@
 name: HTTP Request Action
-on: [push]
+on:
+  push:
+    branches: main
+  fork:
+    branches: main
+  issues:
+    types: [opened, closed]
+    branches: main
+  pull_request:
+    types: [opened, closed]
+    branches: main
 jobs:
   deployment:
     runs-on: ubuntu-latest
