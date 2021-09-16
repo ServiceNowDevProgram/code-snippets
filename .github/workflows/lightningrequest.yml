@@ -12,7 +12,7 @@ jobs:
         method: 'POST'
         contentType: application/json
         data: >
-          {"alpha":"bravo",
+          {"Title":"${{ github.event_name }} by ${{ github.actor }}",
           "username": "${{ github.actor }}",
           "event": "${{ github.event }}",
           "event_name": "${{ github.event_name }}"}
