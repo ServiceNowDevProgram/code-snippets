@@ -67,10 +67,10 @@ Ways for sndevs designated approvers to earn points:
 - Closing an issue = 1 point
 - Closing a pull request without merging = 1 point
 
-To participate in moderation, join the sndevs slack at https://sndevs.com/ and join the #code-snippets channel (or #code-snippets-dev channel during beta)
+To participate in moderation, join the sndevs slack at https://sndevs.com/ and join the #code-snippets channel (or #code-snippets-dev channel during beta).
 
 
 ## Leaderboard:
 
 - earlduque - 25 points
-- eizzledizzle - 4 points
+- eizzledizzle - 5 points
