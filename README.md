@@ -72,6 +72,6 @@ To participate in moderation, join the sndevs slack at https://sndevs.com/ and j
 
 ## Leaderboard:
 
-- earlduque - 45 points
+- earlduque - 50 points
 - eizzledizzle - 7 points
 - MGOPW - 1 points
