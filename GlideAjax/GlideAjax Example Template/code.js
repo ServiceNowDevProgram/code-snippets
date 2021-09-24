@@ -1,4 +1,4 @@
-//Example AJAX call to get number of related incidents for a change.
+//Example AJAX call to get number of related incidents for a change. Notice that this example has two scripts that should be on two different tables.
 
 //Client Script: 
 function onLoad() { 
