@@ -34,8 +34,9 @@ Ways for sndevs designated approvers to earn points:
 
 To participate in moderation, join the sndevs slack at https://sndevs.com/ and join the #code-snippets channel (or #code-snippets-dev channel during beta).
 
+
 ## Leaderboard:
 
-- earlduque - 85 points
+- earlduque - 86 points
 - MGOPW - 13 points
 - eizzledizzle - 9 points
