@@ -37,13 +37,5 @@ To participate in moderation, join the sndevs slack at https://sndevs.com/ and j
 
 ## Leaderboard:
 
-Top 25% of contributors:
-earlduque (89)
-
-Top contributors:
-j4rodm (30)
-
 Other contributors:
-MGOPW (13)
-eizzledizzle (9)
-fakeuser (1)
+earlduque (2)
