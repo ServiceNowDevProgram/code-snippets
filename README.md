@@ -14,7 +14,7 @@ To contribute, just follow these steps:
 2. Add/Update the repo
 4. Submit a pull request!
 
-That's it! More detailed contribution instructions can be found [here|CONTRIBUTING.md]
+That's it! More detailed contribution instructions can be found [here](CONTRIBUTING.md)
 
 ## Earning points
 
@@ -37,6 +37,13 @@ To participate in moderation, join the sndevs slack at https://sndevs.com/ and j
 
 ## Leaderboard:
 
-- earlduque - 88 points
-- MGOPW - 13 points
-- eizzledizzle - 9 points
+Top 25% of contributors:
+earlduque (87)
+
+Top contributors:
+j4rodm (30)
+
+Other contributors:
+MGOPW (13)
+eizzledizzle (9)
+fakeuser (1)
