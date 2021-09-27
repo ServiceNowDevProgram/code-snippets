@@ -14,7 +14,7 @@ To contribute, just follow these steps:
 2. Add/Update the repo
 4. Submit a pull request!
 
-That's it! More detailed contribution instructions can be found [here|CONTRIBUTING.md]
+That's it! More detailed contribution instructions can be found [here](CONTRIBUTING.md)
 
 ## Earning points
 
