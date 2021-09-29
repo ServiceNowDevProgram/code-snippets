@@ -39,13 +39,14 @@ To participate in moderation, join the sndevs slack at https://sndevs.com/ and j
 
 Top 25% of contributors:
 earlduque (19)
+mgopw (7)
 
 Top contributors:
-mgopw (7)
 ashleysnyder (1)
+azeezgaa (1)
 
 Other contributors:
-azeezgaa (1)
 cwhits (1)
 niamccash (1)
 paigesndev (1)
+rmedved84 (1)
