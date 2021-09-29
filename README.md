@@ -44,5 +44,6 @@ Top contributors:
 mgopw (7)
 
 Other contributors:
+cwhits (1)
 niamccash (1)
 paigesndev (1)
