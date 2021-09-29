@@ -44,13 +44,14 @@ Top 25% of contributors:
 mgopw (7)
 
 Top contributors:
-snamjosh (6)
+snamjosh (2)
 ashleysnyder (1)
 
 Other contributors:
 azeezgaa (1)
 cwhits (1)
 j2clow (1)
+mak1A4 (1)
 niamccash (1)
 paigesndev (1)
 rmedved84 (1)
