@@ -41,10 +41,10 @@ Top 10% of contributors:
 earlduque - (20)
 
 Top 25% of contributors:
-mgopw (7)
+snamjosh (8)
 
 Top contributors:
-snamjosh (3)
+mgopw (7)
 ashleysnyder (1)
 
 Other contributors:
