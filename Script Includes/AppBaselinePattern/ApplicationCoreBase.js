@@ -49,5 +49,24 @@ ApplicationCoreBase.prototype = {
         return wrGr;
     },
 
+    /**
+     * 
+     * @param {String} strTableName name of table
+     * @param {String} id sys_id of the record
+     * @param {*} objFieldValues name value pair of fieldname and value e.g {'short_description': 'record title'}
+     * @returns string sys_id of the record being updated, if it exists
+     */
+    _setGr: function (strTableName, id, objFieldValues) {
+        var wrGr = this._getGr(strTableName, id);
+        if(!wrGr) return;
+        objFieldValues = objFieldValues || {};
+        if (typeof objFieldValues != 'object') return;
+        for (var key in objFieldValues) {
+            if (wrGr.getElement(key) != null)
+                wrGr.setValue(key, objFieldValues[key]);
+        }
+        return wrGr.update();
+    },
+
     type: 'ApplicationCoreBase'
 };
