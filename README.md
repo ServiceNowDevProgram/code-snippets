@@ -55,6 +55,7 @@ Other contributors:
 jonahpiascik (1)
 LoicSanchez (1)
 mak1A4 (1)
+mr-swann (1)
 niamccash (1)
 paigesndev (1)
 rafzk (1)
