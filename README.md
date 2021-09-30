@@ -43,15 +43,16 @@ PranavBhagat18 - (11)
 
 Top 25% of contributors:
 mgopw (7)
+mr-swann (6)
 ovarn (6)
-snamjosh (6)
 
 Top contributors:
+snamjosh (6)
 speedy18 (6)
 paigesndev (2)
-ashleysnyder (1)
 
 Other contributors:
+ashleysnyder (1)
 azeezgaa (1)
 cwhits (1)
 j2clow (1)
@@ -59,7 +60,6 @@ jonahpiascik (1)
 kcimpulse (1)
 LoicSanchez (1)
 mak1A4 (1)
-mr-swann (1)
 niamccash (1)
 rafzk (1)
 rmedved84 (1)
