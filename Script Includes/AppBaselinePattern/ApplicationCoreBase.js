@@ -5,7 +5,7 @@ ApplicationCoreBase.prototype = {
     /**
      * Constants for Defaults
      */
-    C_DEFAULT_NOUN1: gs.getProperty('', ''),
+    C_DEFAULT_NOUN1: gs.getProperty('', ''), // always use a 2nd parm default on gs.getProperty to avoid null
 
     /**
      * Constants for Tables
@@ -43,6 +43,7 @@ ApplicationCoreBase.prototype = {
      * @returns GlideRecord of record, if it exists
      */
     _getGr: function (strTableName, id) {
+        if (!strTableName || !id) return;
         var wrGr = new GlideRecord(strTableName);
         if (!wrGr.get(id)) return;
         return wrGr;
