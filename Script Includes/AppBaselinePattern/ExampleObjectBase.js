@@ -2,6 +2,8 @@ var ExampleObjectBase = Class.create();
 ExampleObjectBase.prototype = Object.extendsObject(ApplicationCore, {
     /**
      * Typically the constructor function will be required on the new Object base
+     * if every object would be constructed in same way, move this to the core ? 
+     * or move to the core, and let it be overridden - might be better
      */
     initialize: function (grRecord) {
         if (!this._init(grRecord)) return; // stop dead, but only to prevent further errors. object still created. validate caller.
