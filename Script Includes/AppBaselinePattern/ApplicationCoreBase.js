@@ -53,7 +53,7 @@ ApplicationCoreBase.prototype = {
      * 
      * @param {String} strTableName name of table
      * @param {String} id sys_id of the record
-     * @param {*} objFieldValues name value pair of fieldname and value e.g {'short_description': 'record title'}
+     * @param {Object} objFieldValues name value pair of fieldname and value e.g {'short_description': 'record title'}
      * @returns string sys_id of the record being updated, if it exists
      */
     _setGr: function (strTableName, id, objFieldValues) {
