@@ -58,7 +58,7 @@ ApplicationCoreBase.prototype = {
      */
     _setGr: function (strTableName, id, objFieldValues) {
         var wrGr = this._getGr(strTableName, id);
-        if(!wrGr) return;
+        if (!wrGr) return;
         objFieldValues = objFieldValues || {};
         if (typeof objFieldValues != 'object') return;
         for (var key in objFieldValues) {
