@@ -46,12 +46,13 @@ mgopw (7)
 ovarn (6)
 
 Top contributors:
+speedy18 (6)
 ashleysnyder (1)
 azeezgaa (1)
 cwhits (1)
-j2clow (1)
 
 Other contributors:
+j2clow (1)
 jonahpiascik (1)
 LoicSanchez (1)
 mak1A4 (1)
@@ -61,5 +62,4 @@ paigesndev (1)
 rafzk (1)
 rmedved84 (1)
 salem769 (1)
-speedy18 (1)
 wcarroll (1)
