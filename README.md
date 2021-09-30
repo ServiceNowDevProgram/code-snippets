@@ -43,14 +43,14 @@ earlduque - (20)
 Top 25% of contributors:
 snamjosh (8)
 mgopw (7)
+ovarn (6)
 
 Top contributors:
-ovarn (6)
 ashleysnyder (1)
 azeezgaa (1)
+cwhits (1)
 
 Other contributors:
-cwhits (1)
 j2clow (1)
 LoicSanchez (1)
 mak1A4 (1)
@@ -59,3 +59,4 @@ paigesndev (1)
 rafzk (1)
 rmedved84 (1)
 speedy18 (1)
+wcarroll (1)
