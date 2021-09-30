@@ -52,6 +52,7 @@ azeezgaa (1)
 Other contributors:
 cwhits (1)
 j2clow (1)
+LoicSanchez (1)
 mak1A4 (1)
 niamccash (1)
 paigesndev (1)
