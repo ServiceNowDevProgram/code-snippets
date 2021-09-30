@@ -1,1 +1,0 @@
-var grCodeSnippet = new GlideRecord('');
