@@ -3,6 +3,11 @@ ApplicationCoreBase.prototype = {
     initialize: function () { },
 
     /**
+     * skeleton
+     */
+    _init: function() {},
+
+    /**
      * Constants for Defaults which should be set at the Application level
      */
     C_DEFAULT_NOUN1: gs.getProperty('', ''), // always use a 2nd parm default on gs.getProperty to avoid null
