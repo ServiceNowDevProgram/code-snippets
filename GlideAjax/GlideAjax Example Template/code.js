@@ -8,9 +8,9 @@ function onLoad() {
     var ga = new GlideAjax('ChangeManagementRelatedRecords'); 
     ga.addParam('sysparm_name','getIncidentCount'); 
     ga.addParam('sysparm_change_id', chgSysId); 
-    ga.getXML(GetRelatedIncidentCount); 
+    ga.getXMLAnswer(GetRelatedIncidentCount); 
 
-    function GetRelatedIncidentCount(response) { 
+    function GetRelatedIncidentCount(answer) { 
         var results = JSON.parse(answer);
         alert('Related Incidents: ' + results.row_count); 
     } 
