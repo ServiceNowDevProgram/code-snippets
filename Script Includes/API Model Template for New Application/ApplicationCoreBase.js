@@ -3,7 +3,7 @@ ApplicationCoreBase.prototype = {
     initialize: function () { },
 
     /**
-     * Constants for Defaults
+     * Constants for Defaults which should be set at the Application level
      */
     C_DEFAULT_NOUN1: gs.getProperty('', ''), // always use a 2nd parm default on gs.getProperty to avoid null
 
@@ -14,11 +14,11 @@ ApplicationCoreBase.prototype = {
     C_TBL_GROUP: 'sys_user_group',
 
     /**
-     * Constants for Properties
+     * Constants for Property names, which will be called by gs.getProperty(this.C_PROP_N1, '');
      */
     C_PROP_NOUN1: '',
 
-    /**
+    /** EXAMPLE OF HOW _getGr() can be consumed, only pass sys_id to endpoint based on class
      * get a GlideRecord of the Group based on ID
      * @param {string} id sys_id of the record
      * @returns GlideRecord, if it exists
@@ -27,7 +27,7 @@ ApplicationCoreBase.prototype = {
         return this._getGr(this.C_TBL_GROUP, id);
     },
 
-    /**
+    /** EXAMPLE OF HOW _getGr() can be consumed, only pass sys_id to endpoint based on class
      * get a GlideRecord of the User based on ID
      * @param {string} id sys_id of the record
      * @returns GlideRecord, if it exists
@@ -76,13 +76,7 @@ ApplicationCoreBase.prototype = {
      _setRecordFieldValuesFromTableNameAndId: function (strTableName, id, objFieldValues) {
         var wrGr = this._getGr(strTableName, id);
         if (!wrGr) return;
-        objFieldValues = objFieldValues || {};
-        if (typeof objFieldValues != 'object') return;
-        for (var key in objFieldValues) {
-            if (wrGr.getElement(key) != null)
-                wrGr.setValue(key, objFieldValues[key]);
-        }
-        return wrGr.update();
+        return this._setGr(wrGr, objFieldValues);
     },
 
     type: 'ApplicationCoreBase'
