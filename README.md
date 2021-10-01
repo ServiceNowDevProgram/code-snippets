@@ -50,14 +50,14 @@ Decoder-Paul (12)
 eriemer1 (11)
 
 Top contributors:
+jacebenson (11)
 ovarn (11)
 PranavBhagat18 (11)
 rmedved84 (11)
 bradtiltonnow (6)
-Irston (6)
 
 Other contributors:
-jacebenson (6)
+Irston (6)
 snamjosh (6)
 speedy18 (6)
 ashleysnyder (1)
