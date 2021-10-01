@@ -10,7 +10,7 @@ EngineBase.prototype = Object.extendsObject(ApplicationCore, {
         try {
             var strategy = this._getStrategy();
             if (!strategy) return;
-            strategy.run();
+            return strategy.run();
         } catch (ex) {
             gs.error(ex.getMessage());
         }
