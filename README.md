@@ -48,17 +48,17 @@ PranavBhagat18 (11)
 mgopw (7)
 
 Top contributors:
+Decoder-Paul (6)
 eriemer1 (6)
 snamjosh (6)
 speedy18 (6)
 paigesndev (3)
-ashleysnyder (1)
 
 Other contributors:
+ashleysnyder (1)
 azeezgaa (1)
 Coder0131 (1)
 cwhits (1)
-Decoder-Paul (1)
 j2clow (1)
 jonahpiascik (1)
 kcimpulse (1)
