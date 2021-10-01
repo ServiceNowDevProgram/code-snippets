@@ -45,10 +45,10 @@ Top 25% of contributors:
 mr-swann (11)
 ovarn (11)
 PranavBhagat18 (11)
-mgopw (7)
+Decoder-Paul (7)
 
 Top contributors:
-Decoder-Paul (6)
+mgopw (7)
 eriemer1 (6)
 snamjosh (6)
 speedy18 (6)
