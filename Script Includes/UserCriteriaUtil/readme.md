@@ -1,5 +1,8 @@
 # UserCriteriaUtil
-This ScriptInclude helps to evaluate if a certain UserCriteria did match with a User. It doesn't use the typical `Class.create`, instead it is a simple javascript function.
+This Script Include helps to evaluate if a certain UserCriteria did match with a User.
+
+It doesn't use the typical `Class.create`, instead it is a simple javascript function.
+Check out this blog post for more info about the "Function Pattern": https://codecreative.io/blog/interface-design-patterns-function-pattern/
 
 ## Example Script
 ```javascript
