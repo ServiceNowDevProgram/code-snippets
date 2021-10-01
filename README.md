@@ -40,9 +40,9 @@ To participate in moderation, join the sndevs slack at https://sndevs.com/ and j
 Top 10% of contributors:
 earlduque - (50)
 mak1A4 - (21)
+paigesndev - (14)
 
 Top 25% of contributors:
-paigesndev (14)
 Decoder-Paul (12)
 mgopw (12)
 eriemer1 (11)
@@ -61,6 +61,7 @@ ashleysnyder (1)
 azeezgaa (1)
 Coder0131 (1)
 cwhits (1)
+Irston (1)
 j2clow (1)
 jonahpiascik (1)
 kcimpulse (1)
