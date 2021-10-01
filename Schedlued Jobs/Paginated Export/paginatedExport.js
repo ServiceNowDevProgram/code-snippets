@@ -43,9 +43,9 @@ function createECCAttachmentGR(){
 function downloadFile(id, eccAttachmentID, fileName){
  var request = new sn_ws.RESTMessageV2();
 request.setAuthenticationProfile(authenticationProfileType, authenticationProfileID);
-  request.setEndpoint(instanceURL + '/' + tableName + '_list.do?' + fileFormat + '&sysparm_view=' + viewName + '&sysparm_query=' + orderByField + '%3E%3D' + id + '&sysparm_orderby=' + orderByField + '&sysparm_record_count=' + rowsPerExport);
+  request.setEndpoint(instanceURL + '/' + tableName + '_list.do?' + fileFormat.toUpperCase() + '&sysparm_view=' + viewName + '&sysparm_query=' + orderByField + '%3E%3D' + id + '&sysparm_orderby=' + orderByField + '&sysparm_record_count=' + rowsPerExport);
   request.setHttpMethod('GET');
-  request.saveResponseBodyAsAttachment('ecc_agent_attachment', eccAttachmentID, fileName + fileFormat);
+  request.saveResponseBodyAsAttachment('ecc_agent_attachment', eccAttachmentID, fileName + '.' + fileFormat);
   var response = request.execute(); 
   var attachmentID = response.getResponseAttachmentSysid();
   return attachmentID;
