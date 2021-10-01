@@ -45,17 +45,18 @@ Top 25% of contributors:
 PranavBhagat18 (11)
 mgopw (7)
 eriemer1 (6)
+mak1A4 (6)
 
 Top contributors:
-mak1A4 (6)
 ovarn (6)
 snamjosh (6)
 speedy18 (6)
+paigesndev (3)
 
 Other contributors:
-paigesndev (3)
 ashleysnyder (1)
 azeezgaa (1)
+Coder0131 (1)
 cwhits (1)
 j2clow (1)
 jonahpiascik (1)
