@@ -52,16 +52,16 @@ Top contributors:
 ovarn (11)
 PranavBhagat18 (11)
 sn-ajb (11)
+Irston (6)
 rmedved84 (6)
-snamjosh (6)
 
 Other contributors:
+snamjosh (6)
 speedy18 (6)
 ashleysnyder (1)
 azeezgaa (1)
 Coder0131 (1)
 cwhits (1)
-Irston (1)
 j2clow (1)
 jonahpiascik (1)
 kcimpulse (1)
