@@ -13,9 +13,10 @@ var transformFn = function(ga, groupCount) {
     "group_count": groupCount
   };
 };
-x_twgh_clib.getGroupCount(
+var countOutput = getGroupCount(
   table, encodedQuery, groupBy, minGroupCount, transformFn
 );
+gs.info('Output is ' + JSON.stringify(countOutput, null, 4));
 ```
 ## Example Result
 ```json
