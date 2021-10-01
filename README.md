@@ -42,15 +42,15 @@ earlduque - (50)
 mak1A4 - (21)
 
 Top 25% of contributors:
+paigesndev (14)
 Decoder-Paul (12)
 eriemer1 (11)
 mgopw (11)
 mr-swann (11)
-ovarn (11)
 
 Top contributors:
+ovarn (11)
 PranavBhagat18 (11)
-paigesndev (9)
 sn-ajb (6)
 snamjosh (6)
 speedy18 (6)
