@@ -1,6 +1,6 @@
 # GlideSystem date-time Methods
 
-1. beginningOfLastMonth
+### beginningOfLastMonth
   
   * [beginningOfLastMonth code snippet](beginningOfLastMonth.js)
   * Description: Returns the date and time for the beginning of last month in GMT.
