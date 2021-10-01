@@ -153,7 +153,7 @@ var SRAPIUtil = (function() {
      @name _convertToJSON
      @description Convert the provided GlideRecord to a JSON object
      @private 
-	 @param {GlideRecord} [glideRecord] - GlideRecord to convert
+	 @param {GlideRecord} [GlideRecord] - GlideRecord to convert
 	 @return {Object} GlideRecord represented as JSON
 	*/
     function _convertToJSON(glideRecord) {
