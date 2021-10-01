@@ -52,15 +52,15 @@ Top contributors:
 eriemer1 (11)
 ovarn (11)
 PranavBhagat18 (11)
+bradtiltonnow (6)
 Irston (6)
-rmedved84 (6)
 
 Other contributors:
+rmedved84 (6)
 snamjosh (6)
 speedy18 (6)
 ashleysnyder (1)
 azeezgaa (1)
-bradtiltonnow (1)
 Coder0131 (1)
 cwhits (1)
 j2clow (1)
