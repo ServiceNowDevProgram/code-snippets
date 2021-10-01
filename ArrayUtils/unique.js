@@ -3,10 +3,10 @@
   var obj=[];	
 	var arrayUtil = new ArrayUtil();
 	var gr= new GlideRecord('incident');	
-	gr.addOrderBy('severity');
+	gr.addOrderBy('category');
 	gr.query();
 	while(gr.next()){			
-		obj.push(gr.getValue('severity'));	
+		obj.push(gr.getValue('category'));
 	}
 	obj = arrayUtil.unique(obj);
 	gs.info(obj);
