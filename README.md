@@ -43,9 +43,9 @@ sn-ajb - (27)
 mak1A4 - (26)
 
 Top 25% of contributors:
+jacebenson (22)
 paigesndev (19)
 mr-swann (18)
-jacebenson (17)
 rmedved84 (16)
 mgopw (13)
 
