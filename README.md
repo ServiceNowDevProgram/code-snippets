@@ -44,9 +44,9 @@ mak1A4 - (26)
 
 Top 25% of contributors:
 jacebenson (22)
+rmedved84 (21)
 paigesndev (19)
 mr-swann (18)
-rmedved84 (16)
 mgopw (13)
 
 Top contributors:
