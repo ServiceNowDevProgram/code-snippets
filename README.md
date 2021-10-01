@@ -43,15 +43,15 @@ mak1A4 - (21)
 paigesndev - (16)
 
 Top 25% of contributors:
+sn-ajb (16)
 Decoder-Paul (12)
 mgopw (12)
 eriemer1 (11)
-mr-swann (11)
 
 Top contributors:
+mr-swann (11)
 ovarn (11)
 PranavBhagat18 (11)
-sn-ajb (11)
 Irston (6)
 rmedved84 (6)
 
