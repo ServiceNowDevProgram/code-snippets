@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<unload unload_date="2021-10-02 16:51:09">
+<sys_properties action="INSERT_OR_UPDATE">
+<choices/>
+<description>This hold the value for change lead time for Normal and Standard change.</description>
+<ignore_cache>true</ignore_cache>
+<is_private>false</is_private>
+<name>change.leadtime.values</name>
+<read_roles/>
+<suffix/>
+<sys_class_name>sys_properties</sys_class_name>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2021-10-02 16:48:00</sys_created_on>
+<sys_id>48e14fc4db437010c4ebc58605961913</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_name>change.leadtime.values</sys_name>
+<sys_package display_value="Global" source="global">global</sys_package>
+<sys_policy/>
+<sys_scope display_value="Global">global</sys_scope>
+<sys_update_name>sys_properties_48e14fc4db437010c4ebc58605961913</sys_update_name>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2021-10-02 16:48:00</sys_updated_on>
+<type>string</type>
+<value>{ "High": 5, "Moderate" : 3, "Low" : 1 }</value>
+<write_roles/>
+</sys_properties>
+</unload>
