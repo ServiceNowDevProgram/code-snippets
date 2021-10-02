@@ -41,17 +41,17 @@ Top 10% of contributors:
 earlduque - (57)
 mak1A4 - (38)
 sn-ajb - (27)
+jacebenson - (22)
 
 Top 25% of contributors:
-jacebenson (22)
 rmedved84 (21)
 paigesndev (19)
 mr-swann (18)
 mgopw (13)
 Decoder-Paul (12)
+eriemer1 (11)
 
 Top contributors:
-eriemer1 (11)
 ovarn (11)
 PranavBhagat18 (11)
 azeezgaa (6)
@@ -70,6 +70,7 @@ cwhits (1)
 ishaanshoor (1)
 j2clow (1)
 jonahpiascik (1)
+Karthick986 (1)
 kcimpulse (1)
 kmohit2809 (1)
 Lacah (1)
