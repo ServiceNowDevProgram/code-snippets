@@ -1,2 +1,0 @@
-1) Business Rule for change lead time calculations in days w.r.t to the risk of the change request.
-2) System property which holds the value of risk and days used in the BR - { "High": 5, "Moderate" : 3, "Low" : 1 }
