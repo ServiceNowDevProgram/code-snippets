@@ -4,7 +4,6 @@ ExcelParser.prototype = {
     },
 
     readData: function(attachmentID) {
-        var attID = attachmentID; // depending on client or server side usage
         //Initialize the GlideSysAttachment call for retrieval of our sheet
         var attachment = new GlideSysAttachment();
         var attachmentStream = attachment.getContentStream(attachmentID);
