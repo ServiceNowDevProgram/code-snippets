@@ -13,6 +13,6 @@ var dateTime = new GlideDateTime();
          var dateCreatedLocal = dateCreated.getLocalDate();
          var daysDifferenceMo = gs.dateDiff(dateCreatedLocal, currentDate, true);
          if (daysDifferenceMo > 86400) //It will trigger a reminder after one day currently configure as required.
-             gs.eventQueue('event.name', grSA); //Add event name
+             gs.eventQueue('event.name', grSA); //Add your event name to trigger notification
      }
  }
