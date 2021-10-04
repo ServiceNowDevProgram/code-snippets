@@ -42,10 +42,10 @@ earlduque (86).
 mak1A4 (28).
 sn-ajb (27).
 mr-swann (23).
-rmedved84 (21).
+paigesndev (21).
 
 Top 25% of contributors:
-paigesndev (20).
+rmedved84 (21).
 jacebenson (17).
 PranavBhagat18 (17).
 ReginaldFawcett (17).
