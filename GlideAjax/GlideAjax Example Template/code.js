@@ -10,9 +10,10 @@ function onLoad() {
     ga.addParam('sysparm_change_id', chgSysId); 
     ga.getXMLAnswer(GetRelatedIncidentCount); 
 
-    function GetRelatedIncidentCount(answer) { 
-        var results = JSON.parse(answer);
-        alert('Related Incidents: ' + results.row_count); 
+    function GetRelatedIncidentCount(answer) {
+        if (answer) { //Doing some check before showing the message
+            g_form.addInfoMessage('Related Incidents: ' + answer); //using g_form instead of alert
+        }
     } 
 } 
 
@@ -23,15 +24,11 @@ ChangeManagementRelatedRecords.prototype = Object.extendsObject(AbstractAjaxProc
 
     getIncidentCount: function() { 
 
-        var changeID = this.getParameter('sysparm_change_id'); 
-        var incident = new GlideRecord('incident'); 
-        incident.addQuery('rfc', changeID); 
-        incident.query(); 
-
-        var results = {};
-        results.row_count = incident.getRowCount();
-
-        return JSON.stringify(results);
+        var changeID = this.getParameter('sysparm_change_id');
+        var incCount = new global.GlideQuery('incident') // Using GlideQuery instead of GlideRecord for better performance related to counting records. 
+                       .where('rfc', changeID);
+                       .count();
+        return incCount;
     }, 
       
        _privateFunction: function() { // this function is not client callable      
