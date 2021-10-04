@@ -1,7 +1,12 @@
 # CatalogUtils
-This Script Include provides some methods for dealing with all about Service Catalog.
+This Script Include is a helper class for dealing with Service Catalog Items
+and Requested Items.
 ## getCatalogVariables()
-Returns all variables of a given RITM as stringified array of JSON objects.
+Returns all variables of a given RITM as stringified array of JSON objects. 
+This method thus corresponds to the "Get Catalog Variables" action in a flow and 
+it can be used both server-side and client-side.
+
+A single JSON object has the following properties:
 
 **Note:**\
 Variable types with no values (e.g. containers) are excluded.
