@@ -1,7 +1,7 @@
 var dateTime = new GlideDateTime();
  var currentDate = dateTime.getLocalDate();
  var grCR = new GlideRecord('change_request');
- grCR.addEncodedQuery("source_table=change_request"); //Add your ownn query.
+ grCR.addEncodedQuery("source_table=change_request"); //Add your own query.
  grCR.orderByDesc('number');
  grCR.query();
  while (grCR.next()) {
