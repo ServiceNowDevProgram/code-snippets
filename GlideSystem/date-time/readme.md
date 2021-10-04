@@ -10,3 +10,8 @@
   * Description: Returns a date and time for the end of the minute a certain number of minutes ago.
   * [minutesAgoEnd(Number minutes) code snippet](minutesAgoEnd)
   * [minutesAgoEnd(Number minutes) API Doc](https://developer.servicenow.com/dev.do#!/reference/api/rome/server_legacy/c_GlideSystemAPI#r_GS-minutesAgoEnd_N)
+
+### minutesAgoStart(Number minutes)
+  * Description: Returns a date and time for the start of the minute a certain number of minutes ago.
+  * [minutesAgoStart(Number minutes) code snippet](minutesAgoStart)
+  * [minutesAgoStart(Number minutes) API Doc](https://developer.servicenow.com/dev.do#!/reference/api/rome/server_legacy/c_GlideSystemAPI#r_GS-minutesAgoStart_N)
