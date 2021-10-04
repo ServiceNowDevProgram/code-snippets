@@ -38,7 +38,7 @@ To participate in moderation, join the sndevs slack at https://sndevs.com/ and j
 ## Leaderboard:
 
 Top 10% of contributors:
-earlduque (82).
+earlduque (83).
 mak1A4 (28).
 sn-ajb (27).
 mr-swann (23).
