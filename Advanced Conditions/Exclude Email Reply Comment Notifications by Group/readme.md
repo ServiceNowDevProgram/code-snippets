@@ -1,4 +1,6 @@
-This is an advanced condition script for new comment notifications that will exclude new comments that are email replies for specific groups.  
+# Exclude Email Replies from Comment Notifications based on Group Membership
+
+### This is an advanced condition script for new comment notifications that will exclude new comments that are email replies for specific groups.  
 
 Step 1.
 Specify the user field such as assigned_to, caller_id, or opened_by, etc
