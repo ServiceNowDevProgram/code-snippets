@@ -45,13 +45,13 @@ jacebenson - (22)
 PranavBhagat18 - (22)
 
 Top 25% of contributors:
+ReginaldFawcett (22)
 rmedved84 (21)
 paigesndev (20)
 jonahpiascik (18)
 mr-swann (18)
 kmohit2809 (17)
 Lacah (17)
-ReginaldFawcett (17)
 danr2c2 (16)
 
 Top contributors:
