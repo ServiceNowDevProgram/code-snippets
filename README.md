@@ -47,13 +47,13 @@ Top 25% of contributors:
 rmedved84 (21)
 paigesndev (20)
 mr-swann (18)
+kmohit2809 (17)
 eriemer1 (16)
 mgopw (15)
 Decoder-Paul (12)
-ishaanshoor (12)
 
 Top contributors:
-kmohit2809 (12)
+ishaanshoor (12)
 Irston (11)
 ovarn (11)
 PranavBhagat18 (11)
