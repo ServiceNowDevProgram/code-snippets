@@ -1,2 +1,0 @@
-var minAgo = gs.minutesAgoEnd(5); //Returns a date and time for the end of the minutes (in brackets) a certain number of minutes ago.
-gs.info(minAgo);
