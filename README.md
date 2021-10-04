@@ -44,7 +44,7 @@ sn-ajb - (27)
 jacebenson - (22)
 
 Top 25% of contributors:
-PranavBhagat18 (21)
+PranavBhagat18 (22)
 rmedved84 (21)
 paigesndev (20)
 mr-swann (18)
