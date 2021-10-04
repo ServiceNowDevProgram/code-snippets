@@ -41,11 +41,11 @@ Top 10% of contributors:
 earlduque (80).
 mak1A4 (28).
 sn-ajb (27).
+mr-swann (23).
 rmedved84 (21).
-paigesndev (20).
 
 Top 25% of contributors:
-mr-swann (18).
+paigesndev (20).
 jacebenson (17).
 PranavBhagat18 (17).
 ReginaldFawcett (17).
