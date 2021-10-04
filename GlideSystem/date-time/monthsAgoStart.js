@@ -5,4 +5,4 @@ gs.info('Start of 5 Months Ago: ' + monthsAgo);
 
 //Output Example:
 //*** Script: Now: 2021-10-04 15:00:53
-//*** Script: Start of 5 Months Ago: 2021-05-01 04:00:00
+//*** Script: Start of 5 Months Ago: 2021-05-01 00:00:00
