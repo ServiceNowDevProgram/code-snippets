@@ -19,8 +19,10 @@ EngineBase.prototype = Object.extendsObject(ApplicationCore, {
     _getStrategy: function(strType) {
         strType = strType || '';
         switch (strType) {
-            default:
-                return new ExampleStrategy();
+            case '1':
+                return new ExampleStrategy1();
+            case '2':
+                return new ExampleStrategy2();
         }
     },
 
