@@ -12,6 +12,7 @@ if (userRec.next()) {
    var userID = userRec.getUniqueValue();
 }
 
+//query the exisiting RITM and update the same.
 var ritm = new GlideRecord('sc_req_item');
 var eq = 'cat_item=SYS_ID_OF_THE_ITEM^active=true^request.requested_for='+ userID; //Update the sys_id of the item and update the query as you need.
 ritm.addEncodedQuery(eq);
