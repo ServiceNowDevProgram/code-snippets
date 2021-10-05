@@ -41,8 +41,8 @@ Top 10% of contributors:
 earlduque (87).
 mak1A4 (28).
 sn-ajb (27).
+paigesndev (24).
 mr-swann (23).
-paigesndev (23).
 
 Top 25% of contributors:
 danr2c2 (21).
