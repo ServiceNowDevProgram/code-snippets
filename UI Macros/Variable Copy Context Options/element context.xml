@@ -1,0 +1,11 @@
+<j:if test="${jvar_personalize_dictionary == true }" >
+    // Custom "Copy Field Name"
+    gcm.addLine();
+    gcm.addHref("${JS:gs.getMessage('Copy Field Name')}", "copyToClipboard('${jvar_field_name}');");
+    gcm.addHref("${JS:gs.getMessage('Copy Field Value')}", "copyToClipboard(g_form.getValue('${jvar_field_name}'));");
+    gcm.addHref("${JS:gs.getMessage('Copy Field Display Value')}", "copyToClipboard(g_form.getDisplayBox('${jvar_field_name}').value);");
+    gcm.addLine();
+    gcm.addHref("${JS:gs.getMessage('Show')}" + " - '" + '${jvar_field_name}' + "'",
+        "showDictionary('" + table + "', '" + id + "');");
+    count = 1;
+</j:if>
