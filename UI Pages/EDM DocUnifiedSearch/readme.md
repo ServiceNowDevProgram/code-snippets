@@ -8,7 +8,4 @@ Also, after cut off from these sources is done, ServiceNow EDM table becomes eve
 I created UI page which allows users to search employee documents based on employee, employee ID, document type and HR case.
 This results is performance improvement as well as better UX for end users to search employee documents.
 
-
-
 Note : Please make sure that you have com.sn_employee_document_management plugin active on your instance before using code for this UI page.
-
