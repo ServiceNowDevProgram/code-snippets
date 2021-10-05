@@ -12,7 +12,7 @@ if (userRec.next()) {
 }
 
 var ritm = new GlideRecord('sc_req_item');
-var eq = 'cat_item=SYS_ID_OF_THE_ITEM^active=true^request.requested_for='+ userID;
+var eq = 'cat_item=SYS_ID_OF_THE_ITEM^active=true^request.requested_for='+ userID; //Update the sys_id of the item and update the query as you need.
 ritm.addEncodedQuery(eq);
 ritm.query();
 if(ritm.next()){
