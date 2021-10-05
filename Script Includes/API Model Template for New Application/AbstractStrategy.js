@@ -1,5 +1,5 @@
-var ExampleStrategy = Class.create();
-ExampleStrategy.prototype = Object.extendsObject(ExampleStrategyBase, {
+var AbstractStrategy = Class.create();
+AbstractStrategy.prototype = Object.extendsObject(AbstractStrategyBase, {
     /** Baseline Application 
     * Please override any base functionality here 
     * ---
@@ -8,5 +8,5 @@ ExampleStrategy.prototype = Object.extendsObject(ExampleStrategyBase, {
     * 
     * Copy existing methods to this file and make changes here
     * **/
-    type: 'ExampleStrategy'
+    type: 'AbstractStrategy'
 });
