@@ -42,7 +42,7 @@ earlduque (99).
 mak1A4 (34).
 PranavBhagat18 (27).
 sn-ajb (27).
-paigesndev (24).
+paigesndev (25).
 mr-swann (23).
 
 Top 25% of contributors:
@@ -70,7 +70,6 @@ bradtiltonnow (6).
 
 Other contributors:
 mskoddow (6).
-NayeemKaka (6).
 revantKulkarni (6).
 smartcarleen (6).
 alikuttyka (1).
@@ -91,6 +90,7 @@ LoicSanchez (1).
 LuisSepulveda21 (1).
 mevops (1).
 mikeroosa (1).
+NayeemKaka (1).
 Nerdcode (1).
 niamccash (1).
 Pratyusha418 (1).
