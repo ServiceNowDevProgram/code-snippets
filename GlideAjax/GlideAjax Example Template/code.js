@@ -17,21 +17,16 @@ function onLoad() {
     } 
 } 
 
-
 //Script Include: 
 var ChangeManagementRelatedRecords = Class.create(); 
 ChangeManagementRelatedRecords.prototype = Object.extendsObject(AbstractAjaxProcessor, { 
 
     getIncidentCount: function() { 
-
         var changeID = this.getParameter('sysparm_change_id');
-        var incCount = new global.GlideQuery('incident') // Using GlideQuery instead of GlideRecord for better performance related to counting records. 
-                       .where('rfc', changeID);
-                       .count();
+        //Using GlideQuery instead of GlideRecord for better performance related to counting records.
+        var incCount = new global.GlideQuery('incident').where('rfc', changeID).count();
         return incCount;
-    }, 
-      
-       _privateFunction: function() { // this function is not client callable      
-    } 
-      
-}); 
+    },
+    //this function is not client callable
+    _privateFunction: function() { }
+});

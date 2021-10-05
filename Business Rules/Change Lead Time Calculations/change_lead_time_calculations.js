@@ -9,8 +9,7 @@
 	var diffSeconds = gs.dateDiff(gDate,sDate,true); 
     var hours = diffSeconds/3600;
 	var days = hours/24;
-	if(days < answer)
-	{
+	if(days < answer) {
 		gs.addErrorMessage('Not enough lead time - atleast '+ answer +' day lead time required for '+ index + ' risk changes.');
 		current.setAbortAction(true);
 	}
