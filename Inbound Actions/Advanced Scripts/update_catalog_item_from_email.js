@@ -1,3 +1,4 @@
+//variable values
 var worker = email.body.name;
 var termination = email.body.date;
 var term_f = new GlideDateTime();
