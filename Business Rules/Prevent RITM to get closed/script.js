@@ -7,6 +7,6 @@ var scTask = new GlideRecord('sc_task');
 	scTask.addQuery('request_item',current.sys_id);
 	scTask.query();
 	if(scTask.next()){
-		scTask.setAbortAction(true);
+		current.setAbortAction(true);
 	}
 })(current, previous);
