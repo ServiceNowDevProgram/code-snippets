@@ -12,7 +12,7 @@ if (userRec.next()) {
    var userID = userRec.getUniqueValue();
 }
 
-//query the exisiting RITM and update the same.
+//query the exisiting RITM and cancel the same.
 var ritm = new GlideRecord('sc_req_item');
 var eq = 'cat_item=SYS_ID_OF_THE_ITEM^active=true^request.requested_for='+ userID; //Update the sys_id of the item and update the query as you need.
 ritm.addEncodedQuery(eq);
@@ -25,7 +25,8 @@ if (ritm.next())
 	var workflow = new Workflow();
 	workflow.cancel(ritm);
     	ritm.update();
-	
+
+	//query related catalog task and close the same as well.
 	var rec = new GlideRecord('sc_task');
 	rec.addQuery('request_item', ritm.getUniqueValue());
 	rec.query();
