@@ -45,11 +45,11 @@ mr-swann (23).
 paigesndev (23).
 
 Top 25% of contributors:
+danr2c2 (21).
 rmedved84 (21).
 jacebenson (17).
 PranavBhagat18 (17).
 ReginaldFawcett (17).
-danr2c2 (16).
 eriemer1 (16).
 ishaanshoor (16).
 mgopw (16).
