@@ -1,6 +1,5 @@
 //variable values
 var worker = email.body.name;
-term_d.setDisplayValue(termination);
 var userid = email.body.user_id;
 
 var userRec = new GlideRecord("sys_user");
