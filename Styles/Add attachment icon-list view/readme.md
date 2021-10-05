@@ -1,5 +1,5 @@
 The above two files scripts are useful to put styles on your field in list view. Below are the steps to achieve this:
-1. Open a recor. Write click on any field label and select configure style.
+1. Open a record. Write click on any field label and select configure style.
 2. A list will open with all the styles applied on that field.
 3. Click on New button to create your custom style.
 4. Enter the code of value.js in Value field of style.
