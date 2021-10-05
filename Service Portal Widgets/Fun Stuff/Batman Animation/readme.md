@@ -6,7 +6,7 @@ In order to use the widget, follow the below steps:
 
 3.Update the widget html with the correct image names.
 
-4. Create a page and add the widget to it(12 GRID LAYOUT) and also add the below styling to page CSS.
+4.Create a page and add the widget to it(12 GRID LAYOUT) and also add the below styling to page CSS.
 
 **section {
   background-image: url('Batman.jpg');
