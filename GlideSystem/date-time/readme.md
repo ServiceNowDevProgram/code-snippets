@@ -30,3 +30,28 @@
   * Description: Returns a date and time for the start of the month a certain number of months ago.
   * [monthsAgoStart(Number Months) code snippet](monthsAgoStart.js)
   * [monthsAgoStart(Number Months) API Doc](https://developer.servicenow.com/dev.do#!/reference/api/rome/server_legacy/c_GlideSystemAPI#r_GS-monthsAgoStart_N)
+
+### quartersAgo(Number quarters)
+  * Description: Returns a date and time for a certain number of quarters ago.
+  * [quartersAgo(Number quarters) code snippet](quartersAgo.js)
+  * [quartersAgo(Number quarters) API Doc](https://developer.servicenow.com/dev.do#!/reference/api/rome/server_legacy/c_GlideSystemAPI#r_GS-quartersAgo_N)
+
+### quartersAgoEnd(Number quarters)
+  * Description: Returns a date and time for the last day of the quarter, for a specified number of quarters ago.
+  * [quartersAgoEnd(Number quarters) code snippet](quartersAgoEnd.js)
+  * [quartersAgoEnd(Number quarters) API Doc](https://developer.servicenow.com/dev.do#!/reference/api/rome/server_legacy/c_GlideSystemAPI#r_GS-quartersAgoEnd_N)
+
+### quartersAgoStart(Number quarters)
+  * Description: Returns a date and time for the last day of the quarter, for a specified number of quarters ago.
+  * [quartersAgoStart(Number quarters) code snippet](quartersAgoStart.js)
+  * [quartersAgoStart(Number quarters) API Doc](https://developer.servicenow.com/dev.do#!/reference/api/rome/server_legacy/c_GlideSystemAPI#r_GS-quartersAgoStart_N)
+
+### yearsAgo(Number years)
+  * Description: Gets a date and time for a certain number of years ago.
+  * [yearsAgo(Number years) code snippet](yearsAgo.js)
+  * [yearsAgo(Number years) API Doc](https://developer.servicenow.com/dev.do#!/reference/api/rome/server_legacy/c_GlideSystemAPI#r_GS-yearsAgo_N)
+
+### yesterday()
+  * Description: Returns yesterday's time (24 hours ago).
+  * [yesterday() code snippet](yesterday.js)
+  * [yesterday() API Doc](https://developer.servicenow.com/dev.do#!/reference/api/rome/server_legacy/c_GlideSystemAPI#r_GS-yesterday)
