@@ -8,7 +8,7 @@ EngineBase.prototype = Object.extendsObject(ApplicationCore, {
 
     _process: function() {
         try {
-            var strategy = this._getStrategy();
+            var strategy = this._getStrategy(/* expected */);
             if (!strategy) return;
             strategy.run();
         } catch (ex) {
@@ -16,11 +16,15 @@ EngineBase.prototype = Object.extendsObject(ApplicationCore, {
         }
     },
 
-    _getStrategy: function(strType) {
-        strType = strType || '';
+    _getStrategy: function(grRecord) {
+        grRecord = grRecord || this.grRecord || null;
+        if(!grRecord) return;
+        var strType = this._getType(grRecord) || ''; // method needs to be defined
         switch (strType) {
-            default:
-                return new ExampleStrategy();
+            case '1':
+                return new ExampleStrategy1(/* expected */);
+            case '2':
+                return new ExampleStrategy2(/* expected */);
         }
     },
 
