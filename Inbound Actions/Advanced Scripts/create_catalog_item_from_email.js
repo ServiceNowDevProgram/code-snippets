@@ -20,8 +20,8 @@ if (userRec.next()) {
    var userID = userRec.getUniqueValue();
 }
 
-cart.setVariable(item, 'employee', userID);
-cart.setVariable(item, 'employee_termination_date', term_f);
+cart.setVariable(item, 'select_employee', userID);
+cart.setVariable(item, 'termination_date', term_f);
 
 var rc = cart.placeOrder();   
 var ritmSys = rc.number;
