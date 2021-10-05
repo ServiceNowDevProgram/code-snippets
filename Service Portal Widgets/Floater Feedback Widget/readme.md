@@ -5,5 +5,5 @@ This can be used to gather feedback using a catalog item or create incidents fro
 
 Simply add this widget to the portal homepage anywhere and you can find this present on the side of the homepage. 
 
-![A test image](demo.jpg)
+![A test image](demo.JPG)
 
