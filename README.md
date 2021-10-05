@@ -47,10 +47,10 @@ paigesndev (24).
 Top 25% of contributors:
 mr-swann (23).
 kmohit2809 (22).
+ReginaldFawcett (22).
 danr2c2 (21).
 rmedved84 (21).
 jacebenson (17).
-ReginaldFawcett (17).
 eriemer1 (16).
 ishaanshoor (16).
 mgopw (16).
