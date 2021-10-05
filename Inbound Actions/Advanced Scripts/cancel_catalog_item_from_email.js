@@ -1,24 +1,15 @@
 var worker = email.body.exiting_worker_name;
-var manager = email.body.manager_name;
 var termination = email.body.termination_date;
 var term_f = new GlideDateTime();
 term_f.setDisplayValue(termination);
 var location = email.body.exiting_worker_location;
-var sso = email.body.exiting_worker_sso_number;
-var userid = sso + "@latitudefs.com";
+var userid = email.body.user_id;
 
 var userRec = new GlideRecord("sys_user");
 userRec.addQuery("user_name", userid);
 userRec.query();
 if (userRec.next()) {
    var userID = userRec.getUniqueValue();
-}
-
-var mgrRec = new GlideRecord("sys_user");
-mgrRec.addQuery("name", manager);
-mgrRec.query();
-if (mgrRec.next()) {
- var mngr = mgrRec.getUniqueValue();
 }
 
 var ritm = new GlideRecord('sc_req_item');
