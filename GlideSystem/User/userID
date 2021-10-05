@@ -1,0 +1,4 @@
+var id = gs.userID(); //Returns the sys_id of the user associated with this session
+gs.info(id);
+
+//Example Output: 73b9c2ff1b5098507a513333cc4bcbef

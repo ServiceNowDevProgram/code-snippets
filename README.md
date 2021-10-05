@@ -38,57 +38,62 @@ To participate in moderation, join the sndevs slack at https://sndevs.com/ and j
 ## Leaderboard:
 
 Top 10% of contributors:
-earlduque - (71)
-mak1A4 - (38)
-sn-ajb - (27)
-jacebenson - (22)
+earlduque (86).
+mak1A4 (28).
+sn-ajb (27).
+mr-swann (23).
+paigesndev (23).
 
 Top 25% of contributors:
-PranavBhagat18 (22)
-rmedved84 (21)
-paigesndev (20)
-mr-swann (18)
-ishaanshoor (17)
-kmohit2809 (17)
-danr2c2 (16)
-eriemer1 (16)
+rmedved84 (21).
+jacebenson (17).
+PranavBhagat18 (17).
+ReginaldFawcett (17).
+danr2c2 (16).
+eriemer1 (16).
+ishaanshoor (16).
+mgopw (16).
 
 Top contributors:
-jonahpiascik (16)
-mgopw (16)
-Decoder-Paul (12)
-snamjosh (12)
-azeezgaa (11)
-Irston (11)
-Lacah (11)
-ovarn (11)
+jonahpiascik (13).
+kmohit2809 (12).
+Lacah (12).
+azeezgaa (11).
+Irston (11).
+ovarn (11).
+snamjosh (11).
+src107 (11).
 
 Other contributors:
-src107 (11)
-ashleysnyder (6)
-bradtiltonnow (6)
-hmadhsan (6)
-mskoddow (6)
-NayeemKaka (6)
-revantKulkarni (6)
-speedy18 (6)
-alikuttyka (1)
-Bigshmow (1)
-Coder0131 (1)
-Codjam (1)
-cwhits (1)
-j2clow (1)
-Karthick986 (1)
-kcimpulse (1)
-LoicSanchez (1)
-mikeroosa (1)
-Nerdcode (1)
-niamccash (1)
-rafzk (1)
-ReginaldFawcett (1)
-salem769 (1)
-shaoservicenow (1)
-TRIGGEREDcoder (1)
-Vivek-KP (1)
-wcarroll (1)
-zaidongy (1)
+Decoder-Paul (7).
+ashleysnyder (6).
+bradtiltonnow (6).
+iar42 (6).
+mskoddow (6).
+NayeemKaka (6).
+revantKulkarni (6).
+alikuttyka (1).
+Bigshmow (1).
+Coder0131 (1).
+Codjam (1).
+cwhits (1).
+eizzledizzle (1).
+hmadhsan (1).
+j2clow (1).
+Karthick986 (1).
+kcimpulse (1).
+LoicSanchez (1).
+mevops (1).
+mikeroosa (1).
+Nerdcode (1).
+niamccash (1).
+rafzk (1).
+rverrips (1).
+salem769 (1).
+shaoservicenow (1).
+Soulpancake000 (1).
+speedy18 (1).
+TRIGGEREDcoder (1).
+Vivek-KP (1).
+wcarroll (1).
+zaidongy (1).
