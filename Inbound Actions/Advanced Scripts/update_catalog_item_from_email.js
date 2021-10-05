@@ -1,8 +1,8 @@
 //variable values
 var worker = email.body.name;
 var termination = email.body.date;
-var term_f = new GlideDateTime();
-term_f.setDisplayValue(termination);
+var term_d = new GlideDateTime();
+term_d.setDisplayValue(termination);
 var userid = email.body.user_id;
 
 var userRec = new GlideRecord("sys_user");
@@ -19,7 +19,7 @@ ritm.addEncodedQuery(eq);
 ritm.query();
 if(ritm.next()){
 	ritm.work_notes = "received from: " + email.origemail + "\n\n" + email.body_text;
-	ritm.variables.termination_date = term_f;
+	ritm.variables.termination_date = term_d;
     	ritm.description = email.body_text;  
 	new Workflow().restartWorkflow(ritm);
     ritm.update();
