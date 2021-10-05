@@ -13,6 +13,7 @@ In order to use the widget, follow the below steps:
   background-size: cover;
   background-repeat: unset;
 }
+**
 
 Here is Page Content structure
 
