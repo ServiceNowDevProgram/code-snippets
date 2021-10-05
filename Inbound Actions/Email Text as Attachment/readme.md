@@ -11,7 +11,7 @@ Set the following values:<br />
 
 * [Click here for Script include script](script.js)
 
-**Sample of calling a script include from the Inbound action**
+**Example of calling a script include from the Inbound action**
 ```js
 This utility script will take contents from an inbound email and create an attachment on the created record from the inbound email action.  To utilize this script, add the following lines at the end of the inbound email action script:
 var emailAsAttachment = new global.emailAsAttachmentUtil();
