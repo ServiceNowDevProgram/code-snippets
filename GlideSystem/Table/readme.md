@@ -1,3 +1,5 @@
+# GlideSystem Table Methods
+
 ### tableExists(String tableName)
   * Determines if a database table exists.
   * [tableExists(String tableName) code snippet](tableExists.js)
