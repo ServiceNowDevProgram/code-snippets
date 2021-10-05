@@ -9,8 +9,8 @@ function createRequest() {
 // set variables
 var worker = email.body.name;
 var termination = email.body.date;
-var term_f = new GlideDateTime();
-term_f.setDisplayValue(termination);
+var term_d = new GlideDateTime();
+term_d.setDisplayValue(termination);
 var userid = email.body.user_id;
 
 var userRec = new GlideRecord("sys_user");
@@ -21,7 +21,7 @@ if (userRec.next()) {
 }
 
 cart.setVariable(item, 'select_employee', userID);
-cart.setVariable(item, 'termination_date', term_f);
+cart.setVariable(item, 'termination_date', term_d);
 
 var rc = cart.placeOrder();   
 var ritmSys = rc.number;
