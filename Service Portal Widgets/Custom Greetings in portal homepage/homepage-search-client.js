@@ -4,7 +4,7 @@ api.controller=function() {
   var c = this;
 	
 	var message ='';
-	var date = new Date(); //get the cuurent date.
+	var date = new Date(); //get the current date.
 	var hours = date.getHours(); //get the current hour
 
 // calculations based on hour to get the correct greeting
