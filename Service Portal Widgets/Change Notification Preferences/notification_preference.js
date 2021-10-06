@@ -4,7 +4,6 @@ api.controller = function($http) {
     /* widget controller */
     var c = this;
     var baseApiUrl = '/api/now/v1/notification/preference';
-    var baseUrl = c.data.baseUrl;
     c.enableNotifications = true;
     // initial call to get all the notifications
     $http.get(baseApiUrl + '?category=' + c.data.category + '&sysparm_limit=100&sysparm_offset=0')
