@@ -75,9 +75,9 @@ Decoder-Paul.
 ashleysnyder.
 bradtiltonnow.
 mskoddow.
+RahmanM.
 
 Other contributors:
-RahmanM.
 revantKulkarni.
 niamccash.
 kcimpulse.
@@ -106,6 +106,7 @@ mevops.
 mikeroosa.
 NayeemKaka.
 Nerdcode.
+oasif.
 Pratyusha418.
 rafzk.
 rohi-v.
