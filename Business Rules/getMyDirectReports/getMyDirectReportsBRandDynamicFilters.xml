@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<unload unload_date="2017-01-04 18:14:55">
+<sys_script action="INSERT_OR_UPDATE">
+<abort_action>false</abort_action>
+<access>package_private</access>
+<action_delete>false</action_delete>
+<action_insert>false</action_insert>
+<action_query>false</action_query>
+<action_update>false</action_update>
+<active>true</active>
+<add_message>false</add_message>
+<advanced>true</advanced>
+<change_fields>false</change_fields>
+<client_callable>true</client_callable>
+<collection>global</collection>
+<condition/>
+<description/>
+<execute_function>false</execute_function>
+<filter_condition table="global"/>
+<is_rest>false</is_rest>
+<message/>
+<name>getMyDirectReports</name>
+<order>100</order>
+<priority>100</priority>
+<rest_method display_value=""/>
+<rest_method_text/>
+<rest_service display_value=""/>
+<rest_service_text/>
+<rest_variables/>
+<role_conditions/>
+<script><![CDATA[function getMyDirectReports(mgrID) {
+    var au = new ArrayUtil();
+    
+    if (typeof mgrID == "undefined") {
+   	    mgrID = gs.getUserID();
+    }
+	var myPeople = [];
+
+	var u = new GlideRecord("sys_user");
+	u.addQuery("manager", mgrID);
+	u.addQuery("sys_id", "!=", mgrID);
+	u.addQuery("active", true);
+	u.query();
+	while (u.next()) {
+	   if (!au.contains(myPeople, u.sys_id)) {
+	       myPeople.push(u.sys_id + "");
+	   }
+	}
+	
+	return myPeople;
+}
+
+function getMyReports(mgrID) {
+    var au = new ArrayUtil();
+    
+	if (typeof mgrID == "undefined") {
+   	    mgrID = gs.getUserID();
+    }
+    var myReports = [];
+    getReportsRecursive(mgrID, myReports);
+	
+	au.unique(myReports);
+	return myReports;
+}
+
+function getReportsRecursive(mgrID, myReports) {
+    var au = new ArrayUtil();
+    
+    var u = new GlideRecord("sys_user");
+	u.addQuery("manager", mgrID);
+	u.addQuery("sys_id", "!=", mgrID);
+	u.addQuery("active", true);
+	u.query();
+	while (u.next()) {
+	   if (!au.contains(myReports, u.sys_id)) {
+	       myReports.push(u.sys_id + "");
+	       getReportsRecursive(u.sys_id, myReports);
+	   }
+	}
+}]]></script>
+<sys_class_name>sys_script</sys_class_name>
+<sys_customer_update>true</sys_customer_update>
+<sys_domain>global</sys_domain>
+<sys_domain_path>/</sys_domain_path>
+<sys_id>9dc8efe60f003200909f4c6be1050ead</sys_id>
+<sys_name>getMyDirectReports</sys_name>
+<sys_overrides display_value=""/>
+<sys_package display_value="Global">global</sys_package>
+<sys_policy/>
+<sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+<sys_scope display_value="Global">global</sys_scope>
+<sys_update_name>sys_script_9dc8efe60f003200909f4c6be1050ead</sys_update_name>
+<template/>
+<when>after</when>
+</sys_script>
+<sys_filter_option_dynamic action="INSERT_OR_UPDATE">
+<active>true</active>
+<available_for_default>false</available_for_default>
+<available_for_filter>true</available_for_filter>
+<available_for_ref_qual>true</available_for_ref_qual>
+<field_type display_value="Reference">52a227c1bf3320001875647fcf07396a</field_type>
+<filter_by_schedule display_value=""/>
+<label>One of My Direct Reports</label>
+<order>500</order>
+<roles/>
+<script>getMyDirectReports()</script>
+<script_reference_id>9dc8efe60f003200909f4c6be1050ead</script_reference_id>
+<script_reference_table>sys_script</script_reference_table>
+<sys_class_name>sys_filter_option_dynamic</sys_class_name>
+<sys_customer_update>true</sys_customer_update>
+<sys_id>9b8823e20f003200909f4c6be1050ecd</sys_id>
+<sys_name>One of My Direct Reports</sys_name>
+<sys_package display_value="Global">global</sys_package>
+<sys_policy/>
+<sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+<sys_scope display_value="Global">global</sys_scope>
+<sys_update_name>sys_filter_option_dynamic_9b8823e20f003200909f4c6be1050ecd</sys_update_name>
+<table>sys_user</table>
+<table_containing_filter/>
+</sys_filter_option_dynamic>
+<sys_filter_option_dynamic action="INSERT_OR_UPDATE">
+<active>true</active>
+<available_for_default>false</available_for_default>
+<available_for_filter>true</available_for_filter>
+<available_for_ref_qual>true</available_for_ref_qual>
+<field_type display_value="Reference">52a227c1bf3320001875647fcf07396a</field_type>
+<filter_by_schedule display_value=""/>
+<label>One of My Reports</label>
+<order>600</order>
+<roles/>
+<script>getMyReports()</script>
+<script_reference_id>9dc8efe60f003200909f4c6be1050ead</script_reference_id>
+<script_reference_table>sys_script</script_reference_table>
+<sys_class_name>sys_filter_option_dynamic</sys_class_name>
+<sys_customer_update>true</sys_customer_update>
+<sys_id>7c41376a0f003200909f4c6be1050e00</sys_id>
+<sys_name>One of My Reports</sys_name>
+<sys_package display_value="Global">global</sys_package>
+<sys_policy/>
+<sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+<sys_scope display_value="Global">global</sys_scope>
+<sys_update_name>sys_filter_option_dynamic_7c41376a0f003200909f4c6be1050e00</sys_update_name>
+<table>sys_user</table>
+<table_containing_filter/>
+</sys_filter_option_dynamic>
+</unload>
