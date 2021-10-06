@@ -12,6 +12,7 @@
         grChecklistItem.orderBy("order");
         grChecklistItem.query();
         if (grChecklistItem.hasNext()) {
+            template.print("<strong>Checklist:</strong>");
             while (grChecklistItem.next()) {
                 var checked = "";
                 if (grChecklistItem.getValue("complete") == "1") {
