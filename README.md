@@ -44,9 +44,9 @@ mr-swann (28).
 kmohit2809 (27).
 PranavBhagat18 (27).
 sn-ajb (27).
+ishaanshoor (26).
 
 Top 25% of contributors:
-ishaanshoor (26).
 paigesndev (25).
 ReginaldFawcett (22).
 danr2c2 (21).
@@ -75,6 +75,7 @@ Other contributors:
 revantKulkarni (6).
 niamccash (3).
 kcimpulse (2).
+23Thom (1).
 aatrey882 (1).
 alikuttyka (1).
 Anantharaman91 (1).
