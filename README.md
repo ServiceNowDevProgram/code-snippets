@@ -69,9 +69,10 @@ Decoder-Paul (7).
 ashleysnyder (6).
 bradtiltonnow (6).
 mskoddow (6).
-revantKulkarni (6).
+RahmanM (6).
 
 Other contributors:
+revantKulkarni (6).
 niamccash (3).
 kcimpulse (2).
 aatrey882 (1).
@@ -99,7 +100,6 @@ NayeemKaka (1).
 Nerdcode (1).
 Pratyusha418 (1).
 rafzk (1).
-RahmanM (1).
 rohi-v (1).
 rverrips (1).
 salem769 (1).
