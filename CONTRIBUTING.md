@@ -30,7 +30,7 @@ Note: If you plan on doing another pull request and your original pull request h
 - `vegetables` folder
   - `carrots` folder
     - `readme.md` file describing the vegetables code snippet
-    - `apples.js` first file with code snippet
+    - `carrots.js` first file with code snippet
   - `potatos` folder
     - `readme.md` file describing the potatos code snippet
     - `potatos.js` file with original code snippet
