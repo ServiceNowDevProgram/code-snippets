@@ -7,7 +7,7 @@ Welcome to ServiceNow's Code Snippets community repository, managed by the Devel
 Inside this repository, you will find community submitted code-snippets and their variants for different use-cases.
 
 ## We invite you to contribute!
-t13t1t
+
 To contribute, just follow these steps:
 
 1. Fork this repo (you get a point just by forking!)
@@ -38,7 +38,7 @@ To participate in moderation, join the sndevs slack at https://sndevs.com/ and j
 ## Leaderboard:
 
 Top 10% of contributors:
-earlduque (106).
+earlduque (107).
 mak1A4 (39).
 PranavBhagat18 (32).
 ishaanshoor (31).
