@@ -68,6 +68,7 @@ mgopw.
 snamjosh.
 jonahpiascik.
 Irston.
+MarcMouries.
 src107.
 sumanthdosapati.
 Decoder-Paul.
@@ -75,9 +76,9 @@ Decoder-Paul.
 ashleysnyder.
 bradtiltonnow.
 mskoddow.
-RahmanM.
 
 Other contributors:
+RahmanM.
 revantKulkarni.
 niamccash.
 kcimpulse.
@@ -101,7 +102,6 @@ LarsAssen.
 LoicSanchez.
 LuisSepulveda21.
 m2santiago.
-MarcMouries.
 mevops.
 mikeroosa.
 NayeemKaka.
