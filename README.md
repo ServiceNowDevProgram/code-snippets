@@ -47,7 +47,7 @@ sn-ajb (27).
 ishaanshoor (26).
 
 Top 25% of contributors:
-paigesndev (25).
+paigesndev (26).
 ReginaldFawcett (22).
 danr2c2 (21).
 iar42 (21).
