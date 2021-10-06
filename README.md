@@ -74,10 +74,11 @@ Decoder-Paul.
 23Thom.
 ashleysnyder.
 bradtiltonnow.
+MarcMouries.
 mskoddow.
-RahmanM.
 
 Other contributors:
+RahmanM.
 revantKulkarni.
 niamccash.
 kcimpulse.
@@ -101,7 +102,6 @@ LarsAssen.
 LoicSanchez.
 LuisSepulveda21.
 m2santiago.
-MarcMouries.
 mevops.
 mikeroosa.
 NayeemKaka.
