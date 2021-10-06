@@ -44,11 +44,11 @@ PranavBhagat18 (32).
 ishaanshoor (31).
 mr-swann (28).
 kmohit2809 (27).
-sn-ajb (27).
+paigesndev (27).
 
 Top 25% of contributors:
+sn-ajb (27).
 iar42 (26).
-paigesndev (26).
 ReginaldFawcett (22).
 danr2c2 (21).
 ovarn (21).
