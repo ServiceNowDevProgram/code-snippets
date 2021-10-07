@@ -46,6 +46,16 @@
   * [quartersAgoStart(Number quarters) code snippet](quartersAgoStart.js)
   * [quartersAgoStart(Number quarters) API Doc](https://developer.servicenow.com/dev.do#!/reference/api/rome/server_legacy/c_GlideSystemAPI#r_GS-quartersAgoStart_N)
 
+### yearsAgo(Number years)
+  * Description: Gets a date and time for a certain number of years ago.
+  * [yearsAgo(Number years) code snippet](yearsAgo.js)
+  * [yearsAgo(Number years) API Doc](https://developer.servicenow.com/dev.do#!/reference/api/rome/server_legacy/c_GlideSystemAPI#r_GS-yearsAgo_N)
+
+### yesterday()
+  * Description: Returns yesterday's time (24 hours ago).
+  * [yesterday() code snippet](yesterday.js)
+  * [yesterday() API Doc](https://developer.servicenow.com/dev.do#!/reference/api/rome/server_legacy/c_GlideSystemAPI#r_GS-yesterday)
+
 ### setDisplayValueInternalWithAlternates
   * [setDisplayValueInternalWithAlternates code snippet](setDisplayValueInternalWithAlternates.js)
   * Description: Sets a date and time value using the internal format (yyyy-MM-dd HH:mm:ss) and the current user's time zone. This method attempts to parse incomplete date and time values.
