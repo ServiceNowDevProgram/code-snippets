@@ -72,16 +72,16 @@ Irston.
 MarcMouries.
 RahmanM.
 src107.
-Decoder-Paul.
+pratyushasndev.
 niamccash.
+Decoder-Paul.
 23Thom.
 ashleysnyder.
-bradtiltonnow.
 
 Other contributors:
+bradtiltonnow.
 mskoddow.
 revantKulkarni.
-pratyushasndev.
 kcimpulse.
 aatrey882.
 alikuttyka.
