@@ -9,7 +9,7 @@ for(var i =0;i<total;i++)
   var scTask = new GlideRecord('sc_task');
   scTask.initialize();
   scTask.request_item = current.sys_id;
-  scTask.short_description = mrvs[i].name; //set the short description with mrvs data to task. 'name' is a variable on my mrvs.
+  scTask.short_description = mrvs[i].name; //set the short description of task with mrvs data. Here 'name' is a variable on my mrvs.
   scTask.insert();
 }
 })(current, previous);
