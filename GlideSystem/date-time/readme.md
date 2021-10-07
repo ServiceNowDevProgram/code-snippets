@@ -47,6 +47,6 @@
   * [quartersAgoStart(Number quarters) API Doc](https://developer.servicenow.com/dev.do#!/reference/api/rome/server_legacy/c_GlideSystemAPI#r_GS-quartersAgoStart_N)
 
 ### setDisplayValueInternalWithAlternates
-  * Description: Sets a date and time value using the internal format (yyyy-MM-dd HH:mm:ss) and the current user's time zone. This method attempts to parse incomplete date and time values.
   * [setDisplayValueInternalWithAlternates code snippet](setDisplayValueInternalWithAlternates.js)
+  * Description: Sets a date and time value using the internal format (yyyy-MM-dd HH:mm:ss) and the current user's time zone. This method attempts to parse incomplete date and time values.
   * [setDisplayValueInternalWithAlternates() API Doc](https://developer.servicenow.com/dev.do#!/reference/api/rome/server_legacy/c_GlideSystemAPI#r_GDT-setDispValInternalAlt_S?navFilter=setDisplayValueInternalWithAlternates)
