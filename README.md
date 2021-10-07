@@ -80,8 +80,8 @@ mskoddow.
 
 Other contributors:
 revantKulkarni.
-pratyushasndev.
 niamccash.
+pratyushasndev.
 kcimpulse.
 aatrey882.
 alikuttyka.
