@@ -41,6 +41,15 @@
                         ${proc_po.vendor.getDisplayValue()}
                     </td>
                 </tr>
+				 <tr>
+                    <td class="label_left" width="150px" style="font-weight: bold;">
+                        <g:label_spacing />
+                        ${proc_po.ship_to.sys_meta.label}:
+                    </td>
+                    <td>
+                        ${proc_po.ship_to.getDisplayValue()}
+                    </td>
+                </tr>
                 <tr>
                     <td class="label_left" width="150px" style="font-weight: bold;">
                         <g:label_spacing />
@@ -106,9 +115,9 @@
                     <td width="150px">
                         ${proc_po_labels.number.sys_meta.label}
                     </td>
-                    <td>
+                    <!--<td>
                         ${proc_po_labels.vendor.sys_meta.label}
-                    </td>
+  </td> -->
                     <td width="150px">
                         ${proc_po_labels.model.cmdb_model_category.sys_meta.label}
                     </td>
@@ -143,7 +152,7 @@
                                 ${proc_po_item.number}
                             </a>
                         </td>
-                        <td valign="top"> ${proc_po_item.vendor.getDisplayValue()}</td>
+						<!--<td valign="top"> ${proc_po_item.vendor.getDisplayValue()}</td>-->
                         <td valign="top" width="150px"> ${proc_po_item.model.cmdb_model_category.getDisplayValue()}</td>
                         <td valign="top"> ${proc_po_item.model.getDisplayValue()}</td>
                         <td valign="top" align="right" width="150px">
