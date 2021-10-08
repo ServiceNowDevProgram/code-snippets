@@ -82,6 +82,7 @@ ashleysnyder.
 bradtiltonnow.
 
 Other contributors:
+ChecksumFailed.
 rafzk.
 revantKulkarni.
 SagarVijaykumar.
@@ -96,7 +97,6 @@ Bigshmow.
 billyperkinsukg.
 bird-03.
 cenzo85.
-ChecksumFailed.
 Coder0131.
 Codjam.
 cwhits.
