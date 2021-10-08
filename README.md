@@ -50,9 +50,9 @@ ishaanshoor.
 smartcarleen.
 azeezgaa.
 mr-swann.
+paigesndev.
 
 Top 25% of contributors:
-paigesndev.
 sn-ajb.
 iar42.
 ReginaldFawcett.
@@ -110,6 +110,7 @@ hardikvyasji.
 hmadhsan.
 ishwarighule.
 j2clow.
+j4rodm.
 Jennylou777.
 Karthick986.
 Keagnn.
