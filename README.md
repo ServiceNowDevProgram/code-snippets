@@ -83,6 +83,7 @@ bradtiltonnow.
 
 Other contributors:
 ChecksumFailed.
+odinsride.
 rafzk.
 revantKulkarni.
 SagarVijaykumar.
@@ -116,7 +117,6 @@ mikeroosa.
 NayeemKaka.
 Nerdcode.
 oasif.
-odinsride.
 phr-nk.
 Pratyusha418.
 rohi-v.
