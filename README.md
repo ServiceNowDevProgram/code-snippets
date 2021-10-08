@@ -80,9 +80,9 @@ Decoder-Paul.
 vandna07.
 ashleysnyder.
 bradtiltonnow.
+ChecksumFailed.
 
 Other contributors:
-ChecksumFailed.
 odinsride.
 rafzk.
 revantKulkarni.
@@ -108,6 +108,7 @@ ishwarighule.
 j2clow.
 Jennylou777.
 Karthick986.
+Keagnn.
 LarsAssen.
 LoicSanchez.
 LuisSepulveda21.
