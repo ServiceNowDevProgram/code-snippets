@@ -49,9 +49,9 @@ PranavBhagat18.
 ishaanshoor.
 smartcarleen.
 azeezgaa.
+mr-swann.
 
 Top 25% of contributors:
-mr-swann.
 paigesndev.
 sn-ajb.
 iar42.
@@ -63,9 +63,9 @@ rmedved84.
 jacebenson.
 Lacah.
 mgopw.
+snamjosh.
 
 Top contributors:
-snamjosh.
 sumanthdosapati.
 pratyushasndev.
 jonahpiascik.
@@ -121,6 +121,7 @@ samwinchet.
 shaoservicenow.
 Soulpancake000.
 speedy18.
+stwinkle.
 TRIGGEREDcoder.
 Vivek-KP.
 vpeinado.
