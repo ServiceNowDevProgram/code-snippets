@@ -64,9 +64,9 @@ sumanthdosapati.
 jacebenson.
 Lacah.
 mgopw.
+snamjosh.
 
 Top contributors:
-snamjosh.
 pratyushasndev.
 jonahpiascik.
 MarcMouries.
@@ -79,9 +79,9 @@ src107.
 Decoder-Paul.
 vandna07.
 ashleysnyder.
+bradtiltonnow.
 
 Other contributors:
-bradtiltonnow.
 rafzk.
 revantKulkarni.
 SagarVijaykumar.
@@ -115,6 +115,7 @@ mikeroosa.
 NayeemKaka.
 Nerdcode.
 oasif.
+odinsride.
 phr-nk.
 Pratyusha418.
 rohi-v.
