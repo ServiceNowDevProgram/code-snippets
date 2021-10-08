@@ -72,6 +72,7 @@ pratyushasndev.
 jonahpiascik.
 MarcMouries.
 23Thom.
+ashu759.
 Irston.
 mskoddow.
 niamccash.
@@ -81,7 +82,6 @@ Decoder-Paul.
 vandna07.
 allenandreas.
 ashleysnyder.
-ashu759.
 
 Other contributors:
 bradtiltonnow.
