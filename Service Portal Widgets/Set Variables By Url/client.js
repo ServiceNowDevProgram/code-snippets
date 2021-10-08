@@ -1,4 +1,4 @@
-function($scope, $window) {
+api.controller = function ($scope, $window) {
     // This is the controller, we've included
     // $scope in the function above because
     // it's easy to work with

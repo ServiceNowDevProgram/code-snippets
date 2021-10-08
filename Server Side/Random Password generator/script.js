@@ -1,15 +1,10 @@
-	// Add your code here
-
-	var length = 18; // you can use length as option or static
+function generateRandomPassword(passLenght) {
+	var length = passLenght;
 	var letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
 	var numbers = '0123456789';
 	var symbols = '!#$%&\()*+,-./:;<=>?@^[\\]^_`{|}~';
 
-	var password = '';
-
 	var validChars = '';
-
-
 	validChars += letters;
 	validChars += numbers;
 	validChars += symbols;
@@ -20,6 +15,5 @@
 		var index = Math.floor(Math.random() * validChars.length);
 		generatedPassword += validChars[index];
 	}
-
-	password = generatedPassword;
-gs.info(password);
+	return generatedPassword;
+}

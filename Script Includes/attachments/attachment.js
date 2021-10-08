@@ -1,10 +1,8 @@
 var Attachment = Class.create();
-
 Attachment.prototype = {
 	initialize: function(arg) {
 		this.current = arg;
 	},
-
 	hasImage : function() {
 
 		var attGr = new GlideRecord(Constants.ATTACHMENT_TABLE);
@@ -17,10 +15,8 @@ Attachment.prototype = {
 		if (attGr.hasNext()) {
 			return true;
 		}
-
 		return false;
 	},
-
 	getImageID : function() {
 
 		var attGr = new GlideRecord(Constants.ATTACHMENT_TABLE);
@@ -33,9 +29,7 @@ Attachment.prototype = {
 		if (attGr.next()) {
 			return attGr.getUniqueValue();
 		}
-
 		return;
 	},
-
 	type: 'Attachment'
 };

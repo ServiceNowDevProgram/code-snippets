@@ -1,14 +1,7 @@
 (function process( /*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {
 
-    // implement resource here
-
-    var numInserted;
     var reqBody = request.body.data;
     var a = JSON.stringify(reqBody);
-    var parser = new JSONParser();
-    var parsed = parser.parse(a);
-    var str = '';
-    var str1 = '';
     var j;
     var qstring = reqBody.query_string;
     if (qstring != '') {
@@ -17,12 +10,8 @@
         cmdb.query();
         var item_access = [];
         while (cmdb.next()) {
-
             item_access.push(cmdb.getValue("sys_id"));
-
         }
-
-
     }
 
     var task = new GlideRecord('task');
@@ -30,23 +19,13 @@
     task.query();
     gs.info("TAsk reow co " + task.getRowCount());
     if (task.getRowCount() < 1) {
-
         response.setError("Please provide valid TASK number");
         return;
-
     }
     if (task.next()) {
-
-
         var task_id = task.sys_id;
-
-
-
     }
-
     if (item_access.length > 0) {
-
-
         var cd = new GlideRecord('cmdb_ci');
         cd.addEncodedQuery(qstring);
         cd.query();
@@ -58,19 +37,10 @@
             grDS5.setValue("task", task_id);
             grDS5.insert();
         }
-
-
-
     }
 
-
-
-    //gs.info("NOF of re " + item_access.length);
-    //gs.info("Enoded Query " + 'name=' + reqBody.cis[j].name + 'ORserial_number=' + reqBody.cis[j].serial + 'ORsys_id=' + reqBody.cis[j].sys_id + 'ORip_address=' + reqBody.cis[j].ip + 'ORfqdn=' + reqBody.cis[j].FQDN);
     for (j = 0; j < reqBody.cis.length; j++) {
-
         if (item_access.length == null) {
-
             if (reqBody.cis[j].name != null) {
                 var c = new GlideRecord('cmdb_ci');
                 c.addEncodedQuery('name=' + reqBody.cis[j].name);
@@ -85,7 +55,6 @@
                     grDS.insert();
                 }
             }
-
             if (reqBody.cis[j].serial != null) {
                 var c1 = new GlideRecord('cmdb_ci');
                 c1.addEncodedQuery('serial_number=' + reqBody.cis[j].serial);
@@ -100,7 +69,6 @@
                     grDS1.insert();
                 }
             }
-
             if (reqBody.cis[j].sys_id != null) {
                 var c2 = new GlideRecord('cmdb_ci');
                 c2.addEncodedQuery('sys_id=' + reqBody.cis[j].sys_id);
@@ -115,7 +83,6 @@
                     grDS2.insert();
                 }
             }
-
             if (reqBody.cis[j].ip != null) {
                 var c3 = new GlideRecord('cmdb_ci');
                 c3.addEncodedQuery('ip_address=' + reqBody.cis[j].ip);
@@ -130,7 +97,6 @@
                     grDS3.insert();
                 }
             }
-
             if (reqBody.cis[j].FQDN != null) {
                 var c4 = new GlideRecord('cmdb_ci');
                 c4.addEncodedQuery('fqdn=' + reqBody.cis[j].FQDN);
@@ -145,23 +111,13 @@
                     grDS4.insert();
                 }
             }
-
-
-
         }
-
-
-
     }
-
     response.setBody({
         "code": "CIs created sucessfully",
 
     });
     response.setContentType("application/json");
     response.setStatus(200);
-
-
-
 
 })(request, response);

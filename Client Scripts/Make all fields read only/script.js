@@ -1,6 +1,11 @@
-var fields = g_form.getEditableFields();
-if (fields[x] != 'sys_created_on' && fields[x] != 'sys_created_by' && fields[x] != 'sys_updated_on' && fields[x] != 'sys_updated_by'){
-  g_form.setMandatory(fields[x], false);
-  g_form.setReadOnly(fields[x], true);
+function setAllFieldsReadOnly() {
+  var fields = g_form.getEditableFields().filter(function (f) {
+    if (f.indexOf("sys_created") == 0) return false;
+    if (f.indexOf("sys_updated") == 0) return false;
+    return true;
+  })
+  fields.forEach(fieldname => {
+    g_form.setMandatory(fieldname, false);
+    g_form.setReadOnly(fieldname, true);
+  });
 }
-
