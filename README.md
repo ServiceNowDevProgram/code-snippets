@@ -44,8 +44,8 @@ To participate in moderation, join the sndevs slack at https://sndevs.com/ and j
 Top 10% of contributors:
 earlduque.
 kmohit2809.
-mak1A4.
 PranavBhagat18.
+mak1A4.
 ishaanshoor.
 smartcarleen.
 azeezgaa.
