@@ -74,6 +74,7 @@ MarcMouries.
 Irston.
 mskoddow.
 niamccash.
+odinsride.
 RahmanM.
 src107.
 Decoder-Paul.
@@ -81,11 +82,10 @@ vandna07.
 ashleysnyder.
 ashu759.
 bradtiltonnow.
-ChecksumFailed.
 
 Other contributors:
+ChecksumFailed.
 oasif.
-odinsride.
 rafzk.
 revantKulkarni.
 SagarVijaykumar.
