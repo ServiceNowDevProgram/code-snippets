@@ -82,6 +82,7 @@ ashleysnyder.
 
 Other contributors:
 bradtiltonnow.
+rafzk.
 revantKulkarni.
 SagarVijaykumar.
 stwinkle.
@@ -115,7 +116,6 @@ Nerdcode.
 oasif.
 phr-nk.
 Pratyusha418.
-rafzk.
 rohi-v.
 rverrips.
 salem769.
