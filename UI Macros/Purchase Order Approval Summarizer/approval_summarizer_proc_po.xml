@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="true" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+    <tr>
+        <td class="label_left" width="350px" style="font-weight:bold;">
+            ${gs.getMessage('Summary of Purchase Order')}:
+            <g:label_spacing />
+        </td>
+    </tr>
+    <g:evaluate var="jvar_total"
+        expression="        
+        var proc_po = ${ref}.document_id;
+
+        var proc_po_labels = new GlideRecord('proc_po_item');
+        proc_po_labels.initialize();
+    
+        var proc_po_item = new GlideRecord('proc_po_item');
+        proc_po_item.addQuery('purchase_order', proc_po.sys_id);
+        proc_po_item.query();
+
+        var jvar_total = proc_po.total_cost;
+        jvar_total;
+        " />
+    <tr>
+        <td width="350px">
+            <table width="350px">
+            	<tr>
+                    <td class="label_left" width="150px" style="font-weight: bold;">
+                        <g:label_spacing />
+                        ${proc_po.number.sys_meta.label}:
+                    </td>
+                    <td>
+                        ${proc_po.number.getDisplayValue()}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label_left" width="150px" style="font-weight: bold;">
+                        <g:label_spacing />
+                        ${proc_po.vendor.sys_meta.label}:
+                    </td>
+                    <td>
+                        ${proc_po.vendor.getDisplayValue()}
+                    </td>
+                </tr>
+				 <tr>
+                    <td class="label_left" width="150px" style="font-weight: bold;">
+                        <g:label_spacing />
+                        ${proc_po.ship_to.sys_meta.label}:
+                    </td>
+                    <td>
+                        ${proc_po.ship_to.getDisplayValue()}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label_left" width="150px" style="font-weight: bold;">
+                        <g:label_spacing />
+                        ${proc_po.due_by.sys_meta.label}:
+                    </td>
+                    <td>
+                        ${proc_po.due_by.getDisplayValue()}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label_left" width="150px" style="font-weight: bold;">
+                        <g:label_spacing />
+                        ${proc_po.requested_for.sys_meta.label}:
+                    </td>
+                    <td>
+                        ${proc_po.requested_for.getDisplayValue()}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label_left" width="150px" style="font-weight: bold;">
+                        <g:label_spacing />
+                        ${proc_po.department.sys_meta.label}:
+                    </td>
+                    <td>
+                        ${proc_po.department.getDisplayValue()}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label_left" width="150px" style="font-weight: bold;">
+                        <g:label_spacing />
+                        ${proc_po.short_description.sys_meta.label}:
+                    </td>
+                    <td>
+                        ${proc_po.short_description.getDisplayValue()}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label_left" width="150px" style="font-weight: bold;">
+                        <g:label_spacing />
+                        ${proc_po.ship_rate.sys_meta.label}:
+                    </td>
+                    <td style="text-align: right; padding-right: 5px;">
+                        <g:currency_format value="${proc_po.ship_rate}" />
+                    </td>
+                </tr>
+                <tr style="background-color:lightgreen;">
+                    <td class="label_left" width="150px" style="font-weight: bold;">
+                        <g:label_spacing />
+                        ${proc_po.total_cost.sys_meta.label}:
+                    </td>
+                    <td style="font-weight: bold; text-align: right; padding-right: 5px;">
+                        <g:currency_format value="${proc_po.total_cost}" />
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <j:set var="jvar_line_num" value="0" />
+    <tr>
+        <td width="100%">
+            <table width="100%">
+                <tr class="header">
+                    <td width="150px">
+                        ${proc_po_labels.number.sys_meta.label}
+                    </td>
+                    <!--<td>
+                        ${proc_po_labels.vendor.sys_meta.label}
+  </td> -->
+                    <td width="150px">
+                        ${proc_po_labels.model.cmdb_model_category.sys_meta.label}
+                    </td>
+                    <td>
+                        ${proc_po_labels.model.sys_meta.label}
+                    </td>
+                    <td align="right" width="150px">
+                        ${proc_po_labels.cost.sys_meta.label}
+                    </td>
+                    <td align="right" width="150px">
+                        ${proc_po_labels.ordered_quantity.sys_meta.label}
+                    </td>
+                    <td align="right" width="150px">
+                        ${proc_po_labels.total_cost.sys_meta.label}
+                    </td>
+                </tr>
+                <j:while test="${proc_po_item.next()}">
+                    <j:set var="jvar_line_color" value="odd" />
+                    <j:set var="jvar_line_num" value="${jvar_line_num + 1}" />
+                    <j:if test="${jvar_line_num % 2 == 0}">
+                        <j:set var="jvar_line_color" value="even" />
+                    </j:if>
+					
+                    <tr class="${jvar_line_color}">
+                        <td valign="top" width="150px">
+                            <g2:evaluate var="jvar_pop_target" expression="$[ref].getRecordClassName()" />
+                            <a class="linked" target="gsft_main" href="proc_po_item.do?sys_id=${proc_po_item.sys_id}"
+                                onmouseover="popListDiv(event, 'proc_po_item', '${proc_po_item.sys_id}','${JS:sysparm_view}')" onmouseout="lockPopup(event)">
+                                <img src="images/icons/hover_icon.gifx" class="clsshort" alt="${gs.getMessage('uppercase_view')}" />
+                            </a>${SP}${SP}${SP}
+                            <a class="linked" target="gsft_main" href="proc_po_item.do?sys_id=${proc_po_item.sys_id}">
+                                ${proc_po_item.number}
+                            </a>
+                        </td>
+						<!--<td valign="top"> ${proc_po_item.vendor.getDisplayValue()}</td>-->
+                        <td valign="top" width="150px"> ${proc_po_item.model.cmdb_model_category.getDisplayValue()}</td>
+                        <td valign="top"> ${proc_po_item.model.getDisplayValue()}</td>
+                        <td valign="top" align="right" width="150px">
+                            <g:currency_format value="${proc_po_item.cost.getDisplayValue()}" />
+                        </td>
+                        <td valign="top" align="right" width="150px"> ${proc_po_item.ordered_quantity}</td>
+                        <td valign="top" align="right" width="150px">
+                            <g:currency_format double="${proc_po_item.total_cost}" />
+                        </td>
+                    </tr>
+                </j:while>
+            </table>
+        </td>
+    </tr>
+</j:jelly>

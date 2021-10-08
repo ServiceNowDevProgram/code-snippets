@@ -12,9 +12,13 @@ To contribute, just follow these steps:
 
 1. Fork this repo (you get a point just by forking!)
 2. Add/Update the repo
-4. Submit a pull request!
+3. Submit a pull request!
 
 That's it! More detailed contribution instructions can be found [here](CONTRIBUTING.md)
+
+## Code example program!
+
+Have a code-snippet that could be used in the official ServiceNow API Documentation? You should submit your code-snippet to the [code example program](https://devlink.sn/code-example-program) instead and potentially receive a reward!
 
 ## Earning points
 
@@ -38,20 +42,98 @@ To participate in moderation, join the sndevs slack at https://sndevs.com/ and j
 ## Leaderboard:
 
 Top 10% of contributors:
-earlduque - (20)
+earlduque.
+kmohit2809.
+PranavBhagat18.
+mak1A4.
+ishaanshoor.
+smartcarleen.
+azeezgaa.
+mr-swann.
 
 Top 25% of contributors:
-mgopw (7)
+paigesndev.
+sn-ajb.
+iar42.
+ReginaldFawcett.
+danr2c2.
+eriemer1.
+ovarn.
+rmedved84.
+sumanthdosapati.
+jacebenson.
+Lacah.
+mgopw.
+odinsride.
+snamjosh.
 
 Top contributors:
-snamjosh (2)
-ashleysnyder (1)
+pratyushasndev.
+jonahpiascik.
+MarcMouries.
+23Thom.
+ashu759.
+Irston.
+mskoddow.
+niamccash.
+RahmanM.
+src107.
+Decoder-Paul.
+vandna07.
+allenandreas.
+ashleysnyder.
 
 Other contributors:
-azeezgaa (1)
-cwhits (1)
-j2clow (1)
-mak1A4 (1)
-niamccash (1)
-paigesndev (1)
-rmedved84 (1)
+bradtiltonnow.
+ChecksumFailed.
+oasif.
+rafzk.
+revantKulkarni.
+SagarVijaykumar.
+stwinkle.
+kcimpulse.
+aatrey882.
+alikuttyka.
+Anantharaman91.
+askarthik.
+avssrikanth.
+Bigshmow.
+billyperkinsukg.
+bird-03.
+cenzo85.
+Coder0131.
+Codjam.
+cwhits.
+davidkwhuang.
+eizzledizzle.
+hardikvyasji.
+hmadhsan.
+ishwarighule.
+j2clow.
+Jennylou777.
+Karthick986.
+Keagnn.
+LarsAssen.
+LoicSanchez.
+LuisSepulveda21.
+m2santiago.
+mevops.
+mikeroosa.
+NayeemKaka.
+Nerdcode.
+phr-nk.
+Pratyusha418.
+rohi-v.
+rverrips.
+salem769.
+samwinchet.
+shaoservicenow.
+Soulpancake000.
+speedy18.
+stevezero.
+TRIGGEREDcoder.
+Vivek-KP.
+vpeinado.
+vvijaya19.
+wcarroll.
+zaidongy.
