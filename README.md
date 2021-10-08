@@ -65,9 +65,9 @@ jacebenson.
 Lacah.
 mgopw.
 snamjosh.
+pratyushasndev.
 
 Top contributors:
-pratyushasndev.
 jonahpiascik.
 MarcMouries.
 23Thom.
@@ -81,9 +81,9 @@ vandna07.
 ashleysnyder.
 ashu759.
 bradtiltonnow.
+ChecksumFailed.
 
 Other contributors:
-ChecksumFailed.
 oasif.
 odinsride.
 rafzk.
@@ -103,6 +103,7 @@ cenzo85.
 Coder0131.
 Codjam.
 cwhits.
+davidkwhuang.
 eizzledizzle.
 hardikvyasji.
 hmadhsan.
