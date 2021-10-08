@@ -78,9 +78,9 @@ RahmanM.
 src107.
 Decoder-Paul.
 vandna07.
+ashleysnyder.
 
 Other contributors:
-ashleysnyder.
 bradtiltonnow.
 revantKulkarni.
 SagarVijaykumar.
@@ -123,6 +123,7 @@ samwinchet.
 shaoservicenow.
 Soulpancake000.
 speedy18.
+stevezero.
 TRIGGEREDcoder.
 Vivek-KP.
 vpeinado.
