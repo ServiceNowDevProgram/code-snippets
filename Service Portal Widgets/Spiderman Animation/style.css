@@ -25,8 +25,9 @@
   background: black;
   margin-left: -1px;
   width: 100%;
+  /* Adjust width accordingly */
   margin-top: -10px;
-
+  position: relative;
 }
 
 .goblin {
