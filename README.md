@@ -59,6 +59,7 @@ danr2c2.
 iar42.
 ReginaldFawcett.
 eriemer1.
+odinsride.
 ovarn.
 RahmanM.
 rmedved84.
@@ -66,7 +67,6 @@ jacebenson.
 Lacah.
 mgopw.
 niamccash.
-odinsride.
 
 Top contributors:
 snamjosh.
