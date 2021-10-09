@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="UTF-8"?><unload unload_date="2021-10-09 23:22:38">
+<sys_remote_update_set action="INSERT_OR_UPDATE">
+<application display_value="Global">global</application>
+<application_name>Global</application_name>
+<application_scope>global</application_scope>
+<application_version/>
+<collisions/>
+<commit_date/>
+<deleted/>
+<description/>
+<inserted/>
+<name>Service Portal - Guest Login Modal Widget</name>
+<origin_sys_id/>
+<parent display_value=""/>
+<release_date/>
+<remote_base_update_set display_value=""/>
+<remote_parent_id/>
+<remote_sys_id>43e1c8aa1b8fb010c297c803604bcba4</remote_sys_id>
+<state>loaded</state>
+<summary/>
+<sys_class_name>sys_remote_update_set</sys_class_name>
+<sys_created_by>kcuster</sys_created_by>
+<sys_created_on>2021-10-09 23:22:37</sys_created_on>
+<sys_id>a67f54e61b03f010c297c803604bcb25</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>kcuster</sys_updated_by>
+<sys_updated_on>2021-10-09 23:22:37</sys_updated_on>
+<update_set display_value=""/>
+<update_source display_value=""/>
+<updated/>
+</sys_remote_update_set>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="guest-login-modal-widget">06bc2eeb1bf83010c297c803604bcb23</application>
+<category>customer</category>
+<comments/>
+<name>sp_widget_49eceae71b3c3010c297c803604bcb8b</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_widget"&gt;&lt;sp_widget action="INSERT_OR_UPDATE"&gt;&lt;category&gt;custom&lt;/category&gt;&lt;client_script&gt;&lt;![CDATA[api.controller=function($scope, $uibModal) {
+  /* widget controller */
+  var c = this;
+	c.authenticated = c.data.authenticated;
+	c.continueAsGuest = sessionStorage.continueAsGuest;
+	
+	c.login_button_text = c.data.login_button_text;
+	
+	if (!c.authenticated) {
+		if (!c.continueAsGuest) { // if user hasn't already clicked Continue as Guest
+			c.modalInstance = $uibModal.open({
+				templateUrl: 'guest-login-content',
+				scope: $scope,
+				backdrop: 'static',
+				windowTopClass: 'modal-center-override',
+				ariaLabelledBy: 'title'
+			});
+		}
+	}
+	
+	$scope.openLogin = function () {
+		window.location = '/sp';
+	};
+	
+	// When Guest button is clicked, store in sessionStorage and close modal
+	$scope.continueAsGuest = function () {
+		sessionStorage.continueAsGuest = true;
+		c.modalInstance.close();
+	}
+};]]&gt;&lt;/client_script&gt;&lt;controller_as&gt;c&lt;/controller_as&gt;&lt;css/&gt;&lt;data_table&gt;sp_instance&lt;/data_table&gt;&lt;demo_data/&gt;&lt;description/&gt;&lt;docs/&gt;&lt;field_list/&gt;&lt;has_preview&gt;true&lt;/has_preview&gt;&lt;id&gt;guest-login-modal&lt;/id&gt;&lt;internal&gt;false&lt;/internal&gt;&lt;link&gt;&lt;![CDATA[function link(scope, element, attrs, controller) {  }]]&gt;&lt;/link&gt;&lt;name&gt;Guest Login Modal&lt;/name&gt;&lt;option_schema&gt;[{"name":"login_button_text","section":"Presentation","default_value":"Log in","label":"Login Button Text","type":"string"},{"name":"login_button_help","section":"Presentation","default_value":"to get help or view additional search results","label":"Login Button Help","type":"string"},{"name":"guest_button_text","section":"Presentation","default_value":"Continue as Guest","label":"Guest Button Text","type":"string"},{"name":"guest_button_help","section":"Presentation","default_value":"to get help or view public information","label":"Guest Button Help","type":"string"},{"displayValue":"Images","name":"header_image","section":"Presentation","default_value":"la_jolla_sp_logo.png","label":"Header Image","type":"string","value":"db_image","ed":{"reference":"db_image"}}]&lt;/option_schema&gt;&lt;public&gt;true&lt;/public&gt;&lt;roles/&gt;&lt;script&gt;&lt;![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+
+	data.authenticated = gs.isLoggedIn();		
+	
+})();]]&gt;&lt;/script&gt;&lt;servicenow&gt;false&lt;/servicenow&gt;&lt;sys_class_name&gt;sp_widget&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2021-06-23 15:53:07&lt;/sys_created_on&gt;&lt;sys_id&gt;49eceae71b3c3010c297c803604bcb8b&lt;/sys_id&gt;&lt;sys_mod_count&gt;54&lt;/sys_mod_count&gt;&lt;sys_name&gt;Guest Login Modal&lt;/sys_name&gt;&lt;sys_package display_value="guest-login-modal-widget" source="06bc2eeb1bf83010c297c803604bcb23"&gt;06bc2eeb1bf83010c297c803604bcb23&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="guest-login-modal-widget"&gt;06bc2eeb1bf83010c297c803604bcb23&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_widget_49eceae71b3c3010c297c803604bcb8b&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;kcuster&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2021-10-09 23:14:49&lt;/sys_updated_on&gt;&lt;template/&gt;&lt;/sp_widget&gt;&lt;/record_update&gt;</payload>
+<payload_hash>-418821739</payload_hash>
+<remote_update_set display_value="Service Portal - Guest Login Modal Widget">a67f54e61b03f010c297c803604bcb25</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>kcuster</sys_created_by>
+<sys_created_on>2021-10-09 23:22:37</sys_created_on>
+<sys_id>227f54e61b03f010c297c803604bcb27</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>17c67566b120000001</sys_recorded_at>
+<sys_updated_by>kcuster</sys_updated_by>
+<sys_updated_on>2021-10-09 23:22:37</sys_updated_on>
+<table/>
+<target_name>Guest Login Modal</target_name>
+<type>Widget</type>
+<update_domain>global</update_domain>
+<update_guid>40bd5c26c103f010f009da7b1e05d80a</update_guid>
+<update_guid_history>40bd5c26c103f010f009da7b1e05d80a:-418821739,317d1c268f03f010787a429cd97fca53:998559497,bbfc54266203f01054380df297d1a053:-1279583543,21fc1c26e203f010ab7537680063d826:465368328,fa6cd0269803f01071c8ea2b615ceaee:998559497,ad1b18a27003f010dee02f7082fb16b5:686360518,562a1462bc03f010f7200ca3d4dcfb97:-625357242,cbc9d4627403f010da674ab8e6f7ba67:1954228023,af8994e297cfb010bdce21520f0a8191:322257018,747814ae6ccfb0106b8ad7457573611e:-1894000184,862610ae6bcfb01054fdb74bb4701697:-1027219377,37ba80e286cfb010ec6dd8ef5af707d0:1066564096,caba04e230cfb01008867e6318b0fc3d:1004249312,acba08e273cfb010f74c5feb5c228991:1617901295,978a84e2a2cfb01062cb476cf152aa4d:-900460353,847a80e258cfb010e7d68d58a312ecb8:1918644266,4d4a40e2d0cfb01027f45c597e9a4c4a:-1172717228,1b3a88a287cfb0102696a449558bcff1:1098489625,c93acca2b7cfb01061e7014c35285775:-2026151676,b72a0ca26dcfb010299460393802360e:2078592015,ee2a0ca2afcfb010302845586979ba29:-1032709077,021a8ca219cfb0107933daa34a36993b:-1092633476,841ac8a232cfb010114c421deb73b648:698668295,48f900a254cfb0106aae43d6c6758ff3:-1092633476,56e908a2e3cfb010e966e874ca6c4e5c:1215046510,8c794c62e7cfb01019392b7f9f22d0d7:1250997445,3b590c62accfb01001bf54d4eaa42e92:157382334,a8490862efcfb0101c2117a996be8f73:1432307614,cc294c62e2cfb0100c5ccaf4d1150bce:154234622,eb15c42ef98fb010dee8bab3da8f230d:-1854731309,d9a3082efe8fb01045edc9f5780fbe80:1157193150,b183ccea548fb01083b60a447e3ba803:472434505,0e2308eac48fb01062032875b51e42d3:197517919,e123c8ea538fb01064c2e1e7ba59524e:435993900,9c23ccea4e8fb0108f35d03d9d12fc49:28470063,c71380eaca8fb0101d781afdb0ee28dc:-2096681003,0213c8ea2c8fb010b4cb0c7cd0193ae2:-629834859,df03cceaf38fb01080f4dd46a400ae35:435993900,12038cea068fb010baf5a90e8686a0e0:197517919,17a2c0ea468fb010d9bed2b9f8c83c47:472434505,7c8204ea778fb01041dd97d7e2d1e9fb:430374002,75720ce2348fb0104e571c515855c138:97298626,d282f60250cb70100887f382587992e7:590171217,0522bace4a8b70100fb56fb2b1bfe4ed:289045908,ba2209d2de01301049643c228ddc4612:-1313782481,0af145d2f201301011119c90abe1051f:-480316511,98f1c1d22301301098747ad7d5f954af:-530790403,5ae105d2b90130101f1d09a70bd0ac78:-88992413,cde1c9921c013010203f6f105d16a842:1136953365,8bd1c1d2850130104d505c58503c68a7:1647053305,e4c1c9924b0130102e9cedefc86f4a78:203533984,c1683beba0fc3010b9719961625092c2:-207446025,21583bebd5fc3010f811b75880a85068:-1449051241,a6c7bfab4dfc3010aeca6673508a4871:57912099,41eceae7b13c3010dfe2bbfdea54b48f:-2132406035</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sp_instance_c905486e1b8fb010c297c803604bcbfd</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance"><sp_instance action="INSERT_OR_UPDATE"><active>true</active><class_name/><color>default</color><css/><glyph/><id/><order>1</order><roles/><short_description/><size>md</size><sp_column display_value="1">fbf4c82e1b8fb010c297c803604bcb71</sp_column><sp_widget display_value="Guest Login Modal">49eceae71b3c3010c297c803604bcb8b</sp_widget><sys_class_name>sp_instance</sys_class_name><sys_created_by>kcuster</sys_created_by><sys_created_on>2021-10-09 21:27:01</sys_created_on><sys_id>c905486e1b8fb010c297c803604bcbfd</sys_id><sys_mod_count>0</sys_mod_count><sys_name/><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_scope display_value="Global">global</sys_scope><sys_update_name>sp_instance_c905486e1b8fb010c297c803604bcbfd</sys_update_name><sys_updated_by>kcuster</sys_updated_by><sys_updated_on>2021-10-09 21:27:01</sys_updated_on><title/><url/><widget_parameters/></sp_instance><sys_translated_text action="delete_multiple" query="documentkey=c905486e1b8fb010c297c803604bcbfd"/></record_update>]]></payload>
+<payload_hash>-169321837</payload_hash>
+<remote_update_set display_value="Service Portal - Guest Login Modal Widget">a67f54e61b03f010c297c803604bcb25</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>kcuster</sys_created_by>
+<sys_created_on>2021-10-09 23:22:37</sys_created_on>
+<sys_id>267f54e61b03f010c297c803604bcb26</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>17c66f3bb720000001</sys_recorded_at>
+<sys_updated_by>kcuster</sys_updated_by>
+<sys_updated_on>2021-10-09 23:22:37</sys_updated_on>
+<table/>
+<target_name/>
+<type>Instance</type>
+<update_domain>global</update_domain>
+<update_guid>dd05486e5b8fb010a0159f2c06077bff</update_guid>
+<update_guid_history>dd05486e5b8fb010a0159f2c06077bff:-169321837</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sp_container_43f44c6e1b8fb010c297c803604bcb0d</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_container"><sp_container action="INSERT_OR_UPDATE"><background_color/><background_image/><background_style>default</background_style><bootstrap_alt>false</bootstrap_alt><class_name/><container_class_name/><name>Guest Login Modal Demo - Container 1</name><order>1</order><sp_page display_value="guest_login_demo">adc4886e1b8fb010c297c803604bcb45</sp_page><subheader>false</subheader><sys_class_name>sp_container</sys_class_name><sys_created_by>kcuster</sys_created_by><sys_created_on>2021-10-09 21:26:53</sys_created_on><sys_id>43f44c6e1b8fb010c297c803604bcb0d</sys_id><sys_mod_count>2</sys_mod_count><sys_name>Guest Login Modal Demo - Container 1</sys_name><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_scope display_value="Global">global</sys_scope><sys_update_name>sp_container_43f44c6e1b8fb010c297c803604bcb0d</sys_update_name><sys_updated_by>kcuster</sys_updated_by><sys_updated_on>2021-10-09 23:18:49</sys_updated_on><title/><width>container</width></sp_container></record_update>]]></payload>
+<payload_hash>527004357</payload_hash>
+<remote_update_set display_value="Service Portal - Guest Login Modal Widget">a67f54e61b03f010c297c803604bcb25</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>kcuster</sys_created_by>
+<sys_created_on>2021-10-09 23:22:37</sys_created_on>
+<sys_id>627f54e61b03f010c297c803604bcb26</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>17c675a16de0000001</sys_recorded_at>
+<sys_updated_by>kcuster</sys_updated_by>
+<sys_updated_on>2021-10-09 23:22:37</sys_updated_on>
+<table/>
+<target_name>Guest Login Modal Demo - Container 1</target_name>
+<type>Container</type>
+<update_domain>global</update_domain>
+<update_guid>3e9e10a62103f0109dfab9f19866c3d0</update_guid>
+<update_guid_history>3e9e10a62103f0109dfab9f19866c3d0:527004357,237e9c667303f010f4361f5a0baf95eb:549138287,03f44c6edb8fb010bdf4e98d5b85d40f:527004357</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sp_row_77f4c82e1b8fb010c297c803604bcb6f</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_row"><sp_row action="INSERT_OR_UPDATE"><class_name/><order>1</order><sp_column/><sp_container display_value="Guest Login Modal Demo - Container 1">43f44c6e1b8fb010c297c803604bcb0d</sp_container><sys_class_name>sp_row</sys_class_name><sys_created_by>kcuster</sys_created_by><sys_created_on>2021-10-09 21:26:55</sys_created_on><sys_id>77f4c82e1b8fb010c297c803604bcb6f</sys_id><sys_mod_count>0</sys_mod_count><sys_name>1</sys_name><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_scope display_value="Global">global</sys_scope><sys_update_name>sp_row_77f4c82e1b8fb010c297c803604bcb6f</sys_update_name><sys_updated_by>kcuster</sys_updated_by><sys_updated_on>2021-10-09 21:26:55</sys_updated_on></sp_row></record_update>]]></payload>
+<payload_hash>-1430834805</payload_hash>
+<remote_update_set display_value="Service Portal - Guest Login Modal Widget">a67f54e61b03f010c297c803604bcb25</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>kcuster</sys_created_by>
+<sys_created_on>2021-10-09 23:22:37</sys_created_on>
+<sys_id>6e7f54e61b03f010c297c803604bcb26</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>17c66f3a4cc0000001</sys_recorded_at>
+<sys_updated_by>kcuster</sys_updated_by>
+<sys_updated_on>2021-10-09 23:22:37</sys_updated_on>
+<table/>
+<target_name>1</target_name>
+<type>Row</type>
+<update_domain>global</update_domain>
+<update_guid>bff4c82e378fb010d7909f555a8c1f70</update_guid>
+<update_guid_history>bff4c82e378fb010d7909f555a8c1f70:-1430834805</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sp_column_fbf4c82e1b8fb010c297c803604bcb71</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_column"><sp_column action="INSERT_OR_UPDATE"><class_name/><order>1</order><size>12</size><size_lg/><size_sm/><size_xs/><sp_row display_value="1">77f4c82e1b8fb010c297c803604bcb6f</sp_row><sys_class_name>sp_column</sys_class_name><sys_created_by>kcuster</sys_created_by><sys_created_on>2021-10-09 21:26:55</sys_created_on><sys_id>fbf4c82e1b8fb010c297c803604bcb71</sys_id><sys_mod_count>0</sys_mod_count><sys_name>1</sys_name><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_scope display_value="Global">global</sys_scope><sys_update_name>sp_column_fbf4c82e1b8fb010c297c803604bcb71</sys_update_name><sys_updated_by>kcuster</sys_updated_by><sys_updated_on>2021-10-09 21:26:55</sys_updated_on></sp_column></record_update>]]></payload>
+<payload_hash>1390422863</payload_hash>
+<remote_update_set display_value="Service Portal - Guest Login Modal Widget">a67f54e61b03f010c297c803604bcb25</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>kcuster</sys_created_by>
+<sys_created_on>2021-10-09 23:22:37</sys_created_on>
+<sys_id>aa7f54e61b03f010c297c803604bcb25</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>17c66f3a4f50000001</sys_recorded_at>
+<sys_updated_by>kcuster</sys_updated_by>
+<sys_updated_on>2021-10-09 23:22:37</sys_updated_on>
+<table/>
+<target_name>1</target_name>
+<type>Column</type>
+<update_domain>global</update_domain>
+<update_guid>f3f4c82e6a8fb010d0ea998d34ba1d73</update_guid>
+<update_guid_history>f3f4c82e6a8fb010d0ea998d34ba1d73:1390422863</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sp_page_adc4886e1b8fb010c297c803604bcb45</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_page"><sp_page action="INSERT_OR_UPDATE"><category>custom</category><css/><draft>false</draft><dynamic_title_structure/><id>guest_login_demo</id><internal>false</internal><omit_watcher>false</omit_watcher><public>true</public><roles/><seo_script/><short_description/><sys_class_name>sp_page</sys_class_name><sys_created_by>kcuster</sys_created_by><sys_created_on>2021-10-09 21:26:37</sys_created_on><sys_id>adc4886e1b8fb010c297c803604bcb45</sys_id><sys_mod_count>0</sys_mod_count><sys_name>guest_login_demo</sys_name><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_scope display_value="Global">global</sys_scope><sys_update_name>sp_page_adc4886e1b8fb010c297c803604bcb45</sys_update_name><sys_updated_by>kcuster</sys_updated_by><sys_updated_on>2021-10-09 21:26:37</sys_updated_on><title>Guest Login Modal Demo</title><use_seo_script>false</use_seo_script></sp_page><sys_translated_text action="delete_multiple" query="documentkey=adc4886e1b8fb010c297c803604bcb45"/></record_update>]]></payload>
+<payload_hash>-1261177682</payload_hash>
+<remote_update_set display_value="Service Portal - Guest Login Modal Widget">a67f54e61b03f010c297c803604bcb25</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>kcuster</sys_created_by>
+<sys_created_on>2021-10-09 23:22:37</sys_created_on>
+<sys_id>aa7f54e61b03f010c297c803604bcb26</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>17c66f35bfe0000001</sys_recorded_at>
+<sys_updated_by>kcuster</sys_updated_by>
+<sys_updated_on>2021-10-09 23:22:37</sys_updated_on>
+<table/>
+<target_name>guest_login_demo</target_name>
+<type>Page</type>
+<update_domain>global</update_domain>
+<update_guid>dfe4046e9f8fb01088d28c87c430774f</update_guid>
+<update_guid_history>dfe4046e9f8fb01088d28c87c430774f:-1261177682</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sp_ng_template_8f4acca21bcfb010c297c803604bcbde</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_ng_template"&gt;&lt;sp_ng_template action="INSERT_OR_UPDATE"&gt;&lt;id&gt;guest-login-content&lt;/id&gt;&lt;sp_widget display_value="Guest Login Modal"&gt;49eceae71b3c3010c297c803604bcb8b&lt;/sp_widget&gt;&lt;sys_class_name&gt;sp_ng_template&lt;/sys_class_name&gt;&lt;sys_created_by&gt;kcuster&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2021-10-09 21:50:19&lt;/sys_created_on&gt;&lt;sys_id&gt;8f4acca21bcfb010c297c803604bcbde&lt;/sys_id&gt;&lt;sys_mod_count&gt;17&lt;/sys_mod_count&gt;&lt;sys_name&gt;guest-login-content&lt;/sys_name&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_ng_template_8f4acca21bcfb010c297c803604bcbde&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;kcuster&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2021-10-09 23:15:55&lt;/sys_updated_on&gt;&lt;template&gt;&lt;![CDATA[&lt;style lang="scss"&gt;
+  .modal-center-override {
+    top: 30% !important;
+    transform: translateY(-10%) !important;
+    -webkit-transform: translateY(-10%) !important;
+    -moz-transform: translateY(-10%) !important;
+    -o-transform: translateY(-10%) !important; 
+  }
+  
+  .modal-center-override:focus {
+    outline: none;
+    border: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+  }
+
+  .modal-content {
+    border-radius: 8px;
+  }
+
+  .modal-body-gradient {
+    background: linear-gradient(0deg, rgba(219,219,219,1) 0%, rgba(233,233,233,1) 24%, rgba(255,255,255,1) 100%);
+  }
+
+  .modal-header {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+  }
+
+  .modal-header-img {
+    max-width: 60%;
+    height: auto;
+  }
+
+  .modal-body {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+  }
+
+  .btn-login {
+    font-weight: 500;
+    font-size: 1.4em;
+    /* width: 60%; */
+  }
+
+  .btn-guest {
+    background-color: #d4d4d4 !important;
+    color: #252525 !important;
+    font-weight: 500;
+    font-size: 1.1em;
+    /* width: 40%; */
+  }
+
+  .help-text {
+    margin-top: 0.5rem;
+    color: #7c7c7c;
+    font-weight: 400;
+  }
+  
+  .login-section {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+  }
+
+  .guest-section {
+    margin-bottom: 5rem;
+  }
+
+@media (max-width: 688px) {
+  .login-section {
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+  }
+
+  .guest-section {
+    margin-bottom: 1rem;
+  }
+
+  .btn-login {
+    font-size: 1.0em;
+  }
+
+  .btn-guest {
+    font-size: 0.9em;
+  }
+
+  .help-text {
+    font-size: 0.8em;
+  }
+}  
+&lt;/style&gt;
+
+&lt;div class="modal-header bg-primary"&gt;
+  &lt;div class="text-center"&gt;
+    &lt;img class="modal-header-img" ng-src="{{c.options.header_image}}" /&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="modal-body modal-body-gradient text-center"&gt;
+  &lt;div class="login-section"&gt;
+    &lt;a class="button btn btn-lg btn-primary" href ng-click="openLogin()" role="button"&gt;
+      {{ c.options.login_button_text }}
+    &lt;/a&gt;
+    &lt;div class="help-text"&gt;
+      {{ c.options.login_button_help }}
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="guest-section"&gt;
+    &lt;a class="button btn btn-guest" href ng-click="continueAsGuest()" role="button"&gt;
+      {{ c.options.guest_button_text }}
+    &lt;/a&gt;
+    &lt;div class="help-text"&gt;
+      {{ c.options.guest_button_help }}
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;]]&gt;&lt;/template&gt;&lt;/sp_ng_template&gt;&lt;/record_update&gt;</payload>
+<payload_hash>-1553290653</payload_hash>
+<remote_update_set display_value="Service Portal - Guest Login Modal Widget">a67f54e61b03f010c297c803604bcb25</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>kcuster</sys_created_by>
+<sys_created_on>2021-10-09 23:22:37</sys_created_on>
+<sys_id>e67f54e61b03f010c297c803604bcb26</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>17c67576cb20000001</sys_recorded_at>
+<sys_updated_by>kcuster</sys_updated_by>
+<sys_updated_on>2021-10-09 23:22:37</sys_updated_on>
+<table/>
+<target_name>guest-login-content</target_name>
+<type>Angular ng-template</type>
+<update_domain>global</update_domain>
+<update_guid>dcfd14663803f01024a3a4c1223203f2</update_guid>
+<update_guid_history>dcfd14663803f01024a3a4c1223203f2:-1553290653,b57d14661203f010849b68dc6a4670a4:775978037,db1d1c269603f0104d3e735b8354a5c8:-1739668799,366cd0266303f010012ca4e38dddfef1:775978037,162c14e28c03f010e898cd0211c1f3ab:-107268809,041c54e23803f0101bc7346d01a6a997:-1944192855,52eb54e2c003f01007314c31e8f5cb93:942845174,c9aa90a2bf03f01053913aa3e95a7824:775978037,966a1c628703f010a10baf6a8919f95d:418484917,3f5a9462ad03f010611b9ad55d891723:1261375882,be4a1c626703f0101f2bb26ce2783d58:-1520469770,383a1c62b203f01097d73f4e4bd38215:-1465528543,f7f9d8624c03f010c0c4acd7f88e02cd:-1954980333,a1d994625a03f0101ce8c8fea6ec4619:-1374082360,bca9dca2e0cfb010131b407bcfb58662:-1465528543,8a2910ae12cfb010322b51dfefa7fda9:-601852701,456614ae37cfb010a5a3ac33ae380290:-1573024778,1e5a80e28bcfb01052ee063b25b167b1:1427195917</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+</unload>
