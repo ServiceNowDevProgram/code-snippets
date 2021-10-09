@@ -81,9 +81,10 @@ revantKulkarni.
 src107.
 Decoder-Paul.
 vandna07.
-allenandreas.
+alikuttyka.
 
 Other contributors:
+allenandreas.
 ashleysnyder.
 bradtiltonnow.
 ChecksumFailed.
@@ -94,7 +95,6 @@ samwinchet.
 stwinkle.
 kcimpulse.
 aatrey882.
-alikuttyka.
 Anantharaman91.
 askarthik.
 avssrikanth.
