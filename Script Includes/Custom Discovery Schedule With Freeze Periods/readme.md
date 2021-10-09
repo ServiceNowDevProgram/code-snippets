@@ -2,7 +2,7 @@
 
 One of the requirements we had from one of our client was that they didn't want discovery schedules to run for few days at the begining of the month (BOM) and few days for the end of the month (EOM) as they internally had to generate some big financial reports and didn't want discovery to take any network resources.
 
-So this custom discovery script enables to run discovery on daily basis but will ignore the schedules if its end of month or begining of the month as configured in system properties. There are 4 system properties that are attached as xml and needs to be imported into sys_properties.
+So this custom discovery script enables to run discovery on daily basis but will ignore the schedules if it was end of month or begining of the month as configured in system properties. There are 4 system properties that are attached as xml and needs to be imported into sys_properties.
 
 This script submits the Pre-created discovery schedules (On Demand schedules) but it honours
 pre-configured days to be skipped at the begining of the month and days at the end of the month.
