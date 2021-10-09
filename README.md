@@ -77,18 +77,18 @@ MarcMouries.
 ashu759.
 Irston.
 mskoddow.
+revantKulkarni.
 src107.
 Decoder-Paul.
 vandna07.
 allenandreas.
-ashleysnyder.
 
 Other contributors:
+ashleysnyder.
 bradtiltonnow.
 ChecksumFailed.
 oasif.
 rafzk.
-revantKulkarni.
 SagarVijaykumar.
 samwinchet.
 stwinkle.
