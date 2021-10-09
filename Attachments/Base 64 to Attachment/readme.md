@@ -1,4 +1,4 @@
-This scriplet is used to convert base 64 content into an attachment in ServiceNow. This is mainly used for integrating attachments from external systems to read and convert the content into an attachment.
+This could be used to convert base 64 content into an attachment in ServiceNow. This is mainly used for integrating attachments from external systems to read and convert the base 64 content into an attachment.
 
 Sample Usage - Attaching and xls file on a incident record.
 
