@@ -9,5 +9,11 @@ To use this widget, follow the below steps:
 
 Here is Page Content structure
 
-![image](https://user-images.githubusercontent.com/44492607/136553096-d1685f8d-6262-40cc-8c4e-e49cd1aa8e6c.png)
+# Page Content
 
+## Page: Marvel
+
+    Marvel - Container1
+	    Row1
+		    Column1
+			    Instance: (Spiderman)
