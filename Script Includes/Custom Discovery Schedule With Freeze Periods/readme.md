@@ -13,10 +13,10 @@ It also honours the pre-configured times that discovery should be skipped.
 
 - Standard discovery schedules with Run (On Demand)
 - The following sys_properties needs to be configured
-    > VF.Discovery.BOM.DaysToFreeze
-    > VF.Discovery.EOM.DaysToFreeze
-    > VF.Discovery.Freeze.StartTime
-    > VF.Discovery.Freeze.EndTime
+    * VF.Discovery.BOM.DaysToFreeze
+    * VF.Discovery.EOM.DaysToFreeze
+    * VF.Discovery.Freeze.StartTime
+    * VF.Discovery.Freeze.EndTime
 
 Details of sys_properties are below:
 
