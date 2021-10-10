@@ -81,11 +81,12 @@ Irston.
 mskoddow.
 revantKulkarni.
 src107.
+sauravsumankumar.
 Decoder-Paul.
 vandna07.
-allenandreas.
 
 Other contributors:
+allenandreas.
 ashleysnyder.
 bradtiltonnow.
 ChecksumFailed.
@@ -96,7 +97,6 @@ rafzk.
 SagarVijaykumar.
 samwinchet.
 stwinkle.
-sauravsumankumar.
 kcimpulse.
 aatrey882.
 Anantharaman91.
