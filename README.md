@@ -88,6 +88,7 @@ ashleysnyder.
 Other contributors:
 bradtiltonnow.
 ChecksumFailed.
+dhruvii-powershell.
 oasif.
 phr-nk.
 rafzk.
@@ -109,7 +110,6 @@ Coder0131.
 Codjam.
 cwhits.
 davidkwhuang.
-dhruvii-powershell.
 eizzledizzle.
 hardikvyasji.
 HarneetSital.
