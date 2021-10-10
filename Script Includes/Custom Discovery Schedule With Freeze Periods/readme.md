@@ -9,7 +9,7 @@ pre-configured days to be skipped at the begining of the month and days at the e
 
 It also honours the pre-configured times that discovery should be skipped.
 
-Configurations required:
+### Configurations required
 
 - Standard discovery schedules with Run (On Demand)
 - The following sys_properties needs to be configured
@@ -18,9 +18,18 @@ Configurations required:
     > VF.Discovery.Freeze.StartTime
     > VF.Discovery.Freeze.EndTime
 
-## Usagae
+Details of sys_properties are below:
 
-- Import the required sys_properties and set the values as per requirements
+| Name | Description  | Type  | Value |
+| :-------------------------:   | :-: | :-: |  :-: |
+| VF.Discovery.Freeze.StartTime | The start time that discovery will not be submitted. Should be in system date/time format e.g. 09:00:00 for 9 am | string | 08:00:00 |
+| VF.Discovery.Freeze.EndTime | The end time that discovery will not be submitted. Should be in system date/time format e.g. 21:00:00 for 9 pm | string | 21:00:00 |
+| VF.Discovery.EOM.DaysToFreeze | Number of days to freeze (skip) discovery at the end of month (EOM) | integer | 2 |
+| VF.Discovery.BOM.DaysToFreeze | Number of days to freeze (skip) discovery at the begin of month (BOM) | integer | 3 |
+
+## Usage
+
+- Create the required sys_properties and set the values as per requirements
 - Create a new schedule job that runs on daily basis
 - Keep the Discovery schedules that you want to be submitted by this script to On Demand
 - Include the following script in the schedule job script

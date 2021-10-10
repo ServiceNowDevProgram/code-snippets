@@ -1,6 +1,3 @@
-if (isLoading) {
-    return;
-}
 
 // your condition to apply the style e.g. user is a VIP user
 var condition = true; // Set the condition as needed
