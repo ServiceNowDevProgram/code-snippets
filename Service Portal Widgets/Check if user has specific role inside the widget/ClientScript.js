@@ -6,10 +6,8 @@ function(glideUserSession) {
 
     c.userHasApproverRole = true;
 
-
-    // the hasRoleExactly function
     glideUserSession.loadCurrentUser().then(function (currentUser) {
-        //To check current user has specified role only. Equivalent to g_user.hasRoleExactly('approver_user');
+        //To check current user has specified role only. Equivalent of g_user.hasRoleExactly('approver_user');
         c.userHasApproverRole = currentUser.hasRoleExactly('approver_user');
     });
 
