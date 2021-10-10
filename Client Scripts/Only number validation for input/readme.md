@@ -2,7 +2,8 @@
 
 A client script that validates that the input entry is number only
 
-## Usagae
+## Usage
+
 
 - Create a new client script
 - Set the type to OnChange. Update the field in the client script to <your field name>
