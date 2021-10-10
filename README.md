@@ -72,6 +72,7 @@ Top contributors:
 mgopw.
 snamjosh.
 pratyushasndev.
+sauravsumankumar.
 jonahpiascik.
 MarcMouries.
 phr-nk.
@@ -83,9 +84,9 @@ revantKulkarni.
 src107.
 Decoder-Paul.
 vandna07.
-allenandreas.
 
 Other contributors:
+allenandreas.
 ashleysnyder.
 bradtiltonnow.
 ChecksumFailed.
@@ -97,7 +98,6 @@ SagarVijaykumar.
 samwinchet.
 stwinkle.
 kcimpulse.
-sauravsumankumar.
 aatrey882.
 Anantharaman91.
 askarthik.
