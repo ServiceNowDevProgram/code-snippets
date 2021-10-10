@@ -55,18 +55,18 @@ paigesndev.
 Top 25% of contributors:
 mr-swann.
 sn-ajb.
+danr2c2.
 iar42.
 ReginaldFawcett.
-danr2c2.
 eriemer1.
+odinsride.
 ovarn.
 RahmanM.
 rmedved84.
+niamccash.
 jacebenson.
 Lacah.
 mgopw.
-niamccash.
-odinsride.
 
 Top contributors:
 snamjosh.
@@ -89,6 +89,7 @@ ashleysnyder.
 bradtiltonnow.
 ChecksumFailed.
 oasif.
+phr-nk.
 rafzk.
 SagarVijaykumar.
 samwinchet.
@@ -126,7 +127,6 @@ mevops.
 mikeroosa.
 NayeemKaka.
 Nerdcode.
-phr-nk.
 Pratyusha418.
 rohi-v.
 rverrips.
