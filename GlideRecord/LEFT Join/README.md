@@ -1,8 +1,8 @@
 # LEFT Join
 
-This script can be used if you want to filter results of a table based on values from a related table.
+This script can be used if you want to filter the results of a table based on values from a related table.
 
-This is very usefull in before query Business Rules. You can use this to filter the results based on a related table
+This is very useful in before query Business Rules. You can use this to filter the results based on a related table
 
 ### Examples
 
