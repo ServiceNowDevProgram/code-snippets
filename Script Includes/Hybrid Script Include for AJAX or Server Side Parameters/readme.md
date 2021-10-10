@@ -3,7 +3,7 @@ This example shows how one could code a script include that might be called in t
 Example usage:
 Client script AJAX call:
 
-        var ajax = new GlideAjax('HM_Pre_requisite_check');
+        var ajax = new GlideAjax('example_hybrid_parameters');
         ajax.addParam('sysparm_name', 'exampleHybrid');
         ajax.addParam('sysparm_parm1', parm1);
         ajax.addParam('sysparm_parm2', parm2);
