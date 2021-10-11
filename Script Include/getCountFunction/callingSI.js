@@ -18,3 +18,13 @@ IncidentSI.prototype = Object.extendsObject(AbstractAjaxProcessor, {
         }
         return result.count;
     },
+    
+    
+    /** Example calling script
+var siinc = new GenericNOW();
+var result = siinc.count({
+            table: "incident_task",
+            query: "active=true^incident=b07db7f9878f345034e864a80cbb35e6"
+        });
+gs.log(result.count.toString());
+*/
