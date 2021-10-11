@@ -1,4 +1,10 @@
 // Scripted REST Api
+/*
+HTTP Method: GET
+Relative Path: /request_item/{sys_id} (we added /request_item because we'll probably end up building something similar for record producers 
+the script include we built is already set up to determine whether the provided sys_id is for a Request Item or a Catalog Task).
+
+*/
 
 (function process(/*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {
 
