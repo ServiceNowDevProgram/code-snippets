@@ -85,9 +85,9 @@ src107.
 vandna07.
 Decoder-Paul.
 allenandreas.
+ashleysnyder.
 
 Other contributors:
-ashleysnyder.
 bradtiltonnow.
 ChecksumFailed.
 dhruvii-powershell.
@@ -140,6 +140,7 @@ Soulpancake000.
 speedy18.
 stevezero.
 TRIGGEREDcoder.
+vasantharaja-natarajan.
 Vivek-KP.
 vpeinado.
 vvijaya19.
