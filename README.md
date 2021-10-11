@@ -67,9 +67,9 @@ ovarn.
 rmedved84.
 jacebenson.
 Lacah.
+mgopw.
 
 Top contributors:
-mgopw.
 ashu759.
 revantKulkarni.
 snamjosh.
@@ -84,9 +84,9 @@ mskoddow.
 src107.
 vandna07.
 Decoder-Paul.
+allenandreas.
 
 Other contributors:
-allenandreas.
 ashleysnyder.
 bradtiltonnow.
 ChecksumFailed.
@@ -130,6 +130,7 @@ mikeroosa.
 NayeemKaka.
 Nerdcode.
 Pratyusha418.
+pratyushmp.
 rohi-v.
 rverrips.
 salem769.
