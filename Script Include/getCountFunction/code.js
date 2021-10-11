@@ -1,15 +1,22 @@
-var GenericNOW, getcount;
+var GenericNOW, _count, _get, _insert, _remove, _update;
 GenericNOW = Class.create();
 
 GenericNOW.prototype = {
     type: "GenericNOW",
     initialize: function() {},
+
     count: function() {
-        return _getcount.apply(this, arguments);
+        return _count.apply(this, arguments);
     },
+    tableExists: function(table) {
+        return new TableUtils(table).tableExists();
+    },
+
 };
 
-_getcount = function(arg) {
+
+
+_count = function(arg) {
     var count, ga, query, res, table;
     table = arg.table;
     query = arg.query;
@@ -33,7 +40,6 @@ _getcount = function(arg) {
         error: null,
         count: 0
     };
-    
     ga = new GlideAggregate(table);
     ga.addEncodedQuery(query);
     ga.addAggregate("COUNT");
