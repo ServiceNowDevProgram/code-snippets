@@ -45,8 +45,8 @@ Top 10% of contributors:
 earlduque.
 kmohit2809.
 PranavBhagat18.
-mak1A4.
 ishaanshoor.
+mak1A4.
 smartcarleen.
 azeezgaa.
 paigesndev.
@@ -59,30 +59,31 @@ danr2c2.
 iar42.
 RahmanM.
 ReginaldFawcett.
+alikuttyka.
 eriemer1.
+niamccash.
 odinsride.
 ovarn.
 rmedved84.
-niamccash.
+sauravsumankumar.
 jacebenson.
 Lacah.
-mgopw.
 
 Top contributors:
-alikuttyka.
+mgopw.
+ashu759.
+revantKulkarni.
 snamjosh.
 pratyushasndev.
 jonahpiascik.
 MarcMouries.
+phr-nk.
 23Thom.
-ashu759.
 Irston.
 mskoddow.
-phr-nk.
-revantKulkarni.
 src107.
-Decoder-Paul.
 vandna07.
+Decoder-Paul.
 allenandreas.
 
 Other contributors:
@@ -90,13 +91,14 @@ ashleysnyder.
 bradtiltonnow.
 ChecksumFailed.
 dhruvii-powershell.
+jamesfoot.
 oasif.
+pratyushmp.
 rafzk.
 SagarVijaykumar.
 samwinchet.
 stwinkle.
 kcimpulse.
-sauravsumankumar.
 aatrey882.
 Anantharaman91.
 askarthik.
@@ -107,6 +109,7 @@ billyperkinsukg.
 bird-03.
 cenzo85.
 Coder0131.
+coderdude207.
 Codjam.
 cwhits.
 davidkwhuang.
@@ -117,7 +120,6 @@ hmadhsan.
 ishwarighule.
 j2clow.
 j4rodm.
-jamesfoot.
 Jennylou777.
 Karthick986.
 Keagnn.
