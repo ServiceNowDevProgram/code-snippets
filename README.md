@@ -69,9 +69,10 @@ jacebenson.
 Lacah.
 mgopw.
 ashu759.
-revantKulkarni.
+R3J3NT.
 
 Top contributors:
+revantKulkarni.
 snamjosh.
 pratyushasndev.
 sauravsumankumar.
@@ -83,7 +84,6 @@ phr-nk.
 anillande90.
 Irston.
 mskoddow.
-R3J3NT.
 src107.
 Decoder-Paul.
 allenandreas.
