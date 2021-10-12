@@ -92,6 +92,7 @@ ashleysnyder.
 Other contributors:
 bradtiltonnow.
 ChecksumFailed.
+devinvalencia.
 dhruvii-powershell.
 jamesfoot.
 MihirRathod.
@@ -116,7 +117,6 @@ coderdude207.
 Codjam.
 cwhits.
 davidkwhuang.
-devinvalencia.
 eizzledizzle.
 hardikvyasji.
 HarneetSital.
