@@ -85,10 +85,11 @@ mskoddow.
 src107.
 Decoder-Paul.
 allenandreas.
+anillande90.
 ashleysnyder.
-bradtiltonnow.
 
 Other contributors:
+bradtiltonnow.
 ChecksumFailed.
 dhruvii-powershell.
 jamesfoot.
@@ -103,7 +104,6 @@ stwinkle.
 kcimpulse.
 aatrey882.
 Anantharaman91.
-anillande90.
 askarthik.
 avssrikanth.
 Bharat123rox.
