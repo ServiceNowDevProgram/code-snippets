@@ -5,8 +5,13 @@ Script to *generate new custom event*, which can be used on any conditions, on i
 **Event Registration**
 
 Before you can generate custom event from script, you need to add Event Registration record *(sysevent_register table)*. Example Event Registration configuration:
+![Event Registration](ScreenShot_0.PNG)
+
 
 **Example configuration of Business Rule**
 
+![Coniguration](ScreenShot_1.PNG)
+
 **Example execution effect**
 
+![Event Log](ScreenShot_2.PNG)
