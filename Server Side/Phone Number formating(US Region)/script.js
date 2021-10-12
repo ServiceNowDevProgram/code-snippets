@@ -1,5 +1,5 @@
 
-// Format Phone Number in standard format 4-3-3 example if phone is  1234567891  then output will be 1234 567 891
+// Format Phone Number in standard format 3-3-4 example if phone is  1234567891  then output will be 123-456-7891
 
 
 function normalize(phone) {
