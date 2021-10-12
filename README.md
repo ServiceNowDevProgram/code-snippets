@@ -69,9 +69,9 @@ jacebenson.
 Lacah.
 mgopw.
 ashu759.
+revantKulkarni.
 
 Top contributors:
-revantKulkarni.
 snamjosh.
 pratyushasndev.
 sauravsumankumar.
@@ -87,9 +87,9 @@ src107.
 Decoder-Paul.
 allenandreas.
 anillande90.
+ashleysnyder.
 
 Other contributors:
-ashleysnyder.
 bradtiltonnow.
 ChecksumFailed.
 dhruvii-powershell.
@@ -116,6 +116,7 @@ coderdude207.
 Codjam.
 cwhits.
 davidkwhuang.
+devinvalencia.
 eizzledizzle.
 hardikvyasji.
 HarneetSital.
