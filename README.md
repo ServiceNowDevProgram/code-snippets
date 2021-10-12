@@ -81,16 +81,16 @@ MarcMouries.
 vandna07.
 phr-nk.
 23Thom.
+allenandreas.
 anillande90.
 Irston.
 mskoddow.
 src107.
 Decoder-Paul.
-allenandreas.
 ashleysnyder.
+bradtiltonnow.
 
 Other contributors:
-bradtiltonnow.
 ChecksumFailed.
 devinvalencia.
 dhruvii-powershell.
@@ -106,6 +106,7 @@ thorn91.
 kcimpulse.
 aatrey882.
 Anantharaman91.
+AnnaGould.
 askarthik.
 avssrikanth.
 Bharat123rox.
