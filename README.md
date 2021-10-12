@@ -92,6 +92,7 @@ Other contributors:
 ChecksumFailed.
 dhruvii-powershell.
 jamesfoot.
+MihirRathod.
 oasif.
 pratyushmp.
 R3J3NT.
@@ -130,7 +131,6 @@ LoicSanchez.
 LuisSepulveda21.
 m2santiago.
 mevops.
-MihirRathod.
 mikeroosa.
 NayeemKaka.
 Nerdcode.
