@@ -82,13 +82,14 @@ phr-nk.
 23Thom.
 Irston.
 mskoddow.
+R3J3NT.
 src107.
 Decoder-Paul.
 allenandreas.
 anillande90.
-ashleysnyder.
 
 Other contributors:
+ashleysnyder.
 bradtiltonnow.
 ChecksumFailed.
 dhruvii-powershell.
@@ -96,7 +97,6 @@ jamesfoot.
 MihirRathod.
 oasif.
 pratyushmp.
-R3J3NT.
 rafzk.
 SagarVijaykumar.
 samwinchet.
