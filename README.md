@@ -86,9 +86,9 @@ src107.
 Decoder-Paul.
 allenandreas.
 ashleysnyder.
+bradtiltonnow.
 
 Other contributors:
-bradtiltonnow.
 ChecksumFailed.
 dhruvii-powershell.
 jamesfoot.
@@ -130,6 +130,7 @@ LoicSanchez.
 LuisSepulveda21.
 m2santiago.
 mevops.
+MihirRathod.
 mikeroosa.
 NayeemKaka.
 Nerdcode.
