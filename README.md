@@ -69,11 +69,12 @@ rmedved84.
 jacebenson.
 Lacah.
 mgopw.
+allenandreas.
 ashu759.
 revantKulkarni.
-snamjosh.
 
 Top contributors:
+snamjosh.
 pratyushasndev.
 vandna07.
 sauravsumankumar.
@@ -81,7 +82,6 @@ jonahpiascik.
 MarcMouries.
 phr-nk.
 23Thom.
-allenandreas.
 anillande90.
 Irston.
 mskoddow.
