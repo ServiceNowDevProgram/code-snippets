@@ -4,8 +4,8 @@ customArrayUtil.prototype = {
 	
     arrToJSON: function(array /*Input array */ , isPair /*boolean*/ ) {
         // Convert input array to JSON 
-        //e.g. arreay = ['name','John','age','30']
-        //output would be JSON OBject like {"name":"John","Age":"32"}
+        //e.g. array = ['name','John','age','30']
+        //output would be JSON Object like {"name":"John","age":"30"}
         try {
             var jsonObj = {};
             var myJsonString;
