@@ -21,5 +21,7 @@ function isTableExtended(parent, child){
         }else{
             return false;
         }
+    }else{
+        return false;
     }
 }
