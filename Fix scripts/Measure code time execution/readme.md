@@ -4,5 +4,8 @@ Script which is showing how to *measure time execution of specific part of code*
 
 **Example configuration of Fix Script**
 
+![Coniguration](ScreenShot_1.PNG)
+
 **Example execution logs**
 
+![Logs](ScreenShot_2.PNG)
