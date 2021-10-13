@@ -4,13 +4,11 @@ Input:
 2. String - child - Child table name
 
 Output:
-
 1. Boolean: 
 true - Child table is an extension of parent table
 false - Child table is not an extension of parent table
 
 /***********************************************************/
-
 
 function isTableExtended(parent, child){
     gs.include("j2js");
