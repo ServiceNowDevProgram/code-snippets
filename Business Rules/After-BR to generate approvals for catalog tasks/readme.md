@@ -5,5 +5,8 @@ Fun fact: When you are playing with Document Id type field. You need to keep a f
 the correct table name there and with the help of that you can easily set the document ID field.
 For e.g. dependent field name is u_table_name,
 so you script can be:
-u_table_name = 'Name of the table for your document ID type field'.
-u_document_id = 'Sys_id of the correct record from above table'.
+obj.u_table_name = 'Name of the table for your document ID type field';
+obj.u_document_id = 'Sys_id of the correct record from above table';
+obj.update();
+
+where 'obj' is an object of the record you are referring to.
