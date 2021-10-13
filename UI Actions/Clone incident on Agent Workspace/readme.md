@@ -7,10 +7,17 @@ Caller field will not be copeied to newly created incident, only basic informati
 Create an UI Action with below field values:
 
 Name - Clone Incident
+
 Action Name - clone_incident
+
 Table - Incident
+
 Client - checked (true)
+
 Onclick - cloneIncident();
+
 Workspace Form Button - checked (true)
+
 Script - use clone_incident.js
+
 Workspace Client script - use workspace_client_script.js
