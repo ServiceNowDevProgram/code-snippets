@@ -6,6 +6,13 @@ Script which allows *getting value of specific system property and manipulate th
 
 Before you can get or manipulate custom system property you need to create it in [sys_properties] table. Below you can see example of created property:
 
-**Example configuration of Fix Script**
+![Creating System Property](ScreenShot_0.PNG)
 
-**Example execution logs**
+**Example configuration of Business Rule**
+
+![Configuration](ScreenShot_1.PNG)
+
+**Example execution effect**
+
+
+![Execution effect](ScreenShot_2.PNG)
