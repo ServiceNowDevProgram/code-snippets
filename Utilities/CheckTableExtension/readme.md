@@ -3,4 +3,5 @@ The snippet validates whether a child table is extended from a parent table. You
 Sample Usage
 
 gs.info(isTableExtended("cmdb_ci", "cmdb_ci_win_server"));  //true
+
 gs.info(isTableExtended("cmdb_ci", "cmdb_ci_hardwares"));   //false
