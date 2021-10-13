@@ -87,12 +87,13 @@ Irston.
 mskoddow.
 src107.
 Decoder-Paul.
+anguspalmer.
 ashleysnyder.
 bradtiltonnow.
 ChecksumFailed.
-devinvalencia.
 
 Other contributors:
+devinvalencia.
 dhruvii-powershell.
 jamesfoot.
 MihirRathod.
@@ -108,7 +109,6 @@ thorn91.
 kcimpulse.
 aatrey882.
 Anantharaman91.
-anguspalmer.
 AnnaGould.
 askarthik.
 avssrikanth.
