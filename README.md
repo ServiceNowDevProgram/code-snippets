@@ -97,6 +97,7 @@ bradtiltonnow.
 ChecksumFailed.
 dhruvii-powershell.
 jamesfoot.
+mevops.
 MihirRathod.
 oasif.
 pratyushmp.
@@ -138,7 +139,6 @@ LarsAssen.
 LoicSanchez.
 LuisSepulveda21.
 m2santiago.
-mevops.
 mikeroosa.
 mugiwaramenon.
 NayeemKaka.
