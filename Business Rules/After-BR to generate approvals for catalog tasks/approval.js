@@ -1,3 +1,6 @@
+(function executeRule(current, previous /*null when async*/) {
+
+	// Add your code here
 var sysApp = new GlideRecord('sysapproval_approver');
   sysApp.initialize();
 
@@ -8,3 +11,5 @@ var sysApp = new GlideRecord('sysapproval_approver');
   sysApp.document_id = current.sys_id; //set the sys_id to populate correct value in the Approving field.
   
   sysApp.insert(); // Insert/Create the approval record.
+  
+})(current, previous);
