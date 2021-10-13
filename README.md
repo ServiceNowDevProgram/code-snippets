@@ -83,6 +83,7 @@ jonahpiascik.
 MarcMouries.
 phr-nk.
 23Thom.
+devinvalencia.
 Irston.
 mskoddow.
 src107.
@@ -90,10 +91,9 @@ Decoder-Paul.
 anguspalmer.
 ashleysnyder.
 bradtiltonnow.
-ChecksumFailed.
 
 Other contributors:
-devinvalencia.
+ChecksumFailed.
 dhruvii-powershell.
 jamesfoot.
 MihirRathod.
