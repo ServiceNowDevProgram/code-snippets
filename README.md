@@ -91,9 +91,9 @@ src107.
 Decoder-Paul.
 anguspalmer.
 ashleysnyder.
+bradtiltonnow.
 
 Other contributors:
-bradtiltonnow.
 ChecksumFailed.
 dhruvii-powershell.
 jamesfoot.
@@ -121,6 +121,7 @@ bird-03.
 cenzo85.
 Coder0131.
 coderdude207.
+codexpert247.
 Codjam.
 cwhits.
 davidkwhuang.
