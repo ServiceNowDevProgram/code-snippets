@@ -4,7 +4,7 @@ tableName - Name of table whose records need to be exported
 recordId - sys_id of the record where the exported attachment should be uploaded
 recordQuery - encoded query to access the required records. For PDF files, you should only pass sys_id eg: sys_id=b3f076504750210042bd757f2ede273f
 recordView - Specify the required view, Pass empty string for default view eg: ess, portal,
-dataType - The required export format - eg CSV, XLS, EXCEL, XLSX, JSONv2, XML, XSD, SCHEMA, RSS 
+dataType - The required export format - Supported formats eg CSV, XLS, EXCEL, XLSX, JSONv2, XML, XSD, SCHEMA, RSS 
 fileName - Name of exported file along with its extension eg fileName.csv, fileName.json
 
 OUTPUT:
@@ -23,11 +23,11 @@ function exportRecords(tableName, recordId, recordQuery, recordView, dataType, f
     try {
         var restMessage = new sn_ws.RESTMessageV2();
         restMessage.setHttpMethod('GET');
-        if(dataType != "PDF"){
-            url = gs.getProperty('glide.servlet.uri') + tableName + '.do?'+ dataType + '&sysparm_query=' + recordQuery + '&sysparm_view='+recordView;
-        }else{
+        if(dataType == "PDF"){
             //For PDF, sys_id should be passed as it accepts only a single record
             url = gs.getProperty('glide.servlet.uri') + tableName + '.do?'+ dataType + '&' + recordQuery + '&sysparm_view='+recordView;
+        }else{
+            url = gs.getProperty('glide.servlet.uri') + tableName + '.do?'+ dataType + '&sysparm_query=' + recordQuery + '&sysparm_view='+recordView;
         }
         restMessage.setEndpoint(url);
         restMessage.setBasicAuth(gs.getProperty('pdf.export.user.id'), gs.getProperty('pdf.export.user.password'));
