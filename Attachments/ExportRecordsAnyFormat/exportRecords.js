@@ -14,6 +14,7 @@ status - HTTP status of export
 Note: Create 2 system properties to store the user_name and password of a web service access user
 pdf.export.user.id - user_name of the web service only access user
 pdf.export.user.password - password of the user
+The user should have required access to read the exported tables
 /*****************************************************************************************/
 
 function exportRecords(tableName, recordId, recordQuery, recordView, dataType, fileName) {
