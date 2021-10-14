@@ -77,6 +77,7 @@ Top contributors:
 ashu759.
 revantKulkarni.
 snamjosh.
+thorn91.
 pratyushasndev.
 vandna07.
 sauravsumankumar.
@@ -87,7 +88,6 @@ devinvalencia.
 Irston.
 mskoddow.
 src107.
-thorn91.
 Decoder-Paul.
 anguspalmer.
 ashleysnyder.
