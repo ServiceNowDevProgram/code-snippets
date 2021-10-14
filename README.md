@@ -62,6 +62,7 @@ mr-swann.
 sn-ajb.
 iar42.
 ReginaldFawcett.
+allenandreas.
 eriemer1.
 odinsride.
 ovarn.
@@ -70,7 +71,6 @@ jacebenson.
 Lacah.
 mgopw.
 23Thom.
-allenandreas.
 anillande90.
 
 Top contributors:
