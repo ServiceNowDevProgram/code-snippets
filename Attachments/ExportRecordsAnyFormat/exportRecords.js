@@ -4,7 +4,7 @@ tableName - Name of table whose records need to be exported
 recordId - sys_id of the record where the exported attachment should be uploaded
 recordQuery - encoded query to access the required records. For PDF files, you should only pass sys_id eg: sys_id=b3f076504750210042bd757f2ede273f
 recordView - Specify the required view, Pass empty string for default view eg: ess, portal,
-dataType - The required export format - Supported formats eg CSV, XLS, EXCEL, XLSX, JSONv2, XML, XSD, SCHEMA, RSS 
+dataType - The required export format - Supported formats eg CSV, XLS, EXCEL, XLSX, PDF, JSONv2, XML, XSD, SCHEMA, RSS 
 fileName - Name of exported file along with its extension eg fileName.csv, fileName.json
 
 OUTPUT:
