@@ -13,6 +13,8 @@
      * and use the value that the user is trying to update for the owner that is currently being 
      * udpated.
       */
+
+    var query = 'business_entity=' + current.business_entity;
     var sum_with_previous_values = new x_snc_ecms.Calculator().getSum(tableName, 'ownership_percentage', query);
     gs.info('SUM ownership % with previous value = ' + sum_with_previous_values);
     var sum_with_current_values = sum_with_previous_values - previous.ownership_percentage + current.ownership_percentage;
