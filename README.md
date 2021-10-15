@@ -46,13 +46,13 @@ earlduque.
 kmohit2809.
 sumanthdosapati.
 PranavBhagat18.
-danr2c2.
+alikuttyka.
 
 Top 10% of contributors:
+danr2c2.
 ishaanshoor.
 mak1A4.
 paigesndev.
-alikuttyka.
 azeezgaa.
 smartcarleen.
 
