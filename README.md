@@ -41,64 +41,80 @@ To participate in moderation, join the sndevs slack at https://sndevs.com/ and j
 
 ## Leaderboard:
 
-Top 10% of contributors:
+Top 5% of contributors:
 earlduque.
 kmohit2809.
-PranavBhagat18.
-mak1A4.
-ishaanshoor.
-smartcarleen.
-azeezgaa.
-paigesndev.
 sumanthdosapati.
+PranavBhagat18.
+danr2c2.
+
+Top 10% of contributors:
+ishaanshoor.
+mak1A4.
+paigesndev.
+alikuttyka.
+azeezgaa.
+smartcarleen.
 
 Top 25% of contributors:
+niamccash.
+R3J3NT.
+RahmanM.
 mr-swann.
 sn-ajb.
-danr2c2.
 iar42.
-RahmanM.
 ReginaldFawcett.
+thorn91.
+allenandreas.
 eriemer1.
 odinsride.
 ovarn.
 rmedved84.
-niamccash.
+
+Top contributors (50%):
+jonahpiascik.
 jacebenson.
 Lacah.
 mgopw.
-
-Top contributors:
-alikuttyka.
-snamjosh.
-pratyushasndev.
-jonahpiascik.
-MarcMouries.
 23Thom.
+anillande90.
 ashu759.
-Irston.
-mskoddow.
-phr-nk.
+devinvalencia.
 revantKulkarni.
-src107.
-Decoder-Paul.
+pratyushasndev.
 vandna07.
-allenandreas.
+sauravsumankumar.
+MarcMouries.
 
 Other contributors:
+phr-nk.
+Irston.
+litwi1rm.
+mskoddow.
+snamjosh.
+src107.
+Decoder-Paul.
+rafzk.
+anguspalmer.
 ashleysnyder.
 bradtiltonnow.
 ChecksumFailed.
 dhruvii-powershell.
+jamesfoot.
+mevops.
+MihirRathod.
 oasif.
-rafzk.
+pratyushmp.
+Sagar-agarwal.
 SagarVijaykumar.
+saikumar-e.
 samwinchet.
 stwinkle.
+vasantharaja-natarajan.
 kcimpulse.
-sauravsumankumar.
 aatrey882.
 Anantharaman91.
+AnnaGould.
 askarthik.
 avssrikanth.
 Bharat123rox.
@@ -107,17 +123,20 @@ billyperkinsukg.
 bird-03.
 cenzo85.
 Coder0131.
+coderdude207.
+codexpert247.
 Codjam.
 cwhits.
 davidkwhuang.
 eizzledizzle.
+fisikos.
+HackoDev1530.
 hardikvyasji.
 HarneetSital.
 hmadhsan.
 ishwarighule.
 j2clow.
 j4rodm.
-jamesfoot.
 Jennylou777.
 Karthick986.
 Keagnn.
@@ -125,11 +144,13 @@ LarsAssen.
 LoicSanchez.
 LuisSepulveda21.
 m2santiago.
-mevops.
+Mexiprince.
 mikeroosa.
+mugiwaramenon.
 NayeemKaka.
 Nerdcode.
 Pratyusha418.
+RitheshGit.
 rohi-v.
 rverrips.
 salem769.
@@ -138,8 +159,10 @@ Soulpancake000.
 speedy18.
 stevezero.
 TRIGGEREDcoder.
+tsicot.
 Vivek-KP.
 vpeinado.
 vvijaya19.
 wcarroll.
+youthinkasido.
 zaidongy.
