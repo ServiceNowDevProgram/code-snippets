@@ -64,18 +64,18 @@ mr-swann.
 sn-ajb.
 iar42.
 ReginaldFawcett.
+thorn91.
 allenandreas.
 eriemer1.
 odinsride.
 ovarn.
-rmedved84.
 
 Top contributors (50%):
+rmedved84.
 jonahpiascik.
 jacebenson.
 Lacah.
 mgopw.
-thorn91.
 23Thom.
 anillande90.
 ashu759.
