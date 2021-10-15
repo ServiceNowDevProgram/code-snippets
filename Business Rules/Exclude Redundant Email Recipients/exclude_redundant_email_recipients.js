@@ -78,7 +78,7 @@
 
         // If no recipients remain, don't send the email:
         if (!current.recipients && !current.blind_copied && !current.copied && !current.direct) {
-			      current.setValue('state', 'ignored');
+	    current.setValue('state', 'ignored');
             current.setValue('type', 'send-ignored');
         }
     }
