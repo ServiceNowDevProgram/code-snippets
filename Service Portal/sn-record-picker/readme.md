@@ -27,12 +27,13 @@ The following table lists all of the scope bindings that can be passed to the di
 
 ### Simple user picker
 ![simple user picker](2021-10-16-01-10-08.png)
-HTML
+
+**HTML**
 ```html
 <sn-record-picker table="'sys_user'" field="c.field"></sn-record-picker>
 
 ```
-Client controller
+**Client controller**
 ```javascript
 c.field = {
     value: '',
@@ -42,12 +43,13 @@ c.field = {
 
 ### Displaying additional fields
 ![display additional fields](2021-10-16-01-08-46.png)
-HTML
+
+**HTML**
 ```html
 <sn-record-picker table="'sys_user'" field="c.field" display-fields="'email,location'"></sn-record-picker>
 
 ```
-Client controller
+**Client controller**
 ```javascript
 c.field = {
     value: '',
@@ -57,12 +59,13 @@ c.field = {
 
 ### Multiple selection
 ![Multiple selection](2021-10-16-01-11-40.png)
-HTML
+
+**HTML**
 ```html
 <sn-record-picker table="'sys_user'" display-field="'name'" multiple="true" field="c.field"></sn-record-picker>
 
 ```
-Client controller
+**Client controller**
 ```javascript
 c.field = {
     value: '',
@@ -71,12 +74,13 @@ c.field = {
 ```
 
 ### Handling change
-HTML
+
+**HTML**
 ```html
 <sn-record-picker on-change="c.userSelected()" table="'sys_user'" display-field="'name'" field="c.field"></sn-record-picker>
 
 ```
-Client controller
+**Client controller**
 ```javascript
 c.field = {
     value: '',
@@ -92,12 +96,12 @@ c.userSelected = function(){
 ### Caching data
 By passing the special config option, you can cache the results, which can significantly improve any subsequent loading of data.
 
-HTML
+**HTML**
 ```html
 <sn-record-picker options="c.options" table="'sys_user'" display-field="'name'" field="c.field"></sn-record-picker>
 
 ```
-Client controller
+**Client controller**
 ```javascript
 c.field = {
     value: '',
