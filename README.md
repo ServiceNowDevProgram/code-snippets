@@ -77,18 +77,18 @@ mgopw.
 23Thom.
 anillande90.
 ashu759.
+devinvalencia.
 revantKulkarni.
 snamjosh.
 thorn91.
 pratyushasndev.
 vandna07.
 sauravsumankumar.
-jonahpiascik.
 
 Other contributors:
+jonahpiascik.
 MarcMouries.
 phr-nk.
-devinvalencia.
 Irston.
 mskoddow.
 src107.
