@@ -75,6 +75,7 @@ jonahpiascik.
 jacebenson.
 Lacah.
 mgopw.
+thorn91.
 23Thom.
 anillande90.
 ashu759.
@@ -83,13 +84,12 @@ Irston.
 revantKulkarni.
 snamjosh.
 pratyushasndev.
-vandna07.
 
 Other contributors:
+vandna07.
 sauravsumankumar.
 MarcMouries.
 phr-nk.
-thorn91.
 litwi1rm.
 mskoddow.
 src107.
