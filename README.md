@@ -11,8 +11,9 @@ Inside this repository, you will find community submitted code-snippets and thei
 To contribute, just follow these steps:
 
 1. Fork this repo (you get a point just by forking!)
-2. Add/Update the repo
-3. Submit a pull request!
+2. Create a new branch on your fork
+3. Add/Update the repo
+4. Submit a pull request!
 
 That's it! More detailed contribution instructions can be found [here](CONTRIBUTING.md)
 
@@ -44,26 +45,27 @@ To participate in moderation, join the sndevs slack at https://sndevs.com/ and j
 Top 5% of contributors:
 earlduque.
 kmohit2809.
+sumanthdosapati.
 PranavBhagat18.
-danr2c2.
-ishaanshoor.
+alikuttyka.
 
 Top 10% of contributors:
-sumanthdosapati.
+danr2c2.
+ishaanshoor.
 mak1A4.
 paigesndev.
-alikuttyka.
 azeezgaa.
 smartcarleen.
 
 Top 25% of contributors:
+niamccash.
 R3J3NT.
 RahmanM.
-niamccash.
 mr-swann.
 sn-ajb.
 iar42.
 ReginaldFawcett.
+thorn91.
 allenandreas.
 eriemer1.
 odinsride.
@@ -71,6 +73,7 @@ ovarn.
 rmedved84.
 
 Top contributors (50%):
+jonahpiascik.
 jacebenson.
 Lacah.
 mgopw.
@@ -78,21 +81,21 @@ mgopw.
 anillande90.
 ashu759.
 devinvalencia.
+litwi1rm.
 revantKulkarni.
-snamjosh.
-thorn91.
 pratyushasndev.
 vandna07.
 sauravsumankumar.
 
 Other contributors:
-jonahpiascik.
 MarcMouries.
 phr-nk.
 Irston.
 mskoddow.
+snamjosh.
 src107.
 Decoder-Paul.
+rafzk.
 anguspalmer.
 ashleysnyder.
 bradtiltonnow.
@@ -103,7 +106,6 @@ mevops.
 MihirRathod.
 oasif.
 pratyushmp.
-rafzk.
 Sagar-agarwal.
 SagarVijaykumar.
 saikumar-e.
@@ -129,6 +131,7 @@ cwhits.
 davidkwhuang.
 eizzledizzle.
 fisikos.
+HackoDev1530.
 hardikvyasji.
 HarneetSital.
 hmadhsan.
