@@ -11,10 +11,15 @@ Inside this repository, you will find community submitted code-snippets and thei
 To contribute, just follow these steps:
 
 1. Fork this repo (you get a point just by forking!)
-2. Add/Update the repo
+2. Create a new branch on your fork
+3. Add/Update the repo
 4. Submit a pull request!
 
 That's it! More detailed contribution instructions can be found [here](CONTRIBUTING.md)
+
+## Code example program!
+
+Have a code-snippet that could be used in the official ServiceNow API Documentation? You should submit your code-snippet to the [code example program](https://devlink.sn/code-example-program) instead and potentially receive a reward!
 
 ## Earning points
 
