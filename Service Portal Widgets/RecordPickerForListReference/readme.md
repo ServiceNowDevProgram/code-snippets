@@ -1,0 +1,1 @@
+The widget is an example record picker that can be used as reference or list field. The field is referring to user table and upon change, the new values are passed to the server side for processing any business logic.

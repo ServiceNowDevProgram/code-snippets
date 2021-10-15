@@ -5,10 +5,12 @@ To contribute, just follow these steps:
 1. Fork this repo
 2. Add, edit, or re-organize Code Snippets by editing folders and files and commiting them to your forked repository
 3. Submit a pull request to the main branch of `ServiceNowDevProgram / code-snippets`
+  - Pull requests should have a title/comment that describes what is being added/changed
+  - Pull requests shuold only contain files that are relevant to what is said in the pull request's title
 
 That's it! A developer advocate or an sndevs designated approver will review your pull request and if approved, merge it into this repo for everyone's benefit!
 
-Note: If you plan on doing another pull request and your original pull request hasn't been approved+merged yet, make sure to create a new branch in your forked repo first.
+**Note on multiple submissions**: If you plan on doing another pull request and your original pull request hasn't been approved+merged yet, make sure to create a new branch in your forked repo first.
 
 ## Follow this structure
 
@@ -30,7 +32,7 @@ Note: If you plan on doing another pull request and your original pull request h
 - `vegetables` folder
   - `carrots` folder
     - `readme.md` file describing the vegetables code snippet
-    - `apples.js` first file with code snippet
+    - `carrots.js` first file with code snippet
   - `potatos` folder
     - `readme.md` file describing the potatos code snippet
     - `potatos.js` file with original code snippet

@@ -12,9 +12,13 @@ To contribute, just follow these steps:
 
 1. Fork this repo (you get a point just by forking!)
 2. Add/Update the repo
-4. Submit a pull request!
+3. Submit a pull request!
 
 That's it! More detailed contribution instructions can be found [here](CONTRIBUTING.md)
+
+## Code example program!
+
+Have a code-snippet that could be used in the official ServiceNow API Documentation? You should submit your code-snippet to the [code example program](https://devlink.sn/code-example-program) instead and potentially receive a reward!
 
 ## Earning points
 
@@ -37,54 +41,126 @@ To participate in moderation, join the sndevs slack at https://sndevs.com/ and j
 
 ## Leaderboard:
 
+Top 5% of contributors:
+earlduque.
+kmohit2809.
+PranavBhagat18.
+danr2c2.
+ishaanshoor.
+
 Top 10% of contributors:
-earlduque - (60)
-mak1A4 - (38)
-sn-ajb - (27)
-jacebenson - (22)
+sumanthdosapati.
+mak1A4.
+paigesndev.
+alikuttyka.
+azeezgaa.
+smartcarleen.
 
 Top 25% of contributors:
-rmedved84 (21)
-paigesndev (19)
-mr-swann (18)
-eriemer1 (16)
-mgopw (14)
-Decoder-Paul (12)
-ovarn (11)
+R3J3NT.
+RahmanM.
+niamccash.
+mr-swann.
+sn-ajb.
+iar42.
+ReginaldFawcett.
+allenandreas.
+eriemer1.
+odinsride.
+ovarn.
+rmedved84.
 
-Top contributors:
-PranavBhagat18 (11)
-ishaanshoor (7)
-azeezgaa (6)
-bradtiltonnow (6)
-danr2c2 (6)
-hmadhsan (6)
-Irston (6)
+Top contributors (50%):
+jacebenson.
+Lacah.
+mgopw.
+23Thom.
+anillande90.
+ashu759.
+devinvalencia.
+revantKulkarni.
+snamjosh.
+thorn91.
+pratyushasndev.
+vandna07.
+sauravsumankumar.
 
 Other contributors:
-mskoddow (6)
-NayeemKaka (6)
-snamjosh (6)
-speedy18 (6)
-src107 (6)
-ashleysnyder (1)
-Bigshmow (1)
-Coder0131 (1)
-Codjam (1)
-cwhits (1)
-j2clow (1)
-jonahpiascik (1)
-Karthick986 (1)
-kcimpulse (1)
-kmohit2809 (1)
-Lacah (1)
-LoicSanchez (1)
-niamccash (1)
-rafzk (1)
-revantKulkarni (1)
-salem769 (1)
-shaoservicenow (1)
-TRIGGEREDcoder (1)
-Vivek-KP (1)
-wcarroll (1)
-zaidongy (1)
+jonahpiascik.
+MarcMouries.
+phr-nk.
+Irston.
+mskoddow.
+src107.
+Decoder-Paul.
+anguspalmer.
+ashleysnyder.
+bradtiltonnow.
+ChecksumFailed.
+dhruvii-powershell.
+jamesfoot.
+mevops.
+MihirRathod.
+oasif.
+pratyushmp.
+rafzk.
+Sagar-agarwal.
+SagarVijaykumar.
+saikumar-e.
+samwinchet.
+stwinkle.
+vasantharaja-natarajan.
+kcimpulse.
+aatrey882.
+Anantharaman91.
+AnnaGould.
+askarthik.
+avssrikanth.
+Bharat123rox.
+Bigshmow.
+billyperkinsukg.
+bird-03.
+cenzo85.
+Coder0131.
+coderdude207.
+codexpert247.
+Codjam.
+cwhits.
+davidkwhuang.
+eizzledizzle.
+fisikos.
+hardikvyasji.
+HarneetSital.
+hmadhsan.
+ishwarighule.
+j2clow.
+j4rodm.
+Jennylou777.
+Karthick986.
+Keagnn.
+LarsAssen.
+LoicSanchez.
+LuisSepulveda21.
+m2santiago.
+Mexiprince.
+mikeroosa.
+mugiwaramenon.
+NayeemKaka.
+Nerdcode.
+Pratyusha418.
+RitheshGit.
+rohi-v.
+rverrips.
+salem769.
+shaoservicenow.
+Soulpancake000.
+speedy18.
+stevezero.
+TRIGGEREDcoder.
+tsicot.
+Vivek-KP.
+vpeinado.
+vvijaya19.
+wcarroll.
+youthinkasido.
+zaidongy.
