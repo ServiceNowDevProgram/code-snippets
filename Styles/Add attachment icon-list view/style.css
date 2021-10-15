@@ -1,0 +1,5 @@
+// Add this css to your style field to make the attachement icon visible in list view in front of your record.
+background-image: url('images/attachment.gif');  // This path and icon name you can get from two places: 1. image_picker.do and 2. db_image.list
+            background-repeat: no-repeat;
+            background-position: 98% 5px;
+            padding-right: 30px;
