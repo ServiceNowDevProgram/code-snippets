@@ -11,8 +11,9 @@ Inside this repository, you will find community submitted code-snippets and thei
 To contribute, just follow these steps:
 
 1. Fork this repo (you get a point just by forking!)
-2. Add/Update the repo
-3. Submit a pull request!
+2. Create a new branch on your fork
+3. Add/Update the repo
+4. Submit a pull request!
 
 That's it! More detailed contribution instructions can be found [here](CONTRIBUTING.md)
 
@@ -46,13 +47,13 @@ earlduque.
 kmohit2809.
 sumanthdosapati.
 PranavBhagat18.
-danr2c2.
+alikuttyka.
 
 Top 10% of contributors:
+danr2c2.
 ishaanshoor.
 mak1A4.
 paigesndev.
-alikuttyka.
 azeezgaa.
 smartcarleen.
 
@@ -64,6 +65,7 @@ mr-swann.
 sn-ajb.
 iar42.
 ReginaldFawcett.
+thorn91.
 allenandreas.
 eriemer1.
 odinsride.
@@ -75,23 +77,22 @@ jonahpiascik.
 jacebenson.
 Lacah.
 mgopw.
-thorn91.
 23Thom.
 anillande90.
 ashu759.
 devinvalencia.
-Irston.
+litwi1rm.
 revantKulkarni.
-snamjosh.
 pratyushasndev.
-
-Other contributors:
 vandna07.
 sauravsumankumar.
+
+Other contributors:
 MarcMouries.
 phr-nk.
-litwi1rm.
+Irston.
 mskoddow.
+snamjosh.
 src107.
 Decoder-Paul.
 rafzk.
@@ -130,6 +131,7 @@ cwhits.
 davidkwhuang.
 eizzledizzle.
 fisikos.
+HackoDev1530.
 hardikvyasji.
 HarneetSital.
 hmadhsan.
