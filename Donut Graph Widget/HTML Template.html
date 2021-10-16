@@ -1,0 +1,10 @@
+<div class="DonutContainer" ng-attr-id="{{data.graph.instanceId}}">
+  <div class="DonutOuter {{data.graph.style.outerShadow}} {{data.graph.style.ringColor}}"></div>
+  <div class="DonutInner {{data.graph.style.innerShadow}}"></div>
+  <div class="DonutCaption">{{data.graph.captionText}}</div>
+  <div class="DonutMetric">
+    <span class="Value" data-value="{{data.graph.value}}" id="GraphValue"></span>
+    <span class="Unit" ng-click="c.graphClick()">%</span>    
+  </div>
+  <div class="DonutInfoText {{data.graph.style.infoTextColor}}">{{data.graph.infoText}}</div>
+</div>
