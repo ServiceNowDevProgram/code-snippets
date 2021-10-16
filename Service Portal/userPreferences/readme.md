@@ -11,7 +11,7 @@ api.controller=function(userPreferences) {
   var c = this;
 	
 	userPreferences.getPreference('rowcount').then(function(response){
-		console.log();
+		c.rowcount = response;
 	});
 	
 };
