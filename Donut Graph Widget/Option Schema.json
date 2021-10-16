@@ -1,0 +1,133 @@
+[
+  {
+    "hint":"Make sure it's unique to the page",
+    "name":"unique_instance_id",
+    "section":"Behavior",
+    "default_value":"DonutGraph99",
+    "label":"Unique Instance ID",
+    "type":"string"
+  },
+  {
+    "hint":"Default value",
+    "name":"initial_value",
+    "section":"Data",
+    "default_value":"0",
+    "label":"Initial Value",
+    "type":"integer"
+  },
+  {
+    "hint":"Keep it short",
+    "name":"caption_text",
+    "section":"Presentation",
+    "default_value":"CAPTION",
+    "label":"Caption Text",
+    "type":"string"
+  },
+  {
+    "hint":"Table to query for aggregation",
+    "name":"data_table",
+    "section":"Data",
+    "default_value":"incident",
+    "label":"Data Table",
+    "type":"string"
+  },
+  {
+    "hint":"Query for maximum count",
+    "name":"maximum_count_query",
+    "section":"Data",
+    "default_value":"active=true^incident_stateNOT IN6,7^priorityIN1,2,3",
+    "label":"Maximum Count Query",
+    "type":"string"
+  },
+  {
+    "hint":"Query for current count",
+    "name":"current_count_query",
+    "section":"Data",
+    "default_value":"active=true^incident_stateNOT IN6,7^priorityIN1,2",
+    "label":"Current Count Query",
+    "type":"string"
+  },
+  {
+    "hint":"Value can be DarkShadow or LightShadow or none",
+    "name":"outer_shadow",
+    "section":"Presentation",
+    "default_value":"LightShadow",
+    "label":"Outer Shadow",
+    "type":"choice",
+    "choices":[
+      {
+        "label":"DarkShadow",
+        "value":"DarkShadow"
+      },
+      {
+        "label":"LightShadow",
+        "value":"LightShadow"
+      }
+    ]
+  },
+  {
+    "hint":"Value can be DarkShadow or LightShadow or none",
+    "name":"inner_shadow",
+    "section":"Presentation",
+    "default_value":"None",
+    "label":"Inner Shadow",
+    "type":"choice",
+    "choices":[
+      {
+        "label":"DarkShadow",
+        "value":"DarkShadow"
+      },
+      {
+        "label":"LightShadow",
+        "value":"LightShadow"
+      }
+    ]
+  },
+  {
+    "hint":"Current value graph color",
+    "name":"ring_color",
+    "section":"Presentation",
+    "default_value":"Informational",
+    "label":"Ring Color",
+    "type":"choice",
+    "choices":[
+      {
+        "label":"Informational",
+        "value":"Informational"
+      },
+      {
+        "label":"Warning",
+        "value":"Warning"
+      },
+      {
+        "label":"Critical",
+        "value":"Critical"
+      }
+    ]
+  },
+  {
+    "hint":"informational text",
+    "name":"info_text",
+    "section":"Presentation",
+    "default_value":"P1/P2",
+    "label":"Informational Text",
+    "type":"string"
+  },
+  {
+    "name":"info_text_color",
+    "section":"Presentation",
+    "default_value":"Dark",
+    "label":"Informational Text Color",
+    "type":"choice",
+    "choices":[
+      {
+        "label":"Dark",
+        "value":"Dark"
+      },
+      {
+        "label":"Light",
+        "value":"Light"
+      }
+    ]
+  }
+]
