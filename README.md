@@ -70,9 +70,10 @@ thorn91.
 allenandreas.
 devinvalencia.
 eriemer1.
-odinsride.
+hrobarikt.
 
 Top contributors (50%):
+odinsride.
 ovarn.
 rmedved84.
 jacebenson.
@@ -81,7 +82,6 @@ mgopw.
 23Thom.
 anillande90.
 ashu759.
-hrobarikt.
 Irston.
 litwi1rm.
 revantKulkarni.
