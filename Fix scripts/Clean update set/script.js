@@ -3,7 +3,7 @@
 //Sys_id value of the selected update set
 var UPDATE_SET_ID = '3f8ee93a45553010c0a05206e0e0f800';
 
-//Sys_id value of the selected developer (sys_user)
+//Value of the selected developer (sys_user)
 var DEVELOPER = 'datacenterautomation@snc.maint';
 
 //Query to get list of all updates in the selected update set made by the selected developer
