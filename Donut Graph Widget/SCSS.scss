@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css?family=Rajdhani:300|Roboto:300');
+
+.DonutContainer 
+{
+  --corporate-midnight: #0f202e;
+  --corporate-slate: #354a55;
+  --corporate-blue: #007dc5;
+  --corporate-red: #ed1c24;
+  --itsm-blue: #00b5e5;
+  --itsm-orange: #f9b000;
+  --itsm-yellow: #ffe080;
+  --itsm-green: #b7c200;
+  --itsm-white: #efefef;
+  --itsm-light: #c0c0c0;
+  --itsm-dark: #404040;
+  --itsm-night: #303030;
+  box-sizing: border-box;
+  position: relative;
+  width: 200px;
+  height: 200px;
+  font-family: 'Rajdhani';
+  color: var(--itsm-white);
+  --DonutMetricValue: 0;  
+}
+.DonutOuter
+{
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  float: left;
+}
+.DonutOuter.Informational
+{
+  background: conic-gradient(
+    var(--itsm-blue) calc(var(--DonutMetricValue) * 1%), 
+    var(--corporate-slate) 0
+  );
+}
+.DonutOuter.Critical
+{
+  background: conic-gradient(
+    var(--corporate-red) calc(var(--DonutMetricValue) * 1%), 
+    var(--corporate-slate) 0
+  );
+}
+.DonutOuter.Warning
+{
+  background: conic-gradient(
+    var(--itsm-orange) calc(var(--DonutMetricValue) * 1%), 
+    var(--corporate-slate) 0
+  );
+}
+.DonutInner
+{
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  background-color: var(--itsm-dark);
+}
+
+.DonutOuter.DarkShadow, .DonutInner.DarkShadow
+{
+  box-shadow: 0px 0px 10px 4px var(--itsm-night);
+}
+.DonutOuter.LightShadow, .DonutInner.LightShadow
+{
+  box-shadow: 0px 0px 10px 4px var(--itsm-light);
+}
+
+.DonutCaption
+{
+  position: absolute;
+  top: 50px;
+  width: 100%;
+  word-wrap: break-word;
+  text-align: center;
+  letter-spacing: 1px;
+  font-size: 2.2rem;
+}
+
+.DonutMetric 
+{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-weight: bold;
+}
+.DonutMetric .Value
+{
+  position: relative;
+  top: 65px;
+  left: 5px;
+  font-size: 8rem;
+  letter-spacing: 2px;
+}
+.DonutMetric .Value::before
+{
+  content: attr(data-value);
+}
+.DonutMetric .Unit
+{
+  position: relative;
+  top: 35px;
+  left: 2px;
+  font-size: 3rem;
+}
+
+.DonutInfoText
+{
+  position: absolute;
+  left: 100%;
+  width: 160px;
+  padding-left: 16px;
+  font-size: 2.2rem;
+}
+.DonutInfoText.Dark
+{
+  color: var(--itsm-dark);
+}
+.DonutInfoText.Light
+{
+  color: var(--itsm-white);
+}
