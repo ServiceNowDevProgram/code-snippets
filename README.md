@@ -52,10 +52,10 @@ danr2c2.
 
 Top 10% of contributors:
 ishaanshoor.
+R3J3NT.
 paigesndev.
 mak1A4.
 azeezgaa.
-R3J3NT.
 niamccash.
 
 Top 25% of contributors:
