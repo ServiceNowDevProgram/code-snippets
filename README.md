@@ -55,8 +55,8 @@ danr2c2.
 R3J3NT.
 paigesndev.
 mak1A4.
-azeezgaa.
 niamccash.
+azeezgaa.
 
 Top 25% of contributors:
 smartcarleen.
@@ -70,6 +70,7 @@ thorn91.
 allenandreas.
 devinvalencia.
 eriemer1.
+hrobarikt.
 odinsride.
 
 Top contributors (50%):
@@ -91,7 +92,6 @@ Other contributors:
 sauravsumankumar.
 MarcMouries.
 phr-nk.
-hrobarikt.
 mskoddow.
 snamjosh.
 src107.
@@ -99,9 +99,11 @@ vasantharaja-natarajan.
 Decoder-Paul.
 rafzk.
 anguspalmer.
+apple9000.
 ashleysnyder.
 bradtiltonnow.
 ChecksumFailed.
+dean-croaker.
 dhruvii-powershell.
 j4rodm.
 jamesfoot.
@@ -109,6 +111,7 @@ mevops.
 MihirRathod.
 moshjahan.
 oasif.
+physi.
 pratyushmp.
 Sagar-agarwal.
 saikumar-e.
@@ -133,7 +136,6 @@ codexpert247.
 Codjam.
 cwhits.
 davidkwhuang.
-dean-croaker.
 DirkRedeker.
 eizzledizzle.
 fisikos.
