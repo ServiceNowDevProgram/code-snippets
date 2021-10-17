@@ -102,6 +102,7 @@ anguspalmer.
 ashleysnyder.
 bradtiltonnow.
 ChecksumFailed.
+dean-croaker.
 dhruvii-powershell.
 j4rodm.
 jamesfoot.
@@ -133,7 +134,6 @@ codexpert247.
 Codjam.
 cwhits.
 davidkwhuang.
-dean-croaker.
 DirkRedeker.
 eizzledizzle.
 fisikos.
