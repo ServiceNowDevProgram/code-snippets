@@ -8,3 +8,4 @@ Function addHaving() can not be used in Scoped Applications!
 
 **Example execution logs**
 
+![Logs](ScreenShot_1.PNG)
