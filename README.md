@@ -71,9 +71,9 @@ allenandreas.
 devinvalencia.
 eriemer1.
 hrobarikt.
+odinsride.
 
 Top contributors (50%):
-odinsride.
 ovarn.
 rmedved84.
 jacebenson.
@@ -86,9 +86,9 @@ Irston.
 litwi1rm.
 revantKulkarni.
 pratyushasndev.
+vandna07.
 
 Other contributors:
-vandna07.
 sauravsumankumar.
 MarcMouries.
 phr-nk.
@@ -156,6 +156,7 @@ miracc.
 mugiwaramenon.
 NayeemKaka.
 Nerdcode.
+physi.
 Pratyusha418.
 RitheshGit.
 rohi-v.
