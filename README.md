@@ -87,9 +87,10 @@ Irston.
 litwi1rm.
 revantKulkarni.
 vasantharaja-natarajan.
-pratyushasndev.
+aatrey882.
 
 Other contributors:
+pratyushasndev.
 sauravsumankumar.
 MarcMouries.
 dean-croaker.
@@ -98,7 +99,6 @@ rafzk.
 mskoddow.
 snamjosh.
 src107.
-aatrey882.
 Decoder-Paul.
 anguspalmer.
 apple9000.
