@@ -1,0 +1,11 @@
+<div class="container">
+    <div class="process">
+      <div class="process-row">
+        <div class="process-step" ng-repeat="stateItem in data.processFlow.items">
+          <button type="button" disabled="disabled" class="btn btn-default btn-circle" ng-if="c.data.currentValue!=stateItem"><i class="fa fa-check fa-3x" aria-hidden="true"></i></button>
+          <button type="button" disabled="disabled" class="btn btn-success btn-circle" ng-if="c.data.currentValue==stateItem"><i class="fa fa-check fa-3x" aria-hidden="true"></i></button>  
+          <p>{{stateItem.label}}</p>       	
+        </div>
+      </div>
+    </div>
+   </div>
