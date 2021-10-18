@@ -1,1 +1,1 @@
-# This BR helps to build the recursive logic in ServiceNow tool.
+Using this Recursive BR, when you select the CMDB CI on incident then it would automatically add all level of affected CIs and when you change the new cmdb_ci then its corresponding affected CIs will get added and old affected CIs will get deleted.
