@@ -86,10 +86,11 @@ ashu759.
 Irston.
 litwi1rm.
 revantKulkarni.
+vasantharaja-natarajan.
 pratyushasndev.
-sauravsumankumar.
 
 Other contributors:
+sauravsumankumar.
 MarcMouries.
 dean-croaker.
 phr-nk.
@@ -97,7 +98,6 @@ rafzk.
 mskoddow.
 snamjosh.
 src107.
-vasantharaja-natarajan.
 Decoder-Paul.
 anguspalmer.
 apple9000.
