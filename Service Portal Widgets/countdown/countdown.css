@@ -1,0 +1,23 @@
+.upgrade-countdown {
+  margin-top: 25px;
+  p {
+    margin-bottom: 0;
+  }
+}
+
+.count-down {
+  color: $brand-danger;
+  .number {
+    line-height: 130px;
+    font-size: 150px;
+    font-weight: 200;
+  }
+  .seconds {
+    font-size: 18px;
+    margin-top: 20px;
+  }
+}
+
+.container-btn {
+  text-align: center;
+}
