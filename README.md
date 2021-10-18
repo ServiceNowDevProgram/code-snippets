@@ -65,16 +65,16 @@ mr-swann.
 sn-ajb.
 iar42.
 jonahpiascik.
+ovarn.
 ReginaldFawcett.
 thorn91.
 allenandreas.
 devinvalencia.
 eriemer1.
 hrobarikt.
-odinsride.
 
 Top contributors (50%):
-ovarn.
+odinsride.
 rmedved84.
 vandna07.
 jacebenson.
