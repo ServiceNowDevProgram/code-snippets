@@ -103,6 +103,7 @@ anguspalmer.
 apple9000.
 ashleysnyder.
 bradtiltonnow.
+brichards99.
 ChecksumFailed.
 Decoder-Paul.
 dhruvii-powershell.
@@ -128,7 +129,6 @@ Bharat123rox.
 Bigshmow.
 billyperkinsukg.
 bird-03.
-brichards99.
 cenzo85.
 Coder0131.
 coderdude207.
