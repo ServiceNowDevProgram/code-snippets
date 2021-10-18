@@ -76,6 +76,7 @@ odinsride.
 Top contributors (50%):
 ovarn.
 rmedved84.
+vandna07.
 jacebenson.
 Lacah.
 mgopw.
@@ -86,7 +87,6 @@ Irston.
 litwi1rm.
 revantKulkarni.
 pratyushasndev.
-vandna07.
 
 Other contributors:
 sauravsumankumar.
