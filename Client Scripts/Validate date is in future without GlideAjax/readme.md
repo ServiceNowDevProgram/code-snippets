@@ -2,7 +2,7 @@
 
 A client script that validates that a specified date is in future without the need for a GlideAjax and Script Include
 
-## Usagae
+## Usage
 
 - Create a new client script
 - Set the type to OnChange
