@@ -76,6 +76,7 @@ ReginaldFawcett.
 Top contributors (50%):
 rmedved84.
 thorn91.
+vandna07.
 mgopw.
 23Thom.
 anillande90.
@@ -86,7 +87,6 @@ Lacah.
 litwi1rm.
 oasif.
 revantKulkarni.
-vandna07.
 pratyushasndev.
 
 Other contributors:
