@@ -1,6 +1,6 @@
 (function runMailScript(current, template, email, email_action, event) {
 	 
-	var manager = event.parm2;	
+	var manager = event.parm1;	
   var item = new GlideAggregate('time_sheet_exception');
 	item.addEncodedQuery('stateINPending,Submitted,Rejected,Not_Submitted^week_starts_onONLast week@javascript:gs.beginningOfLastWeek()@javascript:gs.endOfLastWeek()');
 	item.addQuery("user.manager","IN", manager);
