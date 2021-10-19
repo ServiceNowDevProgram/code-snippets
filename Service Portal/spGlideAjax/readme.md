@@ -14,6 +14,8 @@ The method accepts 3 parameters:
 3. associate the angular provider with the widget where you would like to use it
 4. you can now use it as described within [example usage](#example-usage)
 
+> :information_source: for more info visit [docs](https://docs.servicenow.com/bundle/rome-servicenow-platform/page/build/service-portal/task/angular-providers.html)
+
 ## Example usage
 
 ```javascript
