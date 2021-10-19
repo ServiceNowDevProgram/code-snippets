@@ -2,7 +2,7 @@
 	 
 	var manager = event.parm1;	
   var item = new GlideAggregate('time_sheet_exception');
-	item.addEncodedQuery('stateINPending,Submitted,Rejected,Not_Submitted^week_starts_onONLast week@javascript:gs.beginningOfLastWeek()@javascript:gs.endOfLastWeek()');
+	item.addEncodedQuery('stateINPending,Submitted,Rejected,Not_Submitted^week_starts_onONLast week@javascript:gs.beginningOfLastWeek()@javascript:gs.endOfLastWeek()'); //make sure this is the same query as the scheduled job.
 	item.addQuery("user.manager","IN", manager);
 	item.query();
 	if (item.getRowCount() > 0) {
