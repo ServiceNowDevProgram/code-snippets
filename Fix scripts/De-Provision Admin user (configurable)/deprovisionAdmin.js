@@ -42,7 +42,7 @@ function deprovisionAdminAccount() {
         }
         gs.info(deprov_result_msg);
     } catch (error) {
-        gs.error('Error in ');
+        gs.error('Error in Fix Script (function deprovisionAdminAccount()): ' + error);
     }
 
 } //deprovisionAdminAccount()
