@@ -81,6 +81,7 @@ mgopw.
 23Thom.
 anillande90.
 ashu759.
+dean-croaker.
 Irston.
 jacebenson.
 Lacah.
@@ -88,13 +89,12 @@ litwi1rm.
 oasif.
 rafzk.
 revantKulkarni.
-pratyushasndev.
 
 Other contributors:
+pratyushasndev.
 vasantharaja-natarajan.
 MarcMouries.
 sauravsumankumar.
-dean-croaker.
 mskoddow.
 phr-nk.
 src107.
