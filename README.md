@@ -54,12 +54,12 @@ Top 10% of contributors:
 ishaanshoor.
 paigesndev.
 danr2c2.
+RahmanM.
 niamccash.
 azeezgaa.
-mak1A4.
 
 Top 25% of contributors:
-RahmanM.
+mak1A4.
 smartcarleen.
 hrobarikt.
 sn-ajb.
