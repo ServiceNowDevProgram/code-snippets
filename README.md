@@ -44,73 +44,76 @@ To participate in moderation, join the sndevs slack at https://sndevs.com/ and j
 
 Top 5% of contributors:
 earlduque.
-kmohit2809.
 sumanthdosapati.
+kmohit2809.
+R3J3NT.
 PranavBhagat18.
-ishaanshoor.
 alikuttyka.
 
 Top 10% of contributors:
-danr2c2.
-R3J3NT.
+ishaanshoor.
 paigesndev.
-mak1A4.
+danr2c2.
 niamccash.
+RahmanM.
 azeezgaa.
+mak1A4.
 
 Top 25% of contributors:
 smartcarleen.
-RahmanM.
-mr-swann.
-sn-ajb.
-iar42.
-jonahpiascik.
-ReginaldFawcett.
-thorn91.
-allenandreas.
-devinvalencia.
-eriemer1.
 hrobarikt.
+sn-ajb.
+mr-swann.
+devinvalencia.
+iar42.
+ovarn.
+allenandreas.
+eriemer1.
+jonahpiascik.
 odinsride.
+ReginaldFawcett.
+rmedved84.
 
 Top contributors (50%):
-ovarn.
-rmedved84.
-jacebenson.
-Lacah.
+thorn91.
+vandna07.
+vasantharaja-natarajan.
 mgopw.
 23Thom.
 anillande90.
 ashu759.
+dean-croaker.
 Irston.
+jacebenson.
+Lacah.
 litwi1rm.
-revantKulkarni.
-pratyushasndev.
-vandna07.
+oasif.
+rafzk.
 
 Other contributors:
-sauravsumankumar.
+revantKulkarni.
+pratyushasndev.
 MarcMouries.
-phr-nk.
-mskoddow.
-snamjosh.
-src107.
-vasantharaja-natarajan.
-Decoder-Paul.
-rafzk.
+sauravsumankumar.
 anguspalmer.
+mskoddow.
+phr-nk.
+src107.
+snamjosh.
+aatrey882.
+akhoshnood.
 apple9000.
 ashleysnyder.
 bradtiltonnow.
+brichards99.
 ChecksumFailed.
-dean-croaker.
+Decoder-Paul.
 dhruvii-powershell.
 j4rodm.
 jamesfoot.
 mevops.
 MihirRathod.
 moshjahan.
-oasif.
 physi.
 pratyushmp.
 Sagar-agarwal.
@@ -118,7 +121,6 @@ saikumar-e.
 samwinchet.
 stwinkle.
 tanu-profile.
-aatrey882.
 kcimpulse.
 Anantharaman91.
 AnnaGould.
@@ -128,13 +130,13 @@ Bharat123rox.
 Bigshmow.
 billyperkinsukg.
 bird-03.
-brichards99.
 cenzo85.
 Coder0131.
 coderdude207.
 codexpert247.
 Codjam.
 cwhits.
+dalestubblefield.
 davidkwhuang.
 DirkRedeker.
 eizzledizzle.
@@ -146,8 +148,10 @@ hmadhsan.
 ishwarighule.
 j2clow.
 Jennylou777.
+kainturar.
 Karthick986.
 Keagnn.
+KokilaAbeysinghe.
 LarsAssen.
 LoicSanchez.
 LuisSepulveda21.
@@ -159,6 +163,7 @@ mugiwaramenon.
 NayeemKaka.
 Nerdcode.
 Pratyusha418.
+retrokaj.
 RitheshGit.
 rohi-v.
 rverrips.
