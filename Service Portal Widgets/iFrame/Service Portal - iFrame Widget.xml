@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?><unload unload_date="2021-10-20 05:03:12">
+<sys_remote_update_set action="INSERT_OR_UPDATE">
+<application display_value="Global">global</application>
+<application_name>Global</application_name>
+<application_scope>global</application_scope>
+<application_version/>
+<collisions/>
+<commit_date/>
+<deleted/>
+<description/>
+<inserted/>
+<name>Service Portal - iFrame Widget</name>
+<origin_sys_id/>
+<parent display_value=""/>
+<release_date/>
+<remote_base_update_set display_value=""/>
+<remote_parent_id/>
+<remote_sys_id>a3fc8db11b53301097be5283604bcb12</remote_sys_id>
+<state>loaded</state>
+<summary/>
+<sys_class_name>sys_remote_update_set</sys_class_name>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2021-10-20 05:03:12</sys_created_on>
+<sys_id>055dc9bd1b13301097be5283604bcb90</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2021-10-20 05:03:12</sys_updated_on>
+<update_set display_value=""/>
+<update_source display_value=""/>
+<updated/>
+</sys_remote_update_set>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sp_widget_bdf526831b5cbc907393da09dc4bcbb4</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_widget"&gt;&lt;sp_widget action="INSERT_OR_UPDATE"&gt;&lt;category&gt;custom&lt;/category&gt;&lt;client_script&gt;&lt;![CDATA[api.controller = function ($scope, $rootScope, $location, $sce, spUtil) {
+    var c = this;
+    var params = $location.search();
+    var url = params.url || c.options.url;
+    var size = params.size || c.options.size;
+      var label = params.label || c.options.label;
+      var setPageTitle = params.set_page_title || c.options.set_page_title;
+  
+    if (!url) $scope.showError = true;
+    else {
+      $scope.frameSource = $sce.trustAsResourceUrl(url);
+      $scope.contentClass = "external-content-" + size;
+          $scope.label = label;
+    }
+  
+    spUtil.setBreadCrumb($scope, [{label:label}])
+    if(setPageTitle)
+       $('head title').text(label);
+};
+  ]]&gt;&lt;/client_script&gt;&lt;controller_as&gt;c&lt;/controller_as&gt;&lt;css&gt;.external-content {
+  overflow: hidden;
+  position: relative;
+}
+
+.external-content-large {
+  height: 3000px;
+}
+
+.external-content-medium {
+  height: 0;
+  padding-bottom: 75%;
+}
+
+.external-content-small {
+  height: 150px;
+  width: 200px;
+}
+
+.external-content-video {
+  height: 0;
+  padding-bottom: 56.25%; // 16:9 aspect ratio
+  padding-top: 35px;
+}
+
+.external-content iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+&lt;/css&gt;&lt;data_table&gt;sp_instance&lt;/data_table&gt;&lt;demo_data/&gt;&lt;description&gt;A flexible and reusable widget to display content in an iFrame&lt;/description&gt;&lt;docs/&gt;&lt;field_list/&gt;&lt;has_preview&gt;false&lt;/has_preview&gt;&lt;id/&gt;&lt;internal&gt;false&lt;/internal&gt;&lt;link&gt;&lt;![CDATA[function link(scope, element, attrs, controller) {
+
+}]]&gt;&lt;/link&gt;&lt;name&gt;iFrame&lt;/name&gt;&lt;option_schema&gt;[{"name":"url","section":"Presentation","label":"URL","type":"string"},{"name":"size","section":"Presentation","label":"Size","type":"choice","choices":[{"label":"large","value":"large"},{"label":"medium","value":"medium"},{"label":"small","value":"small"},{"label":"video","value":"video"}]},{"name":"label","section":"Presentation","label":"Label","type":"string"},{"name":"set_page_title","section":"Presentation","label":"Set Page Title","type":"boolean"}]&lt;/option_schema&gt;&lt;public&gt;false&lt;/public&gt;&lt;roles/&gt;&lt;script&gt;&lt;![CDATA[(function() {
+	options.size = options.size || "large";
+})();]]&gt;&lt;/script&gt;&lt;servicenow&gt;false&lt;/servicenow&gt;&lt;sys_class_name&gt;sp_widget&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2021-05-28 05:35:19&lt;/sys_created_on&gt;&lt;sys_id&gt;bdf526831b5cbc907393da09dc4bcbb4&lt;/sys_id&gt;&lt;sys_mod_count&gt;30&lt;/sys_mod_count&gt;&lt;sys_name&gt;iFrame&lt;/sys_name&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_widget_bdf526831b5cbc907393da09dc4bcbb4&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2021-10-20 05:02:14&lt;/sys_updated_on&gt;&lt;template&gt;&lt;![CDATA[&lt;div style="padding: 5px"&gt;
+  &lt;div ng-if="showError" class="padding"&gt;
+    &lt;div class="alert alert-warning" role="alert"&gt;
+      Provide a URL as a widget option or as a parameter, 'url'
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="external-content" ng-class="contentClass"&gt;
+    &lt;iframe title="{{label}}" aria-label="{{label}}" ng-src="{{frameSource}}" frameborder="0" scrolling="yes" sandbox="allow-same-origin allow-forms allow-modals allow-popups allow-scripts" allow="fullscreen"
+      &gt;${Browser does not allow iFrames}
+    &lt;/iframe&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+]]&gt;&lt;/template&gt;&lt;/sp_widget&gt;&lt;/record_update&gt;</payload>
+<payload_hash>-1028301866</payload_hash>
+<remote_update_set display_value="Service Portal - iFrame Widget">055dc9bd1b13301097be5283604bcb90</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2021-10-20 05:03:12</sys_created_on>
+<sys_id>015dc9bd1b13301097be5283604bcb91</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>17c9c1414b30000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2021-10-20 05:03:12</sys_updated_on>
+<table/>
+<target_name>iFrame</target_name>
+<type>Widget</type>
+<update_domain>global</update_domain>
+<update_guid>321dc97d9e1330106edff12f2e3b3464</update_guid>
+<update_guid_history>321dc97d9e1330106edff12f2e3b3464:-1028301866,2cf6057db3133010f09e7bca67a73372:-321479317,54960d7d011330108247cc29da1fb9c3:-1900201992,8f660d7d9a133010c9764e6eb5889ebb:377898878,4456c97db8133010834a171a040df908:299766654,5226817d7c133010efe57f08e85cf87d:-1439421155,8705c53d43133010084e44508881d6fc:-1881917512,1babc2915fcd38d039c15cdd26e3f345:-1003000564,40bf7551618d38d0a68e5d964b01f198:1034999308,e19fb151698d38d0b6f064bb1a238e95:2013051852,de581709e4c9f4d00f96e46f3e265c97:1034999308,aaf7530929c9f4d0566a36c827af934f:1221946261,d7bf0f092689f4d0bdb78022b6baa1fb:1360854074,180fc7c55389f4d0f2a0775703cf99ae:-1844628313,209dc7457b89f4d0f46b5c7fb08fa538:2147205276,cbacc7416989f4d022f17f8f33415589:-1104214402,e2c047cbb1dcbc907065a3395880128c:-1677609529,750cbec354dcbc90423c1d2087429816:-690359750,1bfbbec3bbdcbc907a00d0ca04910479:220023520,62cbfac399dcbc902339bd520eba0074:-1816872900,a50b3e4335dcbc901e1c36fcf690f1c3:-1746763043,0b6a7acfe09cbc90c93930c0402e2d0f:1221494628,b047f20fa69cbc90ebc3768a2ff7dc96:1955724214,7f33b287a09cbc904bf4e8e0f90c3341:-636549773,9713be47949cbc905d4e955ea72320df:-981648365,e1d2f247dc9cbc904c8bd1ca4270ea51:1751911966,cf12f207009cbc90d89fdb986d208eac:-684393446,63686607915cbc90485a4f443bbbec11:-1307710588,0448e647da5cbc9083206ba9eb3419e6:-1315848630,4b18aac3745cbc90144569e7842ad039:-1524178090,e9262a831f5cbc90bbaa56d972572113:-930804740</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sp_page_c43a2a0b1b5cbc907393da09dc4bcb9f</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_page"><sp_page action="INSERT_OR_UPDATE"><category>custom</category><css/><draft>false</draft><dynamic_title_structure/><id>external_content</id><internal>false</internal><omit_watcher>false</omit_watcher><public>false</public><roles/><seo_script/><short_description>Example of embedding an external site into Service Portal.</short_description><sys_class_name>sp_page</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2021-05-28 05:53:31</sys_created_on><sys_id>c43a2a0b1b5cbc907393da09dc4bcb9f</sys_id><sys_mod_count>1</sys_mod_count><sys_name>external_content</sys_name><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_scope display_value="Global">global</sys_scope><sys_update_name>sp_page_c43a2a0b1b5cbc907393da09dc4bcb9f</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2021-10-20 05:02:46</sys_updated_on><title>External Content</title><use_seo_script>false</use_seo_script></sp_page><sys_translated_text action="delete_multiple" query="documentkey=c43a2a0b1b5cbc907393da09dc4bcb9f"/></record_update>]]></payload>
+<payload_hash>-832817701</payload_hash>
+<remote_update_set display_value="Service Portal - iFrame Widget">055dc9bd1b13301097be5283604bcb90</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2021-10-20 05:03:12</sys_created_on>
+<sys_id>095dc9bd1b13301097be5283604bcb90</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>17c9c1492860000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2021-10-20 05:03:12</sys_updated_on>
+<table/>
+<target_name>external_content</target_name>
+<type>Page</type>
+<update_domain>global</update_domain>
+<update_guid>323d41f1425330106c4efaf32879ea44</update_guid>
+<update_guid_history>323d41f1425330106c4efaf32879ea44:-832817701,c16505f96c1330102af5ae4088d57b94:-219654804</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+</unload>
