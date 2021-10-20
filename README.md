@@ -77,6 +77,7 @@ rmedved84.
 Top contributors (50%):
 thorn91.
 vandna07.
+vasantharaja-natarajan.
 mgopw.
 23Thom.
 anillande90.
@@ -88,11 +89,10 @@ Lacah.
 litwi1rm.
 oasif.
 rafzk.
-revantKulkarni.
 
 Other contributors:
+revantKulkarni.
 pratyushasndev.
-vasantharaja-natarajan.
 MarcMouries.
 sauravsumankumar.
 anguspalmer.
