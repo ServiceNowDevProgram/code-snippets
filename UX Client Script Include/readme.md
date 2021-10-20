@@ -1,6 +1,6 @@
 # Howto access global object from within the UI builder page scripts
-When creating the page scripts within UI builder, servicenow doesn't allow you to use Web API, hence you are not able to access `document` or `window` objects.
-One neat trick that you can use is to create a reusabe UX Client Script Include and import it into the page script.
+When creating the page scripts within UI builder, servicenow doesn't allow you to use Web API (except console and timeout), hence you are not able to access `document` or `window` objects.
+One neat trick that you can use is to create a reusable UX Client Script Include and import it into the page script.
 
 ## Steps
 1. create a new UX client script include (type `sys_ux_client_script_include.list` into the app navigator and click `new`)
