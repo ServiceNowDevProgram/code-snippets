@@ -34,4 +34,11 @@ A checkbox to override the page title with the Label field.
 4. Copy the contents of `server.js` to the **Server script** window
 5. Copy the contents of `client.js` to the **Client controller** window
 6. Copy the contents of `optionSchema.json` to the **Option schema** window
-7. Drag the newly created widget onto a **Public** Service Portal page.
+7. Drag the newly created widget onto any Service Portal page
+8. Add the URL of the external content to the Widget instance options
+
+## External content requirements
+
+Displaying an external site in an iFrame is subject to Cross Origin Resource Sharing (CORS) policies. These are enforced by the web browser and configured by the external site. You must ensure that the site you are trying to embed allows it.
+
+You may test the iFrame widget using [Wikipedia](https://en.wikipedia.org/) which does allow embedding.
