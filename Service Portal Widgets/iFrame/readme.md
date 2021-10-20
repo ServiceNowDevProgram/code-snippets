@@ -1,8 +1,6 @@
 # iFrame Widget
 A flexible and reusable widget to display content in an iFrame.
 
-This widget can be used to s
-
 ## Configurable Instance Options
 
 The following instance options allow this widget to show external content in a variety of predefined sizes and can update the Service Portal navigation breadcrumb widget and Portal page title.
