@@ -5,5 +5,8 @@ This script allows detecting any customer updates made in 'Default' update set (
 
 **Example configuration of Scheduled Script Execution**
 
+ ![Coniguration](ScreenShot_1.PNG)
 
 **Example execution log**
+
+ ![Log](ScreenShot_2.PNG)
