@@ -44,73 +44,76 @@ To participate in moderation, join the sndevs slack at https://sndevs.com/ and j
 
 Top 5% of contributors:
 earlduque.
-kmohit2809.
 R3J3NT.
 sumanthdosapati.
+kmohit2809.
 PranavBhagat18.
 alikuttyka.
 
 Top 10% of contributors:
 ishaanshoor.
-danr2c2.
 paigesndev.
-mak1A4.
+danr2c2.
 niamccash.
-azeezgaa.
-
-Top 25% of contributors:
 RahmanM.
-smartcarleen.
-mr-swann.
-sn-ajb.
-iar42.
-jonahpiascik.
-ovarn.
-ReginaldFawcett.
-thorn91.
-allenandreas.
-devinvalencia.
-eriemer1.
+azeezgaa.
 hrobarikt.
 
-Top contributors (50%):
+Top 25% of contributors:
+mak1A4.
+smartcarleen.
+sn-ajb.
+mr-swann.
+devinvalencia.
+iar42.
+ovarn.
+allenandreas.
+eriemer1.
+jonahpiascik.
+oasif.
 odinsride.
+ReginaldFawcett.
 rmedved84.
+
+Top contributors (50%):
+thorn91.
 vandna07.
-jacebenson.
-Lacah.
+vasantharaja-natarajan.
 mgopw.
 23Thom.
 anillande90.
 ashu759.
+dean-croaker.
 Irston.
+jacebenson.
+Lacah.
 litwi1rm.
+rafzk.
 revantKulkarni.
-pratyushasndev.
-sauravsumankumar.
 
 Other contributors:
+pratyushasndev.
 MarcMouries.
-dean-croaker.
-phr-nk.
-rafzk.
-mskoddow.
-snamjosh.
-src107.
-vasantharaja-natarajan.
-Decoder-Paul.
+sauravsumankumar.
 anguspalmer.
+mskoddow.
+phr-nk.
+src107.
+snamjosh.
+aatrey882.
+akhoshnood.
 apple9000.
 ashleysnyder.
 bradtiltonnow.
+brichards99.
 ChecksumFailed.
+Decoder-Paul.
 dhruvii-powershell.
 j4rodm.
 jamesfoot.
 mevops.
 MihirRathod.
 moshjahan.
-oasif.
 physi.
 pratyushmp.
 Sagar-agarwal.
@@ -118,9 +121,9 @@ saikumar-e.
 samwinchet.
 stwinkle.
 tanu-profile.
-aatrey882.
 kcimpulse.
 Anantharaman91.
+Anks-26.
 AnnaGould.
 askarthik.
 avssrikanth.
@@ -128,17 +131,19 @@ Bharat123rox.
 Bigshmow.
 billyperkinsukg.
 bird-03.
-brichards99.
 cenzo85.
 Coder0131.
 coderdude207.
 codexpert247.
 Codjam.
 cwhits.
+dalestubblefield.
+DangerousNights.
 davidkwhuang.
 DirkRedeker.
 eizzledizzle.
 fisikos.
+greenc123.
 HackoDev1530.
 hardikvyasji.
 HarneetSital.
@@ -149,6 +154,7 @@ Jennylou777.
 kainturar.
 Karthick986.
 Keagnn.
+KokilaAbeysinghe.
 LarsAssen.
 LoicSanchez.
 LuisSepulveda21.
@@ -160,6 +166,7 @@ mugiwaramenon.
 NayeemKaka.
 Nerdcode.
 Pratyusha418.
+retrokaj.
 RitheshGit.
 rohi-v.
 rverrips.
