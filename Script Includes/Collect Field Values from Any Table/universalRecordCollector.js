@@ -6,7 +6,7 @@ DV_Record_Details.prototype = Object.extendsObject(AbstractAjaxProcessor, {
         var recordID = this.getParameter('sysparm_recordID');
         var fieldNames = this.getParameter('sysparm_fieldNames');
 		
-		var fields = fieldNames.split(',');
+	var fields = fieldNames.split(',');
 		
         var targetRecord = new GlideRecord(table);
         targetRecord.addQuery('sys_id', recordID);
