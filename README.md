@@ -70,12 +70,13 @@ ovarn.
 allenandreas.
 eriemer1.
 jonahpiascik.
+oasif.
 odinsride.
 ReginaldFawcett.
 rmedved84.
-thorn91.
 
 Top contributors (50%):
+thorn91.
 vandna07.
 vasantharaja-natarajan.
 mgopw.
@@ -87,7 +88,6 @@ Irston.
 jacebenson.
 Lacah.
 litwi1rm.
-oasif.
 rafzk.
 revantKulkarni.
 
