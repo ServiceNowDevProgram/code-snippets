@@ -1,5 +1,5 @@
 var HM_Record_Details = Class.create();
-HM_Record_Details.prototype = Object.extendsObject(AbstractAjaxProcessor, {
+DV_Record_Details.prototype = Object.extendsObject(AbstractAjaxProcessor, {
 
     getDetails: function() {
         var table = this.getParameter('sysparm_table');
@@ -25,5 +25,5 @@ HM_Record_Details.prototype = Object.extendsObject(AbstractAjaxProcessor, {
         return JSON.stringify(obj);
     },
 
-    type: 'HM_Record_Details'
+    type: 'DV_Record_Details'
 });
