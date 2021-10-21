@@ -96,6 +96,7 @@ Other contributors:
 MarcMouries.
 sauravsumankumar.
 anguspalmer.
+ChecksumFailed.
 mskoddow.
 phr-nk.
 src107.
@@ -107,7 +108,6 @@ apple9000.
 ashleysnyder.
 bradtiltonnow.
 brichards99.
-ChecksumFailed.
 Decoder-Paul.
 dhruvii-powershell.
 j4rodm.
