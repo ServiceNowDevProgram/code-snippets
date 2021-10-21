@@ -5,4 +5,4 @@
 **Example:** In this case, clicking the "Copy Table Name" menu item will copy ```cmdb_ci_win_server``` to your clipboard
 * **Usage:** 
     - **addMenuItem.js:** Run this background script to add the menu item to the list context menu.
-    - **addMenuItem.js:** Run this background script to remove previously added menu item.
+    - **removeMenuItem.js:** Run this background script to remove a previously added menu item.
