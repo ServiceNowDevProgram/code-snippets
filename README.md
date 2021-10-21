@@ -68,21 +68,21 @@ devinvalencia.
 iar42.
 ovarn.
 allenandreas.
+ashu759.
 eriemer1.
 jonahpiascik.
 oasif.
 odinsride.
 ReginaldFawcett.
-rmedved84.
 
 Top contributors (50%):
+rmedved84.
 thorn91.
 vandna07.
 vasantharaja-natarajan.
 mgopw.
 23Thom.
 anillande90.
-ashu759.
 dean-croaker.
 Irston.
 jacebenson.
