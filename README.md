@@ -73,9 +73,9 @@ jonahpiascik.
 odinsride.
 ReginaldFawcett.
 rmedved84.
+thorn91.
 
 Top contributors (50%):
-thorn91.
 vandna07.
 vasantharaja-natarajan.
 mgopw.
@@ -89,9 +89,9 @@ Lacah.
 litwi1rm.
 oasif.
 rafzk.
+revantKulkarni.
 
 Other contributors:
-revantKulkarni.
 pratyushasndev.
 MarcMouries.
 sauravsumankumar.
@@ -137,6 +137,7 @@ codexpert247.
 Codjam.
 cwhits.
 dalestubblefield.
+DangerousNights.
 davidkwhuang.
 DirkRedeker.
 eizzledizzle.
