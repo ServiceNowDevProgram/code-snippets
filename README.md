@@ -44,9 +44,9 @@ To participate in moderation, join the sndevs slack at https://sndevs.com/ and j
 
 Top 5% of contributors:
 earlduque.
+R3J3NT.
 sumanthdosapati.
 kmohit2809.
-R3J3NT.
 PranavBhagat18.
 alikuttyka.
 
@@ -57,72 +57,74 @@ danr2c2.
 niamccash.
 RahmanM.
 azeezgaa.
+hrobarikt.
 
 Top 25% of contributors:
 mak1A4.
 smartcarleen.
-hrobarikt.
+devinvalencia.
 sn-ajb.
 mr-swann.
-devinvalencia.
 iar42.
 ovarn.
 allenandreas.
+ashu759.
 eriemer1.
 jonahpiascik.
+oasif.
 odinsride.
 ReginaldFawcett.
-rmedved84.
 
 Top contributors (50%):
+rmedved84.
 thorn91.
 vandna07.
 vasantharaja-natarajan.
 mgopw.
 23Thom.
 anillande90.
-ashu759.
 dean-croaker.
 Irston.
 jacebenson.
 Lacah.
 litwi1rm.
-oasif.
 rafzk.
-
-Other contributors:
 revantKulkarni.
 pratyushasndev.
+
+Other contributors:
 MarcMouries.
 sauravsumankumar.
 anguspalmer.
+ChecksumFailed.
 mskoddow.
 phr-nk.
 src107.
 snamjosh.
+Sagar-agarwal.
 aatrey882.
 akhoshnood.
 apple9000.
 ashleysnyder.
 bradtiltonnow.
 brichards99.
-ChecksumFailed.
 Decoder-Paul.
 dhruvii-powershell.
 j4rodm.
 jamesfoot.
 mevops.
 MihirRathod.
+mikeroosa.
 moshjahan.
 physi.
 pratyushmp.
-Sagar-agarwal.
 saikumar-e.
 samwinchet.
 stwinkle.
 tanu-profile.
 kcimpulse.
 Anantharaman91.
+Anks-26.
 AnnaGould.
 askarthik.
 avssrikanth.
@@ -137,10 +139,13 @@ codexpert247.
 Codjam.
 cwhits.
 dalestubblefield.
+DangerousNights.
 davidkwhuang.
 DirkRedeker.
 eizzledizzle.
+ewhite1.
 fisikos.
+greenc123.
 HackoDev1530.
 hardikvyasji.
 HarneetSital.
@@ -151,12 +156,12 @@ Jennylou777.
 kainturar.
 Karthick986.
 Keagnn.
+KokilaAbeysinghe.
 LarsAssen.
 LoicSanchez.
 LuisSepulveda21.
 m2santiago.
 Mexiprince.
-mikeroosa.
 miracc.
 mugiwaramenon.
 NayeemKaka.
@@ -171,6 +176,7 @@ salem769.
 shaoservicenow.
 Soulpancake000.
 speedy18.
+SteveMunsell.
 stevezero.
 TRIGGEREDcoder.
 tsicot.
