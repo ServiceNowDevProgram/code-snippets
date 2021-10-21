@@ -1,5 +1,5 @@
 # Universal Field Collector (Ajax Version Script Include)
-- This SI allows for users to request any field values from any table (except if security restrictions prevent) for any particular record
+- This SI allows for users to request any field values from any table (except if security restrictions prevent) for any one particular record
 - In Client script, instantiate GlideAjax with this script include
 - Call function `getDetails`
 - Pass in the following parameters in this order
