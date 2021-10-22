@@ -92,9 +92,9 @@ litwi1rm.
 revantKulkarni.
 src107.
 pratyushasndev.
+MarcMouries.
 
 Other contributors:
-MarcMouries.
 sauravsumankumar.
 aatrey882.
 anguspalmer.
@@ -180,6 +180,7 @@ Soulpancake000.
 speedy18.
 SteveMunsell.
 stevezero.
+TamByrd.
 TRIGGEREDcoder.
 tsicot.
 Vivek-KP.
