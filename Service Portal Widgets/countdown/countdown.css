@@ -1,4 +1,7 @@
 .upgrade-countdown {
+  background: -webkit-linear-gradient(right, #fe0000, #051d8e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   margin-top: 25px;
   p {
     margin-bottom: 0;
@@ -6,6 +9,9 @@
 }
 
 .count-down {
+  background: -webkit-linear-gradient(right, #fe0000, #051d8e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   color: $brand-danger;
   .number {
     line-height: 130px;
@@ -18,6 +24,10 @@
   }
 }
 
-.container-btn {
+.btn {
   text-align: center;
+  background: -webkit-linear-gradient(right, #051d8e,#fe0000);
+    -webkit-background-clip: text;
+    
+    -webkit-text-fill-color: transparent;
 }
