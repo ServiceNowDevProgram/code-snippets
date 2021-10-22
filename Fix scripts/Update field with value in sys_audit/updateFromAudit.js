@@ -20,7 +20,9 @@ function updateRecords(args) {
     var tbl = args['table'];
     var qry = args['encodedQuery'];
     var updateField = args['updateField'];
-    var auditField = args['auditField']
+    var auditField = args['auditField'];
+    var sort = args['sort'];
+    
     if (!validateArgs(tbl, qry, updateField, auditField)) {
         throw new Error("UpdateRecords: Missing or invalid arguments");
     }
@@ -41,7 +43,7 @@ function updateRecords(args) {
 
     while (grTicket.next()) {
 
-        auditVal = getAuditValue(tbl, grTicket.getUniqueValue(), auditField);
+        auditVal = getAuditValue(tbl, grTicket.getUniqueValue(), auditField,sort);
 
         if (!isNullOrEmpty(auditVal)) {
             asdf.push(grTicket.getValue('number') + ":" + auditVal);
@@ -93,7 +95,8 @@ var updateArgs = {
     encodedQuery: 'u_some_cool_field=blahblahblahL',
     table: 'my_cool_table',
     updateField: 'field to update in target table',
-    auditField: 'field name in sys_audit'
+    auditField: 'field name in sys_audit',
+    sort: 'DESC
 }
 
 
