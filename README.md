@@ -66,6 +66,7 @@ devinvalencia.
 sn-ajb.
 mr-swann.
 iar42.
+vandna07.
 ovarn.
 allenandreas.
 ashu759.
@@ -73,12 +74,11 @@ eriemer1.
 jonahpiascik.
 oasif.
 odinsride.
-ReginaldFawcett.
 
 Top contributors (50%):
+ReginaldFawcett.
 rmedved84.
 thorn91.
-vandna07.
 vasantharaja-natarajan.
 mgopw.
 23Thom.
