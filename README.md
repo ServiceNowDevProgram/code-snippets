@@ -74,9 +74,9 @@ eriemer1.
 jonahpiascik.
 oasif.
 odinsride.
+ReginaldFawcett.
 
 Top contributors (50%):
-ReginaldFawcett.
 rmedved84.
 thorn91.
 vasantharaja-natarajan.
@@ -91,9 +91,9 @@ litwi1rm.
 rafzk.
 revantKulkarni.
 pratyushasndev.
+MarcMouries.
 
 Other contributors:
-MarcMouries.
 sauravsumankumar.
 anguspalmer.
 ChecksumFailed.
@@ -173,6 +173,7 @@ rohi-v.
 rverrips.
 SagarVijaykumar.
 salem769.
+sanchit-varshney.
 shaoservicenow.
 Soulpancake000.
 speedy18.
