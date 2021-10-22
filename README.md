@@ -46,12 +46,12 @@ Top 5% of contributors:
 earlduque.
 R3J3NT.
 sumanthdosapati.
+ishaanshoor.
 kmohit2809.
 PranavBhagat18.
-alikuttyka.
 
 Top 10% of contributors:
-ishaanshoor.
+alikuttyka.
 paigesndev.
 danr2c2.
 niamccash.
