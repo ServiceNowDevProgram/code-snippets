@@ -1,6 +1,23 @@
-var fields = g_form.getEditableFields();
-if (fields[x] != 'sys_created_on' && fields[x] != 'sys_created_by' && fields[x] != 'sys_updated_on' && fields[x] != 'sys_updated_by'){
-  g_form.setMandatory(fields[x], false);
-  g_form.setReadOnly(fields[x], true);
-}
+function onLoad() {
+    var fields = g_form.getEditableFields();
+    
+    var skippedFields = [
+        'sys_created_on',
+        'sys_created_by',
+        'sys_updated_on',
+        'sys_updated_by',
+    ];
 
+    for (var i = 0; i < fields.length; i++) {
+        var field = fields[i];
+
+        // Skip fields in the designated array
+        if (skippedFields.indexOf(field) !== -1) {
+            continue;
+        }
+
+        g_form.setMandatory(fields[i], false);
+        g_form.setReadOnly(fields[i], true);
+
+    }
+}

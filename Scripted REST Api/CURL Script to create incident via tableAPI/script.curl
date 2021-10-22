@@ -1,0 +1,1 @@
+curl -v -H "Accept: application/json" -H "Content-Type: application/json" -X POST --data "{\"short_description\" : \"This is a test incident via CURL script\",\"description\" : \"Description\",\"caller_id\" : \"Ishaan\",\"impact\" : \"1\",\"urgency\":\"1\"}" -u username:password https://instance_name.service-now.com/api/now/table/incident
