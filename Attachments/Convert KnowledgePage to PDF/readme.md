@@ -3,7 +3,7 @@
 * Try it from a simple HTML conversion.
 * It seems that the conversion fails if the HTML contains image files.
 * See the Script Include GeneralPDF for details. 
-* (GeneralPDF is already in Script Include, but it may not exist in some environments)
+* GeneralPDF is already in Script Include, but it may not exist in some environments
 
 ```javascript
 var grKnow = new GlideRecord('kb_knowledge');
