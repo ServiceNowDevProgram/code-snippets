@@ -1,5 +1,5 @@
 # Set time zone and date format to output dates.
-
+Examples
 ```javascript
 // Set time zone and date format to output string dates.
 // Current time "2021-10-23 16:29:08" JST +0900
