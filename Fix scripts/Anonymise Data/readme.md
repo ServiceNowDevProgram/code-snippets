@@ -25,8 +25,17 @@ You need to pass 4 parameters to function anonymiseTable
 3. additionalQuery - Additional encoded query to limit list of records (if you would like to clear whole table just pass empty string)
 4. logging - True/False value to determine if logging should be performed during execution
 
+Example of Fix script execution:
+ ![Coniguration](ScreenShot_2.PNG)
+
 **Example configuration of Script Include** 
 
+ ![Coniguration](ScreenShot_1.PNG)
+ 
 **Execution logs**
 
+ ![Coniguration](ScreenShot_3.PNG)
+
 **Effect of execution**
+
+ ![Coniguration](ScreenShot_4.PNG)
