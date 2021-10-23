@@ -83,6 +83,7 @@ vasantharaja-natarajan.
 mgopw.
 23Thom.
 anillande90.
+apple9000.
 ChecksumFailed.
 dean-croaker.
 Irston.
@@ -92,13 +93,12 @@ litwi1rm.
 revantKulkarni.
 src107.
 pratyushasndev.
-MarcMouries.
 
 Other contributors:
+MarcMouries.
 sauravsumankumar.
 aatrey882.
 anguspalmer.
-apple9000.
 mskoddow.
 phr-nk.
 rafzk.
