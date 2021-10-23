@@ -24,7 +24,9 @@ var strDate = '' + simpleDateFormat.format(javaobjDate);
 gs.info(strDate);
 ```
 
-## Similar Functions: GlideDate.getByFormat()
+### Similar Functions: GlideDate.getByFormat()
+Output in UTC, not in the time zone set by the user.
+
 Examples
 ```javascript
 // Current time "2021-10-23 17:03:56" JST +0900
