@@ -4,5 +4,8 @@
 
  **Example configuration of  Business Rule** 
 
+![Coniguration](ScreenShot_1.PNG)
+
 **Example effect of execution**
 
+![Effect](ScreenShot_2.PNG)
