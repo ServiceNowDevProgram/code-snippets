@@ -96,6 +96,7 @@ pratyushasndev.
 
 Other contributors:
 MarcMouries.
+Sagar-agarwal.
 sauravsumankumar.
 aatrey882.
 anguspalmer.
@@ -103,7 +104,6 @@ mskoddow.
 phr-nk.
 rafzk.
 snamjosh.
-Sagar-agarwal.
 akhoshnood.
 ashleysnyder.
 bradtiltonnow.
