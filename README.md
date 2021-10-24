@@ -69,21 +69,21 @@ ovarn.
 iar42.
 vandna07.
 allenandreas.
+apple9000.
 ashu759.
 eriemer1.
 jonahpiascik.
 oasif.
 odinsride.
-ReginaldFawcett.
 
 Top contributors (50%):
+ReginaldFawcett.
 rmedved84.
 thorn91.
 vasantharaja-natarajan.
 mgopw.
 23Thom.
 anillande90.
-apple9000.
 ChecksumFailed.
 dean-croaker.
 Irston.
