@@ -1,22 +1,18 @@
-# Description
-There are many cases where: we would have workflows on custom tables or non task tables or we would like to see the "Show Workflow" Related Link for ease of accessibility to the workflow.
-The shared code will help show this related link on any table record that has a workflow associated with it.
+There are many cases where,we would have workflows on custom tables or non task tables , where we would like to see the "Show Workflow" Related Link for ease of accessibility to the workflow.
+The shared code will help show this related link on any rable record that has a workflow associated with it.
 
-## Installation
+Below has to be set for this to work on UI action form:
 
-```javascript
-"Table": "Select the table that you would like this UI action to be available on (preferably table with workflows)";
-"Onclick" : "showWorkflow()"
-"Active" : "True"
-"Show Update" : "True"
-"Client" : "True"
-"Form Link" : "True"
-"Condition" : "new global.Workflow().hasWorkflow(current)"
-```
+•	Table: Select the table that you would like this UI action to be available on (preferably table with workflows)
 
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-Please make sure to update tests as appropriate.
+•	Onclick : showWorkflow()
 
-## License
-[MIT](https://choosealicense.com/licenses/mit/)
+•	Active : True
+
+•	Show Update : True
+
+•	Client : True
+
+•	Form Link : True
+
+•	Condition : new global.Workflow().hasWorkflow(current)
