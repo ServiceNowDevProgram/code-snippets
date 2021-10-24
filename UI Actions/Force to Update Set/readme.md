@@ -1,6 +1,6 @@
 # Introduction
 
-This UI action will add the record to the update set. 
+Manually Add a Record to an Update Set
 
 1. Check to make sure the current table isn’t already recording updates
 2. Push the current record into the currently-selected update set
