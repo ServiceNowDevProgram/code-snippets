@@ -72,11 +72,12 @@ allenandreas.
 apple9000.
 ashu759.
 eriemer1.
+jacebenson.
 jonahpiascik.
 oasif.
-odinsride.
 
 Top contributors (50%):
+odinsride.
 ReginaldFawcett.
 rmedved84.
 thorn91.
@@ -87,7 +88,6 @@ anillande90.
 ChecksumFailed.
 dean-croaker.
 Irston.
-jacebenson.
 Lacah.
 litwi1rm.
 revantKulkarni.
