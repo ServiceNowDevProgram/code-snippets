@@ -78,6 +78,7 @@ oasif.
 
 Top contributors (50%):
 odinsride.
+rafzk.
 ReginaldFawcett.
 rmedved84.
 src107.
@@ -90,7 +91,6 @@ dean-croaker.
 Irston.
 Lacah.
 litwi1rm.
-rafzk.
 
 Other contributors:
 revantKulkarni.
