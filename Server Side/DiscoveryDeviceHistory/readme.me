@@ -1,0 +1,15 @@
+The code snippet provides you a readable output from a discovery status record and gives you detail information regarding the devices that were discovered in it.
+This allows you perform the required remediation action on the issues associated with your discovery prcoess.
+
+Sample Usage
+
+var discoveryStatus = new GlideRecord("discovery_status");
+if(discoveryStatus.get("sys_id")){ //Replace with sys_id
+  var devices = getDiscoveryResults(discoveryStatus);
+  for(var entry in devices){
+     if(devices[entry].operational_status = "Not Successful"){
+        //Your business logic here... create incident etc
+        //gs.info(devices[entry].issue_count+ " issues "+ devices[entry].issue_link); 
+     }
+  }
+}
