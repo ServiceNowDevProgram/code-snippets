@@ -1,0 +1,97 @@
+.row {
+  display: flex;
+}
+
+/*animation for spiderman*/
+.web {
+  position: absolute;
+  top: -260px;
+  animation: webout 9s;
+  right: 0;
+}
+
+@-webkit-keyframes webout {
+  0% {
+    top: -260px;
+    animation-play-state: paused
+  }
+
+  100% {
+    top: -10px
+  }
+}
+
+.card-overlay {
+  background: black;
+  margin-left: -1px;
+  width: 100%;
+  /* Adjust width accordingly */
+  margin-top: -10px;
+  position: relative;
+}
+
+.goblin {
+
+  margin-left: 100px;
+  -webkit-filter: brightness(10);
+  filter: brightness(10);
+
+}
+
+/* animation for green goblin*/
+.flashit {
+  -webkit-animation: flash ease 8s infinite;
+  animation: flash ease 8s infinite;
+}
+
+@-webkit-keyframes flash {
+  from {
+    opacity: 0;
+  }
+
+  92% {
+    opacity: 0;
+  }
+
+  93% {
+    opacity: 0.6;
+  }
+
+  94% {
+    opacity: 0.2;
+  }
+
+  96% {
+    opacity: 0.9;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes flash {
+  from {
+    opacity: 0;
+  }
+
+  92% {
+    opacity: 0;
+  }
+
+  93% {
+    opacity: 0.6;
+  }
+
+  94% {
+    opacity: 0.2;
+  }
+
+  96% {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
