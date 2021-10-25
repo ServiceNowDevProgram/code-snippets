@@ -101,6 +101,7 @@ Sagar-agarwal.
 sauravsumankumar.
 aatrey882.
 anguspalmer.
+MihirRathod.
 mskoddow.
 phr-nk.
 snamjosh.
@@ -113,7 +114,6 @@ dhruvii-powershell.
 j4rodm.
 jamesfoot.
 mevops.
-MihirRathod.
 mikeroosa.
 moshjahan.
 physi.
