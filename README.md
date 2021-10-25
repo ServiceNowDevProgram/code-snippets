@@ -74,15 +74,16 @@ ashu759.
 eriemer1.
 jacebenson.
 jonahpiascik.
-oasif.
+litwi1rm.
 
 Top contributors (50%):
+oasif.
 odinsride.
+rafzk.
 ReginaldFawcett.
 rmedved84.
 src107.
 thorn91.
-MarcMouries.
 mgopw.
 23Thom.
 anillande90.
@@ -90,13 +91,12 @@ ChecksumFailed.
 dean-croaker.
 Irston.
 Lacah.
-litwi1rm.
 
 Other contributors:
-rafzk.
 revantKulkarni.
 pratyushasndev.
 vasantharaja-natarajan.
+MarcMouries.
 Sagar-agarwal.
 sauravsumankumar.
 aatrey882.
