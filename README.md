@@ -80,8 +80,8 @@ Top contributors (50%):
 odinsride.
 ReginaldFawcett.
 rmedved84.
+src107.
 thorn91.
-vasantharaja-natarajan.
 mgopw.
 23Thom.
 anillande90.
@@ -94,13 +94,14 @@ rafzk.
 
 Other contributors:
 revantKulkarni.
-src107.
 pratyushasndev.
+vasantharaja-natarajan.
 MarcMouries.
 Sagar-agarwal.
 sauravsumankumar.
 aatrey882.
 anguspalmer.
+MihirRathod.
 mskoddow.
 phr-nk.
 snamjosh.
@@ -113,7 +114,6 @@ dhruvii-powershell.
 j4rodm.
 jamesfoot.
 mevops.
-MihirRathod.
 mikeroosa.
 moshjahan.
 physi.
@@ -134,6 +134,7 @@ Bigshmow.
 billyperkinsukg.
 bird-03.
 cenzo85.
+ChristineMayfield.
 Coder0131.
 coderdude207.
 codexpert247.
