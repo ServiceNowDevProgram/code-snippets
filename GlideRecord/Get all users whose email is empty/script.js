@@ -1,6 +1,7 @@
 (function () {
     var users = [];
     var userGr = new GlideRecord('sys_user'); // used different variable name instead of gr.
+    userGr.addActiveQuery(); // used to filter more on the records fetched.
     userGr.addNullQuery('email');
     userGr.query();
     while (userGr.next()) {
