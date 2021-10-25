@@ -80,6 +80,7 @@ Top contributors (50%):
 odinsride.
 ReginaldFawcett.
 rmedved84.
+src107.
 thorn91.
 mgopw.
 23Thom.
@@ -90,10 +91,9 @@ Irston.
 Lacah.
 litwi1rm.
 rafzk.
-revantKulkarni.
 
 Other contributors:
-src107.
+revantKulkarni.
 pratyushasndev.
 vasantharaja-natarajan.
 MarcMouries.
