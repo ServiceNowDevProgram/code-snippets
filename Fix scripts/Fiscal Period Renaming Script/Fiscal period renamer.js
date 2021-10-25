@@ -49,17 +49,17 @@ function updateFiscalPeriods() {
             currName = fpGR.getValue('name');
 
 			
-			      // if we are trying to add a string that already exists in current fiscal period, abort, abort
+	    // if we are trying to add a string that already exists in current fiscal period, abort, abort
             if (currName.indexOf(orderedMonth[monthIncrementer]) >= 0 && orderedMonth.length > 0 || currName.indexOf(startAdditionalYear) >= 0 && startAdditionalYear > 0) {
-				        gs.info('ERROR - Current name already includes month short name OR additional start year');
-				        return;
+		gs.info('ERROR - Current name already includes month short name OR additional start year');
+		return;
             }
 
              // if a month then add the corresponding short month name to newMonth variable and the string being added doesn't already exist in the current name
              if (fpGR.getValue('fiscal_type') == 'month' && orderedMonth.length > 0) {
                 newMonth = " " + orderedMonth[monthIncrementer];
                 monthIncrementer++;
-			      }
+	    }
 
 
             // if adding year values to name then add the year value and additional year doesn't already exist in current value, if not just set the new name to the current name
