@@ -5,5 +5,6 @@ This GlideRecord script can be used in multiple places. For example in backgroun
 
 ### Did some optimization in the code
 1. Used different variable name instead of gr to reference a GlideRecord object.
-2. Used getDisplayValue() method to push string values in the array instead of using dot notation.
-3. Used self executing function to wrap the code in a function for reducing variable scoping issues.
+2. Used addActiveQuery() method to filter out just the active records.
+3. Used getDisplayValue() method to push string values in the array instead of using dot notation.
+4. Used self executing function to wrap the code in a function for reducing variable scoping issues.
