@@ -1,0 +1,18 @@
+<div>
+    <br /> Table Name: <sn-record-picker table="'sys_db_object'" display-field="'label'" value-field="'name'"
+        field="tableName" search-fields="'label'" default-query="''" required></sn-record-picker>
+    <br /> Record Number (eg: INC0000055): <input type='text' ng-model='record' ng-change='getID(record)' required />
+    <br /><br /> File: <input type="file" id="fileToUpload" multiple
+        onchange="angular.element(this).scope().setFiles(this)" />
+    <br />
+    <div ng-show="files.length">
+        <div ng-repeat="file in files.slice(0)">
+            <span>{{file.webkitRelativePath || file.name}}</span>
+            (<span ng-switch="file.size > 1024*1024">
+                <span ng-switch-when="true">{{file.size / 1024 / 1024 | number:2}} MB</span>
+                <span ng-switch-default>{{file.size / 1024 | number:2}} kB</span>
+            </span>)<span class="glyphicon glyphicon-remove-circle" id="removeicon" ng-click="removeFiles(file)"></span>
+        </div>
+        <input type="button" ng-click="uploadFiles()" value="Upload" />
+    </div>
+</div>

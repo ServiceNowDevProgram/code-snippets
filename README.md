@@ -11,8 +11,9 @@ Inside this repository, you will find community submitted code-snippets and thei
 To contribute, just follow these steps:
 
 1. Fork this repo (you get a point just by forking!)
-2. Add/Update the repo
-3. Submit a pull request!
+2. Create a new branch on your fork
+3. Add/Update the repo
+4. Submit a pull request!
 
 That's it! More detailed contribution instructions can be found [here](CONTRIBUTING.md)
 
@@ -41,83 +42,153 @@ To participate in moderation, join the sndevs slack at https://sndevs.com/ and j
 
 ## Leaderboard:
 
-Top 10% of contributors:
+Top 5% of contributors:
 earlduque.
-mak1A4.
+R3J3NT.
+sumanthdosapati.
+alikuttyka.
+ishaanshoor.
 kmohit2809.
 PranavBhagat18.
-ishaanshoor.
-mr-swann.
+
+Top 10% of contributors:
 paigesndev.
+niamccash.
+danr2c2.
+hrobarikt.
+RahmanM.
+azeezgaa.
+mak1A4.
 
 Top 25% of contributors:
-sn-ajb.
-iar42.
 smartcarleen.
-ReginaldFawcett.
-danr2c2.
+sn-ajb.
+devinvalencia.
+vandna07.
+mr-swann.
 ovarn.
-rmedved84.
-jacebenson.
-Lacah.
-azeezgaa.
+iar42.
+allenandreas.
+apple9000.
+ashu759.
 eriemer1.
-
-Top contributors:
-mgopw.
-snamjosh.
+jacebenson.
 jonahpiascik.
-Irston.
+oasif.
+
+Top contributors (50%):
+odinsride.
+ReginaldFawcett.
+rmedved84.
 src107.
-sumanthdosapati.
-Decoder-Paul.
-ashleysnyder.
-bradtiltonnow.
-mskoddow.
-RahmanM.
+thorn91.
+MarcMouries.
+mgopw.
+23Thom.
+anillande90.
+ChecksumFailed.
+dean-croaker.
+Irston.
+Lacah.
+litwi1rm.
 
 Other contributors:
+rafzk.
 revantKulkarni.
-niamccash.
-kcimpulse.
-23Thom.
+pratyushasndev.
+vasantharaja-natarajan.
+Sagar-agarwal.
+sauravsumankumar.
 aatrey882.
-alikuttyka.
-Anantharaman91.
-avssrikanth.
-Bigshmow.
-bird-03.
-cenzo85.
-Coder0131.
-Codjam.
-cwhits.
-eizzledizzle.
-hardikvyasji.
-hmadhsan.
-j2clow.
-Jennylou777.
-Karthick986.
-LarsAssen.
-LoicSanchez.
-LuisSepulveda21.
-m2santiago.
-MarcMouries.
+anguspalmer.
+MihirRathod.
+mskoddow.
+phr-nk.
+snamjosh.
+akhoshnood.
+ashleysnyder.
+bradtiltonnow.
+brichards99.
+Decoder-Paul.
+dhruvii-powershell.
+j4rodm.
+jamesfoot.
 mevops.
 mikeroosa.
+moshjahan.
+physi.
+pratyushmp.
+saikumar-e.
+samwinchet.
+stwinkle.
+tanu-profile.
+zaidongy.
+kcimpulse.
+Anantharaman91.
+Anks-26.
+AnnaGould.
+askarthik.
+avssrikanth.
+Bharat123rox.
+Bigshmow.
+billyperkinsukg.
+bird-03.
+cenzo85.
+ChristineMayfield.
+Coder0131.
+coderdude207.
+codexpert247.
+Codjam.
+cwhits.
+dalestubblefield.
+DangerousNights.
+davidkwhuang.
+DirkRedeker.
+eizzledizzle.
+ewhite1.
+fisikos.
+greenc123.
+HackoDev1530.
+hardikvyasji.
+HarneetSital.
+hmadhsan.
+ishwarighule.
+j2clow.
+jamiestroud.
+Jennylou777.
+kainturar.
+Karthick986.
+Keagnn.
+KokilaAbeysinghe.
+LarsAssen.
+LoicSanchez.
+loudigi.
+LuisSepulveda21.
+m2santiago.
+Mexiprince.
+miracc.
+MrChrisE.
+mugiwaramenon.
 NayeemKaka.
 Nerdcode.
 Pratyusha418.
-rafzk.
+retrokaj.
+RitheshGit.
 rohi-v.
 rverrips.
+SagarVijaykumar.
 salem769.
-samwinchet.
+sanchit-varshney.
 shaoservicenow.
 Soulpancake000.
 speedy18.
+SteveMunsell.
+stevezero.
+TamByrd.
 TRIGGEREDcoder.
+tsicot.
 Vivek-KP.
 vpeinado.
 vvijaya19.
 wcarroll.
-zaidongy.
+youthinkasido.
