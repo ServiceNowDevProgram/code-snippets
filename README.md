@@ -74,9 +74,10 @@ ashu759.
 eriemer1.
 jacebenson.
 jonahpiascik.
-oasif.
+litwi1rm.
 
 Top contributors (50%):
+oasif.
 odinsride.
 rafzk.
 ReginaldFawcett.
@@ -90,7 +91,6 @@ ChecksumFailed.
 dean-croaker.
 Irston.
 Lacah.
-litwi1rm.
 
 Other contributors:
 revantKulkarni.
