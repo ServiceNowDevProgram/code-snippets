@@ -6,3 +6,4 @@ You can easily change that regex to different domain, by changing 'servicenow' t
 
 **Example effect of execution**
 
+ ![Execution](ScreenShot_1.PNG)
