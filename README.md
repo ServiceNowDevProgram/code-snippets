@@ -47,12 +47,12 @@ earlduque.
 R3J3NT.
 alikuttyka.
 sumanthdosapati.
+hrobarikt.
 ishaanshoor.
 kmohit2809.
-PranavBhagat18.
 
 Top 10% of contributors:
-hrobarikt.
+PranavBhagat18.
 paigesndev.
 niamccash.
 danr2c2.
@@ -103,6 +103,7 @@ aatrey882.
 anguspalmer.
 DynamiteC.
 MihirRathod.
+MrChrisE.
 mskoddow.
 phr-nk.
 snamjosh.
@@ -119,7 +120,6 @@ mevops.
 mikeroosa.
 miracc.
 moshjahan.
-MrChrisE.
 physi.
 pratyushmp.
 saikumar-e.
