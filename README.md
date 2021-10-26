@@ -68,16 +68,16 @@ vandna07.
 mr-swann.
 ovarn.
 iar42.
+litwi1rm.
 allenandreas.
 apple9000.
 ashu759.
 dean-croaker.
 eriemer1.
 jacebenson.
-jonahpiascik.
 
 Top contributors (50%):
-litwi1rm.
+jonahpiascik.
 oasif.
 odinsride.
 rafzk.
