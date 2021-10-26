@@ -103,6 +103,7 @@ aatrey882.
 anguspalmer.
 DynamiteC.
 MihirRathod.
+MrChrisE.
 mskoddow.
 phr-nk.
 snamjosh.
@@ -119,7 +120,6 @@ mevops.
 mikeroosa.
 miracc.
 moshjahan.
-MrChrisE.
 physi.
 pratyushmp.
 saikumar-e.
