@@ -52,8 +52,8 @@ ishaanshoor.
 kmohit2809.
 
 Top 10% of contributors:
-PranavBhagat18.
 paigesndev.
+PranavBhagat18.
 niamccash.
 danr2c2.
 RahmanM.
@@ -68,16 +68,17 @@ vandna07.
 mr-swann.
 ovarn.
 iar42.
+litwi1rm.
 allenandreas.
 apple9000.
 ashu759.
 dean-croaker.
 eriemer1.
 jacebenson.
-jonahpiascik.
 
 Top contributors (50%):
-litwi1rm.
+jonahpiascik.
+MrChrisE.
 oasif.
 odinsride.
 rafzk.
@@ -91,9 +92,9 @@ mgopw.
 anillande90.
 ChecksumFailed.
 Irston.
-Lacah.
 
 Other contributors:
+Lacah.
 revantKulkarni.
 pratyushasndev.
 vasantharaja-natarajan.
