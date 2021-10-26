@@ -1,7 +1,7 @@
 
-# Calculator
-
- This Calculator script include provides shortcut functions that works in both Client and Server sides.
+#  Records Calculator
+Provides functions to easily calculate values across multiple records
+This class provides shortcut functions that works in both Client and Server sides.
 
 ## Note: 
 It is part of a case management application built with App Engine. Contact me for more information: 
@@ -12,7 +12,7 @@ When you copy this script into your scoped application, make sure to set the val
 
 ```javascript
 
-var last_login = new x_snc_ecms.Calculator().getMax('sys_user', 'last_login', 'user_name!=admin');
+var last_login = new x_your_cope.Calculator().getMax('sys_user', 'last_login', 'user_name!=admin');
 gs.info ( "Last time a user logged in: " + last_login) ;
 
 
