@@ -78,6 +78,7 @@ jacebenson.
 
 Top contributors (50%):
 jonahpiascik.
+MrChrisE.
 oasif.
 odinsride.
 rafzk.
@@ -91,10 +92,9 @@ mgopw.
 anillande90.
 ChecksumFailed.
 Irston.
-Lacah.
 
 Other contributors:
-MrChrisE.
+Lacah.
 revantKulkarni.
 pratyushasndev.
 vasantharaja-natarajan.
