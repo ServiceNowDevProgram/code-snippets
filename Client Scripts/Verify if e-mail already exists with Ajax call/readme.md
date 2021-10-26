@@ -6,8 +6,12 @@ Client script for verification if changed e-mail adders on user record is not al
 
 You need to prepare both Script Include (which is processing check on backed) and Client Script (which is sending Ajax call after change on email field and display message).
 
-Example Script Include configuration (code in scriptInclude.js):
+Example Script Include configuration (code in [scriptInclude.js](scriptInclude.js)):
+![Coniguration_SI](ScreenShot_2.PNG)
 
-Example Client Script configuration (code in clientScript.js):
+Example Client Script configuration (code in [clientScript.js](clientScript.js)):
+![Coniguration_CS](ScreenShot_1.PNG)
 
 **Example effect of execution**
+
+![Coniguration_SI](ScreenShot_3.PNG)
