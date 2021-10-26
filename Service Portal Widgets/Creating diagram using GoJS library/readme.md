@@ -30,7 +30,7 @@ In this snippet you will create a custom process using a custom page and populat
 }
 ```
 ***Client Side Scripts***
-- Copy and Paste below `Server-Side Script` in Widget's Client Side Section
+- Copy and Paste below `Script` in Widget's Client Side Section
 ```javascript
 // build GraphObject
   var $ = go.GraphObject.make;  // for conciseness in defining templates
