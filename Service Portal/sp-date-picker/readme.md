@@ -55,4 +55,4 @@ api.controller = function () {
 })();
 ```
 
-The other alternative opion would be to use datimepicker from the [UI Bootstrap library](https://angular-ui.github.io/bootstrap/#!#datepicker) which is already included within the service portal.
+The other alternative option would be to use datetimepicker from the [UI Bootstrap library](https://angular-ui.github.io/bootstrap/#!#datepicker) which is already included within the service portal and offers more options and flexibility.
