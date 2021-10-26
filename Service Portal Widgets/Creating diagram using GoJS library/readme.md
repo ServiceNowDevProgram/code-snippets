@@ -17,7 +17,6 @@ In this snippet you will create a custom process using a custom page and populat
 ***CSS/SCSS***
 - Copy and paste below `CSS` in Widget's CSS/SCSS Section
 ```CSS
-// need to improve this section
 #infobox {
   width: 256px;
   background: #757575;
@@ -31,7 +30,7 @@ In this snippet you will create a custom process using a custom page and populat
 }
 ```
 ***Client Side Scripts***
-- Copy and Paste below `Server-Side Script` in Widget's Server Side Section
+- Copy and Paste below `Server-Side Script` in Widget's Client Side Section
 ```javascript
 // build GraphObject
   var $ = go.GraphObject.make;  // for conciseness in defining templates
