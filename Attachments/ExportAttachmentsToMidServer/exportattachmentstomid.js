@@ -1,11 +1,13 @@
 /**********************************************************************************************/
 Input
 recordId - The sys_id of record whose attachments need to be exported
-filePath - The relative file path where attachments be exported. All attachments will be exported into agent/export/ folder of your mid server
+filePath - The relative file path where attachments be exported. All attachments will be exported into agent\export\ folder of your mid server
 midServerName - Name of your mid server
 
 Output
-All attachments in the input record are exported into the relative file path specified. Eg if filePath provides is /incident/INC000234442/ , the attachments inside INC000234442 will be copied over mid server path at /agent/export/incident/INC000234442/
+All attachments in the input record are exported into the relative file path specified. Eg if filePath provides is \incident\INC000234442\ , the attachments inside INC000234442 will be copied over mid server path at \agent\export\incident\INC000234442\
+
+Note: This can also create new folders automatically
 
 /**********************************************************************************************/
 
