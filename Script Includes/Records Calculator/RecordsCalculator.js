@@ -1,8 +1,11 @@
 /* 
- * Calculator function that Works in both Client and Server scripts
+ * RecordsCalculator 
+ * 
+ * Provides functions to easily calculate values across multiple records
+ * The functions work in both Client and Server scripts.
  */
-var Calculator = Class.create();
-Calculator.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+var RecordsCalculator = Class.create();
+RecordsCalculator.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
 
 
     _getAggregateByType: function (in_tableName, pColumn, pEncodedQuery, pAggregateType) {
@@ -55,5 +58,5 @@ Calculator.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         return this._getAggregateByType(param.tableName, param.fieldName, param.encodedQuery, 'SUM');
     },
 
-    type: 'Calculator'
+    type: 'RecordsCalculator'
 });
