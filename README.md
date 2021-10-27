@@ -61,11 +61,11 @@ RahmanM.
 azeezgaa.
 
 Top 25% of contributors:
+DynamiteC.
 mak1A4.
 vandna07.
 sn-ajb.
 devinvalencia.
-DynamiteC.
 litwi1rm.
 mr-swann.
 ovarn.
