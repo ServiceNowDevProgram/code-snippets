@@ -95,6 +95,7 @@ Irston.
 Lacah.
 
 Other contributors:
+MrChrisE.
 revantKulkarni.
 pratyushasndev.
 vasantharaja-natarajan.
@@ -103,7 +104,6 @@ sauravsumankumar.
 aatrey882.
 anguspalmer.
 MihirRathod.
-MrChrisE.
 mskoddow.
 phr-nk.
 snamjosh.
