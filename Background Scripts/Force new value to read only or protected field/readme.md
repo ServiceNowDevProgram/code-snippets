@@ -12,3 +12,15 @@ You need to fill all four variables which are placed on the begging of the scrip
 - value - new value which should be set on record
 
 **Example execution**
+
+Values choosed in this example: 
+
+![Coniguration](ScreenShot_1.PNG)
+
+Execution log:
+
+![Coniguration](ScreenShot_2.PNG)
+
+Execution effect on incident record
+
+![Coniguration](ScreenShot_3.PNG)
