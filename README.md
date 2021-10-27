@@ -69,19 +69,19 @@ mr-swann.
 ovarn.
 iar42.
 litwi1rm.
+rafzk.
 allenandreas.
 apple9000.
 ashu759.
 dean-croaker.
 eriemer1.
 jacebenson.
-jonahpiascik.
 
 Top contributors (50%):
+jonahpiascik.
 MrChrisE.
 oasif.
 odinsride.
-rafzk.
 ReginaldFawcett.
 rmedved84.
 src107.
