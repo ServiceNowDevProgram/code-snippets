@@ -4,5 +4,8 @@ Client script which is showing how to use g_form.mandatoryCheck() function, whic
 
 **Example configuration**
 
+![Coniguration](ScreenShot_1.PNG)
+
 **Example execution**
 
+![Execution](ScreenShot_2.PNG)
