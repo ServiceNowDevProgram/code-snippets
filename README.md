@@ -45,62 +45,65 @@ To participate in moderation, join the sndevs slack at https://sndevs.com/ and j
 Top 5% of contributors:
 earlduque.
 R3J3NT.
+alikuttyka.
 sumanthdosapati.
+hrobarikt.
 ishaanshoor.
 kmohit2809.
-PranavBhagat18.
 
 Top 10% of contributors:
-alikuttyka.
 paigesndev.
+PranavBhagat18.
 niamccash.
+smartcarleen.
 danr2c2.
 RahmanM.
 azeezgaa.
-hrobarikt.
 
 Top 25% of contributors:
 mak1A4.
-smartcarleen.
+vandna07.
 sn-ajb.
 devinvalencia.
+litwi1rm.
 mr-swann.
 ovarn.
 iar42.
-vandna07.
+rafzk.
 allenandreas.
 apple9000.
 ashu759.
+dean-croaker.
 eriemer1.
 jacebenson.
-jonahpiascik.
-oasif.
 
 Top contributors (50%):
+jonahpiascik.
+MrChrisE.
+oasif.
 odinsride.
 ReginaldFawcett.
 rmedved84.
+src107.
 thorn91.
-vasantharaja-natarajan.
+MarcMouries.
 mgopw.
 23Thom.
 anillande90.
 ChecksumFailed.
-dean-croaker.
 Irston.
 Lacah.
-litwi1rm.
-rafzk.
-revantKulkarni.
-src107.
 
 Other contributors:
+revantKulkarni.
 pratyushasndev.
-MarcMouries.
+vasantharaja-natarajan.
 Sagar-agarwal.
 sauravsumankumar.
 aatrey882.
 anguspalmer.
+DynamiteC.
+MihirRathod.
 mskoddow.
 phr-nk.
 snamjosh.
@@ -110,11 +113,12 @@ bradtiltonnow.
 brichards99.
 Decoder-Paul.
 dhruvii-powershell.
+iamvpbhaskar.
 j4rodm.
 jamesfoot.
 mevops.
-MihirRathod.
 mikeroosa.
+miracc.
 moshjahan.
 physi.
 pratyushmp.
@@ -134,6 +138,7 @@ Bigshmow.
 billyperkinsukg.
 bird-03.
 cenzo85.
+ChristineMayfield.
 Coder0131.
 coderdude207.
 codexpert247.
@@ -165,10 +170,10 @@ loudigi.
 LuisSepulveda21.
 m2santiago.
 Mexiprince.
-miracc.
 mugiwaramenon.
 NayeemKaka.
 Nerdcode.
+Prasannalakshmik.
 Pratyusha418.
 retrokaj.
 RitheshGit.
