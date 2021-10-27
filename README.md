@@ -91,10 +91,11 @@ mgopw.
 23Thom.
 anillande90.
 ChecksumFailed.
+DynamiteC.
 Irston.
-Lacah.
 
 Other contributors:
+Lacah.
 revantKulkarni.
 pratyushasndev.
 vasantharaja-natarajan.
@@ -102,7 +103,6 @@ Sagar-agarwal.
 sauravsumankumar.
 aatrey882.
 anguspalmer.
-DynamiteC.
 MihirRathod.
 mskoddow.
 phr-nk.
