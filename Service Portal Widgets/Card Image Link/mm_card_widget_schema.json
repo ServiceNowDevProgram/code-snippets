@@ -1,0 +1,25 @@
+[
+    {
+        "displayValue": "Images",
+        "name": "image",
+        "section": "Presentation",
+        "label": "Image",
+        "type": "reference",
+        "value": "db_image",
+        "ed": {
+            "reference": "db_image"
+        }
+    },
+    {
+        "name": "title",
+        "section": "Presentation",
+        "label": "Title",
+        "type": "string"
+    },
+    {
+        "name": "link",
+        "section": "Presentation",
+        "label": "Link",
+        "type": "string"
+    }
+]
