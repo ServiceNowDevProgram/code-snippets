@@ -9,5 +9,5 @@ The URL can be formatted to include the paramters by including the following lin
 
 So an example might look like this:
 
-https://dev79911.service-now.com/sp?id=sc_cat_item&sys_id=060f3afa3731300054b6a3549dbe5d3e&referrer=popular_items&sysparm_userid=6816f79cc0a8016401c5a33be04be441
+https://INSTANCENAME.service-now.com/sp?id=sc_cat_item&sys_id=060f3afa3731300054b6a3549dbe5d3e&referrer=popular_items&sysparm_userid=6816f79cc0a8016401c5a33be04be441
 
