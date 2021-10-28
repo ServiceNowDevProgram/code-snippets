@@ -89,12 +89,13 @@ thorn91.
 MarcMouries.
 mgopw.
 23Thom.
+anguspalmer.
 anillande90.
 ChecksumFailed.
 Irston.
-Lacah.
 
 Other contributors:
+Lacah.
 MrChrisE.
 revantKulkarni.
 pratyushasndev.
@@ -102,7 +103,6 @@ vasantharaja-natarajan.
 Sagar-agarwal.
 sauravsumankumar.
 aatrey882.
-anguspalmer.
 MihirRathod.
 mskoddow.
 phr-nk.
