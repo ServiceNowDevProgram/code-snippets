@@ -1,0 +1,10 @@
+{
+  "source": "Nagios",
+  "node": "192.168.221.130",
+  "message_key": "192.168.221.130_SSL Cert - example.com.au",
+  "severity": "2",
+  "description": "SSL CRITICAL - Certificate &apos;example.com.au&apos; expires in 15 day(s) (2021-11-13 23:00 +1100/AEDT).",
+  "type": "SSL Cert - example.com.au",
+  "event_class": "Nagios",
+  "additional_info": ""
+}
