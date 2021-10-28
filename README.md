@@ -111,6 +111,7 @@ akhoshnood.
 ashleysnyder.
 bradtiltonnow.
 brichards99.
+deathkraiser.
 Decoder-Paul.
 dhruvii-powershell.
 iamvpbhaskar.
@@ -147,7 +148,6 @@ cwhits.
 dalestubblefield.
 DangerousNights.
 davidkwhuang.
-deathkraiser.
 DirkRedeker.
 eizzledizzle.
 ewhite1.
