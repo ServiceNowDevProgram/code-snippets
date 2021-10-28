@@ -94,16 +94,16 @@ anillande90.
 ChecksumFailed.
 Irston.
 Lacah.
-revantKulkarni.
+MrChrisE.
 
 Other contributors:
+revantKulkarni.
 pratyushasndev.
 vasantharaja-natarajan.
 Sagar-agarwal.
 sauravsumankumar.
 aatrey882.
 MihirRathod.
-MrChrisE.
 mskoddow.
 phr-nk.
 snamjosh.
