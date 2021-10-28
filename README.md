@@ -93,9 +93,9 @@ anguspalmer.
 anillande90.
 ChecksumFailed.
 Irston.
+Lacah.
 
 Other contributors:
-Lacah.
 MrChrisE.
 revantKulkarni.
 pratyushasndev.
@@ -147,6 +147,7 @@ cwhits.
 dalestubblefield.
 DangerousNights.
 davidkwhuang.
+deathkraiser.
 DirkRedeker.
 eizzledizzle.
 ewhite1.
