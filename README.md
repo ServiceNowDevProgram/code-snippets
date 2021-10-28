@@ -127,6 +127,7 @@ saikumar-e.
 samwinchet.
 stwinkle.
 tanu-profile.
+tomlozano.
 zaidongy.
 kcimpulse.
 Anantharaman91.
@@ -190,7 +191,6 @@ speedy18.
 SteveMunsell.
 stevezero.
 TamByrd.
-tomlozano.
 TRIGGEREDcoder.
 tsicot.
 Vivek-KP.
