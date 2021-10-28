@@ -14,5 +14,8 @@ You need to call getStats() function with three parameters:
 
 Values choosed in this example:
 
+ ![Coniguration](ScreenShot_0.PNG)
+ 
 Execution log:
 
+ ![Execution](ScreenShot_1.PNG)
