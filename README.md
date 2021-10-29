@@ -59,9 +59,9 @@ smartcarleen.
 niamccash.
 danr2c2.
 azeezgaa.
+DynamiteC.
 
 Top 25% of contributors:
-DynamiteC.
 litwi1rm.
 mak1A4.
 vandna07.
@@ -136,6 +136,7 @@ Anks-26.
 AnnaGould.
 askarthik.
 avssrikanth.
+bgrk.
 Bharat123rox.
 Bigshmow.
 billyperkinsukg.
