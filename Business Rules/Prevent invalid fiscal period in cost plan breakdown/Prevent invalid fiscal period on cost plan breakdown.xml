@@ -42,7 +42,7 @@
 <sys_domain_path>/</sys_domain_path>
 <sys_id>c5937fe4db6f3410b8f92ebbd396192a</sys_id>
 <sys_mod_count>1</sys_mod_count>
-<sys_name>(CHRIS) Prevent invalid fiscal period</sys_name>
+<sys_name>Prevent invalid fiscal period</sys_name>
 <sys_overrides display_value=""/>
 <sys_package display_value="Global" source="global">global</sys_package>
 <sys_policy/>
