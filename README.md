@@ -117,6 +117,7 @@ dhruvii-powershell.
 iamvpbhaskar.
 j4rodm.
 jamesfoot.
+LucasRocha2308.
 mevops.
 mikeroosa.
 miracc.
@@ -170,7 +171,6 @@ KokilaAbeysinghe.
 LarsAssen.
 LoicSanchez.
 loudigi.
-LucasRocha2308.
 LuisSepulveda21.
 m2santiago.
 macias-daniel.
