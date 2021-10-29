@@ -98,6 +98,7 @@ Lacah.
 revantKulkarni.
 
 Other contributors:
+trade12.
 pratyushasndev.
 vasantharaja-natarajan.
 Sagar-agarwal.
@@ -108,7 +109,6 @@ MihirRathod.
 mskoddow.
 phr-nk.
 tanu-profile.
-trade12.
 snamjosh.
 akhoshnood.
 ashleysnyder.
