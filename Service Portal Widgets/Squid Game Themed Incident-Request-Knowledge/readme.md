@@ -1,1 +1,1 @@
-![alt text](Service Portal Widgets/Squid Game Themed Incident-Request-Knowledge/Squid Game Themed Incident-Request-Knowledge Widget Preview.png)
+![alt text](https://github.com/avssrikanth/code-snippets/blob/0b965e0d6679d86f663b4b5ffd123c9869d840ee/Service%20Portal%20Widgets/Squid%20Game%20Themed%20Incident-Request-Knowledge/Squid%20Game%20Themed%20Incident-Request-Knowledge%20Widget%20Preview.png)
