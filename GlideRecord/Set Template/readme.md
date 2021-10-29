@@ -1,1 +1,1 @@
-This function is useful in applying template on tables when creating new record/s using scripts.
+This function is useful in applying template on tables when creating new record using scripts.
