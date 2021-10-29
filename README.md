@@ -103,6 +103,7 @@ vasantharaja-natarajan.
 Sagar-agarwal.
 sauravsumankumar.
 aatrey882.
+LucasRocha2308.
 MihirRathod.
 mskoddow.
 phr-nk.
@@ -117,7 +118,6 @@ dhruvii-powershell.
 iamvpbhaskar.
 j4rodm.
 jamesfoot.
-LucasRocha2308.
 mevops.
 mikeroosa.
 miracc.
