@@ -106,5 +106,10 @@ $.get('example.svg', function(svg) {
 		}
 ```
 
+## *step4*
+add echarts.js to your widget dependencies.
+
+# Now you can use it.
+
 
 
