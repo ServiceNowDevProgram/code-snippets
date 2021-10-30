@@ -46,26 +46,27 @@ Top 5% of contributors:
 earlduque.
 R3J3NT.
 alikuttyka.
+ishaanshoor.
 sumanthdosapati.
 hrobarikt.
-ishaanshoor.
 kmohit2809.
 
 Top 10% of contributors:
 paigesndev.
 PranavBhagat18.
-niamccash.
-smartcarleen.
-danr2c2.
 RahmanM.
+smartcarleen.
+niamccash.
+litwi1rm.
+danr2c2.
 azeezgaa.
 
 Top 25% of contributors:
+DynamiteC.
 mak1A4.
 vandna07.
 sn-ajb.
 devinvalencia.
-litwi1rm.
 mr-swann.
 ovarn.
 iar42.
@@ -76,9 +77,9 @@ ashu759.
 dean-croaker.
 eriemer1.
 jacebenson.
+jonahpiascik.
 
 Top contributors (50%):
-jonahpiascik.
 MrChrisE.
 oasif.
 odinsride.
@@ -86,9 +87,11 @@ ReginaldFawcett.
 rmedved84.
 src107.
 thorn91.
+vasantharaja-natarajan.
 MarcMouries.
 mgopw.
 23Thom.
+anguspalmer.
 anillande90.
 ChecksumFailed.
 Irston.
@@ -96,43 +99,47 @@ Lacah.
 
 Other contributors:
 revantKulkarni.
+trade12.
 pratyushasndev.
-vasantharaja-natarajan.
 Sagar-agarwal.
 sauravsumankumar.
 aatrey882.
-anguspalmer.
-DynamiteC.
+LucasRocha2308.
 MihirRathod.
 mskoddow.
 phr-nk.
+tanu-profile.
 snamjosh.
 akhoshnood.
 ashleysnyder.
+avssrikanth.
 bradtiltonnow.
 brichards99.
+deathkraiser.
 Decoder-Paul.
 dhruvii-powershell.
 iamvpbhaskar.
 j4rodm.
 jamesfoot.
+JingAlanzhixin.
 mevops.
 mikeroosa.
 miracc.
+mlemartien.
 moshjahan.
 physi.
 pratyushmp.
 saikumar-e.
 samwinchet.
 stwinkle.
-tanu-profile.
+tomlozano.
 zaidongy.
 kcimpulse.
 Anantharaman91.
 Anks-26.
 AnnaGould.
 askarthik.
-avssrikanth.
+bgrk.
 Bharat123rox.
 Bigshmow.
 billyperkinsukg.
@@ -162,6 +169,7 @@ jamiestroud.
 Jennylou777.
 kainturar.
 Karthick986.
+KayakDK.
 Keagnn.
 KokilaAbeysinghe.
 LarsAssen.
@@ -169,6 +177,7 @@ LoicSanchez.
 loudigi.
 LuisSepulveda21.
 m2santiago.
+macias-daniel.
 Mexiprince.
 mugiwaramenon.
 NayeemKaka.
