@@ -96,9 +96,9 @@ anillande90.
 ChecksumFailed.
 Irston.
 Lacah.
+revantKulkarni.
 
 Other contributors:
-revantKulkarni.
 trade12.
 pratyushasndev.
 Sagar-agarwal.
@@ -184,6 +184,7 @@ NayeemKaka.
 Nerdcode.
 Prasannalakshmik.
 Pratyusha418.
+preshitd.
 retrokaj.
 RitheshGit.
 rohi-v.
