@@ -96,9 +96,10 @@ anillande90.
 ChecksumFailed.
 Irston.
 Lacah.
-revantKulkarni.
+mlemartien.
 
 Other contributors:
+revantKulkarni.
 trade12.
 pratyushasndev.
 Sagar-agarwal.
@@ -106,7 +107,6 @@ sauravsumankumar.
 aatrey882.
 LucasRocha2308.
 MihirRathod.
-mlemartien.
 mskoddow.
 phr-nk.
 tanu-profile.
