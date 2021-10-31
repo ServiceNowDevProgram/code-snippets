@@ -62,11 +62,11 @@ danr2c2.
 azeezgaa.
 
 Top 25% of contributors:
-DynamiteC.
 mak1A4.
 vandna07.
 sn-ajb.
 devinvalencia.
+DynamiteC.
 mr-swann.
 ovarn.
 iar42.
