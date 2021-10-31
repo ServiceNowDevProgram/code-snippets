@@ -1,3 +1,5 @@
+// NOTE : Disable this BR after your investigation as it generate large number of log statements
+
 //Create Business Rule on table with specific condition on which you need to print stackTrace.
 
 (function executeRule(current, previous /*null when async*/) {
