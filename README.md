@@ -119,7 +119,6 @@ Decoder-Paul.
 dhruvii-powershell.
 jamesfoot.
 JingAlanzhixin.
-LucasRocha2308.
 mevops.
 MihirRathod.
 mikeroosa.
@@ -174,6 +173,7 @@ KokilaAbeysinghe.
 LarsAssen.
 LoicSanchez.
 loudigi.
+LucasRocha2308.
 LuisSepulveda21.
 m2santiago.
 macias-daniel.
