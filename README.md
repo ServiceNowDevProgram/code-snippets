@@ -46,9 +46,9 @@ Top 5% of contributors:
 earlduque.
 R3J3NT.
 alikuttyka.
+hrobarikt.
 ishaanshoor.
 sumanthdosapati.
-hrobarikt.
 kmohit2809.
 
 Top 10% of contributors:
@@ -81,6 +81,7 @@ jacebenson.
 
 Top contributors (50%):
 jonahpiascik.
+mlemartien.
 MrChrisE.
 oasif.
 odinsride.
@@ -96,7 +97,6 @@ anillande90.
 ChecksumFailed.
 Irston.
 Lacah.
-mlemartien.
 
 Other contributors:
 revantKulkarni.
