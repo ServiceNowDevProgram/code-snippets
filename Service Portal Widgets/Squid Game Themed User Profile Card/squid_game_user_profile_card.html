@@ -1,0 +1,115 @@
+ <!--  This widget is configured using the theme of Netflix's most watched and very popular show Squid Game  -->
+<!-- Squid game themed user profile created by cloning oob user profile widget and making required changes to the css -->
+
+<div class="card1">
+<div class="card">
+    <div class="front">
+        <div class="circle"></div>
+        <div class="triangle"></div>
+        <div class="square"></div>
+    </div>
+    <div class="back">
+      <div ng-if="data.userExists">
+    <div class="panel panel-default" style="
+    background-color: transparent;
+    border-color: transparent;
+">
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-xs-4 col-sm-4 text-center" style="
+    padding-left: 5px;
+    padding-right: 5px;
+">
+            <div class="row">
+              <div class="avatar-extra-large avatar-container" style="cursor:default;">
+                <div class="avatar soloAvatar bottom">
+                  <div class="sub-avatar mia" ng-style="avatarPicture"><i class="fa fa-user"></i></div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <button ng-if="::connectEnabled()" ng-click="openConnectConversation()" type="button"
+                      class="btn btn-primary send-message" style="
+    margin-left: 35px;
+    margin-right: 35px;
+    margin-top: 10px;
+    background-color: transparent;
+    color: black;
+    padding-left: 8px;
+    padding-right: 8px;
+    font-weight: bold;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    border-color: black;
+    border-width: initial;
+" ><span class="glyphicon glyphicon-comment pad-right"  ></span>${Message}</button>
+              <!-- file upload -->
+              <span ng-if="::data.isLoggedInUsersProfile">
+                <input ng-show="false" type="file" accept="image/jpeg,image/png,image/bmp,image/x-windows-bmp,image/gif,image/x-icon,image/svg+xml" ng-file-select="attachFiles({files: $files})" />
+                <button ng-click="uploadNewProfilePicture($event)"
+                        ng-keypress="uploadNewProfilePicture($event)" type="button"
+                        class="btn btn-default send-message" style="
+    margin-left: 35px;
+    margin-right: 35px;
+    margin-top: 10px;
+    background-color: transparent;
+    color: black;
+    padding-left: 8px;
+    padding-right: 8px;
+    font-weight: bold;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    border-color: black;
+    border-width: initial;
+">${Upload Picture}</button>
+              </span>
+              <a href="/sp?id=user_profile" ><button  type="button"
+                        class="btn btn-default send-message" style="
+    margin-left: 35px;
+    margin-right: 35px;
+    margin-top: 10px;
+    background-color: transparent;
+    color: black;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-weight: bold;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    border-color: black;
+    border-width: initial;
+">${View Full Profile}</button></a>
+              
+            </div>
+          </div>
+          <div class="col-xs-8 col-sm-8" style="
+    margin-left: 0px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+" >
+            <h2 class="user-name" style="
+    color: black;
+    font-weight: bold;
+    padding-bottom: 10px;
+    padding-top: 10px;
+" >{{data.name}}</h2>
+            <p ng-if="::displayField('sys_user', 'company', true)" style="color: black;" ><strong class="pad-right">${Company}</strong><sp-editable-field editable-by-user="data.isLoggedInUsersProfile" table="sys_user" table-id="data.sysUserID" field-model="data.sysUserModel.company" style="color: white;"></sp-editable-field></p>
+            <p ng-if="::displayField('sys_user', 'title', true)" style="color: black;"><strong class="pad-right">${Title}</strong><sp-editable-field editable-by-user="data.isLoggedInUsersProfile" table="sys_user" table-id="data.sysUserID" field-model="data.sysUserModel.title" style="color: white;" ></sp-editable-field></p>
+            <p ng-if="::displayField('sys_user', 'department', true)" style="color: black;" ><strong class="pad-right">${Department}</strong><sp-editable-field editable-by-user="data.isLoggedInUsersProfile" table="sys_user" table-id="data.sysUserID" field-model="data.sysUserModel.department" style="color: white;" ></sp-editable-field></p>
+            <p ng-if="::displayField('sys_user', 'location', true)" style="color: black;" ><strong class="pad-right">${Location}</strong><sp-editable-field editable-by-user="data.isLoggedInUsersProfile" table="sys_user" table-id="data.sysUserID" field-model="data.sysUserModel.location" style="color: white;" ></sp-editable-field></p>
+            <p ng-if="::(data.liveProfileID && displayField('live_profile', 'short_description', true))" style="color: black;" ><strong class="pad-right">${Bio}</strong><sp-editable-field editable-by-user="data.isLoggedInUsersProfile" table="live_profile" table-id="data.liveProfileID" field-model="data.liveProfileModel.short_description" style="color: white;" ></sp-editable-field></p>
+          </div>
+        </div>
+      </div>
+    </div>
+ 
+    
+    </div>
+</div>
+  
+  </div>
+  
+  
+  
+  
