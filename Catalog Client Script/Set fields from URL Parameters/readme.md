@@ -1,6 +1,6 @@
 # Set fields on a catalog item from URL parameters.
 
-This only works on the service portal, be sure to set the script UI Type to either "All" or "Mobile / Service Portal". *(I did see someone contributed a client script that works for both platform and SP, so maybe this can be updated to leverage that)* 
+This only works on both the classic ui and service portal.
 
 To use this you must provide the technical name as a url parameter and then provide the value you would like set. This script is also console logging the techcnical names if you don't have them handy. Reference fields require using the sys_id.
 
