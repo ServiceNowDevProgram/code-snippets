@@ -1,23 +1,26 @@
 function onLoad() {
 
-	var fields = g_form.getEditableFields();
-	console.log(fields);
-	for (var x = 0; x < fields.length; x++) {
-		//console.log(getParameterValue(fields[x]));
-		if(getParameterValue(fields[x]) != ''){
-			g_form.setValue(fields[x], getParameterValue(fields[x]));
-		}
+	try{ // Classic UI
+		var pFields = g_form.nameMap;
+		console.log(pFields);
+		pFields.forEach(function(field){
+			if(getParam(field.prettyName)){
+				g_form.setValue(field.prettyName, getParam(field.prettyName));
+			}
+		});
+
+	}catch(e){ // Service Portal or Mobile
+		var fields = g_form.getEditableFields();
+		console.log(fields);
+		fields.forEach(function(field){
+			if(getParam(field)){
+				g_form.setValue(field, getParam(field));
+			}
+		});
 	}
 }
 
-function getParameterValue(name) {  
-	name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");  
-	var regexS = "[\\?&]" + name + "=([^&#]*)";  
-	var regex = new RegExp(regexS);  
-	var results = regex.exec(top.location);  
-	if (results == null) {  
-		return "";  
-	} else {  
-		return unescape(results[1]);  
-	}  
+function getParam(name){
+	var url = new URL(top.location);
+	return url.searchParams.get(name);
 }
