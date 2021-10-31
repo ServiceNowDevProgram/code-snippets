@@ -74,12 +74,13 @@ MarcMouries.
 allenandreas.
 apple9000.
 ashu759.
+avssrikanth.
 dean-croaker.
 DynamiteC.
 eriemer1.
-jacebenson.
 
 Top contributors (50%):
+jacebenson.
 jonahpiascik.
 mlemartien.
 MrChrisE.
@@ -94,7 +95,6 @@ Sagar-agarwal.
 mgopw.
 23Thom.
 anillande90.
-avssrikanth.
 ChecksumFailed.
 Irston.
 
