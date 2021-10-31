@@ -105,7 +105,6 @@ Sagar-agarwal.
 sauravsumankumar.
 aatrey882.
 anguspalmer.
-LucasRocha2308.
 mskoddow.
 phr-nk.
 tanu-profile.
@@ -120,6 +119,7 @@ Decoder-Paul.
 dhruvii-powershell.
 jamesfoot.
 JingAlanzhixin.
+LucasRocha2308.
 mevops.
 MihirRathod.
 mikeroosa.
