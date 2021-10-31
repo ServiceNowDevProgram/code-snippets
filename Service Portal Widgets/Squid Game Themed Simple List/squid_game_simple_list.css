@@ -1,0 +1,80 @@
+.b{
+  border: 0.5rem solid #F44788;
+}
+
+.panel {
+position: relative;
+}
+
+.list-group-item {
+  background-color: black;
+  border: 4rem solid #F44788;
+}
+
+.text-muted {
+  color:white;
+}
+.panel-heading i {
+  cursor: pointer;
+  position: absolute;
+  padding: 10px;
+  top: 0px;
+  right: 0px;
+  cursor: pointer;
+}
+
+.disabled-filter {
+	color: #A0A0A0;
+}
+
+.list-group-item.ng-enter {
+  transition: all 1s;
+  -webkit-transition: all 1s;
+
+  background-color: #c0dcfa;
+}
+
+.list-group-item.ng-enter-active {
+  background-color: #ffffff;
+}
+
+.hide-x-overflow {
+  overflow-x: hidden;
+}
+
+.translated-html > p {
+  margin: 0px;
+  padding: 0px;
+}
+
+IMG {
+  max-width: 320px;
+  max-height: 240px;
+}
+
+IMG.img-sm {
+  max-height: 40px;
+  max-width: 40px;
+}
+
+.filter-box {
+  margin-top: 10px;
+}
+
+.panel-footer {
+  background-color: black;
+  .number-shown-label {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 16px;
+    display: inline-block;
+  }
+
+  a {
+    color: inherit;
+  }
+}
+
+.list-group-item > a {
+	display: inline-block;
+}
