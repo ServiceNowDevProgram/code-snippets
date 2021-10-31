@@ -91,20 +91,20 @@ thorn91.
 vasantharaja-natarajan.
 mgopw.
 23Thom.
-anguspalmer.
 anillande90.
 ChecksumFailed.
 Irston.
 Lacah.
 mlemartien.
+revantKulkarni.
 
 Other contributors:
-revantKulkarni.
 trade12.
 pratyushasndev.
 Sagar-agarwal.
 sauravsumankumar.
 aatrey882.
+anguspalmer.
 LucasRocha2308.
 MihirRathod.
 mskoddow.
