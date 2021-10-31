@@ -120,7 +120,6 @@ deathkraiser.
 Decoder-Paul.
 dhruvii-powershell.
 iamvpbhaskar.
-j4rodm.
 jamesfoot.
 JingAlanzhixin.
 mevops.
@@ -164,6 +163,7 @@ HarneetSital.
 hmadhsan.
 ishwarighule.
 j2clow.
+j4rodm.
 jamiestroud.
 Jennylou777.
 kainturar.
