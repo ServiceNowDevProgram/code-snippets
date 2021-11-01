@@ -8,6 +8,12 @@ The script include filters for groups with the OOTB **type** of "itil" assigned 
 
 ## Use
 
+1. Create a script include called **BackfillAssignmentGroup**.
+2. Set **Accessible from** to **This application scope only**.
+3. Add description **Links assignment group field to assigned to field so that only the groups of which the assigned to is a member will be displayed for selection.** or write your own.
+4. Paste the entire contents of the script file into the **Script** field.
+5. Save.
+
 Configure the dictionary entry of the assignment_group field on Task table.
 
 1. Type **task.list** into the navigator and press **Enter**.
