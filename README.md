@@ -70,6 +70,7 @@ mr-swann.
 ovarn.
 iar42.
 rafzk.
+stevezero.
 MarcMouries.
 allenandreas.
 apple9000.
@@ -77,9 +78,9 @@ ashu759.
 avssrikanth.
 dean-croaker.
 DynamiteC.
-eriemer1.
 
 Top contributors (50%):
+eriemer1.
 jacebenson.
 jonahpiascik.
 mlemartien.
@@ -89,7 +90,6 @@ odinsride.
 ReginaldFawcett.
 rmedved84.
 src107.
-stevezero.
 thorn91.
 vasantharaja-natarajan.
 Sagar-agarwal.
