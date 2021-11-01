@@ -20,7 +20,7 @@ function getStats(field, aggFunction, orderByField) {
 
     //Display statistics for all groups
     while (agEvent.next()) {
-        var eventNumber = agEvent.getAggregate(aggFunction, orderByField);
+        var eventNumber = agEvent.getAggregate(aggFunction, field);
         var label = agEvent.getValue(orderByField);
         if (field == orderByField) {
             gs.info('[Events stats] ------ Event in ' + orderByField + ': ' + label + ': ' + eventNumber);
