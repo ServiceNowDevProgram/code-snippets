@@ -89,6 +89,7 @@ odinsride.
 ReginaldFawcett.
 rmedved84.
 src107.
+stevezero.
 thorn91.
 vasantharaja-natarajan.
 Sagar-agarwal.
@@ -96,12 +97,11 @@ mgopw.
 23Thom.
 anillande90.
 ChecksumFailed.
-Irston.
 
 Other contributors:
+Irston.
 Lacah.
 revantKulkarni.
-stevezero.
 trade12.
 pratyushasndev.
 sauravsumankumar.
