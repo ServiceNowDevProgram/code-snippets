@@ -7,10 +7,20 @@
 */
 
 function clearFields(dontClearFieldsArray){
-    var fields = g_form.getEditableFields();
-    for (var x = 0; x < fields.length; x++) {
-        if(dontClearFieldsArray.indexOf(fields[x]) == -1){
-            g_form.clearValue(fields[x]);
-        }
-    }
+
+	try{ // Classic UI
+		var pFields = g_form.nameMap;
+		pFields.forEach(function(field){
+			if(dontClearFieldsArray.indexOf(field.prettyName) == -1){
+				g_form.clearValue(field.prettyName);
+			}
+		});
+	}catch(e){ // Service Portal or Mobile
+		var fields = g_form.getEditableFields();
+		fields.forEach(function(field){
+			if(dontClearFieldsArray.indexOf(fields) == -1){
+				g_form.clearValue(field);
+			}
+		});
+	}
 }
