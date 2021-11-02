@@ -9,7 +9,7 @@ The conceit of this function was to filter a list of assets assigned to the _mem
 ### Example
 
 On a list, in the condition builder, choose **assigned_to.sys_id** (or whatever sys_user field you need), select **is one of** for the operator and enter
-`javascript: new userUtil().userMemberOf("Service Desk")` in the assigned_to field.
+`javascript: new userUtil().userMemberOf("Service Desk")` in the **assigned_to** field.
 
 Example Image
 ![userMemberOf example](userMemberOf.png)
