@@ -4,7 +4,7 @@ A collection of scripts related to some esoteric user functions.
 
 ## userMemberOf();
 
-The conceit of this function was to filter a list of assets assigned to the _members_ of a specific group. Returns the sys_ids of the group members. The argument passed in should be the display name of the group
+The conceit of this function was to filter a list of assets assigned to the _members_ of a specific group. Returns the sys_ids of the group members. The argument passed in should be the display name of the group.
 
 ### Example
 
@@ -26,7 +26,7 @@ Returns true or false if the passed in user has direct reports or not. Useful in
 
 ## getUserAssets()
 
-Return a list of sys_ids for assets belonging to the user. Can be used to retrieve a user's current assets in a workflow for fulfilment activity
+Returns a comma-separated list of sys_ids for assets belonging to the user. Can be used to retrieve a user's current assets in a workflow for fulfillment activity.
 
 ### Example
 
