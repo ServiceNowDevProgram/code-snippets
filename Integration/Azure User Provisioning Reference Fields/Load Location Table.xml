@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<unload unload_date="2019-01-17 19:49:13">
+<sys_script action="INSERT_OR_UPDATE">
+<abort_action>false</abort_action>
+<access>package_private</access>
+<action_delete>false</action_delete>
+<action_insert>true</action_insert>
+<action_query>false</action_query>
+<action_update>true</action_update>
+<active>true</active>
+<add_message>false</add_message>
+<advanced>true</advanced>
+<change_fields>false</change_fields>
+<client_callable>false</client_callable>
+<collection>sys_user</collection>
+<condition/>
+<description>Uses a string field to check for a corresponding location, if  no location is found the record is created.
+
+TK</description>
+<execute_function>false</execute_function>
+<filter_condition table="sys_user">u_temp_locationVALCHANGES^EQ<item goto="false" or="false" field="u_temp_location" endquery="false" value="" operator="VALCHANGES" newquery="false"/>
+<item goto="false" or="false" field="" endquery="true" value="" operator="=" newquery="false"/>
+</filter_condition>
+<is_rest>false</is_rest>
+<message/>
+<name>Load Location Table From AzureAD</name>
+<order>100</order>
+<priority>100</priority>
+<rest_method display_value=""/>
+<rest_method_text/>
+<rest_service display_value=""/>
+<rest_service_text/>
+<rest_variables/>
+<role_conditions/>
+<script><![CDATA[(function executeRule(current, previous /*null when async*/) {
+	//Checks for location using locationExists, if false call createLocation passing the 
+	//name of the location as a parameter
+	current.location = locationExists(current.u_temp_location) || createLocation(current.u_temp_location);
+
+	
+	//Queries location table for record that matches the name passed in
+	//If query returns results return true, else return false
+	function locationExists(location){
+		var gr = new GlideRecord("cmn_location");
+		gr.addQuery("name", location);
+		gr.query();
+		if(gr.next())
+		   return gr.sys_id;
+		else
+			return undefined;
+	}
+	//Creates record on cmn_location using the passed parameter as the name
+	function createLocation(location){
+		var gr = new GlideRecord("cmn_location");
+		gr.initialize();
+		gr.name = location;
+		gr.parent = '8201c34fac1d55eb36e59da730b7d035';//Global as parent
+		return gr.update();
+	}
+})(current, previous);]]></script>
+<sys_class_name>sys_script</sys_class_name>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2019-01-17 01:16:00</sys_created_on>
+<sys_domain>global</sys_domain>
+<sys_domain_path>/</sys_domain_path>
+<sys_id>45ef9ea5db43670061f00d53ca9619e6</sys_id>
+<sys_mod_count>13</sys_mod_count>
+<sys_name>Load Location Table From AzureAD</sys_name>
+<sys_overrides display_value=""/>
+<sys_package display_value="Global" source="global">global</sys_package>
+<sys_policy/>
+<sys_scope display_value="Global">global</sys_scope>
+<sys_update_name>sys_script_45ef9ea5db43670061f00d53ca9619e6</sys_update_name>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2019-01-17 19:48:57</sys_updated_on>
+<template/>
+<when>before</when>
+</sys_script>
+</unload>
