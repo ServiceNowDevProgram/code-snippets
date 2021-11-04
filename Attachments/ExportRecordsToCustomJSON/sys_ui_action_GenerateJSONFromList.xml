@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<unload unload_date="2021-11-04 16:35:19">
+<sys_ui_action action="INSERT_OR_UPDATE">
+<action_name/>
+<active>true</active>
+<client>true</client>
+<client_script_v2><![CDATA[function onClick(g_form) {
+
+}]]></client_script_v2>
+<comments/>
+<condition/>
+<form_action>true</form_action>
+<form_button>false</form_button>
+<form_button_v2>false</form_button_v2>
+<form_context_menu>false</form_context_menu>
+<form_link>true</form_link>
+<form_menu_button_v2>false</form_menu_button_v2>
+<form_style/>
+<hint/>
+<isolate_script>false</isolate_script>
+<list_action>true</list_action>
+<list_banner_button>false</list_banner_button>
+<list_button>false</list_button>
+<list_choice>true</list_choice>
+<list_context_menu>false</list_context_menu>
+<list_link>false</list_link>
+<list_save_with_form_button>false</list_save_with_form_button>
+<list_style/>
+<messages/>
+<name>Generate FCAC JSON Via List</name>
+<onclick>confirmAndGenerateFromList()</onclick>
+<order>100</order>
+<script><![CDATA[var tblName;
+var ajaxHelper;
+var selSysIds;
+var sysIdList;
+var indx = 0;
+var numSel = 0;
+
+function confirmAndGenerateFromList() {
+    tblName = g_list.getTableName();
+    selSysIds = g_list.getChecked();
+    sysIdList = selSysIds.split(',');
+    numSel = sysIdList.length;
+    
+    if(numSel > 0) {
+        indx = 0;
+        ajaxHelper = new GlideAjax('GenerateJSONHelper');
+		ajaxHelper.addParam('sysparm_name', 'generateJSONForAttachments');
+		ajaxHelper.addParam('sysparm_id_list', selSysIds);
+		ajaxHelper.getXMLAnswer(displayAnswer, null, null);
+        //ajaxHelper.generateJSONForAttachments(selSysIds);
+    }
+}
+
+function displayAnswer(answer){
+	if(answer == 'true'){
+		alert('JSON export will be emailed to you shortly.');
+	}
+}]]></script>
+<show_insert>true</show_insert>
+<show_multiple_update>false</show_multiple_update>
+<show_query>false</show_query>
+<show_update>true</show_update>
+<sys_class_name>sys_ui_action</sys_class_name>
+<sys_created_by>Trey.KyleSUMO</sys_created_by>
+<sys_created_on>2021-11-01 19:58:53</sys_created_on>
+<sys_domain>global</sys_domain>
+<sys_domain_path>/</sys_domain_path>
+<sys_id>966d8efd1baff81036e8b887cc4bcb5f</sys_id>
+<sys_mod_count>7</sys_mod_count>
+<sys_name>Generate FCAC JSON Via List</sys_name>
+<sys_overrides display_value=""/>
+<sys_package display_value="Global" source="global">global</sys_package>
+<sys_policy/>
+<sys_scope display_value="Global">global</sys_scope>
+<sys_update_name>sys_ui_action_966d8efd1baff81036e8b887cc4bcb5f</sys_update_name>
+<sys_updated_by>Trey.KyleSUMO</sys_updated_by>
+<sys_updated_on>2021-11-04 16:35:13</sys_updated_on>
+<table>sn_complaint_case</table>
+<ui11_compatible>true</ui11_compatible>
+<ui16_compatible>false</ui16_compatible>
+</sys_ui_action>
+</unload>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<unload unload_date="2021-11-04 16:21:02">
+<sys_script_include action="INSERT_OR_UPDATE">
+<access>public</access>
+<active>true</active>
+<api_name>global.GenerateJSONHelper</api_name>
+<caller_access/>
+<client_callable>true</client_callable>
+<description/>
+<name>GenerateJSONHelper</name>
+<script><![CDATA[var GenerateJSONHelper = Class.create();
+GenerateJSONHelper.prototype = Object.extendsObject(AbstractAjaxProcessor, {
+
+    generateJSONForAttachments: function() {
+		//gs.log('generating JSON', 'TK COMPLAINT CASES');
+        var JSONArrayexport = [];
+		var record_sys_ids = this.getParameter('sysparm_id_list');
+		//gs.log('record sys_ids: ' + record_sys_ids, 'TK COMPLAINT CASES');
+        var id_array = record_sys_ids.split(',');
+        for (var i = 0; i < id_array.length; i++) {
+            // Trim the excess whitespace.
+            //id_array[i] = id_array[i].replace(/^\s*/, "").replace(/\s*$/, "");
+            //alert(id_array[i]);
+            var gr = new GlideRecord("sn_complaint_case");
+            //Add Encoded Query below -> list edit -> right-click -> copy query -? paste within addencodedquery string
+            //gr.addEncodedQuery('')
+            gr.addQuery('sys_id', id_array[i]);
+            gr.query();
+            if (gr.next()) {
+                var JSONexport = {
+                    "institution-id": '368', //Hard Coded for Rogers to 368
+                    "record-id": gr.getValue('sys_id'),
+                    "anonymous": gr.u_anonymous.getValue(),
+                    "channel": gr.getValue('contact_type'),
+                    "description": gr.getValue('description'),
+                    "primary-product-service": gr.u_primary_product.getValue(),
+                    "secondary-product-service": gr.getValue('u_secondary_service'),
+                    "complainant-first-name": (gr.consumer.first_name || gr.getValue('u_guest_complainant_name')),
+                    "complainant-last-name": (gr.consumer.last_name || gr.getValue('u_guest_complainant_name')),
+                    "complainant-postal-code": (gr.consumer.zip || gr.getValue('u_guest_complainant_postal')),
+                    "complainant-same-customer": gr.getValue('u_complaint_same_customer'),
+                    "customer-type": gr.getValue('u_customer_type'),
+                    "customer-first-name": (gr.getValue('u_customer_first_name') || (gr.consumer.first_name || gr.getValue('u_guest_complainant_name'))),
+                    "customer-last-name": (gr.getValue('u_customer_last_name') || (gr.consumer.first_name || gr.getValue('u_guest_complainant_name'))),
+                    "customer-company": (gr.getValue('u_customer_company') || (gr.consumer.company || gr.getValue('u_guest_complainant_postal'))),
+                    "resolution-description": gr.getValue('close_notes'),
+                    "compensation-description": gr.getValue('u_compensation_description'),
+                    "confirmation-provided": gr.getValue('u_confirmation_provided'),
+                    "attachment-reference": gr.getValue('u_attachment'),
+                    "status": gr.getValue('state'),
+                    "received-date": gr.getValue('sys_created_on'),
+                    "resolved-date": gr.getValue('resolved_at'),
+                    "reopened-date": gr.getValue('sys_created_on'),
+                    "closed-date": gr.getValue('closed_at')
+                };
+				//gs.log('JSON FOR CASE : ' + i + '  : ' + JSON.stringify(JSONexport), 'TK COMPLAINT CASES');
+                JSONArrayexport.push(JSONexport);
+            }
+        }
+
+		//gs.log('JSON Generated: ' + JSON.stringify(JSONArrayexport), 'TK COMPLAINT CASES');
+        var emailSysID = this.createEmail();
+        this.attachFile(JSONArrayexport, emailSysID);
+        this.sendEmail(emailSysID);
+		return true;
+
+    },
+
+    createEmail: function() {
+		//gs.log('Creating email for JSON','TK COMPLAINT CASES');
+        var gr = new GlideRecord("sys_email");
+        gr.initialize();
+        gr.setValue('body', '<html><head></head><body></body></html>');
+        gr.setValue('type', 'send-ignore');
+        gr.setValue('target_table', 'sn_complaint_case');
+        gr.setValue('instance', '4a99780f1b8b3c10b1ba0fe7cc4bcb03');
+        gr.setValue('recipients', 'trey.kyle@ca.ey.com');
+        gr.setValue('subject', 'JSON Export for cases ');
+		var id = gr.insert();
+		//gs.log('Email : ' + id,'TK COMPLAINT CASES');
+        return id;
+
+    },
+
+    attachFile: function(JSONArrayexport, emailSysID) {
+        var payload = JSONArrayexport;
+
+        var gr = new GlideRecord("sys_email");
+        gr.get(emailSysID);
+
+        var attachment = new GlideSysAttachment();
+        var attachmentSysID = attachment.write(gr, 'payload.json', 'text/plain', JSON.stringify(payload));
+
+        var gr2 = new GlideRecord("sys_email_attachment");
+        gr2.initialize();
+        gr2.setValue('email', emailSysID);
+        gr2.setValue('attachment', attachmentSysID);
+        gr2.setValue('file_name', 'JSON');
+        gr2.insert();
+    },
+
+    sendEmail: function(emailSysID) {
+        var gr = new GlideRecord("sys_email");
+        gr.get(emailSysID);
+        gr.type = "send-ready";
+        gr.update();
+    },
+    type: 'GenerateJSONHelper'
+});]]></script>
+<sys_class_name>sys_script_include</sys_class_name>
+<sys_created_by>Trey.KyleSUMO</sys_created_by>
+<sys_created_on>2021-11-03 17:23:41</sys_created_on>
+<sys_id>58ebb356dbe3b8100b4b3ed4e29619a5</sys_id>
+<sys_mod_count>27</sys_mod_count>
+<sys_name>GenerateJSONHelper</sys_name>
+<sys_package display_value="Global" source="global">global</sys_package>
+<sys_policy/>
+<sys_scope display_value="Global">global</sys_scope>
+<sys_update_name>sys_script_include_58ebb356dbe3b8100b4b3ed4e29619a5</sys_update_name>
+<sys_updated_by>Trey.KyleSUMO</sys_updated_by>
+<sys_updated_on>2021-11-04 16:20:50</sys_updated_on>
+</sys_script_include>
+</unload>
