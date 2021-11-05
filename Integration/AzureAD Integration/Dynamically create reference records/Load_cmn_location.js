@@ -1,4 +1,6 @@
 /***********************************************
+CONTEXT: https://support.servicenow.com/kb?id=kb_article_view&sysparm_article=KB0779148
+
 Functions:
 
 * locationExists(location) 
