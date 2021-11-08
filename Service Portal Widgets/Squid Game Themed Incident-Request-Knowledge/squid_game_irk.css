@@ -1,0 +1,80 @@
+
+ .staff {
+ 
+    align-items: center;
+    display: inline-flex;
+    flex-direction: column;
+}
+.squid_container {
+  border-radius: 50%;
+  height: 312px;
+  -webkit-tap-highlight-color: transparent;
+  transform: scale(0.48);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  width: 400px;
+}
+.squid_container:after {
+  background-color: #f2f2f2;
+  content: "";
+  height: 10px;
+  position: absolute;
+  top: 390px;
+  width: 100%;
+}
+.squid_container:hover {
+  transform: scale(0.54);
+}
+.squid_container-inner {
+  clip-path: path(
+    "M 390,400 C 390,504.9341 304.9341,590 200,590 95.065898,590 10,504.9341 10,400 V 10 H 200 390 Z"
+  );
+  position: relative;
+  transform-origin: 50%;
+  top: -200px;
+}
+.circle {
+  background-color: #fee7d3;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 380px;
+  left: 10px;
+  pointer-events: none;
+  position: absolute;
+  top: 210px;
+  width: 380px;
+}
+.img {
+  pointer-events: none;
+  position: relative;
+  transform: translateY(20px) scale(1.15);
+  transform-origin: 50% bottom;
+  transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.squid_container:hover .img {
+  transform: translateY(0) scale(1.2);
+}
+.img1 {
+left: 2.2rem;
+    top: 16.4rem;
+    width: 34rem;
+    -webkit-transform-origin-x: center;}
+
+.divider {
+  background-color: #F44788;
+  height: 1px;
+  width: 160px;
+}
+.name {
+  color: white;
+  font-size: 36px;
+  font-weight: 600;
+  margin-top: 16px;
+  text-align: center;
+}
+.title {
+  color: #F44788;
+  font-family: arial;
+  font-size: 14px;
+  font-style: italic;
+  margin-top: 4px;
+}
