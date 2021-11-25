@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<unload unload_date="2021-10-24 21:19:34">
+<sp_widget action="INSERT_OR_UPDATE">
+<category>custom</category>
+<client_script><![CDATA[api.controller=function(timeAgo) {
+	/* widget controller */
+	var c = this;
+
+	
+};]]></client_script>
+<controller_as>c</controller_as>
+<css/>
+<data_table>sp_instance</data_table>
+<demo_data/>
+<description>A simple demonstration widget to showcase all available variants of sn-time-ago directive</description>
+<docs display_value=""/>
+<field_list>title</field_list>
+<has_preview>true</has_preview>
+<id>sn-timeago-demo</id>
+<internal>false</internal>
+<link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+<name>Timeago DEMO</name>
+<option_schema/>
+<public>false</public>
+<roles/>
+<script><![CDATA[(function() {
+	
+	
+	data.dates = [generateTimeAgo(0)];
+		
+	for (var minute=1; minute<45; minute++ ){
+		data.dates.push(generateMinuteAgo(minute));
+	}
+	
+	for (var hour=1; hour<24; hour++ ){
+		data.dates.push(generateHoursAgo(hour));
+	}
+	
+	for (var day=1; day<30; day++ ){
+		data.dates.push(generateDaysAgo(day));
+	}
+	
+	for (var months=1; months<13; months++ ){
+		data.dates.push(generateMonthsAgo(months));
+	}
+	
+	for (var years=1; years<10; years++ ){
+		data.dates.push(generateYearsAgo(years));
+	}
+	
+	function generateYearsAgo(years){
+		return generateDaysAgo(years*365);
+	}
+			
+	function generateMonthsAgo(months){
+		return generateDaysAgo(months*30);
+	}
+	
+	
+	function generateDaysAgo(days){
+		return generateTimeAgo(days*3600*24);
+	}
+	
+	function generateHoursAgo(hours){
+		return generateTimeAgo(hours*3600);
+	}
+	
+	function generateMinuteAgo(minute){
+		return generateTimeAgo(minute*60);
+	}
+	
+	function generateTimeAgo(seconds){
+		var nowGDT = new GlideDateTime();
+		nowGDT.addSeconds(-seconds);
+		return nowGDT.toString();		
+	}
+	
+})();]]></script>
+<servicenow>false</servicenow>
+<sys_class_name>sp_widget</sys_class_name>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2021-10-14 20:31:55</sys_created_on>
+<sys_id>6218a9cc1b17f01088d943fddc4bcb64</sys_id>
+<sys_mod_count>232</sys_mod_count>
+<sys_name>Timeago DEMO</sys_name>
+<sys_package display_value="Global" source="global">global</sys_package>
+<sys_policy/>
+<sys_scope display_value="Global">global</sys_scope>
+<sys_update_name>sp_widget_6218a9cc1b17f01088d943fddc4bcb64</sys_update_name>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2021-10-24 21:19:27</sys_updated_on>
+<template><![CDATA[<h2>
+  {{::options.title}}
+</h2>
+
+<div ng-repeat="date in c.data.dates track by $index">
+  <sn-time-ago timestamp="date"></sn-time-ago>  
+</div>
+]]></template>
+</sp_widget>
+</unload>
