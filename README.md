@@ -79,9 +79,9 @@ avssrikanth.
 dean-croaker.
 DynamiteC.
 eriemer1.
+jacebenson.
 
 Top contributors (50%):
-jacebenson.
 jonahpiascik.
 mlemartien.
 MrChrisE.
@@ -98,9 +98,9 @@ Sagar-agarwal.
 anillande90.
 ChecksumFailed.
 Irston.
+Lacah.
 
 Other contributors:
-Lacah.
 revantKulkarni.
 trade12.
 pratyushasndev.
@@ -159,6 +159,7 @@ eizzledizzle.
 ewhite1.
 fisikos.
 greenc123.
+gurudev-7.
 HackoDev1530.
 hardikvyasji.
 HarneetSital.
