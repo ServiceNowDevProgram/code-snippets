@@ -80,9 +80,9 @@ dean-croaker.
 DynamiteC.
 eriemer1.
 jacebenson.
+jonahpiascik.
 
 Top contributors (50%):
-jonahpiascik.
 mlemartien.
 MrChrisE.
 oasif.
@@ -100,9 +100,9 @@ ChecksumFailed.
 Irston.
 Lacah.
 revantKulkarni.
+trade12.
 
 Other contributors:
-trade12.
 pratyushasndev.
 sauravsumankumar.
 aatrey882.
@@ -205,6 +205,7 @@ salem769.
 sanchit-varshney.
 shaoservicenow.
 shubham-snc.
+somusekher.
 Soulpancake000.
 speedy18.
 SteveMunsell.
