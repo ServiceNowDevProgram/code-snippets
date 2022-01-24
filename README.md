@@ -61,9 +61,9 @@ litwi1rm.
 danr2c2.
 azeezgaa.
 mak1A4.
+vandna07.
 
 Top 25% of contributors:
-vandna07.
 sn-ajb.
 devinvalencia.
 stevezero.
@@ -159,6 +159,7 @@ DirkRedeker.
 eizzledizzle.
 ewhite1.
 fisikos.
+GiovanniPeretti.
 greenc123.
 gurudev-7.
 HackoDev1530.
