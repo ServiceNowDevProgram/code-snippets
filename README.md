@@ -81,9 +81,9 @@ DynamiteC.
 eriemer1.
 jacebenson.
 jonahpiascik.
+mlemartien.
 
 Top contributors (50%):
-mlemartien.
 MrChrisE.
 oasif.
 odinsride.
@@ -101,9 +101,9 @@ Irston.
 Lacah.
 revantKulkarni.
 trade12.
+pratyushasndev.
 
 Other contributors:
-pratyushasndev.
 sauravsumankumar.
 aatrey882.
 anguspalmer.
@@ -173,6 +173,7 @@ j2clow.
 j4rodm.
 jamalissimo.
 jamiestroud.
+jayeshyadav252.
 Jennylou777.
 kainturar.
 Karthick986.
