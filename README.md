@@ -102,9 +102,9 @@ Lacah.
 revantKulkarni.
 trade12.
 pratyushasndev.
+sauravsumankumar.
 
 Other contributors:
-sauravsumankumar.
 aatrey882.
 anguspalmer.
 mskoddow.
@@ -139,6 +139,7 @@ Anks-26.
 AnnaGould.
 apbuhssc.
 askarthik.
+Balamurugan-RR.
 beingfluid.
 bgrk.
 Bharat123rox.
