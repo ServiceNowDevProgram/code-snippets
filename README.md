@@ -82,9 +82,9 @@ eriemer1.
 jacebenson.
 jonahpiascik.
 mlemartien.
+MrChrisE.
 
 Top contributors (50%):
-MrChrisE.
 oasif.
 odinsride.
 ReginaldFawcett.
@@ -103,9 +103,9 @@ revantKulkarni.
 trade12.
 pratyushasndev.
 sauravsumankumar.
+aatrey882.
 
 Other contributors:
-aatrey882.
 anguspalmer.
 mskoddow.
 phr-nk.
@@ -177,6 +177,7 @@ jamalissimo.
 jamiestroud.
 jayeshyadav252.
 Jennylou777.
+jschuller.
 kainturar.
 Karthick986.
 KayakDK.
