@@ -104,9 +104,9 @@ trade12.
 pratyushasndev.
 sauravsumankumar.
 aatrey882.
+anguspalmer.
 
 Other contributors:
-anguspalmer.
 mskoddow.
 phr-nk.
 preshitd.
@@ -199,6 +199,7 @@ Mexiprince.
 moshjahan.
 mrdavidgrant.
 mugiwaramenon.
+mybpdi.
 NayeemKaka.
 Nerdcode.
 Prasannalakshmik.
