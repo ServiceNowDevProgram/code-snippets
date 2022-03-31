@@ -103,9 +103,9 @@ revantKulkarni.
 trade12.
 pratyushasndev.
 sauravsumankumar.
+aatrey882.
 
 Other contributors:
-aatrey882.
 anguspalmer.
 mskoddow.
 phr-nk.
@@ -231,4 +231,5 @@ vkambhammettu.
 vpeinado.
 vvijaya19.
 wcarroll.
+xdisplay.
 youthinkasido.
