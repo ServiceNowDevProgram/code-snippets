@@ -83,9 +83,9 @@ jacebenson.
 jonahpiascik.
 mlemartien.
 MrChrisE.
+oasif.
 
 Top contributors (50%):
-oasif.
 odinsride.
 ReginaldFawcett.
 rmedved84.
@@ -104,9 +104,9 @@ trade12.
 pratyushasndev.
 sauravsumankumar.
 aatrey882.
+anguspalmer.
 
 Other contributors:
-anguspalmer.
 mskoddow.
 phr-nk.
 preshitd.
@@ -196,6 +196,7 @@ LuisSepulveda21.
 m2santiago.
 macias-daniel.
 makesh-ind.
+maralucca.
 Mexiprince.
 moshjahan.
 mrdavidgrant.
