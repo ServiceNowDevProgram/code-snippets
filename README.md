@@ -105,9 +105,9 @@ pratyushasndev.
 sauravsumankumar.
 aatrey882.
 anguspalmer.
+mskoddow.
 
 Other contributors:
-mskoddow.
 phr-nk.
 preshitd.
 tanu-profile.
@@ -146,6 +146,7 @@ Bharat123rox.
 Bigshmow.
 billyperkinsukg.
 bird-03.
+Brian-Rowland.
 cenzo85.
 ChristineMayfield.
 Coder0131.
