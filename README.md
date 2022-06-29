@@ -63,9 +63,9 @@ azeezgaa.
 mak1A4.
 vandna07.
 sn-ajb.
+devinvalencia.
 
 Top 25% of contributors:
-devinvalencia.
 stevezero.
 mr-swann.
 ovarn.
@@ -188,6 +188,7 @@ Keagnn.
 KhAhshan.
 kieo-on.
 KokilaAbeysinghe.
+Lamquocminhhuy.
 LarsAssen.
 LaviniaChiburte.
 LoicSanchez.
