@@ -85,9 +85,9 @@ mlemartien.
 MrChrisE.
 oasif.
 odinsride.
+ReginaldFawcett.
 
 Top contributors (50%):
-ReginaldFawcett.
 rmedved84.
 src107.
 thorn91.
@@ -107,9 +107,9 @@ aatrey882.
 anguspalmer.
 mskoddow.
 phr-nk.
+preshitd.
 
 Other contributors:
-preshitd.
 tanu-profile.
 snamjosh.
 akhoshnood.
@@ -230,6 +230,7 @@ Soulpancake000.
 speedy18.
 SteveMunsell.
 TamByrd.
+thesnowguy.
 TRIGGEREDcoder.
 tsicot.
 VictorAlbergaria.
