@@ -108,9 +108,9 @@ anguspalmer.
 mskoddow.
 phr-nk.
 preshitd.
+tanu-profile.
 
 Other contributors:
-tanu-profile.
 snamjosh.
 akhoshnood.
 ashleysnyder.
@@ -161,6 +161,7 @@ dalestubblefield.
 DangerousNights.
 davidkwhuang.
 DirkRedeker.
+eduard-nitoi.
 eizzledizzle.
 Enotgnik.
 ewhite1.
