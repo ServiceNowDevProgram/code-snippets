@@ -86,9 +86,9 @@ MrChrisE.
 oasif.
 odinsride.
 ReginaldFawcett.
+rmedved84.
 
 Top contributors (50%):
-rmedved84.
 src107.
 thorn91.
 vasantharaja-natarajan.
@@ -109,9 +109,9 @@ mskoddow.
 phr-nk.
 preshitd.
 tanu-profile.
+snamjosh.
 
 Other contributors:
-snamjosh.
 akhoshnood.
 ashleysnyder.
 bradtiltonnow.
@@ -160,6 +160,7 @@ cwhits.
 dalestubblefield.
 DangerousNights.
 davidkwhuang.
+denmant.
 DirkRedeker.
 eduard-nitoi.
 eizzledizzle.
