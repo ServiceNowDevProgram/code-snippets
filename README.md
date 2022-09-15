@@ -110,9 +110,9 @@ phr-nk.
 preshitd.
 tanu-profile.
 snamjosh.
+akhoshnood.
 
 Other contributors:
-akhoshnood.
 ashleysnyder.
 bradtiltonnow.
 brichards99.
@@ -184,6 +184,7 @@ jamiestroud.
 jayeshyadav252.
 Jennylou777.
 joshuaprakashg.
+joshuatechie.
 jschuller.
 kainturar.
 Karthick986.
