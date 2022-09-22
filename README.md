@@ -52,9 +52,9 @@ sumanthdosapati.
 kmohit2809.
 RahmanM.
 paigesndev.
+PranavBhagat18.
 
 Top 10% of contributors:
-PranavBhagat18.
 smartcarleen.
 niamccash.
 litwi1rm.
@@ -64,9 +64,9 @@ mak1A4.
 vandna07.
 sn-ajb.
 devinvalencia.
+stevezero.
 
 Top 25% of contributors:
-stevezero.
 mr-swann.
 ovarn.
 iar42.
@@ -109,10 +109,10 @@ mskoddow.
 phr-nk.
 preshitd.
 tanu-profile.
-snamjosh.
-akhoshnood.
 
 Other contributors:
+snamjosh.
+akhoshnood.
 ashleysnyder.
 bradtiltonnow.
 brichards99.
@@ -218,6 +218,7 @@ peteosaz.
 Prasannalakshmik.
 Pratyusha418.
 pupchenko.
+ranjithsit.
 Razzzial.
 retrokaj.
 RitheshGit.
