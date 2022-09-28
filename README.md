@@ -103,15 +103,14 @@ revantKulkarni.
 trade12.
 pratyushasndev.
 sauravsumankumar.
-aatrey882.
 anguspalmer.
 mskoddow.
 phr-nk.
-preshitd.
 tanu-profile.
+snamjosh.
+aatrey882.
 
 Other contributors:
-snamjosh.
 ashleysnyder.
 bradtiltonnow.
 brichards99.
@@ -218,6 +217,7 @@ Nerdcode.
 peteosaz.
 Prasannalakshmik.
 Pratyusha418.
+preshitd.
 pupchenko.
 ranjithsit.
 Razzzial.
