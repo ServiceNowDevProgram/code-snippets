@@ -127,7 +127,6 @@ pratyushmp.
 samwinchet.
 stwinkle.
 TheTreyKyle.
-tomlozano.
 zaidongy.
 kcimpulse.
 akhoshnood.
@@ -239,6 +238,7 @@ speedy18.
 SteveMunsell.
 TamByrd.
 thesnowguy.
+tomlozano.
 TRIGGEREDcoder.
 tsicot.
 VictorAlbergaria.
