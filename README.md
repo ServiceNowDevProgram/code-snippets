@@ -112,11 +112,9 @@ tanu-profile.
 
 Other contributors:
 snamjosh.
-akhoshnood.
 ashleysnyder.
 bradtiltonnow.
 brichards99.
-deathkraiser.
 Decoder-Paul.
 dhruvii-powershell.
 jamesfoot.
@@ -133,6 +131,7 @@ TheTreyKyle.
 tomlozano.
 zaidongy.
 kcimpulse.
+akhoshnood.
 amdhavalikar.
 Anantharaman91.
 Anks-26.
@@ -160,6 +159,7 @@ cwhits.
 dalestubblefield.
 DangerousNights.
 davidkwhuang.
+deathkraiser.
 denmant.
 DirkRedeker.
 eduard-nitoi.
