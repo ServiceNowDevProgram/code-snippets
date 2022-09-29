@@ -6,8 +6,8 @@ Welcome to ServiceNow's Code Snippets community repository, managed by the Devel
 
 Inside this repository, you will find community submitted code-snippets and their variants for different use-cases.
 
-🔔🔔🔔
-CONTRIBUTORS must follow all guidelines in CONTRIBUTING.md or run the risk of having your Pull Requests labeled as spam.
+🔔🔔🔔<br>
+***CONTRIBUTORS must follow all guidelines in [CONTRIBUTING.md](CONTRIBUTING.md)*** or run the risk of having your Pull Requests labeled as spam.<br>
 🔔🔔🔔
 
 ## We invite you to contribute!
