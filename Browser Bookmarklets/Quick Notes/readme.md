@@ -7,11 +7,17 @@ data:text/html, <title>Quick Note</title><script>String.prototype.get=function()
 ```
 
 ## Example
-Enter some text onto the page.
-`This is some text`
-Open the Browser Console.
-Type a string literal with the `.get()` method. 
-`'t'.get()`
-The string literal becomes a variable name containing the contents of the page.
-You can now manipulate the string however needed, then call `variable_name.set()` to see the results in a new tab.
-`t.toUpperCase().set();` will open a new table containing "THIS IS SOME TEXT"
+Enter some text onto the page.  
+> `This is some text`  
+
+Open the Browser Console.  
+Type a string literal with the `.get()` method.   
+> `'t'.get()`  
+
+The string literal becomes a variable name containing the contents of the page.  
+You can now manipulate the string however needed.  
+To see the results, you can simply log the info to the console or you can post it to a new page. To post the content to a new page, call the `.set()` method.  
+> `variable_name.set()`
+
+The command below will open a new tab containing "THIS IS SOME TEXT"  
+> `t.toUpperCase().set();` 
