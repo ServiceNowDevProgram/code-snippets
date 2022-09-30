@@ -69,6 +69,7 @@ mr-swann.
 Top 25% of contributors:
 ovarn.
 iar42.
+johndahl-now.
 rafzk.
 stevezero.
 MarcMouries.
@@ -80,7 +81,6 @@ dean-croaker.
 DynamiteC.
 eriemer1.
 jacebenson.
-johndahl-now.
 jonahpiascik.
 mlemartien.
 MrChrisE.
