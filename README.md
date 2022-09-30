@@ -80,6 +80,7 @@ dean-croaker.
 DynamiteC.
 eriemer1.
 jacebenson.
+johndahl-now.
 jonahpiascik.
 mlemartien.
 MrChrisE.
@@ -87,9 +88,9 @@ oasif.
 odinsride.
 ReginaldFawcett.
 rmedved84.
-src107.
 
 Top contributors (50%):
+src107.
 thorn91.
 vasantharaja-natarajan.
 mgopw.
@@ -98,7 +99,6 @@ Sagar-agarwal.
 anillande90.
 ChecksumFailed.
 Irston.
-johndahl-now.
 Lacah.
 revantKulkarni.
 trade12.
