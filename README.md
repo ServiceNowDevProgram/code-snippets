@@ -118,6 +118,7 @@ Decoder-Paul.
 dhruvii-powershell.
 jamesfoot.
 JingAlanzhixin.
+johndahl-now.
 mevops.
 MihirRathod.
 mikeroosa.
@@ -184,7 +185,6 @@ jamalissimo.
 jamiestroud.
 jayeshyadav252.
 Jennylou777.
-johndahl-now.
 joshuaprakashg.
 joshuatechie.
 jschuller.
