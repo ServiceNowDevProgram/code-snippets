@@ -1,0 +1,1 @@
+Script macros provide shortcuts for typing commonly used code. To insert macro text into a script field, enter the macro keyword into the script editor, followed by a tab.
