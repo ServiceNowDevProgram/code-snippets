@@ -104,22 +104,22 @@ trade12.
 pratyushasndev.
 sauravsumankumar.
 anguspalmer.
+johndahl-now.
 mskoddow.
 phr-nk.
 tanu-profile.
 snamjosh.
 aatrey882.
 ashleysnyder.
-b1naryst0rm.
 
 Other contributors:
+b1naryst0rm.
 bradtiltonnow.
 brichards99.
 Decoder-Paul.
 dhruvii-powershell.
 jamesfoot.
 JingAlanzhixin.
-johndahl-now.
 mevops.
 MihirRathod.
 mikeroosa.
