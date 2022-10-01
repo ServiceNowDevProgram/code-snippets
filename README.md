@@ -65,9 +65,9 @@ vandna07.
 sn-ajb.
 devinvalencia.
 mr-swann.
+ovarn.
 
 Top 25% of contributors:
-ovarn.
 iar42.
 johndahl-now.
 rafzk.
@@ -249,6 +249,7 @@ thesnowguy.
 tomlozano.
 TRIGGEREDcoder.
 tsicot.
+ttoter.
 VictorAlbergaria.
 vigneshmc.
 Vivek-KP.
