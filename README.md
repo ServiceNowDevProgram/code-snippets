@@ -70,6 +70,7 @@ ovarn.
 Top 25% of contributors:
 iar42.
 johndahl-now.
+mlemartien.
 rafzk.
 stevezero.
 MarcMouries.
@@ -83,7 +84,6 @@ DynamiteC.
 eriemer1.
 jacebenson.
 jonahpiascik.
-mlemartien.
 MrChrisE.
 oasif.
 odinsride.
