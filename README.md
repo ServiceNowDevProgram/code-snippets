@@ -64,13 +64,13 @@ mak1A4.
 vandna07.
 sn-ajb.
 devinvalencia.
+mlemartien.
 mr-swann.
-ovarn.
 
 Top 25% of contributors:
+ovarn.
 iar42.
 johndahl-now.
-mlemartien.
 rafzk.
 stevezero.
 MarcMouries.
