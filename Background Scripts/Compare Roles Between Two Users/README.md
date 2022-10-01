@@ -2,7 +2,7 @@
 Provide the usernames of two users and this script will print out the roles they share and the roles they don't share.
 
 ## Usage
-Run in Scripts - Background
+Run script in **compare-roles-2-users.js** in Scripts - Background
 
 * **Parameters:** 
     - **include_inherited_roles:**
