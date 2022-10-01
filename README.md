@@ -77,6 +77,7 @@ allenandreas.
 apple9000.
 ashu759.
 avssrikanth.
+DavidArthurCole.
 dean-croaker.
 DynamiteC.
 eriemer1.
@@ -88,9 +89,9 @@ oasif.
 odinsride.
 ReginaldFawcett.
 rmedved84.
-src107.
 
 Top contributors (50%):
+src107.
 thorn91.
 vasantharaja-natarajan.
 mgopw.
@@ -98,7 +99,6 @@ Sagar-agarwal.
 23Thom.
 anillande90.
 ChecksumFailed.
-DavidArthurCole.
 Irston.
 Lacah.
 revantKulkarni.
