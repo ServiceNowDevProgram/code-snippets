@@ -17,9 +17,7 @@ username_b - Unsername of a sys_user
 
 
 -User abraham.lincoln ONLY Roles:
-
 &emsp;sn_change_write
-
 &emsp;sn_change_read
 
 
