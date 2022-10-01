@@ -116,6 +116,7 @@ bradtiltonnow.
 
 Other contributors:
 brichards99.
+DavidArthurCole.
 Decoder-Paul.
 dhruvii-powershell.
 jamesfoot.
@@ -161,7 +162,6 @@ dalestubblefield.
 DangerousNights.
 Danmax.
 davewburns.
-DavidArthurCole.
 davidkwhuang.
 deathkraiser.
 denmant.
