@@ -12,9 +12,17 @@ username_b - Unsername of a sys_user
 **EXAMPLE RESULT**
 
 User abel.tuter ONLY Roles:
+
 &emsp;sn_request_approver_read
+
+
 User abraham.lincoln ONLY Roles:
+
 &emsp;sn_change_write
+
 &emsp;sn_change_read
+
+
 Shared Roles:
+
 &emsp;sn_request_read
