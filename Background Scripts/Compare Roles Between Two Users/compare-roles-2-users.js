@@ -1,13 +1,12 @@
 (function(){
 	
-	/* CONFIGS */
 	// false - only directly assainged roles
 	// true - roles inherited from other roles or groups
 	var include_inherited_roles = false;
+	
 	// Username of the two users we want to compare roles agaist
 	var username_a = "abel.tuter";
-	var username_b = "admin";
-	/* END CONFIGS */
+	var username_b = "abraham.lincoln";
 
 	var set_a = [];
 	var set_b = [];
@@ -40,5 +39,5 @@
 	// Roles that both A and B have
 	var a_intersect_b = set_a.concat(set_b).filter( function(value, index, self){return set_b.indexOf(value) >= 0 && set_a.indexOf(value) >= 0;} ).filter(function(value, index, self){return self.indexOf(value) === index;});
 	
-	gs.print("\nUser " + username_a + " ONLY Roles:\n\t" + a_not_b.join("\n\t") + "\n\nUser " + username_b + " ONLY Roles:\n\t" + b_not_a.join("\n\t") + "\n\nIntersect Roles:\n\t" + a_intersect_b.join("\n\t"));
+	gs.print("\n-Exclusive Role(s) to " + username_a + ":\n\t" + a_not_b.join("\n\t") + "\n\n-Exclusive Role(s) to " + username_b + ":\n\t" + b_not_a.join("\n\t") + "\n\n-Shared Roles:\n\t" + a_intersect_b.join("\n\t"));
 })();
