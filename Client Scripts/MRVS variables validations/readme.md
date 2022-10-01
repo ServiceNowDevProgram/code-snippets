@@ -7,4 +7,7 @@ Requirement is like there is an adaptation leave form, where the user can take 3
 Users can enter the last working date which is a normal variable in catalog item and batched leaves in MRVS where the Extended leave start and end dates will populate.
 We are restricting here only to enter extended leave start date after the last working date. 
 
+![image](https://user-images.githubusercontent.com/46869542/193416763-27fb52c9-e15b-48b5-99fd-6c146a6819c3.png)
+
+
 
