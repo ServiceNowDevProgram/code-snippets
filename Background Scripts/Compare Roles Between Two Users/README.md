@@ -1,4 +1,4 @@
-#Compare Roles of two users#
+!Compare Roles of two users!
 Provide the usernames of two users and this script will print out the roles they share and the roles they don't share.
 **Usage**
 Run in Scripts - Background
