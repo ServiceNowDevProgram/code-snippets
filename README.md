@@ -105,6 +105,7 @@ trade12.
 pratyushasndev.
 sauravsumankumar.
 anguspalmer.
+DavidArthurCole.
 mskoddow.
 phr-nk.
 tanu-profile.
@@ -112,11 +113,10 @@ snamjosh.
 aatrey882.
 ashleysnyder.
 b1naryst0rm.
-bradtiltonnow.
 
 Other contributors:
+bradtiltonnow.
 brichards99.
-DavidArthurCole.
 Decoder-Paul.
 dhruvii-powershell.
 jamesfoot.
