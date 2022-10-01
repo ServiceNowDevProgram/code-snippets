@@ -1,6 +1,6 @@
 (function(){
 	
-	// false - only directly assainged roles
+	// false - only directly assigned roles
 	// true - roles inherited from other roles or groups
 	var include_inherited_roles = false;
 	
