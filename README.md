@@ -114,9 +114,9 @@ aatrey882.
 ashleysnyder.
 b1naryst0rm.
 bradtiltonnow.
+brichards99.
 
 Other contributors:
-brichards99.
 Decoder-Paul.
 dhruvii-powershell.
 igrzhukovich.
@@ -133,6 +133,7 @@ seviceN.
 stwinkle.
 TheTreyKyle.
 ttoter.
+ynr-ram.
 zaidongy.
 kcimpulse.
 158w5a0532.
