@@ -114,9 +114,9 @@ aatrey882.
 ashleysnyder.
 b1naryst0rm.
 bradtiltonnow.
+brichards99.
 
 Other contributors:
-brichards99.
 Decoder-Paul.
 dhruvii-powershell.
 igrzhukovich.
@@ -263,4 +263,5 @@ Watermark-ServiceNow.
 wcarroll.
 wkbroxton.
 xdisplay.
+ynr-ram.
 youthinkasido.
