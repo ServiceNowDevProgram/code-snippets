@@ -118,6 +118,7 @@ bradtiltonnow.
 
 Other contributors:
 brichards99.
+Danmax.
 Decoder-Paul.
 dhruvii-powershell.
 igrzhukovich.
@@ -166,7 +167,6 @@ CreatorWorkflowSC.
 cwhits.
 dalestubblefield.
 DangerousNights.
-Danmax.
 davewburns.
 davidkwhuang.
 deathkraiser.
