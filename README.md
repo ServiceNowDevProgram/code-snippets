@@ -111,13 +111,14 @@ mskoddow.
 phr-nk.
 seviceN.
 tanu-profile.
+ynr-ram.
 snamjosh.
 aatrey882.
 ashleysnyder.
 bradtiltonnow.
-brichards99.
 
 Other contributors:
+brichards99.
 Decoder-Paul.
 dhruvii-powershell.
 igrzhukovich.
@@ -134,7 +135,6 @@ samwinchet.
 stwinkle.
 TheTreyKyle.
 ttoter.
-ynr-ram.
 zaidongy.
 kcimpulse.
 158w5a0532.
