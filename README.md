@@ -116,9 +116,9 @@ snamjosh.
 aatrey882.
 ashleysnyder.
 bradtiltonnow.
+brichards99.
 
 Other contributors:
-brichards99.
 Decoder-Paul.
 dhruvii-powershell.
 igrzhukovich.
@@ -205,6 +205,7 @@ KokilaAbeysinghe.
 Lamquocminhhuy.
 LarsAssen.
 LaviniaChiburte.
+LekiaAnonim.
 LoicSanchez.
 loudigi.
 LucasRocha2308.
