@@ -109,15 +109,16 @@ anguspalmer.
 b1naryst0rm.
 mskoddow.
 phr-nk.
+seviceN.
 tanu-profile.
 snamjosh.
 aatrey882.
 ashleysnyder.
 bradtiltonnow.
 brichards99.
-Decoder-Paul.
 
 Other contributors:
+Decoder-Paul.
 dhruvii-powershell.
 igrzhukovich.
 jamesfoot.
@@ -130,7 +131,6 @@ mwchiao.
 physi.
 pratyushmp.
 samwinchet.
-seviceN.
 stwinkle.
 TheTreyKyle.
 ttoter.
