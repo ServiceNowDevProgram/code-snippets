@@ -113,13 +113,12 @@ seviceN.
 tanu-profile.
 snamjosh.
 aatrey882.
-AryanBarsaiyan.
 ashleysnyder.
 bradtiltonnow.
 brichards99.
+Decoder-Paul.
 
 Other contributors:
-Decoder-Paul.
 dhruvii-powershell.
 igrzhukovich.
 jamesfoot.
@@ -145,6 +144,7 @@ Anantharaman91.
 Anks-26.
 AnnaGould.
 apbuhssc.
+AryanBarsaiyan.
 askarthik.
 Balamurugan-RR.
 beingfluid.
