@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<unload unload_date="2022-10-03 21:13:25">
+<sp_widget action="INSERT_OR_UPDATE">
+<category>custom</category>
+<client_script><![CDATA[api.controller=function($scope, spUtil, $location) {
+	/* widget controller */
+	var c = this;
+	var urlParams = $location.search();
+	spUtil.recordWatch($scope, urlParams.table, 'sys_id=' + urlParams.sys_id);
+	
+};]]></client_script>
+<controller_as>c</controller_as>
+<css/>
+<data_table>sp_instance</data_table>
+<demo_data/>
+<description>Wrapper widget enhancing the standard ticker header with displaying on hold reason.</description>
+<docs display_value=""/>
+<field_list/>
+<has_preview>false</has_preview>
+<id/>
+<internal>false</internal>
+<link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+<name>Ticket Header with on hold reason</name>
+<option_schema/>
+<public>false</public>
+<roles/>
+<script><![CDATA[(function() {
+	data.headerTicketWidget = $sp.getWidget('standard_ticket_header');
+	
+	var tableName = $sp.getParameter('table');
+	var sysId = $sp.getParameter('sys_id');
+
+	if (tableName != 'incident'){
+		return;
+	}
+	var recordGR = new GlideRecord(tableName);
+	if (recordGR.get(sysId)){
+		var holdReasonField = $sp.getField(gr, 'hold_reason');
+		data.headerTicketWidget.data.headerFields.push(holdReasonField);
+	}
+})();]]></script>
+<servicenow>false</servicenow>
+<sys_class_name>sp_widget</sys_class_name>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2022-09-09 13:06:47</sys_created_on>
+<sys_id>fbfe5b0a97395550e6cd3bc3f153affc</sys_id>
+<sys_mod_count>23</sys_mod_count>
+<sys_name>Ticket Header with on hold reason</sys_name>
+<sys_package display_value="Global" source="global">global</sys_package>
+<sys_policy/>
+<sys_scope display_value="Global">global</sys_scope>
+<sys_update_name>sp_widget_fbfe5b0a97395550e6cd3bc3f153affc</sys_update_name>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2022-10-03 21:12:19</sys_updated_on>
+<template><![CDATA[<sp-widget widget="c.data.headerTicketWidget"></sp-widget>]]></template>
+</sp_widget>
+</unload>
