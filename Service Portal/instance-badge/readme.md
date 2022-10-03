@@ -3,6 +3,8 @@
 This is a simple directive, that can be attached to the OOTB widget header and will render a simple badge based on the url hostname. 
 This doesn't require any cloning of the OOTB widget. The only requirement is that the portal is using some logo.
 
+![header sample](header.png)
+
 ## installation
 1. create a new provider (select Service Portal->Angular Providers->New
 2. select type directive
