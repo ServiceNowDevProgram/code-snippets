@@ -124,7 +124,6 @@ dhruvii-powershell.
 igrzhukovich.
 jamesfoot.
 JingAlanzhixin.
-jiteshmalik.
 mevops.
 MihirRathod.
 mikeroosa.
@@ -195,6 +194,7 @@ jamalissimo.
 jamiestroud.
 jayeshyadav252.
 Jennylou777.
+jiteshmalik.
 joshuaprakashg.
 joshuatechie.
 jschuller.
