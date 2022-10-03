@@ -109,6 +109,7 @@ pratyushasndev.
 sauravsumankumar.
 anguspalmer.
 jiteshmalik.
+MartinStoyanoff.
 mskoddow.
 phr-nk.
 tanu-profile.
@@ -116,16 +117,15 @@ snamjosh.
 aatrey882.
 ashleysnyder.
 bradtiltonnow.
-brichards99.
 
 Other contributors:
+brichards99.
 Danmax.
 Decoder-Paul.
 dhruvii-powershell.
 igrzhukovich.
 jamesfoot.
 JingAlanzhixin.
-MartinStoyanoff.
 mevops.
 MihirRathod.
 mikeroosa.
