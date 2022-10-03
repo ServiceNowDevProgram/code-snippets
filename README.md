@@ -45,8 +45,8 @@ To participate in moderation, join the sndevs slack at https://sndevs.com/ and j
 Top 5% of contributors:
 earlduque.
 R3J3NT.
-alikuttyka.
 hrobarikt.
+alikuttyka.
 ishaanshoor.
 sumanthdosapati.
 kmohit2809.
