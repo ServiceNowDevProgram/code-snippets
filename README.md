@@ -115,9 +115,9 @@ snamjosh.
 aatrey882.
 ashleysnyder.
 bradtiltonnow.
+brichards99.
 
 Other contributors:
-brichards99.
 Danmax.
 Decoder-Paul.
 dhruvii-powershell.
@@ -194,6 +194,7 @@ jamalissimo.
 jamiestroud.
 jayeshyadav252.
 Jennylou777.
+jiteshmalik.
 joshuaprakashg.
 joshuatechie.
 jschuller.
