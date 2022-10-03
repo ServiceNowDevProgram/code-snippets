@@ -131,7 +131,6 @@ MihirRathod.
 mikeroosa.
 miracc.
 mwchiao.
-nthumma.
 physi.
 pratyushmp.
 samwinchet.
@@ -230,6 +229,7 @@ muhjaved.
 mybpdi.
 NayeemKaka.
 Nerdcode.
+nthumma.
 peteosaz.
 Prasannalakshmik.
 Pratyusha418.
