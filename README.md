@@ -117,9 +117,9 @@ tanu-profile.
 aatrey882.
 ashleysnyder.
 bradtiltonnow.
+brichards99.
 
 Other contributors:
-brichards99.
 Danmax.
 Decoder-Paul.
 dhruvii-powershell.
@@ -183,6 +183,7 @@ GiovanniPeretti.
 greenc123.
 gurudev-7.
 HackoDev1530.
+han-le.
 hardikvyasji.
 HarneetSital.
 himavamsi-spec.
