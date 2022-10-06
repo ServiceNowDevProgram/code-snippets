@@ -84,6 +84,7 @@ DynamiteC.
 eriemer1.
 jacebenson.
 jonahpiascik.
+Lacah.
 MrChrisE.
 oasif.
 odinsride.
@@ -92,9 +93,9 @@ rmedved84.
 seviceN.
 src107.
 thorn91.
-snamjosh.
 
 Top contributors (50%):
+snamjosh.
 vasantharaja-natarajan.
 mgopw.
 Sagar-agarwal.
@@ -104,7 +105,6 @@ b1naryst0rm.
 ChecksumFailed.
 Irston.
 jiteshmalik.
-Lacah.
 revantKulkarni.
 trade12.
 pratyushasndev.
