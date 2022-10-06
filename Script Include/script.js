@@ -3,7 +3,7 @@ DynamicListAjax.prototype = Object.extendsObject(AbstractAjaxProcessor, {
 	
 	getList : function(sysparm_table,sysparm_dependent,sysparm_element){
 		var list={};
-    var table_name = this.getParameter('sysparm_table');
+    		var table_name = this.getParameter('sysparm_table');
 		var dependent_value = this.getParameter('sysparm_dependent');
 		var element = this.getParameter('sysparm_element');
 		var sys_choice_gr = new GlideRecord('sys_choice');
