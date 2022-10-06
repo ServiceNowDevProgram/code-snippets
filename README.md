@@ -123,6 +123,7 @@ Danmax.
 Other contributors:
 Decoder-Paul.
 dhruvii-powershell.
+harisnad.
 igrzhukovich.
 jamesfoot.
 JingAlanzhixin.
@@ -186,7 +187,6 @@ gurudev-7.
 HackoDev1530.
 han-le.
 hardikvyasji.
-harisnad.
 HarneetSital.
 himavamsi-spec.
 hmadhsan.
