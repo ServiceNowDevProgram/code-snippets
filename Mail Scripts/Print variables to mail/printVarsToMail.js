@@ -4,7 +4,10 @@
     /* Optional GlideRecord */
     event) {
 
-    template.print("<p></p>Requested item: ");
+    var tableName = current.getDisplayValue('sys_class_name');
+    
+    template.print("<p></p>" + tableName + ": ");
+    
     printVars();
 
     function printVars() {
