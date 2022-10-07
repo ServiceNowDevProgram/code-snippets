@@ -67,9 +67,9 @@ sn-ajb.
 devinvalencia.
 mr-swann.
 ovarn.
+iar42.
 
 Top 25% of contributors:
-iar42.
 johndahl-now.
 rafzk.
 stevezero.
@@ -239,6 +239,7 @@ peteosaz.
 Prasannalakshmik.
 Pratyusha418.
 preshitd.
+prevostr.
 pupchenko.
 ranjithsit.
 Razzzial.
