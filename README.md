@@ -93,9 +93,9 @@ ReginaldFawcett.
 rmedved84.
 seviceN.
 src107.
+thorn91.
 
 Top contributors (50%):
-thorn91.
 snamjosh.
 vasantharaja-natarajan.
 mgopw.
@@ -119,9 +119,9 @@ ashleysnyder.
 bradtiltonnow.
 brichards99.
 Danmax.
+Decoder-Paul.
 
 Other contributors:
-Decoder-Paul.
 dhruvii-powershell.
 harisnad.
 igrzhukovich.
@@ -190,6 +190,7 @@ HackoDev1530.
 han-le.
 hardikvyasji.
 HarneetSital.
+himahk04.
 himavamsi-spec.
 hmadhsan.
 homealone07.
