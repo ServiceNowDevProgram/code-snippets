@@ -116,13 +116,14 @@ phr-nk.
 tanu-profile.
 aatrey882.
 ashleysnyder.
+ashuprince121.
 bradtiltonnow.
 brichards99.
 Danmax.
 Decoder-Paul.
-dhruvii-powershell.
 
 Other contributors:
+dhruvii-powershell.
 harisnad.
 igrzhukovich.
 jamesfoot.
@@ -152,7 +153,6 @@ Anks-26.
 AnnaGould.
 apbuhssc.
 AryanBarsaiyan.
-ashuprince121.
 askarthik.
 Balamurugan-RR.
 beingfluid.
