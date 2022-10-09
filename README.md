@@ -120,9 +120,9 @@ bradtiltonnow.
 brichards99.
 Danmax.
 Decoder-Paul.
+dhruvii-powershell.
 
 Other contributors:
-dhruvii-powershell.
 harisnad.
 igrzhukovich.
 jamesfoot.
@@ -261,6 +261,7 @@ sanju009.
 SanketJ29.
 Sarita3012.
 sekhar398.
+shakeel-sheikh.
 shaoservicenow.
 shubham-snc.
 somusekher.
