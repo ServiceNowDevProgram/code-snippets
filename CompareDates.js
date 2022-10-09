@@ -12,6 +12,7 @@
             if (end == start) {
                 return false;
             } else {
+             //logic updated
                 return true;
             }
         } catch (ex) {
