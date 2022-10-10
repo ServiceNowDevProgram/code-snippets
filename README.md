@@ -104,6 +104,7 @@ Sagar-agarwal.
 anillande90.
 b1naryst0rm.
 ChecksumFailed.
+harisnad.
 Irston.
 MartinStoyanoff.
 revantKulkarni.
@@ -112,7 +113,6 @@ pratyushasndev.
 sauravsumankumar.
 anguspalmer.
 ashuprince121.
-harisnad.
 mskoddow.
 phr-nk.
 tanu-profile.
