@@ -82,6 +82,7 @@ DavidArthurCole.
 dean-croaker.
 DynamiteC.
 eriemer1.
+harisnad.
 jacebenson.
 jiteshmalik.
 jonahpiascik.
@@ -93,9 +94,9 @@ ReginaldFawcett.
 rmedved84.
 seviceN.
 src107.
-thorn91.
 
 Top contributors (50%):
+thorn91.
 snamjosh.
 vasantharaja-natarajan.
 mgopw.
@@ -104,7 +105,6 @@ Sagar-agarwal.
 anillande90.
 b1naryst0rm.
 ChecksumFailed.
-harisnad.
 Irston.
 MartinStoyanoff.
 revantKulkarni.
