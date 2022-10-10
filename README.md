@@ -112,6 +112,7 @@ pratyushasndev.
 sauravsumankumar.
 anguspalmer.
 ashuprince121.
+harisnad.
 mskoddow.
 phr-nk.
 tanu-profile.
@@ -120,11 +121,10 @@ ashleysnyder.
 bradtiltonnow.
 brichards99.
 Danmax.
-Decoder-Paul.
 
 Other contributors:
+Decoder-Paul.
 dhruvii-powershell.
-harisnad.
 igrzhukovich.
 jamesfoot.
 JingAlanzhixin.
