@@ -1,0 +1,2 @@
+# Make Variable Editor Read Only for Catalog Items which have a Multi Row Variable Set
+Create an onLoad Client Script which would call a Script Include and pass in the Catalog Item sys_id to check if the Catalog Item contains a MRVS. The script has been tailored to work with the Requested Item table. To make it work for any other table which has the Variable Editor replace the field "cat_item" with the field containing the details of the Catalog Item
