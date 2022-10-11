@@ -128,6 +128,7 @@ Other contributors:
 igrzhukovich.
 jamesfoot.
 JingAlanzhixin.
+loudigi.
 Mahesh-Krishnan1.
 mevops.
 MihirRathod.
@@ -221,7 +222,6 @@ LarsAssen.
 LaviniaChiburte.
 LekiaAnonim.
 LoicSanchez.
-loudigi.
 LucasRocha2308.
 Luci-git.
 LuisSepulveda21.
