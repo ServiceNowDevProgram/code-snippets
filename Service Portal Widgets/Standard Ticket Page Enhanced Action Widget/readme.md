@@ -11,3 +11,4 @@ Go to Standard Ticket Configuration and select the table (record type) you'd lik
 Then click on the Action Region tab, in the Action Widget field, add your new widget - EC Standard Ticket Approval Actions.
 
 
+![Image of Standard Ticket Configuration](./standard_ticket_config.png)
