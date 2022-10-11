@@ -5,6 +5,9 @@ Adds additional action if current record has an approval pending or if current r
 # Action Widget dropdown 
 ![Image of Action Widget on Service Portl Page](./enhanced_action_sp_widget.png)
 
+## How to use
 
+Go to Standard Ticket Configuration and select the table (record type) you'd like to add this widget too.
+Then click on the Action Region tab, in the Action Widget field, add your new widget - EC Standard Ticket Approval Actions.
 
 
