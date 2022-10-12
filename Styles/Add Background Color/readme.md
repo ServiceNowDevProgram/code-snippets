@@ -1,0 +1,5 @@
+Open a record. Right click on any field label and select configure style.
+A list will open with all the styles applied on that field.
+Click on New button to create your custom style.
+Enter the code of style.css in Style field of style and done.
+You can use this code on any field in any table.
