@@ -42,15 +42,21 @@ ApplicationCoreBase.prototype = {
     },
 
     /**
-     * get a GlideRecord of the specified table
+     * get a GlideRecord of the specified table 
      * @param {string} strTableName name of table
+     * @param {string} strFieldName name of field // OPTIONAL
      * @param {string} id sys_id of the record
      * @returns GlideRecord of record, if it exists
      */
-    _getGr: function (strTableName, id) {
-        if (!strTableName || !id) return;
+     _getGr: function(strTableName, strFieldName /* optional */ , id) {
+        if (!strTableName || !strFieldName) return;
+        id = id ? id : strFieldName;
         var wrGr = new GlideRecord(strTableName);
-        if (!wrGr.get(id)) return;
+        if (wrGr.isValidField(strFieldName)) {
+            if (!wrGr.get(strFieldName, id)) return;
+        } else {
+            if (!wrGr.get(id)) return;
+        }
         return wrGr;
     },
 
