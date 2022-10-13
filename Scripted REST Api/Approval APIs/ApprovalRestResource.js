@@ -1,5 +1,5 @@
   /**
-   * Description : Approval API to approve the given approval record
+         * Description : Approval API to approve the given approval record
 	 * Resource Path : /api/swre/sr_approvals/{id}/approve
 	 * HTTP method : POST
 	 * @id : SysID of the record to be approved
