@@ -123,9 +123,9 @@ ashuprince121.
 bradtiltonnow.
 brichards99.
 Danmax.
+Decoder-Paul.
 
 Other contributors:
-Decoder-Paul.
 dhruvii-powershell.
 gowdah.
 igrzhukovich.
@@ -253,6 +253,7 @@ preshitd.
 prevostr.
 pupchenko.
 ranjithsit.
+Ravenon.
 Razzzial.
 renjithragil.
 retrokaj.
