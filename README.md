@@ -116,14 +116,15 @@ mskoddow.
 phr-nk.
 tanu-profile.
 aatrey882.
+amigujarathi.
 ashleysnyder.
 ashuprince121.
 bradtiltonnow.
 brichards99.
 Danmax.
-Decoder-Paul.
 
 Other contributors:
+Decoder-Paul.
 dhruvii-powershell.
 igrzhukovich.
 jamesfoot.
@@ -149,7 +150,6 @@ kcimpulse.
 akhoshnood.
 allam1234.
 amdhavalikar.
-amigujarathi.
 Anantharaman91.
 Anks-26.
 AnnaGould.
