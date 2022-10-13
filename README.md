@@ -121,9 +121,9 @@ ashuprince121.
 bradtiltonnow.
 brichards99.
 Danmax.
+Decoder-Paul.
 
 Other contributors:
-Decoder-Paul.
 dhruvii-powershell.
 igrzhukovich.
 jamesfoot.
@@ -276,6 +276,7 @@ Soulpancake000.
 speedy18.
 Srutip04.
 SteveMunsell.
+sushil-now.
 TamByrd.
 thesnowguy.
 tomlozano.
