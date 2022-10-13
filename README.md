@@ -127,6 +127,7 @@ Danmax.
 Other contributors:
 Decoder-Paul.
 dhruvii-powershell.
+gowdah.
 igrzhukovich.
 jamesfoot.
 JingAlanzhixin.
@@ -189,7 +190,6 @@ Enotgnik.
 ewhite1.
 fisikos.
 GiovanniPeretti.
-gowdah.
 greenc123.
 gurudev-7.
 HackoDev1530.
