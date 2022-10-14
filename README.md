@@ -113,6 +113,7 @@ trade12.
 pratyushasndev.
 sauravsumankumar.
 anguspalmer.
+gowdah.
 mskoddow.
 phr-nk.
 tanu-profile.
@@ -124,11 +125,10 @@ ashuprince121.
 bradtiltonnow.
 brichards99.
 Danmax.
-Decoder-Paul.
 
 Other contributors:
+Decoder-Paul.
 dhruvii-powershell.
-gowdah.
 igrzhukovich.
 jamesfoot.
 JingAlanzhixin.
