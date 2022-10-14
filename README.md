@@ -96,9 +96,10 @@ rmedved84.
 seviceN.
 src107.
 thorn91.
-snamjosh.
+urspvs.
 
 Top contributors (50%):
+snamjosh.
 vasantharaja-natarajan.
 mgopw.
 Sagar-agarwal.
@@ -110,7 +111,6 @@ Irston.
 MartinStoyanoff.
 revantKulkarni.
 trade12.
-urspvs.
 ynr-ram.
 pratyushasndev.
 sauravsumankumar.
