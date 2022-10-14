@@ -69,9 +69,9 @@ ovarn.
 devinvalencia.
 iar42.
 johndahl-now.
+rafzk.
 
 Top 25% of contributors:
-rafzk.
 stevezero.
 MarcMouries.
 allenandreas.
@@ -255,6 +255,7 @@ preshitd.
 prevostr.
 pupchenko.
 ranjithsit.
+raphaelcrv.
 Ravenon.
 Razzzial.
 renjithragil.
