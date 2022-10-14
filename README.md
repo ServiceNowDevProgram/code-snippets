@@ -117,6 +117,7 @@ gowdah.
 mskoddow.
 phr-nk.
 tanu-profile.
+ynr-ram.
 aatrey882.
 allam1234.
 amigujarathi.
@@ -124,9 +125,9 @@ ashleysnyder.
 ashuprince121.
 bradtiltonnow.
 brichards99.
-Danmax.
 
 Other contributors:
+Danmax.
 Decoder-Paul.
 dhruvii-powershell.
 igrzhukovich.
@@ -147,7 +148,6 @@ stwinkle.
 TheTreyKyle.
 thisnameissoclever.
 ttoter.
-ynr-ram.
 zaidongy.
 kcimpulse.
 158w5a0532.
