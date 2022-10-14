@@ -115,6 +115,7 @@ anguspalmer.
 mskoddow.
 phr-nk.
 tanu-profile.
+urspvs.
 aatrey882.
 allam1234.
 amigujarathi.
@@ -124,9 +125,9 @@ bradtiltonnow.
 brichards99.
 Danmax.
 Decoder-Paul.
-dhruvii-powershell.
 
 Other contributors:
+dhruvii-powershell.
 gowdah.
 igrzhukovich.
 jamesfoot.
@@ -146,7 +147,6 @@ stwinkle.
 TheTreyKyle.
 thisnameissoclever.
 ttoter.
-urspvs.
 ynr-ram.
 zaidongy.
 kcimpulse.
