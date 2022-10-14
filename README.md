@@ -67,13 +67,13 @@ sn-ajb.
 mr-swann.
 ovarn.
 devinvalencia.
+urspvs.
 iar42.
 johndahl-now.
-rafzk.
 
 Top 25% of contributors:
+rafzk.
 stevezero.
-urspvs.
 MarcMouries.
 allenandreas.
 apple9000.
