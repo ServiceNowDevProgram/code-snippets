@@ -73,6 +73,7 @@ rafzk.
 
 Top 25% of contributors:
 stevezero.
+urspvs.
 MarcMouries.
 allenandreas.
 apple9000.
@@ -96,7 +97,6 @@ rmedved84.
 seviceN.
 src107.
 thorn91.
-urspvs.
 
 Top contributors (50%):
 snamjosh.
