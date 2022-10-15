@@ -17,4 +17,4 @@ The API call requires the subflow internal name and scope. The internal name is 
 ### Benefits
 - Enable Citizen Developers to create complex UI Actions with low code Flow Designer capabilities instead of scripting
 - Run complex server side UI Actions asynchronously via Flow Designer for better user experience (avoids long loading times in the current user session)
-- Re use already created subflows and actions as well as provided spokes in UI actions
+- Re-use already created subflows and actions as well as provided spokes in UI actions
