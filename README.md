@@ -72,6 +72,7 @@ iar42.
 johndahl-now.
 
 Top 25% of contributors:
+oasif.
 rafzk.
 stevezero.
 MarcMouries.
@@ -90,7 +91,6 @@ jiteshmalik.
 jonahpiascik.
 Lacah.
 MrChrisE.
-oasif.
 odinsride.
 ReginaldFawcett.
 rmedved84.
