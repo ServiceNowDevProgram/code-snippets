@@ -126,9 +126,9 @@ ashuprince121.
 bradtiltonnow.
 brichards99.
 Danmax.
+Decoder-Paul.
 
 Other contributors:
-Decoder-Paul.
 dhruvii-powershell.
 igrzhukovich.
 jamesfoot.
@@ -248,6 +248,7 @@ mugiwaramenon.
 muhjaved.
 Munnisona.
 mybpdi.
+namrataghorpade.
 NayeemKaka.
 neenaSharma1.
 Nerdcode.
