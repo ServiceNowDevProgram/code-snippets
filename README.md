@@ -60,6 +60,8 @@ Top 10% of contributors:
 litwi1rm.
 danr2c2.
 mlemartien.
+oasif.
+urspvs.
 azeezgaa.
 mak1A4.
 vandna07.
@@ -68,9 +70,9 @@ mr-swann.
 ovarn.
 devinvalencia.
 iar42.
-johndahl-now.
 
 Top 25% of contributors:
+johndahl-now.
 rafzk.
 stevezero.
 MarcMouries.
@@ -82,13 +84,13 @@ DavidArthurCole.
 dean-croaker.
 DynamiteC.
 eriemer1.
+gowdah.
 harisnad.
 jacebenson.
 jiteshmalik.
 jonahpiascik.
 Lacah.
 MrChrisE.
-oasif.
 odinsride.
 ReginaldFawcett.
 rmedved84.
@@ -96,9 +98,9 @@ seviceN.
 src107.
 thorn91.
 snamjosh.
+vasantharaja-natarajan.
 
 Top contributors (50%):
-vasantharaja-natarajan.
 mgopw.
 Sagar-agarwal.
 23Thom.
@@ -109,6 +111,7 @@ Irston.
 MartinStoyanoff.
 revantKulkarni.
 trade12.
+ynr-ram.
 pratyushasndev.
 sauravsumankumar.
 anguspalmer.
@@ -123,14 +126,14 @@ ashuprince121.
 bradtiltonnow.
 brichards99.
 Danmax.
-
-Other contributors:
 Decoder-Paul.
 dhruvii-powershell.
-gowdah.
 igrzhukovich.
+
+Other contributors:
 jamesfoot.
 JingAlanzhixin.
+KartikeSingh.
 loudigi.
 Mahesh-Krishnan1.
 mevops.
@@ -142,10 +145,12 @@ nthumma.
 physi.
 pratyushmp.
 samwinchet.
+shakeel-sheikh.
+soerenmaucher.
 stwinkle.
 TheTreyKyle.
+thisnameissoclever.
 ttoter.
-ynr-ram.
 zaidongy.
 kcimpulse.
 158w5a0532.
@@ -175,6 +180,7 @@ Codjam.
 Coolaxx.
 CreatorWorkflowSC.
 cwhits.
+DaiTranIT.
 dalestubblefield.
 Damilare1212.
 DangerousNights.
@@ -182,6 +188,7 @@ davewburns.
 davidkwhuang.
 deathkraiser.
 denmant.
+Dimuthu7.
 DirkRedeker.
 eduard-nitoi.
 EduardoUG.
@@ -208,10 +215,12 @@ j4rodm.
 jamalissimo.
 jamiestroud.
 jayeshyadav252.
+jc73uk.
 Jennylou777.
 joshuaprakashg.
 joshuatechie.
 jschuller.
+jsmayo.
 JWITSM.
 kainturar.
 Karthick986.
@@ -228,6 +237,7 @@ LoicSanchez.
 LucasRocha2308.
 Luci-git.
 LuisSepulveda21.
+lverbeke.
 m2santiago.
 macias-daniel.
 makesh-ind.
@@ -242,7 +252,9 @@ mugiwaramenon.
 muhjaved.
 Munnisona.
 mybpdi.
+namrataghorpade.
 NayeemKaka.
+neenaSharma1.
 Nerdcode.
 nvprav.
 peteosaz.
@@ -251,7 +263,10 @@ Pratyusha418.
 preshitd.
 prevostr.
 pupchenko.
+Rampriya-S.
 ranjithsit.
+raphaelcrv.
+Ravenon.
 Razzzial.
 renjithragil.
 retrokaj.
@@ -270,8 +285,8 @@ sanju009.
 SanketJ29.
 Sarita3012.
 sekhar398.
-shakeel-sheikh.
 shaoservicenow.
+sherief-io.
 shubham-snc.
 somusekher.
 Soulpancake000.
