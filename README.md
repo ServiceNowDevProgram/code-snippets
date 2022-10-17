@@ -128,9 +128,9 @@ brichards99.
 Danmax.
 Decoder-Paul.
 dhruvii-powershell.
+igrzhukovich.
 
 Other contributors:
-igrzhukovich.
 jamesfoot.
 JingAlanzhixin.
 KartikeSingh.
@@ -188,6 +188,7 @@ davewburns.
 davidkwhuang.
 deathkraiser.
 denmant.
+Dimuthu7.
 DirkRedeker.
 eduard-nitoi.
 EduardoUG.
