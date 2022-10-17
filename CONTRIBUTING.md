@@ -7,7 +7,7 @@ To contribute, just follow these steps:
 3. Add, edit, or re-organize Code Snippets by editing folders and files and commiting them to your forked repository
 4. Submit a pull request to the main branch of `ServiceNowDevProgram / code-snippets`
   - Pull requests should have a title/comment that describes what is being added/changed
-  - Pull requests shuold only contain files that are relevant to what is said in the pull request's title and description
+  - Pull requests should only contain files that are relevant to what is said in the pull request's title and description
   - Files should not be XML imports of ServiceNow records.
 
 That's it! A developer advocate or an sndevs designated approver will review your pull request and if approved, merge it into this repo for everyone's benefit!
