@@ -123,12 +123,13 @@ allam1234.
 amigujarathi.
 ashleysnyder.
 ashuprince121.
+BadalHub.
 bradtiltonnow.
 brichards99.
 Danmax.
-Decoder-Paul.
 
 Other contributors:
+Decoder-Paul.
 dhruvii-powershell.
 igrzhukovich.
 jamesfoot.
@@ -162,7 +163,6 @@ AnnaGould.
 apbuhssc.
 AryanBarsaiyan.
 askarthik.
-BadalHub.
 Balamurugan-RR.
 beingfluid.
 bgrk.
