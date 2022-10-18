@@ -1,9 +1,9 @@
 # Adjust Variable Order on Catalog Item
 
-This Fix Script helps developers to automatically re-order all variables of a given Catalog Item or Variable Set.
-We all know the struggle, that initially we set up variables with fixed order steps such as 100, 200, 300, 400 ... 
-However, over time, additional variables are inserted in between, resulting in a messy looking order (e.g. 10, 15, 50, 55, 100, 200, 350, 300, 400). 
-This fix script should enable developers to keep their Catalog Items celan and structured, whith minimal effort. 
+This Fix Script helps developers to automatically re-order all variables of a given Catalog Item or Variable Set.  
+We all know the struggle, that initially we set up variables with fixed order steps such as 100, 200, 300, 400 ...   
+However, over time, additional variables are inserted in between, resulting in a messy looking order (e.g. 10, 15, 50, 55, 100, 200, 350, 300, 400).   
+This fix script should enable developers to keep their Catalog Items celan and structured, whith minimal effort.   
 
 ### Instruction
 
@@ -13,7 +13,7 @@ Furthermore, you have to define the step size for the order. My recommendation w
  
 ```javascript
 var sys_id = "e0ecd03947e29110d3c0c789826d4332"; //provide a catalog item or variable set sys id
-var step_size = 100; //the step size for the new order
+var step_size = 100; //provide the step size for the new order
 ```
 
 ### Benefits
