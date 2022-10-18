@@ -117,6 +117,7 @@ sauravsumankumar.
 anguspalmer.
 mskoddow.
 phr-nk.
+soerenmaucher.
 tanu-profile.
 aatrey882.
 allam1234.
@@ -126,9 +127,9 @@ ashuprince121.
 BadalHub.
 bradtiltonnow.
 brichards99.
-Danmax.
 
 Other contributors:
+Danmax.
 Decoder-Paul.
 dhruvii-powershell.
 igrzhukovich.
@@ -147,7 +148,6 @@ physi.
 pratyushmp.
 samwinchet.
 shakeel-sheikh.
-soerenmaucher.
 stwinkle.
 TheTreyKyle.
 thisnameissoclever.
