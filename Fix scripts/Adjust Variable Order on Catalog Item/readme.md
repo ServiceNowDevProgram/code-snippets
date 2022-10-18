@@ -8,7 +8,7 @@ This fix script should enable developers to keep their Catalog Items clean and s
 ### Instruction
 
 At the beginning of the script you have to set the Sys ID of the Catalog Item or Variable Set where you want to re-order the variables.
-The Script is build in a way, that this Sys ID can belong to either a Variable Set or Catalog Item.
+The Script is built in a way, that this Sys ID can belong to either a Variable Set or Catalog Item.
 Furthermore, you have to define the step size for the order. My recommendation would be to use 100.
  
 ```javascript
