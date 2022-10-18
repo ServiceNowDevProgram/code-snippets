@@ -110,6 +110,7 @@ ChecksumFailed.
 Irston.
 MartinStoyanoff.
 revantKulkarni.
+soerenmaucher.
 trade12.
 ynr-ram.
 pratyushasndev.
@@ -126,9 +127,9 @@ ashuprince121.
 BadalHub.
 bradtiltonnow.
 brichards99.
-Danmax.
 
 Other contributors:
+Danmax.
 Decoder-Paul.
 dhruvii-powershell.
 igrzhukovich.
@@ -147,7 +148,6 @@ physi.
 pratyushmp.
 samwinchet.
 shakeel-sheikh.
-soerenmaucher.
 stwinkle.
 TheTreyKyle.
 thisnameissoclever.
