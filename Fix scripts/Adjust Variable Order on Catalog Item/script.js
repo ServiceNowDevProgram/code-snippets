@@ -1,7 +1,7 @@
 
 //set the following variables before running the script
 var sys_id = "e0ecd03947e29110d3c0c789826d4332"; //provide a catalog item or variable set sys id
-var step_size = 5000; //provide the step size for the new order
+var step_size = 100; //provide the step size for the new order
 
 
 if (sys_id) { //avoid updating all records with empty fields for catalog item or variable set
