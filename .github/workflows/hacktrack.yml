@@ -1,0 +1,35 @@
+#This file is for ServiceNow Dev Program Hacktoberfest Tracking and can be ignored or deleted.
+
+name: Record Hacktrack Event
+on:
+  push:
+    branches: main
+  fork:
+    branches: main
+  issues:
+    types: [opened, closed]
+    branches: main
+  pull_request_target:
+    types: [opened, closed]
+    branches: main
+jobs:
+  deployment:
+    runs-on: ubuntu-latest
+    steps:
+#     - name: Log payload
+#       env:
+#         GITHUB_CONTEXT: ${{ toJson(github) }}
+#       run: |
+#         echo "$GITHUB_CONTEXT"
+    - name: Contact DPR
+      id: myRequest
+      uses: fjogeleit/http-request-action@v1.8.1
+      with:
+        url: ${{ format('https://{0}.service-now.com/api/x_snc_hacktrack/hacktrack', secrets.HT_INSTANCE_NAME) }}
+        method: 'POST'
+        contentType: application/json
+        data: ${{ toJson(github) }}
+        username: ${{ secrets.DPRD_USERNAME }}
+        password: ${{ secrets.DPRD_PASSWORD }}
+    - name: Show Response
+      run: echo ${{ steps.myRequest.outputs.response }}
