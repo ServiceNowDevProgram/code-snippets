@@ -127,9 +127,9 @@ ashleysnyder.
 ashuprince121.
 BadalHub.
 bradtiltonnow.
+brichards99.
 
 Other contributors:
-brichards99.
 Danmax.
 Decoder-Paul.
 dhruvii-powershell.
@@ -311,4 +311,5 @@ Watermark-ServiceNow.
 wcarroll.
 wkbroxton.
 xdisplay.
+yourepicservices.
 youthinkasido.
