@@ -1,7 +1,7 @@
 # Get Field Label in Specific Language
 
 This Script Include enables retrieving the label of a certain table field in any given language. 
-Often in multi-language instances, the label of a field must be printed via a script. Instead of retrieving the value each time individually this script include can be re-used (e.g. by multiple Business Rules or Mail Scripts) 
+Often in multi-language instances, the label of a field must be accessed via a script (e.g. to add it to the HTML of an email or add it to another fields like the description or work notes). Instead of retrieving the value each time individually this script include can be re-used (e.g. by multiple Business Rules or Mail Scripts) 
 
 ### Instruction
 
