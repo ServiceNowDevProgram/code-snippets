@@ -4,7 +4,7 @@
 
     try {
       
-        new NSWH_PPM_Utils().setProgramDates(current, 'sys_id');
+        new PPM_Utils().setProgramDates(current, 'sys_id');
 
     } catch (e) {
         if (gs.isInteractive() && gs.hasRole('admin')) {
