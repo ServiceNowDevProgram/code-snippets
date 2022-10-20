@@ -69,11 +69,11 @@ sn-ajb.
 mr-swann.
 ovarn.
 devinvalencia.
+MrChrisE.
 iar42.
-johndahl-now.
 
 Top 25% of contributors:
-MrChrisE.
+johndahl-now.
 rafzk.
 stevezero.
 MarcMouries.
