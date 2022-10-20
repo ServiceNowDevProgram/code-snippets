@@ -1,4 +1,4 @@
-Useful for tasks like triggering notifications or to trigger asynchronous script steps from a flow. 
+Useful for tasks like triggering notifications or to trigger asynchronous script actions from a flow. 
 
 This flow action triggers the passed in event with optional parameters. Will work for most scenarios as the event record is passed in as a Document ID input.
 
