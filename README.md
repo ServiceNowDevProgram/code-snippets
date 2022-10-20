@@ -76,6 +76,7 @@ Top 25% of contributors:
 MrChrisE.
 rafzk.
 stevezero.
+ynr-ram.
 MarcMouries.
 allenandreas.
 apple9000.
@@ -98,7 +99,6 @@ seviceN.
 soerenmaucher.
 src107.
 thorn91.
-ynr-ram.
 
 Top contributors (50%):
 snamjosh.
