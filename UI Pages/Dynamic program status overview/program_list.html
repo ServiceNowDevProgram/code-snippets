@@ -1,0 +1,42 @@
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+	<html>	
+		<style>
+			table {
+			border-collapse: collapse;
+			width: 100%;
+			}
+
+			th, td {
+			text-align: left;
+			padding: 8px;
+			color: white;
+			}
+
+			tr:nth-child(even){background-color: #f2f2f2}
+
+			th {
+				background-color: #0A2356;
+				color: white !important;
+			}
+			
+			table.row-clickable tbody tr td {
+				padding: 0;
+			}
+
+			table.row-clickable tbody tr td a {
+				display: block;
+				padding: 8px;
+			}
+		</style>
+
+		<body>	
+
+			<div id="dvTable">
+			</div>
+
+			<p id="no_users" style="color:blue;display:none">No program status to show</p>
+
+		</body>
+	</html>
+
+</j:jelly>
