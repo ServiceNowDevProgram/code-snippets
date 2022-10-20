@@ -95,12 +95,13 @@ odinsride.
 ReginaldFawcett.
 rmedved84.
 seviceN.
+soerenmaucher.
 src107.
 thorn91.
 ynr-ram.
-snamjosh.
 
 Top contributors (50%):
+snamjosh.
 vasantharaja-natarajan.
 mgopw.
 Sagar-agarwal.
@@ -111,7 +112,6 @@ ChecksumFailed.
 Irston.
 MartinStoyanoff.
 revantKulkarni.
-soerenmaucher.
 trade12.
 pratyushasndev.
 sauravsumankumar.
