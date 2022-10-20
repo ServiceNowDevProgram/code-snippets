@@ -121,15 +121,16 @@ Mahesh-Krishnan1.
 mskoddow.
 phr-nk.
 tanu-profile.
+thisnameissoclever.
 aatrey882.
 allam1234.
 amigujarathi.
 ashleysnyder.
 BadalHub.
 bradtiltonnow.
-brichards99.
 
 Other contributors:
+brichards99.
 Danmax.
 Decoder-Paul.
 dhruvii-powershell.
@@ -150,7 +151,6 @@ samwinchet.
 shakeel-sheikh.
 stwinkle.
 TheTreyKyle.
-thisnameissoclever.
 ttoter.
 yourepicservices.
 zaidongy.
