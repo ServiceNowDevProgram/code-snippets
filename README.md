@@ -79,6 +79,7 @@ stevezero.
 ynr-ram.
 MarcMouries.
 allenandreas.
+anillande90.
 apple9000.
 ashu759.
 avssrikanth.
@@ -98,15 +99,14 @@ rmedved84.
 seviceN.
 soerenmaucher.
 src107.
-thorn91.
 
 Top contributors (50%):
+thorn91.
 snamjosh.
 vasantharaja-natarajan.
 mgopw.
 Sagar-agarwal.
 23Thom.
-anillande90.
 b1naryst0rm.
 ChecksumFailed.
 Irston.
