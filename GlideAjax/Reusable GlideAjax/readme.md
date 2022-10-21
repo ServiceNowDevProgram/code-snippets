@@ -3,7 +3,11 @@ When you need a client side script to contact the server and return few values f
 
 **An Example**
 Need user fields like manager, Phone, Email matching sys_id of user:
-var g_ajax = new GlideAjax('ScriptIncludeName'); // pass name of Client callable script include name
+function onChange(control, oldValue, newValue, isLoading) {
+    if (isLoading || newValue == '') {
+        return;
+    }
+    var g_ajax = new GlideAjax('ScriptIncludeName'); // pass name of Client callable script include name
     g_ajax.addParam('sysparm_name', 'scriptIncludeFunctionName'); // pass function name which will return result
     g_ajax.addParam('sysparm_table', 'sys_user'); 
     g_ajax.addParam('sysparm_query', 'sys_id='+g_form.getValue('requested_for')); 
@@ -16,3 +20,4 @@ var g_ajax = new GlideAjax('ScriptIncludeName'); // pass name of Client callable
         g_form.setValue('email', answer.email);
         g_form.setValue('phone', answer.phone);
     }
+}
