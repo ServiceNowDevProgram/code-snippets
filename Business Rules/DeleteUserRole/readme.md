@@ -7,4 +7,6 @@ Steps:
         - AFter
         - Order: 100
         - Operation: Delete
+  - Provide the condition as:
+   !current.user_role.nil()
   - Select Advance option and use the script
