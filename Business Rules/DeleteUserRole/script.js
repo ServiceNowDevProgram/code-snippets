@@ -6,7 +6,8 @@ When: AFter
 Operation:Delete
 order: 100
 
->>>>
+>>>> Condition: 
+  !current.user_role.nil()
 */
 deleteUserRole();
 
