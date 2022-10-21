@@ -127,9 +127,10 @@ allam1234.
 amigujarathi.
 ashleysnyder.
 BadalHub.
-bradtiltonnow.
+bird-03.
 
 Other contributors:
+bradtiltonnow.
 brichards99.
 Danmax.
 Decoder-Paul.
@@ -170,7 +171,6 @@ bgrk.
 Bharat123rox.
 Bigshmow.
 billyperkinsukg.
-bird-03.
 Brian-Rowland.
 cenzo85.
 Charlesemesobum.
