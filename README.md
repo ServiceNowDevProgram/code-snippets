@@ -129,9 +129,9 @@ amigujarathi.
 ashleysnyder.
 BadalHub.
 bradtiltonnow.
+brichards99.
 
 Other contributors:
-brichards99.
 Danmax.
 Decoder-Paul.
 dhruvii-powershell.
@@ -171,6 +171,7 @@ bgrk.
 Bharat123rox.
 Bigshmow.
 billyperkinsukg.
+bmfmancini.
 Brian-Rowland.
 cenzo85.
 Charlesemesobum.
