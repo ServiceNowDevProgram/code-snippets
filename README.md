@@ -135,6 +135,7 @@ Decoder-Paul.
 
 Other contributors:
 dhruvii-powershell.
+girishnagaraj09.
 igrzhukovich.
 jamesfoot.
 JingAlanzhixin.
@@ -206,7 +207,6 @@ Enotgnik.
 ewhite1.
 fisikos.
 GiovanniPeretti.
-girishnagaraj09.
 greenc123.
 gurudev-7.
 HackoDev1530.
