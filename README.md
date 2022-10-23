@@ -115,26 +115,28 @@ revantKulkarni.
 trade12.
 pratyushasndev.
 sauravsumankumar.
+amigujarathi.
 anguspalmer.
 ashuprince121.
 bird-03.
 Mahesh-Krishnan1.
 mskoddow.
 phr-nk.
+Radhe-Manasa.
 tanu-profile.
 thisnameissoclever.
 aatrey882.
 allam1234.
-amigujarathi.
 ashleysnyder.
 BadalHub.
 bradtiltonnow.
 brichards99.
 Danmax.
-Decoder-Paul.
 
 Other contributors:
+Decoder-Paul.
 dhruvii-powershell.
+girishnagaraj09.
 igrzhukovich.
 jamesfoot.
 JingAlanzhixin.
@@ -148,7 +150,6 @@ mwchiao.
 nthumma.
 physi.
 pratyushmp.
-Radhe-Manasa.
 samwinchet.
 shakeel-sheikh.
 stwinkle.
@@ -206,7 +207,6 @@ Enotgnik.
 ewhite1.
 fisikos.
 GiovanniPeretti.
-girishnagaraj09.
 greenc123.
 gurudev-7.
 HackoDev1530.
