@@ -1,0 +1,4 @@
+(function execute(inputs, outputs) {
+// ... code ...
+  gs.eventQueue(inputs.script_event,inputs.script_record,inputs.script_parm1,inputs.script_parm2);
+})(inputs, outputs);
