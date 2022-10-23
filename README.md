@@ -101,9 +101,9 @@ soerenmaucher.
 src107.
 thorn91.
 snamjosh.
+vasantharaja-natarajan.
 
 Top contributors (50%):
-vasantharaja-natarajan.
 mgopw.
 Sagar-agarwal.
 23Thom.
@@ -121,7 +121,6 @@ bird-03.
 Mahesh-Krishnan1.
 mskoddow.
 phr-nk.
-Radhe-Manasa.
 tanu-profile.
 thisnameissoclever.
 aatrey882.
@@ -131,10 +130,10 @@ ashleysnyder.
 BadalHub.
 bradtiltonnow.
 brichards99.
-
-Other contributors:
 Danmax.
 Decoder-Paul.
+
+Other contributors:
 dhruvii-powershell.
 igrzhukovich.
 jamesfoot.
@@ -149,9 +148,11 @@ mwchiao.
 nthumma.
 physi.
 pratyushmp.
+Radhe-Manasa.
 samwinchet.
 shakeel-sheikh.
 stwinkle.
+tejudhoran95.
 TheTreyKyle.
 ttoter.
 Vish-X07.
@@ -205,6 +206,7 @@ Enotgnik.
 ewhite1.
 fisikos.
 GiovanniPeretti.
+girishnagaraj09.
 greenc123.
 gurudev-7.
 HackoDev1530.
