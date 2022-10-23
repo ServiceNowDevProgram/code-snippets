@@ -71,9 +71,9 @@ mr-swann.
 ovarn.
 devinvalencia.
 iar42.
+johndahl-now.
 
 Top 25% of contributors:
-johndahl-now.
 rafzk.
 stevezero.
 ynr-ram.
@@ -164,6 +164,7 @@ amdhavalikar.
 Anantharaman91.
 Anks-26.
 AnnaGould.
+anubhav-ritolia.
 apbuhssc.
 AryanBarsaiyan.
 askarthik.
