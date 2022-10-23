@@ -152,6 +152,7 @@ pratyushmp.
 samwinchet.
 shakeel-sheikh.
 stwinkle.
+tejudhoran95.
 TheTreyKyle.
 ttoter.
 Vish-X07.
@@ -306,7 +307,6 @@ Srutip04.
 SteveMunsell.
 sushil-now.
 TamByrd.
-tejudhoran95.
 thesnowguy.
 tomlozano.
 TRIGGEREDcoder.
