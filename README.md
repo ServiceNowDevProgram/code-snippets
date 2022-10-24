@@ -125,6 +125,7 @@ mskoddow.
 phr-nk.
 tanu-profile.
 thisnameissoclever.
+Vish-X07.
 aatrey882.
 allam1234.
 ashleysnyder.
@@ -132,9 +133,9 @@ BadalHub.
 bradtiltonnow.
 brichards99.
 Danmax.
-Decoder-Paul.
 
 Other contributors:
+Decoder-Paul.
 dhruvii-powershell.
 girishnagaraj09.
 igrzhukovich.
@@ -156,7 +157,6 @@ stwinkle.
 tejudhoran95.
 TheTreyKyle.
 ttoter.
-Vish-X07.
 zaidongy.
 Litwilly.
 kcimpulse.
