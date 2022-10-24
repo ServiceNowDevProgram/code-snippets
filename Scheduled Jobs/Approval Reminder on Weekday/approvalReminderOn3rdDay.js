@@ -20,7 +20,7 @@ var end=sch.add(stdate,dur);
 var diff= parseInt((gs.dateDiff(gr1, end,true))/60/60/24);
 if(diff<=0)
 {
-//trigger notification reminders to approvals on weekday if they not approved in 3 days from creation date and  only if the 
+//trigger notification reminders to approvals on weekday if they not approved in 3 days 
 gs.eventQueue('pending.approval.3rdday',mk,mk.approver.getValue('email'),'');
 
 }
