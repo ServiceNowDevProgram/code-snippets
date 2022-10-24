@@ -1,8 +1,7 @@
  var id=current.sys_id;
 var tableName=current.sys_class_name;          
               var gdt = new GlideDateTime(gs.nowDateTime());
-
-              gdt.addDays(90);
+             gdt.addDays(90);
           
               //gs.addErrorMessage(gdt);
 
@@ -25,8 +24,7 @@ var tableName=current.sys_class_name;
               grST.trigger_type = 0;
 
               grST.insert();
-
-             
+           
 
               function doTimelySchedule(id) {
 
@@ -46,9 +44,7 @@ var tableName=current.sys_class_name;
 
                                            + "}";
 
-                                           return ret;
-
-                                          
+                                           return ret;                                       
 
                                           
 
