@@ -132,9 +132,9 @@ BadalHub.
 bradtiltonnow.
 brichards99.
 Danmax.
+Decoder-Paul.
 
 Other contributors:
-Decoder-Paul.
 dhruvii-powershell.
 girishnagaraj09.
 igrzhukovich.
@@ -310,6 +310,7 @@ sushil-now.
 TamByrd.
 thesnowguy.
 tomlozano.
+TreasuryDigitalApps.
 TRIGGEREDcoder.
 tsicot.
 VictorAlbergaria.
