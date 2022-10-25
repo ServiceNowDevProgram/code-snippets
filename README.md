@@ -62,13 +62,13 @@ danr2c2.
 mlemartien.
 oasif.
 urspvs.
+ovarn.
 azeezgaa.
 mak1A4.
 MrChrisE.
 vandna07.
 sn-ajb.
 mr-swann.
-ovarn.
 devinvalencia.
 iar42.
 johndahl-now.
@@ -101,12 +101,13 @@ soerenmaucher.
 src107.
 thorn91.
 snamjosh.
-
-Top contributors (50%):
 vasantharaja-natarajan.
 mgopw.
+
+Top contributors (50%):
 Sagar-agarwal.
 23Thom.
+amigujarathi.
 b1naryst0rm.
 ChecksumFailed.
 Irston.
@@ -120,22 +121,24 @@ ashuprince121.
 bird-03.
 Mahesh-Krishnan1.
 mskoddow.
+OrgovanGeza.
 phr-nk.
 Radhe-Manasa.
 tanu-profile.
 thisnameissoclever.
+Vish-X07.
 aatrey882.
 allam1234.
-amigujarathi.
 ashleysnyder.
 BadalHub.
 bradtiltonnow.
 brichards99.
+Danmax.
 
 Other contributors:
-Danmax.
 Decoder-Paul.
 dhruvii-powershell.
+girishnagaraj09.
 igrzhukovich.
 jamesfoot.
 JingAlanzhixin.
@@ -147,17 +150,19 @@ mikeroosa.
 miracc.
 mwchiao.
 nthumma.
+patrickpaterlini.
 physi.
 pratyushmp.
 samwinchet.
 shakeel-sheikh.
 stwinkle.
+tejudhoran95.
 TheTreyKyle.
 ttoter.
-Vish-X07.
 zaidongy.
 Litwilly.
 kcimpulse.
+0x3developer.
 158w5a0532.
 Abhishekchowdarapu.
 akhoshnood.
@@ -248,6 +253,7 @@ LuisSepulveda21.
 lverbeke.
 m2santiago.
 macias-daniel.
+Mady1947.
 makesh-ind.
 maralucca.
 Mexiprince.
@@ -266,7 +272,6 @@ NayeemKaka.
 neenaSharma1.
 Nerdcode.
 nvprav.
-patrickpaterlini.
 peteosaz.
 Prasannalakshmik.
 Pratyusha418.
@@ -308,6 +313,7 @@ sushil-now.
 TamByrd.
 thesnowguy.
 tomlozano.
+TreasuryDigitalApps.
 TRIGGEREDcoder.
 tsicot.
 VictorAlbergaria.
