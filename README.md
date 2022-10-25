@@ -121,6 +121,7 @@ ashuprince121.
 bird-03.
 Mahesh-Krishnan1.
 mskoddow.
+OrgovanGeza.
 phr-nk.
 Radhe-Manasa.
 tanu-profile.
@@ -133,9 +134,9 @@ BadalHub.
 bradtiltonnow.
 brichards99.
 Danmax.
-Decoder-Paul.
 
 Other contributors:
+Decoder-Paul.
 dhruvii-powershell.
 girishnagaraj09.
 igrzhukovich.
@@ -149,7 +150,6 @@ mikeroosa.
 miracc.
 mwchiao.
 nthumma.
-OrgovanGeza.
 patrickpaterlini.
 physi.
 pratyushmp.
