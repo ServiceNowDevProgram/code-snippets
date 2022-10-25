@@ -125,6 +125,7 @@ OrgovanGeza.
 phr-nk.
 Radhe-Manasa.
 tanu-profile.
+tejudhoran95.
 thisnameissoclever.
 Vish-X07.
 aatrey882.
@@ -133,9 +134,9 @@ ashleysnyder.
 BadalHub.
 bradtiltonnow.
 brichards99.
-Danmax.
 
 Other contributors:
+Danmax.
 Decoder-Paul.
 dhruvii-powershell.
 girishnagaraj09.
@@ -156,7 +157,6 @@ pratyushmp.
 samwinchet.
 shakeel-sheikh.
 stwinkle.
-tejudhoran95.
 TheTreyKyle.
 ttoter.
 zaidongy.
