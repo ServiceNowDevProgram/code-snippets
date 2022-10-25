@@ -62,13 +62,13 @@ danr2c2.
 mlemartien.
 oasif.
 urspvs.
+ovarn.
 azeezgaa.
 mak1A4.
 MrChrisE.
 vandna07.
 sn-ajb.
 mr-swann.
-ovarn.
 devinvalencia.
 iar42.
 johndahl-now.
@@ -125,6 +125,7 @@ mskoddow.
 phr-nk.
 tanu-profile.
 thisnameissoclever.
+Vish-X07.
 aatrey882.
 allam1234.
 ashleysnyder.
@@ -132,9 +133,9 @@ BadalHub.
 bradtiltonnow.
 brichards99.
 Danmax.
-Decoder-Paul.
 
 Other contributors:
+Decoder-Paul.
 dhruvii-powershell.
 girishnagaraj09.
 igrzhukovich.
@@ -148,6 +149,7 @@ mikeroosa.
 miracc.
 mwchiao.
 nthumma.
+patrickpaterlini.
 physi.
 pratyushmp.
 samwinchet.
@@ -156,7 +158,6 @@ stwinkle.
 tejudhoran95.
 TheTreyKyle.
 ttoter.
-Vish-X07.
 zaidongy.
 Litwilly.
 kcimpulse.
@@ -250,6 +251,7 @@ LuisSepulveda21.
 lverbeke.
 m2santiago.
 macias-daniel.
+Mady1947.
 makesh-ind.
 maralucca.
 Mexiprince.
@@ -268,7 +270,6 @@ NayeemKaka.
 neenaSharma1.
 Nerdcode.
 nvprav.
-patrickpaterlini.
 peteosaz.
 Prasannalakshmik.
 Pratyusha418.
