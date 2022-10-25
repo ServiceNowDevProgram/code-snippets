@@ -134,9 +134,9 @@ ashleysnyder.
 BadalHub.
 bradtiltonnow.
 brichards99.
+Danmax.
 
 Other contributors:
-Danmax.
 Decoder-Paul.
 dhruvii-powershell.
 girishnagaraj09.
@@ -296,6 +296,7 @@ rwhittaker.
 SagarVijaykumar.
 saikumar-e.
 salem769.
+salmaniqbal92.
 sanchit-varshney.
 sanju009.
 SanketJ29.
