@@ -70,16 +70,16 @@ vandna07.
 sn-ajb.
 mr-swann.
 devinvalencia.
+anillande90.
 iar42.
-johndahl-now.
 
 Top 25% of contributors:
+johndahl-now.
 rafzk.
 stevezero.
 ynr-ram.
 MarcMouries.
 allenandreas.
-anillande90.
 apple9000.
 ashu759.
 avssrikanth.
