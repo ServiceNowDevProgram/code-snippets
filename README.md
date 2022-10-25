@@ -53,8 +53,8 @@ sumanthdosapati.
 RahmanM.
 paigesndev.
 PranavBhagat18.
-smartcarleen.
 niamccash.
+smartcarleen.
 litwi1rm.
 
 Top 10% of contributors:
@@ -134,9 +134,9 @@ ashleysnyder.
 BadalHub.
 bradtiltonnow.
 brichards99.
+Danmax.
 
 Other contributors:
-Danmax.
 Decoder-Paul.
 dhruvii-powershell.
 girishnagaraj09.
@@ -151,7 +151,6 @@ mikeroosa.
 miracc.
 mwchiao.
 nthumma.
-patrickpaterlini.
 physi.
 pratyushmp.
 samwinchet.
@@ -272,6 +271,7 @@ NayeemKaka.
 neenaSharma1.
 Nerdcode.
 nvprav.
+patrickpaterlini.
 peteosaz.
 Prasannalakshmik.
 Pratyusha418.
@@ -296,6 +296,7 @@ rwhittaker.
 SagarVijaykumar.
 saikumar-e.
 salem769.
+salmaniqbal92.
 sanchit-varshney.
 sanju009.
 SanketJ29.
