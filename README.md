@@ -131,13 +131,12 @@ tanu-profile.
 tejudhoran95.
 thisnameissoclever.
 aatrey882.
-adarshsingh0205.
 allam1234.
 ashleysnyder.
 BadalHub.
+bradtiltonnow.
 
 Other contributors:
-bradtiltonnow.
 brichards99.
 Danmax.
 Decoder-Paul.
@@ -170,6 +169,7 @@ kcimpulse.
 0x3developer.
 158w5a0532.
 Abhishekchowdarapu.
+adarshsingh0205.
 akhoshnood.
 amdhavalikar.
 Anantharaman91.
