@@ -6,6 +6,8 @@ Welcome to ServiceNow's Code Snippets community repository, managed by the Devel
 
 Inside this repository, you will find community submitted code-snippets and their variants for different use-cases.
 
+**Note:** ServiceNowDevProgram has many repositories that can be imported directly into ServiceNow, this is not one of them; This repository is meant to be edited directly in GitHub or any other Git-enabled IDE like VS Code.
+
 🔔🔔🔔<br>
 ***CONTRIBUTORS must follow all guidelines in [CONTRIBUTING.md](CONTRIBUTING.md)*** or run the risk of having your Pull Requests labeled as spam.<br>
 🔔🔔🔔
@@ -48,12 +50,12 @@ R3J3NT.
 hrobarikt.
 alikuttyka.
 kmohit2809.
-ishaanshoor.
 sumanthdosapati.
+ishaanshoor.
 RahmanM.
+niamccash.
 paigesndev.
 PranavBhagat18.
-niamccash.
 smartcarleen.
 litwi1rm.
 
@@ -112,6 +114,7 @@ b1naryst0rm.
 ChecksumFailed.
 Irston.
 MartinStoyanoff.
+OrgovanGeza.
 revantKulkarni.
 trade12.
 Vish-X07.
@@ -122,7 +125,6 @@ ashuprince121.
 bird-03.
 Mahesh-Krishnan1.
 mskoddow.
-OrgovanGeza.
 phr-nk.
 Radhe-Manasa.
 tanu-profile.
@@ -151,6 +153,7 @@ mikeroosa.
 miracc.
 mwchiao.
 nthumma.
+patrickpaterlini.
 physi.
 pratyushmp.
 RajputUsman.
@@ -272,7 +275,6 @@ NayeemKaka.
 neenaSharma1.
 Nerdcode.
 nvprav.
-patrickpaterlini.
 peteosaz.
 Prasannalakshmik.
 Pratyusha418.
