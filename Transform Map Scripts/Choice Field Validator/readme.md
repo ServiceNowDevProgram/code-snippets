@@ -7,6 +7,7 @@ Used to return the choice even if the instance is in different language.
 ## *Important points*
 - It is imperative that the display value exists in the instance
 - It is possible to validate the values of choices dependent on other choices
+- To get the dependent choice you need set and static value or run the function for the first choice and then with the dependent choice (as in the second example).
 
 
 ## **Example configuration**
@@ -18,4 +19,5 @@ Used to return the choice even if the instance is in different language.
 ![categorysubcategoryvalidation](choice_validador1.png)
 
 
-In these previous cases we used the validator to get the errors / skipped lines in the sys_import_state table.
+In these previous cases we used the validator because some users use Portuguese language and all options in the excel are in English. With the functions we don't need to worry about the different languagues.
+
