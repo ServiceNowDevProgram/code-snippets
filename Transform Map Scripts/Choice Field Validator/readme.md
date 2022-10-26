@@ -5,7 +5,7 @@ Used to return the choice even if the instance is in different language.
 
 
 ## *Important points*
-- It is imperative that the display value exists in the instance
+- It is imperative that the display value in the transform map table exists in the instance
 - It is possible to validate the values of choices dependent on other choices
 - To get the dependent choice you need set and static value or run the function for the first choice and then with the dependent choice (as in the second example).
 
