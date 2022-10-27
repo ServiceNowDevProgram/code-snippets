@@ -6,6 +6,8 @@ Welcome to ServiceNow's Code Snippets community repository, managed by the Devel
 
 Inside this repository, you will find community submitted code-snippets and their variants for different use-cases.
 
+**Note:** ServiceNowDevProgram has many repositories that can be imported directly into ServiceNow, this is not one of them; This repository is meant to be edited directly in GitHub or any other Git-enabled IDE like VS Code.
+
 🔔🔔🔔<br>
 ***CONTRIBUTORS must follow all guidelines in [CONTRIBUTING.md](CONTRIBUTING.md)*** or run the risk of having your Pull Requests labeled as spam.<br>
 🔔🔔🔔
@@ -48,17 +50,17 @@ R3J3NT.
 hrobarikt.
 alikuttyka.
 kmohit2809.
-ishaanshoor.
 sumanthdosapati.
+ishaanshoor.
+niamccash.
 RahmanM.
 paigesndev.
 PranavBhagat18.
-niamccash.
 smartcarleen.
 litwi1rm.
+danr2c2.
 
 Top 10% of contributors:
-danr2c2.
 mlemartien.
 oasif.
 urspvs.
@@ -72,9 +74,9 @@ mr-swann.
 devinvalencia.
 anillande90.
 iar42.
+johndahl-now.
 
 Top 25% of contributors:
-johndahl-now.
 rafzk.
 stevezero.
 ynr-ram.
@@ -112,6 +114,8 @@ b1naryst0rm.
 ChecksumFailed.
 Irston.
 MartinStoyanoff.
+OrgovanGeza.
+Radhe-Manasa.
 revantKulkarni.
 trade12.
 Vish-X07.
@@ -122,9 +126,7 @@ ashuprince121.
 bird-03.
 Mahesh-Krishnan1.
 mskoddow.
-OrgovanGeza.
 phr-nk.
-Radhe-Manasa.
 tanu-profile.
 tejudhoran95.
 thisnameissoclever.
@@ -133,10 +135,10 @@ allam1234.
 ashleysnyder.
 BadalHub.
 bradtiltonnow.
-brichards99.
-Danmax.
 
 Other contributors:
+brichards99.
+Danmax.
 Decoder-Paul.
 dhruvii-powershell.
 girishnagaraj09.
@@ -151,9 +153,11 @@ mikeroosa.
 miracc.
 mwchiao.
 nthumma.
+patrickpaterlini.
 physi.
 pratyushmp.
 RajputUsman.
+salmaniqbal92.
 samwinchet.
 shakeel-sheikh.
 stwinkle.
@@ -165,6 +169,7 @@ kcimpulse.
 0x3developer.
 158w5a0532.
 Abhishekchowdarapu.
+adarshsingh0205.
 akhoshnood.
 amdhavalikar.
 Anantharaman91.
@@ -272,7 +277,6 @@ NayeemKaka.
 neenaSharma1.
 Nerdcode.
 nvprav.
-patrickpaterlini.
 peteosaz.
 Prasannalakshmik.
 Pratyusha418.
@@ -297,7 +301,6 @@ rwhittaker.
 SagarVijaykumar.
 saikumar-e.
 salem769.
-salmaniqbal92.
 sanchit-varshney.
 sanju009.
 SanketJ29.
