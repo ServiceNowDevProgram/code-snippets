@@ -12,6 +12,7 @@ now_GR.query();
 
 var pMgr = new GlidePluginManager();
 
+
 while (now_GR.next()) {
     var pName = now_GR.getValue('name');
     var pID = now_GR.getValue('source');
