@@ -18,7 +18,7 @@ while (now_GR.next()) {
     var pID = now_GR.getValue('source');
     var isActive = pMgr.isActive(pID);
 
-    //ensure the plugin is active before loading Demo Data
+    // ensure the plugin is active before loading Demo Data
     if (isActive) {
         gs.info('The plugin ' + pName + ' is active');
         pMgr.loadDemoData(pID);
