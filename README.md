@@ -57,10 +57,11 @@ RahmanM.
 paigesndev.
 PranavBhagat18.
 smartcarleen.
+stevezero.
 litwi1rm.
-danr2c2.
 
 Top 10% of contributors:
+danr2c2.
 mlemartien.
 oasif.
 urspvs.
@@ -74,11 +75,10 @@ mr-swann.
 devinvalencia.
 anillande90.
 iar42.
-johndahl-now.
 
 Top 25% of contributors:
+johndahl-now.
 rafzk.
-stevezero.
 ynr-ram.
 MarcMouries.
 allenandreas.
@@ -247,6 +247,7 @@ Keagnn.
 KhAhshan.
 kieo-on.
 KokilaAbeysinghe.
+lakshyatyagi24.
 Lamquocminhhuy.
 LarsAssen.
 LaviniaChiburte.
