@@ -73,13 +73,13 @@ vandna07.
 sn-ajb.
 mr-swann.
 devinvalencia.
+salmaniqbal92.
 anillande90.
-iar42.
 
 Top 25% of contributors:
+iar42.
 johndahl-now.
 rafzk.
-salmaniqbal92.
 ynr-ram.
 MarcMouries.
 allenandreas.
