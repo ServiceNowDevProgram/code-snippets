@@ -135,9 +135,9 @@ allam1234.
 ashleysnyder.
 BadalHub.
 bradtiltonnow.
+brichards99.
 
 Other contributors:
-brichards99.
 Danmax.
 Decoder-Paul.
 dhruvii-powershell.
@@ -334,3 +334,4 @@ wkbroxton.
 xdisplay.
 yourepicservices.
 youthinkasido.
+zahidask.
