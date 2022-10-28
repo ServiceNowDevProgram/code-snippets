@@ -127,6 +127,7 @@ bird-03.
 Mahesh-Krishnan1.
 mskoddow.
 phr-nk.
+salmaniqbal92.
 tanu-profile.
 tejudhoran95.
 thisnameissoclever.
@@ -135,9 +136,9 @@ allam1234.
 ashleysnyder.
 BadalHub.
 bradtiltonnow.
-brichards99.
 
 Other contributors:
+brichards99.
 Danmax.
 Decoder-Paul.
 dhruvii-powershell.
@@ -157,7 +158,6 @@ patrickpaterlini.
 physi.
 pratyushmp.
 RajputUsman.
-salmaniqbal92.
 samwinchet.
 shakeel-sheikh.
 stwinkle.
