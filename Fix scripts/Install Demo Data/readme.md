@@ -1,0 +1,1 @@
+Add demo data to a list of installed plugins. I use this to add demo data for the OOTB ATF tests to work in sub-prod instances. It is expected that the corresponding ATF Test plugins are installed on the production instance already, and we are only adding the demo data.
