@@ -105,9 +105,9 @@ soerenmaucher.
 src107.
 thorn91.
 snamjosh.
+vasantharaja-natarajan.
 
 Top contributors (50%):
-vasantharaja-natarajan.
 mgopw.
 Sagar-agarwal.
 23Thom.
@@ -136,9 +136,9 @@ allam1234.
 ashleysnyder.
 BadalHub.
 bradtiltonnow.
+brichards99.
 
 Other contributors:
-brichards99.
 Danmax.
 Decoder-Paul.
 dhruvii-powershell.
@@ -292,6 +292,7 @@ Ravenon.
 Razzzial.
 remkarthick.
 renjithragil.
+renuka-rajpuria.
 retrokaj.
 RitheshGit.
 rohi-v.
