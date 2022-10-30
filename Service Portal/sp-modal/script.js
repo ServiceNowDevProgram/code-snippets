@@ -10,5 +10,7 @@ message: html,
 buttons: [
 	{label:'OK', primary: true}
 ]
+}).then(function(confirmed)){
+c.server.update();
 });
 };
