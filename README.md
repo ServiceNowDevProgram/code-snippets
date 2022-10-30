@@ -133,13 +133,14 @@ tanu-profile.
 tejudhoran95.
 thisnameissoclever.
 Vish-X07.
+Litwilly.
 aatrey882.
 allam1234.
 ashleysnyder.
 BadalHub.
-bradtiltonnow.
 
 Other contributors:
+bradtiltonnow.
 brichards99.
 Danmax.
 Decoder-Paul.
@@ -169,7 +170,6 @@ stwinkle.
 TheTreyKyle.
 ttoter.
 zaidongy.
-Litwilly.
 kcimpulse.
 0x3developer.
 158w5a0532.
