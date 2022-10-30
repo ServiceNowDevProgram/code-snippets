@@ -1,0 +1,3 @@
+let str = 'Santhosh Kumar';
+
+console.log(str.length);
