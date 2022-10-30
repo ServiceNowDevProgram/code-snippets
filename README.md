@@ -124,6 +124,7 @@ pratyushasndev.
 sauravsumankumar.
 anguspalmer.
 bird-03.
+hafsa-asif.
 Mahesh-Krishnan1.
 mskoddow.
 phr-nk.
@@ -136,14 +137,13 @@ allam1234.
 ashleysnyder.
 BadalHub.
 bradtiltonnow.
-brichards99.
 
 Other contributors:
+brichards99.
 Danmax.
 Decoder-Paul.
 dhruvii-powershell.
 girishnagaraj09.
-hafsa-asif.
 igrzhukovich.
 jamesfoot.
 JingAlanzhixin.
