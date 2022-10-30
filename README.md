@@ -137,9 +137,9 @@ allam1234.
 ashleysnyder.
 BadalHub.
 bradtiltonnow.
+brichards99.
 
 Other contributors:
-brichards99.
 Danmax.
 Decoder-Paul.
 dhruvii-powershell.
@@ -230,6 +230,7 @@ himahk04.
 himavamsi-spec.
 hmadhsan.
 homealone07.
+Iamsant.
 iamvpbhaskar.
 ishwarighule.
 j2clow.
