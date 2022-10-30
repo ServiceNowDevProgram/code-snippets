@@ -1,0 +1,17 @@
+var cdt = g_form.getValue('due_date'); //First Date/Time field
+var dttype = 'second'; //this can be day, hour, minute, second. By default it will return seconds.
+
+var ajax = new GlideAjax('ClientDateTimeUtils');
+ajax.addParam('sysparm_name','getNowDateTimeDiff');
+ajax.addParam('sysparm_fdt', cdt);
+ajax.addParam('sysparm_difftype', dttype);
+ajax.getXML(doSomething);
+
+function doSomething(response){
+var answer = response.responseXML.documentElement.getAttribute("answer");
+alert(answer);
+if(answer > 604800 )
+{
+g_form.setMandatory('fieldname',true);
+}
+}
