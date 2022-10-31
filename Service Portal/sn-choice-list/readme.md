@@ -29,18 +29,18 @@ The following table lists all of the scope bindings that can be passed to the di
 c.choice = '';
 
 c.items = [{
-			value: 'volvo',
-			label: 'Volvo'
-		},{
-			value: 'skoda',
-			label: 'Skoda'
-		},{
-			value: 'seat',
-			label: 'Seat'
-		},{
-			value: 'toyota',
-			label: 'Toyota'
-		}]
+	value: 'volvo',
+	label: 'Volvo'
+	},{
+	value: 'skoda',
+	label: 'Skoda'
+	},{
+	value: 'seat',
+	label: 'Seat'
+	},{
+	value: 'toyota',
+	label: 'Toyota'
+}];
 ```
 
 ### Setting options and callback
@@ -81,7 +81,7 @@ c.choiceListOptions = {
 	placeholder: 'Please select your favourite car maker',
 	allowClear: true,
 	hideSearch: false
-}
+};
 
 // List of our available Choices
 c.items = [{
@@ -96,7 +96,7 @@ c.items = [{
 	},{
 	value: 'toyota',
 	label: 'Toyota'
-}]
+}];
 
 // Setting Default Value
 c.field = 'skoda';
