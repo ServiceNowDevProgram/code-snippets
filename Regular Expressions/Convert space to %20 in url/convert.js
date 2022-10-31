@@ -1,2 +1,2 @@
 var name = 'hafsa asif';
-gs.info(encodeURIComponent(type.trim()));
+gs.info(encodeURIComponent(name.trim()));
