@@ -110,7 +110,6 @@ vasantharaja-natarajan.
 
 Top contributors (50%):
 mgopw.
-Iamsant.
 Sagar-agarwal.
 23Thom.
 amigujarathi.
@@ -123,6 +122,7 @@ OrgovanGeza.
 revantKulkarni.
 trade12.
 pratyushasndev.
+Iamsant.
 sauravsumankumar.
 Abhishekchowdarapu.
 anguspalmer.
