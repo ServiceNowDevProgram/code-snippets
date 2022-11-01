@@ -134,14 +134,13 @@ tejudhoran95.
 thisnameissoclever.
 Vish-X07.
 Litwilly.
-Iamsant.
 aatrey882.
 allam1234.
 ashleysnyder.
 BadalHub.
+bradtiltonnow.
 
 Other contributors:
-bradtiltonnow.
 brichards99.
 Danmax.
 Decoder-Paul.
@@ -172,6 +171,7 @@ stwinkle.
 TheTreyKyle.
 ttoter.
 zaidongy.
+Iamsant.
 kcimpulse.
 0x3developer.
 158w5a0532.
