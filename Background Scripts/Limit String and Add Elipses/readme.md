@@ -1,0 +1,1 @@
+This function can be used to show the string with  limited number of characters and add the ellipses to it. This is mostly used on the portal side.

@@ -10,5 +10,7 @@ message: html,
 buttons: [
 	{label:'OK', primary: true}
 ]
+}).then(function(answer)){
+	console.log('this is callback');
 });
 };
