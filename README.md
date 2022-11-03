@@ -75,9 +75,9 @@ sn-ajb.
 mr-swann.
 devinvalencia.
 hafsa-asif.
+Radhe-Manasa.
 
 Top 25% of contributors:
-Radhe-Manasa.
 anillande90.
 iar42.
 johndahl-now.
@@ -187,6 +187,7 @@ anubhav-ritolia.
 apbuhssc.
 AryanBarsaiyan.
 askarthik.
+aysenuruzunnn.
 Balamurugan-RR.
 beingfluid.
 bgrk.
