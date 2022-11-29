@@ -6,6 +6,8 @@ Welcome to ServiceNow's Code Snippets community repository, managed by the Devel
 
 Inside this repository, you will find community submitted code-snippets and their variants for different use-cases.
 
+**Note:** ServiceNowDevProgram has many repositories that can be imported directly into ServiceNow, this is not one of them; This repository is meant to be edited directly in GitHub or any other Git-enabled IDE like VS Code.
+
 🔔🔔🔔<br>
 ***CONTRIBUTORS must follow all guidelines in [CONTRIBUTING.md](CONTRIBUTING.md)*** or run the risk of having your Pull Requests labeled as spam.<br>
 🔔🔔🔔
@@ -46,40 +48,43 @@ Top 5% of contributors:
 earlduque.
 R3J3NT.
 hrobarikt.
-alikuttyka.
-kmohit2809.
-ishaanshoor.
 sumanthdosapati.
+alikuttyka.
+ishaanshoor.
+kmohit2809.
+niamccash.
 RahmanM.
+salmaniqbal92.
 paigesndev.
 PranavBhagat18.
 smartcarleen.
-niamccash.
-litwi1rm.
+stevezero.
 
 Top 10% of contributors:
+litwi1rm.
 danr2c2.
 mlemartien.
 oasif.
 urspvs.
+ovarn.
 azeezgaa.
 mak1A4.
 MrChrisE.
 vandna07.
 sn-ajb.
 mr-swann.
-ovarn.
 devinvalencia.
-iar42.
+hafsa-asif.
+Radhe-Manasa.
 
 Top 25% of contributors:
+ynr-ram.
+anillande90.
+iar42.
 johndahl-now.
 rafzk.
-stevezero.
-ynr-ram.
 MarcMouries.
 allenandreas.
-anillande90.
 apple9000.
 ashu759.
 avssrikanth.
@@ -99,78 +104,97 @@ rmedved84.
 seviceN.
 soerenmaucher.
 src107.
-
-Top contributors (50%):
 thorn91.
 snamjosh.
 vasantharaja-natarajan.
+
+Top contributors (50%):
 mgopw.
 Sagar-agarwal.
 23Thom.
+Abhishekchowdarapu.
+amigujarathi.
+ashuprince121.
 b1naryst0rm.
 ChecksumFailed.
 Irston.
 MartinStoyanoff.
+OrgovanGeza.
 revantKulkarni.
 trade12.
 pratyushasndev.
 sauravsumankumar.
 anguspalmer.
-ashuprince121.
+bird-03.
 Mahesh-Krishnan1.
 mskoddow.
 phr-nk.
 tanu-profile.
+tejudhoran95.
 thisnameissoclever.
+Vish-X07.
+Litwilly.
 aatrey882.
 allam1234.
-amigujarathi.
 ashleysnyder.
 BadalHub.
-bird-03.
+bradtiltonnow.
 
 Other contributors:
-bradtiltonnow.
 brichards99.
 Danmax.
 Decoder-Paul.
 dhruvii-powershell.
+girishnagaraj09.
 igrzhukovich.
 jamesfoot.
 JingAlanzhixin.
 KartikeSingh.
+llipovsky.
 loudigi.
 mevops.
 MihirRathod.
 mikeroosa.
 miracc.
 mwchiao.
+namrataghorpade.
 nthumma.
+patrickpaterlini.
 physi.
 pratyushmp.
+RajputUsman.
+Rampriya-S.
+renuka-rajpuria.
 samwinchet.
 shakeel-sheikh.
 stwinkle.
 TheTreyKyle.
 ttoter.
 zaidongy.
-Litwilly.
+Iamsant.
 kcimpulse.
+0x3developer.
 158w5a0532.
+abhilash264.
+adarshsingh0205.
 akhoshnood.
+aman2519.
 amdhavalikar.
 Anantharaman91.
 Anks-26.
 AnnaGould.
+anubhav-ritolia.
 apbuhssc.
 AryanBarsaiyan.
 askarthik.
+aysenuruzunnn.
 Balamurugan-RR.
 beingfluid.
 bgrk.
 Bharat123rox.
 Bigshmow.
 billyperkinsukg.
+bmfmancini.
 Brian-Rowland.
 cenzo85.
 Charlesemesobum.
@@ -186,6 +210,7 @@ DaiTranIT.
 dalestubblefield.
 Damilare1212.
 DangerousNights.
+danielliaus.
 davewburns.
 davidkwhuang.
 deathkraiser.
@@ -231,10 +256,12 @@ Keagnn.
 KhAhshan.
 kieo-on.
 KokilaAbeysinghe.
+lakshyatyagi24.
 Lamquocminhhuy.
 LarsAssen.
 LaviniaChiburte.
 LekiaAnonim.
+liyAGHORI.
 LoicSanchez.
 LucasRocha2308.
 Luci-git.
@@ -242,10 +269,12 @@ LuisSepulveda21.
 lverbeke.
 m2santiago.
 macias-daniel.
+Mady1947.
 makesh-ind.
 maralucca.
 Mexiprince.
 mgcnent.
+mhendershott.
 mohdzeeshan96.
 moshjahan.
 mrdavidgrant.
@@ -254,7 +283,7 @@ mugiwaramenon.
 muhjaved.
 Munnisona.
 mybpdi.
-namrataghorpade.
+nancystodd.
 NayeemKaka.
 neenaSharma1.
 Nerdcode.
@@ -265,11 +294,11 @@ Pratyusha418.
 preshitd.
 prevostr.
 pupchenko.
-Rampriya-S.
 ranjithsit.
 raphaelcrv.
 Ravenon.
 Razzzial.
+remkarthick.
 renjithragil.
 retrokaj.
 RitheshGit.
@@ -299,6 +328,7 @@ sushil-now.
 TamByrd.
 thesnowguy.
 tomlozano.
+TreasuryDigitalApps.
 TRIGGEREDcoder.
 tsicot.
 VictorAlbergaria.
@@ -313,3 +343,4 @@ wkbroxton.
 xdisplay.
 yourepicservices.
 youthinkasido.
+zahidask.
