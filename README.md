@@ -107,9 +107,9 @@ src107.
 thorn91.
 snamjosh.
 vasantharaja-natarajan.
+mgopw.
 
 Top contributors (50%):
-mgopw.
 Sagar-agarwal.
 23Thom.
 Abhishekchowdarapu.
@@ -139,9 +139,9 @@ allam1234.
 ashleysnyder.
 BadalHub.
 bradtiltonnow.
+brichards99.
 
 Other contributors:
-brichards99.
 Danmax.
 Decoder-Paul.
 dhruvii-powershell.
@@ -236,6 +236,7 @@ himavamsi-spec.
 hmadhsan.
 homealone07.
 iamvpbhaskar.
+imaxdvd.
 ishwarighule.
 j2clow.
 j4rodm.
