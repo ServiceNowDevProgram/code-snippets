@@ -140,9 +140,9 @@ ashleysnyder.
 BadalHub.
 bradtiltonnow.
 brichards99.
+Danmax.
 
 Other contributors:
-Danmax.
 Decoder-Paul.
 dhruvii-powershell.
 girishnagaraj09.
@@ -317,6 +317,7 @@ sanchit-varshney.
 sanju009.
 SanketJ29.
 Sarita3012.
+scschroc.
 sekhar398.
 shaoservicenow.
 sherief-io.
