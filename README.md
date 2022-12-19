@@ -108,9 +108,9 @@ thorn91.
 snamjosh.
 vasantharaja-natarajan.
 mgopw.
+Sagar-agarwal.
 
 Top contributors (50%):
-Sagar-agarwal.
 23Thom.
 Abhishekchowdarapu.
 amigujarathi.
@@ -141,9 +141,9 @@ BadalHub.
 bradtiltonnow.
 brichards99.
 Danmax.
+Decoder-Paul.
 
 Other contributors:
-Decoder-Paul.
 dhruvii-powershell.
 girishnagaraj09.
 igrzhukovich.
@@ -332,6 +332,7 @@ sushil-now.
 TamByrd.
 thesnowguy.
 tomlozano.
+ToosinDada.
 TreasuryDigitalApps.
 TRIGGEREDcoder.
 tsicot.
