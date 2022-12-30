@@ -142,9 +142,9 @@ bradtiltonnow.
 brichards99.
 Danmax.
 Decoder-Paul.
+dhruvii-powershell.
 
 Other contributors:
-dhruvii-powershell.
 girishnagaraj09.
 igrzhukovich.
 jamesfoot.
@@ -172,6 +172,7 @@ TheTreyKyle.
 ttoter.
 zaidongy.
 Iamsant.
+gkiratkar1.
 kcimpulse.
 0x3developer.
 158w5a0532.
