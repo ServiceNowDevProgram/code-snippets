@@ -141,9 +141,9 @@ BadalHub.
 bradtiltonnow.
 brichards99.
 Danmax.
+Decoder-Paul.
 
 Other contributors:
-Decoder-Paul.
 dhruvii-powershell.
 girishnagaraj09.
 igrzhukovich.
@@ -228,6 +228,7 @@ Enotgnik.
 ewhite1.
 fisikos.
 GiovanniPeretti.
+git-rep0.
 greenc123.
 gurudev-7.
 HackoDev1530.
