@@ -113,7 +113,6 @@ Sagar-agarwal.
 Top contributors (50%):
 23Thom.
 Abhishekchowdarapu.
-amigujarathi.
 ashuprince121.
 b1naryst0rm.
 ChecksumFailed.
@@ -124,6 +123,7 @@ revantKulkarni.
 trade12.
 pratyushasndev.
 sauravsumankumar.
+amigujarathi.
 anguspalmer.
 bird-03.
 Mahesh-Krishnan1.
