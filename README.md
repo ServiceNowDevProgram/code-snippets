@@ -109,9 +109,9 @@ snamjosh.
 vasantharaja-natarajan.
 mgopw.
 Sagar-agarwal.
+23Thom.
 
 Top contributors (50%):
-23Thom.
 Abhishekchowdarapu.
 ashuprince121.
 b1naryst0rm.
@@ -142,9 +142,9 @@ bradtiltonnow.
 brichards99.
 Danmax.
 Decoder-Paul.
+dhruvii-powershell.
 
 Other contributors:
-dhruvii-powershell.
 girishnagaraj09.
 igrzhukovich.
 jamesfoot.
@@ -185,6 +185,7 @@ AnnaGould.
 anubhav-ritolia.
 apbuhssc.
 arostesri.
+artemis15.
 AryanBarsaiyan.
 askarthik.
 aysenuruzunnn.
