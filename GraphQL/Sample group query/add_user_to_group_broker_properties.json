@@ -1,0 +1,16 @@
+[
+    {
+      "name": "userID",
+      "label": "User ID",
+      "description": "sys_id of the user",
+      "fieldType": "string",
+      "mandatory": true
+    },
+    {
+      "name": "groupID",
+      "label": "Group ID",
+      "description": "sys_id of the group",
+      "fieldType": "string",
+      "mandatory": true
+    }
+]
