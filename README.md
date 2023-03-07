@@ -143,9 +143,9 @@ brichards99.
 Danmax.
 Decoder-Paul.
 dhruvii-powershell.
+girishnagaraj09.
 
 Other contributors:
-girishnagaraj09.
 igrzhukovich.
 jamesfoot.
 JingAlanzhixin.
@@ -298,6 +298,7 @@ neenaSharma1.
 Nerdcode.
 nvprav.
 peteosaz.
+PeteSkeet101.
 Prasannalakshmik.
 Pratyusha418.
 preshitd.
