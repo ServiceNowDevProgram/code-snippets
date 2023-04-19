@@ -111,9 +111,9 @@ mgopw.
 Sagar-agarwal.
 23Thom.
 Abhishekchowdarapu.
+ashuprince121.
 
 Top contributors (50%):
-ashuprince121.
 b1naryst0rm.
 ChecksumFailed.
 Irston.
@@ -145,9 +145,9 @@ Decoder-Paul.
 dhruvii-powershell.
 girishnagaraj09.
 igrzhukovich.
+jamesfoot.
 
 Other contributors:
-jamesfoot.
 JingAlanzhixin.
 KartikeSingh.
 llipovsky.
@@ -267,6 +267,7 @@ KokilaAbeysinghe.
 lakshyatyagi24.
 Lamquocminhhuy.
 LarsAssen.
+Lathasuv.
 LaviniaChiburte.
 LekiaAnonim.
 liyAGHORI.
