@@ -140,14 +140,15 @@ ashleysnyder.
 BadalHub.
 bradtiltonnow.
 brichards99.
+Crankzaton.
 Danmax.
 Decoder-Paul.
 dhruvii-powershell.
 girishnagaraj09.
 igrzhukovich.
-jamesfoot.
 
 Other contributors:
+jamesfoot.
 JingAlanzhixin.
 KartikeSingh.
 llipovsky.
@@ -208,7 +209,6 @@ coderdude207.
 codexpert247.
 Codjam.
 Coolaxx.
-Crankzaton.
 CreatorWorkflowSC.
 cwhits.
 DaiTranIT.
