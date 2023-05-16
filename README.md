@@ -146,9 +146,9 @@ Decoder-Paul.
 dhruvii-powershell.
 girishnagaraj09.
 igrzhukovich.
+jamesfoot.
 
 Other contributors:
-jamesfoot.
 JingAlanzhixin.
 KartikeSingh.
 llipovsky.
@@ -349,6 +349,7 @@ thesnowguy.
 tomlozano.
 TonySerN.
 ToosinDada.
+TracyCurry96.
 TreasuryDigitalApps.
 TRIGGEREDcoder.
 tsicot.
