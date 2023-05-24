@@ -1,4 +1,4 @@
-This script takes in a GlideRecord object and returns a JSON object. Use the following background script to test the function.
+This script takes in a GlideRecord object and returns an object. Use the following background script to test the function.
 
 function _grToObject(recordToPackage) {
   var packageToSend = {};
