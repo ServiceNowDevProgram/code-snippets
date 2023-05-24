@@ -150,6 +150,7 @@ jamesfoot.
 
 Other contributors:
 JingAlanzhixin.
+jordanrogus.
 KartikeSingh.
 llipovsky.
 loudigi.
@@ -253,7 +254,6 @@ jayeshyadav252.
 jaypalmr.
 jc73uk.
 Jennylou777.
-jordanrogus.
 joshuaprakashg.
 joshuatechie.
 jschuller.
