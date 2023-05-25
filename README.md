@@ -112,9 +112,9 @@ Sagar-agarwal.
 23Thom.
 Abhishekchowdarapu.
 ashuprince121.
+b1naryst0rm.
 
 Top contributors (50%):
-b1naryst0rm.
 ChecksumFailed.
 Irston.
 MartinStoyanoff.
@@ -147,9 +147,9 @@ dhruvii-powershell.
 girishnagaraj09.
 igrzhukovich.
 jamesfoot.
+JingAlanzhixin.
 
 Other contributors:
-JingAlanzhixin.
 jordanrogus.
 KartikeSingh.
 llipovsky.
@@ -318,6 +318,7 @@ Razzzial.
 remkarthick.
 renjithragil.
 retrokaj.
+ricksclick.
 RitheshGit.
 rohi-v.
 ron-karim.
