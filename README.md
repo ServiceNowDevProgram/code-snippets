@@ -148,9 +148,9 @@ girishnagaraj09.
 igrzhukovich.
 jamesfoot.
 JingAlanzhixin.
+jordanrogus.
 
 Other contributors:
-jordanrogus.
 KartikeSingh.
 llipovsky.
 loudigi.
@@ -184,6 +184,7 @@ akhoshnood.
 aman2519.
 amdhavalikar.
 Anantharaman91.
+andyops.
 Anks-26.
 AnnaGould.
 anubhav-ritolia.
