@@ -60,9 +60,9 @@ PranavBhagat18.
 smartcarleen.
 stevezero.
 litwi1rm.
+danr2c2.
 
 Top 10% of contributors:
-danr2c2.
 mlemartien.
 oasif.
 urspvs.
@@ -78,9 +78,9 @@ hafsa-asif.
 Radhe-Manasa.
 ynr-ram.
 anillande90.
+iar42.
 
 Top 25% of contributors:
-iar42.
 johndahl-now.
 rafzk.
 MarcMouries.
@@ -147,10 +147,10 @@ dhruvii-powershell.
 girishnagaraj09.
 igrzhukovich.
 jamesfoot.
-JingAlanzhixin.
-jordanrogus.
 
 Other contributors:
+JingAlanzhixin.
+jordanrogus.
 KartikeSingh.
 llipovsky.
 loudigi.
@@ -304,6 +304,7 @@ neenaSharma1.
 Nerdcode.
 nvprav.
 peteosaz.
+petersonferreira.
 PeteSkeet101.
 Prasannalakshmik.
 Pratyusha418.
