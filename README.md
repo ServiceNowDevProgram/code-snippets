@@ -147,9 +147,9 @@ dhruvii-powershell.
 girishnagaraj09.
 igrzhukovich.
 jamesfoot.
+JingAlanzhixin.
 
 Other contributors:
-JingAlanzhixin.
 jordanrogus.
 KartikeSingh.
 llipovsky.
@@ -179,6 +179,7 @@ kcimpulse.
 158w5a0532.
 abhilash264.
 adarshsingh0205.
+afejzic.
 ajithaju15.
 akhoshnood.
 aman2519.
