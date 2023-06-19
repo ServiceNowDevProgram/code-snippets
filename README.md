@@ -113,9 +113,9 @@ Sagar-agarwal.
 Abhishekchowdarapu.
 ashuprince121.
 b1naryst0rm.
+ChecksumFailed.
 
 Top contributors (50%):
-ChecksumFailed.
 Irston.
 MartinStoyanoff.
 OrgovanGeza.
@@ -148,9 +148,9 @@ girishnagaraj09.
 igrzhukovich.
 jamesfoot.
 JingAlanzhixin.
+jordanrogus.
 
 Other contributors:
-jordanrogus.
 KartikeSingh.
 llipovsky.
 loudigi.
@@ -204,6 +204,7 @@ Bigshmow.
 billyperkinsukg.
 bmfmancini.
 Brian-Rowland.
+celsiogil.
 cenzo85.
 Charlesemesobum.
 ChristineMayfield.
