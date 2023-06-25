@@ -149,9 +149,9 @@ igrzhukovich.
 jamesfoot.
 JingAlanzhixin.
 jordanrogus.
+KartikeSingh.
 
 Other contributors:
-KartikeSingh.
 llipovsky.
 loudigi.
 maialithar.
@@ -177,6 +177,7 @@ gkiratkar1.
 kcimpulse.
 0x3developer.
 158w5a0532.
+aaron-howard.
 abhilash264.
 adarshsingh0205.
 afejzic.
