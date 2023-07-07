@@ -114,9 +114,9 @@ Abhishekchowdarapu.
 ashuprince121.
 b1naryst0rm.
 ChecksumFailed.
+Irston.
 
 Top contributors (50%):
-Irston.
 MartinStoyanoff.
 OrgovanGeza.
 revantKulkarni.
@@ -150,9 +150,9 @@ jamesfoot.
 JingAlanzhixin.
 jordanrogus.
 KartikeSingh.
+llipovsky.
 
 Other contributors:
-llipovsky.
 loudigi.
 maialithar.
 mevops.
@@ -307,6 +307,7 @@ NayeemKaka.
 neenaSharma1.
 Nerdcode.
 nvprav.
+oskadoskaposka.
 peteosaz.
 petersonferreira.
 PeteSkeet101.
