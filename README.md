@@ -79,9 +79,9 @@ Radhe-Manasa.
 ynr-ram.
 anillande90.
 iar42.
+johndahl-now.
 
 Top 25% of contributors:
-johndahl-now.
 rafzk.
 MarcMouries.
 allenandreas.
@@ -221,6 +221,7 @@ dalestubblefield.
 Damilare1212.
 DangerousNights.
 danielliaus.
+DaSilvaThiago.
 davewburns.
 davidkwhuang.
 deathkraiser.
