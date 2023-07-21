@@ -1,0 +1,16 @@
+
+Create a before insert business rule with below script:
+
+(function executeRule(current, previous /*null when async*/ ) {
+
+    var gr = new GlideRecord('incident');
+    gr.addActiveQuery();
+    gr.addEncodedQuery('short_description>=' + current.short_description + '^ORshort_description<=' + current.short_description + '^ORdescription>=' + current.description + '^ORdescription<=' + current.description);
+    gr.addQuery('opened_by', current.opened_by);
+    gr.addQuery('caller_id', current.caller_id);
+    gr.query();
+    if (gr.next()) {
+        current.setAbortAction(true);
+        gs.addErrorMessage('Duplicate incident creation, You already have a similar incident with number:' + gr.number);
+    }
+})(current, previous);
