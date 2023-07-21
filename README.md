@@ -142,6 +142,7 @@ bradtiltonnow.
 brichards99.
 Crankzaton.
 Danmax.
+danybr0.
 Decoder-Paul.
 dhruvii-powershell.
 girishnagaraj09.
@@ -151,9 +152,9 @@ JingAlanzhixin.
 jordanrogus.
 KartikeSingh.
 llipovsky.
-loudigi.
 
 Other contributors:
+loudigi.
 maialithar.
 mevops.
 MihirRathod.
@@ -221,7 +222,6 @@ dalestubblefield.
 Damilare1212.
 DangerousNights.
 danielliaus.
-danybr0.
 DaSilvaThiago.
 davewburns.
 davidkwhuang.
