@@ -152,9 +152,9 @@ JingAlanzhixin.
 jordanrogus.
 KartikeSingh.
 llipovsky.
+loudigi.
 
 Other contributors:
-loudigi.
 maialithar.
 mevops.
 MihirRathod.
@@ -270,6 +270,7 @@ jschuller.
 jsmayo.
 JWITSM.
 kainturar.
+KarelMusa.
 Karthick986.
 KayakDK.
 Keagnn.
