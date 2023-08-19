@@ -116,9 +116,9 @@ b1naryst0rm.
 ChecksumFailed.
 Irston.
 MartinStoyanoff.
+OrgovanGeza.
 
 Top contributors (50%):
-OrgovanGeza.
 revantKulkarni.
 trade12.
 pratyushasndev.
@@ -153,9 +153,9 @@ jordanrogus.
 KartikeSingh.
 llipovsky.
 loudigi.
+maialithar.
 
 Other contributors:
-maialithar.
 mevops.
 MihirRathod.
 mikeroosa.
@@ -374,6 +374,7 @@ TracyCurry96.
 TreasuryDigitalApps.
 TRIGGEREDcoder.
 tsicot.
+vaishakbkj-ml.
 VictorAlbergaria.
 vigneshmc.
 vijayshankar485.
