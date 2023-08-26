@@ -154,9 +154,9 @@ KartikeSingh.
 llipovsky.
 loudigi.
 maialithar.
+mevops.
 
 Other contributors:
-mevops.
 MihirRathod.
 mikeroosa.
 miracc.
@@ -251,6 +251,7 @@ HarneetSital.
 haupx9.
 himahk04.
 himavamsi-spec.
+himavamsi8.
 hmadhsan.
 homealone07.
 iamvpbhaskar.
