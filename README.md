@@ -61,9 +61,9 @@ smartcarleen.
 stevezero.
 litwi1rm.
 danr2c2.
+mlemartien.
 
 Top 10% of contributors:
-mlemartien.
 oasif.
 urspvs.
 ovarn.
@@ -80,9 +80,9 @@ ynr-ram.
 anillande90.
 iar42.
 johndahl-now.
+rafzk.
 
 Top 25% of contributors:
-rafzk.
 MarcMouries.
 allenandreas.
 apple9000.
@@ -153,10 +153,10 @@ jordanrogus.
 KartikeSingh.
 llipovsky.
 loudigi.
-maialithar.
-mevops.
 
 Other contributors:
+maialithar.
+mevops.
 MihirRathod.
 mikeroosa.
 miracc.
@@ -174,6 +174,7 @@ TheTreyKyle.
 ttoter.
 zaidongy.
 Iamsant.
+ab7289.
 gkiratkar1.
 kcimpulse.
 0x3developer.
