@@ -153,9 +153,9 @@ jordanrogus.
 KartikeSingh.
 llipovsky.
 loudigi.
+maialithar.
 
 Other contributors:
-maialithar.
 mevops.
 MihirRathod.
 mikeroosa.
@@ -360,6 +360,7 @@ shakysnake.
 shaoservicenow.
 sherief-io.
 shubham-snc.
+smoothwood.
 SNOWMac75.
 somusekher.
 Soulpancake000.
