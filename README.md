@@ -117,9 +117,9 @@ ChecksumFailed.
 Irston.
 MartinStoyanoff.
 OrgovanGeza.
+revantKulkarni.
 
 Top contributors (50%):
-revantKulkarni.
 trade12.
 pratyushasndev.
 sauravsumankumar.
@@ -154,9 +154,9 @@ KartikeSingh.
 llipovsky.
 loudigi.
 maialithar.
+mevops.
 
 Other contributors:
-mevops.
 MihirRathod.
 mikeroosa.
 miracc.
@@ -215,6 +215,7 @@ Coder0131.
 coderdude207.
 codexpert247.
 Codjam.
+Collosus1.
 Coolaxx.
 CreatorWorkflowSC.
 cwhits.
