@@ -1,0 +1,10 @@
+mutation ($userID: ID!, $groupID: ID!) {
+    app_namespace {
+        schema_namespace {
+            addUserToGroup(userID: $userID, groupID: $groupID) {
+                userName
+                groupName
+            }
+        }
+    }
+}
