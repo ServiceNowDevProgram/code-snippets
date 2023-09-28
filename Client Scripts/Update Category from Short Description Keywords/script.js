@@ -28,7 +28,7 @@ function onChange(control, oldValue, newValue, isLoading, isTemplate) {
     //Loop through the keywords and check if they are present in the short description
     for (var keyword in keywordMapping) {
         if (shortDescription.indexOf(keyword) !== -1) {
-            //Set the assignment group based on the matching keyword
+            //Set the Category based on the matching keyword
             g_form.setValue('category', keywordMapping[keyword]);
             break;
         }
