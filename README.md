@@ -1,4 +1,4 @@
-# code-snippets
+![Code Snippets Banner](https://github.com/ServiceNowDevProgram/code-snippets/assets/31702109/f9fa072a-4c0c-426b-8eed-200c6616ff60)
 
 Welcome to ServiceNow's Code Snippets community repository, managed by the Developer Program and the sndevs Slack community.
 
