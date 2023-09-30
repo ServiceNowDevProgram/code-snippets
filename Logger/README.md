@@ -9,6 +9,7 @@ Here's an explanation of the key components and methods of this `Logger` Script 
      - `this.logging_enabled`: This variable is set by fetching a ServiceNow property based on the provided `source`. It's used to determine whether logging is enabled for this specific source.
      - `this.payload_logging_enabled`: Similar to `this.logging_enabled`, this variable is set to determine whether payload (API requests) logging is enabled for the source.
      - `this.source`: This variable is set to the provided `source` parameter, representing the context for the logs.
+     - In order to manage the Logger through properties you should create two properties for "Text Logger" & another one is for "Payload Logger" with type "TRUE/FALSE". So that those properties can be utilised to manage enable or disable to logs in all the scripts for better performance. 
 
 2. **Logging Methods**:
    - The `Logger` class defines several methods for different types of logging:
