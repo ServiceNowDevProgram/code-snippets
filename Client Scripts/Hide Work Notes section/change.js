@@ -1,3 +1,4 @@
+//OnChange client script
 function onChange(control, oldValue, newValue, isLoading, isTemplate) {
     if (isLoading) {
         return;
