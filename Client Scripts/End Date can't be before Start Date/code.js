@@ -11,4 +11,7 @@ function onChange(control, oldValue, newValue, isLoading) {
         g_form.clearValue('end_date');
 		g_form.showErrorBox('end_date', "End date cannot be before the Start date");
     }
+	else {
+		return;
+	}
 }
