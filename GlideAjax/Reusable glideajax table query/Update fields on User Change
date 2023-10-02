@@ -3,7 +3,7 @@ function onChange(control, oldValue, newValue, isLoading) {
         return;
     }
 
-    var tableName = 'sys_user';
+    var tableName = 'sys_user'; //User Table
     var ourNewUser = g_form.getValue('requested_for'); //get the Requested for Sys_ID
     var query = 'sys_id=' + ourNewUser; // query parameters
     var col = 'user_name,email'; // column attribute values
