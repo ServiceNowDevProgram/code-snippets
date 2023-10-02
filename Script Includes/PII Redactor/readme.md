@@ -9,7 +9,7 @@ Example Usage:
 
 Below sample code redacts PII data from requested item variables.
 
-'''ruby
+```ruby
  var sc = new GlideRecord('sc_item_option_mtom');
     sc.addQuery('request_item', current.sys_id);
     sc.query();
@@ -19,4 +19,4 @@ Below sample code redacts PII data from requested item variables.
 
     }
 
-    '''
+```
