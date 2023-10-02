@@ -1,0 +1,29 @@
+function onChange(control, oldValue, newValue, isLoading) {
+    if (isLoading || newValue == '') {
+        return;
+    }
+
+    var tableName = 'sys_user';
+    var ourNewUser = g_form.getValue('requested_for'); //get the Requested for Sys_ID
+    var query = 'sys_id=' + ourNewUser; // query parameters
+    var col = 'user_name,email'; // column attribute values
+    var ga = new GlideAjax('getTableColumnsClientSide'); //GlideAjax call to getTablecolumnsClientSide Script include
+    ga.addParam('sysparm_name', 'getColumns'); // use the getColumns function in Script include
+    ga.addParam('sysparm_tableName', tableName); //TableName parameter
+    ga.addParam('sysparm_encodedQuery', query); //Encoded query parameter
+    ga.addParam('sysparm_columns', col); //Column attriubutes we need from Tablene
+    ga.getXML(HelloWorldParse);
+
+    function HelloWorldParse(response) {
+        try {
+            var answer = response.responseXML.documentElement.getAttribute("answer");
+            answer = JSON.parse(answer);
+            g_form.setValue('user_name', answer['name']); //Updated to user_name on form.
+            g_form.setValue('user_email_address', answer['email']); //Updte to user email address on form
+            alert(answer);
+            return;
+        } catch (e) {
+            g_form.addInfoMessage('Client Script Ajax callback error: ' + e);
+        }
+    }
+}
