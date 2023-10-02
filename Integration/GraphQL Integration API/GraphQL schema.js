@@ -3,10 +3,10 @@ schema {
 }
 
 type Query {
-	EntersysId(sys_id:ID!):incident  \\ Entery point of data, you can define your own as per your requirement.
+	EntersysId(sys_id:ID!):incident  // Entery point of data, you can define your own as per your requirement.
 }
 type incident{
-	sys_id:DisplayableString  \\ This is the type of data.
+	sys_id:DisplayableString  // This is the type of data.
 	number:DisplayableString
 	short_description:DisplayableString
 	caller_id:User @source(value:"caller_id.value")  // @source is used for extended tables, here caller_id extends to sys_user table.
