@@ -1,9 +1,9 @@
 # Client Script - Add Field Message
 
-A client script that add field message.
+A client script that adds field message.
 
 ## Usage
 
 - Create a new OnLoad script
 - Copy this script into it
-- Update the field name and messgaes
+- Update the field name and message
