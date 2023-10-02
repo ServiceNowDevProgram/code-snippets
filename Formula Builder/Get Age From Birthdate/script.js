@@ -1,0 +1,1 @@
+IF(OR(MONTH(birthdate) < MONTH(TODAY()), AND(MONTH(birthdate) = MONTH(TODAY()), DAY(birthdate) < DAY(TODAY()))),  SUBTRACT(YEAR(TODAY()), YEAR(birthdate)),  SUBTRACT(SUBTRACT(YEAR(TODAY()), 1) ,YEAR(birthdate)))
