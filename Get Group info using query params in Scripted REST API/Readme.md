@@ -1,0 +1,1 @@
+I have created a Scripted REST API to get the group details with the help of query params. you just need to provide the group name and it will validate the name, if exist then it will return the group manager name and group email.
