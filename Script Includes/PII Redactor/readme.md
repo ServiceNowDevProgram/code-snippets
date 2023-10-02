@@ -7,7 +7,7 @@ I have created a script include which redacts PII data from variables, audit log
 
 Example Usage:
 
-Below sample code redacts PII data from requested item variables.
+Below sample code redacts PII data from requested item variables which contain PII Data.
 
 ```ruby
  var sc = new GlideRecord('sc_item_option_mtom');
