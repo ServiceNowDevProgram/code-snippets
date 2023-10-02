@@ -14,6 +14,14 @@ That's it! A developer advocate or an sndevs designated approver will review you
 
 **Note on multiple submissions**: If you plan on doing another pull request and your original pull request hasn't been approved+merged yet, make sure to create a new branch in your forked repo first.
 
+## General requirements
+
+- Pull request descriptions must be explicit and descriptive to what is being changed.
+- Changes that are not within the scope of the description will result in the entire PR being rejected
+- Low effort/spam Pull Requests will be marked as spam accordingly.
+- Code should be relevant to ServiceNow Developers
+- ES2021 is allowed, but since not everyone is necessarily working on ES2021 enabled apps, we encourage you to disclose/warn users using your code about this.
+
 ## Follow this structure
 
 - **Top level folders** (besides the .github folder) are `CATEGORIES` of snippets.

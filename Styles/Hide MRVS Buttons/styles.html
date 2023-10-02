@@ -1,0 +1,26 @@
+/*
+ * Use this in Rich Text Label to hide all the buttons
+ */
+<style>
+	/* hide MRVS buttons on portal */
+	sp-sc-multi-row-element .btn.btn-primary.m-r,   /* hide the add button */
+	sp-sc-multi-row-element .btn.btn-default,		/* hide the add button */
+	sp-sc-multi-row-element .fa-pencil,				/* hide the edit buttons */
+	sp-sc-multi-row-element .fa-close,				/* hide the delete row buttons */
+	sp-sc-multi-row-element .table > tbody > tr > td:first-child,	/* hide the first column cell */
+	sp-sc-multi-row-element .table > caption + thead > tr:first-child > th:first-child	/* hide the first column header */
+	{
+		display:none;
+	}
+
+  /* hide MRVS buttons on platform */
+	.sc-table-variable-buttons .btn.btn-primary, 	/* hide the add button */
+  .sc-table-variable-buttons .btn.btn-default, 	/* hide the add button */
+  .sc-multi-row-actions .icon-edit,				/* hide the edit buttons */
+  .sc-multi-row-actions .icon-cross,				/* hide the delete row buttons */
+  .sc-table-variable-header:first-child,			/* hide the first column header */
+  .sc-multi-row-actions							/* hide the first column cell */
+	{
+		display: none;
+	}
+</style>
