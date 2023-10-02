@@ -1,6 +1,6 @@
 ## Formula builder to calculate the Age from birthdate
 
-This Formulate calculates at the beginning of Today to calculate the exact age from Birthdate.
+This Formula calculates at the beginning of Today to calculate the exact age from Birthdate.
 
 IF(
   OR(
