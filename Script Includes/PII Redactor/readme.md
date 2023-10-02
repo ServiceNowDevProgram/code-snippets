@@ -11,11 +11,11 @@ Below sample code redacts PII data from requested item variables.
 
 ```ruby
  var sc = new GlideRecord('sc_item_option_mtom');
-    sc.addQuery('request_item', current.sys_id);
+    sc.addQuery('request_item', '<SYSID_OF_RITM>');
     sc.query();
     while (sc.next()) {
 
-        var r = new piiRedaction().redactPii('sc_req_item',current.sys_id,sc.sc_item_option.value);
+        var r = new piiRedaction().redactPii('sc_req_item','<SYSID_OF_RITM>',sc.sc_item_option.value);
 
     }
 
