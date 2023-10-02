@@ -2,7 +2,7 @@ function onChange(control, oldValue, newValue, isLoading) {
     if (isLoading || newValue == '') {
         return;
     }
-
+//TEST
     var tableName = 'sys_user'; //User Table
     var ourNewUser = g_form.getValue('requested_for'); //get the Requested for Sys_ID
     var query = 'sys_id=' + ourNewUser; // query parameters
