@@ -1,4 +1,4 @@
-# Get Delegates for user based on type
+# Get Delegates for user based on delegate type
 
 Example snippet using GlideQuery to get the active delegates for a user based on the different types available;
 
