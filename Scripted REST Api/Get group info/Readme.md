@@ -1,0 +1,1 @@
+I have created Scripted REST API, we can easily be able to fetch the group information with the help of this API. If we provide the name of group, it will handle the request, process it and it will return the information like (group email, group manager name etc.)
