@@ -1,0 +1,1 @@
+gs.info(new GlideEncrypter().encrypt("ServiceNow"));
