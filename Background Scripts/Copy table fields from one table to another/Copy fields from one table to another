@@ -1,0 +1,118 @@
+/*
+This is a sample script, please run this script in non-prod environment first and test for all the scenarios. 
+This script could take few minutes to execute depending on number of fields to copy.
+*/
+
+var copyFromTable = "TABLE A"; //Change the name of table here.
+var copyToTable = "TABLE B"; //Change the name of table here.
+var fieldsToCopy = ["FIELD 1","FIELD 2","FIELD 3"]; //Enter list of all fields separated by comma here which you want to copy.
+var fieldCouner = 0;
+
+for (var i = 0; i < fieldsToCopy.length; i++) {
+  var getField = new GlideRecord("sys_dictionary");
+  getField.addQuery("name", copyFromTable);
+  getField.addQuery("element", fieldsToCopy[i]);
+  getField.query();
+  if (getField.next()) {
+    copyFields(copyToTable, getField);
+  } else {
+    gs.info(
+      "Background Script: Could not find the field [{0}] on table [{1}]",
+      fieldsToCopy[i],
+      copyFromTable
+    );
+  }
+}
+
+function copyFields(copyToTable, getField) {
+  var checkIfExists = new GlideRecord("sys_dictionary");
+  checkIfExists.addQuery("name", copyToTable);
+  checkIfExists.addQuery("element", getField.element.toString());
+  checkIfExists.query();
+  if (checkIfExists.hasNext()) {
+    gs.info(
+      "Background Script: Field with same name [{0}] already exists on table [{1}]",
+      getField.element.toString(),
+      copyToTable
+    );
+  } else {
+    var fieldCreated = false;
+    var createNewField = new GlideRecord("sys_dictionary");
+    createNewField.newRecord();
+    createNewField.setValue("name", copyToTable);
+    createNewField.setValue("internal_type", getField.internal_type.toString());
+    createNewField.setValue("column_label", getField.column_label.toString());
+    createNewField.setValue("element", getField.element.toString());
+    createNewField.setValue("max_length", getField.max_length.toString());
+    createNewField.setValue("default_value", getField.default_value.toString());
+    createNewField.setValue("choice", getField.choice.toString());
+    createNewField.setValue("reference", getField.reference.toString());
+    createNewField.setValue(
+      "reference_qual_condition",
+      getField.reference_qual_condition.toString()
+    );
+    createNewField.setValue("read_only", getField.read_only.toString());
+    createNewField.setValue("mandatory", getField.mandatory.toString());
+    createNewField.setValue("display", getField.display.toString());
+    fieldCreated = createNewField.insert();
+
+    //Check if field is successfully created and field type is choice or strin or integer (all fields could have choices), if yes, also copy the choices.
+    if (
+      fieldCreated.length == 32 &&
+      (getField.internal_type.toString() == "choice" ||
+        getField.internal_type.toString() == "string" || getField.internal_type.toString() == "integer")
+    ) {
+      copyChoices(copyToTable, getField, createNewField.element.toString());
+    }
+    gs.info(
+      "Background Script: Copy Finished - Copied field [{0}] from [{1}] to [{2}]",
+      getField.element.toString(),
+      copyFromTable,
+      copyToTable
+    );
+  }
+}
+
+function copyChoices(copyToTable, getField,newFieldName) {
+  var choiceList = [];
+  var checkChoices = new GlideRecord("sys_choice");
+  checkChoices.addQuery("name", getField.name.toString());
+  checkChoices.addQuery("element", getField.element.toString());
+  checkChoices.setLimit(1);
+  checkChoices.query();
+  if (checkChoices.hasNext()) {
+    var getChoices = new GlideRecord("sys_choice");
+    getChoices.addQuery("name", getField.name.toString());
+    getChoices.addQuery("element", getField.element.toString());
+    getChoices.query();
+    while (getChoices.next()) {
+      choiceList.push({
+        label: getChoices.label.toString(),
+        language: getChoices.language.toString(),
+        value: getChoices.value.toString(),
+        sequence: getChoices.sequence.toString(),
+        inactive: getChoices.inactive.toString(),
+        dependent_value: getChoices.dependent_value.toString(),
+        hint: getChoices.hint.toString(),
+      });
+    }
+
+    for (var c = 0; c < choiceList.length; c++) {
+      var createChoice = new GlideRecord("sys_choice");
+      createChoice.newRecord();
+      createChoice.setValue("name", copyToTable);
+      createChoice.setValue("element",newFieldName.toString());
+      createChoice.setValue("label", choiceList[c].label);
+      createChoice.setValue("language", choiceList[c].language);
+      createChoice.setValue("value", choiceList[c].value);
+      createChoice.setValue("sequence", choiceList[c].sequence);
+      createChoice.setValue("inactive", choiceList[c].inactive);
+      createChoice.setValue("dependent_value", choiceList[c].dependent_value);
+      createChoice.setValue("hint", choiceList[c].hint);
+      createChoice.insert();
+    }
+  }else{
+    gs.info("Background Script: No choices found for field [{0}]",getField.element.toString())
+  }
+}
+
