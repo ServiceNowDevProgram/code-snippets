@@ -1,3 +1,1 @@
 Code snippet to stop submission of a form in an Onsubmit Client Script, use an asynchronous call, and open a Widget in Modal view. In the script provided, there are two buttons in the modal. The first continues with the submission to create a new record and the second one cancels it. We can use a Script Include to get some value that we want and based on that open the modal or continue with submission.
-
-A use case might be to check for active cases of the logged-in user. If there is an active case for the same HR service he is trying to submit the case for we can stop the submission of the record producer and showcase in the widget a list of all the active cases of that user. In that way, we can prevent duplication in a user-friendly way.
