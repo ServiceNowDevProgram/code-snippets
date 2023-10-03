@@ -10,7 +10,7 @@ grTable.query();
 var searchresults = "";
 while (grTable.next()) {
     var fieldvalue=grTable.getValue(field);
-    if(/^[a-f0-9]{32}/.test(fieldvalue)) {
+    if(/^[a-f0-9]{32}$/.test(fieldvalue)) {
         searchresults += fieldvalue + ",";
     }
 }
