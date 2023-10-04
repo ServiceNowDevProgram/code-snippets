@@ -1,15 +1,7 @@
 function getNextMonday() {
-    var today = new GlideDate().getDayOfMonthNoTZ();
     var dayOfWeek = new GlideDateTime().getDayOfWeek();
-
-    var daysUntilNextMonday = 8 - dayOfWeek; // 8 for Monday of next week
-    var nextMondayDate = new GlideDate();
-    nextMondayDate.addDaysLocalTime(daysUntilNextMonday);
-
-    gs.info("The next upcoming Monday is on " + nextMondayDate.getDate() + ", in " + daysUntilNextMonday + " days.");
-    
-    return nextMondayDate.getDate();
+    var nextMonday = (8 - dayOfWeek) % 7 + 1; // Calculate days until next Monday
+    var date = new GlideDateTime().addDaysLocalTime(nextMonday);
+    gs.info("The next upcoming Monday is on " + date.getDate() + ", in " + nextMonday + " days.");
+    return date.getDate();
 }
-
-getNextMonday();
-
