@@ -1,7 +1,8 @@
-1.Go to System UI >UI Scripts >Create a new UI script and Check the Global field.
-2.Below is an example 
+# Restrict URL Hack using UI script
+1. Go to System UI >UI Scripts >Create a new UI script and Check the Global field.
+2. Below is an example 
 
-Lets say the Original URL opened is:
+Let's say the Original URL opened is:
 
 https://devXXXXX.service-now.com/sys_security_acl.do?sys_id=-1&sys_is_list=true&sys_target=sys_security_acl&sysparm_checked_items=&sysparm_fixed_query=&sysparm_group_sort=&sysparm_list_css=&sysparm_query=name%3dincident%5eoperation%3dread
 
