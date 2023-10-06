@@ -1,0 +1,9 @@
+// In Email client, agents don't have a way to mark an email high importance. This is an alternate method using which when the agent add an exclamation '!' ot the start of the email subject, email will be sent as High Importance Email
+
+(function executeRule(current, previous /*null when async*/) {
+	if (current.subject.startsWith('!'))
+  {
+	  current.importance = "high";
+	  current.subject = current.subject.substring(1);
+  }
+})(current, previous);
