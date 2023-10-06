@@ -1,0 +1,1 @@
+This Business Rule can help agent mark an email High importance from Email Client. Out of Box there is no way an agent can mark an email High importance while drafting an email from email client. This Business rule can mark an email High importance when an exclamation (!) is added to the start of the subject in the Email Client
