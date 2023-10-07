@@ -14,4 +14,5 @@ Write a client-side code on the UI Action and add the code in ```script.js``` fi
 Values of visible fields/cells can be extracted using the ```getCell(String recSysId, String fieldName)``` method of client-side class ```GlideList (g_list)```. Required parameters:
   - ```String recSysId``` - SysID of the record/row whose value is to be fetched
   - ```String fieldName``` - Name of the field whose value is to be fetched
-Returns: ```HTMLElement (HTMLTableCellElement)```, string content can be extracted using ```.innerText``` property
+
+**Returns:** ```HTMLElement (HTMLTableCellElement)```, string content can be extracted using ```.innerText``` property
