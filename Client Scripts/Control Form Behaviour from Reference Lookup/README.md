@@ -11,5 +11,5 @@ Write a client script/scripted UI policy on the reference table and add the code
 # Explanation
 
 The URL parameters contains the necessary information about the originating table and field from where the lookup icon is clicked. These parameters can be extracted using the client-side class ```GlideURL```. Key parameters of interest here:
-  - ```**sysparm_nameofstack**: "reflist"``` ==> Will always be reflist when form has originated from a reference lookup icon click
-  - ```**sysparm_target**: "change_request.cmdb_ci"``` ==> Will be in the format <table_name>.<field_name>
+  - ```sysparm_nameofstack: "reflist"``` ==> Will always be reflist when form has originated from a reference lookup icon click
+  - ```sysparm_target: "change_request.cmdb_ci"``` ==> Will be in the format <table_name>.<field_name>
