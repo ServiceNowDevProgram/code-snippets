@@ -6,5 +6,5 @@ var field = url.getParam('sysparm_target'); //Dot-walked path to the field (Exam
 
 if (source === 'reflist' && field === 'change_request.cmdb_ci') {
 	// Add form control logic here
-	g_form.setMandatory('name', false);
+	g_form.setMandatory('name', true);
 }
