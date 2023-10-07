@@ -1,0 +1,21 @@
+<div>
+<!-- your widget template -->
+  <h1>Simple List</h1>
+ 
+  <table>
+    <tr>
+      <th>Number</th>
+      <th>Short Desc</th>
+      <th>Assignment Group</th>
+      <th>State</th>
+      <th>Action</th>
+    </tr>
+    <tr ng-repeat="key in data.inc">
+      <td>{{key.number}}</td>
+      <td>{{key.short_desc}}</td>
+      <td>{{key.assign_gr}}</td>
+      <td>{{key.state}}</td>
+    </tr>
+  </table>
+  
+</div>
