@@ -1,0 +1,1 @@
+This script allow users in the watchlist to be added to the CC in the Email. This script will work for a table extended from Task table. You can make changes to the field 'watch_list' to match to any other user list field to be added to CC
