@@ -7,4 +7,4 @@ var flag = 0; //initial flag to 0
       outputs.flag = 1;  //if any one MID server is up proceed next step in the integration
       break;
     }
-    //else returns 0 and no MID server are up inside the cluster, abort integration logic and report to the concerened team
+    //else returns 0 and no MID server are up inside the cluster, abort integration logic and report to the concerened team.
