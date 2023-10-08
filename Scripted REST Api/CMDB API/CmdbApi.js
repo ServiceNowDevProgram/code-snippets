@@ -87,7 +87,7 @@ createCi: function() {
         }
 
         var isRootTable = (function() {
-            var rootTables = gs.getProperty('sr-cmdb-api.root-tables', '');
+            var rootTables = gs.getProperty('sr-cmdb-api.root-tables', ''); // Comma seperated root table names
             return (rootTables.indexOf(tableName) > -1);
         })();
 
@@ -101,7 +101,7 @@ createCi: function() {
     },
 
  /**
-     * Get the valid Choice value of field
+     * Get the valid Choice value of the field
      * 
      * @param {String} tableName
      * @param {String} fieldName
