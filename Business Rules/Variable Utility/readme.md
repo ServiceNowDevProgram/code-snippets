@@ -1,6 +1,6 @@
 # ServiceNow Variable Utilities and Business Rule
 
-This repository contains a Script Include and a Business Rule for ServiceNow that provide utility methods for variable validation, logging, and transformation. It also demonstrates how to pass server-side information to the client side using the `g_scratchpad` variable.
+This sub-folder contains a Script Include and a Business Rule for ServiceNow that provide utility methods for variable validation, logging, and transformation. It also demonstrates how to pass server-side information to the client side using the `g_scratchpad` variable.
 
 ## Components
 
