@@ -1,10 +1,6 @@
 # ServiceNow Variable Utilities and Business Rule
 
-<<<<<<< HEAD
 This sub-folder contains a Script Include and a Business Rule for ServiceNow. These components offer enhanced capabilities for variable validation, logging, and transformation. The Business Rule also initializes and populates the `g_scratchpad` object with server-side information, making it accessible on the client side.
-=======
-This sub-folder contains a Script Include and a Business Rule for ServiceNow that provide utility methods for variable validation, logging, and transformation. It also demonstrates how to pass server-side information to the client side using the `g_scratchpad` variable.
->>>>>>> b3364e14f7b2676887f849f37ad92d672a8f4a17
 
 ## Components
 
@@ -46,3 +42,4 @@ The `logVariable` function in the Script Include supports different logging leve
 - `info`: For general informational logs.
 - `warn`: For warning messages.
 - `error`: For error messages, also throws an error to halt execution.
+
