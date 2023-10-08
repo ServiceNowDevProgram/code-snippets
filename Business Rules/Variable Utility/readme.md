@@ -1,45 +1,48 @@
 # ServiceNow Variable Utilities and Business Rule
 
+<<<<<<< HEAD
+This sub-folder contains a Script Include and a Business Rule for ServiceNow. These components offer enhanced capabilities for variable validation, logging, and transformation. The Business Rule also initializes and populates the `g_scratchpad` object with server-side information, making it accessible on the client side.
+=======
 This sub-folder contains a Script Include and a Business Rule for ServiceNow that provide utility methods for variable validation, logging, and transformation. It also demonstrates how to pass server-side information to the client side using the `g_scratchpad` variable.
+>>>>>>> b3364e14f7b2676887f849f37ad92d672a8f4a17
 
 ## Components
 
 ### Script Include: `variableUtil`
 
-Provides utility methods for:
-- Validating a variable's existence (`validateVariable`)
-- Logging variable states for debugging (`logVariable`)
-- Validating a variable's type (`validateType`)
-- Validating an array variable and its length (`validateArray`)
-- Conditionally transforming a variable (`transformIfValid`)
-- Validating and setting a variable with a fallback (`validateAndSet`)
+This Script Include provides a set of utility methods for:
+
+- **Variable Existence Validation**: Ensures that a variable is neither `null` nor `undefined` using `validateVariable`.
+- **Variable State Logging**: Logs the state of variables for debugging purposes with different log levels using `logVariable`.
+- **Type Validation**: Validates the data type of a variable using `validateType`.
+- **Array Validation**: Validates if a variable is an array and optionally checks its length using `validateArray`.
+- **Conditional Transformation**: Applies a transformation function to a variable if it's valid using `transformIfValid`.
+- **Variable Initialization with Fallback**: Validates and sets a variable, providing a fallback value if the variable is invalid using `validateAndSet`.
 
 ### Business Rule: Display Business Rule
 
-This Business Rule initializes the `g_scratchpad` variable and populates it with various server-side information. It utilizes the `variableUtil` Script Include for variable validation and logging.
+This Business Rule is designed to initialize the `g_scratchpad` object and populate it with specific server-side variables. It leverages the `variableUtil` Script Include for robust variable validation and logging.
 
 ## Usage Scenarios
 
-1. **Server-Side Property Value**: You can apply logic based on some property value stored at the server side. For example, you might want to check a system property like `css.base.color` and pass it to the client side.
-
+1. **Server-Side Property Value**: Utilize server-side properties like `css.base.color` to influence client-side behavior.
     ```javascript
-    g_scratchpad.css = utilInstance.validateAndSet(gs.getProperty('css.base.color'), "Variable does not exist or has no value");
+    g_scratchpad.css = utilInstance.validateAndSet(gs.getProperty('css.base.color'));
     ```
 
-2. **User Information**: You can apply logic based on the department or manager associated with the user. For example, you might want to retrieve the manager of the caller and pass it to the client side.
-
+2. **User-Related Information**: Extract and use information related to the user, such as the manager's name, to customize the user experience.
     ```javascript
-    g_scratchpad.managerName = utilInstance.validateAndSet(current.caller_id.manager.getDisplayValue(), "Variable does not exist or has no value");
+    g_scratchpad.managerName = utilInstance.validateAndSet(current.caller_id.manager.getDisplayValue());
     ```
 
 ## How to Use
 
-1. Import the Script Include `variableUtil` into your ServiceNow instance.
-2. Create a Display Business Rule and include the provided script.
+1. Import the `variableUtil` Script Include into your ServiceNow instance.
+2. Create a new Display Business Rule and incorporate the script from this repository.
 
 ## Logging Levels
 
-The `logVariable` function supports different logging levels:
-- `info`: General information
-- `warn`: Warnings
-- `error`: Errors (Throws an error)
+The `logVariable` function in the Script Include supports different logging levels to categorize the log entries:
+- `info`: For general informational logs.
+- `warn`: For warning messages.
+- `error`: For error messages, also throws an error to halt execution.
