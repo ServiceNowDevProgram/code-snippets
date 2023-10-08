@@ -24,13 +24,3 @@ The primary goal of the Catalog Item Explorer widget is to serve as a valuable l
 7. **Quick Search Placeholder:** Define the placeholder message for the Quick Search field to align with your portal's user interface.
 8. **Widget Title:** Customize the title of the widget to match its purpose within your Service Portal.
 9. **Copyright Display:** Choose whether to display copyright information in the bottom right corner of the widget.
-
-## Installation
-
-1. Download the Catalog Item Explorer widget update set and import it into your ServiceNow instance.
-2. Add the widget to your Service Portal page or portal theme.
-3. Configure the widget by adjusting the options based on your catalog's requirements.
-4. Enjoy an improved catalog browsing experience for both your end-users and catalog administrators.
-
-## License
-This project is licensed under the [MIT License](LICENSE).
