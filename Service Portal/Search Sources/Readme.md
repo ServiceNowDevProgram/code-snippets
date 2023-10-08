@@ -12,3 +12,5 @@ Once done, ensure to use the Search source by navigating to the Service Portals 
 
 Result as below <img width="433" alt="image" src="https://github.com/Jaspalsinghchot/code-snippets/assets/30924269/7885cb4d-dd36-48c7-94ee-5a79ceb1cee9">
 
+where first one will take us ticket page while the other one is approval record.
+
