@@ -45,8 +45,8 @@ variableUtil.prototype = {
     },
 
     // Validates and sets a variable with a fallback, ensuring a safe value is always set.
-    validateAndSet: function(value, fallback) {
-        return this.validateVariable(value) ? value : fallback;
+    validateAndSet: function(value) {
+        return this.validateVariable(value) ? value : 'Variable does not exist or has no value';
     },
 
     type: 'variableUtil'

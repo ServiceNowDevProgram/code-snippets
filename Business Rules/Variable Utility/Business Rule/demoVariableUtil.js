@@ -13,13 +13,13 @@
     var utilInstance = new variableUtil();
     
     // Using validateAndSet for efficient variable initialization and validation for specific variables
-    g_scratchpad.css = utilInstance.validateAndSet(gs.getProperty('css.base.color'), "Variable does not exist or has no value");
+    g_scratchpad.css = utilInstance.validateAndSet(gs.getProperty('css.base.color'));
     utilInstance.logVariable("CSS Color (g_scratchpad)", g_scratchpad.css, 'info');
     
-    g_scratchpad.hasAttachments = utilInstance.validateAndSet(current.hasAttachments(), "Variable does not exist or has no value");
+    g_scratchpad.hasAttachments = utilInstance.validateAndSet(current.hasAttachments());
     utilInstance.logVariable("Has Attachments (g_scratchpad)", g_scratchpad.hasAttachments, 'warn');
     
-    g_scratchpad.managerName = utilInstance.validateAndSet(current.caller_id.manager.getDisplayValue(), "Variable does not exist or has no value");
+    g_scratchpad.managerName = utilInstance.validateAndSet(current.caller_id.manager.getDisplayValue());
     
     // Validating types to ensure data integrity for these specific variables
     var cssTypeValid = utilInstance.validateType(g_scratchpad.css, 'string');
