@@ -1,0 +1,13 @@
+<div>
+  <a href="?id=approvals&table={{item.table}}&sys_id={{item.sys_id}}" class="h4 text-primary m-b-sm block">Approval for: {{item.number}}
+<span ng-bind-html="highlight(item.primary, data.q)"></span></a>
+ <span class="text-muted">
+  {{item.number}}
+ </span>
+  <span class="m-l-xs m-r-xs"> &middot; </span>
+  <span class="text-muted">
+  {{item.sys_created_on}}
+    </span>
+</div>
+
+
