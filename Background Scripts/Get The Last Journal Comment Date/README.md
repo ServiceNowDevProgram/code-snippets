@@ -11,4 +11,4 @@ It may be useful if you don't want to drill down to the 'sys_journal_field' tabl
 
 ```javascript
 /* If your date has a different format you can replace the regex pattern with a new one */
-var timestampMatch = lastRecordComment.match(/YOUR_REGEX_PATTERN/);
+var timestampMatch = commentText.match(/YOUR_REGEX_PATTERN/);
