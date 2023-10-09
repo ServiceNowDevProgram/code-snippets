@@ -1,0 +1,22 @@
+Condition -(After Update) If child task state changes to CLOSED
+(function executeRule(current, previous /*null when async*/ ) {
+    var gr = new GlideRecord('TASK_TABLE_NAME');
+    gr.addQuery('parent', current.parent);
+    gr.addActiveQuery();
+    gr.query();
+    gr.next();
+    {
+        var cse = new GlideRecord('PARENT_TABLE_NAME');
+        cse.addQuery('sys_id', current.parent);
+        cse.query();
+        if (cse.next()) {
+            cse.state = '3'; // Set case to Completed
+            cse.update();
+        }
+        gs.info("Parent Case is Automatically closed since all the child tasks are completed");
+    } else {
+			//do nothing
+    }
+
+
+})(current, previous);
