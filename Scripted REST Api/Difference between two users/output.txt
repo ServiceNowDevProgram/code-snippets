@@ -1,0 +1,36 @@
+Response body:-
+{
+  "result": [
+    {
+      "field": "Updates",
+      "user1Value": "5",
+      "user2Value": "3"
+    },
+    {
+      "field": "Department",
+      "user1Value": "IT",
+      "user2Value": "Development"
+    },
+    {
+      "field": "User ID",
+      "user1Value": "abc.xyz",
+      "user2Value": "xyz.abc"
+    },
+    {
+      "field": "Updated",
+      "user1Value": "2023-06-26 04:26:36",
+      "user2Value": "2023-06-26 04:26:37"
+    },
+    {
+      "field": "Last name",
+      "user1Value": "xyz",
+      "user2Value": "abc"
+    },
+    {
+      "field": "Name",
+      "user1Value": "abc xyz",
+      "user2Value": "xyz abc"
+    },
+    
+  ]
+}
