@@ -1,0 +1,15 @@
+Condition -(Before Update) Parent case state to CLOSED
+
+(function executeRule(current, previous /*null when async*/ ) {
+
+    var gr = new GlideRecord('TASK_TABLE NAME');
+    gr.addQuery('parent', current.sys_id);
+    gr.addQuery('state', '!=', 3);
+    gr.query();
+    if (gr.next()) {
+        gs.addErrorMessage('Cannot close Parent Case with open child Task');
+        current.state = previous.state;
+        current.setAbortAction(true); //abort the record
+    }
+
+})(current, previous);
