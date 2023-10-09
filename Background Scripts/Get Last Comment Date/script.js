@@ -1,11 +1,11 @@
-/* Get required record by sys_id*/
-var record = new GlideRecord('incident');
-record.get('b1c4b18c8739f1108009ac1a0cbb35dc');
+/* Get required record by sys_id */
+var record = new GlideRecord('<table>');
+record.get('<SYSID>');
 
-/* Get the latest comment */
+/* Get the latest comment, replace comments with your journal field if required */
 var commentText = record.comments.getJournalEntry(1);
 
-/* Catch the timestamp out of it */
+/* Catch the timestamp out of it with regex */
 var timestampMatch = commentText.match(/(\d{2}-\d{2}-\d{4} \d{2}:\d{2}:\d{2}).*? -/);
 
 /* If catched, created new DateTime out of it */
