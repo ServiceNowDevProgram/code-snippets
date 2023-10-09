@@ -6,6 +6,9 @@ Custom icons can also be included, but the background colour is lost due to the 
 **Allowed icons (as per SN documentation):**
 > icon-user, icon-user-group, icon-lightbulb, icon-home, icon-mobile, icon-comment, icon-mail, icon-locked, icon-database, icon-book, icon-drawer, icon-folder, icon-catalog, icon-tab, icon-cards, icon-tree-right, icon-tree, icon-book-open, icon-paperclip, icon-edit, icon-trash, icon-image, icon-search, icon-power, icon-cog, icon-star, icon-star-empty, icon-new-ticket, icon-dashboard, icon-cart-full, icon-view, icon-label, icon-filter, icon-calendar, icon-script, icon-add, icon-delete, icon-help, icon-info, icon-check-circle, icon-alert, icon-sort-ascending, icon-console, icon-list, icon-form, and icon-livefeed
 
+
+# Output Screenshot
+
 ![image](https://github.com/annaydas/code-snippets/assets/29729050/7c93828c-d30a-4255-a97c-a2ee4f9126ac)
 
 
