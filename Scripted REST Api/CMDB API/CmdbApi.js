@@ -10,11 +10,11 @@ CmdbApi.prototype = {
 initialize: function() {
 },
 
-	/**
- * Create a CI
- * Mapped to POST /api/978841/cis/{ci_type}
- * 
- * @returns {Object} JSON response of CI created or Error details
+/**
+	 * Create a CI
+	 * Mapped to POST /api/978841/cis/{ci_type}
+	 * 
+	 * @returns {Object} JSON response of CI created or Error details
  */
 createCi: function() {
 	var self = this;
@@ -71,12 +71,73 @@ createCi: function() {
 	}
 },
 
+
+/**
+	 * 
+	 * Creates a Configuration Item (CI) relationship in ServiceNow.
+	 * Mapped to POST /api/relationships
+	 * @returns {Object} JSON response of CI Relationship created or Error details
+	 * 
+ * */
+createCiRelationship: function() {
+	var self = this;
+
+	var payload = self.body;
+
+	//Check for mandatory keys in Payload
+	var missingPayloadAttributes = ['parent', 'type', 'child'].filter(function(key) {
+		if (payload.hasOwnProperty(key)) {
+			return gs.nil(payload[key]);
+		}
+		return true;
+	});
+
+	if (missingPayloadAttributes.length > 0) {
+		return new sn_ws_err.BadRequestError(gs.getMessage('Missing required attributes: {0}', [missingPayloadAttributes.join()]));
+	}
+
+	var parentCiSysId = payload.parent || '';
+	var relationshipTypeSysId = payload.type || '';
+	var childCiSysId = payload.child || '';
+
+	if (!self._isValidRecord('cmdb_ci', parentCiSysId)) {
+		return new sn_ws_err.BadRequestError('Parent CI not found with id: ' + parentCiSysId);
+	}
+
+	if (!self._isValidRecord('cmdb_ci', childCiSysId)) {
+		return new sn_ws_err.BadRequestError('Child CI not found with id: ' + childCiSysId);
+	}
+
+	if (!self._isValidRecord('cmdb_rel_type', relationshipTypeSysId)) {
+		return new sn_ws_err.BadRequestError('Relationship type not found with id: ' + relationshipTypeSysId);
+	}
+
+	if (self._isValidRecord('cmdb_rel_ci', '', gs.getMessage('parent={0}^child={1}^type={2}', [parentCiSysId, childCiSysId, relationshipTypeSysId]))) {
+		return new sn_ws_err.BadRequestError('Relationship already exists');
+	}
+
+	var ciRelation = new GlideRecord('cmdb_rel_ci');
+	ciRelation.initialize();
+	ciRelation.parent = parentCiSysId;
+	ciRelation.child = childCiSysId;
+	ciRelation.type = relationshipTypeSysId;
+	ciRelation.insert();
+
+	var insertError = ciRelation.getLastErrorMessage();
+	if (!gs.nil(insertError)) {
+		return new sn_ws_err.BadRequestError(insertError);
+	}
+
+	return self._getGrResultStream('cmdb_rel_ci', ciRelation.getValue('sys_id'));
+},
+
+	
  /**
      * Check if the Table is part of CMDB. The table should be an extension of cmdb_ci or a root table defined in property sr-cmdb-api.root-tables
      * 
      * @param {String} tableName
      * @returns {Boolean}
-     */
+ */
     _isValidCiType: function(tableName) {
         if (gs.nil(tableName)) {
             return false;
@@ -102,12 +163,11 @@ createCi: function() {
 
  /**
      * Get the valid Choice value of the field
-     * 
      * @param {String} tableName
      * @param {String} fieldName
      * @param {String} payloadValue
      * @returns {String} choiceValue
-     */
+*/
     _getChoiceValue: function(tableName, fieldName, payloadValue) {
 
         if (gs.nil(tableName) || gs.nil(fieldName) || gs.nil(payloadValue)) {
@@ -156,14 +216,14 @@ createCi: function() {
         return choiceValue;
     },
 	
-	  /**
+/**
      * Get the sys_id of the Reference field
      * 
      * @param {String} tableName
      * @param {String} fieldName
      * @param {String} payloadValue
      * @returns {String} refValue
-     */
+*/
     _getReferenceValue: function(tableName, fieldName, payloadValue) {
 
         if (gs.nil(tableName) || gs.nil(fieldName) || gs.nil(payloadValue)) {
@@ -205,25 +265,53 @@ createCi: function() {
             return '';
         })();
 
-        //Commented for now
-        //If Invalid Reference value is passed, system will not populate the field
-        /*
-        if (gs.nil(refValue)) {
-        	throw gs.getMessage('Invalid value [{0}] for field [{1}]', [payloadValue, fieldName]);
-        }
-        */
-
         return refValue;
     },
 
-	/**
+
+/**
+	 * Check if the record is a valid record
+	 * 
+	 * @param {any} tableName
+	 * @param {any} sysId
+	 * @param {any} query
+	 * @returns Boolean
+ */
+_isValidRecord: function(tableName, sysId, query) {
+	if (gs.nil(tableName)) {
+		return false;
+	}
+
+	if (!gs.tableExists(tableName)) {
+		return false;
+	}
+
+	if (gs.nil(sysId) && gs.nil(query)) {
+		return false;
+	}
+
+	gs.getSession().setStrictQuery(true);
+
+	var gr = new GlideRecord(tableName);
+	if (!gs.nil(sysId)) {
+		gr.addQuery('sys_id', sysId);
+	} else {
+		gr.addQuery(query);
+	}
+
+	gr.query();
+
+	return gr.hasNext();
+},
+
+/**
      * Write to response stream
      * 
      * @param {any} tableName
      * @param {any} sysId
      * @param {any} defaultParams
      * @returns {undefined}
-     */
+ */
     _getGrResultStream: function(tableName, sysId, defaultParams) {
 
         var self = this;
@@ -246,8 +334,6 @@ createCi: function() {
 
         var suppressPaginationLink = defaultParams.sysparm_suppress_pagination_header || self.getQueryParam('sysparm_suppress_pagination_header', 'false');
 
-
-        // not implemented....
         var excludeRefLink = self.getQueryParam('sysparm_exclude_reference_link', 'false');
         var view = self.getQueryParam('sysparm_view');
 
