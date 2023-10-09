@@ -6,12 +6,12 @@ record.get('<SYSID>');
 var commentText = record.comments.getJournalEntry(1);
 
 /* Catch the timestamp out of it with regex */
-var timestampMatch = commentText.match(/(\d{2}-\d{2}-\d{4} \d{2}:\d{2}:\d{2}).*? -/);
+var timestampMatch = commentText.match(/(\d{2}-\d{2}-\d{4} \d{2}:\d{2}:\d{2}) -/);
 
 /* If catched, created new DateTime out of it */
 if (timestampMatch) {
     var parsedTimestamp = new GlideDateTime(timestampMatch[1]);
-    gs.info("Parsed Timestamp: " + parsedTimestamp);
+    gs.info("Timestamp: " + parsedTimestamp);
 } else {
-    gs.error("Timestamp not found in comment: " + commentText);
+    gs.error("No timestamp found: " + commentText);
 }
