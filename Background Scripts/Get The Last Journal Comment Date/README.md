@@ -10,5 +10,5 @@ It may be useful if you don't want to drill down to the 'sys_journal_field' tabl
 3. If a timestamp is found, it creates a new `GlideDateTime` object from the matched timestamp.
 
 ```javascript
-/* Replace this regular expression with your desired format */
+/* If your date has a different format you can replace the regex pattern with a new one */
 var timestampMatch = lastRecordComment.match(/YOUR_REGEX_PATTERN/);
