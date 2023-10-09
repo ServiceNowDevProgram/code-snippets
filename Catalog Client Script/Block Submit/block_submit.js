@@ -2,8 +2,10 @@
 function onSubmit() {
   var someVariable = g_form.getValue("someVariable");
   if(someVariable == 'No'){
-	alert('You can only use this form for someReason.  Review someInstructions');
-    return false; // this stops user from submitting the form
+	var gm = new GlideModal('glide_warn',false);
+        gm.setTitle("Submit Blocked! You can only use this form for someReason.  Review someInstructions");
+        gm.render();
+    	return false; // this stops user from submitting the form
     }
   return true; // allow form submit
 }
