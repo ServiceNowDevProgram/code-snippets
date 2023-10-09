@@ -60,30 +60,7 @@ TinyUrlHelper.prototype = {
 		return tinyUrl;
 	},
 	
-	/*
-	 * Return the corresponding tiny url that is the list of all relationships to and from 
-	 * all of the Network Adapters and/or Switchports that belong to the switch with sys_id
-	 * switchSysId. This is useful because the list of sys_ids can be very large, ie if
-	 * encodedSysIds is a long comma separated list of sys_id, then this query could easily 
-	 * be >2000 characters and therefore not work in browsers:
-	 * https://<instance>.service-now.com/cmdb_rel_ci_list.dosysparm_query=childIN' + encodedSysIds + '%5EORparentIN' + encodedSysIds
-	 
-	 *
-	 * @param {string} switchSysId, the sys_id of a switch
-     * @return {string} the tinyUrl or the longUrl, depending, see NOTES on getSert
-	*/
-	getSwitchRelsTinyUrl: function(switchSysId) {
-		var switchportSysIds, queryStr, encodedSysIds;
-		switchportSysIds = new SwitchPortRef().getSwitchPortIDs(switchSysId);
-		gs.debug('TinyUrlHelper.getSwitchRelsTinyUrl: switchportSysIds = ' + switchportSysIds);
-		if (!switchportSysIds) {
-			queryStr = 'sysparm_query=childIN' + encodeURIComponent(switchSysId) + '%5EORparentIN' + encodeURIComponent(switchSysId);
-		}
-		else {
-			encodedSysIds = encodeURIComponent(switchportSysIds + ',' + switchSysId);
-			queryStr = 'sysparm_query=childIN' + encodedSysIds + '%5EORparentIN' + encodedSysIds;
-		}
-		return this.getSert(table='cmdb_rel_ci_list', queryStr=queryStr);
+return this.getSert(table='cmdb_rel_ci_list', queryStr=queryStr);
 	},
 
 	_hashCode: function(s) {
