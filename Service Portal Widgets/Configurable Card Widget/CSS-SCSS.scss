@@ -1,0 +1,65 @@
+$secondary-color: #000000;
+$text-color;
+$text-muted;
+
+.card{
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 1rem #e5e5e5;
+  margin-bottom: 10px;
+}
+
+.tag{  
+  background-color: $secondary-color;
+  color: #ffffff;
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+.heading{
+  margin-top: 1.1rem;
+  margin-bottom: 1.1rem;
+  color:$text-color;
+}
+
+.description{
+  color: $text-muted;
+}
+
+.button{
+  color: #ffffff;
+  background-color: #ffffff;
+  padding: 0.5em 1em;
+  border-radius: 6px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  border: 2px solid $secondary-color;
+  margin-top: 10px;
+  box-shadow: inset 0 0 0 0 #ffffff;
+  transition: ease-out 0.4s;
+  cursor: pointer;
+
+  &:hover{
+    background-color: #ffffff !important;
+    color: #000000;
+    box-shadow: inset 400px 0 0 0 #ffffff;
+  }
+}
+
+.w-100{
+  width: 100%;
+}
+
+.bg{
+  height: 20rem;
+  background: #ffffff;
+  border-radius: 10px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.position-absolute{
+ position: absolute;
+}
