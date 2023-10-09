@@ -8,3 +8,7 @@ Show Update : True
 Client : True
 Action name : copyQuestionSet
 On Click : clientConfirm()
+
+### update
+To complete a task on issue #745 
+Replace JavaScript function confirm() with GlideModal() API.
