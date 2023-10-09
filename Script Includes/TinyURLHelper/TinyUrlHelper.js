@@ -60,8 +60,7 @@ TinyUrlHelper.prototype = {
 		return tinyUrl;
 	},
 	
-return this.getSert(table='cmdb_rel_ci_list', queryStr=queryStr);
-	},
+
 
 	_hashCode: function(s) {
 		var x = 0;
