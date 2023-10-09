@@ -38,3 +38,17 @@ Table of Contents
     Response:
       Status Code: 200 OK
       Response Body: JSON with required fields for CI Relationship
+
+   3. Delete CI
+   Deletes a Configuration Item (CI) based on the provided CI type and sys_id.
+    Request Details:
+    Type: HTTP
+    Method: DELETE
+    URI: https://<service-now-domain>.service-now.com/api/cis/{ci_type}/{sys_id}
+    Headers:
+     Accept: application/json
+     Content-Type: application/json
+    Request Body: NA
+    Response:
+      Status Code: 204 OK
+      Response Body: 
