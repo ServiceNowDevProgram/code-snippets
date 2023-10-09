@@ -11,7 +11,7 @@ Allowed icons (as per SN documentation): > icon-user, icon-user-group, icon-ligh
 # Usage
 
 ### Success Message
-```
+```javascript
 GlideUI.get().addOutputMessage({
     msg: 'Success',
     type: 'success',
@@ -20,7 +20,7 @@ GlideUI.get().addOutputMessage({
 ```
 
 ### Warning Message
-```
+```javascript
 GlideUI.get().addOutputMessage({
     msg: 'Warning',
     type: 'warning',
@@ -29,7 +29,7 @@ GlideUI.get().addOutputMessage({
 ```
 
 ### Error Message
-```
+```javascript
 GlideUI.get().addOutputMessage({
     msg: 'Error',
     type: 'error',
@@ -38,7 +38,7 @@ GlideUI.get().addOutputMessage({
 ```
 
 ### Info Message
-```
+```javascript
 GlideUI.get().addOutputMessage({
     msg: 'Info',
     type: 'info',
@@ -47,7 +47,7 @@ GlideUI.get().addOutputMessage({
 ```
 
 ### Custom Icon (but it loses the background colour)
-```
+```javascript
 GlideUI.get().addOutputMessage({
     msg: 'Custom Icon, but styling is lost',
     icon: 'icon-lightbulb',
