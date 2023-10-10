@@ -4,6 +4,8 @@ Welcome to the CMDB API documentation. This document provides detailed informati
 Table of Contents
 1. Create CIs
 2. Create CI Relationship
+3. Delete CI
+4. Delete CI Relationship
 
 1. Create CIs
   This API is designed to create Configuration Items (CIs).
@@ -45,6 +47,20 @@ Table of Contents
     Type: HTTP
     Method: DELETE
     URI: https://<service-now-domain>.service-now.com/api/cis/{ci_type}/{sys_id}
+    Headers:
+     Accept: application/json
+     Content-Type: application/json
+    Request Body: NA
+    Response:
+      Status Code: 204 OK
+      Response Body:
+
+   4. Delete CI Relationship
+   Deletes a CI (Configuration Item) relationship based on the provided sys_id.
+    Request Details:
+    Type: HTTP
+    Method: DELETE
+    URI: https://<service-now-domain>.service-now.com/api/cis/relationships/{sys_id}
     Headers:
      Accept: application/json
      Content-Type: application/json
