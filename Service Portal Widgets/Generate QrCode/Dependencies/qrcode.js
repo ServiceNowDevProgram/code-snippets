@@ -1,0 +1,1 @@
+//install the code from this repository https://github.com/davidshimjs/qrcodejs/blob/master/qrcode.min.js
