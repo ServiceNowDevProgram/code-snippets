@@ -131,6 +131,75 @@ createCiRelationship: function() {
 	return self._getGrResultStream('cmdb_rel_ci', ciRelation.getValue('sys_id'));
 },
 
+
+/**
+	 * 
+	 * Deletes a Configuration Item (CI) based on the provided CI type and sys_id.
+	 * Mapped to DELETE /cis/{ci_type}/{sys_id}
+	 * @returns 
+	 * 
+ * */
+	deleteCi: function () {
+		var self = this;
+
+        var ciType = self.getPathParam('ci_type', '');
+
+        var ciSysId = self.getPathParam('sys_id');
+
+        var payload = self.body;
+		
+		var isCmdbExtension = (function (tableName) {
+			var absoluteBase = new TableUtils(tableName).getAbsoluteBase();
+            return (absoluteBase == 'cmdb_ci');
+		})(ciType);
+		
+		var isRootTable = (function(tableName) {
+            var rootTables = gs.getProperty('sr-cmdb-api.root-tables.delete', '');
+            return (rootTables.indexOf(tableName) > -1);
+        })(ciType);
+		
+		if (!isCmdbExtension && !isRootTable) {
+            return sn_ws_err.BadRequestError('Invalid CI Type provided:' + ciType);
+		}
+		
+		var honorAcl = isCmdbExtension;
+		// Honor ACL security for tables extending cmdb_ci. For CMDB extended tables, the security can be configured in the metadata record
+		// Do not honor ACL security for standalone tables. Delete access for such tables can be controlled by property 'sr-cmdb-api.root-tables.delete'
+
+		var ciRec = honorAcl ? new GlideRecordSecure(ciType) : new GlideRecord(ciType);
+        if (ciRec.get(ciSysId)) {
+			
+			if (honorAcl) {
+				if (!ciRec.canDelete()) {
+					var unauthorizedError = new sn_ws_err.ServiceError();
+					unauthorizedError.setStatus(403);
+					unauthorizedError.setMessage('Operation Failed');
+					unauthorizedError.setDetail('ACL Exception Delete Failed due to security constraints');
+					return unauthorizedError;
+				}	
+			}
+			
+			try {
+                ciRec.deleteRecord();
+
+                var errMsg = ciRec.getLastErrorMessage();
+                if (!gs.nil(errMsg)) {
+                    return new sn_ws_err.BadRequestError(errMsg);
+                }
+
+                return self.response.setStatus(204);
+
+            } catch (e) {
+                var serverError = new sn_ws_err.ServiceError();
+                serverError.setStatus(500);
+                serverError.setMessage('Operation Failed');
+                serverError.setDetail(e);
+                return serverError;
+            }
+        } else {
+            return new sn_ws_err.NotFoundError('No record found');
+        }
+	},	
 	
  /**
      * Check if the Table is part of CMDB. The table should be an extension of cmdb_ci or a root table defined in property sr-cmdb-api.root-tables
