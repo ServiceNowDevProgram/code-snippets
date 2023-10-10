@@ -23,4 +23,4 @@ This ServiceNow UI Macro allows you to easily copy field values to your clipboar
 ## Supported Fields
 
 - **Standard Fields**: You can use this UI Macro to copy values from standard fields on the form.
-- **Reference Fields**: This UI Macro also supports copying sys_ids from reference fields.
+- **Reference Fields**: This UI Macro also supports copying sys_ids of reference fields.
