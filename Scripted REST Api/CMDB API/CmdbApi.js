@@ -200,7 +200,36 @@ createCiRelationship: function() {
             return new sn_ws_err.NotFoundError('No record found');
         }
 	},	
-	
+
+ /**
+     * Deletes a CI (Configuration Item) relationship based on the provided sys_id.
+     * Mapped to DELETE /cis/relationships/{sys_id}
+     * @throws {sn_ws_err.BadRequestError} Throws an error if the sys_id is null or not provided.
+     * @throws {sn_ws_err.NotFoundError} Throws an error if a CI relationship with the given sys_id is not found.
+     * @returns {void} Returns nothing if the deletion is successful, otherwise throws an error.
+ */	
+    deleteCiRelationship: function() {
+        var self = this;
+
+        var relSysId = self.getPathParam('sys_id', '');
+
+        if (gs.nil(relSysId)) {
+            return new sn_ws_err.BadRequestError('sys_id cannot be null');
+        }
+
+        var ciRelation = new GlideRecord('cmdb_rel_ci');
+        ciRelation.addQuery('sys_id', relSysId);
+        ciRelation.query();
+        if (ciRelation.next()) {
+            ciRelation.deleteRecord();
+
+            self.response.setStatus(204);
+            return;
+        } else {
+            return new sn_ws_err.NotFoundError('CI Relationship not found with sys_id: ' + relSysId);
+        }
+    },
+
  /**
      * Check if the Table is part of CMDB. The table should be an extension of cmdb_ci or a root table defined in property sr-cmdb-api.root-tables
      * 
