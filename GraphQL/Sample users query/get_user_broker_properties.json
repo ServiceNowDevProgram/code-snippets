@@ -1,0 +1,11 @@
+[
+    {
+        "name": "id",
+        "label": "User Sys Id",
+        "description": "User's Sys ID",
+        "readOnly": false,
+        "fieldType": "string",
+        "mandatory": true,
+        "defaultValue": ""
+    }
+]

@@ -1,0 +1,29 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+      <h4>{{data.f.title}}</h4>
+    </div>
+    <div class="panel-body">
+      <button class="btn btn-block" 
+              ng-class="::getButtonClass(action)" 
+              ng-repeat="action in data.f._ui_actions" 
+              ng-click="triggerUIAction(action)" 
+              gfst_id="{{::action.sys_id}}" 
+              ng-disabled="submitting">
+        {{action.name}}
+      </button>
+    </div>
+</div>
+  
+<div class="panel panel-default">
+    <div class="panel-heading">
+      <h4>Behavior based on form state</h4>
+    </div>
+    <div class="panel-body">
+      <button class="btn btn-block btn-primary" ng-click="showInfoMessage()" ng-disabled="dirtyForm || !pageReady">
+        Show when Pristine
+      </button>
+      <button class="btn btn-block btn-secondary" ng-click="showErrorMessage()" ng-disabled="!dirtyForm || !pageReady">
+        Show when Dirty
+      </button>
+    </div>
+</div>

@@ -1,0 +1,1 @@
+This is a simple code to automate creation of incidents for the alerts receiving to ServiceNow instance. This code has functionality of adding receipients (excluding service-now instance emails) of email to watchlist of incident.

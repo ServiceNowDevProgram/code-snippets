@@ -1,0 +1,23 @@
+schema {
+    query: Query
+	mutation: Mutation
+}
+
+type Query {
+	getGroups: [Group]
+}
+
+type Mutation {
+	addUserToGroup(userID: ID!, groupID: ID!): GroupMember
+}
+
+type Group {
+	id: ID
+	name: String
+	manager: String
+}
+
+type GroupMember {
+	userName: String
+	groupName: String
+}
