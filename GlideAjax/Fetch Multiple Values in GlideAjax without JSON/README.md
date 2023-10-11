@@ -1,0 +1,1 @@
+This code snippet allows to receive multiple response from server side to client side using GlideAjax without using the complex JSON format. You can set multiple attributes in server side, and use the same attribute at the client side to receive responses.
