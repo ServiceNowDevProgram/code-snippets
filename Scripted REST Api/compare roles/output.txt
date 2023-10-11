@@ -1,0 +1,21 @@
+Response Body:
+
+{
+  "result": [
+    {
+      "field": "Sys ID",
+      "role1Value": "abc",
+      "role2Value": "xyz"
+    },
+    {
+      "field": "Description",
+      "role1Value": "Role assigned to Account recovery users while they login in recovery mode",
+      "role2Value": "This role give workflow users the ability to create custom orchestration activities in the workflow canvas."
+    },
+    {
+      "field": "Name",
+      "role1Value": "acr_admin",
+      "role2Value": "activity_creator"
+    }
+  ]
+}

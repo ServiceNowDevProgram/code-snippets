@@ -1,12 +1,19 @@
 /****************Client Code****************/
 
 function clientConfirm() {
-    var answer = confirm("This will create a copy of this variable set including all variables, choices, UI policies, UI policy actions and client scripts. Do you want to proceed?");
-    if (answer == true) {
-        gsftSubmit(null, g_form.getFormElement(), 'copyQuestionSet');
-    } else {
-        return false;
-    }
+
+        var actionCallbackOK = function() {
+        	 gsftSubmit(null, g_form.getFormElement(), 'copyQuestionSet');
+    	};
+    	var actionCallbackCancel = function() {
+         	return false;
+    	};
+
+	    var gm = new GlideModal('glide_confirm_basic',false); //UI page with logic to confirm
+    	gm.setTitle("This will create a copy of this variable set including all variables, choices, UI policies, UI policy actions and client scripts. Do you want to proceed?"); // confirm message to ask for confirmation
+	    gm.setPreference('onPromptComplete', actionCallbackOK.bind(this)); //bind to local function to take action when selected Ok
+    	gm.setPreference('onPromptCancel', actionCallbackCancel.bind(this)); //bind to local function to take action when selected Cancel
+    	gm.render();
 }
 
 /****************Server Code****************/
