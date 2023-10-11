@@ -1,4 +1,4 @@
-This utility contains a scripted REST API which helps to insert tags in tables with required parameters.
+This utility contains a scripted REST API which helps to insert tags in records with required parameters.
 
 Below is the REST endpoint to access this SRAPI.
 
