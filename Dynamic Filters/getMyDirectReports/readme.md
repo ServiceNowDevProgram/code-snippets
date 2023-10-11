@@ -17,7 +17,7 @@ There is some recursion protection; the script checks to see if it has already c
 | Name | getMyDirectReports |
 | Table | Global [global] |
 | Advanced | true |
-| Script | <em>see [getMyDirectReports.js](Business%20Rules/getMyDirectReports/getMyDirectReports.js) in this folder</em> |
+| Script | <em>see [getMyDirectReports.js](getMyDirectReports.js) in this folder</em> |
 
 **Dynamic Filter Option (sys_filter_option_dynamic)**
 
