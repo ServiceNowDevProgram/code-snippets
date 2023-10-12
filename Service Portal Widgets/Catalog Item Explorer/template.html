@@ -1,0 +1,58 @@
+<div class="panel panel-default b">
+    <!-- Panel Heading -->
+    <div class="panel-heading">
+        <div><h2 class="panel-title">{{::c.data.widgetTitle}}</h2></div>
+        <div><button ng-if="c.filteredCatalogItems.length > 0" type="button"
+            class="btn btn-primary btn-xs" ng-click="c.showAllItems()">{{::c.data.showAllMsg}}</button>
+            <button ng-if="c.displayItems.length > 0" type="button"
+                class="btn btn-danger btn-xs hidden-xs" ng-click="c.resetState()">Reset</button></div>
+    </div>
+    <!-- Panel Body -->
+    <div class="panels-container">
+        <div class="row category-header fit-content">
+            <!-- Catalog Category Letters -->
+            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                <ul class="list-inline text-center">
+                    <li class="list-inline-item" ng-repeat="category in c.data.catalogCategories">
+                        <div class="category-letter" item="category" ng-class="{'selected' : category.selected}"
+                            ng-click="c.selectCategory(category)"><span
+                                class="catalog-category">{{category.letter}}</span>
+                        </div>
+                    </li>                    
+                </ul>
+            </div>
+            <!-- Quick Search Section -->
+            <div class="xiva-quick-search-container col-lg-4 col-md-4 hidden-sm hidden-xs">
+                <span class="fa fa-search"></span><input class="form-control" type="text"
+                    ng-model="searchText" ng-change="c.quickSearch()"
+                    placeholder="{{c.data.msgQuickSearchPlaceholder}}">
+            </div>
+        </div>
+    </div>
+    <!-- Item List -->
+    <ul role="rowgroup" class="list-group padder-l-none padder-r-none">
+        <li class="list-group-item" ng-repeat="item in c.displayItems | limitTo:c.data.itemsPerPage" style="margin:0;"
+            ng-click="c.openUrl(item.itemId)">
+            <div role="cell" class="padder-l-none padder-r-none main-column">
+                <div class="primary-display">
+                    {{item.name}}
+                </div>
+                <small class="text-muted">
+                    <div class="secondary-display">
+                        <span>{{item.description}}</span>
+                    </div>
+                </small>
+            </div>
+        </li>
+    </ul>
+    <!-- Pagination -->
+    <div class="panels-container" ng-if="c.isMultiplePage" style="display: flex; justify-content: center;">
+        <uib-pagination total-items="c.filteredCatalogItems.length" ng-model="c.data.currentPage"
+            ng-change="c.pageChanged()" items-per-page="c.data.itemsPerPage" max-size="c.data.maxPagesInPaginator"
+            boundary-links="c.data.showBoundaryLinks">
+        </uib-pagination>
+    </div>
+    <!-- Panel Footer -->
+    <div class="panel-footer">Total items found:
+        {{c.filteredCatalogItems.length}}<span class="copyright" ng-show="c.data.showCopyright">&copy; 2023 Ivan Betev</span></div>
+</div>
