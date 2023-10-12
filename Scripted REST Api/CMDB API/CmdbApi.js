@@ -229,7 +229,83 @@ createCiRelationship: function() {
             return new sn_ws_err.NotFoundError('CI Relationship not found with sys_id: ' + relSysId);
         }
     },
+/**
+	 * Get the details of a Configuration Item (CI) Group in the CMDB.
+  	 * Mapped to GET /cis/group/{id}
+	 * @function getCiGroup
+	 * @returns {Object} - Returns a response object containing the details of the CI and its associated groups.
+ **/
+ getCiGroup: function() {
+        var response = {};
+        var self = this;
+        var ciId = self.getPathParam('id', '');
+        if (gs.nil(ciId)) {
+            return new sn_ws_err.BadRequestError('Parameter id cannot be null');
+        }
+        var CI_details = [];
+        var arrGroupList = [];
+        var arrStatusDetails = [];
+        var ciDetailsObj = {};
+        var ci_name = '';
+        var ci = new GlideRecord("cmdb_ci");
+        switch (this.getSourceIDtype(ciId)) {
+            case 'srobjUID':
+                ci.addQuery("u_sr_object_uid", ciId);
+                break;
+            case 'sysID':
+                ci.addQuery("sys_id", ciId);
+                break;
+            case 'configId':
+                ci.addQuery("name", ciId);
+                break;
+        }
+        ci.query();
+        if (ci.next()) {
+            ciDetailsObj['name'] = ci.name.toString();
+            ciDetailsObj['sys_class_name'] = ci.sys_class_name.getDisplayValue();
+            ciDetailsObj['operational_status'] = ci.operational_status.getDisplayValue();
+            ciDetailsObj['short_description'] = ci.short_description.toString();
+            arrStatusDetails.push(ciDetailsObj);
+            ci_name = ci.sys_id;
+            var gr = new GlideRecord("cmdb_rel_group");
+            gr.addQuery("ci", ci_name);
+            gr.query();
+            while (gr.next()) {
+                var retObj = {};
+                retObj['type'] = gr.type.name.toString();
+                retObj['u_default'] = gr.u_default.toString();
+                retObj['group'] = gr.group.name.toString();
+                arrGroupList.push(retObj);
+            }
+        } else {
+            return new sn_ws_err.NotFoundError('No group found for CI with ID: ' + ciId);
+        }
+        ciDetailsObj.ciGroups = arrGroupList;
+        CI_details.push(ciDetailsObj);
+        response['ciDetails'] = CI_details;
+        return response;
+    },
 
+
+/**
+	 * Determine the type of source ID.
+	 * @function getSourceIDtype
+	 * @param {string} parm - The parameter that needs to be tested against various ID types.
+	 * @returns {string} - Returns a string representing the type of the source ID ('srobjUID', 'sysID', or 'configId').
+ */
+    getSourceIDtype: function(parm) {
+        var UUIDregEx = new RegExp(/^[0-9A-F]{8}-[0-9A-F]{4}-[4][0-9A-F]{3}-[89AB][0-9A-F]{3}-[0-9A-F]{12}$/i); //regular expression to validate the input string in uuid
+        var reguuidPattern = new RegExp(UUIDregEx);
+        if (UUIDregEx.test(parm)) {
+            return "srobjUID";
+        }
+        var sysRegex = /[a-z0-9]{32}/;
+        var regexsysidPattern = new RegExp(sysRegex);
+        if (regexsysidPattern.test(parm)) {
+            return "sysID";
+        }
+        return "configId";
+    },
  /**
      * Check if the Table is part of CMDB. The table should be an extension of cmdb_ci or a root table defined in property sr-cmdb-api.root-tables
      * 
