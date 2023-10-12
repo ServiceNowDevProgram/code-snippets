@@ -11,7 +11,8 @@ To install and use the Drag and Drop Widget in your ServiceNow ServicePortal:
 1. Create a new Service Portal widget
 2. Include the widget on the desired portal page.
 3. Copy and paste the code
-4. Done! Now you can try the page
+4. Upload the "x" icon to the images (db_image)
+5. Done! Now you can try the page
 
 ## Usage
 On this demo, it's just possible to drag and drop the items from "Side 1" to "Side 2" column, with the possibility to also remove it simply by clicking on the "x" icon.
