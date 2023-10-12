@@ -6,6 +6,7 @@ Table of Contents
 2. Create CI Relationship
 3. Delete CI
 4. Delete CI Relationship
+5. Retrieve CI Group
 
 1. Create CIs
   This API is designed to create Configuration Items (CIs).
@@ -67,4 +68,19 @@ Table of Contents
     Request Body: NA
     Response:
       Status Code: 204 OK
-      Response Body: 
+      Response Body:
+
+   5. Retrieve CI Group
+   Scripted REST API Resource is designed to retrieve Configuration Item (CI) Group details from a CMDB (Configuration Management Database). The main functionality includes fetching details about a specific CI and its   
+   associated groups based on the given identifier.
+    Request Details:
+    Type: HTTP
+    Method: GET
+    URI: https://<service-now-domain>.service-now.com/api/cis/group/{id}
+    Headers:
+     Accept: application/json
+     Content-Type: application/json
+    Request Body: NA
+    Response:
+      Status Code: 200 OK
+      Response Body: Details of CI and its group
