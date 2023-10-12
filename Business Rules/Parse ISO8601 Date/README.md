@@ -12,4 +12,5 @@ This function takes an ISO8601 date string as input and returns a GlideDateTime 
 
 #### Parameters
 
-- `isoDate` (string): The ISO8601 date string to be parsed. It should be in the following format: `'YYYY-MM-DDTHH:mm:ssZ'` (e.g., `'2022-05-01T14:30:00Z'`).
+- `isoDate` (string): The ISO8601 date string to be parsed. It should be
+in the following format: `'YYYY-MM-DDTHH:mm:ssZ'` (e.g., `'2022-05-01T14:30:00Z'`).
