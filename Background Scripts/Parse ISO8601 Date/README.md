@@ -1,6 +1,6 @@
 # ISO8601 Date Parser Script
 
-Some APIs commonly return dates in ISO8601 format. This script can help you parse the date and get 'GlideDateTime' object in return.
+Some APIs commonly return dates in ISO8601 format. This script can help you parse the date and get `'GlideDateTime'` object in return.
 
 ## Usage
 
