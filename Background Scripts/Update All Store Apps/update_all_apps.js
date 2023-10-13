@@ -8,8 +8,7 @@ upgradeUtil.prototype = {
 	///////////////////////////////////////////////////////////////////////////////
 	countUpgrades: function () {
 
-        //if (this.debug === true) gs.info("Running: countUpgrades");
-        gs.info("countUpgrades(): BEGIN");
+        if (this.debug === true) gs.info("BEGIN: countUpgrades()");
 
 		var log = [];
 
@@ -77,8 +76,7 @@ upgradeUtil.prototype = {
 		log.push("\n --> " + upgrades + " can be upgraded");
 		gs.info(log);
 
-        //if (this.debug === true) gs.info("Running: countUpgrades");
-        gs.info("countUpgrades(): END");
+        if (this.debug === true) gs.info("END: countUpgrades()");
 
 		//var value1 = 10;
 		//var value2 = 20;
@@ -89,11 +87,10 @@ upgradeUtil.prototype = {
 
 	},
 
-	////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
 	upgradeAllAvailable: function (loginType, loginKey) {
 
-        //if (this.debug === true) gs.info("Running: upgradeAllAvailable");
-        gs.info("upgradeAllAvailable(): BEGIN");
+        if (this.debug === true) gs.info("BEGIN: upgradeAllAvailable() ");
 
 		// Check if any inputs are missing
 		if (!loginType || !loginKey) {
@@ -103,7 +100,7 @@ upgradeUtil.prototype = {
 
 		var result = this.countUpgrades();
 
-        gs.info("upgradeAllAvailable(): CONTINUE");
+        if (this.debug === true) gs.info("upgradeAllAvailable(): CONTINUE");
 
 		var log = [];
 
@@ -123,7 +120,7 @@ upgradeUtil.prototype = {
 		////////////////////////////////////////////////////////////////////////////////
 		//var dateString = new GlideDateTime();
 
-		notes = "Submitting " + upgrades + " apps to upgrade"; // This will go in the Batch Install Plan Notes
+		notes = "Submitted " + upgrades + " apps to upgrade"; // This will go in the Batch Install Plan Notes
 
         if (this.debug === true) gs.info(notes);
 
@@ -176,7 +173,7 @@ upgradeUtil.prototype = {
 				log.push("\n --> Connection Alias unknown issue - ABORTING!!!");
 				gs.info(log);
 				explainHowToMakeCreds();
-				return;
+				return false;
 			}
 		} else {
 			log.push("\n\n --> Authentication will be with an account")
@@ -226,11 +223,14 @@ upgradeUtil.prototype = {
                 break;
             case 401:
                 gs.info('HTTP 401: Unauthorized');
-                break;
+                gs.info('The credentials you provided did not work.');
+                return;
+                //break;
             default:
-                log.push("\n\nERROR: Request failed with status code " + statusCode);
-                gs.info(log);
-                break;
+                gs.info("\n\nERROR: Request failed with status code " + statusCode);
+                //gs.info(log);
+                return;
+                //break;
         }
 
 		var responseBodyJSONObj = JSON.parse(responseBody);
@@ -251,22 +251,25 @@ upgradeUtil.prototype = {
 
 		gs.info(log);
 
-		function explainHowToMakeCreds(log) {
-			var instanceName = gs.getProperty('instance_name');
-			var connection_url = 'https://' + instanceName + '.service-now.com/';
-			var alias_url = 'https://' + instanceName + '.service-now.com/nav_to.do?uri=sys_alias.do?sys_id=752a91887740001038e286a2681061fb';
-			var log = [];
-			log.push("\n\n --> NEED TO RECONFIGURE CICD CONNECTION ALIAS FOR SCRIPT");
-			log.push("\n\n --> Go to this URL:\n" + alias_url + "\n");
-			log.push("\n\n --> Change 'Type' to 'Connection and Credential and Save Record");
-			log.push("\n     (Stay on page)");
-			log.push("\n\n --> Create NEW Connection");
-			log.push("\n     NAME: (enter name)");
-			log.push("\n     Credential: (Create new record)");
-			log.push("\n     Connection URL: " + connection_url);
-			gs.info(log);
-		};
 
+        if (this.debug === true) gs.info("BEGIN: upgradeAllAvailable() ");
+
+	},
+
+	explainHowToMakeCreds: function(log) {
+		var instanceName = gs.getProperty('instance_name');
+		var connection_url = 'https://' + instanceName + '.service-now.com/';
+		var alias_url = 'https://' + instanceName + '.service-now.com/nav_to.do?uri=sys_alias.do?sys_id=752a91887740001038e286a2681061fb';
+		var log = [];
+		log.push("\n\n --> NEED TO RECONFIGURE CICD CONNECTION ALIAS FOR SCRIPT");
+		log.push("\n\n --> Go to this URL:\n" + alias_url + "\n");
+		log.push("\n\n --> Change 'Type' to 'Connection and Credential and Save Record");
+		log.push("\n     (Stay on page)");
+		log.push("\n\n --> Create NEW Connection");
+		log.push("\n     NAME: (enter name)");
+		log.push("\n     Credential: (Create new record)");
+		log.push("\n     Connection URL: " + connection_url);
+		gs.info(log);
 	},
 
 	type: 'upgradeUtil'
