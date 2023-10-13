@@ -1,8 +1,8 @@
 var upgradeUtil = Class.create();
 upgradeUtil.prototype = {
 	initialize: function () {
-        //this.debug = true;  // Set to true to get more verbose output
-        this.debug = false;  // Set to true to get more verbose output
+        this.debug = true;  // Set to true to get more verbose output
+        //this.debug = false;  // Set to true to get more verbose output
     },
 
 	///////////////////////////////////////////////////////////////////////////////
