@@ -1,9 +1,27 @@
 # Update All Store Apps
 
 ## Introduction
-This script is here to be ran as a background script, but could also be utilized as a Script Include. 
 
-The usage here will only be referenced as background script. 
+Would you like to upgrade all of your installed plugins and store apps at the same time?  This script include can be used as a background script to allow you to do just that. 
+
+It uses a feature called Batch Plans[^1] included with the out of the box CICD API[^2] to allow you to batch up multiple applications for installations at once. 
+
+Batch Plans are only accessible by sending REST commands with a JSON payload to the CICD API. The examples below use the CICD API on the same instance where the script is running, but theoretically you could call a remote instance with the correct credentials and upgrade all plugins and/or store apps on it. 
+
+The script can utilize hard-coded credentials (*less secure, but easier*) or a Connection & Credential Alias (*very secure, but a few more steps to set up*)
+
+There are three main features:
+
+1. [Find out how many apps are available to upgrade](#option-1-find-how-out-many-apps-are-available-to-upgrade)
+
+2. [Upgrade all apps by hard-coding a username and password](#option-2-upgrade-all-apps-by-hard-coding-a-username-and-password)
+
+3. [Upgrade all apps using a Connection & Credential Alias](#option-3-upgrade-all-apps-using-a-connection--credential-alias)
+
+    1. [Initial Setup](#section-a-initial-setup)
+    2. [Regular Usage after Initial Setup](#section-b-regular-usage-after-initial-setup)
+
+# Instructions
 
 # Step 1: Get ready to run the script
 
@@ -23,7 +41,7 @@ Scroll to the bottom of the background script window.
 
 Select one of the options below to run.
 
-## OPTION 1: Find how out many apps are available to upgrade
+## OPTION 1: Find out how many apps are available to upgrade
 
 1. ***Paste this line at the bottom of the script.***
 
@@ -92,7 +110,7 @@ Select one of the options below to run.
 2. ***Click the "Run script" button.***
 
 
-## OPTION 3: Upgrade all apps using a Connection Alias 
+## OPTION 3: Upgrade all apps using a Connection & Credential Alias 
 
 <table>
   <tr>
@@ -105,7 +123,11 @@ Select one of the options below to run.
   </tr>
 </table>
 
-### OPTION 3: SECTION A
+### SECTION A: Initial Setup
+
+> [!IMPORTANT]
+> You only need to complete SECTION A the first time you use the script on your instance.
+> After that, the Credential is configured and does not need to be defined again so you can skip straight to [SECTION B](#option-3-section-b) for any other time you run the script after the first time.
 
 <table class="info">
    <tr>
@@ -187,7 +209,7 @@ Select one of the options below to run.
 
     ![](2023-10-13-10-33-17.png)
 
-### OPTION 3: SECTION B
+### SECTION B: Regular usage after initial setup
 
 1. ***Go to System Definition > Scripts - Background***
 
@@ -202,19 +224,19 @@ Select one of the options below to run.
 1. ***Click the "Run script" button.***
 
 
-# More information 
+# References
 
-**Product Docs: Install multiple applications in a batch** [https://docs.servicenow.com/csh?topicname=cicd-spoke-batch-install.html&version=latest](https://docs.servicenow.com/csh?topicname=cicd-spoke-batch-install.html&version=latest)
+[^1]: **Product Docs: Install multiple applications in a batch** [https://docs.servicenow.com/csh?topicname=cicd-spoke-batch-install.html&version=latest](https://docs.servicenow.com/csh?topicname=cicd-spoke-batch-install.html&version=latest)
 
-**Product Docs: Create a Connection & Credential alias:** [https://docs.servicenow.com/csh?topicname=connection-alias.html&version=latest](https://docs.servicenow.com/csh?topicname=connection-alias.html&version=latest)
+[^2]:**Product Docs: Continuous Integration/Continuous Delivery (CICD) API:** [https://docs.servicenow.com/csh?topicname=cicd-api.html&version=latest](https://docs.servicenow.com/csh?topicname=cicd-api.html&version=latest)
 
-**Product Docs: Continuous Integration/Continuous Delivery (CICD) API:** [https://docs.servicenow.com/csh?topicname=cicd-api.html&version=latest](https://docs.servicenow.com/csh?topicname=cicd-api.html&version=latest)
+[^3]:**Product Docs: Create a Connection & Credential alias:** [https://docs.servicenow.com/csh?topicname=connection-alias.html&version=latest](https://docs.servicenow.com/csh?topicname=connection-alias.html&version=latest)
 
 
 <style>
         table.warning {
-            background-color: #FFFF99; /* Yellow background for all cells */
             border-collapse: collapse;
+           
         }
 
         table.warning th {
