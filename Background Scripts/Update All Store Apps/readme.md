@@ -8,7 +8,7 @@ It uses a feature called Batch Plans[^1] included with the out of the box CICD A
 
 Batch Plans are only accessible by sending REST commands with a JSON payload to the CICD API. The examples below use the CICD API on the same instance where the script is running, but theoretically you could call a remote instance with the correct credentials and upgrade all plugins and/or store apps on it. 
 
-The script can utilize hard-coded credentials (*less secure, but easier*) or a Connection & Credential Alias (*very secure, but a few more steps to set up*)
+The script can utilize hard-coded credentials (*less secure, but easier*) or a Connection & Credential Alias[^3] (*very secure, but a few more steps to set up*)
 
 There are three main features:
 
@@ -129,29 +129,6 @@ Select one of the options below to run.
 > You only need to complete SECTION A the first time you use the script on your instance.
 > After that, the Credential is configured and does not need to be defined again so you can skip straight to [SECTION B](#option-3-section-b) for any other time you run the script after the first time.
 
-<table class="info">
-   <tr>
-   <th>ⓘ Info</th>
-   </tr>
-   <tr>
-   <td>
-    <p>You only need to complete SECTION A the first time you use the script on your instance.</p>
-    <p>After that, the Credential is configured and does not need to be defined again so you can skip straight to [SECTION B](#option-3-section-b) for any other time you run the script after the first time.</p>
-   </td>
-   </tr>
-</table>
-
-  <table style="width: 100%; background-color: #CCEEFF; border-collapse: collapse;">
-        <tr>
-            <th style="background-color: #0071B2; color: #FFFFFF; text-align: left; font-weight: bold; border: none; padding: 10px;">Info</th>
-        </tr>
-        <tr>
-            <td style="background-color: #CCEEFF; text-align: left; border: none; padding: 10px;">This is important information that requires your attention.</td>
-        </tr>
-    </table>
-
-
-
 1. ***Change your Application Scope to "Continuous Integration and Continuous Delivery (CICD) Spoke"***
 
     ![](2023-10-13-10-19-54.png)
@@ -224,53 +201,8 @@ Select one of the options below to run.
 1. ***Click the "Run script" button.***
 
 
-# References
-
 [^1]: **Product Docs: Install multiple applications in a batch** [https://docs.servicenow.com/csh?topicname=cicd-spoke-batch-install.html&version=latest](https://docs.servicenow.com/csh?topicname=cicd-spoke-batch-install.html&version=latest)
 
 [^2]:**Product Docs: Continuous Integration/Continuous Delivery (CICD) API:** [https://docs.servicenow.com/csh?topicname=cicd-api.html&version=latest](https://docs.servicenow.com/csh?topicname=cicd-api.html&version=latest)
 
 [^3]:**Product Docs: Create a Connection & Credential alias:** [https://docs.servicenow.com/csh?topicname=connection-alias.html&version=latest](https://docs.servicenow.com/csh?topicname=connection-alias.html&version=latest)
-
-
-<style>
-        table.warning {
-            border-collapse: collapse;
-           
-        }
-
-        table.warning th {
-            background-color: #FFD700; /* Darker yellow for the header row */
-            text-align: left;
-            font-weight: bold;
-            border: none; /* Remove borders for header cells */
-            padding: 10px;
-        }
-
-        table.warning td {
-            background-color: #FFFF99; /* Yellow background for data cells */
-            text-align: left;
-            border: none; /* Remove borders for data cells */
-            padding: 10px;
-        }
-
-        table.info {
-            background-color: #4CB3D4; /* blue background for all cells */
-            border-collapse: collapse;
-        }
-
-        table.info th {
-            background-color: #4CB3D4; /* Darker blue for the header row */
-            text-align: left;
-            font-weight: bold;
-            border: none; /* Remove borders for header cells */
-            padding: 10px;
-        }
-
-        table.info td {
-            background-color: #EEF9FD; /* blue background for data cells */
-            text-align: left;
-            border: none; /* Remove borders for data cells */
-            padding: 10px;
-        }
-</style>
