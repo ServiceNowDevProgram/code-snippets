@@ -10,17 +10,6 @@ Batch Plans are only accessible by sending REST commands with a JSON payload to 
 
 The script can utilize hard-coded credentials (*less secure, but easier*) or a Connection & Credential Alias[^3] (*very secure, but a few more steps to set up*)
 
-There are three main features:
-
-1. [Find out how many apps are available to upgrade](#option-1-find-how-out-many-apps-are-available-to-upgrade)
-
-2. [Upgrade all apps by hard-coding a username and password](#option-2-upgrade-all-apps-by-hard-coding-a-username-and-password)
-
-3. [Upgrade all apps using a Connection & Credential Alias](#option-3-upgrade-all-apps-using-a-connection--credential-alias)
-
-    1. [Initial Setup](#section-a-initial-setup)
-    2. [Regular Usage after Initial Setup](#section-b-regular-usage-after-initial-setup)
-
 # Instructions
 
 # Step 1: Get ready to run the script
@@ -41,14 +30,14 @@ Scroll to the bottom of the background script window.
 
 Select one of the options below to run.
 
-1. [Find out how many apps are available to upgrade](#option-1-find-how-out-many-apps-are-available-to-upgrade)
+1. [Find out how many apps are available to upgrade](#option-1-find-out-how-many-apps-are-available-to-upgrade)
 
-2. [Upgrade all apps by hard-coding a username and password](#option-2-upgrade-all-apps-by-hard-coding-a-username-and-password)
+2. [Upgrade all apps by hard-coding a username and password](#option-2-upgrade-all-apps-by-hard-coding-a-username-and-password) (*Less secure*)
 
-3. [Upgrade all apps using a Connection & Credential Alias](#option-3-upgrade-all-apps-using-a-connection--credential-alias)
+3. [Upgrade all apps using a Connection & Credential Alias](#option-3-upgrade-all-apps-using-a-connection--credential-alias) (*More secure*)
 
-    1. [Initial Setup](#section-a-initial-setup)
-    2. [Regular Usage after Initial Setup](#section-b-regular-usage-after-initial-setup)
+    1. [Setup Connection & Credential Alias](#section-a-setup-connection--credential-alias)
+    2. [Regular usage after initial setup of Connection & Credential Alias](#section-b-regular-usage-after-initial-setup-of-connection--credential-alias)
 
 ## OPTION 1: Find out how many apps are available to upgrade
 
@@ -80,6 +69,11 @@ Select one of the options below to run.
 
 ## OPTION 2: Upgrade all apps by hard-coding a username and password
 
+> [!WARNING]
+> <strong>Option 2</strong> will expose the credentials in the System Log on your instance. Do not use this method if you do not want to expose these in the System Log. Any user with the *admin* role will be able to view these credentials in the log.
+> <strong>YOU HAVE BEEN WARNED.</strong>
+
+
 <table>
   <tr>
     <td><b>Difficulty:</b></td>
@@ -90,10 +84,6 @@ Select one of the options below to run.
     <td>Low</td>
   </tr>
 </table>
-
-> [!WARNING]
-> <p>Using <strong>Option 2</strong> will expose the credentials in the System Log on your instance. Do not use this method if you do not want to expose these in the System Log. Any user with the *admin* role will be able to view these credentials in the log.</p>
-> <strong>YOU HAVE BEEN WARNED.</strong>
 
 1. ***Paste this line at the bottom of the script.***
 
@@ -122,7 +112,7 @@ Select one of the options below to run.
   </tr>
 </table>
 
-### SECTION A: Initial Setup
+### SECTION A: Setup Connection & Credential Alias
 
 > [!IMPORTANT]
 > You only need to complete SECTION A the first time you use the script on your instance.
@@ -185,7 +175,7 @@ Select one of the options below to run.
 
     ![](2023-10-13-10-33-17.png)
 
-### SECTION B: Regular usage after initial setup
+### SECTION B: Regular usage after initial setup of Connection & Credential Alias
 
 1. ***Go to System Definition > Scripts - Background***
 
