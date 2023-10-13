@@ -56,15 +56,27 @@ Select one of the options below to run.
 <table>
   <tr>
     <td><b>Difficulty:</b></td>
-    <td><font color="darkgreen">Easy</font></td>
+    <td>Easy</td>
   </tr>
   <tr>
     <td><b>Security:</b></td>
-    <td><font color="darkred">Low</font></td>
+    <td>Low</td>
   </tr>
 </table>
 
-:warning: **Warning**: Using **Option 2** will expose the credentials in the System Log on your instance. Do not use this method if you do not want to expose these in the System Log. Any user with the *admin* role will be able to view these credentials in the log. **YOU HAVE BEEN WARNED.**
+:warning: **Warning**: 
+
+<table class="warning">
+   <tr>
+   <th>⚠️ Warning</th>
+   </tr>
+   <tr>
+   <td>
+    <p>Using <strong>Option 2</strong> will expose the credentials in the System Log on your instance. Do not use this method if you do not want to expose these in the System Log. Any user with the *admin* role will be able to view these credentials in the log.</p>
+    <strong>YOU HAVE BEEN WARNED.</strong>
+   </td>
+   </tr>
+</table>
 
 1. ***Paste this line at the bottom of the script.***
 
@@ -85,22 +97,29 @@ Select one of the options below to run.
 <table>
   <tr>
     <td><b>Difficulty:</b></td>
-    <td><font color="darkred">Medium</font></td>
+    <td>Medium</td>
   </tr>
   <tr>
     <td><b>Security:</b></td>
-    <td><font color="darkgreen">High</font></td>
+    <td>High</td>
   </tr>
 </table>
 
 ### OPTION 3: SECTION A
 
+<table class="info">
+   <tr>
+   <th>ⓘ Info</th>
+   </tr>
+   <tr>
+   <td>
+    <p>You only need to complete SECTION A the first time you use the script on your instance.</p>
+    <p>After that, the Credential is configured and does not need to be defined again so you can skip straight to [SECTION B](#option-3-section-b) for any other time you run the script after the first time.</p>
+   </td>
+   </tr>
+</table>
 
-[!WARNING]  
-**You only need to complete SECTION A the first time you use the script on your instance.**
 
-
-After that, the Credential is configured and does not need to be defined again so you can skip straight to [SECTION B](#option-3-section-b) for any other time you run the script after the first time. 
 
 1. ***Change your Application Scope to "Continuous Integration and Continuous Delivery (CICD) Spoke"***
 
@@ -181,3 +200,46 @@ After that, the Credential is configured and does not need to be defined again s
 **Product Docs: Create a Connection & Credential alias:** [https://docs.servicenow.com/csh?topicname=connection-alias.html&version=latest](https://docs.servicenow.com/csh?topicname=connection-alias.html&version=latest)
 
 **Product Docs: Continuous Integration/Continuous Delivery (CICD) API:** [https://docs.servicenow.com/csh?topicname=cicd-api.html&version=latest](https://docs.servicenow.com/csh?topicname=cicd-api.html&version=latest)
+
+
+<style>
+        table.warning {
+            background-color: #FFFF99; /* Yellow background for all cells */
+            border-collapse: collapse;
+        }
+
+        table.warning th {
+            background-color: #FFD700; /* Darker yellow for the header row */
+            text-align: left;
+            font-weight: bold;
+            border: none; /* Remove borders for header cells */
+            padding: 10px;
+        }
+
+        table.warning td {
+            background-color: #FFFF99; /* Yellow background for data cells */
+            text-align: left;
+            border: none; /* Remove borders for data cells */
+            padding: 10px;
+        }
+
+        table.info {
+            background-color: #4CB3D4; /* blue background for all cells */
+            border-collapse: collapse;
+        }
+
+        table.info th {
+            background-color: #4CB3D4; /* Darker blue for the header row */
+            text-align: left;
+            font-weight: bold;
+            border: none; /* Remove borders for header cells */
+            padding: 10px;
+        }
+
+        table.info td {
+            background-color: #EEF9FD; /* blue background for data cells */
+            text-align: left;
+            border: none; /* Remove borders for data cells */
+            padding: 10px;
+        }
+</style>
