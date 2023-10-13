@@ -41,6 +41,15 @@ Scroll to the bottom of the background script window.
 
 Select one of the options below to run.
 
+1. [Find out how many apps are available to upgrade](#option-1-find-how-out-many-apps-are-available-to-upgrade)
+
+2. [Upgrade all apps by hard-coding a username and password](#option-2-upgrade-all-apps-by-hard-coding-a-username-and-password)
+
+3. [Upgrade all apps using a Connection & Credential Alias](#option-3-upgrade-all-apps-using-a-connection--credential-alias)
+
+    1. [Initial Setup](#section-a-initial-setup)
+    2. [Regular Usage after Initial Setup](#section-b-regular-usage-after-initial-setup)
+
 ## OPTION 1: Find out how many apps are available to upgrade
 
 1. ***Paste this line at the bottom of the script.***
@@ -82,19 +91,9 @@ Select one of the options below to run.
   </tr>
 </table>
 
-:warning: **Warning**: 
-
-<table class="warning">
-   <tr>
-   <th>⚠️ Warning</th>
-   </tr>
-   <tr>
-   <td>
-    <p>Using <strong>Option 2</strong> will expose the credentials in the System Log on your instance. Do not use this method if you do not want to expose these in the System Log. Any user with the *admin* role will be able to view these credentials in the log.</p>
-    <strong>YOU HAVE BEEN WARNED.</strong>
-   </td>
-   </tr>
-</table>
+> [!WARNING]
+> <p>Using <strong>Option 2</strong> will expose the credentials in the System Log on your instance. Do not use this method if you do not want to expose these in the System Log. Any user with the *admin* role will be able to view these credentials in the log.</p>
+> <strong>YOU HAVE BEEN WARNED.</strong>
 
 1. ***Paste this line at the bottom of the script.***
 
