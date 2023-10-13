@@ -190,6 +190,27 @@ Select one of the options below to run.
 1. ***Click the "Run script" button.***
 
 
+## Review the Batch Plan
+
+Once you have ran the script with either Option 2 or Option 3, you will get output about the Batch Plan that was generated. 
+
+Batch Plans do not have a Navigation Module on the All menu so these URLs are provided to help you get to the Batch Plan quicker. 
+
+![](2023-10-13-12-17-09.png)
+
+**This Batch Plan (Example)**: 
+
+`https://myInstanceName.service-now.com/nav_to.do?uri=sys_batch_install_plan.do?sys_id=e4f90b6e93f93910d008b7518bba1050`
+
+Copy and paste the URL from the output of the script into a browser tab to view the Batch Plan you just submitted. You may need to be patient and refresh the page occasionally to see the changes made as the Plan is built and executed. 
+
+**Batch Plan List (Example):**
+
+`https://myInstanceName.service-now.com/now/nav/ui/classic/params/target/sys_batch_install_plan_list`
+
+Copy and paste this URL from the output of the script into a browser tab to view the list of all Batch Plans.
+
+
 [^1]: **Product Docs: Install multiple applications in a batch:** [https://docs.servicenow.com/csh?topicname=cicd-spoke-batch-install.html&version=latest](https://docs.servicenow.com/csh?topicname=cicd-spoke-batch-install.html&version=latest)
 
 [^2]:**Product Docs: Continuous Integration/Continuous Delivery (CICD) API:** [https://docs.servicenow.com/csh?topicname=cicd-api.html&version=latest](https://docs.servicenow.com/csh?topicname=cicd-api.html&version=latest)
