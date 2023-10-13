@@ -119,6 +119,15 @@ Select one of the options below to run.
    </tr>
 </table>
 
+  <table style="width: 100%; background-color: #CCEEFF; border-collapse: collapse;">
+        <tr>
+            <th style="background-color: #0071B2; color: #FFFFFF; text-align: left; font-weight: bold; border: none; padding: 10px;">Info</th>
+        </tr>
+        <tr>
+            <td style="background-color: #CCEEFF; text-align: left; border: none; padding: 10px;">This is important information that requires your attention.</td>
+        </tr>
+    </table>
+
 
 
 1. ***Change your Application Scope to "Continuous Integration and Continuous Delivery (CICD) Spoke"***
