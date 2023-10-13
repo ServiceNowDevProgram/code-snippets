@@ -1,5 +1,5 @@
-Background script to send approval reminder to Approver Delegates:
-========================================
+// Background script to send approval reminder to Approver Delegates:
+// ========================================
 var appr = new GlideRecord('sysapproval_approver');
 appr.addQuery('state', 'requested');
 appr.addQuery('sysapproval.sys_class_name', 'sc_req_item');
