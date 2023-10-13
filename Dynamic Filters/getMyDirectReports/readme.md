@@ -2,43 +2,51 @@ This looping script traverses the User table from a certain point to get either 
 1. **getMyDirectReports**: gets only users directly reporting to the logged on user
 1. **getMyReports**: gets all users reporting to the logged on user
 
-This solution has three components: one Global Business rule and two Dynamic Filters.
+> [!WARNING]
+> There is some recursion protection, but the use of this script could have performance impacts for very large organizations. Use at your discretion.
+
+How to use:
 * Admins can use the script as a Reference Qualifier
-* End Users can select the predefined filter in lists and reports (like with "One of My Assignments").
+* Users (with platform access) can select the predefined filter in lists and reports (like with "One of My Assignments").
 
-There is some recursion protection; the script checks to see if it has already collected the User before it tries to get their direct reports.
+This solution has three main components:
+* 1 Client Callable Script Include
+* 2 Dynamic Filters
 
-**IMPORTANT: The use of this script could have performance impacts for very large organizations. Use at your discretion.**
+> [!NOTE]
+> You will also need to create an ACL for your client callable script include.  Think through other security rules before using this filter broadly for users without roles. OOTB Users without roles are often restricted to seeing only their items, for example, a User without itil or snc_incident_read typically cannot see other user's Incidents unless they are the Opened by or are on the Watch list. Make sure you test as the users you hope to publish this item to.
 
-**Business Rule**
+**Script Include (sys_script_include)**
 
 | Field | Value |
 |---|---|
-| Name | getMyDirectReports |
-| Table | Global [global] |
-| Advanced | true |
-| Script | <em>see [getMyDirectReports.js](getMyDirectReports.js) in this folder</em> |
+| Name | getMyReportsUtil |
+| Client Callable | true |
+| Script | <em>see [getMyDirectReports.js](getMyDirectReports.js)</em> |
 
 **Dynamic Filter Option (sys_filter_option_dynamic)**
 
 | Field | Value |
 |---|---|
 | Label | One of My Direct Reports |
-| Script | getMyDirectReports() |
+| Script | new global.getMyReportsUtil().getMyDirectReports() |
 | Field type | Reference |
 | Reference Table | User [sys_user] |
 | Order | 500 |
-| Reference script | Business Rule: getMyDirectReports |
+| Roles | Choose the same role(s) you added to the Script Include ACL |
+| Reference script | Script Include: getMyReportsUtil |
 | Available for filter | true |
 | Available for ref qual | true |
+
 
 | Field | Value |
 |---|---|
 | Label | One of My Reports |
-| Script | getMyReports() |
+| Script | new global.getMyReportsUtil().getMyReports() |
 | Field type | Reference |
 | Reference Table | User [sys_user] |
 | Order | 600 |
-| Reference script | Business Rule: getMyDirectReports |
+| Roles | Choose the same role(s) you added to the Script Include ACL |
+| Reference script | Script Include: getMyReportsUtil |
 | Available for filter | true |
 | Available for ref qual | true |
