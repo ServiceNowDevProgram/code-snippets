@@ -5,7 +5,7 @@ MarkRecordsInactive.prototype = Object.extendsObject(AbstractAjaxProcessor, {
         var sysIds = this.getParameter('sysparm_ids');
         var tableName = this.getParameter('sysparm_table');
         
-		var recs = new GlideRecord(tableName);
+		var recs = new GlideRecordSecure(tableName);
 		recs.addEncodedQuery('sys_idIN'+sysIds);
 		recs.query();
 		while(recs.next())
