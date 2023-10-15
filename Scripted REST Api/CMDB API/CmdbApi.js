@@ -285,8 +285,21 @@ createCiRelationship: function() {
         response['ciDetails'] = CI_details;
         return response;
     },
-
-
+	
+/**
+ * Retrieves a list of Configuration Item (CI) Relationship Types from the ServiceNow instance.
+ * Mapped to GET /cis/relationshiptypes
+ * @function
+ * @name getCiRelationshipTypes
+ * @returns {GlideRecord} A GlideRecord object representing the list of CI Relationship Types.
+ * @throws {Error} If there is an issue with the retrieval process.
+ **/
+ getCiRelationshipTypes: function() {
+        return this._getGrResultStream('cmdb_rel_type', null, {
+            sysparm_limit: 100
+        });
+    },
+	
 /**
 	 * Determine the type of source ID.
 	 * @function getSourceIDtype
