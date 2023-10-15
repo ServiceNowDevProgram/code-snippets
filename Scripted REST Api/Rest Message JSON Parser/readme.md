@@ -10,8 +10,8 @@ This code snippet helps to know how can we parse the retreive data into ServiceN
   
 **Step 2** Always use "try" and "catch" block for better tracking of erros when rest integration fails
 
+ // Make an HTTP request to the external API
   try {
-    // Make an HTTP request to the external API
     var response = new sn_ws.RESTMessageV2();
     response.setHttpMethod('get');
     response.setEndpoint(apiUrl);
