@@ -4,10 +4,12 @@ This code snippet helps to know how can we parse the retreive data into ServiceN
 **Code Snippet Detailed Explanation**
 
 **Step 1** 
+
   // Define your REST API endpoint
   var apiUrl = 'https://api.example.com/data';
   
 **Step 2** Always use "try" and "catch" block for better tracking of erros when rest integration fails
+
   try {
     // Make an HTTP request to the external API
     var response = new sn_ws.RESTMessageV2();
@@ -16,10 +18,12 @@ This code snippet helps to know how can we parse the retreive data into ServiceN
     var responseBody = response.execute();
 
 **Step 3** - Parse the response into "ServiceNow Tables"
+
     // Parse the JSON response
     var parsedData = JSON.parse(responseBody.getBody());
 
   **Step 4**  - Update records in ServiceNow Table
+  
     // Process the parsed data and update records in a table
     if (parsedData && parsedData.data) {
       var gr = new GlideRecord('your_table_name');
@@ -38,6 +42,7 @@ This code snippet helps to know how can we parse the retreive data into ServiceN
   }
   
   **Step 5** - For detecting the error if code fails
+  
   catch (ex) {
     gs.error('An error occurred: ' + ex);
   }
