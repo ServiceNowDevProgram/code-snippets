@@ -1,0 +1,76 @@
+[{
+    "displayValue": "Catalog",
+    "hint": "Which catalog should this widget work with?",
+    "name": "used_catalog",
+    "section": "Data",
+    "default_value": "e0d08b13c3330100c8b837659bba8fb4",
+    "label": "Used catalog",
+    "type": "reference",
+    "value": "sc_catalog",
+    "ed": {
+        "reference": "sc_catalog"
+    }
+}, {
+    "hint": "How many items should be displayed per page?",
+    "name": "items_per_page",
+    "section": "Presentation",
+    "default_value": "10",
+    "label": "Items per page",
+    "type": "integer"
+}, {
+    "hint": "How should All Items category be called?",
+    "name": "show_all_items_category_label",
+    "section": "Presentation",
+    "default_value": "All",
+    "label": "Show All Items category label",
+    "type": "string"
+}, {
+    "hint": "Should debug logging be enabled?",
+    "name": "is_debug_mode_on",
+    "section": "other",
+    "default_value": "false",
+    "label": "Enable Debug",
+    "type": "boolean"
+}, {
+    "hint": "What link should the widget use to redirect to the catalog item?",
+    "name": "default_item_link",
+    "section": "Behavior",
+    "default_value": "?id=sc_cat_item&sys_id=",
+    "label": "Default link to the catalog item",
+    "type": "string"
+}, {
+    "hint": "How many pages should be displayed in paginator at once?",
+    "name": "max_pages_in_paginator",
+    "section": "Presentation",
+    "default_value": "4",
+    "label": "Maximum pages in the pagination component",
+    "type": "integer"
+}, {
+    "hint": "Should the First/Last links be displayed in the paginator?",
+    "name": "show_boundary_links_in_paginator",
+    "section": "Presentation",
+    "default_value": "false",
+    "label": "Show boundary links in the pagination component",
+    "type": "boolean"
+}, {
+    "hint": "What text should be used for Quick Search field as a placeholder?",
+    "name": "quick_search_placeholder",
+    "section": "Presentation",
+    "default_value": "Quick search...",
+    "label": "Quick Search placeholder message",
+    "type": "string"
+}, {
+    "hint": "What title should this widget have?",
+    "name": "widget_title",
+    "section": "Presentation",
+    "default_value": "Catalog Item Explorer",
+    "label": "Widget Title",
+    "type": "string"
+}, {
+    "hint": "Display copyright in the right bottom corner",
+    "name": "show_copyright",
+    "section": "Presentation",
+    "default_value": "false",
+    "label": "Show Copyright",
+    "type": "boolean"
+}]

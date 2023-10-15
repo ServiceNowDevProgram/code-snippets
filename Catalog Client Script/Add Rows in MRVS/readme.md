@@ -1,0 +1,1 @@
+With this simple script you can through a client script add rows in the MRVS if you like. Ex. you want to prefill a few rows that you get from a GlideAjax call depending on what the user choosed in another variable
