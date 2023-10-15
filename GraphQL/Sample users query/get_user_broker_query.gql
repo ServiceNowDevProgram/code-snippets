@@ -1,0 +1,17 @@
+query ($id: ID!) {
+    app_namespace {
+        schema_namespace {
+            getUser (id: $id){
+                name
+                id
+                roles { 
+                    name
+                }
+                groups {
+                    name
+                    manager
+                }
+            }
+        }
+    }
+}

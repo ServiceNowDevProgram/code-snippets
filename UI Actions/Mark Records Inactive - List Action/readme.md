@@ -5,3 +5,6 @@ mark the records as inactive by calling the reusable script include. Process is 
 3. Keep your script include ready with the function to make records inactive and done.
 
 You can even modify the scrip include to change other fields too based on your requirements. And you do not need to pass any table name also. This is complete generic.
+
+**UPDATE:**
+_Replaced standard Javascript Window method 'alert' with GlideModal as per issue #745. This completes the task 'Mark Records Inactive UI Action'_
