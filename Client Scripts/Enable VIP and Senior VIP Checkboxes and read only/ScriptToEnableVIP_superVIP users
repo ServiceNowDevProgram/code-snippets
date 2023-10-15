@@ -3,9 +3,7 @@ function onLoad() {
    var myRole= g_user.hasRole("admin");
 	if(myRole!=true){
 		g_form.setReadOnly("vip",true);
-		g_form.setReadOnly("u_senior_vip",true);
-	}else{
+			}else{
 		g_form.setReadOnly("vip",false);
-		g_form.setReadOnly("u_senior_vip",false);
-	}
+			}
 }
