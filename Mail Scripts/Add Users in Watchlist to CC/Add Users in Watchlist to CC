@@ -1,0 +1,17 @@
+// Use this script to add a user in watchlist in any tables that extended from Task table
+
+if (!current.watch_list.nil()) {
+    var watcherIds = current.watch_list.split(',');
+        for (var i = 0; i < watcherIds.length; i++) {
+            var user = new GlideRecord("sys_user");
+            user.addQuery("sys_id", watcherIds[i]);
+            user.addQuery("notification", 2);
+            user.addQuery("email", "!=", "");
+            user.query();
+            if (user.next()) {
+                email.addAddress('cc', user.email.toString());
+            } else {
+                email.addAddress('cc', watcherIds[i]);
+            }
+        }
+}
