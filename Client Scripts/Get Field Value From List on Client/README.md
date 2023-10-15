@@ -1,6 +1,6 @@
 # Use Case
 
-Let;s consider a scenario. Some validation logic needs to be executed on click of a list banner button. The field values to be validated are present right on the screen, so why bother writing a GlideAjax code + client-callable Script Include to call the server and run the same validation on the server. Client-side ```GlideList``` API provides the ```getCell()``` method to fetch visible cell values from the list.
+Let's consider a scenario. Some validation logic needs to be executed on click of a list banner button. The field values to be validated are present right on the screen, so why bother writing a GlideAjax code + client-callable Script Include to call the server and run the same validation on the server. Client-side ```GlideList``` API provides the ```getCell()``` method to fetch visible cell values from the list.
 
 
 # Usage
