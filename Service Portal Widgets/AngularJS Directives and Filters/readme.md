@@ -3,7 +3,7 @@ ___
 This widget demonstrates useful AngularJS Directives and Filters.
 
 <h3>Usage:</h3>
-1. Create a new widget.
+1. Create a new widget.<br>
 2. Copy the respective code as mentioned by file names.
 
 <h3>Following are covered in this:</h3>
