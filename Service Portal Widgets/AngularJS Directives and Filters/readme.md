@@ -26,5 +26,4 @@ This widget demonstrates useful AngularJS Directives and Filters.
 17. uppercase<br>
 18. lowercase<br>
 19. orderBy<br>
-20. filter
-18. 
+20. filter 
