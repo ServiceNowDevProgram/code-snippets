@@ -1,0 +1,2 @@
+When an agent needs a button on the form to open Email Client in a single click, This UI action can be used, which works similar to the out of box Email button. Some user may not prefer the out of box button because it is two clicks.
+To use this UI action, mark the UI action as Client and add the openEmailClient function in the onClick Field in the UI action. Then use the script provided in the script field.
