@@ -1,4 +1,4 @@
-# Assign Role - Custom Flow Action
+# Assign Role Custom Flow Action
 Created a custom flow action to assign a role to the user. The action to the input are user and role. These both fields will be of reference type. 
 For better understanding please refer to below Screenshots: 
 
