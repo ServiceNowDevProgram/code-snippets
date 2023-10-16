@@ -1,8 +1,10 @@
 # Drag and Drop Widget
 
 ## Description
-This widget allows users to interactively assign objects to other items within a web interface.
-In fact, users can seamlessly drag and drop objects, providing an intuitive way to map one item to another. 
+This widget allows users to interactively move objects from a side to another within Service Portal.
+
+The core benefit of this widget is the drag and drop functionality that provide the user a way to dinamically drag and drop objects in the Service Portal.
+Starting from this demo, through the customization they could be built even more interesting features for clients. 
 
 
 ## Installation
