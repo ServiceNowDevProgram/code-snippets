@@ -1,0 +1,1 @@
+This is a scheduled job that will check on every monday weekly that last week what all incidents has been resolved. It will close all the incident record on every week monday that has been resolved last week.
