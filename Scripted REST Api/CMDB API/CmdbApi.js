@@ -299,6 +299,27 @@ createCiRelationship: function() {
             sysparm_limit: 100
         });
     },
+
+/**
+ * Retrieves Configuration Items (CIs) based on the specified CI type.
+ * Mapped to GET /cis/{ci_type}
+ * @returns {GlideRecordStream} A stream of GlideRecord objects representing the CIs.
+ * @throws {BadRequestError} If an invalid CI type is provided.
+ */
+ getCis: function() {
+        var self = this;
+
+        var ciType = self.getPathParam('ci_type', '');
+
+        if (!self._isValidCiType(ciType)) {
+            return sn_ws_err.BadRequestError('Invalid CI Type provided:' + ciType);
+        }
+
+        return self._getGrResultStream(ciType, null, {
+            sysparm_limit: 100
+        });
+
+    },
 	
 /**
 	 * Determine the type of source ID.
