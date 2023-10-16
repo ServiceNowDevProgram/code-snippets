@@ -14,3 +14,4 @@ The JavaScript code of the Business Rule is written in way that be also used wit
 
 # Result
 
+![Result](./screenshot.png)
