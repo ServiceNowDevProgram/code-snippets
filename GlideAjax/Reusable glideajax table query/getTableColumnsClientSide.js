@@ -11,7 +11,7 @@ getTableColumnsClientSide.prototype = Object.extendsObject(AbstractAjaxProcessor
         }
         var returnData = [];
         var mappCol = columns.split(',');
-        var fetchColumn = new GlideRecord(tableName);
+        var fetchColumn = new GlideRecordSecure(tableName);
         fetchColumn.addEncodedQuery(encodedQuery);
         fetchColumn.setLimit(1); //Fetch only one record {Check the Query if it return wrong data}
         fetchColumn.query();
