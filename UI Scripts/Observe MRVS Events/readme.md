@@ -4,7 +4,7 @@ Using the MutationObserver API we can monitor changes to a multi-row variable se
 This currently only works in the platform, not Workspace or Service Portal.
 
 Use in a onLoad client script (Isolate script = false).  Sets up an observer on the named variable set and any changes are returned in the mutationList object.
-Return value will list changes to the variable set.  For example;
+Return value will list changes to the variable set.  For example:
 
 ```json
 {
