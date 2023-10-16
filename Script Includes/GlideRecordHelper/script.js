@@ -61,7 +61,7 @@ GlideRecordHelper.prototype = Object.extendsObject(AbstractAjaxProcessor, {
 	},
 
 	getFieldsObjectWithQuery: function(table,query,values){
-		var gr = new GlideRecord(table);
+		var gr = new GlideRecordSecure(table);
 		gr.addEncodedQuery(query);
 		gr.query();
 
@@ -103,7 +103,7 @@ GlideRecordHelper.prototype = Object.extendsObject(AbstractAjaxProcessor, {
 
 	getFieldsMultiObjectWithQuery: function(table,query,values){
 		var fieldObjectArray = [];
-		var gr = new GlideRecord(table);
+		var gr = new GlideRecordSecure(table);
 		gr.addEncodedQuery(query);
 		gr.query();
 		while(gr.next()){
@@ -123,7 +123,7 @@ GlideRecordHelper.prototype = Object.extendsObject(AbstractAjaxProcessor, {
 		table = table || this.getParameter('sysparm_table');
 		query = query || this.getParameter('sysparm_query');
 		var returnVar = false;
-		var grGlideRecord = new GlideRecord(table);
+		var grGlideRecord = new GlideRecordSecure(table);
 		grGlideRecord.addEncodedQuery(query);
 		grGlideRecord.query();
 		if (grGlideRecord.hasNext()) {
