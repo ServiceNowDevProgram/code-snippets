@@ -6,7 +6,7 @@ ScriptIncludeName.prototype = Object.extendsObject(AbstractAjaxProcessor, {
         var query = this.getParameter('sysparm_query');
         var columns = this.getParameter('sysparm_returnAttributes').split(',');
         if (tableName != '') {
-            var grObj = new GlideRecord(tableName);
+            var grObj = new GlideRecordSecure(tableName);
             grObj.addEncodedQuery(query);
             grObj.setLimit(1);
             grObj.query();
