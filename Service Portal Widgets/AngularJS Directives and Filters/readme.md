@@ -7,24 +7,24 @@ This widget demonstrates useful AngularJS Directives and Filters.
 2. Copy the respective code as mentioned by file names.
 
 <h3>Following are covered in this:</h3>
-1. ng-click
-2. ng-model
-3. ng-keyup
-4. ng-repeat
-5. ng-if
-6. ng-show
-7. ng-hide
-8. ng-bind
-9. ng-bind-html
-10. $index
-11. $even
-12. $odd
-13. $first
-14. $last
-15. $middle
-16. limitTo
-17. uppercase
-18. lowercase
-19. orderBy
+1. ng-click<br>
+2. ng-model<br>
+3. ng-keyup<br>
+4. ng-repeat<br>
+5. ng-if<br>
+6. ng-show<br>
+7. ng-hide<br>
+8. ng-bind<br>
+9. ng-bind-html<br>
+10. $index<br>
+11. $even<br>
+12. $odd<br>
+13. $first<br>
+14. $last<br>
+15. $middle<br>
+16. limitTo<br>
+17. uppercase<br>
+18. lowercase<br>
+19. orderBy<br>
 20. filter
 18. 
