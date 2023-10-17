@@ -8,6 +8,7 @@ Table of Contents
 4. Delete CI Relationship
 5. Retrieve CI Group
 6. Retrieve CI Relationship types
+7. Retrieve CIs
 
 1. Create CIs
   This API is designed to create Configuration Items (CIs).
@@ -99,3 +100,17 @@ Table of Contents
     Response:
       Status Code: 200 OK
       Response Body: Details of CI Relationship types
+
+    7. Retrieve CIs
+   Scripted REST API Resource contains a ServiceNow script that implements a function for retrieving Configuration Items (CIs) based on a specified CI type.
+    Request Details:
+    Type: HTTP
+    Method: GET
+    URI: https://<service-now-domain>.service-now.com/api/cis/{ci_type}
+    Headers:
+     Accept: application/json
+     Content-Type: application/json
+    Request Body: NA
+    Response:
+      Status Code: 200 OK
+      Response Body: JSON Details of CIs based on the given type
