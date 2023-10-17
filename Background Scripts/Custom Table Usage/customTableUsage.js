@@ -14,6 +14,7 @@ const USAGE_COUNT_CONFIG = [
     { "table": "sysrule_view", "field": "table", "title": "View Rules" },
     { "table": "wf_workflow", "field": "table", "title": "Workflows" },
     { "table": "sys_hub_flow", "field": "sys_id", "title": "Flows", "query": "", "query_field": "sys_id" },
+    { "table": "sys_script_include", "field": "script", "title": "Script Include", 'query': 'CONTAINS'}
 ];
 
 // get list of fields to query from the table
@@ -21,6 +22,7 @@ const USAGE_COUNT_CONFIG = [
 var selectFields = USAGE_COUNT_CONFIG.map(function (_obj) {
     return _obj.query_field;
 }).filter(Boolean);
+
 selectFields.push('name');
 selectFields.push('label');
 
@@ -53,3 +55,6 @@ var gqTables = new global.GlideQuery('sys_db_object')
     .reduce(function (arr, e) { arr.push(e); return arr; }, []);
 
 gs.info(JSON.stringify(gqTables, '', 3))
+
+
+
