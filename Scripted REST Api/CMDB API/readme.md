@@ -9,6 +9,7 @@ Table of Contents
 5. Retrieve CI Group
 6. Retrieve CI Relationship types
 7. Retrieve CIs
+8. Update CI
 
 1. Create CIs
   This API is designed to create Configuration Items (CIs).
@@ -114,3 +115,18 @@ Table of Contents
     Response:
       Status Code: 200 OK
       Response Body: JSON Details of CIs based on the given type
+
+  8. Update CIs
+    This API is designed to Update a Configuration Item (CI).
+    Request Details:
+      Type: HTTP
+      Method: PATCH
+      URI: https://<service-now-domain>.service-now.com/api/cis/{ci_type}/{sys_id}
+      Headers:
+       Accept: application/json
+       Content-Type: application/json
+    Request Body:
+      The request body should contain a JSON key-value pair for the required fields.
+    Response:
+      Status Code: 200 OK
+      Response Body: JSON with required fields
