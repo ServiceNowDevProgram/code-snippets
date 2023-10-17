@@ -174,7 +174,7 @@ ActivityStreamCollector.prototype = {
                 continue;
 
             fieldDataArray.push({
-                name: activityFields[i],
+                name: item,
                 label: currentRecElem.getLabel(),
                 oldValue: currGr.getDisplayValue(item),
                 newValue: nextGr.getDisplayValue(item),
