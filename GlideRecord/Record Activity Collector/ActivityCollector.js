@@ -27,14 +27,14 @@ ActivityStreamCollector.prototype = {
         activityFields = activityFields.split(",");
 
         // Collect the initial data
-        var initialHistoryData = this.getFirstHistory(currentRec, activityFields);
+        var initialHistoryData = this._getFirstHistory(currentRec, activityFields);
 
         // Walking through the history data
         while (hw.walkForward()) {
             var nextRec = hw.getWalkedRecord();
 
             // Get all field changes
-            var fieldChanges = this.compareTwoRecord(currentRec, nextRec, activityFields);
+            var fieldChanges = this._compareTwoRecords(currentRec, nextRec, activityFields);
             if (fieldChanges.fields.length > 0)
                 historyArray.push(fieldChanges);
 
@@ -42,10 +42,10 @@ ActivityStreamCollector.prototype = {
         }
 
         // Get Comments and Work Notes
-        historyArray = this.arrayUtil.concat(historyArray, this.getNotesComments());
+        historyArray = this.arrayUtil.concat(historyArray, this._getNotesComments());
 
         // Get attachments
-        historyArray = this.arrayUtil.concat(historyArray, this.getAttachments());
+        historyArray = this.arrayUtil.concat(historyArray, this._getAttachments());
 
         // Sort the element by date desc.
         historyArray.sort(function(elem1, elem2) {
@@ -103,7 +103,7 @@ ActivityStreamCollector.prototype = {
     /**
      * Get all attachments, which are related to the current record
      */
-    getAttachments: function() {
+    _getAttachments: function() {
         var attachments = [];
         var saGr = new GlideRecord('sys_attachment');
         saGr.addQuery("table_name", this.tableName);
@@ -112,7 +112,7 @@ ActivityStreamCollector.prototype = {
         while (saGr.next()) {
             attachments.push({
                 date: saGr.getDisplayValue("sys_created_on"),
-                userName: this.getUserDisplayName(saGr.getValue("sys_created_by")),
+                userName: this._getUserDisplayName(saGr.getValue("sys_created_by")),
                 type: "attachment",
                 fileName: saGr.getValue("file_name")
             });
@@ -123,7 +123,7 @@ ActivityStreamCollector.prototype = {
     /**
      * This function collects and gives back the audited fields which are shown on the activity stream
      */
-    getFirstHistory: function(currGr, activityFields) {
+    _getFirstHistory: function(currGr, activityFields) {
         var fieldDataArray = [];
 
         for (var idxItem in activityFields) {
@@ -152,7 +152,7 @@ ActivityStreamCollector.prototype = {
 
         return {
             date: currGr.getDisplayValue("sys_created_on"),
-            userName: this.getUserDisplayName(currGr.getValue("sys_created_by")),
+            userName: this._getUserDisplayName(currGr.getValue("sys_created_by")),
             type: "field_changes",
             fields: fieldDataArray
         };
@@ -161,7 +161,7 @@ ActivityStreamCollector.prototype = {
     /**
      * This function compares two records and gets all audited fields, where the content is different
      */
-    compareTwoRecord: function(currGr, nextGr, activityFields) {
+    _compareTwoRecords: function(currGr, nextGr, activityFields) {
 
         var fieldDataArray = [];
 
@@ -183,7 +183,7 @@ ActivityStreamCollector.prototype = {
 
         return {
             date: nextGr.getDisplayValue("sys_updated_on"),
-            userName: this.getUserDisplayName(nextGr.getValue("sys_created_by")),
+            userName: this._getUserDisplayName(nextGr.getValue("sys_created_by")),
             type: "field_changes",
             fields: fieldDataArray
         };
@@ -192,7 +192,7 @@ ActivityStreamCollector.prototype = {
     /**
      * Get Work notes, Comments from a record
      */
-    getNotesComments: function() {
+    _getNotesComments: function() {
 
         var noteArray = [];
 
@@ -203,7 +203,7 @@ ActivityStreamCollector.prototype = {
         while (journalGr.next()) {
             noteArray.push({
                 date: journalGr.getDisplayValue("sys_created_on"),
-                userName: this.getUserDisplayName(journalGr.getValue("sys_created_by")),
+                userName: this._getUserDisplayName(journalGr.getValue("sys_created_by")),
                 type: journalGr.getDisplayValue("element"),
                 text: journalGr.getValue("value"),
             });
@@ -215,7 +215,7 @@ ActivityStreamCollector.prototype = {
     /**
      * Get user display name
      */
-    getUserDisplayName: function(userName) {
+    _getUserDisplayName: function(userName) {
 
         // A bit caching... 
         if (this.users[userName])
