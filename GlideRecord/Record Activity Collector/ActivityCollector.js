@@ -60,9 +60,9 @@ ActivityStreamCollector.prototype = {
             }
         });
 
-		// Add initial data to the end of array
-		// It is handled as a last step, because if the date of this activity is the same with the first action, de order is not correct.
-		historyArray.push(initialHistoryData);
+        // Add initial data to the end of array
+        // It is handled as a last step, because if the date of this activity is the same with the first action, de order is not correct.
+        historyArray.push(initialHistoryData);
 
         var historyDataArray = [];
         for (var idx in historyArray) {
