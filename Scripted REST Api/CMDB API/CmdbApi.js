@@ -299,6 +299,94 @@ createCiRelationship: function() {
             sysparm_limit: 100
         });
     },
+
+/**
+ * Retrieves Configuration Items (CIs) based on the specified CI type.
+ * Mapped to GET /cis/{ci_type}
+ * @returns {GlideRecordStream} A stream of GlideRecord objects representing the CIs.
+ * @throws {BadRequestError} If an invalid CI type is provided.
+ */
+ getCis: function() {
+        var self = this;
+
+        var ciType = self.getPathParam('ci_type', '');
+
+        if (!self._isValidCiType(ciType)) {
+            return sn_ws_err.BadRequestError('Invalid CI Type provided:' + ciType);
+        }
+
+        return self._getGrResultStream(ciType, null, {
+            sysparm_limit: 100
+        });
+
+    },
+
+/**
+ * Update a Configuration Item (CI).
+ * Mapped to PATCH /cis/{ci_type}/{sys_id}
+ *
+ * This function updates a CI based on its type and system ID.
+ *
+ * @returns {Object} JSON response containing the updated CI or error details.
+ * @throws {BadRequestError} If an invalid CI type is provided.
+ * @throws {ServiceError} If the operation fails for any reason.
+ * @throws {NotFoundError} If no record is found for the provided system ID.
+ */
+    updateCi: function() {
+        var self = this;
+
+        var ciType = self.getPathParam('ci_type', '');
+
+        var ciSysId = self.getPathParam('sys_id');
+
+        var payload = self.body;
+
+        if (!self._isValidCiType(ciType)) {
+            return sn_ws_err.BadRequestError('Invalid CI Type provided:' + ciType);
+        }
+
+        var ciRec = new GlideRecord(ciType);
+        if (ciRec.get(ciSysId)) {
+
+            try {
+                for (var key in payload) {
+                    if (ciRec.isValidField(key) && key.indexOf('sys_') != 0) {
+                        var value = payload[key];
+                        var el = ciRec.getElement(key);
+
+                        var descriptor = el.getED();
+                        var choice = descriptor.choice;
+                        var type = descriptor.getInternalType();
+
+                        if (choice != '0') {
+                            ciRec[key] = self._getChoiceValue(ciType, key, value);
+                        } else if (type == 'reference') {
+                            ciRec[key] = self._getReferenceValue(ciType, key, value);
+                        } else {
+                            ciRec[key] = payload[key];
+                        }
+                    }
+                }
+                ciRec.update();
+
+                var errMsg = ciRec.getLastErrorMessage();
+                if (!gs.nil(errMsg)) {
+                    return new sn_ws_err.BadRequestError(errMsg);
+                }
+
+                return self._getGrResultStream(ciType, ciRec.getValue('sys_id'), {});
+
+            } catch (e) {
+                var serverError = new sn_ws_err.ServiceError();
+                serverError.setStatus(500);
+                serverError.setMessage('Operation Failed');
+                serverError.setDetail(e);
+                return serverError;
+            }
+        } else {
+            return new sn_ws_err.NotFoundError('No record found');
+        }
+    },
 	
 /**
 	 * Determine the type of source ID.
