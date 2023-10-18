@@ -1,0 +1,1 @@
+Removes HTML tags from an input string using regular expressions. It replaces all HTML tags with an empty string, leaving only the plain text content. This is useful for extracting text from HTML strings.
