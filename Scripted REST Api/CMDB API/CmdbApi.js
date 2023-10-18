@@ -387,6 +387,22 @@ createCiRelationship: function() {
             return new sn_ws_err.NotFoundError('No record found');
         }
     },
+/**
+ * Retrieve Configuration Item (CI) Relationships.
+ * Mapped to GET /cis/relationships
+ *
+ * This function retrieves CI relationships
+ *
+ * @returns {Object} JSON response containing the CI relationships or error details.
+ */
+ getRelationships: function() {
+        var self = this;
+
+        return self._getGrResultStream('cmdb_rel_ci', null, {
+            sysparm_limit: 100
+        });
+
+    },
 	
 /**
 	 * Determine the type of source ID.
