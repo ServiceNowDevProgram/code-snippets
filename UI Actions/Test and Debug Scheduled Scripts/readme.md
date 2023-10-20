@@ -9,6 +9,7 @@ This UI Action will run the script in the current session, so that it can be run
 4. Form Button = selected<br>
 5. Add the given script.
 6. New UI Action will be available on Scheduled Scripts in Studio.
+7. Use break points in script to debug.
 
 <h3><span style='color: red;'>WARNING</span></h3>
 This will run the script. So use it wisely.
