@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?><unload unload_date="2023-10-20 10:36:44">
+<sys_remote_update_set action="INSERT_OR_UPDATE">
+<application display_value="Global">global</application>
+<application_name>Global</application_name>
+<application_scope>global</application_scope>
+<application_version/>
+<collisions/>
+<commit_date/>
+<deleted/>
+<description/>
+<inserted/>
+<name>ACLs with empty checks</name>
+<origin_sys_id/>
+<parent display_value=""/>
+<release_date/>
+<remote_base_update_set display_value=""/>
+<remote_parent_id/>
+<remote_sys_id>d632a13497ca35104234fa56f053af5b</remote_sys_id>
+<state>loaded</state>
+<summary/>
+<sys_class_name>sys_remote_update_set</sys_class_name>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2023-10-20 10:36:43</sys_created_on>
+<sys_id>8842f134970e35104234fa56f053af41</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2023-10-20 10:36:43</sys_updated_on>
+<update_set display_value=""/>
+<update_source display_value=""/>
+<updated/>
+</sys_remote_update_set>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sysevent_register_df72e53497ca35104234fa56f053afa3</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sysevent_register"><sysevent_register action="INSERT_OR_UPDATE"><caller_access/><derived_priority>100</derived_priority><description/><event_name>empty.checks.acl.notification</event_name><fired_by>Scheduled Job</fired_by><priority>100</priority><queue/><suffix/><sys_class_name>sysevent_register</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2023-10-20 09:28:25</sys_created_on><sys_id>df72e53497ca35104234fa56f053afa3</sys_id><sys_mod_count>0</sys_mod_count><sys_name>empty.checks.acl.notification</sys_name><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_scope display_value="Global">global</sys_scope><sys_update_name>sysevent_register_df72e53497ca35104234fa56f053afa3</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2023-10-20 09:28:25</sys_updated_on><table>sys_security_acl</table></sysevent_register></record_update>]]></payload>
+<payload_hash>-1872215553</payload_hash>
+<remote_update_set display_value="ACLs with empty checks">8842f134970e35104234fa56f053af41</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2023-10-20 10:36:43</sys_created_on>
+<sys_id>1842f134970e35104234fa56f053af42</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>18b4c6a22d50000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2023-10-20 10:36:43</sys_updated_on>
+<table>sys_security_acl</table>
+<target_name>empty.checks.acl.notification</target_name>
+<type>Event Registration</type>
+<update_domain>global</update_domain>
+<update_guid>bb92257077ca35108fae348ce13c0242</update_guid>
+<update_guid_history>bb92257077ca35108fae348ce13c0242:-1872215553</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sysevent_register_1b7da134970e35104234fa56f053af02</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sysevent_register"><sysevent_register action="INSERT_OR_UPDATE"><caller_access/><derived_priority>100</derived_priority><description/><event_name>empty.checks.acl.notification</event_name><fired_by>Scheduled Job</fired_by><priority>100</priority><queue/><suffix/><sys_class_name>sysevent_register</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2023-10-20 10:15:54</sys_created_on><sys_id>1b7da134970e35104234fa56f053af02</sys_id><sys_mod_count>0</sys_mod_count><sys_name>empty.checks.acl.notification</sys_name><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_scope display_value="Global">global</sys_scope><sys_update_name>sysevent_register_1b7da134970e35104234fa56f053af02</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2023-10-20 10:15:54</sys_updated_on><table>sys_security_acl</table></sysevent_register></record_update>]]></payload>
+<payload_hash>-1872215553</payload_hash>
+<remote_update_set display_value="ACLs with empty checks">8842f134970e35104234fa56f053af41</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2023-10-20 10:36:43</sys_created_on>
+<sys_id>5442f134970e35104234fa56f053af42</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>18b4c959abf0000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2023-10-20 10:36:43</sys_updated_on>
+<table>sys_security_acl</table>
+<target_name>empty.checks.acl.notification</target_name>
+<type>Event Registration</type>
+<update_domain>global</update_domain>
+<update_guid>5f7da134740e3510a52862ac96882503</update_guid>
+<update_guid_history>5f7da134740e3510a52862ac96882503:-1872215553</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sysevent_email_action_fa54a9b497ca35104234fa56f053af88</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sysevent_email_action"&gt;&lt;sysevent_email_action action="INSERT_OR_UPDATE"&gt;&lt;action_insert&gt;false&lt;/action_insert&gt;&lt;action_update&gt;false&lt;/action_update&gt;&lt;active&gt;true&lt;/active&gt;&lt;advanced_condition/&gt;&lt;affected_field_on_event/&gt;&lt;category display_value="Security" name="Security"&gt;047929527ff832005f58108c3ffa91bd&lt;/category&gt;&lt;collection/&gt;&lt;condition/&gt;&lt;content_type&gt;text/html&lt;/content_type&gt;&lt;default_interval/&gt;&lt;description/&gt;&lt;digest_from/&gt;&lt;digest_html/&gt;&lt;digest_reply_to/&gt;&lt;digest_separator_html&gt;&lt;![CDATA[&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;]]&gt;&lt;/digest_separator_html&gt;&lt;digest_separator_text&gt;&lt;![CDATA[\n--------------------------------------------------------------------------------\n]]&gt;&lt;/digest_separator_text&gt;&lt;digest_subject/&gt;&lt;digest_template/&gt;&lt;digest_text/&gt;&lt;digestable&gt;false&lt;/digestable&gt;&lt;enable_dynamic_translation&gt;false&lt;/enable_dynamic_translation&gt;&lt;event_name&gt;empty.checks.acl.notification&lt;/event_name&gt;&lt;event_parm_1&gt;false&lt;/event_parm_1&gt;&lt;event_parm_2&gt;false&lt;/event_parm_2&gt;&lt;exclude_delegates&gt;false&lt;/exclude_delegates&gt;&lt;force_delivery&gt;false&lt;/force_delivery&gt;&lt;from/&gt;&lt;generation_type&gt;event&lt;/generation_type&gt;&lt;importance/&gt;&lt;include_attachments&gt;false&lt;/include_attachments&gt;&lt;item&gt;event.parm1&lt;/item&gt;&lt;item_table/&gt;&lt;mandatory&gt;false&lt;/mandatory&gt;&lt;message/&gt;&lt;message_html&gt;&lt;![CDATA[&lt;p&gt;Dear Team,&lt;/p&gt;
+&lt;p&gt;Please review the following ACLs, which have empty checks.&lt;/p&gt;
+&lt;p&gt;${mail_script:construct_empty_check_acls_body}&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;Thank you,&lt;/p&gt;
+&lt;p&gt;Admin&lt;/p&gt;]]&gt;&lt;/message_html&gt;&lt;message_list/&gt;&lt;message_text/&gt;&lt;name&gt;Empty Checks in ACL Notification&lt;/name&gt;&lt;omit_watermark&gt;false&lt;/omit_watermark&gt;&lt;order&gt;100&lt;/order&gt;&lt;push_message_only&gt;false&lt;/push_message_only&gt;&lt;recipient_fields/&gt;&lt;recipient_groups name="ServiceNow Admins"&gt;702465b497ca35104234fa56f053afdb&lt;/recipient_groups&gt;&lt;recipient_users&gt;6816f79cc0a8016401c5a33be04be441,62826bf03710200044e0bfc8bcbe5df1&lt;/recipient_users&gt;&lt;reply_to/&gt;&lt;send_self&gt;true&lt;/send_self&gt;&lt;sms_alternate/&gt;&lt;style/&gt;&lt;subject&gt;ACLs with empty checks&lt;/subject&gt;&lt;subscribable&gt;false&lt;/subscribable&gt;&lt;sys_class_name&gt;sysevent_email_action&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2023-10-20 09:39:33&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;fa54a9b497ca35104234fa56f053af88&lt;/sys_id&gt;&lt;sys_mod_count&gt;3&lt;/sys_mod_count&gt;&lt;sys_name&gt;Empty Checks in ACL Notification&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;sysevent_email_action_fa54a9b497ca35104234fa56f053af88&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2023-10-20 10:12:50&lt;/sys_updated_on&gt;&lt;sys_version&gt;2&lt;/sys_version&gt;&lt;template display_value="Unsubscribe and Preferences"&gt;7ed0481f3b0b2200c869c2c703efc487&lt;/template&gt;&lt;type&gt;email&lt;/type&gt;&lt;weight&gt;0&lt;/weight&gt;&lt;/sysevent_email_action&gt;&lt;/record_update&gt;</payload>
+<payload_hash>-140655707</payload_hash>
+<remote_update_set display_value="ACLs with empty checks">8842f134970e35104234fa56f053af41</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2023-10-20 10:36:43</sys_created_on>
+<sys_id>8c42f134970e35104234fa56f053af41</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>18b4c92c8f90000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2023-10-20 10:36:43</sys_updated_on>
+<table/>
+<target_name>Empty Checks in ACL Notification</target_name>
+<type>Notification</type>
+<update_domain>global</update_domain>
+<update_guid>d6cce9b0eb0e35108e38f4fbf3528de0</update_guid>
+<update_guid_history>d6cce9b0eb0e35108e38f4fbf3528de0:-140655707,574c69b0f10e35101248edea57b2a97f:1965676276,3458e1b8abca351003a074809c4ac2ad:-714069897,fe2569f4c0ca3510dbfeb2fb49858d2b:1370385409</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_script_email_0e03a17497ca35104234fa56f053af22</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_script_email"&gt;&lt;sys_script_email action="INSERT_OR_UPDATE"&gt;&lt;name&gt;construct_empty_check_acls_body&lt;/name&gt;&lt;new_lines_to_html&gt;false&lt;/new_lines_to_html&gt;&lt;script&gt;&lt;![CDATA[(function runMailScript( /* GlideRecord */ current, /* TemplatePrinter */ template,
+    /* Optional EmailOutbound */
+    email, /* Optional GlideRecord */ email_action,
+    /* Optional GlideRecord */
+    event) {
+
+    var aclGr = new GlideRecord("sys_security_acl");
+    aclGr.addEncodedQuery("conditionISEMPTY^scriptISEMPTY^type=record");
+    aclGr.query();
+
+    var body = "&lt;ul&gt;";
+    while (aclGr.next()) {
+        var aclRoleGr = new GlideRecord("sys_security_acl_role");
+        if (!aclRoleGr.get("sys_security_acl", aclGr.getUniqueValue())) {
+            gs.print(aclGr.name + " : " + aclGr.sys_id);
+            body += "&lt;li&gt;" + aclGr.name + " - " + aclGr.sys_id + "&lt;/li&gt;";
+        }
+    }
+    body = body + "&lt;/ul&gt;";
+    template.print(body);
+
+})(current, template, email, email_action, event);]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_email&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2023-10-20 09:34:19&lt;/sys_created_on&gt;&lt;sys_id&gt;0e03a17497ca35104234fa56f053af22&lt;/sys_id&gt;&lt;sys_mod_count&gt;2&lt;/sys_mod_count&gt;&lt;sys_name&gt;construct_empty_check_acls_body&lt;/sys_name&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_email_0e03a17497ca35104234fa56f053af22&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2023-10-20 10:36:09&lt;/sys_updated_on&gt;&lt;/sys_script_email&gt;&lt;/record_update&gt;</payload>
+<payload_hash>-1280209501</payload_hash>
+<remote_update_set display_value="ACLs with empty checks">8842f134970e35104234fa56f053af41</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2023-10-20 10:36:43</sys_created_on>
+<sys_id>d842f134970e35104234fa56f053af42</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>18b4ca824260000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2023-10-20 10:36:43</sys_updated_on>
+<table/>
+<target_name>construct_empty_check_acls_body</target_name>
+<type>Email Script</type>
+<update_domain>global</update_domain>
+<update_guid>08227934df0e35100f8f9cd1f8b23552</update_guid>
+<update_guid_history>08227934df0e35100f8f9cd1f8b23552:-1280209501,1c77e578e1ca35109f671d35985a6804:93810420,96f321701cca351068cf0d502f57e4d8:-2096096752</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+</unload>
