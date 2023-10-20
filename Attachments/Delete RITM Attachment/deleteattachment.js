@@ -10,6 +10,7 @@ var glideAttachment = new GlideRecord("sys_attachment");
         
 		var attachment = new GlideSysAttachment();
 			attachment.deleteAttachment(glideAttachment.getValue("sys_id"));
+
     }
 
 })(current, previous);

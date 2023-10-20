@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+	<!-- The block below is dedicated for html element id generation with always unique GUID to refer later if needed -->
+	<g:evaluate var="jvar_guid" expression="gs.generateGUID(this);" />
+	<j:set var="jvar_n" value="copy_to_clpb_${jvar_guid}:${ref}" />
+	<!-- The block below looks for the field by id we assigned on the previous steps and attaches onClick function as well as hint and icon decoration -->
+	<g:reference_decoration id="${jvar_n}" field="${ref}"
+		onclick="copyFieldToClipboard('${ref}');"
+		title="${gs.getMessage('Copy to Clipboard')}" image="images/icons/tasks.gifx" icon="icon-copy" />
+	<script>
+		function copyFieldToClipboard(reference) {
+			try {
+				var fieldName = reference.split('.');
+				var fieldValue;
+				
+				if (fieldName[0] === 'reference') {
+					fieldValue = g_form.getReference(fieldName[1]).name;
+				} else {
+					fieldValue = g_form.getValue(fieldName[1]);
+				}
+
+				copyToClipboard(fieldValue);
+			} catch (e) {
+				jslog('Error copying to clipboard. Please contact ServiceNow Administration group.');
+				jslog(e);
+			}
+		}
+	</script>
+</j:jelly>

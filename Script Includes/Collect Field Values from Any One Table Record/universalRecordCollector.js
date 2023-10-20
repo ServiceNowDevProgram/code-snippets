@@ -8,7 +8,7 @@ DV_Record_Details.prototype = Object.extendsObject(AbstractAjaxProcessor, {
 		
 	var fields = fieldNames.split(',');
 		
-        var targetRecord = new GlideRecord(table);
+        var targetRecord = new GlideRecordSecure(table);
         targetRecord.addQuery('sys_id', recordID);
         targetRecord.query();
 

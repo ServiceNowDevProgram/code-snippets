@@ -9,22 +9,22 @@ var CatalogUtils = Class.create();
  */
 CatalogUtils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
     /**
-	 * Returns all variables of a given RITM as stringified array of JSON objectss.
-	 *
-	 * @param {Object} objParameter Valid `sc_req_item` record or String-based Sys ID of a RITM.
-	 * @return {String} Stringified array of JSON objects with various variable values and information or an empty array if no valid data could be found.
-	 */
+     * Returns all variables of a given RITM as stringified array of JSON objectss.
+     *
+     * @param {Object} objParameter Valid `sc_req_item` record or String-based Sys ID of a RITM.
+     * @return {String} Stringified array of JSON objects with various variable values and information or an empty array if no valid data could be found.
+     */
     getVariables: function(objParameter) {
         var _grRITM = null;
 
         //server-side call with Sys ID
         if (typeof objParameter == 'string' && objParameter.length == 32) {
             _grRITM = new GlideRecord('sc_req_item');
-            
+
             if (!_grRITM.get(objParameter)) {
                 _grRITM = null;
             } 
-		    }
+        }
 
         //server-side call with initialized RITM GlideRecord 
         if (typeof objParameter == 'object' && objParameter instanceof GlideRecord) {
@@ -39,7 +39,7 @@ CatalogUtils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
 
             if (_strSysID.length == 32) {
                 _grRITM = new GlideRecord('sc_req_item');
-            
+
                 if (!_grRITM.get(_strSysID)) {
                     _grRITM = null;
                 }
@@ -81,6 +81,25 @@ CatalogUtils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         }
 
         return JSON.stringify(_arrResult);
+    },
+
+    /**SNDOC
+    @name _variablesToText
+    @description Parses over the variables of a given record, returning Question Label and Display Value of answers
+    @param {object} [pRecord] GlideRecord object with variables key
+    @returns {string} A formatted string of variable questions and corresponding answer
+    */
+    variablesToText: function (pRecord) {
+        var oVariables = pRecord.variables;
+        var aPayload = [];
+        for (key in oVariables) {
+            var sQuestion = oVariables[key].getLabel();
+            var sAnswer = oVariables[key].getDisplayValue();
+            if (JSUtil.notNil(sQuestion) && JSUtil.notNil(sAnswer)) {
+                aPayload.push(sQuestion + ':\n>>' + sAnswer);
+            }
+        }
+        return aPayload.join('\n\n');
     },
 
     type: 'CatalogUtils',

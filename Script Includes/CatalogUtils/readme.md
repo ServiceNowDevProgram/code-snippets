@@ -51,3 +51,33 @@ var jsonVariables = JSON.parse(gaCatalogUtils.getAnswer() || "");
   }
 ]
 ```
+
+## Variables to Text
+
+Returns all Variables with an answer as a formatted string.
+Useful for 'exporting' question:answers to primitive fields such as description or notifications 
+Expected use is Server side.
+
+### Example of server-side call
+```javascript
+var grRITM = new GlideRecord('sc_req_item');
+
+if (grRITM.get('8c135e0647b1b110da816241e36d437e')) {
+    var jsonVariables = JSON.parse((new CatalogUtils()).variablesToText(grRITM));
+}
+```
+
+### Example of returned values
+```
+Copier paper (reams):
+>>3
+
+Pens (box of 10):
+>>3
+
+Screen wipes (tube of 20):
+>>4
+
+Additional requirements:
+>>I need this yesterday
+```
