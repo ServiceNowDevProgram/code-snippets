@@ -1,0 +1,1 @@
+This is a client script that add one more choice in category field when a particular word is found in short description. search function is used for searching. Then sets value with the newly created field of that word.
