@@ -6,7 +6,7 @@ ListCopyOptions.prototype = Object.extendsObject(AbstractAjaxProcessor, {
 		var sys_id = this.getParameter('sysparm_sys_id');
 		var field = this.getParameter('sysparm_field');
 		var table = this.getParameter('sysparm_table');
-		var this_gr = new GlideRecord(table);
+		var this_gr = new GlideRecordSecure(table);
 		this_gr.get(sys_id);
 		return this_gr.getDisplayValue(field);
 	},

@@ -1,3 +1,4 @@
+
 var gr = new GlideRecord("sys_attachment");
     var task = new GlideRecord('sc_task');
     if (task.get(current.table_sys_id)) {
