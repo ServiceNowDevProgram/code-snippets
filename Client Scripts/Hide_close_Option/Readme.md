@@ -1,0 +1,1 @@
+This Client script is used in the Problem Management (Table - [Problem]) module to display a hide-close Option for all Users except the Problem manager. You need to run this Client script with the type "OnLoad" and enable "Global" and UI Type as Desktop .
