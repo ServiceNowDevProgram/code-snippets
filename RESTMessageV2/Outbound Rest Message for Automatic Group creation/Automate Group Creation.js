@@ -1,18 +1,13 @@
-//create a after insert business rule on sys_user_group table.
+var request = new sn_ws.RESTMessageV2();
+request.setEndpoint('https://instance_name.service now.com/api/now/table/sys_user_group'); //Target Instance 
+request.setHttpMethod('POST');
+var user = 'username';
+var password = 'password';
+request.setBasicAuth(user, password);
+request.setRequestHeader("Accept", "application/json");
+request.setRequestHeader("Content-Type', 'application/json'); 
+//set new group required field values
+request.setRequestBody(" {\"name\":\"Group Name\",\"manager\":\"sys_id of the manager\",\"description\":\"Creating group with API\",\"type\":\"sys_id of the group type (GlideList)\"}"); 
+var response = request.execute();
 
-(function executeRule(current, previous /* null when async */){
 
-var restMsg = new sn_ws.RestMessageV2('Create group in QA', 'Create group');
-restMsg.setStringParameterNoEscape('name', current.namee);
-restMsg.setStringParameterNoEscape('manager', current.manager);
-restMsg.setStringParameterNoEscape('type', current.type);
-restMsg.setStringParameterNoEscape('sys_id',current.sys_id);
-restMsg.execute();
-
- var response = restMsg.execute();
-  var reqBody = restmsg.getrequestBody();
-  var responseBody = response.getBody();
-  var htttpStatus = response.getStatusCode();
-
-}}(current, previous);
-  
