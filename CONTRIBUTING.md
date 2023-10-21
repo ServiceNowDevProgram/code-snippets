@@ -3,16 +3,25 @@
 To contribute, just follow these steps:
 
 1. Fork this repo
-2. Create a new branch (name it according to what functionality you are adding)
+2. Create a new branch (name it according to what functionality you are adding). From the main branch dropdown, switch to your new branch. 
 3. Add, edit, or re-organize Code Snippets by editing folders and files and commiting them to your forked repository
 4. Submit a pull request to the main branch of `ServiceNowDevProgram / code-snippets`
   - Pull requests should have a title/comment that describes what is being added/changed
   - Pull requests should only contain files that are relevant to what is said in the pull request's title and description
-  - Files should not be XML imports of ServiceNow records.
+  - Files should not be XML exports of ServiceNow records.
 
 That's it! A developer advocate or an sndevs designated approver will review your pull request and if approved, merge it into this repo for everyone's benefit!
 
 **Note on multiple submissions**: If you plan on doing another pull request and your original pull request hasn't been approved+merged yet, make sure to create a new branch in your forked repo first.
+
+## General requirements
+
+- Pull request descriptions must be explicit and descriptive to what is being changed.
+- Changes that are not within the scope of the description will result in the entire PR being rejected
+- Low effort/spam Pull Requests will be marked as spam accordingly.
+- Code snippets (re-)used from [Docs](https://docs.servicenow.com/) or [API references](https://developer.servicenow.com/dev.do#!/reference/) are only acceptable if they are expanded in a meaningful way (e.g. extended script and/or documentation) - remember: *"QUANTITY IS FUN, QUALITY IS KEY"*
+- Code should be relevant to ServiceNow Developers
+- ES2021 is allowed, but since not everyone is necessarily working on ES2021 enabled apps, we encourage you to disclose/warn users using your code about this.
 
 ## Follow this structure
 

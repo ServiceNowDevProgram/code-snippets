@@ -1,0 +1,9 @@
+function onLoad() {
+   //Type appropriate comment here, and begin script below
+   var myRole= g_user.hasRole("admin");
+	if(myRole!=true){
+		g_form.setReadOnly("vip",true);
+			}else{
+		g_form.setReadOnly("vip",false);
+			}
+}

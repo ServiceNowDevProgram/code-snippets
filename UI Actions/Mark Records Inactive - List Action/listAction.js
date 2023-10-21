@@ -15,6 +15,12 @@ function markInactive() {
 
     function ResponseFunction(response) {
         var answer = response.responseXML.documentElement.getAttribute("answer");
-        alert(answer.toString());
+        //alert(answer.toString());
+        // Commented above code and replaced it with GlideModal
+        var gm = new GlideModal("glide_alert_standard", false, 600);
+        gm.setTitle("Info Message");
+        gm.setPreference("title", answer.toString());
+        gm.setPreference("warning", "false");
+        gm.render();
     }
 }
