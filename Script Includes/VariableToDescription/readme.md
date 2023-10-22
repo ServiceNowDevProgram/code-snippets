@@ -1,0 +1,1 @@
+This script include can be used to get all of the variables from a RITM as text. It is client callable, so it can be used from any client script as well as Server Side script like a business rule.
