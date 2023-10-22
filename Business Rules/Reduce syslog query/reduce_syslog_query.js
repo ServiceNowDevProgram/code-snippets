@@ -25,7 +25,7 @@
 			'For performance reasons your query was extended by an expression to narrow ' +
 			'down the result list to entries which have been created in the last 15 min. ' +
 			'You can override this setting by using a dedicated query expression for the ' +
-			'"Created by" field. But be careful: If the query result set is very large, ' +
+			'"Created on" field. But be careful: If the query result set is very large, ' +
 			'it will cause a performance decrease!'
 		);
 	}
