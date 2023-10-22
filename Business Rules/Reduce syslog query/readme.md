@@ -18,4 +18,4 @@ If the user already added any condition for the `sys_created_on` field then no q
 
 # Result
 
-![Result](./screenshot.png)
+![Result](./business_rule.png)
