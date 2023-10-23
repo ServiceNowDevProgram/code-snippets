@@ -2,11 +2,10 @@
 
 	var workNotes = current.work_notes.getJournalEntry(1);
 
-	var gr = new GlideRecord('problem');
-	gr.addQuery('sys_id',current.problem);
-	gr.query();
-	if(gr.next()){
-		gr.work_notes ='This worknote is updated in' + current.number + "\n" + workNotes;
+	var parentProblem = new GlideRecord('problem'); 
+	parentProblem.get(current.getValue('problem')); //fetching current problem record from the problem record
+	if(parentProblem) {
+	parentProblem.work_notes = 'This worknote is updated in' + current.getValue('number') + '\n' + workNotes; //updating worknotes from problem task to parent problem
 	}
-	gr.update();
+	parentProblem.update();
 })(current, previous);
