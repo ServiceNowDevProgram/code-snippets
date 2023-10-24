@@ -1,3 +1,8 @@
+/* 
+ * This script is not to be used to determine subscription and license usage.  
+ * It is simply to determine how widespread the use of a custom table is in your instance to assist with tidying up unused tables.
+ */
+
 const USAGE_COUNT_CONFIG = [
     { "table": "sys_dictionary", "field": "reference", "title": "Dictionary" },
     { "table": "item_option_new", "field": "reference", "title": "Variables" },

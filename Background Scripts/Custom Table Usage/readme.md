@@ -2,6 +2,8 @@
 
 This script provides a way of counting where any custom tables (u_) are used in the instance.
 
+**This script is not to be used to determine subscription and license usage.  It is simply to determine how widespread the use of a custom table is in your instance to assist with tidying up unused tables.**
+
 Returns JSON object similar to the following:
 
 ```json
