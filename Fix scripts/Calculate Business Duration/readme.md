@@ -1,0 +1,1 @@
+Use this script to update the business duration field for records. Add the sys_id of a schedule in the selectedSchedule variable to factor in a schedule in the calculation. Table can be selected by using the table variable.
