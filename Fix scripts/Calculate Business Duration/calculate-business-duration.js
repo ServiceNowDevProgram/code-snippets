@@ -4,7 +4,7 @@ var selectedSchedule = ''; // Set the sys_id of the schedule you'd like to use t
 table = 'sc_req_item'; // Change this to set a different table such as incident
 
 var gr = new GlideRecord(table);
-gr.addEncodedQuery("stateIN3,4^sys_created_on>javascript:gs.dateGenerate('2022-01-01','23:59:59')"); // Set your encoded query to whatever you would like
+gr.addEncodedQuery("stateIN3,4^sys_created_on>javascript:gs.dateGenerate('2022-01-01','00:00:01')"); // Set your encoded query to whatever you would like
 gr.query();
 var count = 0;
 while (gr.next()) {
