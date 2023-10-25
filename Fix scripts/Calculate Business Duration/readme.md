@@ -22,8 +22,9 @@ Updates the business duration field for tables such as incident and sc_req_item.
 
 ## Author
 
-ex Brad Warman
-ex https://www.servicenow.com/community/user/viewprofilepage/user-id/80167
+Brad Warman
+
+https://www.servicenow.com/community/user/viewprofilepage/user-id/80167
 
 ## Version History
 
