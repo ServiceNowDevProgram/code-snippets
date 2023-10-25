@@ -10,11 +10,11 @@ try {
 	gs.info("Restarting flow for " + grScReqItem.number);
 	var flow = grScReqItem.cat_item.flow_designer_flow;
 	var flowName = flow.sys_scope.scope + "." + flow.internal_name;
-    var inputs = {};
-    inputs['request_item'] = grScReqItem; // GlideRecord of table: sc_req_item
-    inputs['table_name'] = 'sc_req_item';
+    	var inputs = {};
+    	inputs['request_item'] = grScReqItem; // GlideRecord of table: sc_req_item
+    	inputs['table_name'] = 'sc_req_item';
 
-    var contextId = sn_fd.FlowAPI.startFlow(flowName, inputs);	
+    	var contextId = sn_fd.FlowAPI.startFlow(flowName, inputs);	
 	
   } catch (ex) {
     var message = ex.getMessage();
