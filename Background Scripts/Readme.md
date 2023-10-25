@@ -1,0 +1,1 @@
+Use the ritmSysId variable to store the sys_id of the RITM for which you want the flow to be restarted. Run the script as a fix script or background script to restart the flow.
