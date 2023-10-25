@@ -20,12 +20,10 @@ Updates the business duration field for tables such as incident and sc_req_item.
 * Set the encoded query to obtain the records you would like to update. The preconfigured query includes records from January 1, 2022 where the state is either closed or cancelled.
 * Run the script.
 
-## Authors
+## Author
 
-Contributors names and contact info
-
-Brad Warman
-https://www.servicenow.com/community/user/viewprofilepage/user-id/80167
+ex Brad Warman
+ex https://www.servicenow.com/community/user/viewprofilepage/user-id/80167
 
 ## Version History
 
