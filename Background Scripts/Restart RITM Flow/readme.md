@@ -4,7 +4,7 @@ Restarts a Flow Designer flow for an individual RITM.
 
 ## Description
 
-Restart a Flow Designer flow by running restart-ritm-flow.js as a background or fix script. Use the ritmSysId variable to store the sys_id of the RITM for which you want the flow to be restarted.
+Restart a Flow Designer flow by running restart-ritm-flow.js as a background or fix script. Use the ritmSysId variable to store the sys_id of the RITM for which you want the flow to be restarted. Output is logged to the sys_log table.
 
 ## Getting Started
 
