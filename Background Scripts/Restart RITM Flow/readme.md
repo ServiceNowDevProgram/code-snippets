@@ -15,39 +15,16 @@ Restart a Flow Designer flow by running restart-ritm-flow.js as a background or 
 ### Execution
 
 * Copy the script from restart-ritm-flow.js to either a background script or a fix script.
-* 
-
-## Help
-
-Any advise for common problems or issues.
-```
-command to run if program contains helper info
-```
+* Set the sys_id of the target RITM in the ritmSysId variable.
+* Run the script and the flow will be restarted.
 
 ## Authors
 
-Contributors names and contact info
+Brad Warman 
 
-ex. Dominique Pizzie  
-ex. [@DomPizzie](https://twitter.com/dompizzie)
+https://www.servicenow.com/community/user/viewprofilepage/user-id/80167
 
 ## Version History
 
-* 0.2
-    * Various bug fixes and optimizations
-    * See [commit change]() or See [release history]()
 * 0.1
     * Initial Release
-
-## License
-
-This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
-
-## Acknowledgments
-
-Inspiration, code snippets, etc.
-* [awesome-readme](https://github.com/matiassingers/awesome-readme)
-* [PurpleBooth](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
-* [dbader](https://github.com/dbader/readme-template)
-* [zenorocha](https://gist.github.com/zenorocha/4526327)
-* [fvcproductions](https://gist.github.com/fvcproductions/1bfc2d4aecb01a834b46)
