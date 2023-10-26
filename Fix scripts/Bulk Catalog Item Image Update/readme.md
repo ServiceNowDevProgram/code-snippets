@@ -15,14 +15,14 @@ This script can perform bulk updates of the picture and/or icon fields used in c
 
 ### Execution
 
-* Copy the script from bulk-update-cat-item-images.js to either a fix script or background script in your ServiceNow instance.
-* Copy the sys_id(s) from the image that you will using from the sys_attachments table. If you have added this image using the db_image table, you can filter the sys_attachments table name column to ZZ_YYdb_image to make it easier to find.
-* Update the script variables as follows:
-** table = the table you want to change the icons for the catalog item(s) - commonly sc_cat_item or sc_cat_item_producer
-** iconSysId = the sys_id of the image to be used for the icon (NOTE - you can comment this line out if you don't want to update the icon)
-** pictureSysId = the sys_id of the image to be used for the picture (NOTE - you can comment this line out if you don't want to update the picture)
-** query = the encoded query you will use to identify the items to be updated
-* Run the script and the picture and/or icon fields will be updated
+1. Copy the script from bulk-update-cat-item-images.js to either a fix script or background script in your ServiceNow instance.
+2. Copy the sys_id(s) from the image that you will using from the sys_attachments table. If you have added this image using the db_image table, you can filter the sys_attachments table name column to ZZ_YYdb_image to make it easier to find.
+3. Update the script variables as follows:
+    * **table**: the table you want to change the icons for the catalog item(s) - commonly sc_cat_item or sc_cat_item_producer
+    * **iconSysId**: the sys_id of the image to be used for the icon (NOTE - you can comment this line out if you don't want to update the icon)
+    * **pictureSysId**: the sys_id of the image to be used for the picture (NOTE - you can comment this line out if you don't want to update the picture)
+    * **query**: the encoded query you will use to identify the items to be updated
+4. Run the script and the picture and/or icon fields will be updated
 
 ## Authors
 
