@@ -1,6 +1,6 @@
-var hrITIntegrationUtils = Class.create();
+var attachmentParserUtil = Class.create();
 
-hrITIntegrationUtils.attachmentDecoder = function(target, filename, filetype, attachment_base64) {
+attachmentParserUtil.attachmentDecoder = function(target, filename, filetype, attachment_base64) {
 
     var attachment = new GlideSysAttachment();
 
@@ -11,7 +11,7 @@ hrITIntegrationUtils.attachmentDecoder = function(target, filename, filetype, at
 
 };
 
-hrITIntegrationUtils.attachmentEncoder = function(attachmentID) {
+attachmentParserUtil.attachmentEncoder = function(attachmentID) {
 	
     try {
         var gsa, binData, file_name = [],
@@ -45,19 +45,19 @@ return JSON.stringify({
 
 };
 
-hrITIntegrationUtils.attachmentHandler = function(attachment) {
+attachmentParserUtil.attachmentHandler = function(attachment) {
 
     if (attachment.endsWith("]")) {
 
-        return hrITIntegrationUtils.attachmentMultiAttachment(attachment);
+        return attachmentParserUtil.attachmentMultiAttachment(attachment);
     } else if (attachment.endsWith("}")) {
 
-        return hrITIntegrationUtils.attachmentSingleAttachment(attachment);
+        return attachmentParserUtil.attachmentSingleAttachment(attachment);
 
     }
 };
 
-hrITIntegrationUtils.attachmentSingleAttachment = function(attachment) {
+attachmentParserUtil.attachmentSingleAttachment = function(attachment) {
 
     var attachDetails = {};
 
@@ -80,7 +80,7 @@ hrITIntegrationUtils.attachmentSingleAttachment = function(attachment) {
 
 };
 
-hrITIntegrationUtils.attachmentMultiAttachment = function(attachment) {
+attachmentParserUtil.attachmentMultiAttachment = function(attachment) {
     var attachmentArray = [],
         finalArray = [];
     var attachDetails = {};
@@ -126,7 +126,7 @@ hrITIntegrationUtils.attachmentMultiAttachment = function(attachment) {
 
 
 
-hrITIntegrationUtils.attachmentSingleEncoder = function(attachmentID) {
+attachmentParserUtil.attachmentSingleEncoder = function(attachmentID) {
 	
     try {
         var gsa, binData, file_name = [],
