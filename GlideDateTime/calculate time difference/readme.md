@@ -1,2 +1,2 @@
-#This code calculates the time difference in seconds between a fixed date and the current date and time, then logs the result.
+# This code calculates the time difference in seconds between a fixed date and the current date and time, then logs the result.
 So basically this is used to calculate and log the time difference in seconds between a specific date and time (earlierDate) and the current date and time (laterDate). It's a common use case for measuring durations or elapsed time, such as determining how much time has passed between two events
