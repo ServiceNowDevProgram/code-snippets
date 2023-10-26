@@ -18,7 +18,7 @@ attachmentParserUtil.attachmentEncoder = function(attachmentID) {
         file_type = [],
         file_content = [];
         var attachFetch = new GlideRecord("sys_attachment");
-        attachFetch.addQuery("table_sys_id", attachmentID).addCondition("sys_created_by","!=","hrsd_snow");
+        attachFetch.addQuery("table_sys_id", attachmentID).addCondition("<filter>");
         attachFetch.query();
         while (attachFetch.next()) {
 
@@ -124,39 +124,7 @@ attachmentParserUtil.attachmentMultiAttachment = function(attachment) {
 
 };
 
-attachmentParserUtil.passAttachmentREST=function(incident){
-var payload = {};
-var inc = new GlideRecord("incident");
-inc.addQuery("sys_id", incident).addCondition("cmdb_ci", gs.getProperty("ea_it_enterprise_ServiceNow_CI")).addCondition("correlation_id", "!=", "");
-inc.query();
-if (inc.next())
 
-payload["u_correlation_display"] = inc.correlation_display.toString();
-payload["u_correlation_id"] = inc.correlation_id.toString();
-payload["u_subject_person"] = inc.caller_id.email.toString();
-//payload["u_work_notes"] = "New attachment added from ITSM incident `#"+inc.number.toString() +"`";
-var attachParser = JSON.parse(attachmentParserUtil.attachmentSingleEncoder(inc.getUniqueValue()));
-
-payload.u_file_name = attachParser.file_name.toString();
-payload.u_file_type = attachParser.file_type.toString();
-payload.u_file_content = attachParser.file_content.toString();
-
-try {
-	// gs.info("Aashish flow output "+ JSON.stringify(payload,null,4));
-    var inputs = {};
-    inputs['payload_details'] = JSON.stringify(payload, null, 4); // JSON 
-
-  
-    var result = sn_fd.FlowAPI.getRunner().action('global.ea_it_incident_update').inForeground().withInputs(inputs).run();
-    var outputs = result.getOutputs();
- 
-// gs.info("Aashish flow output "+ JSON.stringify(outputs));
-        } catch (ex) {
-            var message = ex.getMessage();
-            gs.error(message);
-        } 
-	
-};
 
 attachmentParserUtil.attachmentSingleEncoder = function(attachmentID) {
 	
@@ -165,7 +133,7 @@ attachmentParserUtil.attachmentSingleEncoder = function(attachmentID) {
         file_type = [],
         file_content = [];
         var attachFetch = new GlideRecord("sys_attachment");
-        attachFetch.addQuery("table_sys_id", attachmentID).addCondition("sys_created_by","!=","hrsd_snow");
+        attachFetch.addQuery("table_sys_id", attachmentID).addCondition("<filter>");
 		attachFetch.orderByDesc('sys_created_on');
 		attachFetch.setLimit(1);
         attachFetch.query();
@@ -190,16 +158,4 @@ return JSON.stringify({
 
 
 };
-attachmentParserUtil.validateCaller=function(caller){
-	var val=false;
-	var inc = new GlideRecord("sys_user");
-inc.addEncodedQuery("active=true^emailLIKE"+caller.toString());
-inc.query();
-if (inc.next()) {
-   val=true;
-	
-}
-return val;
-	
-	
-};
+
