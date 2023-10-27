@@ -20,8 +20,8 @@ The list of items is obtained from the sp_log table and can be modified to suit 
 
 ### Execution
 
-1. Clone the out-of-the-box Homepage Search widget
-2. Add the HTML from the recently-viewed-items-widget.js file to your cloned widget under the 
+1. Clone the out-of-the-box Homepage Search widget.
+2. Add the HTML from the recently-viewed-items-widget.js file to your cloned widget under the <sp-widget widget="data.typeAheadSearch"></sp-widget> line.
 3. Update the <PORTAL> components of the href tags with your portal suffix.
 4. Add the CSS from the recently-viewed-items-widget.js file to your cloned widget CSS section.
 5. Add the Server Script from the recently-viewed-items-widget.js file to your cloned widget Server Script section.
