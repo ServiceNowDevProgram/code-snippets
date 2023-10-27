@@ -3,7 +3,7 @@
 
 This is a modification to the out-of-the-box Homepage Search widget that displays the users 3 most recently viewed items under the search bar.
 
-![alt text](https://github.com/captainbraddles/code-snippets/blob/Service Portal Widgets/Recently Viewed Items/Recently viewed widget.png?raw=true)
+![alt text]("https://github.com/captainbraddles/code-snippets/blob/Service Portal Widgets/Recently Viewed Items/Recently viewed widget.png?raw=true")
 
 ## Description
 
