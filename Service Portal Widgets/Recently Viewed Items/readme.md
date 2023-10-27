@@ -7,28 +7,28 @@ This is a modification to the out-of-the-box Homepage Search widget that display
 
 ## Description
 
-This script can be added to a scheduled job to deactivate and reactivate catalog items and/or record producers. An example of a use case is where maintenance is being performed which will involve a system outage so certain forms that might rely on an integration with that system need to be disabled during the maintenance window.
+The modification to the out-of-the-box Homepage Search widget provides some additional text under the search bar the displays the logged in users 3 most recently viewed catalog items / record producers. It does not display
+duplicate items.
+
+The list of items is obtained from the sp_log table and can be modified to suit your needs for the number of records it checks to find the 3 most recent unique items. The default is 100.
 
 ## Getting Started
 
 ### Dependencies
 
-* None
+* You must be in the scope of the widget you are modifying.
 
 ### Execution
 
-1. Create a scheduled job that automatically runs a script of your choosing.
-2. Configure the scheduled job to run at the relevant time (see image for example).
-3. Copy the script from deactivate-reactivate-cat-item.js into the 'Run this script' field.
-4. Modify the variables as required:
-    * Add or remove variables to capture all of the catalog items that need to be deactivated/reactivated.
-    * Ensure the sys_id of the catalog item is set as the variable value.
-5. Update the array list on line 8 to include the variables you want to use.
-6. Set the value of the active flag on line 11 to 'false' to deactivate the catalog item or 'true' to activate the catalog item.
-7. Save the scheduled job and it will run once the trigger condition is met.
+1. Clone the out-of-the-box Homepage Search widget
+2. Add the HTML from the recently-viewed-items-widget.js file to your cloned widget under the 
+3. Update the <PORTAL> components of the href tags with your portal suffix.
+4. Add the CSS from the recently-viewed-items-widget.js file to your cloned widget CSS section.
+5. Add the Server Script from the recently-viewed-items-widget.js file to your cloned widget Server Script section.
+6. Save the widget and add it to your portal page.
 
-### Additional Information
-If you are setting a deactivate scheduled job for a maintenance window, make sure you create a second scheduled job to reactivate the catalog items once the maintenance window is closed.
+### Custom Configurations
+You can modify the CSS values to change the style of the text that is displayed under the search bar.
 
 ## Authors
 
