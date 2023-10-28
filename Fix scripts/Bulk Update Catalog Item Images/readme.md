@@ -4,7 +4,8 @@ Updates the image(s) associated with catalog items or record producers
 
 ## Description
 
-This script can perform bulk updates of the picture and/or icon fields used in catalog items and record producers. The image for the picture and icon fields can be different or the same.
+This script can perform bulk updates of the picture and/or icon fields used in catalog items and record producers. The script will update each item that is returned in the query with the images set
+in the iconSysId and pictureSysId variables. A business use for this script would be the need to update the picture and icon fields of all Apple related catalog items with an new Apple logo image.
 
 ## Getting Started
 
