@@ -4,7 +4,10 @@
 //Here is the code on the scheduled job that runs daily but sends notification after evey week(7 days) based on the due date.
 
 var app = new GlideRecord("sysapproval_approver");
-app.addActiveQuery('state','requested');
+gr.addEncodedQuery('sysapproval.numberSTARTSWITHINC^state=requested'); // Please rename the "INC" with based on the number maintenance of the table that you are looking at.
+app.query();
+while(app.next())
+ {
 var createdte = new GlideDateTime(current.created_on);
 var now = new GlideDateTime();
 var dur = new GlideDuration();
@@ -12,7 +15,8 @@ dur = GlideDateTime.subtract(createdte,now);
 var days = dur.getDayPart();
 if(days%7==0)
 {
- gs.eventQueue('<eventname',approval,app.approver,app.sysapproval);
+ gs.eventQueue('<eventname>',approval,app.approver,app.sysapproval);
 //event needs to created in the event Registry first and then the event name to be provided as the first parameter in the above eventQueue function.
 // Now you configure a Notificatin that triggers based on this event and that does the Job!!!!
+}
 }
