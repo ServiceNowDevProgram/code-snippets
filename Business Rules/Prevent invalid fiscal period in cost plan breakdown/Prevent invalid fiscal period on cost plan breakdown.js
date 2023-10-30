@@ -1,0 +1,4 @@
+//before update
+//table cost_plan_breakdown
+//condition:
+fiscal_periodVALCHANGES^fiscal_period.fiscal_end_date_timeMORETHANcost_plan.end_fiscal_period.fiscal_end_date_time@hour@after@0^ORfiscal_period.fiscal_start_date_timeMORETHANcost_plan.start_fiscal_period.fiscal_start_date_time@hour@before@0^EQ

@@ -1,0 +1,69 @@
+.mm_card  {
+    position: relative;
+    color: rgb(119, 119, 119);
+    transition: transform .2s; /* Animation */
+    width: 100%; 
+    padding: 0px;  
+    margin-bottom: 20px;
+    box-shadow: 2px 2px 3px 1px grey;
+    border: solid #fff 2px;
+  }
+  
+  .mm_card:hover {
+    background: #3b5998;
+    color: #fff;
+    cursor: pointer;
+    transform: scale(1.05);
+    box-shadow: 2px 20px 30px 1px grey;
+    border: solid #fff 4px;
+  }
+  
+  .mm_card_image  {
+    width: 100%; 
+  }
+  
+  .mm_card__header {
+      position : absolute;
+    top : 5%;
+    left: 5%;
+    z-index: 2;
+  }
+  
+  .mm_card__title {
+      color: #ffffff;
+      font-family: "Source Sans Pro", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-transform: uppercase;
+      font-size: 4vw;
+      margin: 0;
+      text-shadow: 0 2px 4px rgb(0 0 0 / 50%);
+  }
+  
+  .mm_card__title_text {
+      color: #ffffff;
+      font-family: "Source Sans Pro", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+      font-size: 1em;
+    
+  }
+  
+  .mm_card:before {
+      background: #2B5C0D;
+      bottom: 0;
+      content: "";
+      height: 0;
+      left: 0;
+      position: absolute;
+      right: 0;
+      width: 100%;
+      z-index: 0;
+  }
+  .mm_card__overlay {
+      position: absolute;
+      background: rgba(0, 0, 0, 0.3);
+      bottom: 0;
+      content: "";
+      height: 100%;
+      width: 100%;
+      z-index: 0;
+  }

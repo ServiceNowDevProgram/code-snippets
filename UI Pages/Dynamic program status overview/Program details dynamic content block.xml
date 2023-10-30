@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+	
+	<div class="col-md-12">
+			<div class="panel-body">
+				<div id="pgmDetails">
+					<div class="list-group"></div>
+				</div>
+			</div>
+		</div>
+
+<script>
+	
+	var container = document.getElementById("pgmDetails");
+	
+	//Get the saved default filter
+	var defaultFilter = window.SNC.canvas.interactiveFilters.defaultValues;
+	//Check if the saved default filter is an empty object, this means no filter (all) is selected
+	if (Object.keys(defaultFilter).length === 0) {
+		container.textContent = "No Program selected";
+	}
+	//If the object is not empty, that means a default filter is saved and applied onload of the dashboard
+	else {
+		var returnValue = defaultFilter[Object.keys(defaultFilter)[0]];
+		filterDefault = returnValue[0].filter;
+		var priorityID = filterDefault.split("=").pop()
+		container.textContent = getText(priorityID);
+	}
+	
+	//If we select "All", the filter is destroyed
+	CustomEvent.observe('dashboard_filter.removed', function() {
+		container.textContent = "No Program selected";
+	});
+	
+	//If we select something other than all, a filter is added
+	CustomEvent.observe('dashboard_filter.added', function(filterMessage) {
+		var idObj = filterMessage.id;
+		var filterFound = filterMessage[idObj][0].filter;
+		priorityID = filterFound.split("=").pop();
+	
+	
+		var ga = new GlideAjax('Program_Info');
+		ga.addParam('sysparm_name', 'getProgInfo');
+		ga.addParam('sysparm_task_type', priorityID);
+		ga.addParam('sysparm_fields', "executive_summary,comments,achievements_last_week,key_activities_next_week");
+		ga.getXML(callback);
+		function callback(response) {
+			var result = response.responseXML.documentElement.getAttribute("answer");
+			var details = JSON.parse(result);
+			var keys = Object.keys(details[0]);
+			var html = [];
+			keys.forEach(function(key) {
+				var label = key.toUpperCase().replace("_", " ");
+				var text = details[0][key];
+				html.push('<div class="list-group-item"><h4 class="list-group-item-heading">'+ label + '</h4>');
+				html.push('<p class="list-group-item-text">' + text + '</p></div>');
+			});
+			pgmDetails.innerHTML = html.join("");
+		}
+	});
+	
+</script>
+</j:jelly>

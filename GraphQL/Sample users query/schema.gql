@@ -1,0 +1,23 @@
+schema {
+    query: Query
+}
+
+type Query {
+   getUser(id: ID!): User
+}
+
+type User {
+	id: ID @source(value: "sys_id")
+	name: String @source(value: "userName")
+	roles: [Role]
+	groups: [Group]
+}
+
+type Role {
+	name: String
+}
+
+type Group {
+	name: String
+	manager: String
+}

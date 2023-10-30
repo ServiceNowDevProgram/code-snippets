@@ -1,0 +1,1 @@
+Accepts a string and removes unnecessary spaces!

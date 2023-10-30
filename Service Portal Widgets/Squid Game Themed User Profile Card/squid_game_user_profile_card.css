@@ -1,0 +1,190 @@
+
+ .card1 {
+  background-color: transparent;
+  width: 300px;
+  height: 300px;
+  perspective: 1000px;
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.card1:hover .card {
+  transform: rotateY(180deg);
+}
+
+.front, .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.front {
+ 
+}
+
+.back {
+ 
+  transform: rotateY(180deg);
+}
+ 	
+
+* {
+	 margin: 0;
+	 padding: 0;
+	 box-sizing: border-box;
+}
+ body {
+	 display: flex;
+	 justify-content: center;
+	 align-items: center;
+	 font-family: "montserrat", san-serif;
+	 height: 100vh;
+}
+ .card {
+	 display: flex;
+	 justify-content: center;
+	 align-items: center;
+	 width: 400px;
+	 height: 250px;
+	 background-image: url(squid_game_card.png);
+	 background-color: #b29967;
+	 cursor: pointer;
+	 transform-style: preserve-3d;
+	 transition: all 0.5s ease;
+	 position: relative;
+}
+ .card .front {
+	 display: flex;
+	 justify-content: center;
+	 align-items: center;
+	 position: absolute;
+	 backface-visibility: hidden;
+}
+ .card .front .circle {
+	 width: 70px;
+	 height: 70px;
+	 border: 7px solid #000;
+	 border-radius: 50%;
+	 margin-right: 0.5em;
+}
+ .card .front .triangle {
+	 position: relative;
+	 border-left: 45px solid transparent;
+	 border-right: 45px solid transparent;
+	 border-bottom: 70px solid #000;
+}
+ .card .front .triangle:before {
+	 width: 68px;
+	 height: 55px;
+	 content: " ";
+	 background: url(squid_game_card.png) center center;
+	 clip-path: polygon(50% 5%, 0% 100%, 100% 100%);
+	 position: absolute;
+	 top: 10px;
+	 left: -34px;
+}
+ .card .front .square {
+	 width: 70px;
+	 height: 70px;
+	 border: 7px solid #000;
+	 margin-left: 0.5em;
+}
+ .back {
+	 display: flex;
+	 justify-content: center;
+	 align-items: center;
+	 transform: rotateY(180deg);
+}
+ .back .icon {
+	 width: 50px;
+	 height: 50px;
+	 background-color: #485461;
+	 background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
+	 border-radius: 50%;
+	 margin-right: 1em;
+}
+ .back p {
+	 font-weight: 400;
+	 letter-spacing: 1px;
+}
+ .flip-card {
+	 transform: rotateY(180deg);
+}
+ 
+
+
+
+
+
+
+
+.list-group-item {
+  border: none;
+  padding: 5px 15px;
+
+  .btn-link {
+  	padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.user-name {
+  word-break: break-word;
+}
+
+.select2-container.select2-allowclear .select2-choice .select2-chosen {
+  margin-right: 60px;
+}
+
+.mia i {
+  font-size: 6rem;
+}
+
+.mia {
+  color: #808080;
+}
+
+.popover {
+  z-index: 1049;
+}
+
+.user-profile-container {
+  width: 100%;
+  max-width: 755px;
+  margin: 0 auto;
+  padding: 0 8px;
+}
+.input-switch input[type=checkbox]:checked ~ .switch {
+	background-color: $brand-primary;
+}
+
+// accessible accessibility toggle
+@media screen and (-ms-high-contrast: active) {
+  .input-switch input.ng-not-empty+label.switch[for="accessibility-enabled"] {
+    background-color: highlight;
+    border: none;
+
+    &:before {
+      background-color: highlightText;
+    }
+  }
+
+  .input-switch input.ng-empty+label[for="accessibility-enabled"] {
+    background-color: window;
+    border: 1px solid windowText;
+
+    &:before {
+      background-color: windowText;
+    }
+  }
+}

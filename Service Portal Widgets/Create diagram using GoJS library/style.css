@@ -1,0 +1,11 @@
+#infobox {
+  width: 256px;
+  background: #757575;
+  color: #FFF;
+  padding: 20px;
+}
+
+#myDiagramDiv * {
+  outline: none;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0); /* mobile webkit */
+}

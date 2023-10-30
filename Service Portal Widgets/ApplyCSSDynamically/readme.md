@@ -1,0 +1,1 @@
+The widget demonstrates how CSS can be dynamically applied on the HTML attributes via client controller. Inorder to demonstrate, a color picker dropdown has been placed in the HTML. Upon selecting a color option, the corresponding CSS is applied on an HTML text to color it with the same.

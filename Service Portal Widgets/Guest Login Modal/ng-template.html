@@ -1,0 +1,121 @@
+<!-- Save this as an ng-template named "guest-login-content" and associate it to the widget -->
+
+<style lang="scss">
+  .modal-center-override {
+    top: 30% !important;
+    transform: translateY(-10%) !important;
+    -webkit-transform: translateY(-10%) !important;
+    -moz-transform: translateY(-10%) !important;
+    -o-transform: translateY(-10%) !important; 
+  }
+  
+  .modal-center-override:focus {
+    outline: none;
+    border: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+  }
+
+  .modal-content {
+    border-radius: 8px;
+  }
+
+  .modal-body-gradient {
+    background: linear-gradient(0deg, rgba(219,219,219,1) 0%, rgba(233,233,233,1) 24%, rgba(255,255,255,1) 100%);
+  }
+
+  .modal-header {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+  }
+
+  .modal-header-img {
+    max-width: 60%;
+    height: auto;
+  }
+
+  .modal-body {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+  }
+
+  .btn-login {
+    font-weight: 500;
+    font-size: 1.4em;
+    /* width: 60%; */
+  }
+
+  .btn-guest {
+    background-color: #d4d4d4 !important;
+    color: #252525 !important;
+    font-weight: 500;
+    font-size: 1.1em;
+    /* width: 40%; */
+  }
+
+  .help-text {
+    margin-top: 0.5rem;
+    color: #7c7c7c;
+    font-weight: 400;
+  }
+  
+  .login-section {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+  }
+
+  .guest-section {
+    margin-bottom: 5rem;
+  }
+
+@media (max-width: 688px) {
+  .login-section {
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+  }
+
+  .guest-section {
+    margin-bottom: 1rem;
+  }
+
+  .btn-login {
+    font-size: 1.0em;
+  }
+
+  .btn-guest {
+    font-size: 0.9em;
+  }
+
+  .help-text {
+    font-size: 0.8em;
+  }
+}  
+</style>
+
+<div class="modal-header bg-primary">
+  <div class="text-center">
+    <img class="modal-header-img" ng-src="{{c.options.header_image}}" />
+  </div>
+</div>
+<div class="modal-body modal-body-gradient text-center">
+  <div class="login-section">
+    <a class="button btn btn-lg btn-primary" href ng-click="openLogin()" role="button">
+      {{ c.options.login_button_text }}
+    </a>
+    <div class="help-text">
+      {{ c.options.login_button_help }}
+    </div>
+  </div>
+  <div class="guest-section">
+    <a class="button btn btn-guest" href ng-click="continueAsGuest()" role="button">
+      {{ c.options.guest_button_text }}
+    </a>
+    <div class="help-text">
+      {{ c.options.guest_button_help }}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+query {
+    app_namespace {
+        schema_namespace {
+            getGroups {
+                id
+                name
+                manager
+            }
+         }
+    }
+}
