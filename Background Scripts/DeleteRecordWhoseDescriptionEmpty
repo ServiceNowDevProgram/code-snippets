@@ -1,0 +1,9 @@
+
+    var gr = new GlideRecord('incident');
+    gr.addQuery('short_description', '');
+    gr.query();
+    while (gr.next()) {
+        gr.deleteRecord();
+        gs.log("Incident record deleted with empty short description. Sys ID: " + gr.getUniqueValue());
+    }
+
