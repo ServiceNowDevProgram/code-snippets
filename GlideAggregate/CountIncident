@@ -1,0 +1,18 @@
+(function() {
+    // Create a GlideAggregate object for the "incident" table
+    var ga = new GlideAggregate('incident');
+
+    // Add an aggregation to count the records
+    ga.addAggregate('COUNT', 'number');
+
+    // Execute the aggregation
+    ga.query();
+
+    // Get the count of incident records
+    if (ga.next()) {
+        var incidentCount = ga.getAggregate('COUNT', 'number');
+        gs.log("Number of Incident Records: " + incidentCount);
+    } else {
+        gs.log("No incident records found.");
+    }
+})();
