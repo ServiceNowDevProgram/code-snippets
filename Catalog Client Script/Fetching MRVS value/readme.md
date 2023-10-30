@@ -10,3 +10,5 @@ It returns the value of the specified field on the catalog item form when used i
 
 Use this method when an MRVS modal is open for editing or creating and you want to modify data within the MRVS based on the value of a field on the parent catalog item form. 
 **For example:** when you need to modify the contents of the cells within an MRVS based on a check box on the parent form. You can also use this method to access the data of other MRVS elements within the same parent form.
+
+* [Click here for script](pull_mrvs_variable_value.js)
