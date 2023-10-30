@@ -1,0 +1,10 @@
+(function executeRule(current, previous) {
+    // Add your business rule logic here
+    if (current.impact == 1 && current.urgency == 1) {
+        current.priority = 1; // High
+    } else if (current.impact == 2 && current.urgency == 2) {
+        current.priority = 2; // Medium
+    } else {
+        current.priority = 3; // Low
+    }
+})(current, previous);
