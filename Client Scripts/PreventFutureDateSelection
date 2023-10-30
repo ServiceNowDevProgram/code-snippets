@@ -1,0 +1,13 @@
+function onChange(control, oldValue, newValue, isLoading) {
+    if (isLoading || newValue == '') {
+        return;
+    }
+
+    var selectedDate = new GlideDate(newValue);
+    var currentDate = new GlideDate();
+
+    if (selectedDate > currentDate) {
+        g_form.clearValue('your_date_field'); // Replace 'your_date_field' with the actual field name
+        alert('Future dates are not allowed.');
+    }
+}
