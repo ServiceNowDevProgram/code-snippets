@@ -1,0 +1,16 @@
+var gr = new GlideRecord('incident');
+
+
+if (gr.isNewRecord()) {
+    gs.log("This is a new incident record.");
+} else {
+    gs.log("This is an existing incident record.");
+}
+gr.addQuery('active', true); 
+gr.query();
+
+while (gr.next()) {
+   
+    gs.log('Incident Number: ' + gr.number);
+    gs.log('Short Description: ' + gr.short_description);
+}
