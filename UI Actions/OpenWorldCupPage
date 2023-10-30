@@ -1,0 +1,11 @@
+(function executeUIAction(current, parent) {
+    var url = "https://www.cricketworldcup.com/";
+    var openInNewTab = true;
+
+    if (openInNewTab) {
+        var win = window.open(url, "_blank");
+        win.focus();
+    } else {
+        window.location.href = url;
+    }
+})(current, current)
