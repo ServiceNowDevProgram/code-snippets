@@ -1,0 +1,13 @@
+function onChange(control, oldValue, newValue, isLoading) {
+    if (isLoading || newValue == '') {
+        return;
+    }
+
+    var selectedDate = new GlideDate(newValue);
+    var currentDate = new GlideDate();
+
+    if (selectedDate > currentDate) {
+        g_form.clearValue('opened_at'); 
+        alert('Future dates are not allowed.');
+    }
+}
