@@ -1,0 +1,17 @@
+
+    var condition = "state=3"; 
+
+ 
+    var gr = new GlideRecord('incident'); 
+    gr.addEncodedQuery(condition);
+    gr.query();
+
+    
+    while (gr.next()) {
+        gr.state = 7;
+        gr.update();
+        gs.log("Updated incident: " + gr.number + " - State: Closed");
+    }
+
+  
+
