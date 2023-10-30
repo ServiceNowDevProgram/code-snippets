@@ -1,0 +1,11 @@
+var op = new GlideRecord('cmdb_ci_server');
+op.addEncodedQuery('nameSTARTSWITHIFNDMPRDWEB^u_cia_value=3^location=2b6ee90e1b77109020a10f26cc4bcb58');
+op.query();
+if(op.next()){
+    var c = new GlideRecord('u_infra_checklist');
+    c.addQuery('u_host_name',c.u_host_name)
+    c.query();
+    if(c.next()){
+        gs.log(c.u_patch_status);  //get value of patch status then put them into an array
+    }
+}
