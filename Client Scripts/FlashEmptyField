@@ -1,0 +1,15 @@
+function onLoad() {
+    // Get the field element
+    var field = g_form.getControl('short_description');
+    
+    // Check if the field is empty
+    if (g_form.getValue('short_description').trim() === '') {
+        // Apply CSS style to flash the field
+        field.style.backgroundColor = 'red';
+        
+        // Set a timeout to reset the background color after a few seconds
+        setTimeout(function() {
+            field.style.backgroundColor = '';
+        }, 2000); // Change '2000' to set the duration in milliseconds
+    }
+}
