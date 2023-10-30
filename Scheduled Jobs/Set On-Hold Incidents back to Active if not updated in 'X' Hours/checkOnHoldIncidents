@@ -1,0 +1,13 @@
+var holdIncs = new GlideRecord('incident');
+var incCount = 0;
+//Active Incidents, State = On Hold, On Hold = Waiting for Customer || Waiting for Vendor, Updated before 72 hours, Not KAR Integration User, and not assigned to Ebond Groups
+holdIncs.addEncodedQuery('active=true^state=3^hold_reasonIN1,4^caller_id!=7915890f874125509d1077b7cebb35be^assignment_group!=3e1771e9971da950a79270700153afa5^assignment_group!=347ab8b8876529109d1077b7cebb35eb^sys_updated_onRELATIVELT@hour@ago@72');
+holdIncs.query();
+while (holdIncs.next()) {
+    incCount++;
+    holdIncs.setValue('state', '2'); // Set State to "In Progress"
+    holdIncs.setValue('hold_reason', '');
+    holdIncs.update();
+
+}
+gs.info("The count for on hold incidents updated is: " + incCount);
