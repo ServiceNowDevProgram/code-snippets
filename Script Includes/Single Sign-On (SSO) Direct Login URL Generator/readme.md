@@ -45,7 +45,7 @@ userHelper.getUserById('1234567890'); //userHelper.getUserByEmail('<EMAIL>');
 // Generate a direct login URL for the user "admin".
 var loginUrl = userHelper.login();
 
-//loginUrl: https://dev178683.service-now.com/?glide_sso_id=<SSO_PROVIDER_SYS_ID>&SM_USER=admin&DE_USER=htrULTFZTOLl9PHEvNBejz65ghxp6dJgDazXXv9v/wY=
+//loginUrl: https://<instance>.service-now.com/?glide_sso_id=<SSO_PROVIDER_SYS_ID>&SM_USER=admin&DE_USER=htrULTFZTOLl9PHEvNBejz65ghxp6dJgDazXXv9v/wY=
 ```
 
 ## Security<a name="security"></a>
