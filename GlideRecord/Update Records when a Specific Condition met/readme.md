@@ -1,0 +1,1 @@
+This code helps in gliding the required table and querying the table records based on the given conditions and if the conditions are met, will update the record as required. This helps in bulk update of the records data at a time.
