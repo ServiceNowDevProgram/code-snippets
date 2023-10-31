@@ -29,7 +29,7 @@ This script include required Digest Token Authentication Integration below:
 
 To generate a direct login URL for a user, you can use the `login()` function provided by the UserHelper script include. This function takes the user's name or GlideRecord as input and returns a URL that the user can use to log in directly.
 
-The following example shows how to use the UserHelper script include to generate a direct login URL for a user and then open the URL in a new tab:
+The following example shows how to use the UserHelper script include to generate a direct login URL for a user:
 ```javascript
 // Generate a direct login URL for the user "admin".
 var userHelper = new UserHelper();
