@@ -9,10 +9,8 @@
 
     var dateDiff = new GlideDuration(dur);
 
-    gs.addInfoMessage("dateDifference : " + dateDiff);
-
     var d = dateDiff.getDayPart();
 
-    gs.addInfoMessage("d :" + d);
+    gs.addInfoMessage("Number of Days :" + d);
 
 })(current, previous);
