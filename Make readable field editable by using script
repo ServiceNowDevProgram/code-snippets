@@ -1,0 +1,7 @@
+var gr = new GlideRecord('kb_knowledge');
+gr.addEncodedQuery('numberSTARTSWITHKB0043839');//Suppose is the KB article number, I want to update it's parent field. which is readable
+gr.query();
+if(gr.next()){
+gr.parent = '32ed3ec5db61c8534a824531ba9619eb';//This is the 32 digits sys_id of the Knowledge article which I want to update in parent field.
+gr.update();
+}
