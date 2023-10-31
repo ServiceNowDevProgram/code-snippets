@@ -15,8 +15,8 @@ This script include required Digest Token Authentication Integration below:
 
 #### Prerequisites
 
-* Multi-Provider SSO plugin is activated [documentation](https://docs.servicenow.com/bundle/vancouver-platform-security/page/integrate/single-sign-on/task/t_ActivateMultipleProviderSSO.html){:target="_blank"}
-* Multi-Provider SSO properties are configured [documentation](https://docs.servicenow.com/bundle/vancouver-platform-security/page/integrate/single-sign-on/task/t_ConfigureMultiProviderSSOProps.html){:target="_blank"}
+* Multi-Provider SSO plugin is activated [documentation](https://docs.servicenow.com/bundle/vancouver-platform-security/page/integrate/single-sign-on/task/t_ActivateMultipleProviderSSO.html)
+* Multi-Provider SSO properties are configured [documentation](https://docs.servicenow.com/bundle/vancouver-platform-security/page/integrate/single-sign-on/task/t_ConfigureMultiProviderSSOProps.html)
 
 #### Steps
 
