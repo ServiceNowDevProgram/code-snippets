@@ -1,4 +1,4 @@
-/*****************************************************************************************/
+/*
 INPUT:
 tableName - Name of table whose records need to be exported
 recordId - sys_id of the record where the exported attachment should be uploaded
@@ -10,12 +10,17 @@ fileName - Name of exported file along with its extension eg fileName.csv, fileN
 OUTPUT:
 status - HTTP status of export
 200 = Successfully exported
+
+Access - The user should have required access/roles to read the exported tables, and write to the record where the file will be attached
+
+Authentication option #1 - preferred
+Create a Basic Auth credential record and insert the sys_id of the Credential record in the script below
   
-Note: Create 2 system properties to store the user_name and password of a web service access user
+Authentication option #2 - less secure
+Create 2 system properties to store the user_name and password of a web service access user
 pdf.export.user.id - user_name of the web service only access user
 pdf.export.user.password - password of the user
-The user should have required access to read the exported tables
-/*****************************************************************************************/
+*/
 
 function exportRecords(tableName, recordId, recordQuery, recordView, dataType, fileName) {
     var response;
@@ -31,7 +36,16 @@ function exportRecords(tableName, recordId, recordQuery, recordView, dataType, f
             url = gs.getProperty('glide.servlet.uri') + tableName + '.do?'+ dataType + '&sysparm_query=' + recordQuery + '&sysparm_view='+recordView;
         }
         restMessage.setEndpoint(url);
-        restMessage.setBasicAuth(gs.getProperty('pdf.export.user.id'), gs.getProperty('pdf.export.user.password'));
+  
+        //Authentication option #1 - preferred
+        var credentialID = "ef43c6d40a0a0b5700c77f9bf387afe3"; //SYSID of the Credential record, REPLACE VALUE FROM YOUR INSTANCE
+        var provider = new sn_cc.StandardCredentialsProvider();
+        var credential = provider.getCredentialByID(credentialID);
+        restMessage.setBasicAuth(credential.getAttribute("user_name"), credential.getAttribute("password"));
+        
+        //Authentication option #2 - less secure
+        //restMessage.setBasicAuth(gs.getProperty('pdf.export.user.id'), gs.getProperty('pdf.export.user.password'));
+        
         restMessage.saveResponseBodyAsAttachment(tableName, recordId, fileName);
         response = restMessage.execute();
         status = response.getStatusCode();
