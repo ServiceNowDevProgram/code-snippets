@@ -43,7 +43,7 @@ UserHelper.prototype = {
         var token = SncAuthentication.encode(this.userGR.getValue('user_name'), this.SECRET_KEY, this.MAC_ALG);
 
         //formating url
-        var url = gs.getProperty('glide.servlet.uri') + '?glide_sso_id=' + this.GLIDE_SSO_ID + '&SM_USER=' + user_name + '&DE_USER=' + token;
+        var url = gs.getProperty('glide.servlet.uri') + '?glide_sso_id=' + this.GLIDE_SSO_ID + '&SM_USER=' + this.userGR.getValue('user_name') + '&DE_USER=' + token;
 
         return url;
     },
