@@ -3,7 +3,10 @@ var inc = new GlideRecord('incident');
 inc.addEncodedQuery('parent_incident='+parentID); // sys_id of parent Incident
 inc.query();
 
+if(inc.next()){
 gs.info('List of Child Incidents of:'+inc.getDisplayValue('parent_incident'));
+gs.info(inc.getValue('number'));
+}
 
 while(inc.next())
 {
