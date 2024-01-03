@@ -32,6 +32,8 @@ upgradeUtil.prototype = {
 			var versionStr = appsGr.getValue('version');
 			var assignedVersionStr = appsGr.getValue('assigned_version');
 			var latestVersionStr = appsGr.getValue('latest_version');
+			// Check if Latest Version field is populated, break the current loop if so as update cannot be checked
+			if (!latestVersionStr) break;
 			// Convert the strings to arrays of integers
 			var versionArr = versionStr.split('.').map(Number);
 			var assignedVersionArr = assignedVersionStr.split('.').map(Number);
