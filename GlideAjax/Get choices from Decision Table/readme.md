@@ -13,3 +13,7 @@
 * `var resultColumn = 'u_choice_result';` Set this to the technical name of the result column that contains your choices
 
 ## Variables in the client script
+> [!IMPORTANT]
+> Remember to define the target field (the one you want to add the choices to) in row 3: `var targetChoiceField = 'choice_field';`
+
+If you want send values from other variables for your decision table to consider, add them as additional parameters, in line with what you have defined in the Script include, for instance: `dtChoiceAjax.addParam('sysparm_cat_variable', g_form.getValue('some_variable'));`
