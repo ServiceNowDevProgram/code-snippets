@@ -2,6 +2,7 @@
 ## Decision table
 > [!IMPORTANT]
 > Create a Decision table with a result column of type '**Choice**', and at least one, **mandatory input** that is a reference to sc_cat_item.
+
 You will have to define the decisions for each catalog item separately, and obviously one catalog item can have multiple results - this is how you will get multiple choices for your selectbox variabke at the end.
 If you have other inputs, i.e. for different values of different variables, you simple add those conditions for each decision line for the related catalog item.
 > [!NOTE]
