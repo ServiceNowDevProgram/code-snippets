@@ -6,8 +6,8 @@ GetChoicesFromDT.prototype = Object.extendsObject(global.AbstractAjaxProcessor, 
          * In this example, catIem and decisionTableId variables must be defined,
          * while catVar represents and optional parameter, in case you have multiple inputs to consider in your Decition Table.
          * 
-         * dtInput1, 2, etc. must be set to technical name of the Decision Table inputs.
-		 * resultColumn must be set to the technical name of the result column that has the choices set.
+         * dtInput1, 2, etc. must be set to technical names of the Decision Table inputs.
+	 * resultColumn must be set to the technical name of the result column that has the choices set.
          */
 
         var catItem = gs.nil(this.getParameter('sysparm_cat_item')) ? null : this.getParameter('sysparm_cat_item'); // Mandatory parameter
@@ -36,7 +36,7 @@ GetChoicesFromDT.prototype = Object.extendsObject(global.AbstractAjaxProcessor, 
                 answerArray.push(dtResponse[iter1]['result_elements'][resultColumn].toString());
                 iter1++;
             }
-			// Now find the the actual choices with labels
+	   // Now find the the actual choices with labels
             var choiceGr = new GlideRecord('sys_choice');
             choiceGr.addQuery('name', choiceQuery);
             choiceGr.addQuery('value', 'IN', answerArray.toString());
