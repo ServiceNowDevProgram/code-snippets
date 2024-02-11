@@ -9,7 +9,6 @@ function onLoad() {
     dtChoiceAjax.addParam('sysparm_cat_item', catItem);
     /*
      * Add an other option parameter, e.g.:
-     * 
      * dtChoiceAjax.addParam('sysparm_cat_variable', g_form.getValue('some_variable'));
      */
     dtChoiceAjax.getXMLAnswer(setChoices);
