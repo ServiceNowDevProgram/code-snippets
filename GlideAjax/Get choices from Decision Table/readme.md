@@ -23,4 +23,4 @@ If you have other inputs, i.e. for different values of different variables, you 
 If you want send values from other variables for your decision table to consider, add them as additional parameters, in line with what you have defined in the Script include, for instance: `dtChoiceAjax.addParam('sysparm_cat_variable', g_form.getValue('some_variable'));`
 
 # Usage
-Use the provided Script Include and Client Script, and update them as mentioned in the Prerequisites section. The example client script is **onLoad**, but if you are looking to use variable values as additional inputs, you will want to have it run as an **onChange** script instead, or as a scripted UI Policy - it should work the same way.
+Use the provided Script Include and Client Script, and update them as mentioned in the [Prerequisites](#prerequisites) section. The example client script is **onLoad**, but if you are looking to use variable values as additional inputs, you will want to have it run as an **onChange** script instead, or as a scripted UI Policy - it should work the same way.
