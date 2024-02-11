@@ -1,4 +1,15 @@
+# Prerequisites
+## Decision table
 > [!IMPORTANT]
 > Create a Decision table with a result column of type '**Choice**'!
 > If you created the choices inside the Decision Table, make sure the values are noo long. They end up getting truncated in the sys_decision_answer table, and sebsequently the values stored in sys_choice will not much. So if necessary, change the default value to something short and unique, or use an existing choice list from sys_choice.
 
+## Variables in the Script Include
+> [!IMPORTANT]
+> Make sure the following variables have a valid value in your script include (rows 15-18)!
+* `var decisionTableId = '';`  The Sys ID of the decision table. Store in a system property and set with gs.getProperty().
+* `var dtInput1 = 'u_catalog_item';`  Make sure you set this to the technical name of the first input of your Decision Table. It will always start with u_. If unsure, check the **sys_decision_input** table.
+* `var dtInput2 = 'u_catalog_variable';` Make sure you set this to the technical name of the second input of your Decision Table, if you have one. Multiply as needed (if you have more inuts), or remove / comment out if not.
+* `var resultColumn = 'u_choice_result';` Set this to the technical name of the result column that contains your choices
+
+## Variables in the client script
