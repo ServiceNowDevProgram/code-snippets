@@ -2,17 +2,6 @@ var GetChoicesFromDT = Class.create();
 GetChoicesFromDT.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
 
     getChoices: function() {
-/**
-* Installs a list of plugins and applications.
-*
-* @author Maik Skoddow
-* @param {Array} arrToBeInstalled
-*    List of plugin IDs or application scope to be installed
-* @param {Boolean} dryRun
-*    If `true` only output is given but no installations are performed
-* @param {Boolean} loadDemoData
-*    If `false` demo data is not installed
-*/
 	    
          /**
 	 * Gets the defined choices for the passed in catalog item
