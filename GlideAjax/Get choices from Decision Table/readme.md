@@ -10,7 +10,7 @@ If you have other inputs, i.e. for different values from different variables, yo
 
 ## Variables in the Script Include
 > [!IMPORTANT]
-> Make sure the following variables have a valid value in your script include (rows 15-18)!
+> Make sure the following variables have a valid value in your script include:
 * `var decisionTableId = '';`  The Sys ID of the decision table. Store in a system property and set with gs.getProperty().
 * `var dtInput1 = 'u_catalog_item';`  Make sure you set this to the technical name of the first input of your Decision Table. It will always start with u_. If unsure, check the **sys_decision_input** table.
 * `var dtInput2 = 'u_catalog_variable';` Make sure you set this to the technical name of the second input of your Decision Table, if you have one. Multiply as needed (if you have more inuts), or remove / comment out if not.
