@@ -3,10 +3,10 @@
 > [!IMPORTANT]
 > Create a Decision table with a result column of type '**Choice**', and at least one, **mandatory input** that is a reference to sc_cat_item.
 
-You will have to define the decisions for each catalog item separately, and obviously one catalog item can have multiple results - this is how you will get multiple choices for your selectbox variabke at the end.
-If you have other inputs, i.e. for different values of different variables, you simple add those conditions for each decision line for the related catalog item.
+You will have to define the decisions for each catalog item separately. One catalog item can have multiple results - this is how you will get multiple choices for your selectbox variable at the end.
+If you have other inputs, i.e. for different values from different variables, you simple add those conditions for each decision line for the related catalog item.
 > [!NOTE]
-> If you created the choices inside the Decision Table, make sure the values are not too long. They end up getting truncated in the sys_decision_answer table, and sebsequently the values stored in sys_choice will not match. So if necessary, change the default value to something short and unique (or use an existing choice list if you can).
+> If you created the choices inside the Decision Table, make sure the values are not too long. They end up getting truncated in the sys_decision_answer table, and sebsequently the values stored in sys_choice will not match. If necessary, change the default value to something short and unique (or use an existing choice list if you can).
 
 ## Variables in the Script Include
 > [!IMPORTANT]
