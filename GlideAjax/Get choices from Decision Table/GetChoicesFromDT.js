@@ -2,12 +2,37 @@ var GetChoicesFromDT = Class.create();
 GetChoicesFromDT.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
 
     getChoices: function() {
-        /*
-         * In this example, catIem and decisionTableId variables must be defined,
-         * while catVar represents and optional parameter, in case you have multiple inputs to consider in your Decition Table.
-         * 
-         * dtInput1, 2, etc. must be set to technical names of the Decision Table inputs.
-	 * resultColumn must be set to the technical name of the result column that has the choices set.
+/**
+* Installs a list of plugins and applications.
+*
+* @author Maik Skoddow
+* @param {Array} arrToBeInstalled
+*    List of plugin IDs or application scope to be installed
+* @param {Boolean} dryRun
+*    If `true` only output is given but no installations are performed
+* @param {Boolean} loadDemoData
+*    If `false` demo data is not installed
+*/
+	    
+         /**
+	 * Gets the defined choices for the passed in catalog item
+  	 * 
+    	 * @author Laszlo Balla
+	 * @param {String} sysparm_cat_item
+  	 *    The sys_id of the catalog item to get choices for - mandatory
+    	 * @param {String} sysparm_cat_variable
+      	 *    Value from an additional catalog variable to evaluate as part of your decision - optional
+	 * @return {String}
+  	 *    A stringified array (since it goes to client script) of choices
+  	 */
+	
+	
+	 /**
+         * In addition to the above, the following variable MUST be set for the script to work:
+	 *
+	 ** decisionTableId : Sys ID of the decision table. Store in a system property and set with gs.getProperty()
+         ** dtInput1, 2, etc. :  the technical names of the Decision Table inputs
+	 ** resultColumn : the technical name of the result column of your Decision Table that has the choices set
          */
 
         var catItem = gs.nil(this.getParameter('sysparm_cat_item')) ? null : this.getParameter('sysparm_cat_item'); // Mandatory parameter
