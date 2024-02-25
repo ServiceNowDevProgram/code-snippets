@@ -38,11 +38,11 @@ GetChoicesFromDT.prototype = Object.extendsObject(global.AbstractAjaxProcessor, 
             var choiceQuery = 'var__m_sys_decision_multi_result_element_' + decisionTableId;
             var decisonTable = new sn_dt.DecisionTableAPI();
             var inputs = new Object();
-            inputs[dtInput1] = catItem;
+            inputs[dtInput1] = '' + catItem;
 
             // Repeat this block as necessary with additional parameters and inputs
             if (!gs.nil(catVar)) {
-                inputs[dtInput2] = catVar;
+                inputs[dtInput2] = '' + catVar;
             }
 
             var dtResponse = decisonTable.getDecisions(decisionTableId, inputs);
