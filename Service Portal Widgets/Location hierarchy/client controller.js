@@ -1,6 +1,5 @@
 api.controller=function($scope, spModal) {
-  /* widget controller */
-  var c = this;
+  	var c = this;
 	c.newLocations = [];
 	
 	c.server.get({
