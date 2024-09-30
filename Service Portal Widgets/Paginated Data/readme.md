@@ -4,7 +4,7 @@ Nuanced pagination functionality:
 
 paging up displays more numbered pages
 
-<img width="311" alt="image" src="https://github.com/user-attachments/assets/53042d25-7b6a-4226-a6d0-ca8a6ffc64e1">
+<img width="341" alt="image" src="https://github.com/user-attachments/assets/5864449f-dc17-476a-a47d-33e977263fb2">
 
 and then shows an ... when the gaps become too large on each other side
 
