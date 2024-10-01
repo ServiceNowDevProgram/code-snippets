@@ -7,4 +7,5 @@ function onLoad() {
        g_form.hideRelatedList('put your related list name here');
     }
 
+    
  } 

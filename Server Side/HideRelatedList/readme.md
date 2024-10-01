@@ -12,6 +12,7 @@ The action plan
 
 1) Every record has a field called sys_created_by;
 2) On the front-end (client side) we have access to an API called Glide User that has some information about the logged in user. Among them is the name in the userName property.
+
 What if we create a Client Script of type onLoad* that compares these two fields and, if they are the same, simply hides the Approvers related list?
 To see the related list name created for your table, you can access the platform and go to System UI > Related lists.
 
