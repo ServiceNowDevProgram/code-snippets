@@ -1,0 +1,6 @@
+UI Action - Send Notification to assigned user
+
+This UI Action adds a button that, when clicked, sends an email to the assigned user.
+This is Server side script and creates a record in the table 'sys_email' with Email Body, Email Subject and Email Recipients.
+
+When clicked on the form button, it will send notification to the assigned to user.
