@@ -4,4 +4,5 @@ function onLoad() {
     if (createdBy == loggedUser) {
        g_form.hideRelatedList('put your related list name here');
     }
+    
  } 

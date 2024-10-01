@@ -8,6 +8,7 @@ Leaving this question of personas aside and focusing on the problem, what would 
 The first workaround that came to my mind was to hide the Approval list if the user who registered was viewing his own record.
 A workaround is not the ultimate solution. Just a palliative fix while we find time to think about the ideal one.
 
+
 # The action plan
 
 1) Every record has a field called sys_created_by;
