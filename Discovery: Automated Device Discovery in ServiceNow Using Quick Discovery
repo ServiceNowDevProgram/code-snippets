@@ -1,0 +1,20 @@
+The JavaScript code is part of a ServiceNow workflow that helps find a device on the network using a specific IP address. It starts by defining two MID (Management, Instrumentation, and Discovery) servers and retrieves the target IP address from the current workflow. The code creates a Discovery object to handle the discovery process. First, it tries to find the device using the first MID server and saves the result. If that doesn’t work (if the result is null), it logs a message and tries again with the second MID server. Finally, it logs the discovery result and the IP address, updating the current context with the discovery status. This method increases the chances of successfully finding the device by trying two different servers.
+
+var midServer1 = 'SNOWMIDPRD01'; // Rename/input your MID server as per your organization
+var midServer2 = 'SNOWMIDPRD02'; // Rename/input your second MID server accordingly
+var ipAddressScan = current.variables.ip_address; // IP address to scan
+var discovery = new Discovery(); // Create a new Discovery object
+
+// Attempt discovery using the first MID Server
+workflow.scratchpad.statusID = discovery.discoveryFromIP(ipAddressScan, midServer1);
+
+// If the first attempt was unsuccessful, try the second MID Server
+if (workflow.scratchpad.statusID == null) {
+    gs.info('Discovery using ' + midServer1 + ' failed. Trying ' + midServer2);
+    workflow.scratchpad.statusID = discovery.discoveryFromIP(ipAddressScan, midServer2);
+}
+
+// Log the results
+gs.log('DiscoveryStatusId: ' + workflow.scratchpad.statusID);
+gs.log('QuickDiscoveryIPAddress: ' + ipAddressScan);
+current.variables.discovery_status = workflow.scratchpad.statusID;
