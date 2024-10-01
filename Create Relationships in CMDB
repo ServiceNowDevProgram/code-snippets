@@ -1,0 +1,32 @@
+createCIRel();
+
+function createCIRel() {
+
+var gr1 = new GlideRecord("cmdb_ci_business_app"); gr1.addQuery("install_status', '1');
+
+gr1.addQuery("x_dtc_msp_bubble', '165e31ae83210210826e31b6feaad37d'); gri.query();
+
+while (gri.next()) {
+
+var gr2 new GlideRecord("cmdb_ci_service_auto");
+
+gr2.addQuery("name", gr1.name.toString());
+
+gr2.addQuery("x_dtc_msp_bubble', '165e31ae83210210826e31b6feaad37d")
+
+gr2.query(); if (gr2.next()) {
+
+//var owner
+
+var gr3 new GlideRecord("cmdb_rel_ci");
+
+gr3.initialize();
+
+gr3.setValue('parent', grl.getValue('sys_id'));
+
+gr3.setValue('child', gr2.getValue('sys_id')); gr3.setDisplayValue('type', 'Consumes:: Consumed by');
+
+gr3.insert();
+}
+}
+}
