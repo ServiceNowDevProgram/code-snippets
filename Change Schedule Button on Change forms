@@ -1,0 +1,57 @@
+//UI Action script that opens a modal dialog to update the Planning Start Date and Planning End Date on a Change Request form. The script opens a modal window, allowing the Change Admin to update the fields. Sharing use a UI Action with a simple UI Modal setup.
+//UI Action condition gs.hasRole('change_admin')
+function showModal() {
+    // Define modal properties
+    var dialog = new GlideModal('glide-modal-dialog');
+    dialog.setTitle('Change Schedule');
+    
+    // Add form to modal content
+    var modalContent = `
+        <form id="change_schedule_form">
+            <div>
+                <label for="start_date">New Planning Start Date:</label>
+                <input type="date" id="start_date" name="start_date" value="${g_form.getValue('planned_start_date')}">
+            </div>
+            <br>
+            <div>
+                <label for="end_date">New Planning End Date:</label>
+                <input type="date" id="end_date" name="end_date" value="${g_form.getValue('planned_end_date')}">
+            </div>
+        </form>
+    `;
+    dialog.setBody(modalContent, false, false);
+    
+    // Add Save and Cancel buttons
+    dialog.addFooterButton('Save', 'saveSchedule()', 'btn-primary');
+    dialog.addFooterButton('Cancel', 'closeModal()', 'btn-default');
+
+    dialog.render();
+}
+
+function saveSchedule() {
+    var startDate = document.getElementById('start_date').value;
+    var endDate = document.getElementById('end_date').value;
+
+    // Check if both dates are provided
+    if (!startDate || !endDate) {
+        alert('Please provide both Planning Start and End dates.');
+        return;
+    }
+
+    // Update the fields in the form
+    g_form.setValue('planned_start_date', startDate);
+    g_form.setValue('planned_end_date', endDate);
+
+    // Optionally, save the form
+    g_form.save();
+
+    // Close the modal
+    closeModal();
+}
+
+function closeModal() {
+    GlideModal.close('glide-modal-dialog');
+}
+
+// Invoke the showModal function to display the modal
+showModal();
