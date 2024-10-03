@@ -9,4 +9,4 @@ The OnClick function opens a confirmation window to protect against misclicks.
 
 Setting up the UI Action:
 
-![alt text](https://github.com/ezratkim/code-snippets/UI%20Actions/Convert%20Request%20to%20Incident/UIActionScreenshot.png)
+![alt text](https://github.com/ezratkim/code-snippets/blob/main/UI%20Actions/Convert%20Request%20to%20Incident/UIActionScreenshot.png)
