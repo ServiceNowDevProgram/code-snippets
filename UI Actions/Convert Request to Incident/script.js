@@ -1,3 +1,15 @@
+//Prompts confirmation window on click
+function ReqWarning() {
+    var answer = confirm("Please confirm Request to Incident Action. \n This will set the current Request to 'Closed Skipped' and create a new Incident.");
+
+    if (answer == false) {
+        return false;
+    }
+
+    gsftSubmit(null, g_form.getFormElement(), 'create_inc_cancel_req');
+
+}
+
 // Ensure this runs on the server side
 if (typeof current != 'undefined') {
     // Create a new incident record
