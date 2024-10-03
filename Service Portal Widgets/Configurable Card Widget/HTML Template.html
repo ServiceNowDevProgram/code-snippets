@@ -1,0 +1,15 @@
+<div class="card" ng-style="{'background': c.options.background_color}">
+  <span ng-if="::c.options.feature" class="tag" ng-style="{'background-color': c.options.feature_color}" ng-class="{'position-absolute': c.options.background_image && c.options.background_image != ''}">{{::c.options.feature}}</span>
+  <div ng-if="::c.options.background_image" class="bg" ng-style="{'background-image': c.image}"></div>
+  <h2 class="heading">
+   {{c.options.heading}}
+  </h2>
+  <p class="description">
+    {{c.options.description}}
+  </p>
+  <div>
+    <a ng-href="{{c.options.redirect_url}}" class="button" ng-style="{'border-color': c.options.feature_color, 'background-color': c.options.feature_color}">
+      Learn More &nbsp;&nbsp;<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+    </a>
+  </div>
+</div>
