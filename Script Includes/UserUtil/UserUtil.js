@@ -1,6 +1,6 @@
 var userUtil = Class.create();
 userUtil.prototype = {
-  initialize: function () {},
+  initialize: function () { },
 
   //main use of this was to filter a list of assets assigned to the members of a specific group.
 
@@ -51,6 +51,45 @@ userUtil.prototype = {
     }
 
     return list;
+  },
+
+  getCompanyUsers: function (companyId, roleName) {
+
+    var userGR = new GlideRecord('sys_user');
+    userGR.addQuery('company', companyId);
+    userGR.addQuery('roles', 'snc_external');
+    userGR.addQuery('roles', roleName);
+    userGR.query();
+    var users = [];
+    while (userGR.next()) {
+      var user = {};
+      user.email = userGR.email.toString();
+      user.firstName = userGR.first_name.toString();
+      user.lastName = userGR.last_name.toString();
+      user.roleName = roleName;
+      users.push(user);
+    }
+
+    return users;
+  },
+
+  emailValidation: function () {
+    //sysparam_catalog_req_email
+    var catalogReqEmail = this.getParameter('sysparam_email');
+    var userGR = new GlideRecord('sys_user');
+    userGR.addQuery('email', catalogReqEmail);
+    userGR.queryNoDomain();
+
+    var user = {};
+
+    if (userGR.next()) {
+      user.email = userGR.email.toString();
+      user.firstName = userGR.first_name.toString();
+      user.lastName = userGR.last_name.toString();
+    }
+
+    gs.log("Users - " + JSON.stringify(user));
+    return JSON.stringify(user);
   },
 
   type: "userUtil",
