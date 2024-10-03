@@ -8,6 +8,6 @@ In this simplified example, I have a Manager (v_manager) reference variable (sys
 
 2) Use the included onLoad Catalog Client Script that applies to the Variable set, or you can also use this onChange of the Catalog Item variable in a script that applies to the Catalog Item.
 
-3) Add the included Client callable Script Include for the Catalog Client Script to call via GlideAjax.
+3) Add the included Client callable Script Include for the Catalog Client Script to call via GlideAjax.  This Script Include uses parameters for the System Property Name and Value, so it can be re-used in every instance of this solution.
 
 This solution works in both the Native UI and Service Portal.  The script contains an alternate Service Portal only approach in the commented if block that can be used in conjunction with the native UI approach in the else block.  This alternate Service Portal solution was developed in collaboration with Chris Perry.
