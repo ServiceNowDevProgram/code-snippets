@@ -1,32 +1,33 @@
 (function() {
-  
-    // Using GlideAggregate for active incidents
+    var userId = gs.getUserID(); 
+
+    // Using GlideAggregate for active incidents assigned to the user
     var incidentAgg = new GlideAggregate('incident');
-    incidentAgg.addQuery('state', '!=', 'Closed');
+    incidentAgg.addEncodedQuery('state!=closed^assigned_to='+userId); 
     incidentAgg.addAggregate('COUNT');
     incidentAgg.query();
     incidentAgg.next();
     data.activeIncidents = incidentAgg.getAggregate('COUNT');
 
-    // Using GlideAggregate for active changes
+    // Using GlideAggregate for active changes assigned to the user
     var changeAgg = new GlideAggregate('change_request');
-    changeAgg.addQuery('state', '!=', 'Closed');
+    changeAgg.addEncodedQuery('state!=closed^assigned_to='+userId); ;
     changeAgg.addAggregate('COUNT');
     changeAgg.query();
     changeAgg.next();
     data.activeChanges = changeAgg.getAggregate('COUNT');
 
-    // Using GlideAggregate for active problems
+    // Using GlideAggregate for active problems assigned to the user
     var problemAgg = new GlideAggregate('problem');
-    problemAgg.addQuery('state', '!=', 'Closed');
+    problemAgg.addEncodedQuery('state!=closed^assigned_to='+userId); 
     problemAgg.addAggregate('COUNT');
     problemAgg.query();
     problemAgg.next();
     data.activeProblems = problemAgg.getAggregate('COUNT');
 
-    // Using GlideAggregate for active catalog tasks
+    // Using GlideAggregate for active catalog tasks assigned to the user
     var catalogTaskAgg = new GlideAggregate('sc_task');
-    catalogTaskAgg.addQuery('state', '!=', 'Closed');
+    catalogTaskAgg.addEncodedQuery('state!=closed^assigned_to='+userId); 
     catalogTaskAgg.addAggregate('COUNT');
     catalogTaskAgg.query();
     catalogTaskAgg.next();
