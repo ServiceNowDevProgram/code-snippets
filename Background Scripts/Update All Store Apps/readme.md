@@ -41,7 +41,7 @@ Select one of the options below to run.
 
 ## OPTION 1: Find out how many apps are available to upgrade
 
-1. ***Paste this line at the bottom of the script.***
+1. ***Replace the last line by pasting this line at the bottom of the script.***
 
     ```javascript
     new upgradeUtil().countUpgrades();
