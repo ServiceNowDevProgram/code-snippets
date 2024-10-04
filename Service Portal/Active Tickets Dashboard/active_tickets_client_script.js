@@ -6,23 +6,25 @@
     c.activeProblems = 0;
     c.activeCatalogTasks = 0;
 
+    var userId = c.userId; 
+
     c.openIncidents = function() {
-        var url = '/incident_list.do'; // URL to navigate to the active incidents list
+        var url = '/incident_list.do?sysparm_query=active=true^assigned_to=' + userId + '^state!=Resolved^state!=Closed'; 
         window.location.href = url; 
     };
 
     c.openChanges = function() {
-        var url = '/change_request_list.do'; // URL to navigate to the active changes list
+        var url = '/change_request_list.do?sysparm_query=active=true^assigned_to=' + userId + '^state!=Closed'; 
         window.location.href = url; 
     };
 
     c.openProblems = function() {
-        var url = '/problem_list.do'; // URL to navigate to the active problems list
+        var url = '/problem_list.do?sysparm_query=active=true^assigned_to=' + userId + '^state!=Closed'; 
         window.location.href = url; 
     };
 
     c.openCatalogTasks = function() {
-        var url = '/sc_task_list.do'; // URL to navigate to the active catalog tasks list
+        var url = '/sc_task_list.do?sysparm_query=active=true^assigned_to=' + userId + '^state!=Closed'; 
         window.location.href = url; 
     };
 })();
