@@ -7,4 +7,4 @@ This code provides a Jelly script UI Macros to display an on-call schedule butto
 - Uses GlideRecord to check for active on-call rotations.
 - Constructs a URL with proper encoding to navigate to the on-call workbench.
 
-I have used this code in the Incident Table 
+I have used this code on the Incident Table 
