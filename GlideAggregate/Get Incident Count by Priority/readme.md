@@ -1,0 +1,1 @@
+Many of times, you are being asked to report the total count of incidents grouped by Incident priority. This code  will be helpful to get that information. The code could be further enhanced or modified to get more detailed requirements like getting the latest incident being raised within the respective priority.
