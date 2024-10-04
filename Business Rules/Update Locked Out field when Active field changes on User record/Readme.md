@@ -1,5 +1,5 @@
 # Use Case <br/>
-As per OOB, the lcoked out field will be set to true if Active field set to false. But, the vice-versa case is not implemented. For example, If Employee is on long leave like maternity leave etc., then the user account will be set inactive temporarily and reactivated upon his/arrival to office. This causes, user account to be Active and Locked out as true which makes the login to fail
+As per OOB, the "Locked out" field will be set to true if Active field set to false. But, the vice-versa case is not implemented. For example, If Employee is on long leave like maternity leave etc., then the user account will be set inactive temporarily and reactivated upon his/arrival to office. This causes, user account to be Active and Locked out as true which makes the login to fail
 # Business Rule <br/>
 Name: Update Locked Out field<br/>
 Table: User [sys_user] <br/>
