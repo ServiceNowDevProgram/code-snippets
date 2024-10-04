@@ -1,0 +1,20 @@
+
+
+// Query the sys_script table to find Business Rules
+var grScript = new GlideRecord('sys_script');
+grScript.addQuery('script', 'CONTAINS', 'var gr');  // Search for 'var gr' in the script field
+grScript.query();
+
+while (grScript.next()) {
+    var scriptText = grScript.script.toString();
+
+    // Regular expression to match exact 'var gr' (no extra characters after 'gr')
+    var regex = /\bvar\s+gr\b(?!\w)/;
+
+    if (scriptText.match(regex)) {
+        // Output the name, sys_id, and script content if the exact match is found
+        gs.print('Business Rule: ' + grScript.name);
+        gs.print('Sys ID: ' + grScript.sys_id);
+        gs.print('Script: \n' + scriptText);
+    }
+}
