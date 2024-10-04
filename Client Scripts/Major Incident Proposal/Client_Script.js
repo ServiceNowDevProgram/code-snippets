@@ -9,9 +9,10 @@ function onSubmit() {
 
         var response = gaCheck.getXMLWait();
         var isMajorIncident = response.documentElement.getAttribute('answer'); 
-
-        if (isMajorIncident == 'false') { // not yet a Major Incident
-            var resp = confirm(getMessage('Please confirm that you would like to propose a Major Incident Candidate and inform Enterprise Incident Management of this issue?'));
+        
+        // not yet a Major Incident
+        if (isMajorIncident == 'false') {
+            var resp = confirm(getMessage('Please confirm that you would like to propose a Major Incident Candidate?'));
 
             if (resp) {
                 // propose the Major Incident
@@ -24,7 +25,8 @@ function onSubmit() {
 
                 alert("Incident " + incidentNumber + " has been proposed as a Major Incident candidate.");
             } else {
-                return false; // cancels
+                // cancels
+                return false;
             }
         }
     }
