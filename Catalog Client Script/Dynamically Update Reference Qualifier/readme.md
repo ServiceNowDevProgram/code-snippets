@@ -1,4 +1,4 @@
-When we have a reference variable that is used in a (single-row) variable set, sometimes we want to update the Reference qualifier only for specific Catalog Item(s).
+When we have a reference variable that is used in a (single row) variable set, sometimes we want to update the Reference qualifier only for specific Catalog Item(s).
 
 In this example, I have a Configuration item (named v_configuration_item) reference variable (cmdb_ci table) in a single row variable set that has been included in a number of Catalog Items.  The simple Reference qualifier for this variable is:
 sys_class_name=cmdb_ci_ip_router^ORsys_class_name=cmdb_ci_ip_switch

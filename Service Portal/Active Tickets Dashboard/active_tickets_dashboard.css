@@ -1,0 +1,21 @@
+.tile-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.tile {
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 200px;
+    padding: 20px;
+    text-align: center;
+    margin: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.tile:hover {
+    background-color: #e1e1e1;
+}
