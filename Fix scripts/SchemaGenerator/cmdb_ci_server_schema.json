@@ -1,0 +1,1105 @@
+{
+    "classification": {
+        "label": "Classification",
+        "max_length": "40",
+        "choice_list": true,
+        "internal_type": "string",
+        "active_status": "1",
+        "choice_list_values": {
+            "-- None --": "",
+            "Critical Infrastructure": "Critical Infrastructure",
+            "Development": "Development",
+            "Development Test": "Development Test",
+            "Disaster Recovery": "Disaster Recovery",
+            "Production": "Production",
+            "UAT": "UAT"
+        }
+    },
+    "dr_backup": {
+        "label": "Disaster backup",
+        "max_length": 32,
+        "choice_list": false,
+        "internal_type": "reference",
+        "active_status": "1",
+        "reference_table": "cmdb_ci_server",
+        "reference_field_max_length": "32"
+    },
+    "host_name": {
+        "label": "Host name",
+        "max_length": "255",
+        "choice_list": false,
+        "internal_type": "string",
+        "active_status": "1"
+    },
+    "maintenance_schedule": {
+        "label": "Maintenance schedule",
+        "max_length": 32,
+        "choice_list": false,
+        "internal_type": "reference",
+        "active_status": "1",
+        "reference_table": "cmn_schedule",
+        "reference_field_max_length": "32"
+    },
+    "firewall_status": {
+        "label": "Firewall status",
+        "max_length": "40",
+        "choice_list": true,
+        "internal_type": "string",
+        "active_status": "1",
+        "choice_list_values": {
+            "-- None --": "",
+            "DMZ": "DMZ",
+            "Internet": "Internet",
+            "Intranet": "Intranet"
+        }
+    },
+    "dns_domain": {
+        "label": "DNS Domain",
+        "max_length": "255",
+        "choice_list": false,
+        "internal_type": "string",
+        "active_status": "1"
+    },
+    "assigned": {
+        "label": "Assigned",
+        "max_length": "40",
+        "choice_list": false,
+        "internal_type": "glide_date_time",
+        "active_status": "1"
+    },
+    "purchase_date": {
+        "label": "Purchased",
+        "max_length": "40",
+        "choice_list": false,
+        "internal_type": "glide_date",
+        "active_status": "1"
+    },
+    "life_cycle_stage": {
+        "label": "Life Cycle Stage",
+        "max_length": 32,
+        "choice_list": false,
+        "internal_type": "reference",
+        "active_status": "1",
+        "reference_table": "life_cycle_stage",
+        "reference_field_max_length": "40"
+    },
+    "short_description": {
+        "label": "Description",
+        "max_length": "1000",
+        "choice_list": false,
+        "internal_type": "string",
+        "active_status": "1"
+    },
+    "cd_speed": {
+        "label": "CD Speed",
+        "max_length": "40",
+        "choice_list": false,
+        "internal_type": "integer",
+        "active_status": "1"
+    },
+    "floppy": {
+        "label": "Floppy",
+        "max_length": "40",
+        "choice_list": true,
+        "internal_type": "string",
+        "active_status": "1",
+        "choice_list_values": {
+            "-- None --": "",
+            "3.5 inch": "3.5 inch",
+            "5.25 inch": "5.25 inch",
+            "None": "None"
+        }
+    },
+    "managed_by": {
+        "label": "Managed by",
+        "max_length": 32,
+        "choice_list": false,
+        "internal_type": "reference",
+        "active_status": "1",
+        "reference_table": "sys_user",
+        "reference_field_max_length": "32"
+    },
+    "os_domain": {
+        "label": "OS Domain",
+        "max_length": "40",
+        "choice_list": false,
+        "internal_type": "string",
+        "active_status": "1"
+    },
+    "last_discovered": {
+        "label": "Most recent discovery",
+        "max_length": "40",
+        "choice_list": false,
+        "internal_type": "glide_date_time",
+        "active_status": "1"
+    },
+    "can_print": {
+        "label": "Can Print",
+        "max_length": "40",
+        "choice_list": false,
+        "internal_type": "boolean",
+        "active_status": "1"
+    },
+    "sys_class_name": {
+        "label": "Class",
+        "max_length": "80",
+        "choice_list": true,
+        "internal_type": "sys_class_name",
+        "active_status": "1",
+        "choice_list_values": {
+            "A10 Load Balancer": "cmdb_ci_lb_a10",
+            "ACE": "cmdb_ci_lb_ace",
+            "AIX Server": "cmdb_ci_aix_server",
+            "Alteon": "cmdb_ci_lb_alteon",
+            "CIM Server": "cmdb_ci_cim_server",
+            "Cisco CSM": "cmdb_ci_lb_cisco_csm",
+            "Cisco CSS": "cmdb_ci_lb_cisco_css",
+            "Cisco GSS": "cmdb_ci_lb_cisco_gss",
+            "Citrix Netscaler": "cmdb_ci_lb_netscaler",
+            "Cloud Host": "cmdb_ci_cloud_host",
+            "Data Power Hosting Server": "cmdb_ci_datapower_server",
+            "ESX Server": "cmdb_ci_esx_server",
+            "F5 BIG-IP": "cmdb_ci_lb_bigip",
+            "F5 BigIP GTM": "cmdb_ci_lb_f5_gtm",
+            "F5 BigIP LTM": "cmdb_ci_lb_f5_ltm",
+            "HPUX Server": "cmdb_ci_hpux_server",
+            "Hyper-V Server": "cmdb_ci_hyper_v_server",
+            "IBM Mainframe": "cmdb_ci_mainframe",
+            "IBM Mainframe LPAR": "cmdb_ci_mainframe_lpar",
+            "IBM zOS server": "cmdb_ci_ibm_zos_server",
+            "ISA Server": "cmdb_ci_lb_isa",
+            "ISAM Server": "cmdb_ci_isam_server",
+            "Linux Server": "cmdb_ci_linux_server",
+            "Load Balancer": "cmdb_ci_lb",
+            "Netware Server": "cmdb_ci_netware_server",
+            "Network Appliance Hardware": "cmdb_ci_net_app_server",
+            "Network Load Balancer": "cmdb_ci_lb_network",
+            "OS/X Server": "cmdb_ci_osx_server",
+            "Radware Load Balancer": "cmdb_ci_lb_radware",
+            "Server": "cmdb_ci_server",
+            "Server Chassis": "cmdb_ci_chassis_server",
+            "Server Hardware": "cmdb_ci_server_hardware",
+            "Server Tape Unit": "cmdb_ci_tape_server",
+            "Solaris Server": "cmdb_ci_solaris_server",
+            "Storage Node Element": "cmdb_ci_storage_node_element",
+            "Storage Server": "cmdb_ci_storage_server",
+            "UNIX Server": "cmdb_ci_unix_server",
+            "Virtualization Server": "cmdb_ci_virtualization_server",
+            "VMware vCenter Server Object": "cmdb_ci_vcenter_server_obj",
+            "Windows Server": "cmdb_ci_win_server"
+        }
+    },
+    "manufacturer": {
+        "label": "Manufacturer",
+        "max_length": 32,
+        "choice_list": false,
+        "internal_type": "reference",
+        "active_status": "1",
+        "reference_table": "core_company",
+        "reference_field_max_length": "32"
+    },
+    "cpu_count": {
+        "label": "CPU count",
+        "max_length": "40",
+        "choice_list": false,
+        "internal_type": "integer",
+        "active_status": "1"
+    },
+    "vendor": {
+        "label": "Vendor",
+        "max_length": 32,
+        "choice_list": false,
+        "internal_type": "reference",
+        "active_status": "1",
+        "reference_table": "core_company",
+        "reference_field_max_length": "32"
+    },
+    "life_cycle_stage_status": {
+        "label": "Life Cycle Stage Status",
+        "max_length": 32,
+        "choice_list": false,
+        "internal_type": "reference",
+        "active_status": "1",
+        "reference_table": "life_cycle_stage_status",
+        "reference_field_max_length": "40"
+    },
+    "model_number": {
+        "label": "Model number",
+        "max_length": "255",
+        "choice_list": false,
+        "internal_type": "string",
+        "active_status": "1"
+    },
+    "assigned_to": {
+        "label": "Assigned to",
+        "max_length": 32,
+        "choice_list": false,
+        "internal_type": "reference",
+        "active_status": "1",
+        "reference_table": "sys_user",
+        "reference_field_max_length": "32"
+    },
+    "start_date": {
+        "label": "Start date",
+        "max_length": "40",
+        "choice_list": false,
+        "internal_type": "glide_date_time",
+        "active_status": "1"
+    },
+    "os_version": {
+        "label": "OS Version",
+        "max_length": "40",
+        "choice_list": false,
+        "internal_type": "string",
+        "active_status": "1"
+    },
+    "serial_number": {
+        "label": "Serial number",
+        "max_length": "255",
+        "choice_list": false,
+        "internal_type": "string",
+        "active_status": "1"
+    },
+    "cd_rom": {
+        "label": "CD",
+        "max_length": "40",
+        "choice_list": false,
+        "internal_type": "boolean",
+        "active_status": "1"
+    },
+    "support_group": {
+        "label": "Support group",
+        "max_length": 32,
+        "choice_list": false,
+        "internal_type": "reference",
+        "active_status": "1",
+        "reference_table": "sys_user_group",
+        "reference_field_max_length": "32"
+    },
+    "unverified": {
+        "label": "Requires verification",
+        "max_length": "40",
+        "choice_list": false,
+        "internal_type": "boolean",
+        "active_status": "1"
+    },
+    "correlation_id": {
+        "label": "Correlation ID",
+        "max_length": "512",
+        "choice_list": false,
+        "internal_type": "string",
+        "active_status": "1"
+    },
+    "attributes": {
+        "label": "Attributes",
+        "max_length": "65000",
+        "choice_list": false,
+        "internal_type": "string",
+        "active_status": "1"
+    },
+    "asset": {
+        "label": "Asset",
+        "max_length": 32,
+        "choice_list": false,
+        "internal_type": "reference",
+        "active_status": "1",
+        "reference_table": "alm_asset",
+        "reference_field_max_length": "32"
+    },
+    "form_factor": {
+        "label": "Form factor",
+        "max_length": "40",
+        "choice_list": true,
+        "internal_type": "string",
+        "active_status": "1",
+        "choice_list_values": {
+            "-- None --": "",
+            "Blade": "Blade",
+            "Desktop": "Desktop",
+            "Hand Held": "Hand Held",
+            "Laptop": "Laptop",
+            "Rack Mount": "Rack Mount",
+            "Stand Alone": "Stand Alone"
+        }
+    },
+    "cpu_core_count": {
+        "label": "CPU core count",
+        "max_length": "40",
+        "choice_list": false,
+        "internal_type": "integer",
+        "active_status": "1"
+    },
+    "skip_sync": {
+        "label": "Skip sync",
+        "max_length": "40",
+        "choice_list": false,
+        "internal_type": "boolean",
+        "active_status": "1"
+    },
+    "product_instance_id": {
+        "label": "Product instance identifier",
+        "max_length": "255",
+        "choice_list": false,
+        "internal_type": "string",
+        "active_status": "1"
+    },
+    "most_frequent_user": {
+        "label": "Most frequent logged in user",
+        "max_length": 32,
+        "choice_list": false,
+        "internal_type": "reference",
+        "active_status": "1",
+        "reference_table": "sys_user",
+        "reference_field_max_length": "32"
+    },
+    "attestation_score": {
+        "label": "Attestation Score",
+        "max_length": "40",
+        "choice_list": false,
+        "internal_type": "integer",
+        "active_status": "1"
+    },
+    "sys_updated_by": {
+        "label": "Updated by",
+        "max_length": "40",
+        "choice_list": false,
+        "internal_type": "string",
+        "active_status": "1"
+    },
+    "sys_created_on": {
+        "label": "Created",
+        "max_length": "40",
+        "choice_list": false,
+        "internal_type": "glide_date_time",
+        "active_status": "1"
+    },
+    "sys_domain": {
+        "label": "Domain",
+        "max_length": 32,
+        "choice_list": false,
+        "internal_type": "domain_id",
+        "active_status": "1",
+        "reference_table": null,
+        "reference_field_max_length": "32"
+    },
+    "cpu_type": {
+        "label": "CPU type",
+        "max_length": "40",
+        "choice_list": false,
+        "internal_type": "string",
+        "active_status": "1"
+    },
+    "install_date": {
+        "label": "Installed",
+        "max_length": "40",
+        "choice_list": false,
+        "internal_type": "glide_date_time",
+        "active_status": "1"
+    },
+    "asset_tag": {
+        "label": "Asset tag",
+        "max_length": "40",
+        "choice_list": false,
+        "internal_type": "string",
+        "active_status": "1"
+    },
+    "hardware_substatus": {
+        "label": "Substatus",
+        "max_length": "40",
+        "choice_list": true,
+        "internal_type": "string",
+        "active_status": "1",
+        "choice_list_values": {
+            "-- None --": "",
+            "Available": "available",
+            "In Use": "in_use",
+            "Lost": "lost",
+            "Ordered": "ordered",
+            "Repairable": "repairable",
+            "Awaiting Vendor Delivery": "awaiting_vendor_delivery",
+            "Disposable": "disposable",
+            "Reserved": "reserved",
+            "Sold": "sold",
+            "Credit": "credit",
+            "Received": "received",
+            "Dereferenced": "dereferenced",
+            "Divested": "divested",
+            "Stolen": "stolen",
+            "Donated": "donated",
+            "Scrapped": "scrapped",
+            "Duplicate Error": "duplicate_error"
+        }
+    },
+    "fqdn": {
+        "label": "Fully qualified domain name",
+        "max_length": "255",
+        "choice_list": false,
+        "internal_type": "string",
+        "active_status": "1"
+    },
+    "change_control": {
+        "label": "Approval group",
+        "max_length": 32,
+        "choice_list": false,
+        "internal_type": "reference",
+        "active_status": "1",
+        "reference_table": "sys_user_group",
+        "reference_field_max_length": "32"
+    },
+    "internet_facing": {
+        "label": "Internet Facing",
+        "max_length": "40",
+        "choice_list": false,
+        "internal_type": "boolean",
+        "active_status": "1"
+    },
+    "delivery_date": {
+        "label": "Order received",
+        "max_length": "40",
+        "choice_list": false,
+        "internal_type": "glide_date_time",
+        "active_status": "1"
+    },
+    "hardware_status": {
+        "label": "Hardware Status",
+        "max_length": "40",
+        "choice_list": true,
+        "internal_type": "string",
+        "active_status": "1",
+        "choice_list_values": {
+            "-- None --": "",
+            "Installed": "installed",
+            "In Maintenance": "in_maintenance",
+            "In Stock": "in_stock",
+            "Out of Stock": "out_of_stock",
+            "In Transit": "in_transit",
+            "Defective": "defective",
+            "In Disposition": "in_disposition",
+            "Retired": "retired",
+            "On Order": "on_order",
+            "Pending Install": "pending_install",
+            "Pending Repair": "pending_repair",
+            "Pending Transfer": "pending_transfer",
+            "Stolen": "stolen"
+        }
+    },
+    "install_status": {
+        "label": "Install Status",
+        "max_length": "40",
+        "choice_list": true,
+        "internal_type": "integer",
+        "active_status": "1",
+        "choice_list_values": {
+            "-- None --": "",
+            "Absent": "100",
+            "In Maintenance": "3",
+            "In Stock": "6",
+            "Installed": "1",
+            "On Order": "2",
+            "Pending Install": "4",
+            "Pending Repair": "5",
+            "Retired": "7",
+            "Stolen": "8"
+        }
+    },
+    "supported_by": {
+        "label": "Supported by",
+        "max_length": 32,
+        "choice_list": false,
+        "internal_type": "reference",
+        "active_status": "1",
+        "reference_table": "sys_user",
+        "reference_field_max_length": "32"
+    },
+    "name": {
+        "label": "Name",
+        "max_length": "255",
+        "choice_list": false,
+        "internal_type": "string",
+        "active_status": "1"
+    },
+    "subcategory": {
+        "label": "Subcategory",
+        "max_length": "40",
+        "choice_list": false,
+        "internal_type": "string",
+        "active_status": "1"
+    },
+    "default_gateway": {
+        "label": "Default Gateway",
+        "max_length": "40",
+        "choice_list": false,
+        "internal_type": "string",
+        "active_status": "1"
+    },
+    "chassis_type": {
+        "label": "Chassis type",
+        "max_length": "40",
+        "choice_list": true,
+        "internal_type": "string",
+        "active_status": "1",
+        "choice_list_values": {
+            "-- None --": "",
+            "All in One": "All in One",
+            "Bus Expansion Chassis": "Bus Expansion Chassis",
+            "Desktop": "Desktop",
+            "Docking Station": "Docking Station",
+            "Expansion Chassis": "Expansion Chassis",
+            "Hand Held": "Hand Held",
+            "Laptop": "Laptop",
+            "Low Profile Desktop": "Low Profile Desktop",
+            "Lunch Box": "Lunch Box",
+            "Main System Chassis": "Main System Chassis",
+            "Mini Tower": "Mini Tower",
+            "Notebook": "Notebook",
+            "Other": "Other",
+            "Peripheral Chassis": "Peripheral Chassis",
+            "Pizza Box": "Pizza Box",
+            "Portable": "Portable",
+            "Rack Mount Chassis": "Rack Mount Chassis",
+            "Sealed-Case PC": "Sealed-Case PC",
+            "Space-Saving": "Space-Saving",
+            "Storage Chassis": "Storage Chassis",
+            "Sub Notebook": "Sub Notebook",
+            "SubChassis": "SubChassis",
+            "Tower": "Tower",
+            "Unknown": "Unknown"
+        }
+    },
+    "virtual": {
+        "label": "Is Virtual",
+        "max_length": "40",
+        "choice_list": false,
+        "internal_type": "boolean",
+        "active_status": "1"
+    },
+    "assignment_group": {
+        "label": "Change Group",
+        "max_length": 32,
+        "choice_list": false,
+        "internal_type": "reference",
+        "active_status": "1",
+        "reference_table": "sys_user_group",
+        "reference_field_max_length": "32"
+    },
+    "managed_by_group": {
+        "label": "Managed By Group",
+        "max_length": 32,
+        "choice_list": false,
+        "internal_type": "reference",
+        "active_status": "1",
+        "reference_table": "sys_user_group",
+        "reference_field_max_length": "32"
+    },
+    "po_number": {
+        "label": "PO number",
+        "max_length": "40",
+        "choice_list": false,
+        "internal_type": "string",
+        "active_status": "1"
+    },
+    "checked_in": {
+        "label": "Checked in",
+        "max_length": "40",
+        "choice_list": false,
+        "internal_type": "glide_date_time",
+        "active_status": "1"
+    },
+    "sys_class_path": {
+        "label": "Sys class path",
+        "max_length": "255",
+        "choice_list": false,
+        "internal_type": "sys_class_path",
+        "active_status": "1"
+    },
+    "mac_address": {
+        "label": "MAC Address",
+        "max_length": "24",
+        "choice_list": false,
+        "internal_type": "string",
+        "active_status": "1"
+    },
+    "company": {
+        "label": "Company",
+        "max_length": 32,
+        "choice_list": false,
+        "internal_type": "reference",
+        "active_status": "1",
+        "reference_table": "core_company",
+        "reference_field_max_length": "32"
+    },
+    "justification": {
+        "label": "Justification",
+        "max_length": "80",
+        "choice_list": true,
+        "internal_type": "string",
+        "active_status": "1",
+        "choice_list_values": {
+            "-- None --": "",
+            "New employee hire": "New employee hire",
+            "Replace in repair": "Replace in repair",
+            "Replace stolen": "Replace stolen",
+            "Replacement": "Replacement",
+            "Stock replenishment": "Stock replenishment",
+            "Swap": "Swap",
+            "Testing": "Testing",
+            "Upgrade": "Upgrade"
+        }
+    },
+    "department": {
+        "label": "Department",
+        "max_length": 32,
+        "choice_list": false,
+        "internal_type": "reference",
+        "active_status": "1",
+        "reference_table": "cmn_department",
+        "reference_field_max_length": "32"
+    },
+    "cost": {
+        "label": "Cost",
+        "max_length": "40",
+        "choice_list": false,
+        "internal_type": "float",
+        "active_status": "1"
+    },
+    "comments": {
+        "label": "Comments",
+        "max_length": "4000",
+        "choice_list": false,
+        "internal_type": "string",
+        "active_status": "1"
+    },
+    "os": {
+        "label": "Operating System",
+        "max_length": "50",
+        "choice_list": true,
+        "internal_type": "string",
+        "active_status": "1",
+        "choice_list_values": {
+            "-- None --": "",
+            "AIX": "AIX",
+            "ESX": "ESX",
+            "GNU/Linux": "GNU/Linux",
+            "HP/UX": "HP/UX",
+            "Hyper-V": "Hyper-V",
+            "Hyper-V 2012": "Hyper-V 2012",
+            "Linux Fedora": "Linux Fedora",
+            "Linux Oracle": "Linux Oracle",
+            "Linux Red Hat": "Linux Red Hat",
+            "Linux SuSE": "Linux SuSE",
+            "Mac OS 10 (OS/X)": "Mac OS 10 (OS/X)",
+            "Mac OS 8": "Mac OS 8",
+            "Mac OS 9": "Mac OS 9",
+            "Mac OS/X": "Mac OS/X",
+            "OneFS": "EMC",
+            "OS/400": "OS/400",
+            "Solaris": "Solaris",
+            "SunOS": "SunOS",
+            "Windows": "Windows",
+            "Windows 2000": "Windows 2000",
+            "Windows 2000 Advanced Server": "Windows 2000 Advanced Server",
+            "Windows 2000 Datacenter Server": "Windows 2000 Datacenter Server",
+            "Windows 2000 Professional": "Windows 2000 Professional",
+            "Windows 2000 Server": "Windows 2000 Server",
+            "Windows 2003 Datacenter": "Windows 2003 Datacenter",
+            "Windows 2003 Enterprise": "Windows 2003 Enterprise",
+            "Windows 2003 Standard": "Windows 2003 Standard",
+            "Windows 2003 Web": "Windows 2003 Web",
+            "Windows 2008 R2 Datacenter": "Windows 2008 R2 Datacenter",
+            "Windows 95": "Windows 95",
+            "Windows 98": "Windows 98",
+            "Windows ME": "Windows ME",
+            "Windows NT 4.0": "Windows NT 4.0",
+            "Windows XP": "Windows XP",
+            "Windows XP Home": "Windows XP Home",
+            "Windows XP Professional": "Windows XP Professional"
+        }
+    },
+    "attestation_status": {
+        "label": "Attestation Status",
+        "max_length": "40",
+        "choice_list": true,
+        "internal_type": "string",
+        "active_status": "1",
+        "choice_list_values": {
+            "Not Yet Reviewed": "Not Yet Reviewed",
+            "Attested": "Attested",
+            "Rejected": "Rejected"
+        }
+    },
+    "sys_mod_count": {
+        "label": "Updates",
+        "max_length": "40",
+        "choice_list": false,
+        "internal_type": "integer",
+        "active_status": "1"
+    },
+    "monitor": {
+        "label": "Monitor",
+        "max_length": "40",
+        "choice_list": false,
+        "internal_type": "boolean",
+        "active_status": "1"
+    },
+    "model_id": {
+        "label": "Model ID",
+        "max_length": 32,
+        "choice_list": false,
+        "internal_type": "reference",
+        "active_status": "1",
+        "reference_table": "cmdb_model",
+        "reference_field_max_length": "32"
+    },
+    "ip_address": {
+        "label": "IP Address",
+        "max_length": "255",
+        "choice_list": false,
+        "internal_type": "ip_addr",
+        "active_status": "1"
+    },
+    "duplicate_of": {
+        "label": "Duplicate Of",
+        "max_length": 32,
+        "choice_list": false,
+        "internal_type": "reference",
+        "active_status": "1",
+        "reference_table": "cmdb_ci",
+        "reference_field_max_length": "32"
+    },
+    "cost_cc": {
+        "label": "Cost currency",
+        "max_length": "3",
+        "choice_list": true,
+        "internal_type": "string",
+        "active_status": "1",
+        "choice_list_values": {
+            "-- None --": "",
+            "EUR": "EUR",
+            "GBP": "GBP",
+            "USD": "USD"
+        }
+    },
+    "order_date": {
+        "label": "Ordered",
+        "max_length": "40",
+        "choice_list": false,
+        "internal_type": "glide_date_time",
+        "active_status": "1"
+    },
+    "environment": {
+        "label": "Environment",
+        "max_length": "40",
+        "choice_list": true,
+        "internal_type": "string",
+        "active_status": "1",
+        "choice_list_values": {
+            "-- None --": "",
+            "Development": "Development",
+            "Production": "Production",
+            "Test": "Test"
+        }
+    },
+    "due": {
+        "label": "Due",
+        "max_length": "40",
+        "choice_list": false,
+        "internal_type": "glide_date_time",
+        "active_status": "1"
+    },
+    "attested": {
+        "label": "Attested",
+        "max_length": "40",
+        "choice_list": false,
+        "internal_type": "boolean",
+        "active_status": "1"
+    },
+    "location": {
+        "label": "Location",
+        "max_length": 32,
+        "choice_list": false,
+        "internal_type": "reference",
+        "active_status": "1",
+        "reference_table": "cmn_location",
+        "reference_field_max_length": "32"
+    },
+    "category": {
+        "label": "Category",
+        "max_length": "40",
+        "choice_list": false,
+        "internal_type": "string",
+        "active_status": "1"
+    },
+    "fault_count": {
+        "label": "Fault count",
+        "max_length": "40",
+        "choice_list": false,
+        "internal_type": "integer",
+        "active_status": "1"
+    },
+    "lease_id": {
+        "label": "Lease contract",
+        "max_length": "40",
+        "choice_list": false,
+        "internal_type": "string",
+        "active_status": "1"
+    },
+    "schedule": {
+        "label": "Schedule",
+        "max_length": 32,
+        "choice_list": false,
+        "internal_type": "reference",
+        "active_status": "1",
+        "reference_table": "cmn_schedule",
+        "reference_field_max_length": "32"
+    },
+    "attested_date": {
+        "label": "Attested Date",
+        "max_length": "40",
+        "choice_list": false,
+        "internal_type": "glide_date_time",
+        "active_status": "1"
+    },
+    "operational_status": {
+        "label": "Operational status",
+        "max_length": "40",
+        "choice_list": true,
+        "internal_type": "integer",
+        "active_status": "1",
+        "choice_list_values": {
+            "Operational": "1",
+            "Non-Operational": "2",
+            "Repair in Progress": "3",
+            "DR Standby": "4",
+            "Ready": "5",
+            "Retired": "6"
+        }
+    },
+    "os_service_pack": {
+        "label": "OS Service Pack",
+        "max_length": "40",
+        "choice_list": false,
+        "internal_type": "string",
+        "active_status": "1"
+    },
+    "cpu_core_thread": {
+        "label": "CPU core thread",
+        "max_length": "40",
+        "choice_list": false,
+        "internal_type": "integer",
+        "active_status": "1"
+    },
+    "cpu_manufacturer": {
+        "label": "CPU manufacturer",
+        "max_length": 32,
+        "choice_list": false,
+        "internal_type": "reference",
+        "active_status": "1",
+        "reference_table": "core_company",
+        "reference_field_max_length": "32"
+    },
+    "sys_updated_on": {
+        "label": "Updated",
+        "max_length": "40",
+        "choice_list": false,
+        "internal_type": "glide_date_time",
+        "active_status": "1"
+    },
+    "discovery_source": {
+        "label": "Discovery source",
+        "max_length": "40",
+        "choice_list": true,
+        "internal_type": "string",
+        "active_status": "1",
+        "choice_list_values": {
+            "-- None --": "",
+            "ACC-Visibility": "ACC-Visibility",
+            "AgentClientCollector": "AgentClientCollector",
+            "Altiris": "Altiris",
+            "Cloud Insights Billing": "Cloud Insights Billing",
+            "CredentiallessDiscovery": "CredentiallessDiscovery",
+            "EventManagement": "EventManagement",
+            "Health Log Analytics": "Health Log Analytics",
+            "ImportSet": "ImportSet",
+            "LANDesk": "LANDesk",
+            "Manual Entry": "Manual Entry",
+            "ManualStagingTable": "ManualStagingTable",
+            "MS SMS": "MS SMS",
+            "OpenView": "OpenView",
+            "Other Automated": "Other Automated",
+            "PatternDesigner": "PatternDesigner",
+            "ServiceNow": "ServiceNow",
+            "ServiceWatch": "ServiceWatch",
+            "SNAssetManagement": "SNAssetManagement",
+            "Tivoli": "Tivoli"
+        }
+    },
+    "first_discovered": {
+        "label": "First discovered",
+        "max_length": "40",
+        "choice_list": false,
+        "internal_type": "glide_date_time",
+        "active_status": "1"
+    },
+    "due_in": {
+        "label": "Due in",
+        "max_length": "40",
+        "choice_list": true,
+        "internal_type": "string",
+        "active_status": "1",
+        "choice_list_values": {
+            "-- None --": "",
+            "1 Day": "1 Day",
+            "1 Hour": "1 Hour",
+            "1 Week": "1 Week"
+        }
+    },
+    "invoice_number": {
+        "label": "Invoice number",
+        "max_length": "40",
+        "choice_list": false,
+        "internal_type": "string",
+        "active_status": "1"
+    },
+    "gl_account": {
+        "label": "GL account",
+        "max_length": "40",
+        "choice_list": false,
+        "internal_type": "string",
+        "active_status": "1"
+    },
+    "sys_created_by": {
+        "label": "Created by",
+        "max_length": "40",
+        "choice_list": false,
+        "internal_type": "string",
+        "active_status": "1"
+    },
+    "warranty_expiration": {
+        "label": "Warranty expiration",
+        "max_length": "40",
+        "choice_list": false,
+        "internal_type": "glide_date",
+        "active_status": "1"
+    },
+    "ram": {
+        "label": "RAM (MB)",
+        "max_length": "40",
+        "choice_list": false,
+        "internal_type": "integer",
+        "active_status": "1"
+    },
+    "cpu_name": {
+        "label": "CPU name",
+        "max_length": "100",
+        "choice_list": false,
+        "internal_type": "string",
+        "active_status": "1"
+    },
+    "cpu_speed": {
+        "label": "CPU speed (MHz)",
+        "max_length": "15",
+        "choice_list": false,
+        "internal_type": "decimal",
+        "active_status": "1"
+    },
+    "owned_by": {
+        "label": "Owned by",
+        "max_length": 32,
+        "choice_list": false,
+        "internal_type": "reference",
+        "active_status": "1",
+        "reference_table": "sys_user",
+        "reference_field_max_length": "32"
+    },
+    "checked_out": {
+        "label": "Checked out",
+        "max_length": "40",
+        "choice_list": false,
+        "internal_type": "glide_date_time",
+        "active_status": "1"
+    },
+    "sys_domain_path": {
+        "label": "Domain Path",
+        "max_length": "255",
+        "choice_list": false,
+        "internal_type": "domain_path",
+        "active_status": "1"
+    },
+    "disk_space": {
+        "label": "Disk space (GB)",
+        "max_length": "15",
+        "choice_list": false,
+        "internal_type": "decimal",
+        "active_status": "1"
+    },
+    "object_id": {
+        "label": "Object ID",
+        "max_length": "512",
+        "choice_list": false,
+        "internal_type": "string",
+        "active_status": "1"
+    },
+    "business_unit": {
+        "label": "Business Unit",
+        "max_length": 32,
+        "choice_list": false,
+        "internal_type": "reference",
+        "active_status": "1",
+        "reference_table": "business_unit",
+        "reference_field_max_length": "32"
+    },
+    "cost_center": {
+        "label": "Cost center",
+        "max_length": 32,
+        "choice_list": false,
+        "internal_type": "reference",
+        "active_status": "1",
+        "reference_table": "cmn_cost_center",
+        "reference_field_max_length": "32"
+    },
+    "attested_by": {
+        "label": "Attested By",
+        "max_length": 32,
+        "choice_list": false,
+        "internal_type": "reference",
+        "active_status": "1",
+        "reference_table": "sys_user",
+        "reference_field_max_length": "32"
+    },
+    "used_for": {
+        "label": "Used for",
+        "max_length": "40",
+        "choice_list": true,
+        "internal_type": "string",
+        "active_status": "1",
+        "choice_list_values": {
+            "Production": "Production",
+            "Staging": "Staging",
+            "QA": "QA",
+            "Test": "Test",
+            "Development": "Development",
+            "Demonstration": "Demonstration",
+            "Training": "Training",
+            "Disaster recovery": "Disaster recovery"
+        }
+    },
+    "sys_id": {
+        "label": "Sys ID",
+        "max_length": "32",
+        "choice_list": false,
+        "internal_type": "GUID",
+        "active_status": "1"
+    },
+    "os_address_width": {
+        "label": "OS Address Width (bits)",
+        "max_length": "40",
+        "choice_list": true,
+        "internal_type": "integer",
+        "active_status": "1",
+        "choice_list_values": {
+            "-- None --": "",
+            "32": "32",
+            "64": "64"
+        }
+    }
+}
