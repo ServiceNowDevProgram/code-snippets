@@ -18,6 +18,6 @@ using a System Property Name of your choice
 
 Now that the other Catalog Items using the variable set are still working as they were, all you need to do to update the Reference qualifier on certain Catalog Item(s) is:
 
-5) Add the included 'Catalog Item onLoad' Catalog Client Script that applies to the Catalog Item.
+5) Add the included 'Catalog Item onLoad' Catalog Client Script that applies to the Catalog Item. Set the Order of this script to a high number (10,000) so that it runs after the variable set one.
 
 This solution works in both the Native UI and Service Portal. The Catalog Client scripts contain an alternate Service Portal only approach in the commented if block that can be used in conjunction with the native UI approach in the else block. This alternate Service Portal solution was developed in collaboration with Chris Perry.
