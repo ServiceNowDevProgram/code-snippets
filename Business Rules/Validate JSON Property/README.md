@@ -1,6 +1,7 @@
 Usage : Executes a business rule to verify if the JSON object saved in the property is a valid JSON. 
 
 Steps for Creating the Business Rule:
+
 Navigate to Business Rules:
   - Go to System Definition > Business Rules in ServiceNow.
   - Create a New Business Rule:
