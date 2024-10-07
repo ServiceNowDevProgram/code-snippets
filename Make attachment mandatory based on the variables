@@ -1,0 +1,28 @@
+Client Script Snippet
+Create a new Client Script in your ServiceNow instance.
+Use the following code in the Script section of the Client Script:
+javascript
+Copy code
+function onSubmit() {
+    var isAttachmentRequired = g_form.getValue('u_is_attachment_required'); // Replace with your actual field name
+
+    // Check if the variable indicates an attachment is required
+    if (isAttachmentRequired === 'true') { // Assuming it's a string; adjust based on your field type
+        var hasAttachments = g_form.getAttachments().length > 0; // Check for existing attachments
+        
+        if (!hasAttachments) {
+            g_form.showFieldMsg('u_attachment_field', 'Attachment is mandatory!', 'error'); // Replace with your actual field name
+            return false; // Prevent form submission
+        }
+    }
+    
+    return true; // Allow form submission
+}
+Explanation:
+Field Reference: Replace 'u_is_attachment_required' with the name of the variable that determines if an attachment is required.
+Attachment Check: The g_form.getAttachments() method retrieves the current attachments. If none exist, the script will show an error message.
+Field Message: The g_form.showFieldMsg function displays an error message next to the specified field (replace 'u_attachment_field' with the actual field name for your attachment).
+Return Values: The function returns false to prevent form submission if the conditions aren't met.
+Additional Configuration:
+Ensure the script is set to run on the appropriate conditions (like onSubmit).
+Test the form to verify that the behavior works as expected based on your requirements.
