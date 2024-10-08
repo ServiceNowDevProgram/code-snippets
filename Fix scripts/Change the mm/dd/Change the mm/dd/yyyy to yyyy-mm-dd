@@ -1,0 +1,8 @@
+//While using excel parser logic I was receiving the date in format mm/dd/yyyy. I had to convert it in yyyy-mm-dd to to accept it in Servicenow field and map it correctly.
+
+
+var input = "07/23/2024"; //mm/dd/yyyy
+var output = input.replace(/(\d\d)\/(\d\d)\/(\d{4})/, "$3-$1-$2");
+gs.info("Shamma " +output); //convert it to yyyy-mm-dd
+
+//In the same way we can change to any other format
