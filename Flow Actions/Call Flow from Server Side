@@ -1,0 +1,21 @@
+//You can call Flow from any server side script by using the below code:
+
+(function() {
+	
+	try {
+		var inputs = {};
+		inputs['current'] = ; // GlideRecord of table:  
+		inputs['table_name'] = 'x_66357_motherho_0_request';
+
+		// Start Asynchronously: Uncomment to run in background.
+		// sn_fd.FlowAPI.getRunner().flow('x_66357_motherho_0.call_decision').inBackground().withInputs(inputs).run();
+				
+		// Execute Synchronously: Run in foreground.
+		sn_fd.FlowAPI.getRunner().flow('x_66357_motherho_0.call_decision').inForeground().withInputs(inputs).run();
+		
+	} catch (ex) {
+		var message = ex.getMessage();
+		gs.error(message);
+	}
+	
+})();
