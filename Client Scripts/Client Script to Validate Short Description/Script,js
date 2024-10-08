@@ -1,0 +1,12 @@
+// Client Script: Validate Short Description
+// Table: incident
+// Type: onSubmit
+
+function onSubmit() {
+    var shortDesc = g_form.getValue('short_description');
+    if (shortDesc.length < 15) {
+        alert('Short description must be at least 15 characters long.');
+        return false; // Prevent form submission
+    }
+    return true; // Allow form submission
+}
