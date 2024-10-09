@@ -1,0 +1,64 @@
+Code Snippet to Add Users to Reports
+
+// Function to add a user to a report's visibility list
+function addUserToReport(reportSysId, userSysId) {
+    var visibilityRecord = new GlideRecord('sys_report_visibility'); // sys_report_visibility table
+    visibilityRecord.initialize();
+    
+    visibilityRecord.report = reportSysId; // The sys_id of the report
+    visibilityRecord.user = userSysId; // The sys_id of the user to be added
+    visibilityRecord.visible = true; // Visibility flag
+
+    // Check if the record already exists to avoid duplicates
+    if (!visibilityExists(reportSysId, userSysId)) {
+        var result = visibilityRecord.insert(); // Insert visibility record for user
+        if (result) {
+            gs.info('User added to report visibility successfully.');
+        } else {
+            gs.error('Failed to add user to report visibility.');
+        }
+    } else {
+        gs.info('User is already in the report visibility list.');
+    }
+}
+
+// Helper function to check if a visibility record already exists
+function visibilityExists(reportSysId, userSysId) {
+    var gr = new GlideRecord('sys_report_visibility');
+    gr.addQuery('report', reportSysId);
+    gr.addQuery('user', userSysId);
+    gr.query();
+    return gr.hasNext(); // Return true if record already exists
+}
+
+// Example usage: add user to a specific report
+var reportSysId = 'your_report_sys_id'; // sys_id of the report
+var userSysId = 'your_user_sys_id'; // sys_id of the user you want to add
+
+addUserToReport(reportSysId, userSysId);
+Explanation:
+sys_report_visibility Table: This table holds the visibility records for reports in ServiceNow. Each record specifies whether a report is visible to a user or group.
+
+addUserToReport() Function:
+
+This function takes the sys_id of the report and the sys_id of the user and adds a record in sys_report_visibility to make the report visible to that user.
+The visible = true ensures that the user has access to the report.
+visibilityExists() Function:
+
+This helper function checks if the user already has visibility to the report. This prevents duplicate entries in the sys_report_visibility table.
+Inserting Visibility Record: If the user does not already have visibility, the script creates a new record in the sys_report_visibility table.
+
+How to Use:
+You can run this script as a Fix Script to add a specific user to a report.
+Alternatively, you can create a Script Include or a Business Rule that triggers when certain conditions are met.
+Example Fix Script Execution:
+
+// Example of how you might call the function in a Fix Script
+
+var reportSysId = 'report_sys_id_here'; // Replace with the actual sys_id of the report
+var userSysId = 'user_sys_id_here'; // Replace with the actual sys_id of the user
+
+addUserToReport(reportSysId, userSysId);
+Notes:
+Make sure that the sys_id of the report and the user are correct.
+This script only handles adding users to a report. If you want to add groups, you can adjust the script to use the group field in sys_report_visibility instead of user.
