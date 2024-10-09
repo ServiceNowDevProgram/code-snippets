@@ -1,0 +1,24 @@
+Create a variable:
+
+Let's say you have a variable called attachment_control (which could be a dropdown or checkbox).
+The choices for this variable could be:
+Mandatory
+Optional
+Client Script:
+
+function onChange(control, oldValue, newValue, isLoading) {
+    if (isLoading || newValue == '') {
+        return;
+    }
+
+    // Check the variable value
+    if (newValue == 'Mandatory') {
+        // Make attachment mandatory
+        g_form.addInfoMessage('Attachment is mandatory');
+        g_form.setMandatory('attachment', true);
+    } else {
+        // Make attachment optional
+        g_form.addInfoMessage('Attachment is optional');
+        g_form.setMandatory('attachment', false);
+    }
+}
