@@ -1,0 +1,42 @@
+Here's how you can do it using a Client Script on a catalog item or record producer:
+
+Steps:
+Create a variable (for example, a dropdown or checkbox) that will control whether the attachment is mandatory or not.
+Use a Client Script to make the attachment mandatory based on the value of the variable.
+Example:
+Create a variable:
+
+Let's say you have a variable called attachment_control (which could be a dropdown or checkbox).
+The choices for this variable could be:
+Mandatory
+Optional
+Client Script:
+
+javascript
+Copy code
+function onChange(control, oldValue, newValue, isLoading) {
+    if (isLoading || newValue == '') {
+        return;
+    }
+
+    // Check the variable value
+    if (newValue == 'Mandatory') {
+        // Make attachment mandatory
+        g_form.addInfoMessage('Attachment is mandatory');
+        g_form.setMandatory('attachment', true);
+    } else {
+        // Make attachment optional
+        g_form.addInfoMessage('Attachment is optional');
+        g_form.setMandatory('attachment', false);
+    }
+}
+Explanation:
+The onChange client script will be triggered when the value of the variable (attachment_control) changes.
+When the value of the variable is Mandatory, the attachment field is set as mandatory using g_form.setMandatory('attachment', true);.
+When the value of the variable is Optional, the attachment requirement is removed using g_form.setMandatory('attachment', false);.
+An informational message is added to the form using g_form.addInfoMessage() to inform the user whether the attachment is required or not.
+Configuration:
+Type: onChange Client Script
+Table: The table where your catalog item is (likely sc_cat_item).
+Field: Set to the field you are monitoring (e.g., attachment_control).
+Note: The 'attachment' field here refers to the attachment field in ServiceNow. This will make all attachments on the form mandatory or optional based on the condition. If you need specific control over multiple attachments, further scripting will be required.
