@@ -1,0 +1,36 @@
+You can use this script in a Business Rule, Script Include, or any server-side logic that executes when creating or updating a record.
+
+javascript:
+// Function to calculate the next business day
+function getNextBusinessDay(date) {
+    var businessCalendar = new GlideBusinessCalendar(); // Create an instance of the business calendar
+    var nextBusinessDay = new GlideDateTime(date); // Start from the provided date
+
+    // Increment the date until a business day is found
+    nextBusinessDay.addDays(1); // Move to the next day
+
+    // Check if it's a business day, if not, keep adding days
+    while (!businessCalendar.isBusinessDay(nextBusinessDay)) {
+        nextBusinessDay.addDays(1); // Keep adding days until we find a business day
+    }
+
+    return nextBusinessDay;
+}
+
+// Example usage
+var currentDateTime = new GlideDateTime(); // Get the current date and time
+var nextBusinessDueDate = getNextBusinessDay(currentDateTime); // Calculate the next business day
+
+// Set the Due Date field to the calculated next business day
+current.sys_due_date = nextBusinessDueDate; // Assuming 'current' is the GlideRecord for the record being updated or created
+Explanation:
+getNextBusinessDay(date): This function calculates the next business day.
+
+It creates an instance of GlideBusinessCalendar.
+It starts with the provided date, increments it by one day, and checks if it is a business day.
+If it’s not a business day, it continues to add days until it finds one.
+currentDateTime: This variable captures the current date and time.
+
+nextBusinessDueDate: This variable stores the result of the getNextBusinessDay function.
+
+current.sys_due_date: This sets the Due Date to the calculated next business day. Ensure that current refers to the GlideRecord you are modifying (e.g., an incident, task, or any record).
