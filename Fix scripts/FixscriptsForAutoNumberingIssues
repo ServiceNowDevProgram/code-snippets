@@ -1,0 +1,10 @@
+#Fixscript for autonumbering issues
+#This script will be run in global using scripts Background
+
+var nm = new NumberManager(tablename);
+var gr = new GlideRecord(tablename);
+gr.orderBy('sys_created_on');
+gr.query();
+while (gr.next()) {
+	gr.number = nm.getNextObjNumberPadded();
+	gr.update();
