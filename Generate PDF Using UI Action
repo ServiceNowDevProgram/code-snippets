@@ -1,0 +1,28 @@
+To generate a PDF in ServiceNow, you can use the Print feature combined with a Scheduled Script or a Business Rule. Below is a basic code snippet that demonstrates how to generate a PDF of a record (like an incident) using a UI Action.
+
+UI Action Snippet
+Create a new UI Action in your ServiceNow instance.
+Use the following code in the Script section of the UI Action:
+javascript
+Copy code
+function generatePDF() {
+    var recordSysId = g_form.getUniqueValue(); // Get the current record's sys_id
+    var tableName = g_form.getTableName(); // Get the current table name
+
+    // Construct the URL to generate the PDF
+    var pdfUrl = '/api/now/pdf/' + tableName + '/' + recordSysId;
+
+    // Open the PDF in a new window
+    window.open(pdfUrl, '_blank');
+}
+Explanation:
+Record Identification: g_form.getUniqueValue() retrieves the sys_id of the current record, while g_form.getTableName() gets the table name (e.g., incident, task).
+PDF Generation URL: The URL is constructed to call the ServiceNow PDF API.
+Opening the PDF: The PDF will open in a new browser window.
+Additional Considerations:
+Permissions: Ensure that the user has permission to view the record and generate PDFs.
+PDF Template: You might want to customize the PDF template to include specific fields or formatting. You can do this by configuring the PDF generation template in the ServiceNow PDF settings.
+UI Action Properties: Set the UI Action to be visible on the desired form, and choose an appropriate action name (e.g., "Generate PDF").
+Testing:
+After creating the UI Action, navigate to a record (like an incident) and test the action. It should generate and open the PDF with the current record’s information.
+This snippet provides a straightforward way to generate a PDF for any record in ServiceNow!

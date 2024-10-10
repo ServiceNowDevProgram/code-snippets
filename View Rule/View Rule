@@ -1,0 +1,18 @@
+(function overrideView(view, is_list) {
+
+
+if (gs.getUser().hasRole('itil')) {
+
+if (is_list && gs.getUser().hasRole('itil')) {
+answer = "view_name"; //replace with the view name for the list view
+}
+
+if (!is_list) {
+answer = "view_name2";
+
+}
+
+}
+
+
+})(view, is_list);
