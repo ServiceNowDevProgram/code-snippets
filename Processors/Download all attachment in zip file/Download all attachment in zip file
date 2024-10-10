@@ -1,0 +1,76 @@
+(function process(g_request, g_response, g_processor) {
+
+var strSysId = "sys_idIN";
+var sysids = g_request.getParameter('sysparm_sys_id'); //to get the selected records's sys_id's
+
+var htmlval = '',
+htmlCode = '',
+htmlvar = '';
+var grRec = new GlideRecord('sc_req_item');
+grRec.addQuery('sys_id', 'IN', sysids);
+grRec.query();
+while (grRec.next()) {
+new ICHtmlPdfGeneratorScriptInclude().pdfGenerateonDownload(grRec);
+var att = new GlideRecord('sys_attachment');
+att.addQuery('table_sys_id', grRec.sys_id);
+att.addQuery('file_name', 'CONTAINS', 'Discharge Letter');
+att.query();
+if (att.next()) {
+if (att.getRowCount() > 1) {
+att.deleteRecord();
+new HtmlPdfGeneratorScriptInclude().pdfGenerate(grRec);
+
+}
+
+}
+}
+
+
+var grRITM = new GlideRecord('sc_req_item');
+grRITM.addQuery('sys_id', 'IN', sysids);
+grRITM.query();
+while (grRITM.next()) {
+var zipName = 'Patient Discharge Batch.zip'; //name of zip file
+var StringUtil = GlideStringUtil;
+var grSysAtt = new GlideRecord('sys_attachment');
+grSysAtt.addQuery('file_name', 'CONTAINS', 'Discharge Letter');
+grSysAtt.addQuery('table_sys_id', grRITM.sys_id);
+grSysAtt.query();
+if (grSysAtt.next()) {
+if (strSysId == 'sys_idIN') {
+strSysId = strSysId + grSysAtt.sys_id;
+} else {
+strSysId = strSysId + ',' + grSysAtt.sys_id;
+}
+}
+}
+
+var grAtta = new GlideRecord('sys_attachment');
+grAtta.addQuery(strSysId);
+grAtta.query();
+if (grAtta.hasNext()) {
+g_response.setHeader('Pragma', 'public');
+g_response.addHeader('Cache-Control', 'max-age=0');
+g_response.setContentType('application/octet-stream');
+g_response.addHeader('Content-Disposition', 'attachment;filename=' + zipName);
+var out = new Packages.java.util.zip.ZipOutputStream(g_response.getOutputStream()); //Generate Zip file
+var count = 0;
+while (grAtta.next()) {
+var grAttach = new GlideSysAttachment();
+var binData = grAttach.getBytes(grAtta);
+var file = grAtta.file_name + "-" + count + ".pdf";
+addBytesToZip(out, zipName, file, binData);
+count++;
+}
+// Complete the ZIP file
+out.close();
+}
+
+function addBytesToZip(out, dir, file, stream) {
+// Add ZIP entry to output stream.
+out.putNextEntry(new Packages.java.util.zip.ZipEntry(file));
+out.write(stream, 0, stream.length);
+out.closeEntry();
+}
+
+})(g_request, g_response, g_processor);
