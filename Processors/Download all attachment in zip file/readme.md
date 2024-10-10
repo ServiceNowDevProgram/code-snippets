@@ -1,0 +1,1 @@
+Processor is a server-side script that can be invoked via a URL and used to handle various server-side operations. You can use a Processor to download all attachments related to a specific record and bundle them into a single ZIP file for download.
