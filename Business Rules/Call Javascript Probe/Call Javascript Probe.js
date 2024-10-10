@@ -1,6 +1,6 @@
 var jspr = new global.JavascriptProbe(gs.getProperty('midserver.name.vmd'));
 		jspr.setName('ShamaProbe77');
-		jspr.setJavascript('var vk = new AttachmentSftpUtils(); res = vk.processFileTransfer();');
+		jspr.setJavascript('var vk = new AttachmentSftpUtils(); res = vk.sftpFile();');
 		jspr.addParameter("httpDomain",gs.getProperty('instance.url'));
 		jspr.addParameter("relativeUrl" ,url);
 		jspr.addParameter("SnowMidUsername" , gs.getProperty('snow.username'));
