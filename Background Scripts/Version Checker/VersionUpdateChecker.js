@@ -1,7 +1,3 @@
-//run this as a background script (scripts - background module) and then copy/paste the results into Excel, then do a split on columns, and select delimited and choose the pipe symbol.
-//replace <<names>> with application names to check new versions that have been modified from OOTB
-//Initial author credit to gary.opela@servicenow.com
-
 var grVers = new GlideRecord('sys_update_version');
 grVers.addEncodedQuery('application.nameIN<<names>>'); //change <<names>>
 grVers.query();
