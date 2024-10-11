@@ -19,7 +19,8 @@ bookmark.query();
 if (!bookmark.next()) {
     var newBookmark = new GlideRecord("sys_ui_bookmark");
     newBookmark.initialize();
-	newBookmark.order
+    newBookmark.order = 9;
+    newBookmark.icon = "list";
     newBookmark.user = gs.getUserID();
     newBookmark.url = listURL;
     newBookmark.title = "Incidents assigned to my groups";
