@@ -1,0 +1,28 @@
+var memGroups = [];
+var gr = new GlideRecord("sys_user_grmember");
+gr.addQuery("user", gs.getUserID());
+//gs.print("query is "+gr.getEncodedQuery());
+gr.query();
+while (gr.next()) {
+    memGroups.push(gr.group);
+}
+//gs.print("groups "+memGroups.join(","));
+
+var filter = "assignment_groupIN" + memGroups.join(", ");
+
+var listURL = "/incident_list.do?sysparm_query=" + encodeURIComponent(filter);
+
+var bookmark = new GlideRecord("sys_ui_bookmark");
+bookmark.addQuery("user", gs.getUserID());
+bookmark.addQuery("url", listURL);
+bookmark.query();
+if (!bookmark.next()) {
+    var newBookmark = new GlideRecord("sys_ui_bookmark");
+    newBookmark.initialize();
+	newBookmark.order
+    newBookmark.user = gs.getUserID();
+    newBookmark.url = listURL;
+    newBookmark.title = "Incidents assigned to my groups";
+    newBookmark.pinned = true;
+    newBookmark.insert();
+}
