@@ -1,11 +1,15 @@
-(function getUserRoles() {
-	// sample user
-	var userName = 'bow.ruggeri';
+function getUserRoles(userName) {
 
-	var roleQuery = new GlideQuery('sys_user_has_role')
-		.where('user.user_name', 'bow.ruggeri')
-		.select(['role$DISPLAY', 'role.active', 'user$DISPLAY', 'user.email'])
-		.toArray(100);
+    var gqRoles = new global.GlideQuery('sys_user_has_role')
+        .where('user.user_name', userName)
+        .select('role$DISPLAY')
+        // use .reduce() instead of .toArray() as it allows us to strip out only whats needed, and doesn't need to know the number of entries.
+        .reduce(function (arr, e) {
+            arr.push(e.role$DISPLAY);
+            return arr;
+        }, []);
 
-	gs.log(JSON.stringify(roleQuery, null, 2));
-})();
+    return gqRoles;
+};
+
+gs.info(getUserRoles('bow.ruggeri'));

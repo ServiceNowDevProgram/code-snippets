@@ -8,7 +8,13 @@ function onChange(control, oldValue, newValue, isLoading, isTemplate) {
    aj.getXML(callback);
    function callback(response){  // creating a callback function to store the response getting from script include.
 	var answer = response.responseXML.documentElement.getAttribute('answer');
-	alert(answer); // This will alert the details.
+	//alert(answer); // This will alert the details.
+	// Commented above code and replaced it with GlideModal
+        var gm = new GlideModal("glide_alert_standard", false, 600);
+        gm.setTitle("Caller Details");
+        gm.setPreference("title", answer.toString());
+        gm.setPreference("warning", "false");
+        gm.render();
    }
    
 }
