@@ -4,8 +4,7 @@ function onChange(control, oldValue, newValue, isLoading, isTemplate) {
       return;
 
    }
-  //If State of Incident is updated to In Progress from New State then Flash the Assigned to field.
-  
+  //If State of Incident is updated to In Progress from New State then Flash the Assigned to field. 
    if(newValue==2)
 {	
 	g_form.flash("incident.assigned_to","red",-4);
