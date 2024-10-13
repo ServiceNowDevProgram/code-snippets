@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<unload unload_date="2024-10-13 11:45:15">
+<sys_script_include action="INSERT_OR_UPDATE">
+<access>public</access>
+<active>true</active>
+<api_name>global.RecordProducerVariableUtils</api_name>
+<caller_access/>
+<client_callable>false</client_callable>
+<description>This script include is used to support functionality around custom usage of Record Producer variables</description>
+<mobile_callable>false</mobile_callable>
+<name>RecordProducerVariableUtils</name>
+<script><![CDATA[var RecordProducerVariableUtils = Class.create();
+
+// Function to create a new variable
+RecordProducerVariableUtils.createVariable = function(currentGr, order, questionId) {
+
+    // Get table name and the sys_id of the record
+    var recordId = currentGr.getUniqueValue();
+    var tableName = currentGr.getTableName();
+
+	// Create variable and associate it with the record so that it can be visible via Variable Editor
+    var variableGr = new GlideRecord('question_answer');
+    variableGr.initialize();
+    variableGr.setValue('order', order);
+    variableGr.setValue('question', questionId);
+    variableGr.setValue('table_name', tableName);
+    variableGr.setValue('table_sys_id', recordId);
+    
+	return variableGr.insert();
+};]]></script>
+<sys_class_name>sys_script_include</sys_class_name>
+<sys_created_by>ivan.betev</sys_created_by>
+<sys_created_on>2024-09-26 13:00:35</sys_created_on>
+<sys_id>9e42a3b2837c525013c9bac6feaad333</sys_id>
+<sys_mod_count>3</sys_mod_count>
+<sys_name>RecordProducerVariableUtils</sys_name>
+<sys_package display_value="Global" source="global">global</sys_package>
+<sys_policy/>
+<sys_scope display_value="Global">global</sys_scope>
+<sys_update_name>sys_script_include_9e42a3b2837c525013c9bac6feaad333</sys_update_name>
+<sys_updated_by>ivan.betev</sys_updated_by>
+<sys_updated_on>2024-10-13 11:33:20</sys_updated_on>
+</sys_script_include>
+</unload>
