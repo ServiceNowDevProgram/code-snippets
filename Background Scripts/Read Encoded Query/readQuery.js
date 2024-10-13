@@ -1,5 +1,5 @@
 // This code get the encoded query in readable format.
-// Copy and paste encoded query in quotes of the function API whoch you want to read.
+// Pass the table name and encoded query in the function API whoch you want to read.
 
-var grQ= new GlideQueryBreadcrumbs().getReadableQuery('');
+var grQ= new GlideQueryBreadcrumbs().getReadableQuery('table name', 'Pass the encoded query');
 gs.info("Readable Query is "+grQ);
