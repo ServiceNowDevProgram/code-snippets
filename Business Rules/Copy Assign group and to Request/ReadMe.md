@@ -1,4 +1,8 @@
-Script: Copy Assignment group and Assigned to details of sc_task to Request table.
+Script: Copy the Assignment group and Assign the  details of sc_task to the Request table.
+
+This script automates the process of assigning values from the first sc_task in a REQ to the parent REQ record. This is useful for keeping the request record in sync with its initial task(If multiple tasks are created for one request), allowing other workflows to use these values directly from the request.
+
+
 
 Purpose of the Script:
 
