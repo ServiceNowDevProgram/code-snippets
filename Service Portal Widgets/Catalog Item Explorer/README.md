@@ -15,7 +15,7 @@ The primary goal of the Catalog Item Explorer widget is to serve as a valuable l
 
 ## Configurable Options
 
-1. **Catalog Selection:** Choose the catalog with which the widget should work, allowing for flexibility in catalog management.
+1. **Catalog Selection:** Choose the catalogs with which the widget should work, allowing for flexibility in catalog management.
 2. **Items Per Page:** Define the number of items displayed per page to suit your catalog's content density.
 3. **All Items Category Label:** Customize the label for the "All Items" category to match your catalog's naming conventions.
 4. **Debug Mode:** Enable or disable debug logging to facilitate troubleshooting and development.
