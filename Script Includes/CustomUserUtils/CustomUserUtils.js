@@ -149,5 +149,22 @@ CustomUserUtils.prototype = {
         return false;
     },
 
+    /*	
+    	Returns: Array of user SysIDs
+    */
+   
+    lineManagers: function() {
+        var managers = [];
+        var usrGa = new GlideAggregate("sys_user");
+        usrGa.addQuery("active", "=", true);
+        usrGa.addQuery("manager", "!=", "");
+        usrGa.addAggregate("COUNT", "manager");
+        usrGa.query();
+        while (usrGa._next()) {
+            managers.push(usrGa.getValue('manager'));
+        }
+        return managers;
+    },
+
     type: 'CustomUserUtils'
 };
