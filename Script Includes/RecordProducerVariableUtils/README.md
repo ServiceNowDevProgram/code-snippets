@@ -17,6 +17,6 @@ Background Script to add an additional variable to a change record:
 ```javascript
 var current = new GlideRecord("change_request");
 if (current.get("<SYS_ID>")){
-    RecordProducerVariableUtils.createVariable(current, -1000, '<VARIABLE_SYS_ID>');
+    RecordProducerVariableUtils.createVariable(current, -1000, "<VARIABLE_SYS_ID>");
 }
 ```
