@@ -21,26 +21,37 @@
 
     /* Get Catalog ID */
     var catalogsId = $sp.getParameter("used_catalog") || options.used_catalog;
-
+    
     /* Get all catalog items */
     var catalogItems = new GlideRecordSecure('sc_cat_item');
-    catalogItems.addQuery('sc_catalogs', 'LIKE', catalogsId);
+    catalogItems.addQuery('sc_catalogs', 'IN', catalogsId);
     catalogItems.addQuery('active', true);
     catalogItems.orderBy('name');
     catalogItems.query();
 
     /* Save all sys_ids and names of catalog items to an array */
     data.catalogItems = [];
+    
+    /* Declare a variable to host externalUrl */
+    var extUrl = "";
 
     while (catalogItems.next()) {
         if (!$sp.canReadRecord("sc_cat_item", catalogItems.sys_id.getDisplayValue())) {
             continue;
         }
 
+        extUrl = "";        
+        if (catalogItems.sys_class_name == "sc_cat_item_content") {
+            var contentItemGr = new GlideRecordSecure('sc_cat_item_content');
+            contentItemGr.get(catalogItems.getUniqueValue());
+            extUrl = contentItemGr.isValidRecord() ? contentItemGr.getValue('url') : "";            
+        }
+
         data.catalogItems.push({
-            itemId: catalogItems.getValue('sys_id').toString(),
+            itemId: catalogItems.getUniqueValue(),
             name: catalogItems.getValue('name'),
-            description: catalogItems.getValue('short_description')
+            description: catalogItems.getValue('short_description'),
+			externalUrl: extUrl
         });
     }
 
