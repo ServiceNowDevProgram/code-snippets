@@ -3,9 +3,20 @@
 # Update the tableName per requirement
 
 var nm = new NumberManager(tableName);
-var gr = new GlideRecord(tableName);
-gr.orderBy('sys_created_on');
-gr.query();
-while (gr.next()) {
-	gr.number = nm.getNextObjNumberPadded();
-	gr.update();
+
+var query = ''; //add query string
+
+var grTableName = new GlideRecord(tableName); // glideRecord Table Name ex. Incident
+
+grTableName.addQuery(query);
+
+grTableName.orderBy('sys_created_on');
+
+grTableName.query();
+
+while (grTableName.next()) {
+	
+grTableName.number = 
+nm.getNextObjNumberPadded();
+	
+grTableName.update();
