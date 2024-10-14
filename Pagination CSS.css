@@ -1,0 +1,18 @@
+.pageNum {
+  font-size: 16px;
+}
+.btngroupStyle {
+  margin-top: -0px;
+}
+table {
+  width: 100%;
+  word-wrap: break-word;
+  table-layout: fixed;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.th {
+  font-size: 16px;
+  font-weight: 550;
+}
