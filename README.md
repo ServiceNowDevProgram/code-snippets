@@ -1,42 +1,68 @@
-![Code Snippets Banner](https://github.com/ServiceNowDevProgram/code-snippets/assets/31702109/f9fa072a-4c0c-426b-8eed-200c6616ff60)
+README: Pagination with Next & Previous Button
+This widget displays a paginated table of incident records using Next and Previous buttons to navigate between pages. The widget is built with AngularJS and integrates with ServiceNow GlideRecord to fetch active incident records.
 
-Welcome to ServiceNow's Code Snippets community repository, managed by the Developer Program and the sndevs Slack community.
+---
 
-Inside this repository, you will find community submitted code-snippets and their variants for different use-cases.
+Features:
 
-**Note:** ServiceNowDevProgram has many repositories that can be imported directly into ServiceNow, this is not one of them; This repository is meant to be edited directly in GitHub or any other Git-enabled IDE like VS Code.
+1. Displays Incident Records: The widget retrieves and displays active incident records from the ServiceNow incident table, including fields such as:
+   o Number
+   o State
+   o Short Description
+   o Priority
+   o Assignment Group
+   o Assigned To
+2. Pagination:
+   o The table is paginated to show 5 records per page.
+   o Users can navigate through pages using Next and Previous buttons.
 
-## Disclaimer
+---
 
-Please note the following:
+Files/Code Overview:
 
-1. **Community-Sourced Code**: The code found in this repository is contributed by members of the community and has not been vetted or officially endorsed by the repository owners.
+1. HTML Template (Table and Pagination UI):
+   • The HTML template uses an AngularJS directive ng-repeat to loop through displayData, which contains a subset of the incident records for the current page.
+   • A table is built with the following columns:
+   o Number, State, Short Description, Priority, Assignment Group, Assigned To.
+   • Pagination Controls:
+   o Previous Button: Decrements the currentPage and updates the table content.
+   o Next Button: Increments the currentPage and updates the table content.
+   • No Records: Displays a message when there are no records in displayData.
+2. CSS Styles:
+   • .pageNum: Defines the styling for the page number display.
+   • .btngroupStyle: Minor adjustments to button margin.
+   • table: Ensures the table has a fixed layout and word wrapping to handle long text.
+   • .th: Defines the styling for the table header.
+3. AngularJS Controller (api.controller):
+   • $scope.currentPage: Tracks the current page number.
+   • $scope.pageSize: Defines the number of records per page (set to 5).
+   • $scope.numberOfPages: Calculates the total number of pages based on the length of the tableRecord array.
+   • $scope.displayData: Contains the records to be displayed on the current page. It is updated whenever the user changes pages.
+   • Pagination Functions:
+   o pageChange(): This function updates the data shown when the user clicks the Next button. It calculates the range of records to display based on the current page index.
+   o previousPage(): This function updates the data shown when the user clicks the Previous button. It recalculates the range of records for the previous page.
+4. Server-Side Script:
+   • Uses a GlideRecord query to retrieve incident records from the incident table where the state is "active" (state=2).
+   • The data fetched includes:
+   o Number, Short Description, Priority, State, Assignment Group, and Assigned To.
+   • Each record's sys_id is used to generate a clickable link for each incident in the table (sp?id=form&table=incident&sys_id=).
+   • The fetched data is stored in the data.tableRecord array.
 
-2. **Use at Your Own Risk**: Users are advised to exercise caution and thoroughly review the code before implementing it in their ServiceNow instances. We strongly recommend a comprehensive review to ensure the code aligns with your specific requirements and security standards.
+---
 
-3. **Reporting Mistakes and Issues**: If you come across any mistakes, issues, or improvements in the code, we encourage you to report them and consider contributing to the repository by submitting corrections or enhancements.
+How Pagination Works:
+• Initial Page Load: When the widget is first loaded, it fetches all active incidents and displays the first 5 records.
+• Next Button: When the user clicks the Next button, the page index is incremented by 1. The records from the next page are sliced from the tableRecord array and displayed in the table.
+• Previous Button: When the user clicks the Previous button, the page index is decremented by 1. The records from the previous page are sliced and displayed.
 
-4. **No Warranty or Support**: This repository is provided as-is, without any warranties or guarantees. It does not come with official support from the ServiceNow team or the repository owners.
+---
 
-By using the code from this repository, you acknowledge that you have read and understood this disclaimer. Your use of the code is at your own discretion and risk.
+Error Handling:
+• If an error occurs during the GlideRecord query, an error message is captured and displayed using gs.addErrorMessage().
 
-We appreciate your participation and contributions to this community-driven project. Let's collaborate to make it a valuable resource for ServiceNow developers and enthusiasts.
+---
 
-🔔🔔🔔<br>
-**_CONTRIBUTORS must follow all guidelines in [CONTRIBUTING.md](CONTRIBUTING.md)_** or run the risk of having your Pull Requests labeled as spam.<br>
-🔔🔔🔔
-
-## We invite you to contribute!
-
-To contribute, just follow these steps:
-
-1. Fork this repo (you get a point just by forking!)
-2. Create a new branch on your fork
-3. Add/Update the repo
-4. Submit a pull request!
-
-That's it! More detailed contribution instructions can be found [here](CONTRIBUTING.md)
-
-## Leaderboard
-
-Looking for the old leaderboard? We've moved the leaderboard to the overarching [Hacktoberfest](https://github.com/ServiceNowDevProgram/Hacktoberfest#leaders) repository and have expanded its scope to all participating projects.
+Customization:
+• Change Page Size: Modify $scope.pageSize in the controller to change how many records are displayed per page.
+• Alter Displayed Fields: Adjust the fields fetched from GlideRecord (like adding more fields or removing existing ones).
+• Styling: Modify the CSS styles to customize the table layout, fonts, or button appearance.
