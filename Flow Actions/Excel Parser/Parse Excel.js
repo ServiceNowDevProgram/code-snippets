@@ -1,5 +1,5 @@
 (function execute() {
-    // ... code ...
+    //
 
     var arr = [];
 
