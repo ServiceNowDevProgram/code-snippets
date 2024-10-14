@@ -1,11 +1,8 @@
 
 # Change Label of Field 
 
-• Modify field labels dynamically in the ServiceNow platform.
+• Using g_form.setLabelOf() method we can change the field. We have to pass two parameters in this first paramater is the field which we want to change and second parameter is the label we want. Like in the code first parameter is "description" and second is "Please Explain Breifly". When the form loads if priority of the incident record is 1 then it changes description label to "Please Explain Breifly"
 
-• Change labels through the UI form designer or through client/server-side scripts.
 
-• Implement Business Rules to change labels based on conditions.
 
-• Adjust field labels dynamically using Client Scripts based on user interactions.
 
