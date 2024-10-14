@@ -10,7 +10,7 @@ GenerateSCIMPayload.prototype = {
         for (var i = 0; i < length; i++) {
             result += characters.charAt(Math.floor(Math.random() * characters.length));
         }
-        return "MB test group " + result;
+        return "test group " + result;
     },
 
     // Function to retrieve the groups where the user is a member
