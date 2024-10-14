@@ -1,0 +1,6 @@
+var mail = new GlideEmailOutbound();
+mail.setSubject("Hello Peter Parker!");
+mail.addRecipient("peter.p@uncleben.com");
+mail.addAddress('cc',"may.p@uncleben.com");
+mail.setBody("With great power, Comes great responsibility!!!");
+mail.save()
