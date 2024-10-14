@@ -6,7 +6,7 @@ Purpose: we often recive requests add a single group member to multiple groups. 
    
 - **addEncodedQuery('')**: Add the required list of groups here, by copying filter from list of groups.
 
-- We use while loop to loop through list of groups
+- We use while loop to loop through list of groups.
 
 - **The second GlideRecord('sys_user_grmember')**: For each group, creates a new GlideRecord instance to query the `sys_user_grmember` table (user-group memberships).
 
