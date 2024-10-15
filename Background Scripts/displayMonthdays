@@ -1,0 +1,12 @@
+// Get the current date
+var currentDate = new Date();
+
+// Get the month index (0-11)
+var monthIndex = currentDate.getMonth();
+
+// Get the month name using an array of month names
+var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+var monthName = monthNames[monthIndex];
+
+// Display the month name
+gs.info("Current month: " + monthName);
