@@ -1,0 +1,19 @@
+function assignRoleToUser(userId, roleName) {
+    var userGR = new GlideRecord('sys_user');
+    userGR.get(userId);
+
+    // Check if the user already has the role
+    if (!userGR.hasRole(roleName)) {
+        // Add the role to the user
+        userGR.addRole(roleName);
+        userGR.update();
+        gs.info('Role ' + roleName + ' assigned to user ' + userGR.name);
+    } else {
+        gs.info('User ' + userGR.name + ' already has role ' + roleName);
+    }
+}
+
+// Example usage:
+var userId = '0d486492db5411004d3b695593efc488'; // Replace with the actual user sys_id
+var roleName = 'ServiceNow Administrator'; // Replace with the desired role name
+assignRoleToUser(userId, roleName);
