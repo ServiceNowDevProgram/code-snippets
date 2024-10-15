@@ -1,0 +1,4 @@
+var user = gs.getUser();
+var companyName = user.company;
+
+gs.info("Current user's company: " + companyName);
