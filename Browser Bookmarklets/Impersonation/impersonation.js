@@ -1,0 +1,1 @@
+javascript:let impWin=window.open("/impersonate_dialog.do", "Impersonation", "scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,width=300,height=300,left=100,top=100");setInterval(()=>{if(!impWin.location.pathname.includes("impersonate")){impWin.close();window.location.reload();};},500);
