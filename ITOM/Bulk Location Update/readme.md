@@ -1,0 +1,1 @@
+This script will get all the CI classes mentioned in the property "nonDiscovery.location.update" in a comma-separated and fetch all the sub-classes of the mentioned classes and update the location data based on subnet information stored in 'cmdb_ci_ip_network_subnet' table and make updates in bulk on location basis.
