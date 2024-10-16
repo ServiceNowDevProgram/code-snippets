@@ -1,0 +1,1 @@
+Description: This is a script that assigns roles to users in bulk based on specific conditions such as department,location or job title. This script can simplify the process of managing user roles and permissions. Use Case: Assign the 'itil' role to all users in the 'IT' department who are located in a specific region.
