@@ -43,8 +43,14 @@ api.controller = function ($scope, $window) {
   };
 
   /* Function to make the whole row clickable */
-  c.openUrl = function (itemId) {
-    var fullLink = c.data.defaultCatalogLink + itemId;
+  c.openUrl = function (itemId, externalUrl) {
+
+    var fullLink = "";
+    fullLink = c.data.defaultCatalogLink + itemId;
+    
+    /* If external URL provided then replace the output with it */
+    if (externalUrl) { fullLink = externalUrl };
+
     $window.open(fullLink, "_blank");
   };
 
