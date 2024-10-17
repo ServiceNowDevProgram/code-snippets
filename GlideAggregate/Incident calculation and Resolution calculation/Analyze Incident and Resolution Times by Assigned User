@@ -1,1 +1,0 @@
-This script demonstrates the usage of GlideAggregate. I have written a script to analyze incident data. It groups incidents by their assigned user, counts the number of incidents assigned to each user, and calculates the average time it takes to close them.
