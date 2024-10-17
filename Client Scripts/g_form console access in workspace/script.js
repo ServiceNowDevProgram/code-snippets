@@ -1,23 +1,42 @@
 function getGlideFormAW() {
-    document.getElementsByTagName("sn-workspace-content")[0].shadowRoot.querySelectorAll("now-record-form-connected")[0]
-
-    var firstContentChild = document.getElementsByTagName("sn-workspace-content")[0].shadowRoot
-        .querySelectorAll(".chrome-tab-panel.is-active")[0].firstChild;
-
-    var snWorkspaceFormEl;
-    if (firstContentChild.tagName == "NOW-RECORD-FORM-CONNECTED") {
-        snWorkspaceFormEl = firstContentChild.shadowRoot.querySelectorAll(".sn-workspace-form")[0];
-    } else {
-        snWorkspaceFormEl = firstContentChild.shadowRoot.querySelectorAll("now-record-form-connected")[0]
-            .shadowRoot.querySelectorAll(".sn-workspace-form")[0];
-    }
-    if (!snWorkspaceFormEl) throw "Couldn't find sn-workspace-form";
-
-    var reactInternalInstanceKey = Object.keys(snWorkspaceFormEl).find(function (objKey) {
-        if (objKey.indexOf("__reactInternalInstance$") >= 0) {
-            return true;
+    try {
+        // Look for the HR Agent Workspace root element
+        const recordShell = document.querySelector('now-record-page-shell');
+        if (!recordShell || !recordShell.shadowRoot) {
+            throw new Error('HR workspace shell not found');
         }
-        return false;
-    });
-    return snWorkspaceFormEl[reactInternalInstanceKey].return.stateNode.props.glideEnvironment._gForm;
+
+        // Find the form element in the new Utah structure
+        const formElement = recordShell.shadowRoot.querySelector('now-record-form-connected');
+        if (!formElement || !formElement.shadowRoot) {
+            throw new Error('Form element not found');
+        }
+
+        // Find the React instance key
+        const reactKey = Object.keys(formElement).find(key => 
+            key.startsWith('__reactFiber$') || 
+            key.startsWith('__reactInternalInstance$')
+        );
+
+        if (!reactKey) {
+            throw new Error('React instance not found');
+        }
+
+        // Navigate the React fiber tree to find g_form
+        let fiber = formElement[reactKey];
+        while (fiber) {
+            if (fiber.stateNode?.props?.glideEnvironment?._gForm) {
+                return fiber.stateNode.props.glideEnvironment._gForm;
+            }
+            fiber = fiber.return;
+        }
+
+        throw new Error('g_form not found in component tree');
+    } catch (error) {
+        console.error('Error accessing g_form:', error);
+        throw error;
+    }
 }
+
+// Usage example:
+// var g_form = getGlideFormAW();
