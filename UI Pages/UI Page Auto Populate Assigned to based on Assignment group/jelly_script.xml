@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+<label>Assignment Group</label>
+<g:ui_reference id="assignment_group" name="assignment_group" table="sys_user_group" query="active=true" coloumns="label" onChange="onAssignmentGroupChange()"/>
+<label>Assigned To</label>
+<g:ui_reference id="assigned_to" name="assigned_to" table="sys_user" query="active=true" />
+</j:jelly>
