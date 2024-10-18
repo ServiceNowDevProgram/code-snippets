@@ -1,0 +1,68 @@
+<div>
+  <!-- your widget template -->
+  <!--TABLE TO DISPLAY INCIDENT TABLE RECORDS-->
+  <table class="table table-striped item-table">
+
+    <thead class="fixed-listheader">
+      <tr>
+        <th scope="col" colspan="2">${Number}</th>
+        <th scope="col" colspan="2">
+          ${State}</th>
+        <th scope="col" colspan="3">${Short Description}</th>
+        <th scope="col" colspan="2">
+          ${Priority}</th>
+        <th scope="col" colspan='3'>
+          ${Assignment Group}</th>
+        <th scope="col" colspan='3'>
+          ${Assigned to}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="item in displayData | orderBy:number" ng-if="!loading">
+
+        <td headers="id-header-item" scope="row" colspan="2">
+
+          <a ng-href="{{::item.link}}">
+            <div>
+              <span>{{::item.number}}</span>
+            </div>
+          </a>
+        </td>
+        <td headers="id-header-description id-item-{{item.sys_id}}" class="catalog-text-wrap"
+            colspan="2">
+          {{::item.state}}</td>
+        <td headers="id-header-description id-item-{{item.sys_id}}" class="catalog-text-wrap"
+            colspan="3">
+          {{::item.short_description}}</td>
+        <td headers="id-header-description id-item-{{item.sys_id}}" class="catalog-text-wrap"
+            colspan="2" >
+          {{::item.priority}}</td>
+        <td headers="id-header-description id-item-{{item.sys_id}}" class="catalog-text-wrap"
+            colspan="3" ng-if="data.task_table == 'cmdb_ci_outage'">
+          {{::item.duration}}</td>
+        <td headers="id-header-description id-item-{{item.sys_id}}" class="catalog-text-wrap"
+            colspan="3" >
+          {{::item.assignment_group}}</td>
+        <td headers="id-header-description id-item-{{item.sys_id}}" class="catalog-text-wrap"
+            colspan="2">
+          {{::item.assigned_to}}</td>
+      </tr>
+      <tr ng-if="displayData.length==0">
+        <td colspan='15' class="text-center">No Records</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!--PAGINATION-->
+  <div class="text-center">
+    <button class="btn btn1 btn-primary" ng-disabled="currentPage == 0"
+            ng-click="previousPage(currentPage-1)">
+      Previous
+    </button>
+    <span class="pageNum">{{currentPage+1}} of {{numberOfPages}}</span>
+    <button class="btn btn1 btn-primary" ng-disabled="currentPage >= numberOfPages - 1"
+            ng-click="pageChange(currentPage)">
+      Next
+    </button>
+  </div>
+</div>
