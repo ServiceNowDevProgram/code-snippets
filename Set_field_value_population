@@ -1,0 +1,13 @@
+function onLoad() {
+    // Set the value of the 'short_description' field based on the 'category' field
+    var category = g_form.getValue('category');
+    if (category === 'Hardware') {
+        g_form.setValue('short_description', 'Hardware Request');
+    } else if (category === 'Software') {
+        g_form.setValue('short_description', 'Software Request');
+    }
+      else if (category === 'Network') {
+              g_form.setValue('short_description', 'Network Issue Request');
+          }
+
+}
