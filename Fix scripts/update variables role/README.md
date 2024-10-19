@@ -5,7 +5,8 @@
 - To update multiple variables write role this fix script will help to add them.
 
 
-`function updateItemOptionRoles() {
+```
+function updateItemOptionRoles() {
      var query = 'sys_scope=5f414691db10a4101b2733f3b9961961';   // sys_id of application
      var varGr = new GlideRecord('item_option_new');  // GlideRecord of variables table
      varGr.addEncodedQuery(query);
@@ -14,4 +15,5 @@
      varGr.setValue('write_roles', 'role1, role2, role3'); // add the write roles 
      varGr.updateMultiple();
     gs.info('Updated ' + varGr.getRowCount() + ' records.');
- }`
+ }
+```
