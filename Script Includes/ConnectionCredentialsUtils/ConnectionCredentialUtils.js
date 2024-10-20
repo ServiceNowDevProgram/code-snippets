@@ -8,6 +8,6 @@
         gs.info("Connection URL: " + connectionInfo.getAttribute("connection_url")); // to get other information, replace the connection_url with other field_name available in connection table.
 
         // get Credential Record Information (for ex: password)
-        gs.info("Password: "+ connectionInfo.getCredentialAttribute("passowrd")); // to get other information, replace password with other field_name available in credenitals table.
+        gs.info("Password: "+ connectionInfo.getCredentialAttribute("password")); // to get other information, replace password with other field_name available in credenitals table.
     }
 })();
