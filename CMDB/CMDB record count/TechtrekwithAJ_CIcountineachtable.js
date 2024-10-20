@@ -8,13 +8,13 @@
         'cmdb_ci_netgear',  // Network Gear,
         'cmdb_ci_win_server',  // windows Servers
         'cmdb_ci_linux_server',  // linux Servers
-        'cmdb_ci_appl',  // Applications
+        'cmdb_ci_appl',   // Applications
         'cmdb_ci_computer',  // Computers
         'cmdb_ci_application',  // Applications
         'cmdb_ci_printer',   // Printers
         'cmdb_ci_hardware',  // Hardware
         'cmdb_ci_storage_device',  // Storage devices
-        'cmdb_ci_vm_object',  // Virtual Machine Objects
+        'cmdb_ci_vm_object'  // Virtual Machine Objects
        
         // we can add more CMDB tables as we needed
      
