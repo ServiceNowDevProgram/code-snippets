@@ -1,4 +1,4 @@
-Use Case: Set up Approve and Reject buttons using Email script to Approve/Reject through Email
+Use Case: Set up Approve and Reject buttons using Email script to Approve/Reject through Email (Use this on the sysapproval_approver Table Notifications)
 
 1)Upload below images to DB tables in ServiceNow (System UI> Images)
 
