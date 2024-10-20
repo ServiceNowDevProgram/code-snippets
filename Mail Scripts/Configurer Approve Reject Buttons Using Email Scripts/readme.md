@@ -2,6 +2,9 @@ Use Case: Set up Approve and Reject buttons using Email script to Approve/Reject
 
 1)Upload below images to DB tables in ServiceNow (System UI> Images)
 
+![image](https://github.com/user-attachments/assets/a7113ce8-7acf-4c78-af29-dde41a816332)
+
+![image](https://github.com/user-attachments/assets/9b01e1c8-b8f2-4a14-8274-a7d4d4fdbf73)
 
 
 2)Go to Email Scripts > Click new
@@ -9,3 +12,7 @@ Use Case: Set up Approve and Reject buttons using Email script to Approve/Reject
 4)Call this in email in your Notification by using below syntax
 ${mail_script:"name of the email script"}
 5)Preview the email verify results
+
+Result:
+
+![image](https://github.com/user-attachments/assets/6c65a977-de11-4abd-918f-a4edeab4b2ce)
