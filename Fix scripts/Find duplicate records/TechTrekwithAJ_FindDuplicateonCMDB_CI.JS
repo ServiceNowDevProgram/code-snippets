@@ -1,6 +1,6 @@
 (function() {
 
-    var TABLE_TO_FIND_DUPLICATE_IN = 'cmdb_ci;
+    var TABLE_TO_FIND_DUPLICATE_IN = 'cmdb_ci';
     var FIELD_TO_GROUP_BY = 'name';
 
     // GlideAggregate instance
