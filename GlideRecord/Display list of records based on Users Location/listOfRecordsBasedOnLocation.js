@@ -12,6 +12,8 @@ Scripts -
     usr.addQuery('sys_id', current_user);
     usr.query();
     if (usr.next()) {
+        if (usr.location != '') {
         current.addQuery('location=' + usr.location); // Querying the user's location with current record location 
+    }
     }
 })(current, previous);
