@@ -1,16 +1,15 @@
-//create business rule on sc_req_item table and add condtion 
-
-(function executeRule(current, previous /*null when async*/ ) {
+(function executeRule(current, previous /*null when async*/) {
+    var OPEN_STATE = 1;
+    var WORK_IN_PROGRESS_STATE = 2;
 
     var gr = new GlideRecord("sc_task");
     gr.addQuery('request_item', current.sys_id);
-    gr.orderBy('order');
-    gr.setLimit(1);
+    gr.addQuery('state', OPEN_STATE);  // Only fetch tasks in Open state
     gr.query();
-    if (gr.next() && gr.getValue('state') == 1) {
-        gr.setValue('state', '2');
+
+    while (gr.next()) {
+        gr.setValue('state', WORK_IN_PROGRESS_STATE);  // Update the task to Work in Progress
         gr.update();
+        gs.log('Task ' + gr.number + ' updated from Open to Work in Progress');
     }
-
-
 })(current, previous);
