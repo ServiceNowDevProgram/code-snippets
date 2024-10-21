@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<unload unload_date="2024-10-18 06:07:09">
+<sys_properties action="INSERT_OR_UPDATE">
+<choices/>
+<description/>
+<ignore_cache>false</ignore_cache>
+<is_private>false</is_private>
+<name>glide.db.impex.XMLLoader.max.file.size.mb</name>
+<read_roles/>
+<suffix/>
+<sys_class_name>sys_properties</sys_class_name>
+<sys_created_by>charanjeet.singh</sys_created_by>
+<sys_created_on>2024-10-09 18:50:48</sys_created_on>
+<sys_id>bebfefc73b8996109136f05765e45a39</sys_id>
+<sys_mod_count>1</sys_mod_count>
+<sys_name>glide.db.impex.XMLLoader.max.file.size.mb</sys_name>
+<sys_package display_value="Global" source="global">global</sys_package>
+<sys_policy/>
+<sys_scope display_value="Global">global</sys_scope>
+<sys_update_name>sys_properties_bebfefc73b8996109136f05765e45a39</sys_update_name>
+<sys_updated_by>charanjeet.singh</sys_updated_by>
+<sys_updated_on>2024-10-09 20:04:58</sys_updated_on>
+<type>string</type>
+<value>1000000</value>
+<write_roles/>
+</sys_properties>
+<sys_properties action="INSERT_OR_UPDATE">
+<choices/>
+<description/>
+<ignore_cache>true</ignore_cache>
+<is_private>false</is_private>
+<name>glide.script.max_run_time</name>
+<read_roles/>
+<suffix/>
+<sys_class_name>sys_properties</sys_class_name>
+<sys_created_by>charanjeet.singh</sys_created_by>
+<sys_created_on>2024-10-09 19:11:00</sys_created_on>
+<sys_id>7644b78f3b8996109136f05765e45a21</sys_id>
+<sys_mod_count>1</sys_mod_count>
+<sys_name>glide.script.max_run_time</sys_name>
+<sys_package display_value="Global" source="global">global</sys_package>
+<sys_policy/>
+<sys_scope display_value="Global">global</sys_scope>
+<sys_update_name>sys_properties_7644b78f3b8996109136f05765e45a21</sys_update_name>
+<sys_updated_by>charanjeet.singh</sys_updated_by>
+<sys_updated_on>2024-10-09 20:04:39</sys_updated_on>
+<type>integer</type>
+<value>6000</value>
+<write_roles/>
+</sys_properties>
+<sys_properties action="INSERT_OR_UPDATE">
+<choices/>
+<description/>
+<ignore_cache>true</ignore_cache>
+<is_private>false</is_private>
+<name>glide.script.timeout</name>
+<read_roles/>
+<suffix/>
+<sys_class_name>sys_properties</sys_class_name>
+<sys_created_by>charanjeet.singh</sys_created_by>
+<sys_created_on>2024-10-09 19:11:37</sys_created_on>
+<sys_id>7e64f7033bc996109136f05765e45ac6</sys_id>
+<sys_mod_count>1</sys_mod_count>
+<sys_name>glide.script.timeout</sys_name>
+<sys_package display_value="Global" source="global">global</sys_package>
+<sys_policy/>
+<sys_scope display_value="Global">global</sys_scope>
+<sys_update_name>sys_properties_7e64f7033bc996109136f05765e45ac6</sys_update_name>
+<sys_updated_by>charanjeet.singh</sys_updated_by>
+<sys_updated_on>2024-10-09 20:04:28</sys_updated_on>
+<type>integer</type>
+<value>70000</value>
+<write_roles/>
+</sys_properties>
+<sys_properties action="INSERT_OR_UPDATE">
+<choices/>
+<description/>
+<ignore_cache>true</ignore_cache>
+<is_private>false</is_private>
+<name>com.glide.processors.XMLProcessor.max_record_count</name>
+<read_roles/>
+<suffix/>
+<sys_class_name>sys_properties</sys_class_name>
+<sys_created_by>charanjeet.singh</sys_created_by>
+<sys_created_on>2024-10-09 19:10:09</sys_created_on>
+<sys_id>6793b7cf3b8996109136f05765e45a43</sys_id>
+<sys_mod_count>1</sys_mod_count>
+<sys_name>com.glide.processors.XMLProcessor.max_record_count</sys_name>
+<sys_package display_value="Global" source="global">global</sys_package>
+<sys_policy/>
+<sys_scope display_value="Global">global</sys_scope>
+<sys_update_name>sys_properties_6793b7cf3b8996109136f05765e45a43</sys_update_name>
+<sys_updated_by>charanjeet.singh</sys_updated_by>
+<sys_updated_on>2024-10-09 20:04:27</sys_updated_on>
+<type>integer</type>
+<value>70000</value>
+<write_roles/>
+</sys_properties>
+<sys_properties action="INSERT_OR_UPDATE">
+<choices/>
+<description/>
+<ignore_cache>true</ignore_cache>
+<is_private>false</is_private>
+<name>glide.script.thread.termination</name>
+<read_roles/>
+<suffix/>
+<sys_class_name>sys_properties</sys_class_name>
+<sys_created_by>charanjeet.singh</sys_created_by>
+<sys_created_on>2024-10-09 19:08:16</sys_created_on>
+<sys_id>a753b7cf3b8996109136f05765e45a3b</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_name>glide.script.thread.termination</sys_name>
+<sys_package display_value="Global" source="global">global</sys_package>
+<sys_policy/>
+<sys_scope display_value="Global">global</sys_scope>
+<sys_update_name>sys_properties_a753b7cf3b8996109136f05765e45a3b</sys_update_name>
+<sys_updated_by>charanjeet.singh</sys_updated_by>
+<sys_updated_on>2024-10-09 19:08:16</sys_updated_on>
+<type>integer</type>
+<value>6400</value>
+<write_roles/>
+</sys_properties>
+</unload>
