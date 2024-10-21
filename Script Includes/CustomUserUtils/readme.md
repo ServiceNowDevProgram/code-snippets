@@ -1,6 +1,6 @@
 # CustomUserUtils
 
-A collection of methods related to user roles and group memberships.
+A collection of methods related to user roles, group memberships and other utilities.
 
 ## hasRoleExactly();
 
@@ -51,4 +51,12 @@ The use of this function is to check whether the user is member of all of the sp
 ### Example
 
 `javascript: new CustomUserUtils().isMemberOfAll('62826bf03710200044e0bfc8bcbe5df1', 'Service Desk, Hardware, Database'))`
+
+## lineManagers();
+
+The use of this function is to get the managers (users who have atleast one direct reportee).
+
+### Example
+
+`new CustomUserUtils().lineManagers()`
 
