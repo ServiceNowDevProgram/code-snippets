@@ -16,4 +16,4 @@ for (var i = 0; i < groups.length; i++) { // Visit all the groups in the list of
 
         gs.info('Added User ' + userSysId + 'to group ' + groupSysId); // Info Message displaying after each users group membership creation
     }
-
+}
