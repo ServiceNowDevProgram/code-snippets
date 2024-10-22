@@ -3,4 +3,11 @@ CIs that haven't been be used for 'd' days.
 
 detectDuplicates.js: This script is designed to detect duplicate Configuration Items (CIs) in the CMDB (Configuration Management Database) in ServiceNow. Duplicate CIs can cause data quality issues and interfere with processes such as asset management, incident management, and change management. By identifying CIs with the same values in specific fields (like name, serial number, or asset tag), the script helps maintain the integrity of the CMDB.
 
+populateMissingManufacturers.js: This script is used in ServiceNow to automatically populate the manufacturer field for CIs (Configuration Items) in the CMDB (Configuration Management Database) when the manufacturer field is missing (null). It uses a predefined mapping between models and their respective manufacturers, and updates the CIs accordingly.
+
+
+
+
+
+
 
