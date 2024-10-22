@@ -1,2 +1,3 @@
-Unique field should be set to True at the dictonary level for Number field. If incase it is not there might be a possiblity of two or more records with same number.
-Purpose of the scirpt is to help find those records and correct it.
+Purpose of the script is to help replace text IT_SAP with IT_ERP for all the Groups in Group table containing IT_SAP as keyword.
+It uses replace method which follows format replace(/'ABCD'/g,'PQR')
+whefre ABCD is to be replaced with PQR
