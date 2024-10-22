@@ -3,7 +3,8 @@
 	data.recordsTable = 'task';
 	data.recordsQuery = ''; // The encoded query to filter records (empty means all records)
 	data.recordsFields = ['number', 'short_description']; // The fields to retrieve for each record
-	data.recordsPerPage = 10;
+	data.recordsPerPage = parseInt($sp.getParameter('display')) || 10;
+	data.userQuery = $sp.getParameter('query');
 
 	// Get pagination parameters
 	data.page_id = $sp.getParameter('id');
@@ -13,6 +14,7 @@
 	// Count total records
 	var countGa = new GlideAggregate(data.recordsTable);
 	countGa.addEncodedQuery(data.recordsQuery);
+	countGa.addEncodedQuery(data.userQuery);
 	countGa.addAggregate('COUNT');
 	countGa.query();
 	if (countGa.next()) {
@@ -34,6 +36,7 @@
 	data.records = [];
 	var recordsGr = new GlideRecord(data.recordsTable);
 	recordsGr.addEncodedQuery(data.recordsQuery);
+	recordsGr.addEncodedQuery(data.userQuery);
 	recordsGr.chooseWindow(data.rowStart, rowEnd);
 	recordsGr.query();
 	while (recordsGr.next()) {
