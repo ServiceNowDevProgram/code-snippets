@@ -8,3 +8,25 @@
     }
     return array;
 }
+
+function createRandomPairs(array) {
+    var shuffledArray = shuffleArray(array.slice()); // Make a copy of the array and shuffle it
+    var pairs = [];
+    for (var i = 0; i < shuffledArray.length; i += 2) {
+        if (i + 1 < shuffledArray.length) {
+            pairs.push([shuffledArray[i], shuffledArray[i + 1]]);
+        } else {
+            pairs.push([shuffledArray[i]]);
+        }
+    }
+    return pairs;
+}
+
+
+var randomPairs = createRandomPairs(inputs.wheels);
+
+
+
+    outputs.match = randomPairs;
+
+})(inputs, outputs);
