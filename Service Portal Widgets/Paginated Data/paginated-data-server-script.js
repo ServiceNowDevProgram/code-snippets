@@ -1,25 +1,26 @@
 (function() {
-	// Configuration: Fields for pagination
-	data.recordsTable = 'task'; // The table name to query records from
+	// Configuration
+	data.recordsTable = 'task';
 	data.recordsQuery = ''; // The encoded query to filter records (empty means all records)
 	data.recordsFields = ['number', 'short_description']; // The fields to retrieve for each record
-	data.recordsPerPage = 10; // Number of records to display per page
+	data.recordsPerPage = parseInt($sp.getParameter('display')) || 10;
+	data.userQuery = $sp.getParameter('query');
 
 	// Get pagination parameters
 	data.page_id = $sp.getParameter('id');
 	data.page = parseInt($sp.getParameter('page'), 10) || 1; // Current page number, default to 1
-	data.display = parseInt(data.recordsPerPage, 10) > 0 ? parseInt(data.recordsPerPage, 10) : 10; // Ensure positive number of records per page
+	data.display = parseInt(data.recordsPerPage, 10) > 0 ? parseInt(data.recordsPerPage, 10) : 10; // Amount of records to display per page
 
 	// Count total records
 	var countGa = new GlideAggregate(data.recordsTable);
 	countGa.addEncodedQuery(data.recordsQuery);
+	countGa.addEncodedQuery(data.userQuery);
 	countGa.addAggregate('COUNT');
 	countGa.query();
 	if (countGa.next()) {
 		data.count = parseInt(countGa.getAggregate('COUNT'), 10);
 	}
 
-	// Calculate pagination details
 	data.pages = calculatePaginationPages(data.count, data.display, data.page);
 
 	// Adjust current page if it exceeds the total number of pages
@@ -35,6 +36,7 @@
 	data.records = [];
 	var recordsGr = new GlideRecord(data.recordsTable);
 	recordsGr.addEncodedQuery(data.recordsQuery);
+	recordsGr.addEncodedQuery(data.userQuery);
 	recordsGr.chooseWindow(data.rowStart, rowEnd);
 	recordsGr.query();
 	while (recordsGr.next()) {
