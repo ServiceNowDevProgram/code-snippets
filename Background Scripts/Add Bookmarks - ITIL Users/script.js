@@ -1,7 +1,7 @@
 var jsonFavList = {
   "SLA for My Group Tasks": "task_list.do?sysparm_query=assignment_groupDYNAMICd6435e965f510100a9ad2572f2b47744&sysparm_first_row=1&sysparm_view=",
   "SLA for My Tasks": "task_list.do?sysparm_query=assigned_toDYNAMIC90d1921e5f510100a9ad2572f2b477fe&sysparm_first_row=1&sysparm_view=",
-  "Tasks Assigned to Me": "stateNOT INclosed_complete,closed_abandoned^assigned_toDYNAMIC90d1921e5f510100a9ad2572f2b477fe",
+  "Tasks Assigned to Me": "task_list.do?sysparm_query=stateNOT INclosed_complete,closed_abandoned^assigned_toDYNAMIC90d1921e5f510100a9ad2572f2b477fe",
   "My approvals": "sysapproval_approver_list.do?sysparm_query=approverDYNAMIC90d1921e5f510100a9ad2572f2b477fe&sysparm_first_row=1&sysparm_view="
 };
 
