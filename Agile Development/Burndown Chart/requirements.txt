@@ -1,0 +1,11 @@
+pprint
+requests
+jpholiday
+datetime
+pandas as pd
+matplotlib
+urllib.request
+urllib.parse
+json
+datetime
+pytz
