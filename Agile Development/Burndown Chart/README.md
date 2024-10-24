@@ -28,7 +28,9 @@ pip install -r equirements.txt
 <code>pip install -r equirements.txt</code>
 
 5. Run script.py.  
-<code>python sprint_burndown_chart.py</code>
+<code>python3 sprint_burndown_chart.py INSTANCE_NAME BASE64_ENCODED_STRING(USERID:PASSWORD) SPRINT_NAME</code>  
+example:  
+<code>python3 sprint_burndown_chart.py dev209156 YXBpOmpkc0RhajNAZDdKXnNmYQ== Sprint1</code>  
 
 When you run it, a burndown chart image like the one shown will be created.
 ![figure](https://github.com/user-attachments/assets/50d3ffc2-4c66-4f4d-bb69-c2b98763621d)
