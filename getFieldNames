@@ -1,0 +1,20 @@
+
+    getFieldNames(glideRecord) {
+
+		//Return if GlideRecord is empty
+        if (this.nil(glideRecord))
+            return;
+
+        //Check whether this is actually a valid GR and not something else
+		if (glideRecord instanceof GlideRecord == false)
+			return [];
+
+
+        var fieldNameArr = [];
+        var fields = glideRecord.getElements();
+        for (var i in fields) {
+            var element = fields[i];
+            fieldNameArr.push(element.getName());
+        }
+        return fieldNameArr;
+    }
