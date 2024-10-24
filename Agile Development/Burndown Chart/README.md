@@ -21,7 +21,7 @@ Clone the repository and place the "Burndown Chart" directory in any location.
 <code>pip install -r equirements.txt</code>
 
 5. Run script.py.  
-<code>python script.py</code>
+<code>python sprint_burndown_chart.py</code>
 
 When you run it, a burndown chart image like the one shown will be created.
 ![figure](https://github.com/user-attachments/assets/50d3ffc2-4c66-4f4d-bb69-c2b98763621d)
