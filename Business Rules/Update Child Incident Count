@@ -1,0 +1,25 @@
+// This code snippet will Update child_incidents field only when the current value is different than the actual count
+// Reduces performance overhead of an un-necessary DML operation
+// This is essential to keep the actual count of child incidents up to date.
+
+updateChildCount(current.parent_incident + "");
+
+function updateChildCount(id) {
+    var rec = new GlideRecord("incident");
+    if (!rec.get(id))
+        return;
+
+    var gr = new GlideAggregate('incident');
+    gr.addQuery("parent_incident", id);
+    gr.addAggregate('COUNT');
+    gr.query();
+    var count = 0;
+    if (gr.next())
+        count = gr.getAggregate('COUNT');
+
+    
+    if (rec.child_incidents.nil() || rec.child_incidents != count) {
+        rec.child_incidents = count;
+        rec.update();
+    }
+}
