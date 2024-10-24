@@ -2,7 +2,7 @@ pprint
 requests
 jpholiday
 datetime
-pandas as pd
+pandas
 matplotlib
 urllib.request
 urllib.parse
