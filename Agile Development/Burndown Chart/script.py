@@ -1,3 +1,4 @@
+import argparse
 import pprint
 import requests
 import jpholiday
@@ -8,24 +9,31 @@ import matplotlib.pyplot as plt
 import urllib.request
 import urllib.parse
 import json
+import datetime
 from pytz import timezone
-point_dict = {}
+
 # ---- #
 # init #
 # ---- #
+point_dict = {}
 total_points = 0
 done = 0
 undone = 0
-BASIC = 'Basic XXXXXXXXXXXXXXX=='
-SPRINT = "Sprint1"
+parser = argparse.ArgumentParser()
+parser.add_argument('instancename')
+parser.add_argument('authstring')
+parser.add_argument('sprintname')
+args = parser.parse_args()
+BASIC = 'Basic ' + args.authstring
+
 # ---------- #
 # Get Sprint #
 # ---------- #
 params = {
-    'sysparm_query': 'short_description=' + SPRINT
+    'sysparm_query': 'short_description=' + args.sprintname
 }
 param = urllib.parse.urlencode(params)
-url = "https://<InstanceName>.service-now.com/api/now/table/rm_sprint?" + param
+url = "https://" + args.instancename + ".service-now.com/api/now/table/rm_sprint?" + param
 req = urllib.request.Request(url)
 req.add_header("authorization", BASIC)
 with urllib.request.urlopen(req) as res:
@@ -45,10 +53,10 @@ while start_date <= end_date:
 # Get Story #
 # --------- #
 params = {
-    'sysparm_query': 'sprint.short_descriptionLIKE' + SPRINT
+    'sysparm_query': 'sprint.short_descriptionLIKE' + args.sprintname
 }
-p = urllib.parse.urlencode(params)
-url = "https://<InstanceName>.service-now.com/api/now/table/rm_story?" + p
+param = urllib.parse.urlencode(params)
+url = "https://" + args.instancename + ".service-now.com/api/now/table/rm_story?" + param
 req = urllib.request.Request(url)
 req.add_header("authorization", BASIC)
 with urllib.request.urlopen(req) as res:
@@ -115,7 +123,7 @@ days = mdates.DayLocator()
 daysFmt = mdates.DateFormatter('%m/%d')
 ax.xaxis.set_major_locator(days)
 ax.xaxis.set_major_formatter(daysFmt)
-plt.title("" + SPRINT + " Burndown")
+plt.title("" + args.sprintname + " Burndown")
 plt.plot(x2, y2, label="Ideal", color='green')
 plt.plot(x2, y2, marker='.', markersize=20, color='green')
 plt.plot(x, y, label="Actual", color='red')
