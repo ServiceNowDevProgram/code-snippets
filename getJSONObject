@@ -1,0 +1,39 @@
+function getJSONObject(gr, desiredFields /* optional */) {
+    // Check whether this is actually a valid GlideRecord
+    if (!isValidGR(gr)) {
+        return {};
+    }
+
+    // Determine fields to retrieve
+    if (nil(desiredFields) || !isArray(desiredFields)) {
+        var gRU = new GlideRecordUtil();
+        desiredFields = gRU.getFields(gr); // Get fields using GlideRecordUtil
+    }
+
+    var fieldValues = {};
+    for (var i = 0; i < desiredFields.length; i++) {
+        var fieldName = desiredFields[i];
+        if (!gr.isValidField(fieldName)) {
+            continue; // Skip invalid fields
+        }
+
+        // Get the field value
+        var fieldValue = gr.getValue(fieldName);
+        fieldValues[fieldName] = gs.nil(fieldValue) ? '' : fieldValue; // Handle nil values
+    }
+
+    return fieldValues;
+}
+
+// Helper functions
+function isValidGR(gr) {
+    return gr instanceof GlideRecord && !gr.nil();
+}
+
+function nil(value) {
+    return value === null || value === undefined;
+}
+
+function isArray(value) {
+    return Array.isArray(value);
+}
