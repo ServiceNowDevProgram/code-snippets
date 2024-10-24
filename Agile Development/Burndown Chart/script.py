@@ -8,7 +8,6 @@ import matplotlib.pyplot as plt
 import urllib.request
 import urllib.parse
 import json
-import datetime
 from pytz import timezone
 point_dict = {}
 # ---- #
