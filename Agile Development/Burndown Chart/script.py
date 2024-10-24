@@ -41,9 +41,9 @@ end_date = (datetime.datetime.strptime(end_date, '%Y-%m-%d %H:%M:%S') + datetime
 while start_date <= end_date:
     point_dict[str(start_date)] = 0
     start_date = start_date + datetime.timedelta(days=1)
-# ----------- #
-# Storyを取得 #
-# ----------- #
+# --------- #
+# Get Story #
+# --------- #
 params = {
     'sysparm_query': 'sprint.short_descriptionLIKE' + SPRINT
 }
