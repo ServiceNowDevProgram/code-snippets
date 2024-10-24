@@ -7,7 +7,14 @@ The generated burndown chart can also be automatically deployed as an image to S
 Python3.x
 
 ## Installation
-Clone the repository and place the "Burndown Chart" directory in any location.
+Clone the repository and place the "Burndown Chart" directory in any location.  
+Execute the following command to create a virtual environment.  
+<code>
+python3 -m venv .venv
+macOS/Unix: source .venv/bin/activate
+Windows: .venv\Scripts\activate
+pip install -r equirements.txt
+</code>
 
 ## Usage
 1. Go to the Burndown Chart directory.
