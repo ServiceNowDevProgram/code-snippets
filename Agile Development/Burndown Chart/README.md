@@ -4,7 +4,10 @@ By using this Python snippet, you can create a burndown chart with planned lines
 The generated burndown chart can also be automatically deployed as an image to Slack and other tools.  
 
 ## Requirements
-Python3.x
+OS: Windows/MacOS/Unix  
+Python: Python3.x  
+ServiceNow: More than Vancouver  
+Plugins: Agile Development 2.0 (com.snc.sdlc.agile.2.0) is installed
 
 ## Installation
 Clone the repository and place the "Burndown Chart" directory in any location.  
