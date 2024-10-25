@@ -12,7 +12,7 @@ Execute the following command to create a virtual environment.
 <code>python3 -m venv .venv
 macOS/Unix: source .venv/bin/activate
 Windows: .venv\Scripts\activate
-pip install -r equirements.txt
+pip install -r requirements.txt
 </code>
 
 ## Usage
