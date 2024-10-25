@@ -1,0 +1,16 @@
+* {
+  margin: 0;
+}
+
+body {
+  background: #000008;
+}
+
+.wrapper {
+  margin: 20px auto;
+  position: relative;
+}
+
+canvas {
+  position: absolute;
+}
