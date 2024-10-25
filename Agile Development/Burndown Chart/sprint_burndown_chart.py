@@ -1,7 +1,6 @@
 import argparse
 import pprint
 import requests
-import jpholiday
 import datetime
 import matplotlib.dates as mdates
 import pandas as pd
@@ -98,7 +97,7 @@ for key in point_dict.keys():
 DATE = "yyyymmdd"
 def isBizDay(DATE):
     Date = datetime.date(int(DATE[0:4]), int(DATE[4:6]), int(DATE[6:8]))
-    if Date.weekday() >= 5 or jpholiday.is_holiday(Date):
+    if Date.weekday() >= 5:
         return 0
     else:
         return 1
