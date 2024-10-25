@@ -9,8 +9,7 @@ Python3.x
 ## Installation
 Clone the repository and place the "Burndown Chart" directory in any location.  
 Execute the following command to create a virtual environment.  
-<code>
-python3 -m venv .venv
+<code>python3 -m venv .venv
 macOS/Unix: source .venv/bin/activate
 Windows: .venv\Scripts\activate
 pip install -r equirements.txt
@@ -18,16 +17,15 @@ pip install -r equirements.txt
 
 ## Usage
 1. Go to the Burndown Chart directory.
-2. Open script.py and enter the following variables according to your environment.
-- BASIC: Instance login information (Read permission to the rm_sprint table is required.)
-- SPRINT: Target sprint name from the Sprint[rm_sprint] table
-  
-  In addition, change the instance name <InstanceName> in the URL to your instance name.
+2. Prepare the following values ​​according to your environment:
+- InstanceName: Your instance name (e.g. dev000000 for PDI)
+- Credentials: Instance login information in Base64 (Read permission to the rm_sprint table is required.)
+- Sprint Name: Target sprint name from the Sprint[rm_sprint] table
 
 3. Run the command to install the required modules.  
 <code>pip install -r equirements.txt</code>
 
-5. Run script.py.  
+5. Run sprint_burndown_chart.py.  
 <code>python3 sprint_burndown_chart.py INSTANCE_NAME BASE64_ENCODED_STRING(USERID:PASSWORD) SPRINT_NAME</code>  
 example:  
 <code>python3 sprint_burndown_chart.py dev209156 YXBpOmpkc0RhajNAZDdKXnNmYQ== Sprint1</code>  
