@@ -1,5 +1,5 @@
 /** 
-* HHexadecimal color pattern. The following formats are allowed:
+* Hexadecimal color pattern. The following formats are allowed:
 * #ABC | #AB1 | #123
 * #ABCDEF | #ABC123 | #123456 
 */
