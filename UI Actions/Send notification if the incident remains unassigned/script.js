@@ -16,31 +16,25 @@ if (current.assignment_group.nil()) {
 // Get the assignment group's manager
 var assignmentGroup = new GlideRecord('sys_user_group');
 if (assignmentGroup.get(current.assignment_group)) {
-    var manager = assignmentGroup.getValue('manager'); // Fetches the sys_id of the manager field
+    var manager = assignmentGroup.getValue('manager');
 
     if (manager) {
-var userGR = new GlideRecord('sys_user'); // Access the sys_user table
-    var managerEmail = "";
-    if (userGR.get(assignedToEmail)) {
-        managerEmail = userGR.getValue('email'); // Retrieves the email field from the sys_user record
-    }
-if (managerEmail)
-{
- // Create a notification
-   var gr_sys_email = new GlideRecord('sys_email');
-        gr_sys_email.initialize();
-        gr_sys_email.setValue('type', 'send-ready');
-        gr_sys_email.setValue('subject', "Incident " + current.number + " is still unassigned");
-        gr_sys_email.setValue('recipients', managerEmail);
-        gr_sys_email.setValue('body', "The incident " + current.number + " has been unassigned for more than 5 days. Please assign it promptly.");
-        gr_sys_email.insert();
-}
-        gs.addInfoMessage("Notification about incident unassigned is sent to the assignment group's manager.");
+        // Create a notification
+        var notification = new GlideEmailOutbound();
+        notification.setFrom('no-reply@yourdomain.com');
+        notification.setSubject("Alert! Incident " + current.number + " is still unassigned");
+        notification.setBody("The incident " + current.number + " has been unassigned for more than 5 days. Please assign it promptly.");
+        notification.setTo(manager);
+
+        // Send the email
+        notification.send();
+
+        gs.addInfoMessage("Notification sent to the assignment group's manager.");
     } else {
         gs.addErrorMessage("The assignment group has no manager defined.");
     }
 } else {
-    gs.addErrorMessage("The incident has no assignment group.");
+    gs.addErrorMessage("Could not find the assignment group.");
 }
 
 action.setRedirectURL(current);
