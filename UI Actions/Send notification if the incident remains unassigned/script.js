@@ -21,7 +21,7 @@ if (assignmentGroup.get(current.assignment_group)) {
     if (manager) {
         // Create a notification
         var notification = new GlideEmailOutbound();
-        notification.setFrom('no-reply@yourdomain.com');
+        notification.setFrom('no-reply@xyz.com');
         notification.setSubject("Alert! Incident " + current.number + " is still unassigned");
         notification.setBody("The incident " + current.number + " has been unassigned for more than 5 days. Please assign it promptly.");
         notification.setTo(manager);
