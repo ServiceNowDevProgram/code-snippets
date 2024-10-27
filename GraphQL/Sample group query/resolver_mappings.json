@@ -1,0 +1,4 @@
+{
+    "Query:getGroups": "getGroups",
+    "Mutation:addUserToGroup": "addUserToGroup"
+}

@@ -1,0 +1,1 @@
+This business rule help to replace the KB author of knowledge article to Knowledge base manager, if the author of that article leaves the organization. This is a kind of logic which helps to assign the knowledge article to knowledge base manager.

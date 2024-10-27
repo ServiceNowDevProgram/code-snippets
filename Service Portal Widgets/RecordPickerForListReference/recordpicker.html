@@ -1,0 +1,17 @@
+<!-- A record picker that can select multiple records from user table
+
+field - mapped to the $scope to pass the value
+table - Table to be associated with list/reference field
+display-field - Display column name for the field
+value-field - Default value column for the field
+search-fields - List of search columns
+default-query - Default reference qualifier 
+multiple - false=Reference field, true=List field
+paze-size - Number of records displayed in a page
+
+-->
+
+<div>
+   <sn-record-picker field="user" table="'sys_user'" display-field="'name'" value-field="'sys_id'" search-fields="'name'"
+      default-query="'active=true'" multiple = "true" page-size="100" ></sn-record-picker>
+</div>

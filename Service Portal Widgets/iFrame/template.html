@@ -1,0 +1,13 @@
+<div style="padding: 5px">
+    <div ng-if="showError" class="padding">
+      <div class="alert alert-warning" role="alert">
+        Provide a URL as a widget option or as a parameter, 'url'
+      </div>
+    </div>
+    <div class="external-content" ng-class="contentClass">
+      <iframe title="{{label}}" aria-label="{{label}}" ng-src="{{frameSource}}" frameborder="0" scrolling="yes" sandbox="allow-same-origin allow-forms allow-modals allow-popups allow-scripts" allow="fullscreen"
+        >${Browser does not allow iFrames}
+      </iframe>
+    </div>
+  </div>
+  

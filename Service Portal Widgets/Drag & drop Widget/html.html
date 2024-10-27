@@ -1,0 +1,62 @@
+<div class="panel-heading" ng-init="onLoad()">
+   <h3 class="h4 panel-title">
+      <span>
+         <fa name="{{::c.options.glyph}}"></fa>
+      </span>
+   </h3>
+</div>
+<div id="drag-n-drop">
+   <script>
+      function getScope() {
+          return angular.element('#drag-n-drop').scope().c;
+      }
+   </script>
+   <div id="taskboard-container">
+      <div class="taskboard-header">
+         <h1>Drag and drop widget</h1>
+      </div>
+      <div class="task-col right-border" id="todo">
+         <div class="task-col-header">
+            Side 1
+         </div>
+         <div class="task-col-content">
+            <div class="task" ng-repeat="task in c.data.tasks" id="{{task.id}}"
+               draggable="true" ondragstart="getScope().dragStart(event)" ondragend="getScope().dragEnd(event)">
+               <div class="task-header">
+                  {{task.title}}
+                  <div ng-if="task.type=='reference'" style="display: inline;">
+                     <button id="{{task.id}}" onmouseover="getScope().getReferenceFields(event)" class="ref-btn">></button>
+                  </div>
+               </div>
+               <div id="container-{{task.id}}" class="dropdown-container" >
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="task-col right-border">
+         <div class="task-col-header">
+            Side 2
+         </div>
+         <div class="form-row">
+            <div class="form-group">
+               <div ng-repeat="x in data.arrfields">
+                  <div class="task-col right-border" id="{{x.label_field}}">
+                     <div id="{{x.label_field}}" class="task-col-content droppable" ondragenter="getScope().dragEnter(event)" 
+                        ondragleave="getScope().dragLeave(event)" 
+                        ondragover="getScope().dragOver(event)" 
+                        ondrop="getScope().drop(event)" >
+                        {{x.label_field}}
+                     </div>
+                     <div class="task-pdf" ng-repeat="task in c.data.tasks" ng-if="task.state.indexOf(x.label_field) > -1" id="{{task.id}}"
+                        ondragstart="getScope().dragStart(event)" ondragend="getScope().dragEnd(event)">
+                        <div class="task-header">
+                           {{task.title}} <a class="x-btn" id="{{task.id}}" onclick="getScope().removeElement(event)">x</a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

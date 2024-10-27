@@ -1,0 +1,12 @@
+
+.list-group-item {
+	border: none;
+  
+	.btn-link {
+	  padding-left: 0;
+	  padding-right: 0;
+	}
+  }
+  .input-switch{
+	display: inline-block;
+	float: right;
