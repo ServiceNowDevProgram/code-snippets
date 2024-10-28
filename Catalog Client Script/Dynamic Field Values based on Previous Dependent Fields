@@ -1,0 +1,19 @@
+function onChange(control, oldValue, newValue, isLoading) {
+    if (isLoading || newValue === '') {
+        return;
+    }
+    featureDetails();
+}
+function featureDetails()
+{
+  var fieldFeature = g_form.getValue('field_name');
+  if(fieldFeature=='true')
+  {
+    g_form.setValue('feature_details',true);
+  }
+  else
+  {
+    g_form.setValue('feature_details',false);
+  }
+}
+
