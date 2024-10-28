@@ -1,0 +1,3 @@
+This script is useful for displaying a custom popup with a UI Page in ServiceNow. By leveraging GlideModal, you can render a UI Page as a popup, allowing you to create tailored dialogs with specific content, forms, or data, all within the ServiceNow environment.
+
+This approach is particularly beneficial when you need a customized interface beyond standard alerts or confirmations. You can design the UI Page to include interactive elements, custom forms, or dynamic data, making it suitable for complex interactions and enhancing the overall user experience within your ServiceNow instance. This modal can be triggered from client-side scripts, UI Actions, or other scripted elements.
