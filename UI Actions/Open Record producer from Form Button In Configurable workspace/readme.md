@@ -11,4 +11,4 @@ This UI Action and catalog client script Redirects you to the record producer or
    Applies on catalog item view - true
    Name - ParseURL
 
-Note : Above UI Action works in Configurable workspce and opens the catalog item/record producer in workspace.
+Note : Above UI Action works in Configurable workspce and opens the catalog item/record producer in workspace itself
