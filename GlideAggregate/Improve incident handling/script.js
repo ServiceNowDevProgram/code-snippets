@@ -2,7 +2,7 @@
 var inc = new GlideAggregate('incident');
 
 // Filter for resolved incidents only
-inc.addQuery('state', 'resolved');
+inc.addQuery('state', 6); 
 
 // Add aggregations
 inc.addAggregate('COUNT');                    // Total number of incidents
