@@ -10,7 +10,7 @@ emailGR.query();
 while (emailGR.next()) {
     emailGR.state = "ignored"; //setting state to "ignored"
     emailGR.type = 'send-ignored'; // Set the type to 'ignored'
-    emailGR.update(); // Save the changes
+    emailGR.updateMultiple(); // Save the changes
 }
 
 gs.info('All relevant emails have been marked as ignored.');
