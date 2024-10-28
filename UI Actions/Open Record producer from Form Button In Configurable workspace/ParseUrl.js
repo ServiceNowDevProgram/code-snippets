@@ -1,3 +1,10 @@
+/*
+Catalog Client script.
+   Name - ParseURL
+   Type - Onload
+   Applies on catalog item view - true
+*/
+
 function onLoad() {
 
   
@@ -19,8 +26,6 @@ function onLoad() {
 	}
 }
 /*
-
 pass the parameter name which was used in the ui action to parse the value here.
-
-Example - parseURL('sysparm_description)
+Example - parseURL('sysparm_description) as I am passing description value in the params from ui action.
 */
