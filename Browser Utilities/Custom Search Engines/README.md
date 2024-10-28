@@ -10,9 +10,9 @@ For example you can type the following in your browser address bar to search for
 ### ServiceNow Docs
 Search the ServiceNow Docs site directly.
 
-- **Search engine**: ServiceNow Docs (Vancouver)
+- **Search engine**: ServiceNow Docs (Xanadu)
 - **Shortcut**: sndocs
-- **URL**: https://docs.servicenow.com/search?q=%s&labelkey=vancouver
+- **URL**: https://docs.servicenow.com/search?q=%s&labelkey=xanadu
 
 ### ServiceNow Community
 Search the ServiceNow Community site directly
@@ -20,6 +20,20 @@ Search the ServiceNow Community site directly
 - **Search engine**: ServiceNow Community
 - **Shortcut**: sncomm
 - **URL**: https://www.servicenow.com/community/forums/searchpage/tab/message?advanced=false&allow_punctuation=false&q=%s
+
+### ServiceNow Store Release Notes
+Search in Store Release Notes
+
+- **Search engine**: ServiceNow Store Release Notes
+- **Shortcut**: snrelnotes
+- **URL**: https://docs.servicenow.com/search?bundle=store-release-notes&q=%s
+
+### Now Support
+Search on the Now Support portal
+
+- **Search engine**: ServiceNow Now Support Portal
+- **Shortcut**: nowsupport
+- **URL**: https://support.servicenow.com/now?id=ns_search&q=%s&s=true&pp=form
 
 ### My Instance Global Search
 Do a Global search on my instance. Remember to replace "instance" with your actual instance name.
