@@ -1,0 +1,6 @@
+var gm = new GlideModal("glide_prompt", true, 600);
+gm.setTitle("Test title");
+gm.setPreference("title", "Test body text");
+gm.setPreference("onPromptComplete", function(value) {alert("You clicked on 'Ok', value was: "+value)});
+gm.setPreference("onPromptCancel", function(value) {alert("You clicked on 'Cancel', value was: "+value)});
+gm.render();
