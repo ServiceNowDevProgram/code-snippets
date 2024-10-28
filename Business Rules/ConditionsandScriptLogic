@@ -1,0 +1,10 @@
+// Check if the Business Rule has a condition
+if (!current.condition) {
+    gs.addErrorMessage('Business Rule without condition: ' + current.name);
+}
+
+// Check for inefficient script logic (example: GlideRecord queries inside loops)
+var script = current.script.toString();
+if (script.includes('while') && script.includes('new GlideRecord')) {
+    gs.addErrorMessage('Potential inefficient GlideRecord usage in Business Rule: ' + current.name);
+}
