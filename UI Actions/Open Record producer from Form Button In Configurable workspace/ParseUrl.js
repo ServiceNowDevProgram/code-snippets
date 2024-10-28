@@ -1,5 +1,5 @@
 /*
-Catalog Client script.
+Catalog Client script on the record producer/catalog item you want to open from ui action
    Name - ParseURL
    Type - Onload
    Applies on catalog item view - true
