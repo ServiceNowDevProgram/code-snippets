@@ -1,3 +1,6 @@
+//Escalate incidents based on priority and time elapsed since creation.
+//Notify the assigned group and incident manager.
+
 // Business Rule: Complex Incident Escalation
 (function executeRule(current, previous /*null when async*/) {
     // Constants
