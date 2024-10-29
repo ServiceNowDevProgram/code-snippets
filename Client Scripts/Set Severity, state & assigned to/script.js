@@ -12,9 +12,9 @@ function onChange(control, oldValue, newValue, isLoading, isTemplate) {
     //Type appropriate comment here, and begin script below
 
 
-    var ga = new GlideAjax('getSIRDetails');
+    var ga = new GlideAjax('getSIRDetails'); // calling script include
     ga.addParam('sysparm_name', 'getDetails');
-    ga.addParam('sysparm_sir', newValue);
+    ga.addParam('sysparm_sir', newValue); //passing newValue to the script include
     ga.getXMLAnswer(callBackFunction);
 
 
@@ -22,7 +22,7 @@ function onChange(control, oldValue, newValue, isLoading, isTemplate) {
 
     function callBackFunction(response) {
         var ans = JSON.parse(response);
-        g_form.setValue('severity', ans.severity);
+        g_form.setValue('severity', ans.severity); // setting values from the obj to appropriate fields
         g_form.setValue('soc_sir_state', ans.state);
         g_form.setValue('soc_sir_assigned_to', ans.assignedto);
 
