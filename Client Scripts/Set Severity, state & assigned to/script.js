@@ -1,23 +1,17 @@
 //onChange client script
 
-
 function onChange(control, oldValue, newValue, isLoading, isTemplate) {
     if (isLoading || newValue === '') {
-
-
+        
         return;
     }
 
 
     //Type appropriate comment here, and begin script below
-
-
     var ga = new GlideAjax('getSIRDetails'); // calling script include
     ga.addParam('sysparm_name', 'getDetails');
     ga.addParam('sysparm_sir', newValue); //passing newValue to the script include
     ga.getXMLAnswer(callBackFunction);
-
-
 
 
     function callBackFunction(response) {
