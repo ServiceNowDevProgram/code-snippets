@@ -1,1 +1,5 @@
-This pull contains a business rule to call an event to trigger a notification that will parse the user's first name. 
+This pull contains a business rule and a mail:script.
+
+The business rule calls an event to trigger a notification whenever someone new is added to a field/list. It will parse the user's first name so the mail script within the notification can address the recipient by first name if desired. 
+
+The main:script contains a header banner, body and footer banner. The body is a response and can be used when there is an update to a case. It has a link to the case, description, location and embeds any attachments that are on the case.
