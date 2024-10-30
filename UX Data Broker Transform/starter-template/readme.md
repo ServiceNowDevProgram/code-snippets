@@ -13,7 +13,7 @@ This repository provides a starter template for creating Transform Data Brokers 
 
 ```javascript
 /**
- * @param {{param1: string, param2: number, param3: [boolean]}} inputs 
+ * @param {{param1: string, param2: number, param3?: boolean}} inputs 
  * Inputs from the properties field above; param1 and param2 are mandatory.
  * @returns {string} The value returned after transformation.
  */
