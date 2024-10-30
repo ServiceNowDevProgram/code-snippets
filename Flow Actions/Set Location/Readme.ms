@@ -1,0 +1,1 @@
+This will populate a <u_location> field string based on the <location> field on the user's record without having to use GlideAjax. Go to the <u_location> dictionary and place this snippet in the Default Value field.
