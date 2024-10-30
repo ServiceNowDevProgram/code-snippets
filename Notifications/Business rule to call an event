@@ -1,0 +1,17 @@
+(function executeRule(current, previous /*null when async*/) {
+
+    // Assuming you are getting the list of added users from the watchlist
+    var addedUsers = current.<list field name>.split(',');
+
+    // Loop through the added users to trigger the event for each
+    addedUsers.forEach(function(userID) {
+        // Get the user record to retrieve first name
+        var userGr = new GlideRecord('sys_user');
+        if (userGr.get(userID)) {
+                  
+            // Fire an event for each user with their first name
+            gs.eventQueue('<event name>’, current, userID, userGr.first_name);
+        }
+    });
+
+})(current, previous);
