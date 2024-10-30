@@ -1,0 +1,35 @@
+
+//css for styling of all the buttons
+#escButtons a {
+  position: absolute;
+  right: -90px;
+  transition: 0.3s;
+  border:2px solid white;
+  border-radius: 20px;
+  padding: 12px;
+  width: 140px;
+  font-size: 20px;
+  color: white;
+  
+}
+//css for hover on the buttons
+#escButtons a:hover {
+  right: 0;
+  border:3px solid #fc0366;
+  color:#fc0366;
+}
+//css for button policies
+#policies {
+  top: 20px;
+  background-color: #9bf542;
+}
+//css for button divisions
+#divisions {
+  top: 80px;
+  background-color: #2577db;
+}
+//css for button contact
+#contact {
+  top: 140px;
+  background-color:#fcdb03;
+}
