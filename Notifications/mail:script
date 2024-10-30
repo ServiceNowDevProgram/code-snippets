@@ -1,0 +1,74 @@
+    // Top Banner
+    var banner =
+        '<div class="banner" style="background-color: #000000; color: white; padding-top: 0px; padding-left: 10px; text-align: left; border-bottom: 5px solid gold; border-radius: 5px;">' +
+        '<span style="font-family: Arial, Helvetica, sans-serif; font-size: 12pt;">' +
+        '<a title="<POP UP NAME>" href="<website>">' +
+        '<img src="<image name in the instance>" width="168" height="56" />' +
+        '</a>' +
+        '</span>' +
+        '</div>';
+
+    var emailBody = banner;
+
+    emailBody += '<div style="font-family: Arial, sans-serif; font-size: 16px; color: black;">';
+    emailBody += '<p>Team,<br><br>';
+    emailBody += 'New attachments have been added to case ' + caseLink + '. Click the link to view the case details.</p>';
+    emailBody += '<table style="width: 100%;">';
+
+    emailBody += '<tr>';
+    emailBody += '<td style="width: 120px; padding-left: 20px; padding-right: 0px; font-weight: bold; text-align: left;">Description:</td>';
+    emailBody += '<td style="padding-left: 0px;">' + current.description + '</td></tr>';
+
+    emailBody += '<tr>';
+    emailBody += '<td style="width: 120px; padding-left: 20px; padding-right: 0px; font-weight: bold; text-align: left;">Location:</td>';
+    emailBody += '<td style="padding-left: 0px;">' + current.location.getDisplayValue() + '</td></tr>';
+
+    // Query the attachments
+    var attachmentGr = new GlideRecord('sys_attachment');
+    attachmentGr.addQuery('table_sys_id', current.sys_id);
+    attachmentGr.query();
+
+    if (attachmentGr.hasNext()) {
+        emailBody += '<tr>';
+        emailBody += '<td style="width: 120px; padding-left: 20px; padding-right: 0px; font-weight: bold; text-align: top; vertical-align: top;">Attachments:</td>';
+        emailBody += '<td style="padding-left: 0px;">';
+
+        while (attachmentGr.next()) {
+            var attachmentLink = gs.getProperty('glide.servlet.uri') + 'sys_attachment.do?sys_id=' + attachmentGr.sys_id;
+            var fileName = attachmentGr.file_name;
+
+            // Check if the file is an image
+            if (attachmentGr.content_type.startsWith('image/')) {
+                emailBody += '<p style="margin-bottom: 10px;"><img src="' + attachmentLink + '" alt="' + fileName + '" style="max-width: 400px;"></p>';
+            } else {
+                emailBody += '<p><a href="' + attachmentLink + '" target="_blank">' + fileName + '</a></p>';
+            }
+        }
+
+        emailBody += '</td></tr>';
+    } else {
+        emailBody += '<tr><td colspan="2" style="padding-left: 20px;"><b>No attachments found for this case.</b></td></tr>';
+    }
+
+    emailBody += '</table>';
+    emailBody += '<p>Best regards,<br><NAME></p>';
+    emailBody += '</div>';
+
+    // Bottom banner
+    var bottombanner =
+        '<div class="bottom-banner" style="' +
+        'background-color: #000000;' +
+        'height: 10px;' +
+        'border-top: 4px solid gold;' +
+        'border-radius: 5px;' +
+        'margin-top: 20px;' +
+        '"></div>';
+
+    // Add the bottom banner to the email body
+    emailBody += bottombanner;
+
+        '</div>';
+
+    template.print(emailBody);
+
+})();
