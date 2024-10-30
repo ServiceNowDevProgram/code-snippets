@@ -1,5 +1,5 @@
 # Overview
-This snippet enables the backup of critical table data (such as task or incident records) to an external storage solution. It’s a valuable tool for developers looking to ensure redundancy and backup for sensitive data within ServiceNow.
+This ServiceNow script automates backing up critical record data (such as task or incident records) to an external storage solution. Designed to run as a Business Rule, it helps maintain redundancy for sensitive information by copying specific record details to a backup API whenever a record is created or modified.
 
 # How It Works
 - Data Extraction: Collects key record fields (such as `sys_id`, `number`, `short_description`) from `current`.
