@@ -4,7 +4,7 @@
  * - Destructured inputs
  * - Try/catch
  * - Error logging then throw (Enables error logging but still allows the data resource to fail)
- * @param {{param1: string, param2: number, param3: [boolean]}} inputs inputs from the properties field above, param1 and param2 are mandatory
+ * @param {{param1: string, param2: number, param3?: boolean}} inputs inputs from the properties field above, param1 and param2 are mandatory
  * @returns {string} the value returned
  */
 function transform({ param1, param2, param3 }) {
