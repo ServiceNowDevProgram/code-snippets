@@ -1,0 +1,15 @@
+(function checkEmail(source, target, map, log, isUpdate) {
+// Replace with your source email field
+    var email = source.u_email; 
+    if (email) {
+        email = email.trim().toLowerCase();
+        //Regular Expression to validate email pattern
+        var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (emailPattern.test(email)) {
+        // Replace with your target email field
+            target.email = email; 
+        } else {
+            log.info('Invalid email format for ' + email);
+        }
+    }
+})(source, target, map, log, isUpdate);
