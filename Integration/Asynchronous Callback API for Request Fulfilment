@@ -1,0 +1,41 @@
+
+Use Case:
+
+When a request is created in ServiceNow, it is essential to send the request details to a third-party system via an API gateway (such as GAMS or API Gateway) for fulfilment activities, such as access provisioning or record creation. Given the potential for lengthy processing times due to a high volume of activities, a synchronous integration may lead to timeouts. Therefore, leveraging asynchronous integration allows for efficient handling of such requests.
+
+Proposed Solution: 
+
+1.	Synchronous Outbound Integration:
+  >	 Utilize the REST integration step within the Flow Designer to send request details to the third-party endpoint.
+  >  The third-party system is expected to send an acknowledgment upon receiving the request, confirming that it is being           processed.
+2.	Status Tracking:
+    >	Introduce a new field or leverage an existing field in the sc_req_item table (or another relevant table) to track            fulfilment status, with choice values such as "Success" or "Failure."
+3.	Inbound Import Set API:
+    >	Create an Inbound Import Set API that allows the third-party system to send updates back to ServiceNow. The fields in         the import set table should include:
+          Request Number: A unique identifier for the request.
+	        Fulfilment Status: The status of the fulfilment (e.g., Success or Failure).
+	        Work Notes: Additional comments or information regarding the fulfilment process.
+4.	Transform Map:
+    >	Establish a Transform Map where:
+	      a. Source Table: The Import Set Table that receives the status updates.
+        b. Target Table: The sc_req_item table (or another relevant table based on the use case).
+	      c. Define field mappings to ensure accurate data transfer and use coalescing on the Request Number to allow updates           only.
+        d. Map the fulfilment status field from import set to new custom field to store the fulfilment status in sc_req_item             table.
+5.	Flow Changes:
+	 >  Update the request stage based on the integration fulfilment status value
+6.	API Sharing:
+    >  Provide the Inbound Import Set API to the third-party system, enabling it to send fulfilment status updates once the           fulfilment process is complete.
+
+Benefits of Asynchronous Callback API:
+
+•	Enhanced Performance: Asynchronous processing minimizes the risk of timeouts, ensuring that requests are handled efficiently, even when high volumes of activities are present.
+
+•	Improved User Experience: Users are not left waiting for synchronous responses; instead, they can continue working while the third-party system processes their requests.
+
+•	Reliable Status Tracking: The introduction of a dedicated status field allows for effective tracking of fulfilment outcomes, facilitating better communication with users regarding the success or failure of their requests.
+
+•	Scalability: This approach can easily scale to accommodate increased workloads and additional integrations with other systems, enhancing overall operational capacity.
+
+•	Flexibility in Integration: By decoupling request sending and status receiving, organizations can adapt to changes in third-party processes without disrupting their internal workflows.
+
+This asynchronous callback API solution not only streamlines the integration process but also ensures that ServiceNow can effectively manage and track request fulfilment in a robust and user-friendly manner.
