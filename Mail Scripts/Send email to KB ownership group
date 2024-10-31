@@ -1,0 +1,12 @@
+var group_sysid = current.ownership_group.sys_id;
+
+    var query = "group=" + group_sysid + "^user.active=true^user.emailISNOTEMPTY";
+
+    if (group_sysid != '' && group_sysid != undefined) {
+        var gr = new GlideRecord("sys_user_grmember");
+        gr.addEncodedQuery(query);
+        gr.query();
+        while (gr.next()) {
+            email.addAddress("cc", gr.user.email, gr.user.getDisplayValue());
+        }
+    }
