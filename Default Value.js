@@ -1,1 +1,0 @@
-javascript: var luser = new GlideRecord("sys_user"); luser.get("sys_id", gs.getUserID()); luser.location.u_installation_id.sys_id.toString();
