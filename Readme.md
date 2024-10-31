@@ -1,3 +1,0 @@
-Scenario: Clerks want to create a special handling note. As an admin, I want to limit those that can see the special handling notes to only view notes with the same Location on their user record. To do this, I added a field on the special handling note "u_location" so the form has a reference field for the signed-in user. When a new special handling note record is loaded, the field is filled in with the Location on their user record without having to use GlideAjax. Now we have a field for an ACL to reference. 
-
-Application: Add the field, then go to the dictionary and place the @Default Value snippet in the Default Value field. Replace "u_location" with your field name.
