@@ -1,0 +1,56 @@
+(function execute(inputs, outputs) {
+    function jsonEncode(str) {
+        var stri = new JSON().encode(str);
+        return stri.substring(1, stri.length - 1);
+    }
+
+    var remarks = '';
+    var target = new GlideRecord('incident');
+    target.addQuery('number', inputs.number);
+    target.query(); // Issue the query to the database to get relevant records
+    while (target.next()) {
+
+        remarks = remarks + "Priority : " + target.priority.getDisplayValue();
+
+        if (target.u_incident_manager_required) {
+            remarks = remarks + "\\r\\nIncident Manager Requested = Yes";
+            remarks = remarks + "\\r\\nReason for Incident Manager requested = " + jsonEncode(target.u_reason_for_incident_manager + '');
+        }
+
+        if (target.u_escalation) {
+            remarks = remarks + "\\r\\nEscalation = Yes";
+            remarks = remarks + "\\r\\nReason for escalation = " + jsonEncode(target.u_escalation_reason + '');
+        }
+        var grWorknotes = new GlideRecord('sys_journal_field');
+        grWorknotes.addQuery('element_id', inputs.journalid);
+        grWorknotes.addQuery('element', 'work_notes');
+        grWorknotes.addEncodedQuery('sys_updated_by!=test_API^sys_updated_by!=system');
+        grWorknotes.orderByDesc('sys_created_on');
+
+        grWorknotes.query();
+        if (grWorknotes.next()) {
+            if (inputs.work_notes) {
+                remarks = remarks + "\\r\\nWork Notes : " + jsonEncode(grWorknotes.value.toString());
+            }
+        }
+
+
+
+        var grComments = new GlideRecord('sys_journal_field');
+        grComments.addQuery('element_id', inputs.journalid);
+        grComments.addQuery('element', 'comments');
+        grComments.orderByDesc('sys_created_on');
+
+        grComments.query();
+        if (grComments.next()) {
+            if (inputs.comments) {
+                remarks = remarks + "\\r\\nAdditional comments : " + jsonEncode(grComments.value.toString());
+            }
+        }
+    }
+    if (!inputs.journalid) {
+        remarks = inputs.work_notes;
+    }
+    outputs.remark = remarks;
+
+})(inputs, outputs);
