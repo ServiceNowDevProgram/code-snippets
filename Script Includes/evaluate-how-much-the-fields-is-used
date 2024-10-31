@@ -1,0 +1,41 @@
+function calculatePercentUsed(table, field, time){
+
+	var countAll = new GlideAggregate(table);
+	if (time){
+		countAll.addEncodedQuery(time);
+	}
+	countAll.addAggregate('COUNT');
+	countAll.query();
+	var allRecords = 0;
+	if (countAll.next()){
+		allRecords = countAll.getAggregate('COUNT');
+		gs.info('All records [' + table + ']: ' + allRecords);
+
+	}
+	var arrayFields = field.split(',');
+	for (var i=0; i<arrayFields.length; i++){
+
+		var countEmpty = new GlideAggregate(table);
+		countEmpty.addAggregate('COUNT');
+		countEmpty.addEncodedQuery(arrayFields[i] + 'ISNOTEMPTY');
+		if (time){
+			countEmpty.addEncodedQuery(time);
+		}
+		countEmpty.query();
+		var emptyRecords = 0;
+		if (countEmpty.next()){
+			emptyRecords = countEmpty.getAggregate('COUNT');
+			gs.info('Records using field [' + arrayFields[i] + ']: ' + emptyRecords);
+		}
+			
+		if (allRecords != 0){
+			var percentUsed = parseFloat(emptyRecords/allRecords);
+			gs.info('Percent used: ' + (percentUsed*100).toFixed(2) );
+		}
+
+	}
+	if (allRecords == 0){
+		gs.info('No records found');
+	}
+
+}
