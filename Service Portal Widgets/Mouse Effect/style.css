@@ -1,0 +1,13 @@
+/* Light Ball Styling */
+.light-ball {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    background-color: rgba(173, 216, 230, 0.8); /* Light blue with slight transparency */
+    border-radius: 50%;
+    filter: blur(25px); /* Creates a fuzzy glow effect */
+    pointer-events: none; /* Ensures it doesn't interfere with clicking */
+    transition: transform 0.5s ease; /* 500ms latency effect */
+}
