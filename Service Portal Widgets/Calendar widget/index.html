@@ -1,0 +1,17 @@
+<div class="calendar-widget" ng-init="loadCalendar()">
+    <div class="calendar-header">
+        <button ng-click="prevMonth()">&#9664;</button>
+        <span>{{ monthNames[currentMonth] }} {{ currentYear }}</span>
+        <button ng-click="nextMonth()">&#9654;</button>
+    </div>
+
+    <div class="calendar-days">
+        <div class="day-name" ng-repeat="day in dayNames">{{ day }}</div>
+        <div 
+            class="day" 
+            ng-repeat="day in days track by $index" 
+            ng-class="{'current-day': isCurrentDay(day), 'weekend': isWeekend($index), 'regular-day': day}">
+            {{ day }}
+        </div>
+    </div>
+</div>
