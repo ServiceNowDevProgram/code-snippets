@@ -1,0 +1,1 @@
+These scripts explain the usage of Glideaggregate. This script helps to group the incidents by their assigned user, counts the number of incidents assigned to each user, and calculates the average time it takes to close these incidents.
