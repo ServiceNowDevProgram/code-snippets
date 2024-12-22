@@ -5,8 +5,8 @@ ga.addAggregate('COUNT', 'number');
 ga.addAggregate('AVG', 'time_to_close');
 ga.query();
 while (ga.next()) {
-  var assigned_to = ga.get('assigned_to');
-  var count = ga.get('result');
-  var avgTimeToClose = ga.get('result.avg_time_to_close');
+  var assigned_to = ga.getDisplayValue('assigned_to');
+  var count = ga.getAggregate('COUNT', 'number');
+  var avgTimeToClose = ga.getAggregate('AVG', 'time_to_close');
   gs.info('Assigned to: ' + assigned_to + ', Incident Count: ' + count + ', Average Time to Close: ' + avgTimeToClose);
 }
