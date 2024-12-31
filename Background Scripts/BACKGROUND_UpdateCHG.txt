@@ -1,0 +1,11 @@
+var uC = new GlideRecord('u_change_legacy');
+uC.setLimit(1);
+uC.query();
+
+while(uC.next()) {
+uC.number = 'L' + uC.number
+uC.autoSysField(false);
+uC.setWorkflow(false);
+uC.update();
+gs.info(uC.number);
+}

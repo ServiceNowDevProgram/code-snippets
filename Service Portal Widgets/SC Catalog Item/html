@@ -1,0 +1,316 @@
+<div id="sc_cat_item" ng-if="::(data.recordFound && !data.not_for_mobile)" sn-atf-blacklist="IS_SERVICE_CATALOG">
+  <sp-widget widget="c.orderItemModal" ng-if="c.orderItemModal"></sp-widget>
+  <sp-widget widget="c.saveItemModal" ng-if="c.saveItemModal"></sp-widget>
+  <div class="row" ng-if="::data.sc_cat_item" ng-class="{'native-mobile': options.native_mobile == 'true'}">
+    <div class="col-sm-12" ng-class="{'col-md-9': options.display_cart_on_right === 'true', 'col-md-12': options.display_cart_on_right !== 'true', 'no-padder': options.native_mobile == 'true'}" id="catItemTop">
+      <!-- Info Message Box -->
+      <div  ng-if="data.hasDraftItem && !data.is_draft_item && !c.data.sc_cat_item.no_save_as_draft && !c.isNative" class="alert alert-info" sc-bind-html-compile="::c.draftExistsWithLinkMsg">
+      </div>
+      <div ng-if="c.showAddToWishlist()  && !data.is_wishlist_item && !!data.wishlist_item_id && data.wishlist_item_id != data._generatedItemGUID" class="alert alert-info" role="status">
+        {{::m.itemWishlistMsg}}
+      </div>
+      <div class="alert alert-danger" ng-if="data.isInvalidVersion">
+        <span>
+          {{::m.deletedOutdatedItemMsg}}
+        </span>
+       <i class="fa fa-close pull-right pointer" aria-label="${Close Notification}" tabindex="0" ng-click="data.isInvalidVersion = false"/>
+      </div>
+      <!--	Success Message Box	-->
+      <div class="alert alert-success" ng-if="data.showMsg" sc-bind-html-compile="m.actionMsg">
+      </div>
+      <div class="panel panel-default">
+        <!-- Title Section -->
+        <div role="region" aria-label="${Item Details}">
+        	<div class="wrapper-md b-b break-word item-header clearfix" ng-class="{true: '', false: 'sc-sticky-item-header'}[!c.data.sc_cat_item.short_description]" style="top: {{stickyHeaderTop}}">
+	          <span class="pull-right" ng-if="!c.isNative">
+                <sp-widget widget="data.favoriteWidget"></sp-widget>
+              </span>
+          <h2 class="h2 m-t-none m-b-sm font-thin" ng-if="::data.sc_cat_item.name && options.native_mobile != 'true'">{{::data.sc_cat_item.name}}</h2>
+          <div class="text-muted sc-cat-item-short-description" ng-if="::data.sc_cat_item.short_description">{{::data.sc_cat_item.short_description}}</div>
+          <div ng-if="c.isNative && !c.isAgentApp" class="cat-mobile-favorite" ng-click="toggleFavorite($event)">
+              <sp-widget widget="data.favoriteWidget"></sp-widget>
+              <span ng-if = "showFavorite">
+                <span class="favorite-text" ng-if="isFavorite === true">${Favorited}</span>
+                <span class="favorite-text" ng-if="isFavorite === false">${Favorite}</span>
+              </span>
+          </div>
+        </div>
+        	<div class="row b-b no-margin" ng-if="c.data.sc_cat_item.picture || c.data.sc_cat_item.trusted_description" ng-class="{'wrapper-md': options.native_mobile != 'true', 'wrapper-sm': options.native_mobile == 'true'}">
+          <div class="col-sm-4 col-xs-12 no-padder" ng-if="c.data.sc_cat_item.picture">
+            <div class="wrapper-md text-center">
+              <i class="fa fa-chevron-left pointer" style="position:absolute; top:50%; left:4%; color:#CECECE" ng-if="options.image_gallery"></i>
+              <img class="img-responsive catalog-item-image" alt="{{c.isNative ? data.sc_cat_item.name : ''}}" role="{{c.isNative ? 'img' : 'presentation'}}" style="display: inline" ng-src="{{::data.sc_cat_item.picture}}?t=medium" />
+              <i class="fa fa-chevron-right pointer" style="position:absolute; top:50%; right:4%; color:#CECECE" ng-if="options.image_gallery"></i>
+              <div class="image-gallery padding-top" ng-if="options.image_gallery">
+                <i class="fa fa-circle active"></i>
+                <i class="fa fa-circle"></i>
+                <i class="fa fa-circle"></i>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12 break-word"
+               ng-class="{true: 'col-sm-12 no-padder', false: 'col-sm-8'}[!c.data.sc_cat_item.picture]">
+            <div class="visible-md visible-lg" ng-class="{false : 'visible-xs visible-sm', true : 'hidden-xs hidden-sm'}[c.options.show_less_description === 'true']" style="overflow : auto">
+              <div ng-bind-html="::data.sc_cat_item.trusted_description" class="sc-item-description"></div>
+            </div>
+            <div class="col-xs-12 col-sm-12 visible-xs visible-sm" ng-if="c.options.show_less_description === 'true'">
+              <sc-toggle-data sn-data="::data.sc_cat_item.trusted_description"></sc-toggle-data>
+            </div>
+          </div>
+        </div>
+        </div>
+        <div class="b-b wrapper-md" ng-show="!data.no_fields" aria-label="${Form}">
+          <sp-cat-item item="::data.sc_cat_item" ></sp-cat-item>
+	  <div ng-if="c.mandatory.length > 0" class="sc-cat-item-legend" ng-attr-role="{{c.isNative ? 'text' : undefined}}">
+           <span class="fa fa-asterisk mandatory" title="${asterisk}" style="padding-right: .25rem">
+		<span class="sr-only">${asterisk}</span>
+	    </span>
+            <span>${Indicates required}</span>
+     	  </div>
+          <form id="catalog-form">
+            <!-- display view and model -->
+            <sp-model form-model="::data.sc_cat_item" mandatory="c.mandatory"></sp-model>
+          </form>
+        </div>
+        <div class="b-b wrapper-md" ng-if="::(data.sc_cat_item.content_type == 'external' || data.sc_cat_item.content_type == 'kb' || data.sc_cat_item.content_type == 'dynamic')">
+          <div ng-if="::data.sc_cat_item.content_type == 'external'" class="wrapper-md m-l-sm">
+            <a ng-href="{{::data.sc_cat_item.url}}" target={{::data.sc_cat_item.target}}>${Go to Link:} {{::data.sc_cat_item.url}} ➚</a>
+          </div>
+          <div ng-if="::data.sc_cat_item.content_type == 'kb'" class="wrapper-md m-l-sm">
+            <a  ng-href="?id=kb_article&sys_id={{::data.sc_cat_item.kb_article}}">${Go to KB Article:} {{::data.sc_cat_item.kb_article_description}}</a>
+          </div>
+          <div ng-if="::data.sc_cat_item.content_type == 'dynamic'" class="wrapper-md m-l-sm">
+            	<a ng-if="::data.sc_cat_item.portalUrl" ng-href="{{::data.sc_cat_item.portalUrl}}">${Go to Link:} {{::data.sc_cat_item.portalUrl}}</a>
+                <a ng-if="::!data.sc_cat_item.portalUrl" ng-href="{{::data.sc_cat_item.url}}" target={{::data.sc_cat_item.target}}>${Go to Link:} {{::data.sc_cat_item.url}} ➚</a>
+          </div>
+        </div>
+        <!-- Bottom cart -->
+        <div class="inline-cart" ng-if="::(options.display_cart_on_right !== 'true' && options.native_mobile != 'true')" role="region" aria-label="${Page Actions}">
+          <div ng-if="c.showCart()" class="wrapper-md b-b">
+            <div ng-if="::c.allowOrder() && c.showQuantitySelector()" class="m-b">
+               <label for="catItemQuantity"><b>${Quantity}</b></label>
+               <div class="cat-item-quantity-box-bottom-cart">
+                 <select id="catItemQuantity"
+                          title="${Quantity}"
+                          ng-disabled="disableControls()"
+                          class="m-r-xs sn-select-basic"
+                          ng-model="c.quantity"
+                          sn-select-width="65px"
+                          ng-change="c.updateQuantity(data.sc_cat_item)"
+                          aria-hidden="true">
+                   <option ng-repeat="num in data.choiceListQuantity" value={{::num.value}}>{{::num.label}}</option>
+                 </select>
+               </div>
+            </div>
+            <div class="m-b" ng-if="c.showPrice()" >
+              <b>${Price}</b>
+              <div>
+                {{data.sc_cat_item.price_display}}<em ng-if="data.sc_cat_item.recurring_price" class="cat_item_price"> {{data.sc_cat_item.price ? '+' : ''}} {{data.sc_cat_item.recurring_price_display + ' ' + data.sc_cat_item.recurring_price_frequency}}</em>
+              </div>
+            </div>
+             <div class="m-b" ng-if="c.showDeliveryTime()">
+              <b>${Delivery Time}</b>
+              <div>
+                {{::data.sc_cat_item.estimated_delivery_time}}
+              </div>
+            </div>
+            <div ng-if="::c.allowOrder()" class="text-right">
+              <button sp-ellipsis-tooltip sp-ellipsis-tooltip-title="${Add to Cart}" tabindex="0" ng-if="c.showAddCartBtn()" name="add_to_cart" ng-disabled="disableControls()" ng-click="triggerAddToCart()" class="btn btn-default m-r-xs bottom-button-width text-overflow-ellipsis">
+                <i class="fa fa fa-shopping-cart pull-left cart-icon-padding-top" aria-hidden="true"></i>
+                ${Add to Cart}
+              </button>
+              <button sp-ellipsis-tooltip sp-ellipsis-tooltip-title="${Update Cart}" tabindex="0" ng-if="data.is_cart_item" name="update" ng-disabled="disableControls()" ng-click="triggerUpdateCart()" class="btn btn-default m-r-xs bottom-button-width text-overflow-ellipsis">
+                <i class="fa fa fa-shopping-cart pull-left cart-icon-padding-top" aria-hidden="true"></i>
+                ${Update Cart}
+              </button>
+              <span class="form-group relative" ng-if="c.showAddToWishlist()">
+                <button sp-ellipsis-tooltip sp-ellipsis-tooltip-title="${Add to Wish List}" ng-if="!data.is_wishlist_item" name="add_to_wishlist" ng-click="triggerAddToWishlist()" ng-disabled="disableControls()" class="btn btn-default m-r-xs bottom-button-width text-overflow-ellipsis">
+                  <i class="icon-sp-wishlist pull-left cart-icon-margin" aria-hidden="true"></i>
+                  ${Add to Wish List}
+                </button>
+                <button sp-ellipsis-tooltip sp-ellipsis-tooltip-title="${Update Wish List}" ng-if="data.is_wishlist_item" name="update_wishlist" ng-click="triggerAddToWishlist()" ng-disabled="disableControls()" class="btn btn-default m-r-xs bottom-button-width text-overflow-ellipsis">
+                  <i class="icon-sp-wishlist pull-left cart-icon-margin" aria-hidden="true"></i>
+                  ${Update Wish List}
+                </button>
+              </span>
+              <span class="form-group relative">
+                <button sp-ellipsis-tooltip sp-ellipsis-tooltip-title="${Save as Draft}" ng-if="c.showDraftButtons() && !data.is_draft_item" name="save_item" ng-click="triggerSaveItem()" ng-disabled="disableControls()" class="btn btn-default m-r-xs bottom-button-width text-overflow-ellipsis">
+                  <i class="icon-save pull-left cart-icon-margin" aria-hidden="true"></i>
+                  ${Save as Draft}
+                </button>
+                <button sp-ellipsis-tooltip sp-ellipsis-tooltip-title="${Update Draft}" ng-if="c.showDraftButtons() && data.is_draft_item" name="update_saved_item" ng-click="triggerSaveItem()" ng-disabled="disableControls()" class="btn btn-default m-r-xs bottom-button-width text-overflow-ellipsis">
+                  <i class="icon-save pull-left cart-icon-margin" aria-hidden="true"></i>
+                  ${Update Draft}
+                </button>
+              </span>
+              <button sp-ellipsis-tooltip sp-ellipsis-tooltip-title="{{submitButtonMsg}}" ng-if="::c.showOrderNowButton()" tabindex="0" name="submit" ng-disabled="disableControls()" ng-click="triggerOnSubmit()" class="btn btn-primary bottom-button-width text-overflow-ellipsis" id="submit-btn" aria-live="assertive">{{submitButtonMsg}}</button>
+              <span ng-if="submitting" style="padding-left:4px">${Submitting...}</span>
+              <span ng-if="validating" style="padding-left:4px">${Validating...}</span>
+            </div>
+            <div ng-show="hasMandatory(c.mandatory)" class="alert alert-info" style="margin-top: .5em" ng-if="c.options.show_field_validation_messages === 'true'" aria-live="assertive">
+              <div id="required_field_bottom" role="group" aria-label="${Required information - clicking on any button in this group will take you to the corresponding mandatory field}">
+                <div id="required_information_bottom" ng-if="hasMandatory(c.mandatory)" aria-hidden="true">${Required information} </div>
+                <div style="display:flex; flex-wrap:wrap; grid-row-gap:3px;">
+                  <div ng-repeat="f in c.mandatory">
+                    <div role="alert">
+                      <span class="sr-only" id="req_info_bottom_{{::f.name}}">${Required information}</span>
+                  		<button for="req_info_bottom_{{::f.name}}" class="label sc-field-error-label sc-reqd-info-btn" ng-click="getFocus(f)" title="{{::f.label}}">{{::f.label}}</button>
+                    </div>
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div ng-if="c.showAttachments()" class="wrapper-md row no-margin" role="region" data-label="Attachments" aria-label="${Attachments}">
+          <now-attachments-list template="sp_attachment_single_line" ></now-attachments-list>
+          <div ng-class="{'flex-center attachment-height': options.native_mobile == 'true', 'flex-end': options.native_mobile != 'true'}">
+            <label ng-if="!submitting && !submitted" style="font-weight:normal;cursor:pointer;">
+              <sp-attachment-button modal="true" required="{{data.sc_cat_item.mandatory_attachment}}"></sp-attachment-button>
+              <span class="fa fa-asterisk mandatory"
+                      ng-if="data.sc_cat_item.mandatory_attachment"
+                      ng-class="{'mandatory-filled': data.sc_cat_item.mandatory_attachment && (data.sc_cat_item.attachment_submitted || attachments.length > 0)}"
+                      style="vertical-align:super" aria-hidden="true"></span>
+              <span ng-class="{'attachment-text' : options.native_mobile == 'true'}" aria-hidden="true">${Add attachments}</span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Right side content -->
+    <div class="col-sm-12 col-md-3 right-side-cart" ng-show="::options.display_cart_on_right === 'true' || c.isNative === true" ng-class="{'no-padder': options.native_mobile == 'true'}" role="region" aria-label="${Page Actions}">
+      <!-- Right side cart( If you are chaning anything here, please change in bottom cart section also) -->
+      <div ng-class="{true:'sc-fixed', false:'' }[isSCCartFixed]">
+        <div ng-if="c.showCart()" class="panel panel-{{::options.color}} b" ng-class="{'wrapper-md': options.native_mobile != 'true', 'wrapper-sm': options.native_mobile == 'true'}">
+          <div ng-if="::c.allowOrder()" ng-class="{'form-group': options.native_mobile == 'true'}">
+            <div ng-if="c.showQuantitySelector()" class="cat-item-quantity-group">
+			   <label for="catItemQuantity"><b>${Quantity}:</b></label>
+              <div class="cat-item-quantity-box">
+                <select id="catItemQuantity"
+                    title="${Quantity}"
+                    ng-disabled="disableControls()"
+                    class="m-b sn-select-basic"
+                    ng-model="c.quantity"
+                    ng-change="c.updateQuantity(data.sc_cat_item)"
+                    aria-hidden="true">
+                  <option ng-repeat="num in data.choiceListQuantity" value={{::num.value}}>{{::num.label}}</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="form-group relative" ng-if="c.options.native_mobile == 'true'">
+            <div class="" ng-if="c.showPrice()">
+              <b aria-hidden="true">{{data.sc_cat_item.price_display}}</b>
+              <span class="sr-only">${Price} {{data.sc_cat_item.price_display}}</span>
+              <em aria-hidden="true" ng-if="data.sc_cat_item.recurring_price" class="cat_item_price"> {{data.sc_cat_item.price ? '+' : ''}} {{data.sc_cat_item.recurring_price_display + ' ' + data.sc_cat_item.recurring_price_frequency}}</em>
+              <span class="sr-only" ng-if="data.sc_cat_item.recurring_price">${Recurring Price} {{data.sc_cat_item.recurring_price_display}} {{data.sc_cat_item.recurring_price_frequency}}</span>
+            </div>
+            <div class="text-muted" ng-if="c.showDeliveryTime()">
+              ${Delivery Time}: {{::data.sc_cat_item.estimated_delivery_time}}
+            </div>
+          </div>
+          <div class="form-group relative" ng-if="c.options.native_mobile != 'true'">
+            <div class="form-group" ng-if="c.showPrice()">
+              <b>${Price}:</b> {{data.sc_cat_item.price_display}}<em ng-if="data.sc_cat_item.recurring_price" class="cat_item_price"> {{data.sc_cat_item.price ? '+' : ''}} {{data.sc_cat_item.recurring_price_display + ' ' + data.sc_cat_item.recurring_price_frequency}}</em>
+            </div>
+            <div class="form-group" ng-if="c.showDeliveryTime()">
+              <b>${Delivery Time}:</b> {{::data.sc_cat_item.estimated_delivery_time}}
+            </div>
+            <button sp-ellipsis-tooltip sp-ellipsis-tooltip-title="${Add to Cart}" tabindex="0" ng-if="c.showAddCartBtn()" name="add_to_cart" ng-disabled="disableControls()" ng-click="triggerAddToCart()" class="btn btn-default sc-btn form-control text-overflow-ellipsis">
+              <i class="fa fa fa-shopping-cart pull-left cart-icon-padding-top" aria-hidden="true"></i>
+              ${Add to Cart}
+            </button>
+            <button sp-ellipsis-tooltip sp-ellipsis-tooltip-title="${Update Cart}" tabindex="0" ng-if="data.is_cart_item" name="update" ng-disabled="disableControls()" ng-click="triggerUpdateCart()" class="btn btn-default sc-btn form-control text-overflow-ellipsis">
+              <i class="fa fa fa-shopping-cart pull-left cart-icon-padding-top" aria-hidden="true"></i>
+              ${Update Cart}
+            </button>
+          </div>
+          <div class="form-group relative" ng-if="c.showAddToWishlist()">
+            <button sp-ellipsis-tooltip sp-ellipsis-tooltip-title="${Add to Wish List}" ng-if="!data.is_wishlist_item" name="add_to_wishlist" ng-click="triggerAddToWishlist()" ng-disabled="disableControls()" class="btn btn-default sc-btn form-control text-overflow-ellipsis">
+              <i class="icon-sp-wishlist pull-left cart-icon-margin" aria-hidden="true"></i>
+              ${Add to Wish List}
+            </button>
+            <button sp-ellipsis-tooltip sp-ellipsis-tooltip-title="${Update Wish List}" ng-if="data.is_wishlist_item" name="update_wishlist" ng-click="triggerAddToWishlist()" ng-disabled="disableControls()" class="btn btn-default sc-btn form-control text-overflow-ellipsis">
+              <i class=" icon-sp-wishlist pull-left cart-icon-margin" aria-hidden="true"></i>
+              ${Update Wish List}
+            </button>
+          </div>
+          <div class="form-group relative" ng-if="c.options.native_mobile != 'true'">
+            <button sp-ellipsis-tooltip sp-ellipsis-tooltip-title="${Save as Draft}" ng-if="c.showDraftButtons() && !data.is_draft_item" name="save_item" ng-click="triggerSaveItem()" ng-disabled="disableControls()" class="btn btn-default sc-btn form-control text-overflow-ellipsis">
+              <i class="icon-save pull-left cart-icon-margin" aria-hidden="true"></i>
+              ${Save as Draft}
+            </button>
+            <button sp-ellipsis-tooltip sp-ellipsis-tooltip-title="${Update Draft}" ng-if="c.showDraftButtons() && data.is_draft_item" name="update_saved_item" ng-click="triggerSaveItem()" ng-disabled="disableControls()" class="btn btn-default sc-btn form-control text-overflow-ellipsis">
+              <i class="icon-save pull-left cart-icon-margin" aria-hidden="true"></i>
+              ${Update Draft}
+            </button>
+          </div>
+          <div class="form-group m-b-xs" ng-if="c.options.native_mobile != 'true'">
+            <button sp-ellipsis-tooltip sp-ellipsis-tooltip-title="{{submitButtonMsg}}" ng-if="::c.showOrderNowButton()" tabindex="0" name="submit" id="submit-btn" ng-disabled="disableControls()" ng-click="triggerOnSubmit()" class="btn btn-primary btn-block text-overflow-ellipsis">{{submitButtonMsg}}</button>
+            <span ng-if="submitting" style="padding-left:4px">${Submitting...}</span>
+            <span ng-if="validating" style="padding-left:4px">${Validating...}</span>
+          </div>
+          <div class="form-group m-b-xs flex-center" ng-if="c.options.native_mobile == 'true' && 1==2">
+            <button tabindex="0" ng-if="c.showAddCartBtn()" name="add_to_cart" ng-disabled="disableControls()" ng-click="triggerAddToCart()" class="btn btn-default sc-btn native-btn rounded m-r-lg padder-xl">
+              ${Add to Cart}
+            </button>
+            <button tabindex="0" ng-if="data.is_cart_item" name="update" ng-disabled="disableControls()" ng-click="triggerUpdateCart()" class="btn btn-default sc-btn native-btn rounded m-r-lg padder-xl">
+              <i class="fa fa fa-shopping-cart sc-order-widget-btn pull-left" aria-hidden="true"></i>
+              ${Update Cart}
+            </button>
+            <div class="form-group m-b-xs">
+              <button ng-if="::c.showOrderNowButton()" tabindex="0" name="submit" id="submit-btn" ng-disabled="disableControls()" ng-click="triggerOnSubmit()" class="btn btn-primary rounded m-l-lg padder-xl">{{submitButtonMsg}}</button>
+              <span ng-if="submitting" style="padding-left:4px">${Submitting...}</span>
+            </div>
+          </div>
+        </div>
+        <div class="sc-item-error-messages" ng-if="c.options.show_field_validation_messages === 'true'">
+          <div ng-if="hasMandatory(c.mandatory)" class="row alert alert-info-border" style="margin-top: .5em" aria-live="assertive">
+            <div class="col-sm-12">
+              <div id="required_field_bottom" role="group" aria-label="${Required information - clicking on any button in this group will take you to the corresponding mandatory field}">
+                <div id="required_information_bottom" ng-if="hasMandatory(c.mandatory)" aria-hidden="true">${Required information} </div>
+                <div style="display:flex; flex-wrap:wrap; grid-row-gap:3px;">
+                  <div ng-repeat="f in c.mandatory">
+                      <span class="sr-only" id="req_info_bottom_{{::f.name}}">${Required information}</span>
+                  		<button for="req_info_bottom_{{::f.name}}" class="label sc-field-error-label sc-reqd-info-btn" ng-click="getFocus(f)" title="{{::f.label}}">{{::f.label}}</button>
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div ng-if="::!data.sc_cat_item" >
+    <div class="panel panel-default">
+      <div class="panel-heading"><h4 class="panel-title">${Item not found}</h4></div>
+      <div class="panel-body wrapper">
+        <p>${This item is not found or currently not available}</p>
+        <p>${Suggestions}:</p>
+        <ul>
+          <li>${Try searching for the item}</li>
+          <li>${Go to the Service Catalog homepage}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="sr-only" aria-live="assertive">{{::c.status}}</div>
+</div>
+<div ng-if="::!data.recordFound" class="alert alert-info">{{::m.invalidRecordMsg}}</div>
+<div ng-if="::data.not_for_mobile">
+  <div class="wrapper-lg flex-center">
+    ${We're sorry, this item isn't available on mobile}
+  </div>
+  <div class="flex-center">
+    <img src="not_viewable.png" width="300"/>
+  </div>
+</div>
+<now-message key="Added item to shopping cart" value="${Added item to shopping cart}"></now-message>
+<now-message key="Updated Item to shopping cart" value="${Updated Item to shopping cart}"></now-message>
+<now-message key="Attachment(s) are not added" value="${Attachment(s) are not added}"></now-message>
+<now-message key="Please wait, attachment deletion in progress" value="${Please wait, attachment deletion in progress}"></now-message>
+<now-message key="Leave page?" value="${Leave page?}"></now-message>
+<now-message key="Changes you made will be lost." value="${Changes you made will be lost.}"></now-message>
+<now-message key="Cancel" value="${Cancel}"></now-message>
+<now-message key="Leave" value="${Leave}"></now-message>

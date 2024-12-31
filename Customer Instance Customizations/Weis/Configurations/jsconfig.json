@@ -1,0 +1,4 @@
+/** 
+    this should be in root of working directory, created by sn-scriptsync
+    without this file, autocintellisense does not work
+*/

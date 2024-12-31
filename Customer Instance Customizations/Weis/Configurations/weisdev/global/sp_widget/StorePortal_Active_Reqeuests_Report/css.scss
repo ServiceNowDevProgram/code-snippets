@@ -1,0 +1,22 @@
+td {padding:15px;}
+
+tr:nth-child(even) {
+    background-color: #e8e8ee;
+}
+
+.Container {border-left:.5px solid #d3d3d3;
+border-right:.5px solid #d3d3d3;
+border-bottom:.5px solid #d3d3d3;
+}
+.DisplayFields {font-size:18px;
+padding-bottom:2px;
+}
+.SecondaryFields{font-size:12px;
+padding-bottom:1px;
+}
+
+button {width:100%; background-color:green; color:white;
+border: 1px solid black;
+}
+
+.Pending{background-color:#9edb0f;}

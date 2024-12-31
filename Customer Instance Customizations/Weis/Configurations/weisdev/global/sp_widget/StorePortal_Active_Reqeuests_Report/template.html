@@ -1,0 +1,34 @@
+<div>
+   <div><label>Search</label><input type="text" ng-model="searchText"/><div> 
+<table>
+  <!--<tr style="background-color:green; color:white;">
+     <td>Number</td>
+     <td>Short Description</td>
+     <td>Opened</td>
+     <td>State</td>
+  </tr>-->
+  <tr><th><button ng-click="changeSort('number')">Number</button></th>
+    <th><button ng-click="changeSort('name')">Name</button></th>
+     <th><button ng-click="changeSort('openedat')">Opened On</button></th>
+    <th><button ng-click="changeSort('state')">State</button></th>
+  </tr>
+  <tr ng-repeat="request in data.requests | orderBy:'-' + orderField:orderReverse| filter:searchText">
+   <!-- <td>
+     <a href="https://weisdev.service-now.com/task.do?sys_id={{request.sys_id}}">
+        {{request.number}}</a>
+    </td>-->
+    <td> <a href= "{{request.enviro}}?id=ticket&sys_id={{request.sys_id}}&table={{request.tableName}}">
+       {{request.number}}</a></td>
+    <td> 
+    {{request.shortdescription}}
+    </td>
+     <td>
+       {{request.openedat}}
+    </td>
+    <td>
+      {{request.state}}
+    </td>
+    
+  </tr>
+  </table>
+</div>
