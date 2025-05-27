@@ -1,0 +1,28 @@
+✅ What It Does
+Sends a formatted message for KB article approval.
+Includes article details and links to approve or reject.
+📥 Data Used
+Pulls info from the KB article via fd_data._1__look_up_record.record.
+
+📦 Info in Message
+KB Number (clickable link)
+Short Description
+Requested By
+Requested On
+Knowledge Base
+Knowledge Managers
+
+🔗 Action Links
+Approve → opens approval in ServiceNow
+Reject → opens rejection in ServiceNow
+KB Number → links to the KB article
+
+📝 Example Output
+Pending approval request from ServiceNow
+KB000012: ASDF TEST
+Requested by: John Doe
+Requested on: 2025-05-23
+Knowledge Base: IT KB
+Knowledge Managers: Jane Smith
+Approve link: [Click here to approve]
+Reject link: [Click here to reject]
