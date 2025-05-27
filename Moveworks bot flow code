@@ -1,0 +1,38 @@
+var article = fd_data._1__look_up_record.record;
+
+// Safely retrieve fields with null checks for a KB Article
+var sys_id = article.sys_id || '';
+var articleTitle = article.short_description || 'N/A';
+var requestedBy = fd_data.trigger.current.sys_created_by;
+var articleNumber = article.number || 'N/A';
+var requestedOn = article.sys_created_on || 'N/A';
+var kbName = (article.kb_knowledge_base && article.kb_knowledge_base.title) || 'N/A';
+var knowledgeManagers = (article.kb_knowledge_base && article.kb_knowledge_base.owner && article.kb_knowledge_base.owner.getDisplayValue()) || 'N/A';
+
+// Base URL
+var baseUrl = gs.getProperty('glide.servlet.uri') || '';
+var kbLink = baseUrl + 'kb_knowledge.do?sys_id=' + sys_id;
+//Below are links for opening the record in servicenow
+var approveLink = baseUrl + 'sysapproval_approver.do?action=approve&sys_id=' + sys_id;
+var rejectLink = baseUrl + 'sysapproval_approver.do?action=reject&sys_id=' + sys_id;
+//Below lines are for email template which is used to create email inbound template.
+var inst ='inspirebrandsdev';
+var approveSub = 'RE: '+ articleNumber +' Approve KB Article ';
+var body = 'Please do not change the subject, just click send message.';
+var rejectSub = 'RE: '+ articleNumber +' Reject KB Article ';
+
+
+// HTML message
+var message = 
+  '<b>Pending approval request from ServiceNow</b><br><br>' +
+  '<b><a href="' + kbLink + '">' + articleNumber + '</a>: ' + articleTitle + '</b><br><br>' +
+  '<b>Requested by:</b> ' + requestedBy + '<br>' +
+  '<b>Requested on:</b> ' + requestedOn + '<br>' +
+  '<b>Knowledge Base:</b> ' + kbName + '<br>' +
+  '<b>Knowledge Managers:</b> ' + knowledgeManagers + '<br><br>' +
+  '<b>Approve link :</b> <a href="mailto:' + inst + '@service-now.com?SUBJECT=' + approveSub + '&amp;body=' + body + '">Click here</a><br>'+
+  '<b>Reject link :</b> <a href="mailto:' + inst + '@service-now.com?SUBJECT=' + rejectSub + '&amp;body=' + body + '">Click here</a><br>';
+  //'<b>Approve link :</b> <a href="' + approveLink + '">Click here to approve</a><br>' +
+  //'<b>Reject link:</b> <a href="' + rejectLink + '">Click here to reject</a>';
+
+return message;
