@@ -9,22 +9,36 @@ This is the **ServiceNow Developer Program's Code Snippets Repository** - a comm
 ## Repository Structure and Organization
 
 ### Directory Structure
-All code snippets follow a standardized three-level structure:
+All code snippets follow a standardized four-level structure:
 ```
-Category/
-├── Specific-Use-Case/
-│   ├── README.md           # Description and usage instructions
-│   ├── script.js           # Main code implementation
-│   └── variant.js          # Optional code variations
+Top-Level Category/
+├── Sub-Category/
+│   ├── Specific-Use-Case/
+│   │   ├── README.md           # Description and usage instructions
+│   │   ├── script.js           # Main code implementation
+│   │   └── variant.js          # Optional code variations
 ```
 
-### Major Categories
-- **Core ServiceNow APIs**: `GlideRecord/`, `GlideAjax/`, `GlideSystem/`, `GlideDate/`, `GlideDateTime/`
-- **Server-Side Components**: `Background Scripts/` (100+ examples), `Business Rules/` (150+ examples), `Script Includes/`
-- **Client-Side Components**: `Client Scripts/`, `Catalog Client Script/`, `UI Actions/`, `UI Scripts/`
-- **Modern Development**: `Service Portal/`, `NOW Experience/`, `GraphQL/`, `ECMASScript 2021/`
-- **Integration**: `Integration/`, `RESTMessageV2/`, `GlideHTTPRequest/`, `Import Set API/`
-- **Specialized Areas**: `CMDB/`, `ITOM/`, `Performance Analytics/`, `ATF Steps/`
+### Top-Level Categories (REQUIRED Structure)
+The repository is organized into **6 major categories**. All contributions MUST use these categories:
+
+- **Core ServiceNow APIs/**: Essential ServiceNow JavaScript APIs
+  - `GlideRecord/`, `GlideAjax/`, `GlideSystem/`, `GlideDate/`, `GlideDateTime/`, `GlideElement/`, `GlideFilter/`, `GlideAggregate/`, `GlideHTTPRequest/`, `GlideModal/`, `GlideQuery/`, `GlideTableDescriptor/`
+
+- **Server-Side Components/**: Server-executed code
+  - `Background Scripts/`, `Business Rules/`, `Script Includes/`, `Script Actions/`, `Scheduled Jobs/`, `Transform Map Scripts/`, `Server Side/`, `Inbound Actions/`, `Processors/`
+
+- **Client-Side Components/**: Browser-executed code
+  - `Client Scripts/`, `Catalog Client Script/`, `UI Actions/`, `UI Scripts/`, `UI Pages/`, `UI Macros/`, `UX Client Scripts/`, `UX Client Script Include/`, `UX Data Broker Transform/`
+
+- **Modern Development/**: Modern ServiceNow frameworks
+  - `Service Portal/`, `Service Portal Widgets/`, `NOW Experience/`, `GraphQL/`, `ECMASCript 2021/`
+
+- **Integration/**: External systems and data exchange
+  - `Integration/` (original), `RESTMessageV2/`, `Import Set API/`, `Scripted REST Api/`, `Mail Scripts/`, `MIDServer/`, `Attachments/`
+
+- **Specialized Areas/**: Domain-specific functionality
+  - `CMDB/`, `ITOM/`, `Performance Analytics/`, `ATF Steps/`, `Agile Development/`, `Advanced Conditions/`, `Browser Bookmarklets/`, `Browser Utilities/`, `Dynamic Filters/`, `Fix scripts/`, `Flow Actions/`, `Formula Builder/`, `Notifications/`, `On-Call Calendar/`, `Record Producer/`, `Regular Expressions/`, `Styles/`
 
 ## Development Guidelines
 
@@ -36,10 +50,11 @@ Category/
 - Quality over quantity - low-effort submissions are rejected
 
 ### Contribution Requirements
+- **Mandatory Category Structure**: All contributions MUST use the 6 top-level categories. PRs with incorrect structure will be rejected.
 - **Descriptive Structure**: Changes must match pull request scope exactly
 - **No XML Exports**: Avoid ServiceNow record exports in favor of JavaScript code
 - **Documentation**: Every code snippet requires accompanying README.md
-- **Categorization**: Place snippets in appropriate existing categories or propose new ones
+- **Proper Categorization**: Place snippets in appropriate existing sub-categories within the required top-level structure
 
 ### File Organization
 - Use descriptive folder names that clearly indicate functionality
