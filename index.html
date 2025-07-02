@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ServiceNow Code Snippets | Developer Program</title>
+    <meta name="description" content="Community-driven collection of ServiceNow development code examples and utilities from the ServiceNow Developer Program.">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Syntax Highlighting     -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+    
+    <!-- Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        /* CSS Variables for theming */
+        :root {
+            --primary-color: #1a73e8;
+            --secondary-color: #34a853;
+            --accent-color: #fbbc04;
+            --danger-color: #ea4335;
+            
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8f9fa;
+            --bg-tertiary: #e8f0fe;
+            
+            --text-primary: #202124;
+            --text-secondary: #5f6368;
+            --text-muted: #80868b;
+            
+            --border-color: #dadce0;
+            --border-light: #f1f3f4;
+            
+            --shadow-sm: 0 1px 2px 0 rgba(60,64,67,0.3), 0 1px 3px 1px rgba(60,64,67,0.15);
+            --shadow-md: 0 1px 2px 0 rgba(60,64,67,0.3), 0 2px 6px 2px rgba(60,64,67,0.15);
+            --shadow-lg: 0 2px 4px -1px rgba(60,64,67,0.3), 0 4px 8px 0 rgba(60,64,67,0.15);
+            
+            --border-radius: 8px;
+            --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --font-mono: 'JetBrains Mono', 'SF Mono', Monaco, 'Cascadia Code', monospace;
+        }
+
+        /* Dark mode */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-primary: #121212;
+                --bg-secondary: #1e1e1e;
+                --bg-tertiary: #2d2d2d;
+                
+                --text-primary: #e8eaed;
+                --text-secondary: #9aa0a6;
+                --text-muted: #5f6368;
+                
+                --border-color: #3c4043;
+                --border-light: #2d2d2d;
+            }
+        }
+
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(45deg, #ffffff, #e3f2fd);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .stats {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .stat {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Search */
+        .search-section {
+            background: var(--bg-secondary);
+            padding: 2rem 0;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .search-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .search-box {
+            position: relative;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 1rem 1rem 1rem 3rem;
+            border: 2px solid var(--border-color);
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            transition: all 0.2s ease;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.1);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+        }
+
+        /* Categories Grid */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .section-subtitle {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .category-card {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .category-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-color);
+        }
+
+        .category-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+        }
+
+        .category-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: var(--border-radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .category-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .category-description {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .category-stats {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .category-stat {
+            background: var(--bg-secondary);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .category-examples {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border-light);
+            padding: 3rem 0 2rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section ul li a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--border-light);
+            padding-top: 2rem;
+            text-align: center;
+            color: var(--text-muted);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .header-content {
+                padding: 0 1rem;
+            }
+            
+            .main-content {
+                padding: 2rem 1rem;
+            }
+            
+            .categories-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .stats {
+                justify-content: center;
+            }
+        }
+
+        /* Loading Animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Utilities */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <h1>ServiceNow Code Snippets</h1>
+            <p>Community-driven collection of ServiceNow development code examples and utilities from the ServiceNow Developer Program.</p>
+            
+            <div class="stats">
+                <div class="stat">
+                    <span class="stat-number" id="total-snippets">900+</span>
+                    <span class="stat-label">Code Snippets</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">6</span>
+                    <span class="stat-label">Categories</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" id="total-contributors">Community</span>
+                    <span class="stat-label">Contributors</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Search Section -->
+    <section class="search-section">
+        <div class="search-container">
+            <div class="search-box">
+                <i class="fas fa-search search-icon"></i>
+                <input 
+                    type="text" 
+                    class="search-input" 
+                    placeholder="Search for ServiceNow code snippets..."
+                    id="search-input"
+                    aria-label="Search code snippets"
+                >
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <h2 class="section-title">Browse by Category</h2>
+        <p class="section-subtitle">
+            Explore our organized collection of ServiceNow development code snippets, categorized by platform area and use case.
+        </p>
+
+        <div class="categories-grid" id="categories-grid">
+            <!-- Categories will be loaded dynamically -->
+            <div class="category-card" onclick="navigateToCategory('core-servicenow-apis')">
+                <div class="category-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <h3 class="category-title">Core ServiceNow APIs</h3>
+                <p class="category-description">
+                    Essential ServiceNow JavaScript APIs and classes including GlideRecord, GlideAjax, GlideSystem, and other foundational APIs.
+                </p>
+                <div class="category-stats">
+                    <span class="category-stat">12 Sub-categories</span>
+                    <span class="category-stat">200+ Examples</span>
+                </div>
+                <p class="category-examples">
+                    GlideRecord, GlideAjax, GlideSystem, GlideDate, GlideDateTime...
+                </p>
+            </div>
+
+            <div class="category-card" onclick="navigateToCategory('server-side-components')">
+                <div class="category-icon">
+                    <i class="fas fa-server"></i>
+                </div>
+                <h3 class="category-title">Server-Side Components</h3>
+                <p class="category-description">
+                    Server-side code including Background Scripts, Business Rules, Script Includes, and other server-executed components.
+                </p>
+                <div class="category-stats">
+                    <span class="category-stat">9 Sub-categories</span>
+                    <span class="category-stat">300+ Examples</span>
+                </div>
+                <p class="category-examples">
+                    Background Scripts, Business Rules, Script Includes, Scheduled Jobs...
+                </p>
+            </div>
+
+            <div class="category-card" onclick="navigateToCategory('client-side-components')">
+                <div class="category-icon">
+                    <i class="fas fa-desktop"></i>
+                </div>
+                <h3 class="category-title">Client-Side Components</h3>
+                <p class="category-description">
+                    Client-side code including Client Scripts, Catalog Client Scripts, UI Actions, and UX framework components.
+                </p>
+                <div class="category-stats">
+                    <span class="category-stat">9 Sub-categories</span>
+                    <span class="category-stat">150+ Examples</span>
+                </div>
+                <p class="category-examples">
+                    Client Scripts, Catalog Client Scripts, UI Actions, UI Scripts...
+                </p>
+            </div>
+
+            <div class="category-card" onclick="navigateToCategory('modern-development')">
+                <div class="category-icon">
+                    <i class="fas fa-rocket"></i>
+                </div>
+                <h3 class="category-title">Modern Development</h3>
+                <p class="category-description">
+                    Modern ServiceNow development approaches including Service Portal, NOW Experience Framework, and GraphQL.
+                </p>
+                <div class="category-stats">
+                    <span class="category-stat">5 Sub-categories</span>
+                    <span class="category-stat">80+ Examples</span>
+                </div>
+                <p class="category-examples">
+                    Service Portal, NOW Experience, GraphQL, ECMAScript 2021...
+                </p>
+            </div>
+
+            <div class="category-card" onclick="navigateToCategory('integration')">
+                <div class="category-icon">
+                    <i class="fas fa-plug"></i>
+                </div>
+                <h3 class="category-title">Integration</h3>
+                <p class="category-description">
+                    External system integrations, data import/export utilities, RESTMessageV2 examples, and communication patterns.
+                </p>
+                <div class="category-stats">
+                    <span class="category-stat">7 Sub-categories</span>
+                    <span class="category-stat">120+ Examples</span>
+                </div>
+                <p class="category-examples">
+                    RESTMessageV2, Import Sets, Mail Scripts, MIDServer, Attachments...
+                </p>
+            </div>
+
+            <div class="category-card" onclick="navigateToCategory('specialized-areas')">
+                <div class="category-icon">
+                    <i class="fas fa-cogs"></i>
+                </div>
+                <h3 class="category-title">Specialized Areas</h3>
+                <p class="category-description">
+                    Domain-specific functionality including CMDB utilities, ITOM scripts, Performance Analytics, and testing frameworks.
+                </p>
+                <div class="category-stats">
+                    <span class="category-stat">18 Sub-categories</span>
+                    <span class="category-stat">100+ Examples</span>
+                </div>
+                <p class="category-examples">
+                    CMDB, ITOM, Performance Analytics, ATF Steps, Agile Development...
+                </p>
+            </div>
+        </div>
+
+        <!-- Quick Links Section -->
+        <section class="quick-links">
+            <h2 class="section-title">Quick Links</h2>
+            <div class="categories-grid">
+                <div class="category-card" onclick="window.open('https://github.com/ServiceNowDevProgram/code-snippets', '_blank')">
+                    <div class="category-icon">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <h3 class="category-title">GitHub Repository</h3>
+                    <p class="category-description">
+                        View the source code, contribute new snippets, and report issues on our GitHub repository.
+                    </p>
+                </div>
+
+                <div class="category-card" onclick="window.open('https://github.com/ServiceNowDevProgram/code-snippets/blob/main/CONTRIBUTING.md', '_blank')">
+                    <div class="category-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3 class="category-title">Contribute</h3>
+                    <p class="category-description">
+                        Learn how to contribute your own ServiceNow code snippets to help the community.
+                    </p>
+                </div>
+
+                <div class="category-card" onclick="window.open('https://developer.servicenow.com/', '_blank')">
+                    <div class="category-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="category-title">Developer Program</h3>
+                    <p class="category-description">
+                        Join the ServiceNow Developer Program for resources, training, and community.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>ServiceNow Code Snippets</h3>
+                    <ul>
+                        <li><a href="#core-servicenow-apis">Core ServiceNow APIs</a></li>
+                        <li><a href="#server-side-components">Server-Side Components</a></li>
+                        <li><a href="#client-side-components">Client-Side Components</a></li>
+                        <li><a href="#modern-development">Modern Development</a></li>
+                        <li><a href="#integration">Integration</a></li>
+                        <li><a href="#specialized-areas">Specialized Areas</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Community</h3>
+                    <ul>
+                        <li><a href="https://github.com/ServiceNowDevProgram/code-snippets" target="_blank">GitHub Repository</a></li>
+                        <li><a href="https://github.com/ServiceNowDevProgram/code-snippets/blob/main/CONTRIBUTING.md" target="_blank">Contributing Guide</a></li>
+                        <li><a href="https://github.com/ServiceNowDevProgram/code-snippets/issues" target="_blank">Report Issues</a></li>
+                        <li><a href="https://sndevs.slack.com/" target="_blank">sndevs Slack</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>ServiceNow</h3>
+                    <ul>
+                        <li><a href="https://developer.servicenow.com/" target="_blank">Developer Program</a></li>
+                        <li><a href="https://docs.servicenow.com/" target="_blank">Documentation</a></li>
+                        <li><a href="https://developer.servicenow.com/dev.do#!/learn" target="_blank">Learning Path</a></li>
+                        <li><a href="https://community.servicenow.com/" target="_blank">Community</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="https://github.com/ServiceNowDevProgram/code-snippets/blob/main/README.md" target="_blank">README</a></li>
+                        <li><a href="https://github.com/ServiceNowDevProgram/code-snippets/blob/main/CLAUDE.md" target="_blank">Claude.md Guide</a></li>
+                        <li><a href="https://github.com/ServiceNowDevProgram/Hacktoberfest" target="_blank">Hacktoberfest</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 ServiceNow Developer Program. Community-sourced code snippets repository.</p>
+                <p>This repository is provided as-is, without warranties. Use at your own risk.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    
+    <script>
+        // Navigation function
+        function navigateToCategory(category) {
+            // Navigate to the category pages
+            const categoryMap = {
+                'core-servicenow-apis': 'core-apis.html',
+                'server-side-components': 'server-side-components.html',
+                'client-side-components': 'client-side-components.html',
+                'modern-development': 'modern-development.html',
+                'integration': 'integration.html',
+                'specialized-areas': 'specialized-areas.html'
+            };
+            
+            const pageUrl = categoryMap[category];
+            if (pageUrl) {
+                window.location.href = pageUrl;
+            }
+        }
+
+        // Search functionality
+        document.getElementById('search-input').addEventListener('input', function(e) {
+            const query = e.target.value.toLowerCase();
+            // This would be enhanced with actual search functionality
+            console.log('Searching for:', query);
+            
+            // Future: Implement search across all snippets
+            // This could use GitHub's API or a pre-built search index
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add loading animation to category cards on click
+        document.querySelectorAll('.category-card').forEach(card => {
+            card.addEventListener('click', function() {
+                const icon = this.querySelector('.category-icon i');
+                const originalClass = icon.className;
+                icon.className = 'loading';
+                
+                setTimeout(() => {
+                    icon.className = originalClass;
+                }, 1000);
+            });
+        });
+
+        // Dynamic stats loading (placeholder)
+        function updateStats() {
+            // This could fetch real data from GitHub API
+            document.getElementById('total-snippets').textContent = '950+';
+            document.getElementById('total-contributors').textContent = 'Open Source';
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            updateStats();
+        });
+    </script>
+</body>
+</html>
