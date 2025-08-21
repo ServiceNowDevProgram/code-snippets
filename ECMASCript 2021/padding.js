@@ -1,17 +1,17 @@
 // What's the use of `padStart()` and `padEnd()` in JavaScript?
-//
+
 // String padding is often needed to ensure consistent formatting.
 // Common examples in ServiceNow:
 //  - Padding numeric IDs with leading zeros (e.g., "INC000045")
 //  - Making export data columns align neatly
 //  - Adding placeholders to strings for integration formatting
-//
+
 // padStart(targetLength, padString)
 //    → Pads a string from the start until it reaches the target length
-//
+
 // padEnd(targetLength, padString)
 //    → Pads a string from the end until it reaches the target length
-//
+
 // Example:
 // "1234".padStart(10, "x"); // → "xxxxxx1234"
 // "1234".padEnd(10, "y");   // → "1234yyyyyy"
