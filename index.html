@@ -371,8 +371,19 @@
             animation: spin 1s ease-in-out infinite;
         }
 
+        .loading-text {
+            font-size: 1.5rem;
+            opacity: 0.8;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
         @keyframes spin {
             to { transform: rotate(360deg); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.8; }
+            50% { opacity: 0.4; }
         }
 
         /* Utilities */
@@ -691,11 +702,195 @@
             });
         });
 
-        // Dynamic stats loading (placeholder)
-        function updateStats() {
-            // This could fetch real data from GitHub API
-            document.getElementById('total-snippets').textContent = '950+';
-            document.getElementById('total-contributors').textContent = 'Open Source';
+        // GitHub API configuration
+        const GITHUB_API_BASE = 'https://api.github.com';
+        const REPO = 'ServiceNowDevProgram/code-snippets';
+        const BRANCH = 'main';
+
+        // Folders to exclude from counting
+        const EXCLUDED_FOLDERS = [
+            '.github',
+            '.git',
+            'node_modules',
+            '.vscode',
+            '.idea',
+            'assets'
+        ];
+
+        // Root files to exclude (these are typically config/documentation files)
+        const EXCLUDED_ROOT_FILES = [
+            'README.md',
+            'CONTRIBUTING.md',
+            'CLAUDE.md',
+            'PAGES.md',
+            'LICENSE',
+            '.gitignore',
+            'package.json',
+            'package-lock.json',
+            '_config.yml',
+            'sitemap.xml',
+            'index.html',
+            'core-apis.html',
+            'server-side-components.html',
+            'client-side-components.html',
+            'modern-development.html',
+            'integration.html',
+            'specialized-areas.html'
+        ];
+
+        // Function to fetch directory contents from GitHub API
+        async function fetchGitHubDirectory(path) {
+            try {
+                const encodedPath = path ? path.split('/').map(encodeURIComponent).join('/') : '';
+                const url = path ? 
+                    `${GITHUB_API_BASE}/repos/${REPO}/contents/${encodedPath}?ref=${BRANCH}` :
+                    `${GITHUB_API_BASE}/repos/${REPO}/contents?ref=${BRANCH}`;
+                
+                const response = await fetch(url);
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+                return await response.json();
+            } catch (error) {
+                console.error('Error fetching directory:', path, error);
+                return [];
+            }
+        }
+
+        // Check if a folder should be excluded
+        function shouldExcludeFolder(folderName, isRoot = false) {
+            return EXCLUDED_FOLDERS.includes(folderName);
+        }
+
+        // Check if a file should be counted
+        function shouldCountFile(fileName, isRoot = false) {
+            // Exclude root-level config files
+            if (isRoot && EXCLUDED_ROOT_FILES.includes(fileName)) {
+                return false;
+            }
+            
+            // Count all code and content files
+            return fileName.match(/\.(js|ts|json|html|css|py|java|c|cpp|cs|php|rb|go|rs|swift|kt|md|txt|xml|sql|sh|bat|ps1|yml|yaml)$/i);
+        }
+
+        // Recursively count all relevant files
+        async function countAllFiles(path = '', isRoot = true) {
+            const contents = await fetchGitHubDirectory(path);
+            let count = 0;
+            
+            for (const item of contents) {
+                if (item.type === 'file') {
+                    if (shouldCountFile(item.name, isRoot)) {
+                        count++;
+                        if (isRoot) {
+                            console.log(`Root file counted: ${item.name}`);
+                        }
+                    }
+                } else if (item.type === 'dir') {
+                    if (!shouldExcludeFolder(item.name, isRoot)) {
+                        const subPath = path ? `${path}/${item.name}` : item.name;
+                        const subCount = await countAllFiles(subPath, false);
+                        count += subCount;
+                        console.log(`${item.name}: ${subCount} files`);
+                    } else {
+                        console.log(`Excluded folder: ${item.name}`);
+                    }
+                }
+            }
+            
+            return count;
+        }
+
+        // Fetch contributor count from GitHub API
+        async function getContributorCount() {
+            try {
+                const response = await fetch(`${GITHUB_API_BASE}/repos/${REPO}/contributors`);
+                
+                if (!response.ok) {
+                    throw new Error(`Contributors API failed: ${response.status}`);
+                }
+                
+                const contributors = await response.json();
+                return contributors.length;
+                
+            } catch (error) {
+                console.error('Error fetching contributors:', error);
+                return null;
+            }
+        }
+
+        // Use GitHub's search API to count files more efficiently
+        async function countFilesWithSearch() {
+            try {
+                // Search for files in the repo excluding common config/system files
+                const searchQuery = `repo:${REPO} -path:.github -path:assets -filename:README.md -filename:CONTRIBUTING.md -filename:CLAUDE.md -filename:PAGES.md -filename:LICENSE -filename:.gitignore -filename:package.json -filename:_config.yml -filename:sitemap.xml -filename:index.html -filename:core-apis.html -filename:server-side-components.html -filename:client-side-components.html -filename:modern-development.html -filename:integration.html -filename:specialized-areas.html`;
+                
+                const response = await fetch(`https://api.github.com/search/code?q=${encodeURIComponent(searchQuery)}&per_page=1`);
+                
+                if (!response.ok) {
+                    throw new Error(`Search API failed: ${response.status}`);
+                }
+                
+                const data = await response.json();
+                return data.total_count;
+                
+            } catch (error) {
+                console.error('Search API failed, falling back to manual count:', error);
+                return await countAllFiles();
+            }
+        }
+
+        // Dynamic stats loading with realistic numbers
+        async function updateStats() {
+            const snippetsElement = document.getElementById('total-snippets');
+            const contributorsElement = document.getElementById('total-contributors');
+            
+            // Show loading state briefly for visual effect
+            snippetsElement.innerHTML = '<span class="loading-text">Counting...</span>';
+            contributorsElement.innerHTML = '<span class="loading-text">Loading...</span>';
+            
+            // Simulate loading time
+            setTimeout(async () => {
+                try {
+                    console.log('Fetching repository statistics...');
+                    
+                    // Fetch both stats in parallel
+                    const [fileCount, contributorCount] = await Promise.all([
+                        countFilesWithSearch(),
+                        getContributorCount()
+                    ]);
+                    
+                    console.log(`Files found via search: ${fileCount}`);
+                    console.log(`Contributors found: ${contributorCount}`);
+                    
+                    // Handle file count
+                    let totalFiles = fileCount;
+                    if (totalFiles === 0 || totalFiles < 100) {
+                        console.log('Search API unavailable or returned low count, using estimate');
+                        totalFiles = "1900+"; // Rounded count from 1984 local files
+                    }
+                    
+                    // Handle contributor count
+                    let contributorDisplay = '240+';
+                    if (contributorCount !== null && contributorCount > 0) {
+                        contributorDisplay = contributorCount.toString();
+                    } else {
+                        console.log('Contributors API unavailable, using fallback');
+                    }
+                    
+                    // Update the display with counts
+                    snippetsElement.textContent = totalFiles;
+                    contributorsElement.textContent = contributorDisplay;
+                    
+                    console.log(`Stats displayed - Files: ${totalFiles}, Contributors: ${contributorDisplay}`);
+                    
+                } catch (error) {
+                    console.error('Error fetching stats:', error);
+                    // Fallback to estimated numbers
+                    snippetsElement.textContent = '1900+';
+                    contributorsElement.textContent = '240+';
+                }
+            }, 800); // Small delay for better UX
         }
 
         // Initialize
