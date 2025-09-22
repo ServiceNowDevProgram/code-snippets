@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ServiceNow Code Snippets | Developer Program</title>
-    <meta name="description" content="Community-driven collection of ServiceNow development code examples and utilities from the ServiceNow Developer Program.">
+    <meta name="description" content="Community-driven collection of ServiceNow development code examples and utilities.">
     
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -285,56 +285,6 @@
             color: var(--text-muted);
         }
 
-        /* Footer */
-        .footer {
-            background: var(--bg-secondary);
-            border-top: 1px solid var(--border-light);
-            padding: 3rem 0 2rem;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer-section h3 {
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
-        }
-
-        .footer-section ul {
-            list-style: none;
-        }
-
-        .footer-section ul li {
-            margin-bottom: 0.5rem;
-        }
-
-        .footer-section ul li a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            transition: color 0.2s ease;
-        }
-
-        .footer-section ul li a:hover {
-            color: var(--primary-color);
-        }
-
-        .footer-bottom {
-            border-top: 1px solid var(--border-light);
-            padding-top: 2rem;
-            text-align: center;
-            color: var(--text-muted);
-        }
 
         /* Responsive */
         @media (max-width: 768px) {
@@ -405,7 +355,7 @@
     <header class="header">
         <div class="header-content">
             <h1>ServiceNow Code Snippets</h1>
-            <p>Community-driven collection of ServiceNow development code examples and utilities from the ServiceNow Developer Program.</p>
+            <p>Community-driven collection of ServiceNow development code examples and utilities.</p>
             
             <div class="stats">
                 <div class="stat">
@@ -576,87 +526,37 @@
                     </p>
                 </div>
 
-                <div class="category-card" onclick="window.open('https://developer.servicenow.com/', '_blank')">
+                <div class="category-card" onclick="window.open('https://devlink.sn/hacktoberfest', '_blank')">
                     <div class="category-icon">
                         <i class="fas fa-graduation-cap"></i>
                     </div>
-                    <h3 class="category-title">Developer Program</h3>
+                    <h3 class="category-title">Hacktoberfest</h3>
                     <p class="category-description">
-                        Join the ServiceNow Developer Program for resources, training, and community.
+                        This repository is a product of the ServiceNow Community's participation in Hacktoberfest. Read more about it here.
                     </p>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-grid">
-                <div class="footer-section">
-                    <h3>ServiceNow Code Snippets</h3>
-                    <ul>
-                        <li><a href="#core-servicenow-apis">Core ServiceNow APIs</a></li>
-                        <li><a href="#server-side-components">Server-Side Components</a></li>
-                        <li><a href="#client-side-components">Client-Side Components</a></li>
-                        <li><a href="#modern-development">Modern Development</a></li>
-                        <li><a href="#integration">Integration</a></li>
-                        <li><a href="#specialized-areas">Specialized Areas</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>Community</h3>
-                    <ul>
-                        <li><a href="https://github.com/ServiceNowDevProgram/code-snippets" target="_blank">GitHub Repository</a></li>
-                        <li><a href="https://github.com/ServiceNowDevProgram/code-snippets/blob/main/CONTRIBUTING.md" target="_blank">Contributing Guide</a></li>
-                        <li><a href="https://github.com/ServiceNowDevProgram/code-snippets/issues" target="_blank">Report Issues</a></li>
-                        <li><a href="https://sndevs.slack.com/" target="_blank">sndevs Slack</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>ServiceNow</h3>
-                    <ul>
-                        <li><a href="https://developer.servicenow.com/" target="_blank">Developer Program</a></li>
-                        <li><a href="https://docs.servicenow.com/" target="_blank">Documentation</a></li>
-                        <li><a href="https://developer.servicenow.com/dev.do#!/learn" target="_blank">Learning Path</a></li>
-                        <li><a href="https://community.servicenow.com/" target="_blank">Community</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>Resources</h3>
-                    <ul>
-                        <li><a href="https://github.com/ServiceNowDevProgram/code-snippets/blob/main/README.md" target="_blank">README</a></li>
-                        <li><a href="https://github.com/ServiceNowDevProgram/code-snippets/blob/main/CLAUDE.md" target="_blank">Claude.md Guide</a></li>
-                        <li><a href="https://github.com/ServiceNowDevProgram/Hacktoberfest" target="_blank">Hacktoberfest</a></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2024 ServiceNow Developer Program. Community-sourced code snippets repository.</p>
-                <p>This repository is provided as-is, without warranties. Use at your own risk.</p>
-            </div>
-        </div>
-    </footer>
+    <!-- Footer will be loaded by footer.js -->
 
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="assets/footer.js" data-auto-init data-root-page="true"></script>
     
     <script>
         // Navigation function
         function navigateToCategory(category) {
             // Navigate to the category pages
             const categoryMap = {
-                'core-servicenow-apis': 'core-apis.html',
-                'server-side-components': 'server-side-components.html',
-                'client-side-components': 'client-side-components.html',
-                'modern-development': 'modern-development.html',
-                'integration': 'integration.html',
-                'specialized-areas': 'specialized-areas.html'
+                'core-servicenow-apis': 'pages/core-apis.html',
+                'server-side-components': 'pages/server-side-components.html',
+                'client-side-components': 'pages/client-side-components.html',
+                'modern-development': 'pages/modern-development.html',
+                'integration': 'pages/integration.html',
+                'specialized-areas': 'pages/specialized-areas.html'
             };
             
             const pageUrl = categoryMap[category];

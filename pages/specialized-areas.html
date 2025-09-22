@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Integration | ServiceNow Code Snippets</title>
-    <meta name="description" content="ServiceNow integration patterns including REST APIs, attachments, mail scripts, MID Server operations, and external system connectivity.">
+    <title>Specialized Areas | ServiceNow Code Snippets</title>
+    <meta name="description" content="Specialized ServiceNow development areas including CMDB, ITOM, Performance Analytics, ATF testing, and domain-specific functionality.">
     
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -264,14 +264,14 @@
     <!-- Navigation -->
     <nav class="nav">
         <div class="nav-content">
-            <a href="index.html" class="nav-brand">
+            <a href="../index.html" class="nav-brand">
                 <i class="fas fa-code"></i>
                 ServiceNow Code Snippets
             </a>
             <div class="breadcrumb">
-                <a href="index.html">Home</a>
+                <a href="../index.html">Home</a>
                 <i class="fas fa-chevron-right"></i>
-                <span>Integration</span>
+                <span>Specialized Areas</span>
             </div>
         </div>
     </nav>
@@ -281,13 +281,13 @@
         <div class="page-header-content">
             <h1>
                 <div class="page-header-icon">
-                    <i class="fas fa-link"></i>
+                    <i class="fas fa-puzzle-piece"></i>
                 </div>
-                Integration
+                Specialized Areas
             </h1>
             <p>
-                ServiceNow integration patterns and external system connectivity including REST APIs, attachments, 
-                mail scripts, MID Server operations, and data exchange with external systems.
+                Specialized ServiceNow development areas and domain-specific functionality including CMDB, ITOM, 
+                Performance Analytics, testing frameworks, and advanced platform capabilities.
             </p>
         </div>
     </header>
@@ -316,30 +316,34 @@
             window.open(githubUrl, '_blank');
         }
 
-        // Category descriptions for integration
+        // Category descriptions for specialized areas
         const categoryDescriptions = {
-            'Attachments': 'File attachment handling, processing, and manipulation',
-            'AzureAD Integration': 'Azure Active Directory integration patterns',
-            'GraphQL Integration API': 'GraphQL API integration and resolver patterns',
-            'ITSM': 'IT Service Management integration utilities',
-            'Import Set API': 'Data import and transformation via Import Sets',
-            'Import Sets Debug': 'Debugging and troubleshooting import operations',
-            'Import Sets': 'General import set patterns and utilities',
-            'MIDServer': 'MID Server operations and remote system connectivity',
-            'Mail Scripts': 'Email processing and mail server integration',
-            'RESTMessageV2': 'REST API integration and message handling',
-            'Rest Integration Send Attachment Payload': 'REST API attachment handling patterns',
-            'Scripted REST Api': 'Custom REST API endpoints and services',
-            'Scripted SOAP Incident Creation': 'SOAP web service integration patterns'
+            'ATF Steps': 'Automated Test Framework custom test steps and utilities',
+            'Advanced Conditions': 'Complex condition logic and advanced filtering patterns',
+            'Agile Development': 'Agile project management and development utilities',
+            'Browser Bookmarklets': 'Browser bookmarklets for ServiceNow development productivity',
+            'Browser Utilities': 'Browser-based utilities and development tools',
+            'CMDB': 'Configuration Management Database utilities and operations',
+            'Dynamic Filters': 'Dynamic filtering and query building patterns',
+            'Fix scripts': 'Data repair and system maintenance scripts',
+            'Flow Actions': 'Custom Flow Designer actions and integrations',
+            'Formula Builder': 'Custom formulas and calculation patterns',
+            'ITOM': 'IT Operations Management utilities and integrations',
+            'Notifications': 'Custom notification templates and delivery patterns',
+            'On-Call Calendar': 'On-call scheduling and calendar management',
+            'Performance Analytics': 'Performance Analytics widgets and data collection',
+            'Record Producer': 'Service Catalog record producer customizations',
+            'Regular Expressions': 'Regular expression patterns and utilities',
+            'Styles': 'CSS styling and UI customization patterns'
         };
 
         function loadAllSubcategories() {
-            // Hardcoded list of all Integration categories
+            // Hardcoded list of all Specialized Areas categories
             const subcategories = [
-                'Attachments', 'AzureAD Integration', 'GraphQL Integration API', 'ITSM',
-                'Import Set API', 'Import Sets Debug', 'Import Sets', 'MIDServer',
-                'Mail Scripts', 'RESTMessageV2', 'Rest Integration Send Attachment Payload',
-                'Scripted REST Api', 'Scripted SOAP Incident Creation'
+                'ATF Steps', 'Advanced Conditions', 'Agile Development', 'Browser Bookmarklets',
+                'Browser Utilities', 'CMDB', 'Dynamic Filters', 'Fix scripts', 'Flow Actions',
+                'Formula Builder', 'ITOM', 'Notifications', 'On-Call Calendar',
+                'Performance Analytics', 'Record Producer', 'Regular Expressions', 'Styles'
             ];
             
             // Generate the subcategory cards
@@ -358,9 +362,9 @@
         function createSubcategoryCard(subcategory) {
             const card = document.createElement('div');
             card.className = 'subcategory-card';
-            card.onclick = () => openGitHubFolder(`Integration/${subcategory}`);
+            card.onclick = () => openGitHubFolder(`Specialized Areas/${subcategory}`);
             
-            const description = categoryDescriptions[subcategory] || 'Integration utilities and patterns';
+            const description = categoryDescriptions[subcategory] || 'Specialized development utilities and patterns';
             
             card.innerHTML = `
                 <div class="subcategory-header">
@@ -384,5 +388,7 @@
             loadAllSubcategories();
         });
     </script>
+    <!-- Footer will be loaded by footer.js -->
+    <script src="../assets/footer.js" data-auto-init data-root-page="false"></script>
 </body>
 </html>
