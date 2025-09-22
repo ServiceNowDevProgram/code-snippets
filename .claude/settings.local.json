@@ -5,7 +5,9 @@
       "Bash(ls:*)",
       "Bash(mkdir:*)",
       "Bash(mv:*)",
-      "Bash(rmdir:*)"
+      "Bash(rmdir:*)",
+      "Bash(curl:*)",
+      "Bash(node:*)"
     ],
     "deny": []
   }
