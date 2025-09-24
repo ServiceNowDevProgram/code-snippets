@@ -681,18 +681,211 @@
             }
         }
 
+        // Rate limiting and API management
+        class GitHubApiManager {
+            constructor() {
+                this.rateLimitHit = false;
+                this.rateLimitResetTime = null;
+                this.apiCallCount = 0;
+                this.lastApiReset = Date.now();
+                this.maxApiCalls = 50; // Conservative limit per hour
+                this.apiCallLog = [];
+            }
+
+            canMakeApiCall() {
+                const now = Date.now();
+                
+                // Reset counter every hour
+                if (now - this.lastApiReset > 3600000) {
+                    this.apiCallCount = 0;
+                    this.lastApiReset = now;
+                    this.apiCallLog = [];
+                }
+
+                // Check if we're rate limited
+                if (this.rateLimitHit && this.rateLimitResetTime && now < this.rateLimitResetTime) {
+                    return false;
+                }
+
+                // Reset rate limit flag if time has passed
+                if (this.rateLimitHit && this.rateLimitResetTime && now >= this.rateLimitResetTime) {
+                    this.rateLimitHit = false;
+                    this.rateLimitResetTime = null;
+                }
+
+                // Check if we've made too many calls recently
+                this.apiCallLog = this.apiCallLog.filter(time => now - time < 3600000);
+                
+                return this.apiCallLog.length < this.maxApiCalls && !this.rateLimitHit;
+            }
+
+            recordApiCall(response) {
+                const now = Date.now();
+                this.apiCallLog.push(now);
+                this.apiCallCount++;
+
+                if (response && (response.status === 403 || response.status === 401)) {
+                    this.rateLimitHit = true;
+                    // Set reset time to 1 hour from now if not provided by headers
+                    this.rateLimitResetTime = now + 3600000;
+                    
+                    // Try to get actual reset time from headers
+                    const resetHeader = response.headers.get('X-RateLimit-Reset');
+                    if (resetHeader) {
+                        this.rateLimitResetTime = parseInt(resetHeader) * 1000;
+                    }
+                }
+            }
+
+            getRateLimitStatus() {
+                if (!this.rateLimitHit) return { limited: false };
+                
+                const now = Date.now();
+                const resetIn = this.rateLimitResetTime ? Math.max(0, this.rateLimitResetTime - now) : 0;
+                
+                return {
+                    limited: true,
+                    resetIn: resetIn,
+                    resetTime: new Date(this.rateLimitResetTime).toLocaleTimeString()
+                };
+            }
+        }
+
+        // Enhanced caching with localStorage
+        class SearchCache {
+            constructor() {
+                this.memoryCache = new Map();
+                this.cachePrefix = 'sns_search_';
+                this.cacheVersion = '1.0';
+                this.maxAge = 1800000; // 30 minutes
+            }
+
+            getCacheKey(query) {
+                return `${this.cachePrefix}${this.cacheVersion}_${btoa(query.toLowerCase()).slice(0, 20)}`;
+            }
+
+            get(query) {
+                // Try memory cache first
+                if (this.memoryCache.has(query)) {
+                    const cached = this.memoryCache.get(query);
+                    if (Date.now() - cached.timestamp < this.maxAge) {
+                        return cached.data;
+                    } else {
+                        this.memoryCache.delete(query);
+                    }
+                }
+
+                // Try localStorage cache
+                try {
+                    const cacheKey = this.getCacheKey(query);
+                    const cached = localStorage.getItem(cacheKey);
+                    if (cached) {
+                        const parsedCache = JSON.parse(cached);
+                        if (Date.now() - parsedCache.timestamp < this.maxAge) {
+                            // Also store in memory cache for faster access
+                            this.memoryCache.set(query, parsedCache);
+                            return parsedCache.data;
+                        } else {
+                            localStorage.removeItem(cacheKey);
+                        }
+                    }
+                } catch (error) {
+                    console.warn('Cache read error:', error);
+                }
+
+                return null;
+            }
+
+            set(query, data) {
+                const cacheData = {
+                    data: data,
+                    timestamp: Date.now()
+                };
+
+                // Store in memory cache
+                this.memoryCache.set(query, cacheData);
+
+                // Store in localStorage
+                try {
+                    const cacheKey = this.getCacheKey(query);
+                    localStorage.setItem(cacheKey, JSON.stringify(cacheData));
+                } catch (error) {
+                    console.warn('Cache write error:', error);
+                }
+            }
+
+            clear() {
+                this.memoryCache.clear();
+                try {
+                    const keys = Object.keys(localStorage);
+                    keys.forEach(key => {
+                        if (key.startsWith(this.cachePrefix)) {
+                            localStorage.removeItem(key);
+                        }
+                    });
+                } catch (error) {
+                    console.warn('Cache clear error:', error);
+                }
+            }
+        }
+
         // Search System Implementation
         class CodeSnippetSearch {
             constructor() {
                 this.searchInput = document.getElementById('search-input');
                 this.searchResults = document.getElementById('search-results');
                 this.fileCache = new Map();
-                this.searchCache = new Map();
+                this.searchCache = new SearchCache();
+                this.apiManager = new GitHubApiManager();
                 this.debounceTimer = null;
                 this.isSearching = false;
                 this.currentQuery = '';
+                this.offlineMode = false;
                 
                 this.initializeSearch();
+                this.initializeStaticData();
+            }
+
+            initializeStaticData() {
+                // Static data for offline search fallback
+                this.staticCategories = [
+                    {
+                        name: 'Core ServiceNow APIs',
+                        path: 'Core ServiceNow APIs',
+                        url: 'pages/core-apis.html',
+                        subcategories: ['GlideAggregate', 'GlideAjax', 'GlideDate', 'GlideDateTime', 'GlideElement', 'GlideFilter', 'GlideHTTPRequest', 'GlideRecord', 'GlideSession', 'GlideSystem', 'GlideUser', 'XML Functions']
+                    },
+                    {
+                        name: 'Server-Side Components', 
+                        path: 'Server-Side Components',
+                        url: 'pages/server-side-components.html',
+                        subcategories: ['Background Scripts', 'Business Rules', 'Script Includes', 'Scheduled Jobs', 'Flow Designer', 'Transform Maps', 'Inbound Email Actions', 'Notifications', 'Email Scripts']
+                    },
+                    {
+                        name: 'Client-Side Components',
+                        path: 'Client-Side Components', 
+                        url: 'pages/client-side-components.html',
+                        subcategories: ['Client Scripts', 'Catalog Client Script', 'UI Actions', 'UI Scripts', 'UI Macros', 'UI Pages', 'UX Client Scripts', 'UX Data Broker Transform', 'UX Client Script Include']
+                    },
+                    {
+                        name: 'Modern Development',
+                        path: 'Modern Development',
+                        url: 'pages/modern-development.html', 
+                        subcategories: ['Service Portal', 'Service Portal - Angular Provider', 'Service Portal - CSS', 'Service Portal - HTML Templates', 'Service Portal - Server Scripts']
+                    },
+                    {
+                        name: 'Integration',
+                        path: 'Integration',
+                        url: 'pages/integration.html',
+                        subcategories: ['Attachment Utilities', 'Import Sets', 'Mail Scripts', 'MIDServer Scripts', 'RESTMessageV2', 'Scripted REST API', 'Web Services']
+                    },
+                    {
+                        name: 'Specialized Areas',
+                        path: 'Specialized Areas', 
+                        url: 'pages/specialized-areas.html',
+                        subcategories: ['Agile Development', 'ATF Steps', 'CMDB', 'Discovery', 'Event Management', 'HRSD', 'ITOM', 'Knowledge Management', 'Machine Learning', 'Mobile', 'Now Assist', 'PA', 'Performance Analytics', 'Predictive Intelligence', 'SIAM', 'Security', 'Service Mapping', 'Virtual Agent']
+                    }
+                ];
             }
 
             initializeSearch() {
@@ -731,10 +924,10 @@
                     return;
                 }
 
-                // Debounce search
+                // Debounce search - increased to 600ms to reduce API calls
                 this.debounceTimer = setTimeout(() => {
                     this.performSearch(query);
-                }, 300);
+                }, 600);
             }
 
             handleSearchFocus() {
@@ -799,27 +992,83 @@
 
                 try {
                     // Check cache first
-                    const cacheKey = query.toLowerCase();
-                    if (this.searchCache.has(cacheKey)) {
-                        this.displayResults(this.searchCache.get(cacheKey), query);
+                    const cachedResults = this.searchCache.get(query);
+                    if (cachedResults) {
+                        this.displayResults(cachedResults, query);
                         return;
                     }
 
-                    // Perform search
+                    // Check if we can make API calls
+                    const rateLimitStatus = this.apiManager.getRateLimitStatus();
+                    if (rateLimitStatus.limited) {
+                        const results = this.performOfflineSearch(query);
+                        this.displayResults(results, query, true);
+                        return;
+                    }
+
+                    // Check if we can make API calls
+                    if (!this.apiManager.canMakeApiCall()) {
+                        console.log('API rate limit preventative measure - using offline search');
+                        const results = this.performOfflineSearch(query);
+                        this.displayResults(results, query, true);
+                        return;
+                    }
+
+                    // Perform online search
                     const results = await this.searchRepository(query);
                     
                     // Cache results
-                    this.searchCache.set(cacheKey, results);
+                    this.searchCache.set(query, results);
                     
                     // Display results
                     this.displayResults(results, query);
 
                 } catch (error) {
                     console.error('Search error:', error);
-                    this.showError('Search failed. Please try again or check your connection.');
+                    // Fallback to offline search on error
+                    try {
+                        const offlineResults = this.performOfflineSearch(query);
+                        this.displayResults(offlineResults, query, true);
+                    } catch (offlineError) {
+                        this.showError('Search failed. Please try again or check your connection.');
+                    }
                 } finally {
                     this.isSearching = false;
                 }
+            }
+
+            performOfflineSearch(query) {
+                const results = [];
+                const searchTerms = query.toLowerCase().split(/\s+/);
+
+                // Search categories
+                this.staticCategories.forEach(category => {
+                    // Check main category name
+                    if (searchTerms.some(term => category.name.toLowerCase().includes(term))) {
+                        results.push({
+                            type: 'category',
+                            title: category.name,
+                            path: category.path,
+                            snippet: `Category: ${category.name}`,
+                            url: category.url
+                        });
+                    }
+
+                    // Check subcategories  
+                    category.subcategories.forEach(subcategory => {
+                        if (searchTerms.some(term => subcategory.toLowerCase().includes(term))) {
+                            results.push({
+                                type: 'subcategory',
+                                title: subcategory,
+                                path: `${category.path}/${subcategory}`,
+                                snippet: `Subcategory in ${category.name}: ${subcategory}`,
+                                url: `https://github.com/${REPO}/tree/${BRANCH}/${encodeURIComponent(category.path)}/${encodeURIComponent(subcategory)}`
+                            });
+                        }
+                    });
+                });
+
+                return results.slice(0, 10);
             }
 
             async searchRepository(query) {
@@ -843,9 +1092,13 @@
                         }
                     );
 
-                    if (response.status === 403) {
-                        // Rate limit hit, fall back to manual search
-                        return await this.fallbackSearch(query);
+                    // Record API call for rate limiting
+                    this.apiManager.recordApiCall(response);
+
+                    if (response.status === 403 || response.status === 401) {
+                        // Rate limit hit or unauthorized, fall back to offline search
+                        console.log(`API error ${response.status} during search, falling back to offline search`);
+                        return this.performOfflineSearch(query);
                     }
 
                     if (!response.ok) {
@@ -883,140 +1136,28 @@
 
                 } catch (error) {
                     console.error('GitHub search failed:', error);
-                    return await this.fallbackSearch(query);
+                    return this.performOfflineSearch(query);
                 }
             }
 
             async fallbackSearch(query) {
-                // Fallback to recursive directory search when GitHub API fails
-                const results = [];
-                const searchTerms = query.toLowerCase().split(/\s+/);
-                
+                // Fallback search is now just offline search to prevent API calls
                 console.log('Using fallback search for:', query);
-                
-                try {
-                    // Search the entire repository recursively
-                    const allResults = await this.recursiveDirectorySearch('', searchTerms, query);
-                    return allResults.slice(0, 20);
-                } catch (error) {
-                    console.error('Fallback search failed:', error);
-                    
-                    // Ultimate fallback - search just category names
-                    const mainPaths = [
-                        'Core ServiceNow APIs',
-                        'Server-Side Components', 
-                        'Client-Side Components',
-                        'Modern Development',
-                        'Integration',
-                        'Specialized Areas'
-                    ];
-
-                    for (const path of mainPaths) {
-                        if (searchTerms.some(term => path.toLowerCase().includes(term))) {
-                            results.push({
-                                type: 'category',
-                                title: path,
-                                path: path,
-                                snippet: `Category: ${path}`,
-                                url: this.getCategoryUrl(path)
-                            });
-                        }
-                    }
-                    
-                    return results;
-                }
+                return this.performOfflineSearch(query);
             }
 
+            // Disabled recursive directory search to prevent API flooding
             async recursiveDirectorySearch(path, searchTerms, originalQuery, depth = 0, maxDepth = 4) {
-                if (depth > maxDepth) return [];
-                
-                const results = [];
-                
-                try {
-                    const contents = await fetchGitHubDirectory(path);
-                    
-                    for (const item of contents) {
-                        if (shouldExcludeFolder(item.name) || this.shouldExcludeFile(item.name)) {
-                            continue;
-                        }
-                        
-                        const itemPath = path ? `${path}/${item.name}` : item.name;
-                        
-                        if (item.type === 'dir') {
-                            // Check if directory name matches search terms
-                            if (this.matchesSearchTerms(item.name, searchTerms)) {
-                                results.push({
-                                    type: 'folder',
-                                    title: item.name,
-                                    path: itemPath,
-                                    snippet: `Folder: ${itemPath}`,
-                                    url: `https://github.com/${REPO}/tree/${BRANCH}/${itemPath.split('/').map(encodeURIComponent).join('/')}`
-                                });
-                            }
-                            
-                            // Recursively search subdirectories
-                            const subResults = await this.recursiveDirectorySearch(itemPath, searchTerms, originalQuery, depth + 1, maxDepth);
-                            results.push(...subResults);
-                            
-                        } else if (item.type === 'file') {
-                            // Check if filename matches
-                            if (this.matchesSearchTerms(item.name, searchTerms)) {
-                                results.push({
-                                    type: 'file',
-                                    title: item.name,
-                                    path: itemPath,
-                                    snippet: `File: ${itemPath}`,
-                                    url: `https://github.com/${REPO}/blob/${BRANCH}/${itemPath.split('/').map(encodeURIComponent).join('/')}`
-                                });
-                            }
-                            
-                            // For code files, also search content
-                            if (this.isSearchableFile(item.name)) {
-                                try {
-                                    const fileContent = await this.getFileContentByPath(itemPath);
-                                    if (fileContent) {
-                                        const contentMatches = this.findContentMatches(fileContent, originalQuery, itemPath);
-                                        results.push(...contentMatches);
-                                    }
-                                } catch (error) {
-                                    console.log(`Could not search content of ${itemPath}:`, error);
-                                }
-                            }
-                        }
-                        
-                        // Limit results to prevent overwhelming the API
-                        if (results.length >= 50) break;
-                    }
-                } catch (error) {
-                    console.error(`Error searching directory ${path}:`, error);
-                }
-                
-                return results;
+                // This method is disabled to prevent API rate limiting
+                // Use performOfflineSearch instead
+                console.log('Recursive directory search disabled to prevent rate limiting');
+                return [];
             }
 
             async getFileContentByPath(filePath) {
-                try {
-                    const encodedPath = filePath.split('/').map(encodeURIComponent).join('/');
-                    const response = await fetch(`${GITHUB_API_BASE}/repos/${REPO}/contents/${encodedPath}?ref=${BRANCH}`, {
-                        headers: {
-                            'Accept': 'application/vnd.github.v3+json'
-                        }
-                    });
-
-                    if (!response.ok) return null;
-
-                    const data = await response.json();
-                    
-                    // Handle large files
-                    if (data.size > 100000) { // Skip files larger than 100KB
-                        return null;
-                    }
-                    
-                    return atob(data.content.replace(/\n/g, ''));
-                } catch (error) {
-                    console.error('Error fetching file content:', error);
-                    return null;
-                }
+                // Disabled to prevent API rate limiting
+                console.log('File content fetching disabled to prevent rate limiting');
+                return null;
             }
 
             matchesSearchTerms(text, searchTerms) {
@@ -1076,31 +1217,9 @@
             }
 
             async getFileContent(item) {
-                try {
-                    // Check cache first
-                    if (this.fileCache.has(item.sha)) {
-                        return this.fileCache.get(item.sha);
-                    }
-
-                    const response = await fetch(item.url, {
-                        headers: {
-                            'Accept': 'application/vnd.github.v3+json'
-                        }
-                    });
-
-                    if (!response.ok) return null;
-
-                    const data = await response.json();
-                    const content = atob(data.content.replace(/\n/g, ''));
-                    
-                    // Cache the content
-                    this.fileCache.set(item.sha, content);
-                    
-                    return content;
-                } catch (error) {
-                    console.error('Error fetching file content:', error);
-                    return null;
-                }
+                // Disabled to prevent additional API calls
+                console.log('File content fetching disabled to prevent rate limiting');
+                return null;
             }
 
             shouldIncludeFile(path) {
@@ -1171,18 +1290,19 @@
                     .join('\n');
             }
 
-            displayResults(results, query) {
+            displayResults(results, query, isOffline = false) {
                 this.searchResults.innerHTML = '';
 
                 if (results.length === 0) {
-                    this.showNoResults(query);
+                    this.showNoResults(query, isOffline);
                     return;
                 }
 
                 // Add stats
                 const stats = document.createElement('div');
                 stats.className = 'search-stats';
-                stats.textContent = `Found ${results.length} result${results.length !== 1 ? 's' : ''} for "${query}"`;
+                const offlineIndicator = isOffline ? ' (offline mode - categories only)' : '';
+                stats.textContent = `Found ${results.length} result${results.length !== 1 ? 's' : ''} for "${query}"${offlineIndicator}`;
                 this.searchResults.appendChild(stats);
 
                 // Add results
@@ -1257,12 +1377,14 @@
                 this.showSearchResults();
             }
 
-            showNoResults(query) {
+            showNoResults(query, isOffline = false) {
+                const offlineMessage = isOffline ? '<br><small style="color: #ea4335;">Search limited to categories in offline mode</small>' : '';
                 this.searchResults.innerHTML = `
                     <div class="search-no-results">
                         <i class="fas fa-search"></i><br>
                         No results found for "<strong>${query}</strong>"<br>
                         <small>Try different keywords or check spelling</small>
+                        ${offlineMessage}
                     </div>
                 `;
                 this.showSearchResults();
@@ -1352,7 +1474,12 @@
         ];
 
         // Function to fetch directory contents from GitHub API
-        async function fetchGitHubDirectory(path) {
+        async function fetchGitHubDirectory(path, apiManager) {
+            // Don't make API call if rate limited
+            if (apiManager && !apiManager.canMakeApiCall()) {
+                throw new Error('Rate limited');
+            }
+
             try {
                 const encodedPath = path ? path.split('/').map(encodeURIComponent).join('/') : '';
                 const url = path ? 
@@ -1360,6 +1487,12 @@
                     `${GITHUB_API_BASE}/repos/${REPO}/contents?ref=${BRANCH}`;
                 
                 const response = await fetch(url);
+                
+                // Record API call if manager provided
+                if (apiManager) {
+                    apiManager.recordApiCall(response);
+                }
+
                 if (!response.ok) {
                     throw new Error(`HTTP ${response.status}: ${response.statusText}`);
                 }
@@ -1415,11 +1548,20 @@
         }
 
         // Fetch contributor count from GitHub API
-        async function getContributorCount() {
+        async function getContributorCount(apiManager) {
             try {
                 const response = await fetch(`${GITHUB_API_BASE}/repos/${REPO}/contributors`);
                 
+                // Record API call if manager provided
+                if (apiManager) {
+                    apiManager.recordApiCall(response);
+                }
+                
                 if (!response.ok) {
+                    if (response.status === 401 || response.status === 403) {
+                        console.log(`Contributors API authentication failed: ${response.status}`);
+                        return null;
+                    }
                     throw new Error(`Contributors API failed: ${response.status}`);
                 }
                 
@@ -1433,14 +1575,23 @@
         }
 
         // Use GitHub's search API to count files more efficiently
-        async function countFilesWithSearch() {
+        async function countFilesWithSearch(apiManager) {
             try {
                 // Search for files in the repo excluding common config/system files
                 const searchQuery = `repo:${REPO} -path:.github -path:assets -filename:README.md -filename:CONTRIBUTING.md -filename:CLAUDE.md -filename:PAGES.md -filename:LICENSE -filename:.gitignore -filename:package.json -filename:_config.yml -filename:sitemap.xml -filename:index.html -filename:core-apis.html -filename:server-side-components.html -filename:client-side-components.html -filename:modern-development.html -filename:integration.html -filename:specialized-areas.html`;
                 
                 const response = await fetch(`https://api.github.com/search/code?q=${encodeURIComponent(searchQuery)}&per_page=1`);
                 
+                // Record API call if manager provided
+                if (apiManager) {
+                    apiManager.recordApiCall(response);
+                }
+                
                 if (!response.ok) {
+                    if (response.status === 401 || response.status === 403) {
+                        console.log(`Search API authentication failed: ${response.status}`);
+                        return 0;
+                    }
                     throw new Error(`Search API failed: ${response.status}`);
                 }
                 
@@ -1449,12 +1600,27 @@
                 
             } catch (error) {
                 console.error('Search API failed, falling back to manual count:', error);
-                return await countAllFiles();
+                return 0; // Return 0 instead of trying manual count to avoid more API calls
             }
         }
 
-        // Dynamic stats loading with realistic numbers
+        // Dynamic stats loading with realistic numbers - but only once per session
         async function updateStats() {
+            // Check if we've already updated stats in this session
+            const statsUpdatedKey = 'sns_stats_updated';
+            const lastUpdated = sessionStorage.getItem(statsUpdatedKey);
+            const now = Date.now();
+            
+            // Only update stats once per session (1 hour max)
+            if (lastUpdated && (now - parseInt(lastUpdated)) < 3600000) {
+                console.log('Stats already updated this session, using cached values');
+                const snippetsElement = document.getElementById('total-snippets');
+                const contributorsElement = document.getElementById('total-contributors');
+                snippetsElement.textContent = '1900+';
+                contributorsElement.textContent = '240+';
+                return;
+            }
+
             const snippetsElement = document.getElementById('total-snippets');
             const contributorsElement = document.getElementById('total-contributors');
             
@@ -1467,33 +1633,48 @@
                 try {
                     console.log('Fetching repository statistics...');
                     
-                    // Fetch both stats in parallel
-                    const [fileCount, contributorCount] = await Promise.all([
-                        countFilesWithSearch(),
-                        getContributorCount()
-                    ]);
+                    // Create a temporary API manager for stats
+                    const statsApiManager = new GitHubApiManager();
+                    
+                    // Only try API if we can make calls
+                    let fileCount = 0;
+                    let contributorCount = null;
+                    
+                    if (statsApiManager.canMakeApiCall()) {
+                        // Fetch both stats in parallel, but be prepared for rate limiting
+                        try {
+                            [fileCount, contributorCount] = await Promise.all([
+                                countFilesWithSearch(statsApiManager),
+                                getContributorCount(statsApiManager)
+                            ]);
+                        } catch (apiError) {
+                            console.log('API calls failed, using fallback numbers:', apiError);
+                        }
+                    } else {
+                        console.log('Rate limit protection: skipping API calls for stats');
+                    }
                     
                     console.log(`Files found via search: ${fileCount}`);
                     console.log(`Contributors found: ${contributorCount}`);
                     
                     // Handle file count
-                    let totalFiles = fileCount;
-                    if (totalFiles === 0 || totalFiles < 100) {
-                        console.log('Search API unavailable or returned low count, using estimate');
-                        totalFiles = "1900+"; // Rounded count from 1984 local files
+                    let totalFiles = "1900+"; // Use fallback first
+                    if (fileCount > 100) {
+                        totalFiles = fileCount.toString();
                     }
                     
                     // Handle contributor count
                     let contributorDisplay = '240+';
                     if (contributorCount !== null && contributorCount > 0) {
                         contributorDisplay = contributorCount.toString();
-                    } else {
-                        console.log('Contributors API unavailable, using fallback');
                     }
                     
                     // Update the display with counts
                     snippetsElement.textContent = totalFiles;
                     contributorsElement.textContent = contributorDisplay;
+                    
+                    // Mark as updated in session storage
+                    sessionStorage.setItem(statsUpdatedKey, now.toString());
                     
                     console.log(`Stats displayed - Files: ${totalFiles}, Contributors: ${contributorDisplay}`);
                     
