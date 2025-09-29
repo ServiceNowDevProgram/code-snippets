@@ -1,4 +1,4 @@
-name: Validate Folder Structure
+﻿name: Validate Folder Structure
 
 on:
   pull_request:
@@ -25,3 +25,16 @@ jobs:
 
       - name: Validate folder layout
         run: node .github/scripts/validate-structure.js
+
+      - name: Close pull request on failure
+        if: ${{ failure() && github.event_name == 'pull_request' }}
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            await github.rest.pulls.update({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: context.payload.pull_request.number,
+              state: 'closed'
+            });
