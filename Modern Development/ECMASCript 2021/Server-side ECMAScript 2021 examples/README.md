@@ -410,6 +410,131 @@ class FilledRectangle extends Rectangle {
 }
 ```
 
+### async/await and Promises
+
+One of the most powerful features in modern JavaScript is the ability to handle asynchronous operations with Promises and async/await syntax. This makes asynchronous code much more readable and easier to maintain compared to traditional callback patterns.
+
+#### What are Promises?
+
+A Promise represents a value that may not be available yet but will be resolved at some point in the future. It can be in one of three states:
+- **Pending**: Initial state, neither fulfilled nor rejected
+- **Fulfilled**: Operation completed successfully
+- **Rejected**: Operation failed
+
+#### Basic Promise Example
+
+```javascript
+(function executeRule(current, previous /*null when async*/) {
+
+    function getIncidentCount() {
+        return new Promise((resolve, reject) => {
+            try {
+                var inc_gr = new GlideRecord('incident');
+                inc_gr.addQuery('active', true);
+                inc_gr.query();
+                resolve(inc_gr.getRowCount());
+            } catch (error) {
+                reject('Error fetching incidents: ' + error);
+            }
+        });
+    }
+
+    getIncidentCount()
+        .then(count => {
+            current.work_notes = 'Total active incidents: ' + count;
+        })
+        .catch(error => {
+            gs.error(error);
+        });
+
+})(current, previous);
+```
+
+#### Async/Await - Cleaner Syntax
+
+Async/await provides a cleaner, more synchronous-looking way to work with Promises:
+
+```javascript
+(function executeRule(current, previous /*null when async*/) {
+
+    async function fetchIncidentData(incidentNumber) {
+        return new Promise((resolve, reject) => {
+            var inc_gr = new GlideRecord('incident');
+            if (inc_gr.get('number', incidentNumber)) {
+                resolve({
+                    number: inc_gr.getValue('number'),
+                    short_description: inc_gr.getValue('short_description'),
+                    priority: inc_gr.getValue('priority')
+                });
+            } else {
+                reject('Incident not found: ' + incidentNumber);
+            }
+        });
+    }
+
+    async function processIncident() {
+        try {
+            const incident = await fetchIncidentData(current.getValue('number'));
+            current.work_notes = 'Processed: ' + incident.short_description;
+        } catch (error) {
+            gs.error(error);
+            current.work_notes = 'Error processing incident';
+        }
+    }
+
+    processIncident();
+
+})(current, previous);
+```
+
+#### Promise.all() - Parallel Execution
+
+Execute multiple async operations in parallel and wait for all to complete:
+
+```javascript
+(function executeRule(current, previous /*null when async*/) {
+
+    function getIncidentsByState(state) {
+        return new Promise((resolve) => {
+            var inc_gr = new GlideRecord('incident');
+            inc_gr.addQuery('state', state);
+            inc_gr.query();
+            resolve({ state: state, count: inc_gr.getRowCount() });
+        });
+    }
+
+    async function getStatistics() {
+        const results = await Promise.all([
+            getIncidentsByState('1'), // New
+            getIncidentsByState('2'), // In Progress
+            getIncidentsByState('6')  // Resolved
+        ]);
+
+        let summary = results.map(r =>
+            `State ${r.state}: ${r.count} incidents`
+        ).join('\n');
+
+        current.work_notes = 'Statistics:\n' + summary;
+    }
+
+    getStatistics();
+
+})(current, previous);
+```
+
+#### Benefits of Async/Await
+
+- **Readability**: Code looks more like synchronous code, easier to understand
+- **Error Handling**: Use try/catch blocks just like synchronous code
+- **Debugging**: Stack traces are more meaningful
+- **Control Flow**: Easier to implement complex async logic
+
+For more examples, check out `asyncawait.js` in this folder which includes:
+- Promise chaining
+- Sequential async operations
+- Promise.race() for competing operations
+- Comprehensive error handling patterns
+
 ### And more
 
 That's not all! Go check it out in the docs!
