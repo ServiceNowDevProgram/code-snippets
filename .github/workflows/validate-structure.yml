@@ -1,0 +1,27 @@
+name: Validate Folder Structure
+
+on:
+  pull_request:
+    branches:
+      - main
+
+concurrency:
+  group: folder-structure-${{ github.head_ref || github.run_id }}
+  cancel-in-progress: true
+
+jobs:
+  structure:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Use Node.js 18
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Validate folder layout
+        run: node .github/scripts/validate-structure.js
