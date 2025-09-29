@@ -51,13 +51,25 @@ jobs:
         with:
           github-token: ${{ github.token }}
           script: |
+            const pullNumber = context.payload.pull_request.number;
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+
+            await github.rest.issues.createComment({
+              owner,
+              repo,
+              issue_number: pullNumber,
+              body: `Thank you for your contribution. However, it doesn't comply with our contributing guidelines. As a reminder, the general requirements (as outlined in the [CONTRIBUTING.md file](https://github.com/ServiceNowDevProgram/code-snippets/blob/main/CONTRIBUTING.md)) are the following: follow the folder+subfolder+snippetfolder guidelines and include a README.md file explaining what the code snippet does. Review your contribution against the guidelines and make the necessary adjustments. Closing this for now. Once you make additional changes, feel free to re-open this Pull Request or create a new one.`.trim()
+            });
+
             await github.rest.pulls.update({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              pull_number: context.payload.pull_request.number,
+              owner,
+              repo,
+              pull_number: pullNumber,
               state: 'closed'
             });
 
       - name: Mark job as failed if validation failed
         if: ${{ steps.validate.outcome == 'failure' }}
         run: exit 1
+
