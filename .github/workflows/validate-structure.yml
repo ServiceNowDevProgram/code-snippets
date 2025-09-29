@@ -26,14 +26,20 @@ jobs:
         run: cp .github/scripts/validate-structure.js "$RUNNER_TEMP/validate-structure.js"
 
       - name: Fetch pull request head
+        id: fetch_head
         env:
-          PR_REMOTE_URL: https://x-access-token:${{ github.token }}@github.com/${{ github.event.pull_request.head.repo.full_name }}.git
+          PR_REMOTE_URL: https://github.com/${{ github.event.pull_request.head.repo.full_name }}.git
           PR_HEAD_REF: ${{ github.event.pull_request.head.ref }}
         run: |
           git remote remove pr >/dev/null 2>&1 || true
           git remote add pr "$PR_REMOTE_URL"
-          git fetch pr "$PR_HEAD_REF":pr-head --depth=1
-          git checkout pr-head
+          if git fetch pr "$PR_HEAD_REF":pr-head --depth=1; then
+            git checkout pr-head
+            echo "fetched=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "::warning::Unable to fetch fork repository. Skipping structure validation."
+            echo "fetched=false" >> "$GITHUB_OUTPUT"
+          fi
 
       - name: Use Node.js 18
         uses: actions/setup-node@v4
@@ -41,6 +47,7 @@ jobs:
           node-version: 18
 
       - name: Validate folder layout
+        if: ${{ steps.fetch_head.outputs.fetched == 'true' }}
         id: validate
         continue-on-error: true
         run: node "$RUNNER_TEMP/validate-structure.js" origin/${{ github.event.pull_request.base.ref }}...HEAD
@@ -59,7 +66,7 @@ jobs:
               owner,
               repo,
               issue_number: pullNumber,
-              body: `Thank you for your contribution. However, it doesn't comply with our contributing guidelines. As a reminder, the general requirements (as outlined in the [CONTRIBUTING.md file](https://github.com/ServiceNowDevProgram/code-snippets/blob/main/CONTRIBUTING.md)) are the following: follow the folder+subfolder+snippetfolder guidelines and include a README.md file explaining what the code snippet does. Review your contribution against the guidelines and make the necessary adjustments. Closing this for now. Once you make additional changes, feel free to re-open this Pull Request or create a new one.`.trim()
+              body: `Thank you for your contribution. However, it doesn't comply with our contributing guidelines. As a reminder, the general requirements (as outlined in the [CONTRIBUTING.md file](https://github.com/ServiceNowDevProgram/code-snippets/blob/main/CONTRIBUTING.md)) are the following: follow the folder+subfolder guidelines and include a README.md file explaining what the code snippet does. Review your contribution against the guidelines and make the necessary adjustments. Closing this for now. Once you make additional changes, feel free to re-open this Pull Request or create a new one.`.trim()
             });
 
             await github.rest.pulls.update({
@@ -72,4 +79,3 @@ jobs:
       - name: Mark job as failed if validation failed
         if: ${{ steps.validate.outcome == 'failure' }}
         run: exit 1
-
