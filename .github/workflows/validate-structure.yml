@@ -35,7 +35,7 @@ jobs:
           git remote add pr "$PR_REMOTE_URL"
           if git fetch pr "$PR_HEAD_REF":pr-head --no-tags; then
             git checkout pr-head
-            git fetch origin "${{ github.event.pull_request.base.ref }}" --depth=0
+            git fetch origin "${{ github.event.pull_request.base.ref }}"
             echo "fetched=true" >> "$GITHUB_OUTPUT"
           else
             echo "::warning::Unable to fetch fork repository. Skipping structure validation."
