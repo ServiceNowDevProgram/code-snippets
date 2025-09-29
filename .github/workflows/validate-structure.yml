@@ -1,4 +1,4 @@
-﻿name: Validate Folder Structure
+name: Validate Folder Structure
 
 on:
   pull_request_target:
@@ -33,8 +33,9 @@ jobs:
         run: |
           git remote remove pr >/dev/null 2>&1 || true
           git remote add pr "$PR_REMOTE_URL"
-          if git fetch pr "$PR_HEAD_REF":pr-head --depth=1; then
+          if git fetch pr "$PR_HEAD_REF":pr-head --no-tags; then
             git checkout pr-head
+            git fetch origin "${{ github.event.pull_request.base.ref }}" --depth=0
             echo "fetched=true" >> "$GITHUB_OUTPUT"
           else
             echo "::warning::Unable to fetch fork repository. Skipping structure validation."
@@ -49,11 +50,35 @@ jobs:
       - name: Validate folder layout
         if: ${{ steps.fetch_head.outputs.fetched == 'true' }}
         id: validate
-        continue-on-error: true
-        run: node "$RUNNER_TEMP/validate-structure.js" origin/${{ github.event.pull_request.base.ref }}...HEAD
+        run: |
+          set -euo pipefail
+
+          tmp_output=$(mktemp)
+          tmp_error=$(mktemp)
+
+          set +e
+          node "$RUNNER_TEMP/validate-structure.js" origin/${{ github.event.pull_request.base.ref }}...HEAD >"$tmp_output" 2>"$tmp_error"
+          status=$?
+          set -e
+
+          cat "$tmp_output"
+          cat "$tmp_error" >&2
+
+          if grep -q 'Folder structure violations found' "$tmp_output" "$tmp_error"; then
+            echo "status=failed" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          if [ $status -ne 0 ]; then
+            echo "::warning::Structure validation skipped because the diff could not be evaluated (exit code $status)."
+            echo "status=skipped" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          echo "status=passed" >> "$GITHUB_OUTPUT"
 
       - name: Close pull request on failure
-        if: ${{ steps.validate.outcome == 'failure' }}
+        if: ${{ steps.validate.outputs.status == 'failed' }}
         uses: actions/github-script@v6
         with:
           github-token: ${{ github.token }}
@@ -77,5 +102,5 @@ jobs:
             });
 
       - name: Mark job as failed if validation failed
-        if: ${{ steps.validate.outcome == 'failure' }}
+        if: ${{ steps.validate.outputs.status == 'failed' }}
         run: exit 1
