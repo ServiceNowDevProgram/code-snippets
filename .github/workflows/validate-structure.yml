@@ -1,22 +1,39 @@
 ﻿name: Validate Folder Structure
 
 on:
-  pull_request:
+  pull_request_target:
     branches:
       - main
 
+permissions:
+  contents: read
+  pull-requests: write
+
 concurrency:
-  group: folder-structure-${{ github.head_ref || github.run_id }}
+  group: folder-structure-${{ github.event.pull_request.number || github.run_id }}
   cancel-in-progress: true
 
 jobs:
   structure:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: Checkout base repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+
+      - name: Cache validation script
+        run: cp .github/scripts/validate-structure.js "$RUNNER_TEMP/validate-structure.js"
+
+      - name: Fetch pull request head
+        env:
+          PR_REMOTE_URL: https://x-access-token:${{ github.token }}@github.com/${{ github.event.pull_request.head.repo.full_name }}.git
+          PR_HEAD_REF: ${{ github.event.pull_request.head.ref }}
+        run: |
+          git remote remove pr >/dev/null 2>&1 || true
+          git remote add pr "$PR_REMOTE_URL"
+          git fetch pr "$PR_HEAD_REF":pr-head --depth=1
+          git checkout pr-head
 
       - name: Use Node.js 18
         uses: actions/setup-node@v4
@@ -24,13 +41,15 @@ jobs:
           node-version: 18
 
       - name: Validate folder layout
-        run: node .github/scripts/validate-structure.js
+        id: validate
+        continue-on-error: true
+        run: node "$RUNNER_TEMP/validate-structure.js" origin/${{ github.event.pull_request.base.ref }}...HEAD
 
       - name: Close pull request on failure
-        if: ${{ failure() && github.event_name == 'pull_request' }}
+        if: ${{ steps.validate.outcome == 'failure' }}
         uses: actions/github-script@v6
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ github.token }}
           script: |
             await github.rest.pulls.update({
               owner: context.repo.owner,
@@ -38,3 +57,7 @@ jobs:
               pull_number: context.payload.pull_request.number,
               state: 'closed'
             });
+
+      - name: Mark job as failed if validation failed
+        if: ${{ steps.validate.outcome == 'failure' }}
+        run: exit 1
