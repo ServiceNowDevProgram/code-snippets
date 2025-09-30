@@ -12,3 +12,5 @@ Put this code in the client controller of a widget to listen for the Konami Code
 4. Removes event listener when widget is destroyed to prevent memory leaks
 5. Uses array join comparison instead of position tracking
 6. Modern variable declarations for better scoping
+
+<img width="314" height="205" alt="image" src="https://github.com/user-attachments/assets/ea39dbdf-c252-4f7f-942d-8f26319ca6e2" />
