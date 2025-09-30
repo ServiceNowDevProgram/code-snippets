@@ -4,6 +4,8 @@ Welcome to ServiceNow's Code Snippets community repository, managed by the Devel
 
 Inside this repository, you will find community submitted code-snippets and their variants for different use-cases.
 
+> Interested in our other ServiceNow Hacktoberfest projects? See the main repository [here](https://github.com/ServiceNowDevProgram/Hacktoberfest) or see our official blog post [here](https://devlink.sn/hacktoberfest).
+
 **Note:** ServiceNowDevProgram has many repositories that can be imported directly into ServiceNow, this is not one of them; This repository is meant to be edited directly in GitHub or any other Git-enabled IDE like VS Code.
 
 ## Disclaimer
