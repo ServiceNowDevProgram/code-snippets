@@ -3,7 +3,7 @@ UpdateINCworkNotes.prototype = Object.extendsObject(AbstractAjaxProcessor, {
 
     getIncLastWorknotes: function() {
         var id = this.getParameter('sysparm_id');
-        var table = 'incident';
+       // var table = 'incident';
         var list = new GlideRecord("sys_journal_field");
         list.addEncodedQuery("element_id=" + id + "^element=comments^ORelement=work_notes");
 
@@ -18,7 +18,7 @@ UpdateINCworkNotes.prototype = Object.extendsObject(AbstractAjaxProcessor, {
     updateCommentsLatest: function() {
         var id = this.getParameter('sysparm_id');
         var newcomment = this.getParameter('sysparm_newcomment');
-        var table = 'incident';
+     //   var table = 'incident';
         var list = new GlideRecord("sys_journal_field");
         list.addEncodedQuery("element_id=" + id + "^element=comments^ORelement=work_notes");
         list.orderByDesc('sys_created_on');
