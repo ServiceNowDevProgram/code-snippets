@@ -1,0 +1,32 @@
+<div>
+  <div class="record-list">
+    <div ng-repeat="record in data.records">
+      <span ng-repeat="field in data.recordsFields">{{record[field]}} </span>
+    </div>
+  </div>
+  <nav aria-label="Page navigation" ng-if="data.count > 0">
+    <ul class="pagination">
+      <li class="page-item">
+        <a class="page-link" href="?id={{data.page_id}}&page={{data.page-1}}&display={{data.display}}&query={{data.userQuery}}" aria-label="Previous" ng-if="data.page > 1">
+          <span aria-hidden="true">&laquo;</span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="page-link disabled" aria-label="Previous" ng-if="data.page <= 1">
+          <span aria-hidden="true">&laquo;</span>
+          <span class="sr-only">Previous</span>
+        </a>
+      </li>
+      <li class="page-item" ng-repeat="page in data.pages track by $index" ng-class="{active: page == data.page}"><a class="page-link" href="?id={{data.page_id}}&page={{page}}&display={{data.display}}&query={{data.userQuery}}" ng-if="page != '...'">{{page}}</a><span ng-if="page == '...'">...</span></li>
+      <li class="page-item">
+        <a class="page-link" href="?id={{data.page_id}}&page={{data.page+1}}&display={{data.display}}&query={{data.userQuery}}" aria-label="Next" ng-if="data.page < data.pages[data.pages.length - 1]">
+          <span aria-hidden="true">&raquo;</span>
+          <span class="sr-only">Next</span>
+        </a>
+        <a class="page-link disabled" aria-label="Next" ng-if="data.page >= data.pages[data.pages.length - 1]">
+          <span aria-hidden="true">&raquo;</span>
+          <span class="sr-only">Next</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>

@@ -1,0 +1,67 @@
+<div class="panel panel-{{::c.options.color}} b" ng-if="c.data.isValid && (c.options.always_show == 'true' || c.options.always_show == true || c.data.filterText || c.data.list.length)">
+  <div class="panel-heading" ng-if="::!c.options.hide_header" style="
+    background-image: url('squid_game_coffin.png');
+    background-size: auto;
+    background-position-x: center;
+    background-position-y: center;
+    height: 130px;
+    border-color: #F44788;
+">
+    <h3 class="h4 panel-title" style="
+    text-align: -webkit-center;
+    color: white;
+    font-weight: bold;
+    font-size: xx-large;
+    margin-left: 70px;
+   
+">
+      <span ng-if="c.options.glyph">
+        <fa name="{{::c.options.glyph}}" />
+      </span>{{::c.options.title}}</h3>
+    <!-- <i class="fa fa-filter" ng-click="c.toggleFilter()" ng-class="{'disabled-filter': !c.showFilter}"></i> -->
+    <div ng-show="c.showFilter">
+      <input aria-label="${Filter}" ng-model="c.data.filterText" ng-model-options="{debounce: 300}" sn-focus="c.showFilter" placeholder="{{::data.filterMsg}}" ng-change="c.update()" class="form-control input-sm filter-box">
+    </div>
+  </div>
+  <ul class="list-group hide-x-overflow" ng-style="::{maxHeight: c.getMaxHeight()}" style="overflow-y: auto;" ng-if="c.data.list.length > 0">
+    <li ng-repeat="item in c.data.list track by item.sys_id" class="list-group-item">
+      <a ng-if="action.glyph || c.options.image_field || (item.display_field.type == 'translated_html' ? item.display_field.value : item.display_field.display_value)" ng-click="c.onClick($event, item, item.url, {})" href="javascript:void(0)" oncontextmenu="return false;">
+        <span ng-repeat="action in c.data.actions" href="" ng-click="c.onClick($event, item, action.url, action)" ng-if="action.glyph"
+              class="list-action l-h-40 pull-right">
+          <fa name="{{action.glyph}}" ng-class="c.getActionColor(action)" />
+        </span>
+        <span ng-if="c.options.image_field" class="pull-left m-r"
+              ng-class="{'avatar': c.options.rounded_images, 'thumb-sm': c.options.rounded_images}">
+          <img ng-src="{{item.image_field}}" alt="..." class="img-sm" ng-class="{'img-circle': c.options.rounded_images}">
+        </span>
+          <div ng-switch on="item.display_field.type" ng-class="{'l-h-40': !item.secondary_fields.length}">
+            <span class="translated-html" ng-switch-when="translated_html" ng-bind-html="item.display_field.value"></span>
+            <div ng-switch-default>{{item.display_field.display_value}}</div>
+          </div>
+	  </a>
+	    <div>
+          <small class="text-muted" ng-repeat="f in item.secondary_fields">
+            <span ng-if="!$first"> • </span>
+            <span ng-switch="f.type" title="{{::f.label}}">
+              <span ng-switch-when="glide_date">
+                <span ng-if="!f.isFuture"> <sn-day-ago date="::f.value" /> </span>
+                <span ng-if="f.isFuture"> {{f.display_value}}</span>
+              </span>
+              <span ng-switch-when="glide_date_time">
+                <span ng-if="!f.isFuture"> <sn-time-ago timestamp="::f.value" /></span>
+                <span ng-if="f.isFuture"> {{f.display_value}}</span>
+              </span>
+              <span ng-switch-default="">{{f.display_value}}</span>
+            </span>
+          </small>
+        </div>
+    </li>
+  </ul>
+  <div ng-if="!c.data.list.length" class="list-group-item">
+     ${No records found}
+  </div>
+  <div class="panel-footer" ng-if="!c.options.hide_footer && c.options.maximum_entries && c.data.count > c.options.maximum_entries">
+    <div class="h4 number-shown-label">{{c.getMaxShownLabel(c.options.maximum_entries, c.data.count)}}</div>
+    <a class="pull-right" ng-href="?id={{c.seeAllPage}}&table={{c.options.table}}&filter={{c.options.filter}}{{c.targetPageID}}" aria-label="{{::data.viewAllMsg}} - {{::c.options.title}}">${View all}</a>
+  </div>
+</div>

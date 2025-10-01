@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<unload unload_date="2022-10-11 20:04:19">
+<sp_widget action="INSERT_OR_UPDATE">
+<category>custom</category>
+<client_script><![CDATA[function ($scope, spUtil, spModal) {
+	var c = this;
+
+	c.action = function(state) {
+		if(state == 'rejected'){
+			spModal.prompt("Please provide a rejection reason").then(function(reason) {
+				c.data.reject_reason = reason;
+				c.data.op = state;
+				c.data.state = state;
+				c.server.update();
+			});
+		} else{
+			c.data.op = state;
+			c.data.state = state;
+			c.server.update();
+		}	
+	}
+}]]></client_script>
+<controller_as>c</controller_as>
+<css>.arrow {
+  position: absolute;
+  margin-left: 50px;
+  z-index: 150;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 12px solid #FFFFFF;
+}
+
+.question-tab{
+	font-size:1.4rem;
+}
+
+.dropdown-menu li {
+  cursor: pointer;
+}
+
+.action-btn {
+  width: 100%;
+}</css>
+<data_table>sp_instance</data_table>
+<demo_data/>
+<description/>
+<docs display_value=""/>
+<field_list/>
+<has_preview>false</has_preview>
+<id>ec_stk_approval_actions</id>
+<internal>false</internal>
+<link><![CDATA[function link(scope, element, attrs, controller) {
+  scope.setFocusOnActionButtons = function() {
+		if (scope.widget.isFocusRequired) {
+			var elm = element.find('#actions-button')[0];
+			elm.focus();
+		}
+	}
+}]]></link>
+<name>EC Standard Ticket Approval Actions</name>
+<option_schema/>
+<public>true</public>
+<roles/>
+<script><![CDATA[(function() {
+
+	var taskGR = $sp.getRecord();
+	if (taskGR == null || !taskGR.isValid()) {
+		data.isValid = false;
+		return;
+	}
+
+	var tableName = taskGR.getTableName();
+	var sysId = taskGR.getUniqueValue();
+	data.canRead = taskGR.canRead();
+	data.canWrite = taskGR.canWrite();
+	data.table = tableName;
+	data.sys_id = sysId;
+	var user = gs.getUser();
+
+	// If record is RITM, get REQ
+	data.req = {};
+	if(data.table == 'sc_req_item'){
+		var ritm = new GlideRecord('sc_req_item');
+		if(ritm.get(data.sys_id)){
+			var req = ritm.request.getRefRecord();
+			data.req.number = req.getValue('number');
+			data.req.id = req.sys_id.toString();
+			//data.req.table = req.sys_class_name.toString();
+		}
+	}
+
+
+	var approvalGR = new GlideRecord('sysapproval_approver');
+	approvalGR.addQuery('document_id', sysId);
+	approvalGR.addQuery('sysapproval', sysId);
+	approvalGR.addQuery("state", "requested");
+	approvalGR.addQuery("approver", user.getID());
+	approvalGR.query();
+	while(approvalGR.next()){
+		data.isValid = true;
+		if(input && input.op){
+			if(input.reject_reason){
+				approvalGR.comments = input.reject_reason;
+				approvalGR.state = input.op;
+				approvalGR.update();
+			} else{
+				approvalGR.state = input.op;
+				approvalGR.update();
+			}
+		}
+
+
+	}
+
+
+
+})();
+]]></script>
+<servicenow>false</servicenow>
+<sys_class_name>sp_widget</sys_class_name>
+<sys_created_by>lcabrera</sys_created_by>
+<sys_created_on>2022-04-25 16:04:33</sys_created_on>
+<sys_id>0406a24a1bcf45902f782069bc4bcbab</sys_id>
+<sys_mod_count>125</sys_mod_count>
+<sys_name>EC Standard Ticket Approval Actions</sys_name>
+<sys_package display_value="Service Portal - Standard Ticket" source="sn_std_tkt">c9f1df5787f50010e0ef0cf888cb0b2c</sys_package>
+<sys_policy/>
+<sys_scope display_value="Service Portal - Standard Ticket">c9f1df5787f50010e0ef0cf888cb0b2c</sys_scope>
+<sys_update_name>sp_widget_0406a24a1bcf45902f782069bc4bcbab</sys_update_name>
+<sys_updated_by>lcabrera</sys_updated_by>
+<sys_updated_on>2022-05-17 03:24:18</sys_updated_on>
+<template><![CDATA[<div ng-if="data.isValid || data.table == 'sc_req_item' ">
+  <div class="dropdown" id="child-case-tabs">
+    <button type="button" id="actions-button" class="btn btn-default dropdown-toggle action-btn" data-toggle="dropdown" style="width : 100%" aria-haspopup="true" ng-init="setFocusOnActionButtons()">
+      ${Actions}
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu pull-right" id="actionList">
+      <li ng-if="data.table == 'sc_req_item'">
+        <a ng-href="?sys_id={{::data.req.id}}&view=sp&id=order_status&table=sc_request">${View } {{::data.req.number}}</a>
+      </li>  
+      <li ng-if="data.isValid">
+        <a href="javascript:void(0)" ng-click="c.action('approved')">${Approve}</a>
+      </li>
+      <li ng-if="data.isValid">
+        <a href="javascript:void(0)" ng-click="c.action('rejected')">${Reject}</a>
+      </li>
+    </ul>
+  </div>
+</div>]]></template>
+</sp_widget>
+</unload>

@@ -1,0 +1,1 @@
+While approving any request it was very hard until now to preview the record for which the approval was required. This UI action created on sysapproval_approver table will enable previewing the record before approval so that the approver can make an easy informed decision.

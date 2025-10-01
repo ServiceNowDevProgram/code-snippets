@@ -1,0 +1,29 @@
+.toggler {
+  width: 100%;
+  position: relative;
+  text-align: left;
+}
+
+.toggler::before {
+  content: "\f107";
+  position: absolute;
+  top: 50%;
+  right: 0.8rem;
+  transform: translateY(-50%);
+  display: block;
+  font-family: "FontAwesome";
+  font-size: 1.1rem;
+}
+
+.toggler[aria-expanded="true"]::before {
+  content: "\f106";
+}
+.border-1{
+	border: 1px solid #d7d7d7;
+}
+.margin-bottom-0{
+	margin-bottom: 0px;
+}
+.padding-5{
+	padding: 10px;
+}

@@ -1,0 +1,1 @@
+This is an expanding info message. It can even run a script when an element is clicked.
