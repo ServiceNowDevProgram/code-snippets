@@ -1,3 +1,5 @@
+//Enable client set to true
+//Enter Onclick value as function name openEditLastCommentModal()
 function openEditLastCommentModal() {
     var dialog = new GlideModal("edit_worknotes_comments_inc");
     dialog.setTitle('Edit Last WorkNotes/Additional Comments');
