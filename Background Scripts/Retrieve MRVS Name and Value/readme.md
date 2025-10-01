@@ -1,4 +1,8 @@
-This code comes handy to retrieve the name and value of Multi Row Variable Sets(MRVS).
+Open 'Scripts - Background' and paste the code of 'RetrieveMRVSNameAndValue.js' file in it.
+Replace the <pass_ritm_sys_id_here> with the RITM sysId of your use case.
+Replace the MRVS Internal name as per that RITM's MRVS name
+
+Usage: This code comes handy to retrieve the name and value of Multi Row Variable Sets(MRVS).
 
 
 Sample:
