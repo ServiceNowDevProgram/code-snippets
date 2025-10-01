@@ -1,3 +1,1 @@
-Using GlideAggregate function to find out tickets (tasks) with same number. OOB there happens to be a Unique checkbox at dictionary level
-and if in case not set to True it might create duplicate numbered tickets.
-Script will help find, ticekts if any.
+This script identifies duplicate tickets or tasks in ServiceNow when the number field is not unique. It uses GlideAggregate to group records by number, count duplicates, and optionally list affected records with their Sys IDs and short descriptions. Helps maintain data integrity and accurate reporting.
