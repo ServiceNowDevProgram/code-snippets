@@ -1,0 +1,40 @@
+# Entry point of the GraphQL schema
+schema {
+  query: Query
+}
+
+# Root query type - defines the queries clients can run
+type Query {
+  # Fetch an Incident by sys_id (unique identifier)
+  EntersysId(sys_id: ID!): Incident
+}
+
+# Incident type - represents an Incident record in ServiceNow
+type Incident {
+  sys_id: DisplayableString          # Unique system identifier of the incident
+  number: DisplayableString          # Incident number
+  short_description: DisplayableString  # Brief description of the incident
+  caller_id: User @source(value: "caller_id.value")  # Linked user (caller) record
+  cmdb_ci: CI @source(value: "cmdb_ci.value")        # Linked configuration item (CI) record
+}
+
+# User type - represents a caller or user record
+type User {
+  sys_id: DisplayableString          # Unique system identifier of the user
+  user_name: DisplayableString       # Username (login name)
+  first_name: DisplayableString      # User's first name
+  last_name: DisplayableString       # User's last name
+}
+
+# CI type - represents a configuration item (e.g., server, application, device)
+type CI {
+  sys_id: DisplayableString          # Unique system identifier of the CI
+  install_status: DisplayableString  # Installation status of the CI
+  name: DisplayableString            # Display name of the CI
+}
+
+# DisplayableString type - wrapper for both raw and display values in ServiceNow
+type DisplayableString {
+  value: String          # Raw value (e.g., sys_id or code)
+  display_value: String  # Human-readable label for the value
+}
