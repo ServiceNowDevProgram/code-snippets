@@ -1,7 +1,11 @@
 var gr=new GlideRecord('sys_user');
+var user_name ="dhruvbhatheja";
+var first_name = "Dhruv";
+var last_name ='Bhatheja';
+var email ='d@gmail.com';
 gr.initialize();
-gr.user_name='test.user';
-gr.first_name='test';
-gr.last_name='user';
-gr.email='test.user@servicenow';
+gr.user_name = user_name;
+gr.first_name = first_name;
+gr.last_name = last_name;
+gr.email = email;
 gr.insert();
