@@ -1,0 +1,7 @@
+var rec = new GlidRecord("sysapproval_approver");
+rec.addQuery("sys_id", "Provide the sys_Id of the record");  // Provide the sys_id of the record in which you want to change the approver.
+rec.query();
+if(rec.next()){
+rec.approver = "Provide the sys_id of the user";  // Provide the sys_id of the user for whom you want to trigger an approval
+rec.update();  // This will update the approver record.
+}
