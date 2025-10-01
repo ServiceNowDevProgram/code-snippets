@@ -1,0 +1,1 @@
+This schedule job script will help to auto disable the service accounts which has not been logged in or used for last 30 days. This can be helpful for those who are looking to disable the accounts based on some certain time period.
