@@ -1,0 +1,1 @@
+This script will calculate a due date for a given RITM and validate it matches the actual due date. You can use this in a "Run Server Side Script" ATF test step, and requires you to have a previous ATF Test Step that does a Record Query for the RITM record.
