@@ -3,7 +3,7 @@ Edit Last Entered Work Notes
 This UI action is built specifically to edit the last entered work notes by the user in incident form or any table which support this journal fields.
 
 There is some restriction around journal fields/ work notes as user cannot edit or adjust the work notes that they entered. If they wish to edit it, I have introduced a new
-UI page which calls the UI pages which will automatically populates the last entered work notes/comments and user can adjust and submit it.
+UI action which calls the UI pages which will automatically populates the last entered work notes/comments and user can adjust and submit it.
 
 Key actions: 
 sys_journal_field :
