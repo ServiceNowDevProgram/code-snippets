@@ -1,41 +1,40 @@
-function onCancel() {
+fetchLastComment();
+
+function closeDialog() {
     GlideDialogWindow.get().destroy();
     return false;
 }
-fetchlastcomment();
 
-function fetchlastcomment() {
-    var gdw = GlideDialogWindow.get(); // attempting to get the sys_id value
-    var sys_id = gdw.getPreference('incid'); // attempting to get the sys_id value
-    var ga = new GlideAjax('global.UpdateINCworkNotes');
-    ga.addParam('sysparm_name', 'getIncLastWorknotes');
-    ga.addParam('sysparm_id', sys_id);
-
-    ga.getXMLAnswer(callback);
-
-    function callback(answer) {
-        if (answer) {
-            document.getElementById('commenttext').value = answer;
-        } else {
-            document.getElementById('commenttext').value = '';
-        }
-    }
-
+function fetchLastComment() {
+    var dialogWindow = GlideDialogWindow.get();
+    var incidentSysId = dialogWindow.getPreference('incid');
+    var glideAjax = new GlideAjax('UpdateINCworkNotes');
+    glideAjax.addParam('sysparm_name', 'getIncLastWorknotes');
+    glideAjax.addParam('sysparm_id', incidentSysId);
+    glideAjax.getXMLAnswer(setCommentFieldValue);
 }
 
-function onSubmit() {
-    var gdw = GlideDialogWindow.get(); // attempting to get the sys_id value
-    var sys_id = gdw.getPreference('incid'); // attempting to get the sys_id value
-    var ga = new GlideAjax('global.UpdateINCworkNotes');
-    ga.addParam('sysparm_name', 'updateCommentsLatest');
-    ga.addParam('sysparm_id', sys_id);
-    ga.addParam('sysparm_newcomment',  document.getElementById('commenttext').value);
-
-    ga.getXMLAnswer(callback);
-
-    function callback(answer) {
-       	window.location.reload();
+function setCommentFieldValue(answer) {
+    var commentField = document.getElementById('commenttext');
+    if (commentField) {
+        commentField.value = answer || '';
     }
-    GlideDialogWindow.get().destroy();
-    return false;
+}
+
+function submitComment() {
+    var dialogWindow = GlideDialogWindow.get();
+    var incidentSysId = dialogWindow.getPreference('incid');
+    var newCommentText = document.getElementById('commenttext').value;
+
+    var glideAjax = new GlideAjax('UpdateINCworkNotes');
+    glideAjax.addParam('sysparm_name', 'updateCommentsLatest');
+    glideAjax.addParam('sysparm_id', incidentSysId);
+    glideAjax.addParam('sysparm_newcomment', newCommentText);
+
+    glideAjax.getXMLAnswer(handleSuccessfulSubmit);
+    closeDialog();
+}
+
+function handleSuccessfulSubmit(answer) {
+    window.location.reload();
 }
