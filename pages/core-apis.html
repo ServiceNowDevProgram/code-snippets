@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Core ServiceNow APIs | ServiceNow Code Snippets</title>
+    <meta name="description" content="Essential ServiceNow JavaScript APIs and classes including GlideRecord, GlideAjax, GlideSystem, and foundational APIs.">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Syntax Highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+    
+    <!-- Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        /* Reuse the CSS from index.html with some page-specific styles */
+        :root {
+            --primary-color: #1a73e8;
+            --secondary-color: #34a853;
+            --accent-color: #fbbc04;
+            --danger-color: #ea4335;
+            
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8f9fa;
+            --bg-tertiary: #e8f0fe;
+            
+            --text-primary: #202124;
+            --text-secondary: #5f6368;
+            --text-muted: #80868b;
+            
+            --border-color: #dadce0;
+            --border-light: #f1f3f4;
+            
+            --shadow-sm: 0 1px 2px 0 rgba(60,64,67,0.3), 0 1px 3px 1px rgba(60,64,67,0.15);
+            --shadow-md: 0 1px 2px 0 rgba(60,64,67,0.3), 0 2px 6px 2px rgba(60,64,67,0.15);
+            --shadow-lg: 0 2px 4px -1px rgba(60,64,67,0.3), 0 4px 8px 0 rgba(60,64,67,0.15);
+            
+            --border-radius: 8px;
+            --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --font-mono: 'JetBrains Mono', 'SF Mono', Monaco, 'Cascadia Code', monospace;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-primary: #121212;
+                --bg-secondary: #1e1e1e;
+                --bg-tertiary: #2d2d2d;
+                
+                --text-primary: #e8eaed;
+                --text-secondary: #9aa0a6;
+                --text-muted: #5f6368;
+                
+                --border-color: #3c4043;
+                --border-light: #2d2d2d;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        .nav {
+            background: var(--bg-primary);
+            border-bottom: 1px solid var(--border-light);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .nav-brand i {
+            color: var(--primary-color);
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .breadcrumb a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        /* Header */
+        .page-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 3rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .page-header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .page-header-icon {
+            width: 64px;
+            height: 64px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: var(--border-radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+        }
+
+        /* Main Content */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .subcategories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .subcategory-card {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .subcategory-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-color);
+        }
+
+        .subcategory-header {
+            background: var(--bg-secondary);
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .subcategory-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .subcategory-description {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .subcategory-content {
+            padding: 1.5rem;
+        }
+
+        .snippet-list {
+            list-style: none;
+        }
+
+        .snippet-item {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--border-light);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .snippet-item:last-child {
+            border-bottom: none;
+        }
+
+        .snippet-name {
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        .snippet-type {
+            background: var(--bg-tertiary);
+            color: var(--primary-color);
+            padding: 0.25rem 0.5rem;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .view-all-btn {
+            width: 100%;
+            padding: 1rem;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: var(--border-radius);
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            margin-top: 1rem;
+        }
+
+        .view-all-btn:hover {
+            background: #1557b0;
+        }
+
+        /* Code Preview */
+        .code-preview {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            margin: 2rem 0;
+            overflow: hidden;
+        }
+
+        .code-preview-header {
+            background: var(--bg-tertiary);
+            padding: 1rem;
+            border-bottom: 1px solid var(--border-light);
+            display: flex;
+            align-items: center;
+            justify-content: between;
+        }
+
+        .code-preview-title {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .code-preview-content {
+            padding: 0;
+        }
+
+        pre {
+            margin: 0;
+            padding: 1.5rem;
+            background: #2d3748;
+            color: #e2e8f0;
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            line-height: 1.5;
+            overflow-x: auto;
+        }
+
+        /* Snippet Detail Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            backdrop-filter: blur(4px);
+        }
+
+        .modal.show {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: var(--bg-primary);
+            border-radius: var(--border-radius);
+            width: 90%;
+            max-width: 1000px;
+            max-height: 90vh;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            animation: modalSlideIn 0.3s ease-out;
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .modal-header {
+            background: var(--bg-secondary);
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--border-light);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .modal-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: 0;
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 50%;
+            transition: all 0.2s ease;
+        }
+
+        .modal-close:hover {
+            background: var(--border-light);
+            color: var(--text-primary);
+        }
+
+        .modal-body {
+            padding: 0;
+            max-height: 70vh;
+            overflow-y: auto;
+        }
+
+        .snippet-detail {
+            display: none;
+        }
+
+        .snippet-detail.active {
+            display: block;
+        }
+
+        .snippet-readme {
+            padding: 2rem;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .snippet-readme h1,
+        .snippet-readme h2,
+        .snippet-readme h3 {
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .snippet-readme p {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .snippet-readme ul {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+
+        .snippet-readme li {
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .snippet-files {
+            background: var(--bg-secondary);
+        }
+
+        .file-tab-header {
+            display: flex;
+            background: var(--bg-tertiary);
+            border-bottom: 1px solid var(--border-light);
+            overflow-x: auto;
+        }
+
+        .file-tab {
+            padding: 1rem 1.5rem;
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.2s ease;
+            border-bottom: 3px solid transparent;
+        }
+
+        .file-tab.active {
+            color: var(--primary-color);
+            border-bottom-color: var(--primary-color);
+            background: var(--bg-primary);
+        }
+
+        .file-tab:hover {
+            color: var(--text-primary);
+            background: var(--bg-primary);
+        }
+
+        .file-content {
+            display: none;
+        }
+
+        .file-content.active {
+            display: block;
+        }
+
+        .file-content pre {
+            margin: 0;
+            border-radius: 0;
+        }
+
+        .loading-indicator {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem;
+            color: var(--text-secondary);
+        }
+
+        .loading-spinner {
+            width: 32px;
+            height: 32px;
+            border: 3px solid var(--border-light);
+            border-top: 3px solid var(--primary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-right: 1rem;
+        }
+
+        .error-message {
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+            color: #dc2626;
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin: 1rem;
+        }
+
+        .snippet-meta {
+            padding: 1rem 2rem;
+            background: var(--bg-tertiary);
+            border-bottom: 1px solid var(--border-light);
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .github-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .github-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Expandable snippet items */
+        .snippet-item {
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .snippet-item:hover {
+            background: var(--bg-secondary);
+            border-radius: 4px;
+            margin: 0 -0.5rem;
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2rem;
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .nav-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .main-content {
+                padding: 2rem 1rem;
+            }
+            
+            .subcategories-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .modal-content {
+                width: 95%;
+                max-height: 95vh;
+            }
+
+            .modal-header {
+                padding: 1rem;
+            }
+
+            .snippet-readme {
+                padding: 1rem;
+            }
+
+            .file-tab {
+                padding: 0.75rem 1rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-content">
+            <a href="../index.html" class="nav-brand">
+                <i class="fas fa-code"></i>
+                ServiceNow Code Snippets
+            </a>
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>Core ServiceNow APIs</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="page-header-content">
+            <h1>
+                <div class="page-header-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                Core ServiceNow APIs
+            </h1>
+            <p>
+                Essential ServiceNow JavaScript APIs and classes that form the foundation of platform development. 
+                These APIs provide core functionality for database operations, AJAX communication, system utilities, and more.
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Subcategories -->
+        <div class="subcategories-grid">
+            <!-- Categories will be loaded dynamically -->
+        </div>
+
+        <!-- Additional APIs Section
+        <section style="margin-top: 4rem;">
+            <h2 style="font-size: 1.5rem; margin-bottom: 2rem; color: var(--text-primary);">Additional Core APIs</h2>
+            <div class="subcategories-grid">
+                
+            </div>
+        </section>
+         -->
+    </main>
+
+    <!-- Snippet Detail Modal -->
+    <div id="snippet-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-title" class="modal-title">Loading...</h2>
+                <button class="modal-close" onclick="closeSnippetModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="loading-indicator">
+                    <div class="loading-spinner"></div>
+                    <span>Loading snippet details...</span>
+                </div>
+                <div id="snippet-content" class="snippet-detail">
+                    <!-- Content will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    
+    <script>
+        // GitHub API configuration
+        const GITHUB_API_BASE = 'https://api.github.com';
+        const REPO = 'ServiceNowDevProgram/code-snippets';
+        const BRANCH = 'main';
+
+        // Cache for API responses
+        const apiCache = new Map();
+
+        // GitHub API helper functions
+        async function fetchGitHubAPI(path) {
+            if (apiCache.has(path)) {
+                return apiCache.get(path);
+            }
+
+            try {
+                // Properly encode the path for the GitHub API
+                const encodedPath = path.split('/').map(encodeURIComponent).join('/');
+                const response = await fetch(`${GITHUB_API_BASE}/repos/${REPO}/contents/${encodedPath}?ref=${BRANCH}`);
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+                const data = await response.json();
+                apiCache.set(path, data);
+                return data;
+            } catch (error) {
+                console.error('GitHub API Error:', error);
+                throw error;
+            }
+        }
+
+        async function loadSubcategorySnippets(subcategory) {
+            try {
+                const path = `Core ServiceNow APIs/${subcategory}`;
+                const contents = await fetchGitHubAPI(path);
+                
+                // Filter for directories (snippet folders)
+                const snippetFolders = contents.filter(item => item.type === 'dir');
+                
+                // Get detailed info for each snippet
+                const snippets = await Promise.all(
+                    snippetFolders.map(async (folder) => {
+                        try {
+                            const snippetPath = `${path}/${folder.name}`;
+                            const snippetContents = await fetchGitHubAPI(snippetPath);
+                            
+                            // Find README and code files
+                            const readmeFile = snippetContents.find(f => 
+                                f.name.toLowerCase().includes('readme') && f.name.endsWith('.md')
+                            );
+                            const codeFiles = snippetContents.filter(f => 
+                                f.name.endsWith('.js') || f.name.endsWith('.ts') || f.name.endsWith('.json')
+                            );
+                            
+                            return {
+                                name: folder.name,
+                                path: snippetPath,
+                                readme: readmeFile,
+                                codeFiles: codeFiles,
+                                githubUrl: `https://github.com/${REPO}/tree/${BRANCH}/${encodeURIComponent(snippetPath)}`
+                            };
+                        } catch (error) {
+                            console.error(`Error loading snippet ${folder.name}:`, error);
+                            return null;
+                        }
+                    })
+                );
+                
+                return snippets.filter(s => s !== null);
+            } catch (error) {
+                console.error('Error loading subcategory:', error);
+                return [];
+            }
+        }
+
+        async function loadFileContent(downloadUrl) {
+            try {
+                const response = await fetch(downloadUrl);
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+                return await response.text();
+            } catch (error) {
+                console.error('Error loading file content:', error);
+                throw error;
+            }
+        }
+
+        function parseMarkdown(markdown) {
+            // Simple markdown parsing - could be enhanced with a proper parser
+            return markdown
+                .replace(/^# (.*$)/gm, '<h1>$1</h1>')
+                .replace(/^## (.*$)/gm, '<h2>$1</h2>')
+                .replace(/^### (.*$)/gm, '<h3>$1</h3>')
+                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                .replace(/\*(.*?)\*/g, '<em>$1</em>')
+                .replace(/`(.*?)`/g, '<code>$1</code>')
+                .replace(/\n\n/g, '</p><p>')
+                .replace(/^(.*)$/gm, '<p>$1</p>')
+                .replace(/^<p>(<h[1-6]>.*<\/h[1-6]>)<\/p>$/gm, '$1')
+                .replace(/^<p>(<ul>.*<\/ul>)<\/p>$/gm, '$1')
+                .replace(/^- (.*$)/gm, '<li>$1</li>')
+                .replace(/(<li>.*<\/li>)/gs, '<ul>$1</ul>');
+        }
+
+        function getLanguageFromFileName(fileName) {
+            const ext = fileName.split('.').pop().toLowerCase();
+            const langMap = {
+                'js': 'javascript',
+                'ts': 'typescript',
+                'json': 'json',
+                'html': 'html',
+                'css': 'css',
+                'md': 'markdown'
+            };
+            return langMap[ext] || 'javascript';
+        }
+
+        async function showSnippetDetails(snippetPath, snippetName) {
+            const modal = document.getElementById('snippet-modal');
+            const modalTitle = document.getElementById('modal-title');
+            const snippetContent = document.getElementById('snippet-content');
+            const loadingIndicator = modal.querySelector('.loading-indicator');
+
+            // Show modal and loading state
+            modal.classList.add('show');
+            modalTitle.textContent = snippetName;
+            loadingIndicator.style.display = 'flex';
+            snippetContent.style.display = 'none';
+
+            try {
+                // Load snippet folder contents
+                const contents = await fetchGitHubAPI(snippetPath);
+                
+                const readmeFile = contents.find(f => 
+                    f.name.toLowerCase().includes('readme') && f.name.endsWith('.md')
+                );
+                const codeFiles = contents.filter(f => 
+                    f.name.endsWith('.js') || f.name.endsWith('.ts') || f.name.endsWith('.json')
+                );
+
+                let html = '';
+
+                // Add snippet metadata
+                html += `
+                    <div class="snippet-meta">
+                        <a href="https://github.com/${REPO}/tree/${BRANCH}/${encodeURIComponent(snippetPath)}" 
+                           target="_blank" class="github-link">
+                            <i class="fab fa-github"></i>
+                            View on GitHub
+                        </a>
+                    </div>
+                `;
+
+                // Load and display README
+                if (readmeFile) {
+                    try {
+                        const readmeContent = await loadFileContent(readmeFile.download_url);
+                        const parsedReadme = parseMarkdown(readmeContent);
+                        html += `
+                            <div class="snippet-readme">
+                                ${parsedReadme}
+                            </div>
+                        `;
+                    } catch (error) {
+                        console.error('Error loading README:', error);
+                    }
+                }
+
+                // Load and display code files
+                if (codeFiles.length > 0) {
+                    html += '<div class="snippet-files">';
+                    
+                    // File tabs
+                    if (codeFiles.length > 1) {
+                        html += '<div class="file-tab-header">';
+                        codeFiles.forEach((file, index) => {
+                            html += `
+                                <button class="file-tab ${index === 0 ? 'active' : ''}" 
+                                        onclick="switchFileTab(${index})">
+                                    <i class="fas fa-file-code"></i>
+                                    ${file.name}
+                                </button>
+                            `;
+                        });
+                        html += '</div>';
+                    }
+
+                    // File contents
+                    for (let i = 0; i < codeFiles.length; i++) {
+                        const file = codeFiles[i];
+                        try {
+                            const fileContent = await loadFileContent(file.download_url);
+                            const language = getLanguageFromFileName(file.name);
+                            
+                            html += `
+                                <div class="file-content ${i === 0 ? 'active' : ''}" id="file-${i}">
+                                    <pre><code class="language-${language}">${escapeHtml(fileContent)}</code></pre>
+                                </div>
+                            `;
+                        } catch (error) {
+                            html += `
+                                <div class="file-content ${i === 0 ? 'active' : ''}" id="file-${i}">
+                                    <div class="error-message">
+                                        <strong>Error loading ${file.name}:</strong> ${error.message}
+                                    </div>
+                                </div>
+                            `;
+                        }
+                    }
+                    
+                    html += '</div>';
+                }
+
+                if (!readmeFile && codeFiles.length === 0) {
+                    html += `
+                        <div class="error-message">
+                            No README or code files found in this snippet.
+                        </div>
+                    `;
+                }
+
+                // Update modal content
+                snippetContent.innerHTML = html;
+                snippetContent.classList.add('active');
+                
+                // Hide loading, show content
+                loadingIndicator.style.display = 'none';
+                snippetContent.style.display = 'block';
+
+                // Re-run syntax highlighting
+                Prism.highlightAll();
+
+            } catch (error) {
+                console.error('Error loading snippet details:', error);
+                snippetContent.innerHTML = `
+                    <div class="error-message">
+                        <strong>Error loading snippet:</strong> ${error.message}
+                    </div>
+                `;
+                loadingIndicator.style.display = 'none';
+                snippetContent.style.display = 'block';
+            }
+        }
+
+        function switchFileTab(index) {
+            // Update tab states
+            document.querySelectorAll('.file-tab').forEach((tab, i) => {
+                tab.classList.toggle('active', i === index);
+            });
+            
+            // Update content states
+            document.querySelectorAll('.file-content').forEach((content, i) => {
+                content.classList.toggle('active', i === index);
+            });
+        }
+
+        function closeSnippetModal() {
+            const modal = document.getElementById('snippet-modal');
+            modal.classList.remove('show');
+            
+            // Reset modal content
+            setTimeout(() => {
+                document.getElementById('snippet-content').innerHTML = '';
+                document.querySelector('.loading-indicator').style.display = 'flex';
+            }, 300);
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        // Update subcategory cards to load real snippets
+        async function loadSubcategoryDetails(subcategory, cardElement) {
+            try {
+                const snippets = await loadSubcategorySnippets(subcategory);
+                const snippetList = cardElement.querySelector('.snippet-list');
+                const viewAllBtn = cardElement.querySelector('.view-all-btn');
+                
+                if (snippets.length > 0) {
+                    // Clear existing placeholder content
+                    snippetList.innerHTML = '';
+                    
+                    // Add real snippets (show first 4)
+                    const displaySnippets = snippets.slice(0, 4);
+                    displaySnippets.forEach(snippet => {
+                        const li = document.createElement('li');
+                        li.className = 'snippet-item';
+                        li.innerHTML = `
+                            <span class="snippet-name">${snippet.name}</span>
+                            <span class="snippet-type">${snippet.codeFiles.length} file${snippet.codeFiles.length !== 1 ? 's' : ''}</span>
+                        `;
+                        li.onclick = (e) => {
+                            e.stopPropagation();
+                            showSnippetDetails(snippet.path, snippet.name);
+                        };
+                        snippetList.appendChild(li);
+                    });
+                    
+                    // Update view all button
+                    if (snippets.length > 4) {
+                        viewAllBtn.textContent = `View All ${snippets.length} Examples`;
+                    } else {
+                        viewAllBtn.textContent = `View ${snippets.length} Example${snippets.length !== 1 ? 's' : ''}`;
+                    }
+                    
+                    // Store all snippets for "view all" functionality
+                    cardElement.dataset.allSnippets = JSON.stringify(snippets);
+                }
+            } catch (error) {
+                console.error(`Error loading ${subcategory} details:`, error);
+            }
+        }
+
+        function openGitHubFolder(path) {
+            const encodedPath = encodeURIComponent(path);
+            const githubUrl = `https://github.com/${REPO}/tree/${BRANCH}/${encodedPath}`;
+            window.open(githubUrl, '_blank');
+        }
+
+        // API descriptions for each category
+        const apiDescriptions = {
+            'GlideRecord': 'Database operations, queries, and record manipulation',
+            'GlideAjax': 'Client-server communication and asynchronous operations',
+            'GlideSystem': 'System utilities, logging, and platform services',
+            'GlideDate': 'Date manipulation utilities',
+            'GlideDateTime': 'Date and time manipulation utilities',
+            'GlideAggregate': 'Aggregate queries and statistical operations',
+            'GlideHTTPRequest': 'HTTP client operations and external API calls',
+            'GlideElement': 'Field-level operations and data manipulation',
+            'GlideFilter': 'Advanced filtering and query building',
+            'GlideQuery': 'Modern query API with fluent interface',
+            'GlideModal': 'Modal dialog operations and UI management',
+            'GlideTableDescriptor': 'Table metadata and schema operations'
+        };
+
+        function loadAllSubcategories() {
+            // Hardcoded list of all Core ServiceNow API categories
+            const subcategories = [
+                'GlideAggregate', 'GlideAjax', 'GlideDate', 'GlideDateTime',
+                'GlideElement', 'GlideFilter', 'GlideHTTPRequest', 'GlideModal',
+                'GlideQuery', 'GlideRecord', 'GlideSystem', 'GlideTableDescriptor'
+            ];
+            
+            // Generate the subcategory cards
+            const subcategoriesGrid = document.querySelector('.subcategories-grid');
+            const additionalGrid = document.querySelector('.subcategories-grid:last-of-type');
+            
+            // Clear existing content
+            subcategoriesGrid.innerHTML = '';
+            if (additionalGrid && additionalGrid !== subcategoriesGrid) {
+                additionalGrid.innerHTML = '';
+            }
+            
+            // Create cards for all subcategories
+            subcategories.forEach((subcategory, index) => {
+                const card = createSubcategoryCard(subcategory);
+                
+                // Distribute cards across grids for better layout
+                if (index < 6) {
+                    subcategoriesGrid.appendChild(card);
+                } else if (additionalGrid) {
+                    additionalGrid.appendChild(card);
+                } else {
+                    subcategoriesGrid.appendChild(card);
+                }
+            });
+        }
+
+        function createSubcategoryCard(subcategory) {
+            const card = document.createElement('div');
+            card.className = 'subcategory-card';
+            card.onclick = () => openGitHubFolder(`Core ServiceNow APIs/${subcategory}`);
+            
+            const description = apiDescriptions[subcategory] || 'ServiceNow API utilities and operations';
+            
+            card.innerHTML = `
+                <div class="subcategory-header">
+                    <h3 class="subcategory-title">${subcategory}</h3>
+                    <p class="subcategory-description">${description}</p>
+                </div>
+                <div class="subcategory-content">
+                    <button class="view-all-btn">View ${subcategory} Examples on GitHub</button>
+                </div>
+            `;
+            
+            return card;
+        }
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize syntax highlighting
+            Prism.highlightAll();
+            
+            // Load all subcategories
+            loadAllSubcategories();
+
+            // Close modal when clicking outside
+            document.getElementById('snippet-modal').addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeSnippetModal();
+                }
+            });
+
+            // Close modal with Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closeSnippetModal();
+                }
+            });
+        });
+    </script>
+    <!-- Footer will be loaded by footer.js -->
+    <script src="../assets/footer.js" data-auto-init data-root-page="false"></script>
+</body>
+</html>
