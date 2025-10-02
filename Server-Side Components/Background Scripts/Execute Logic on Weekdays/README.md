@@ -1,4 +1,4 @@
-Script that checks today is weekday and then execute further logic inside if block.
+Background Script that checks today is weekday and then execute further logic inside if block.
 This script can also be used in 'Condition' part of Scheduled job, with an answer variable.
 
 var answer = false;
