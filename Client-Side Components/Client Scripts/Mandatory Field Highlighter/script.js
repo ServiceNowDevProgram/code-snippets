@@ -1,28 +1,22 @@
 function onLoad() {
-    // Highlight mandatory fields that are empty using proper ServiceNow methods
-    highlightMandatoryFields();
+    // Get all field names on the form
+    var fieldNames = g_form.getFieldNames();
     
-    function highlightMandatoryFields() {
-        var allFields = g_form.getFieldNames();
+    // Check each field
+    for (var i = 0; i < fieldNames.length; i++) {
+        var fieldName = fieldNames[i];
         
-        for (var i = 0; i < allFields.length; i++) {
-            var fieldName = allFields[i];
-            
-            // Check if field is mandatory and visible
-            if (g_form.isMandatory(fieldName) && g_form.isVisible(fieldName)) {
-                var fieldValue = g_form.getValue(fieldName);
-                
-                if (!fieldValue || fieldValue === '') {
-                    // Show warning message for empty mandatory fields
-                    g_form.showFieldMsg(fieldName, 'This field is required', 'error');
-                } else {
-                    // Clear any existing field messages
-                    g_form.hideFieldMsg(fieldName);
-                }
-            }
+        // Skip if field is not mandatory or not visible
+        if (!g_form.isMandatory(fieldName) || !g_form.isVisible(fieldName)) {
+            continue;
+        }
+        
+        // Get current field value
+        var value = g_form.getValue(fieldName);
+        
+        // Show error message if field is empty
+        if (!value || value === '') {
+            g_form.showFieldMsg(fieldName, 'This field is required', 'error');
         }
     }
-    
-    // Store function globally so onChange scripts can call it
-    window.updateMandatoryHighlighting = highlightMandatoryFields;
 }
