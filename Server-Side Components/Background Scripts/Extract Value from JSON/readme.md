@@ -1,6 +1,6 @@
 Open 'Scripts - background' and run the script of [extractValueFromJSON.js] file.
 
-This is generally utilized in integrations when we receive the JSON response and we have to get the value from it.
+This also checks for the duplicate user_name and shows the unique ones and the corresponding roles of that particular user.
 
 
 Script:
