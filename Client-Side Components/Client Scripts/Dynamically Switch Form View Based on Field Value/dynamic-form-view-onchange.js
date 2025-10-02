@@ -24,6 +24,7 @@ function onChange(control, oldValue, newValue, isLoading) {
 
   if (targetView) {
     try {
+      // Here for example the table name is incident
       switchView("section", "incident", targetView);
     } catch (e) {
       console.error("View switch failed: ", e);
