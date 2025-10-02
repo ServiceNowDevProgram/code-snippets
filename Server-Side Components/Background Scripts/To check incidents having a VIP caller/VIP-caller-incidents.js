@@ -2,7 +2,7 @@
  * Name: VIP Caller Incidents
  * Type: Background Script
  * Purpose: Prints all incidents where the caller is a VIP user
- * Author: Shashank Jain
+ * Author: Shashank Jain 
  */
 
 var inc = new GlideRecord('incident');
