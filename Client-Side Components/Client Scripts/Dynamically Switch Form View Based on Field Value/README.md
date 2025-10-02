@@ -12,3 +12,9 @@ Improves user experience by guiding users to the **most relevant form view**, en
 **Test:**  
 - Change the **Category** field to *Hardware* → Form view should switch to **ess**.  
 - Update mapping to add new conditions (e.g., *Software → itil*) and verify the view switches accordingly.
+
+**How to Use:**  
+1. **Modify the table name** in the `switchView` function to match your target table:
+   ```javascript
+   switchView("section", "<your_table_name>", targetView);
+2. **Modify the view mapping**
