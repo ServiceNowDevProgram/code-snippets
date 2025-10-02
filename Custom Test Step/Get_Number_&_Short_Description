@@ -3,7 +3,7 @@
 	var recordSysId = inputs.u_sys_id;  // It takes the sys_id of the incident
 
     var finance = new GlideRecord("incident");
-    finance.addQuery("sys_id", recordSysId);
+    finance.addQuery("sys_id", recordSysId); 
     finance.query();
     if (finance.next()) {
         outputs.u_number = finance.getDisplayValue("number");
