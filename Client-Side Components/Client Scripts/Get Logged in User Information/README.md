@@ -1,4 +1,4 @@
-# The Glide User (g_user) is a global object available within the client side. It provides information about the logged-in user.
+# The Glide User (g_user) is a global object available within the client side. It provides information about the logged-in  user.
 
 Property                   Description
 

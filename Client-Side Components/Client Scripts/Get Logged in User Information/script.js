@@ -15,4 +15,4 @@ g_form.setValue('short_description', g_user.lastName);
 
 g_form.setValue('short_description', g_user.name);
 
-g_form.setValue('short_description', g_user.userID;
+g_form.setValue('short_description', g_user.userID);
