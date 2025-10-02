@@ -1,10 +1,14 @@
 function onLoad() {
-    // Get all field names on the form
-    var fieldNames = g_form.getFieldNames();
+
+    // USER CONFIGURATION: Add field names you want to check (comma-separated)
+    var fieldsToCheck = 'short_description,priority,category,caller_id';
+    
+    // Convert to array and process
+    var fieldArray = fieldsToCheck.split(',');
     
     // Check each field
-    for (var i = 0; i < fieldNames.length; i++) {
-        var fieldName = fieldNames[i];
+    for (var i = 0; i < fieldArray.length; i++) {
+        var fieldName = fieldArray[i];
         
         // Skip if field is not mandatory or not visible
         if (!g_form.isMandatory(fieldName) || !g_form.isVisible(fieldName)) {
