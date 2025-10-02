@@ -8,7 +8,7 @@
 var inc = new GlideRecord('incident');
 inc.addQuery('caller_id.vip', true); // Only VIP callers
 inc.query();
-inc.print("Incidents with VIP Callers:");
+gs.print("Incidents with VIP Callers:");
 while (inc.next()) {
     gs.print("Number: " + inc.number + " | Short Description: " + inc.short_description);
 }
