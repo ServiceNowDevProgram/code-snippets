@@ -1,11 +1,11 @@
-# Alphanumeric String Validator
+# Indian GSTIN Validator
 
-This project provides a simple JavaScript function to validate whether a given string is alphanumeric (i.e., contains only letters and numbers).
+This project provides a guide and resources for validating an Indian GST Identification Number (GSTIN) using a Regular Expression. A GSTIN is a 15-character alphanumeric code assigned to taxpayers in India.
 
 ## Table of Contents
 
 - [Features](#features)
-- [Usage](#usage)
+- [GSTIN Format and Structure](#gstin-format-and-Structure)
 - [Validation Logic](#validation-logic)
 - [Examples](#examples)
 - [How to Run](#how-to-run)
@@ -14,12 +14,12 @@ This project provides a simple JavaScript function to validate whether a given s
 
 ## Features
 
-- Validates strings to ensure they contain only letters (a-z, A-Z) and numbers (0-9).
-- Returns a boolean indicating the validity of the string.
+- Defines the regular expression pattern for a structurally valid GSTIN.
+- Explains the 15-character structure of the GSTIN.
 
-## Usage
+## GSTIN Format and Structure
 
-You can use the `isAlphanumeric` function to check if a string is alphanumeric.
+A valid GSTIN must be 15 characters long and adhere to the following structure:
 
 ### Function Signature
 
