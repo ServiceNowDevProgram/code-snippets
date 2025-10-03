@@ -1,52 +1,67 @@
-/** Client callable script include */
-var GetServiceDetails = Class.create();
-GetServiceDetails.prototype = Object.extendsObject(AbstractAjaxProcessor, {
-	type:'GetServiceDetails',
+/** Client callable script include named getServiceDetails*/
+
+var getServiceDetails = Class.create();
+getServiceDetails.prototype = Object.extendsObject(AbstractAjaxProcessor, {
+
+    /**creating a script include function named getService */
+
     getService: function() {
+        
+        /**getting the sysid of CI from client side */
         var ciSysId = this.getParameter('sysparm_ci_sys_id');
-        gs.log('GetServiceDetails called for CI: ' + ciSysId);
+        gs.log('[getServiceDetails] Called for CI: ' + ciSysId);
 
-        var result = {
-            businessService: ''
-        };
-
-        // Find Business Service via cmdb_rel_ci
-        var rel = new GlideRecord('cmdb_rel_ci');
-        rel.addQuery('child', ciSysId);
-        rel.query();
-        if (rel.next()) {
-            var bs = new GlideRecord('cmdb_ci_service');
-            if (bs.get(rel.parent.toString())) {
-                result.businessServiceId = bs.getUniqueValue();
-                result.businessServiceName = bs.getDisplayValue();
-
-            } else {
-            gs.log('No Business Service relationship found for CI: ' + ciSysId);
-            result.businessService = 'No Business Service linked';
-        }
-            
+        if (!ciSysId) {
+            gs.log('[getServiceDetails] No CI sys_id provided.');
+            return '';
         }
 
-        return JSON.stringify(result);
+        /**Querying the cmdb_rel_ci to find parent relationships for the CI */
+        var relGR = new GlideRecord('cmdb_rel_ci');
+        relGR.addQuery('child', ciSysId);
+        relGR.query();
+
+        while (relGR.next()) {
+            var parentSysId = relGR.getValue('parent');
+
+            /**Check if the parent is a Business Service (cmdb_ci_service) */
+            var bsGR = new GlideRecord('cmdb_ci_service');
+            if (bsGR.get(parentSysId)) {
+                var businessServiceName = bsGR.getValue('name');
+                gs.log('[getServiceDetails] Found Business Service: ' + businessServiceName);
+                return businessServiceName; // Return the name of the businessService
+            }
+        }
+
+        gs.log('[getServiceDetails] No linked Business Service found.');
+        return '';
     },
-	
+
+    type: 'getServiceDetails'
 });
 
 
 /**onChange Client Script on Change_Request form when CI changes */
 
-function onChange(control, oldValue, newValue, isLoading) {
+function onchange(control, oldValue, newValue, isLoading) {
     if (isLoading || newValue == '') {
         return;
     }
 
-    var ga = new GlideAjax('GetServiceDetails');
+    var ga = new GlideAjax('getServiceDetails');
     ga.addParam('sysparm_name', 'getService');
     ga.addParam('sysparm_ci_sys_id', newValue);
     ga.getXML(callScriptInclude);
 
-	function callScriptInclude(response){
-		var answer = response.responseXML.documentElement.getAttribute("answer");
+    function callScriptInclude(response) {
+        var answer = response.responseXML.documentElement.getAttribute("answer");
+
+        if (answer) {
+            // Set the Business Service field with the service name returned
+            g_form.setValue('business_service', answer);
+        } else {
+            // Optional: show a message if no service is found
+            g_form.showFieldMsg('business_service', 'No linked Business Service found for this CI.', 'info');
         }
-   
+    }
 }
