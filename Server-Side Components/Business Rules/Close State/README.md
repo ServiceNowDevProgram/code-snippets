@@ -1,0 +1,1 @@
+To close a parent record when its children are closed in ServiceNow, create a Business Rule or Flow Designer on the child table. This rule should trigger when a child record's state changes to "closed," check if all related child records are closed, and then update the parent record's state accordingly. 
