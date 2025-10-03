@@ -11,7 +11,9 @@ Track how long users spend on a form before submitting it. Useful for UX analysi
 
 1. Add one Display BR and a Client Scripts:
    - `displayBR`: Starts timer
-   - `onSubmit`: Calculates and stores time
+   - onLoad client script: set the start time
+   - `onSubmit client script: Calculates and stores time
+2. create a field u_spent_time to store the start time
 
 ## 🤝 Contributing
 
