@@ -14,7 +14,6 @@
         if (itemGR.hasNext()) {
             gs.addErrorMessage('Checklist has incomplete items. Please complete all before assigning it back.');
             current.setAbortAction(true);
-            break; // stop after first failure
         }
     }
 })(current, previous);
