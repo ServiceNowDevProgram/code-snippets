@@ -1,13 +1,13 @@
-In ServiceNow, Open catalog client Scripts [catalog_script_client] and paste the code snipper of [spModalSweetAlerts.js]
+In ServiceNow, Open catalog client Scripts [catalog_script_client] and paste the code snippet of [spModalSweetAlerts.js] file.
 
 Setup:
-1. A catalog item having variable name Rewards[rewards] of type 'Select Box' with include none as true and 2 choices(Yes and No)
-2. A Single line field named Reward Selected [reward_selected] which will hold the value which will be sleected from the spModal
-3. Now, the onLoad catalog client script:
-   Type: onChange
-   Variable: rewards (as per step 1)
-   Script: [[spModalSweetAlerts.js]]
-
+1. A catalog item having variable name Rewards[rewards] of type 'Select Box'(include none as true) and 2 choices(Yes and No)
+2. A Single line type field named 'Reward Selected' [reward_selected] which will hold the value selected by user from the spModal popup.
+3. The onLoad catalog client script setup as below:
+4. Type: onChange
+5. Variable: rewards (as per step 1)
+6. Script: [[spModalSweetAlerts.js]]
+   
 
 
 Screenshots:
