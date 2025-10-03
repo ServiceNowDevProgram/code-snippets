@@ -47,8 +47,6 @@ function getAgeYMD(startDate, endDate) {
 // var birthdate = new GlideDateTime("1997-06-19 00:00:00");
 // var today = new GlideDateTime(); // current date
 // var age = getAgeYMD(birthdate, today);
-
 // gs.info("Age: " + age.years + " years, " + age.months + " months, " + age.days + " days");
-
 // Output
 // Age: 28 years, 3 months, 14 days
