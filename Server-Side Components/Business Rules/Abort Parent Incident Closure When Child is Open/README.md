@@ -11,6 +11,6 @@ Advanced: true
 When: before
 Update: Check this box.
 In the When to run tab, set the Condition field:
-current.state.changesTo(7) || current.state.changesTo(6) || current.state.changesTo(8)
+current.state.changesTo(7) || current.state.changesTo(6) || current.state.changesTo(8)  The state values are: 6 (Resolved), 7 (Closed), 8 (Cancelled).
 Note: The state values (6, 7, 8) may vary based on your instance configuration.
 In the Advanced tab, paste the provided script into the Script field.
