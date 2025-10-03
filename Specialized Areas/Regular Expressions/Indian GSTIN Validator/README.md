@@ -80,7 +80,7 @@ The most commonly used Regular Expression (Regex) pattern for GSTIN structural v
 
 - `boolean`: `true` if the string is matches with the given regular expression, `false` otherwise.
 
-## Examples
+### Examples
 
 <table border="1">
     <thead>
