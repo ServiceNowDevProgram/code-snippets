@@ -1,4 +1,4 @@
-Open 'Scripts - background' and run the script of [extractValueFromJSON.js] file.
+Open 'Scripts - background' in ServiceNow and run the script of [extractValueFromJSON.js] file.
 
 This also checks for the duplicate user_name and shows the unique ones and the corresponding roles of that particular user.
 
