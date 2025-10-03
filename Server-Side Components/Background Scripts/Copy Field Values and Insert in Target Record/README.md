@@ -1,7 +1,7 @@
 
 Script Usage :
 
-The function tables the parameters such as source table, source record sys_id, target table, fields that needs to be copied to target table.
+This function takes the parameters such as source table, source record sys_id, target table, fields that needs to be copied to target table.
 
 As a validation check, the fields from source table should be similar to target else abort inserting the record.
 
