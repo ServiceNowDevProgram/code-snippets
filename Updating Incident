@@ -1,0 +1,9 @@
+var incidentGR = new GlideRecord('incident');
+
+// Replace 'INC0010001' with the actual incident number or use a query to find it
+if (incidentGR.get('number', 'INC0010001')) {
+    incidentGR.short_description = 'Updated short description for Priority 1 incident';
+    incidentGR.update();
+} else {
+    gs.info('Incident not found');
+}
