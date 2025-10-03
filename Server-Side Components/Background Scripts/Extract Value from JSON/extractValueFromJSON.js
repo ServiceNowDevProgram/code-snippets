@@ -28,6 +28,7 @@ var userData = {
     ]
 };
 
+
 var userRoles = {};
 for (var i = 0; i < userData.userDetails.length; i++) {
     var user = userData.userDetails[i];
