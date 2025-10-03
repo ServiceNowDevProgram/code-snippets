@@ -1,4 +1,5 @@
-//Business Rule: before update on the escalation table (custom)
+//Business Rule: before update on the incident table
+//Condition: changing state to 'In Progress'
 (function executeRule(current, previous /*null when async*/) {
     var checklistGR = new GlideRecord("checklist");
     checklistGR.addQuery("document", current.sys_id);
