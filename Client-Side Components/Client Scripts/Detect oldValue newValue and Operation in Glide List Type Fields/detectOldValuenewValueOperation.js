@@ -25,7 +25,7 @@ function onChange(control, oldValue, newValue, isLoading, isTemplate) {
         operation = '';
     }
 
-    var ajaxGetNames = new GlideAjax('scriptUtil');
+    var ajaxGetNames = new GlideAjax('watchListCandidatesUtil');
     ajaxGetNames.addParam('sysparm_name', 'getWatchListUsers');
     ajaxGetNames.addParam('sysparm_old_values', oldGlideValue);
     ajaxGetNames.addParam('sysparm_new_values', newGlideValue);
