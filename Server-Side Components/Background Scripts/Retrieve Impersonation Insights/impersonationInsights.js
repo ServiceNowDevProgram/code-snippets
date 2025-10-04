@@ -1,23 +1,23 @@
-var impersonatorSysId = 'zane.sulikowski'; //Replace it with the userID of userfor whom  we need to check impersonation details
+var impersonatorUserID = 'zane.sulikowski'; //Replace it with the user ID of user for whom  we need to check impersonation details
 
-var checkUserId = new GlideRecord('sys_user');
-if (checkUserId.get('user_name', impersonatorSysId)) {
+var isUserPresent = new GlideRecord('sys_user');
+if (isUserPresent.get('user_name', impersonatorUserID)) {
 
-    var eventsGR = new GlideRecord('sysevent');
-    eventsGR.addEncodedQuery("name=impersonation.start^ORname=impersonation.end^parm1=" + impersonatorSysId + "^sys_created_onONToday@javascript:gs.beginningOfToday()@javascript:gs.endOfToday()");
-    eventsGR.orderBy('sys_created_on');
-    eventsGR.query();
+    var queryEvents = new GlideRecord('sysevent');
+    queryEvents.addEncodedQuery("name=impersonation.start^ORname=impersonation.end^parm1=" + impersonatorUserID + "^sys_created_onONToday@javascript:gs.beginningOfToday()@javascript:gs.endOfToday()");
+    queryEvents.orderBy('sys_created_on');
+    queryEvents.query();
 
     //This object will hold all events grouped by impersonated user which is in parm2
     var userEvents = {};
 
-    while (eventsGR.next()) {
-        var impersonatedId = eventsGR.getValue('parm2');
+    while (queryEvents.next()) {
+        var impersonatedId = queryEvents.getValue('parm2');
         if (!userEvents[impersonatedId])
             userEvents[impersonatedId] = [];
         userEvents[impersonatedId].push({
-            name: eventsGR.getValue('name'),
-            time: eventsGR.getValue('sys_created_on')
+            name: queryEvents.getValue('name'),
+            time: queryEvents.getValue('sys_created_on')
         });
     }
 
@@ -55,6 +55,6 @@ for (var userId in userEvents) {
     var minutes = Math.floor((totalSeconds % 3600) / 60);
     var seconds = Math.floor(totalSeconds % 60);
 
-    gs.info(impersonatorSysId + " impersonated User: " + getUserName(userId) +
+    gs.info(impersonatorUserID + " impersonated User: " + getUserName(userId) +
         " - Total Duration of impersonation is : " + hours + "hrs " + minutes + "min " + seconds + "sec (" + totalSeconds + "sec)");
 }
