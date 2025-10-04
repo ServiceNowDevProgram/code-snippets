@@ -1,5 +1,5 @@
-var scriptUtil = Class.create();
-scriptUtil.prototype = Object.extendsObject(AbstractAjaxProcessor, {
+var watchListCandidatesUtil = Class.create();
+watchListCandidatesUtil.prototype = Object.extendsObject(AbstractAjaxProcessor, {
 
 
     getWatchListUsers: function() {
@@ -29,8 +29,8 @@ scriptUtil.prototype = Object.extendsObject(AbstractAjaxProcessor, {
         } else {
             return 'No record found';
         }
-
     },
 
-    type: 'scriptUtil'
+
+    type: 'watchListCandidatesUtil'
 });
