@@ -1,6 +1,6 @@
 // Below code will be used in client script of UI page as mentioned in README.md file
 
-function ResolveIncident(sysId) {
+function ResolveIncidentOnsubmit(sysId) {     //This function is called in UI page HTML section When user clicks the Submit button
       var rejectionReason = document.getElementById('resolution_reason').value;
       var resolutionCode = document.getElementById('resolution_code').value;
       var ga = new GlideAjax('ResolutionProcessor');
