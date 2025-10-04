@@ -1,0 +1,101 @@
+<div id="" style="overflow:scroll; height:400px;">
+<!-- your widget template -->
+ <h4>Data</h4>
+ <p class="mydata">
+  <b>record:</b>{{data.record}}</p>
+ <p class="mydata">  
+  <b>record1:</b>{{data.record1}}</p><br>
+  
+ <h4>NG-CLICK</h4>
+ <p>Run Function on Click</p>  
+ <button ng-click="myButton()">Click me!!!</button>
+
+ <h4>NG-MODEL</h4>  
+ <p>2-Way data variable</p>
+ <b>myText:</b> {{myText}}<br>   
+ <input type="text" ng-model="myText"><br>
+
+ <h4>NG-KEYUP</h4>  
+ <p>Use Enter to Run Function</p>
+ <input type="text" placeholder="Press Enter key here" ng-keyup="$event.keyCode == 13 ? myKey() : null"/><br><br>
+
+ <h4>NG-REPEAT</h4>  
+ <p>Looping through data</p>
+ <p ng-repeat="x in data.record">{{x}} - Index {{$index}}</p><br>
+
+ <h4>NG-IF</h4>    
+ <p>Show only where condition in passed<br>
+    Other Variables are not available</p>  
+ <p ng-repeat="x in data.record" ng-if="x == 3">{{x}}</p>  
+
+  
+ <h4>NG-SHOW</h4>    
+ <p>Show only where condition in passed<br>
+    Other Variables are available but hidden</p>
+ <p ng-repeat="x in data.record" ng-show="x == 3">{{x}}</p> 
+  
+
+ <h4>NG-HIDE</h4>    
+ <p>Hide where condition in passed<br>
+    Variable is available but hidden</p>
+ <p ng-repeat="x in data.record" ng-hide="x == 3">{{x}}</p>    
+
+  
+ <h4>NG-BIND</h4>    
+ TEXT-BINDING
+ <p ng-bind="mytext"></p><br>
+
+ <h4>NG-BIND-HTML</h4>    
+ <p>BIND with HTML Formatting</p>
+ <p ng-bind-html="htmlText"></p> 
+  
+  
+ <h4>$INDEX</h4>
+ <p ng-repeat="x in data.record">{{x}} - Index {{$index}}</p>
+
+ <h4>$INDEX IN IF CONDITION</h4>
+ <p ng-repeat="x in data.record" ng-if="$index == 3">{{x}} - Index {{$index}}</p>
+
+ <h4>$EVEN</h4>
+ <p ng-repeat="x in data.record" ng-if="$even">{{x}} - Index {{$index}}</p>    
+
+ <h4>$ODD</h4>
+ <p ng-repeat="x in data.record" ng-if="$odd">{{x}} - Index {{$index}}</p>  
+
+ <h4>$FIRST</h4>
+ <p ng-repeat="x in data.record" ng-if="$first">{{x}} - Index {{$index}}</p> 
+
+ <h4>$LAST</h4>
+ <p ng-repeat="x in data.record" ng-if="$last">{{x}} - Index {{$index}}</p>   
+
+ <h4>$MIDDLE</h4>
+ Leave 1st and Last
+ <p ng-repeat="x in data.record" ng-if="$middle">{{x}} - Index {{$index}}</p>   
+
+ <h4>LIMIT TO</h4>
+ <p ng-repeat="x in data.record | limitTo:3">{{x}} - Index {{$index}}</p>  
+
+ <h4>LIMIT TO BEGIN</h4>
+ Start Index:<input type="number" ng-model="startIndex"> <br>   
+ <p ng-repeat="x in data.record | limitTo:3:startIndex">{{x}} - Index {{$index}}</p>  
+
+ <h4>UPPERCASE</h4>    
+ {{data.record1}}<br>  
+ <p ng-repeat="x in data.record1">{{x | uppercase}} - Index {{$index}}</p>    
+
+ <h4>lowercase</h4>
+ <p ng-repeat="x in data.record1">{{x | lowercase}} - Index {{$index}}</p>    
+
+ <h4>ORDER BY</h4>
+ <p ng-repeat="x in data.record1 | orderBy:x">{{x}} - Index {{$index}}</p>    
+
+ <h4>ORDER BY DESCENDING</h4>
+ <p ng-repeat="x in data.record1 | orderBy:x:true">{{x}} - Index {{$index}}</p>  
+
+  
+ <h4>FILTER</h4>
+ Filter:<input type="text" placeholder="Enter filter here" ng-model="myFilter">
+ <p ng-repeat="x in data.record1 | filter:myFilter">{{x}} - Index {{$index}}</p>   
+  
+  
+</div>
