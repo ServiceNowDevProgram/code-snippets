@@ -3,7 +3,6 @@ function onChange(control, oldValue, newValue, isLoading, isTemplate) {
         return;
     }
 
-
     var prevValue;
     if (g_scratchpad.prevValue == undefined)
         prevValue = oldValue;
@@ -16,7 +15,6 @@ function onChange(control, oldValue, newValue, isLoading, isTemplate) {
     var oldGlideValue = prevValue.split(',');
     var newGlideValue = newValue.split(',');
 
-
     var operation;
 
     if (oldGlideValue.length > newGlideValue.length || newValue == '') {
@@ -27,9 +25,19 @@ function onChange(control, oldValue, newValue, isLoading, isTemplate) {
         operation = '';
     }
 
-    g_form.clearMessages();
-    g_form.addSuccessMessage('Operation Performed : ' + operation);
-    g_form.addSuccessMessage('OldValue : ' + oldGlideValue);
-    g_form.addSuccessMessage('newValue : ' + newGlideValue);
+    var ajaxGetNames = new GlideAjax('scriptUtil');
+    ajaxGetNames.addParam('sysparm_name', 'getWatchListUsers');
+    ajaxGetNames.addParam('sysparm_old_values', oldGlideValue);
+    ajaxGetNames.addParam('sysparm_new_values', newGlideValue);
+    ajaxGetNames.getXMLAnswer(function(response) {
+
+        var result = JSON.parse(response);
+
+        g_form.clearMessages();
+        g_form.addSuccessMessage('Operation Performed : ' + operation);
+        g_form.addSuccessMessage('OldValue : ' + result.oldU);
+        g_form.addSuccessMessage('NewValue : ' + result.newU);
+
+    });
 
 }
