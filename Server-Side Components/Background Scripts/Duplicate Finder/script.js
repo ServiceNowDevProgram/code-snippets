@@ -1,6 +1,6 @@
 // Update ONLY below values to find duplicates
-var tableName = 'sys_user'; // ADD: Table you want for duplicates
-var fieldName = 'email';	// ADD: Field that you want to check for duplicates
+var tableName = 'incident'; // ADD: Table you want for duplicates
+var fieldName = 'short_description';	// ADD: Field that you want to check for duplicates
 
 findDuplicates(tableName, fieldName);
 
@@ -17,12 +17,9 @@ function findDuplicates(tableName, fieldName) {
     }
 
     // Check if field exists
-    var fieldGr = new GlideRecord('sys_dictionary');
-    fieldGr.addQuery('name', tableName);
-    fieldGr.addQuery('element', fieldName);
-    fieldGr.query();
-
-    if (!fieldGr.next()) {
+    var gr = new GlideRecord(tableName);
+    gr.initialize();
+    if (!gr.isValidField(fieldName)) {
         gs.print('No field called "' + fieldName + '" on the "' + tableName + '" table.');
         return;
     }
