@@ -13,7 +13,7 @@ Setup details:
 onChange client Script on [incident] table
 Field Name: [watch_list]
 Script: Check [detectOldValuenewValueOperation.js] file
-Script Include Name: scriptUtil (client callable/GlideAjax Enabled - true), Check [scriptUtil.js] file for script
+Script Include Name: watchListCandidatesUtil (client callable/GlideAjax Enabled - true), Check [watchListCandidatesUtil.js] file for script
 
 
 
