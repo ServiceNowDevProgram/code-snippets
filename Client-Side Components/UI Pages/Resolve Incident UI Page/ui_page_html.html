@@ -21,6 +21,6 @@
                 <option value="User error">User error</option>
             </select>
         </p>
-        <g:dialog_buttons_ok_cancel ok_text="${gs.getMessage('Submit')}" ok_title="${gs.getMessage('Submit')}" ok="return ResolveIncident('${jvar_sys_id}');" ok_style_class="btn btn-primary" cancel_text="${gs.getMessage('Cancel')}" cancel_title="${gs.getMessage('Cancel')}" cancel="return closeDialog(); disable" />
+        <g:dialog_buttons_ok_cancel ok_text="${gs.getMessage('Submit')}" ok_title="${gs.getMessage('Submit')}" ok="return ResolveIncidentOnsubmit('${jvar_sys_id}');" ok_style_class="btn btn-primary" cancel_text="${gs.getMessage('Cancel')}" cancel_title="${gs.getMessage('Cancel')}" cancel="return closeDialog(); disable" />
     </div>
 </j:jelly>
