@@ -15,6 +15,7 @@ watchListCandidatesUtil.prototype = Object.extendsObject(AbstractAjaxProcessor, 
         return JSON.stringify(result);
     },
 
+    
     _getUserNames: function(userList) {
         var names = [];
 
