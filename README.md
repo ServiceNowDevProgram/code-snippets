@@ -1,66 +1,190 @@
+# 🚀 ServiceNow Code Snippets
+
+<div align="center">
+
 ![Code Snippets Banner](https://github.com/ServiceNowDevProgram/code-snippets/assets/31702109/f9fa072a-4c0c-426b-8eed-200c6616ff60)
 
-Welcome to ServiceNow's Code Snippets community repository, managed by the Developer Program and the sndevs Slack community.
+**A community-driven collection of ServiceNow code snippets and solutions**
 
-Inside this repository, you will find community submitted code-snippets and their variants for different use-cases.
+[![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat-square)](CONTRIBUTING.md)
+[![Hacktoberfest](https://img.shields.io/badge/Hacktoberfest-Participating-orange?style=flat-square)](https://github.com/ServiceNowDevProgram/Hacktoberfest)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](LICENSE)
 
-> Interested in our other ServiceNow Hacktoberfest projects? See the main repository [here](https://github.com/ServiceNowDevProgram/Hacktoberfest) or see our official blog post [here](https://devlink.sn/hacktoberfest).
+[Explore Snippets](#-repository-structure) · [Contribute](#-how-to-contribute) · [Join Community](https://sndevs.com)
 
-**Note:** ServiceNowDevProgram has many repositories that can be imported directly into ServiceNow, this is not one of them; This repository is meant to be edited directly in GitHub or any other Git-enabled IDE like VS Code.
+</div>
 
-## Disclaimer
+---
 
-Please note the following:
+## 📖 About
 
-1. **Community-Sourced Code**: The code found in this repository is contributed by members of the community and has not been vetted or officially endorsed by the repository owners.
+Welcome to the **ServiceNow Code Snippets** repository - your go-to resource for practical, real-world ServiceNow code examples. Managed by the ServiceNow Developer Program and the vibrant **sndevs** Slack community, this repository features battle-tested code snippets submitted by developers like you.
 
-2. **Use at Your Own Risk**: Users are advised to exercise caution and thoroughly review the code before implementing it in their ServiceNow instances. We strongly recommend a comprehensive review to ensure the code aligns with your specific requirements and security standards.
+> 🎃 **Hacktoberfest Participant**: Check out our [main Hacktoberfest repository](https://github.com/ServiceNowDevProgram/Hacktoberfest) and [official blog post](https://devlink.sn/hacktoberfest) for more projects!
 
-3. **Reporting Mistakes and Issues**: If you come across any mistakes, issues, or improvements in the code, we encourage you to report them and consider contributing to the repository by submitting corrections or enhancements.
+### ✨ What Makes This Repository Special
 
-4. **No Warranty or Support**: This repository is provided as-is, without any warranties or guarantees. It does not come with official support from the ServiceNow team or the repository owners.
+- 🌍 **Community-Powered**: Real solutions from real developers
+- 📚 **Comprehensive**: Covers all aspects of ServiceNow development
+- 🔄 **Always Growing**: Regular updates and new snippets
+- 🎯 **Practical**: Code you can actually use in production
+- 🤝 **Collaborative**: Built by developers, for developers
 
-By using the code from this repository, you acknowledge that you have read and understood this disclaimer. Your use of the code is at your own discretion and risk.
+---
 
-We appreciate your participation and contributions to this community-driven project. Let's collaborate to make it a valuable resource for ServiceNow developers and enthusiasts.
+## 🗂️ Repository Structure
 
-🔔🔔🔔<br>
-**_CONTRIBUTORS must follow all guidelines in [CONTRIBUTING.md](CONTRIBUTING.md)_** or run the risk of having your Pull Requests labeled as spam.<br>
-🔔🔔🔔
-
-## Repository Organization
-
-The repository is organized into **6 major categories** that cover all aspects of ServiceNow development:
+<table>
+<tr>
+<td width="50%">
 
 ### 📚 [Core ServiceNow APIs](Core%20ServiceNow%20APIs/)
-Essential ServiceNow JavaScript APIs and classes including GlideRecord, GlideAjax, GlideSystem, GlideDate, GlideDateTime, and other foundational APIs.
+Essential JavaScript APIs and classes
+- GlideRecord & GlideAjax
+- GlideSystem & GlideUser
+- GlideDate & GlideDateTime
+- Core utility functions
 
 ### ⚙️ [Server-Side Components](Server-Side%20Components/)
-Server-side code including Background Scripts, Business Rules, Script Includes, Scheduled Jobs, Transform Map Scripts, and other server-executed components.
+Server-executed code patterns
+- Background Scripts
+- Business Rules & ACLs
+- Script Includes
+- Scheduled Jobs & Transform Maps
 
 ### 🖥️ [Client-Side Components](Client-Side%20Components/)
-Client-side code including Client Scripts, Catalog Client Scripts, UI Actions, UI Scripts, UI Pages, and UX framework components.
+Browser-based functionality
+- Client Scripts & UI Policies
+- Catalog Client Scripts
+- UI Actions & UI Scripts
+- UX Framework components
+
+</td>
+<td width="50%">
 
 ### 🚀 [Modern Development](Modern%20Development/)
-Modern ServiceNow development approaches including Service Portal, NOW Experience Framework, GraphQL implementations, and ECMAScript 2021 features.
+Contemporary ServiceNow approaches
+- Service Portal widgets
+- NOW Experience Framework
+- GraphQL implementations
+- ECMAScript 2021+ features
 
 ### 🔗 [Integration](Integration/)
-External system integrations, data import/export utilities, RESTMessageV2 examples, Mail Scripts, MIDServer utilities, and attachment handling.
+External system connectivity
+- REST & SOAP integrations
+- Mail Scripts & Webhooks
+- MIDServer utilities
+- Attachment handling
 
 ### 🎯 [Specialized Areas](Specialized%20Areas/)
-Domain-specific functionality including CMDB utilities, ITOM scripts, Performance Analytics, ATF Steps, Agile Development tools, and other specialized use cases.
+Domain-specific solutions
+- CMDB & Discovery
+- ITOM & Performance Analytics
+- ATF Steps & Test utilities
+- Agile Development tools
 
-## We invite you to contribute!
+</td>
+</tr>
+</table>
 
-To contribute, just follow these steps:
+---
 
-1. Fork this repo (you get a point just by forking!)
-2. Create a new branch on your fork
-3. Add/Update the repo
-4. Submit a pull request!
+## 🚀 How to Contribute
 
-That's it! More detailed contribution instructions can be found [here](CONTRIBUTING.md)
+We'd love your contributions! Here's how to get started:
 
-## Leaderboard
+### Quick Start
 
-Looking for the old leaderboard? We've moved the leaderboard to the overarching [Hacktoberfest](https://github.com/ServiceNowDevProgram/Hacktoberfest#leaders) repository and have expanded its scope to all participating projects.
+1. **Fork** this repository (you get a point just for forking! 🎉)
+2. **Create** a new branch (`git checkout -b feature/amazing-snippet`)
+3. **Add** your code snippet following our [structure guidelines](CONTRIBUTING.md)
+4. **Commit** your changes (`git commit -m 'Add amazing snippet for X'`)
+5. **Push** to your branch (`git push origin feature/amazing-snippet`)
+6. **Open** a Pull Request
+
+### 📝 Contribution Guidelines
+
+> 🔔 **IMPORTANT**: All contributors **must** follow the guidelines in [CONTRIBUTING.md](CONTRIBUTING.md) or risk having PRs labeled as spam.
+
+**Key Points:**
+- Follow the existing folder structure
+- Include clear documentation and comments
+- Provide real-world use cases
+- Test your code before submitting
+- Use descriptive commit messages
+
+**Not sure where to start?** Check out issues labeled `good-first-issue` or `help-wanted`!
+
+---
+
+## ⚠️ Important Disclaimer
+
+<details>
+<summary>Click to read full disclaimer</summary>
+
+### Community-Sourced Content
+
+**Please note the following:**
+
+1. **Not Officially Endorsed**: Code in this repository is community-contributed and not officially vetted or endorsed by ServiceNow or repository owners.
+
+2. **Use at Your Own Risk**: Always review code thoroughly before implementing in your ServiceNow instances. Test in sub-production environments first.
+
+3. **Report Issues**: Found a bug or improvement? Please [open an issue](../../issues) or submit a correction.
+
+4. **No Warranty**: This repository is provided "as-is" without warranties or guarantees. No official support is provided.
+
+5. **Security First**: Always validate code against your organization's security standards before deployment.
+
+**By using code from this repository, you acknowledge you've read and understood this disclaimer.**
+
+</details>
+
+---
+
+## 🏆 Recognition
+
+View our contributor leaderboard and stats in the [Hacktoberfest repository](https://github.com/ServiceNowDevProgram/Hacktoberfest#leaders)!
+
+---
+
+## 🌐 Community & Resources
+
+<div align="center">
+
+| Resource | Description |
+|----------|-------------|
+| [sndevs Slack](https://sndevs.com) | Join thousands of ServiceNow developers |
+| [Developer Portal](https://developer.servicenow.com) | Official ServiceNow documentation |
+| [Community Forum](https://www.servicenow.com/community/) | Ask questions and share knowledge |
+| [Developer Blog](https://developer.servicenow.com/blog.do) | Latest news and tutorials |
+
+</div>
+
+---
+
+## 📄 License
+
+This repository is available under the MIT License. See [LICENSE](LICENSE) for more details.
+
+---
+
+## 🙏 Acknowledgments
+
+Special thanks to:
+- All our amazing [contributors](../../graphs/contributors)
+- The ServiceNow Developer Program team
+- The sndevs community moderators
+- Everyone who has starred, forked, or shared this project
+
+---
+
+<div align="center">
+
+**⭐ Star this repo if you find it helpful!**
+
+Made with ❤️ by the ServiceNow Developer Community
+
+[Report Bug](../../issues) · [Request Feature](../../issues) · [View Statistics](../../pulse)
+
+</div>
