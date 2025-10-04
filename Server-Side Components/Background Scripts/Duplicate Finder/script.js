@@ -1,3 +1,9 @@
+// Update ONLY below values to find duplicates
+var tableName = 'sys_user'; // ADD: Table you want for duplicates
+var fieldName = 'email';	// ADD: Field that you want to check for duplicates
+
+findDuplicates(tableName, fieldName);
+
 function findDuplicates(tableName, fieldName) {
     /**************************************/
     /*** Basic error handling on inputs ***/
@@ -59,8 +65,3 @@ function findDuplicates(tableName, fieldName) {
     }
 }
 
-// Update below values to find duplicates
-var tableName = 'sys_user'; // ADD: Table you want for duplicates
-var fieldName = 'email';	// ADD: Field that you want to check for duplicates
-
-findDuplicates(tableName, fieldName);
