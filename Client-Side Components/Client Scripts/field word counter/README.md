@@ -59,7 +59,7 @@ var maxWords = 100;
 - **Over limit**: Error message (red) - "Limit exceeded"
 
 ## Notes
-- Uses standard ServiceNow APIs: `g_form.showFieldMsg()` and `g_form.hideFieldMsg()`
+- Uses standard ServiceNow APIs: `g_form.addInfoMessage()` and `g_form.hideFieldMsg()`
 - Create separate Client Scripts for multiple fields
 - Works with all text fields and text areas
 - Word count excludes extra whitespace and empty strings

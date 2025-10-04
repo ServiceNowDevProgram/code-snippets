@@ -13,10 +13,10 @@ function onChange(control, oldValue, newValue, isLoading) {
     
     // Show appropriate message based on word count
     if (currentWords > maxWords) {
-        g_form.showFieldMsg(fieldName, currentWords + ' out of ' + maxWords + ' words - Limit exceeded', ' error');
+        g_form.addErrorMessage(fieldName, currentWords + ' out of ' + maxWords + ' words - Limit exceeded', ' error');
     } else if (currentWords >= maxWords - 5) {
-        g_form.showFieldMsg(fieldName, currentWords + ' out of ' + maxWords + ' words - Approaching limit', ' warning');
+        g_form.addInfoMessage(fieldName, currentWords + ' out of ' + maxWords + ' words - Approaching limit', ' warning');
     } else {
-        g_form.showFieldMsg(fieldName, currentWords + ' out of ' + maxWords + ' words', ' info');
+        g_form.addInfoMessage(fieldName, currentWords + ' out of ' + maxWords + ' words', ' info');
     }
 }
