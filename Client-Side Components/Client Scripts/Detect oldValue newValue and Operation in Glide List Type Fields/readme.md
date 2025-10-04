@@ -6,9 +6,7 @@ So, In order to identify the oldValue on change(as it does in business rule(prev
 detect the action performed.
 
 
-This onChange Client script comes handy when dealing with Glide List type fields where we have to change the value
-in that particular field and detect the value before and after change and also detect the operation which was 
-performed(addition or removal).
+This onChange Client script comes handy when dealing with Glide List type fields where we have to detect whether the value was added or removed and returns the display name of users who were added/removed along with name of operation performed.
 
 Setup details:
 
@@ -21,17 +19,19 @@ Output:
 
 Currently there is no one in the watchlist field:
 
-<img width="784" height="232" alt="image" src="https://github.com/user-attachments/assets/245339ac-04b3-47db-922a-912cca32fba5" />
+<img width="873" height="298" alt="image" src="https://github.com/user-attachments/assets/a46ca53a-f031-4bf9-9f85-2056c408b66b" />
 
-Adding [amos.linnan] , It shows the operation was addition, newValue(user's sysId) as well as oldValue(empty)
-<img width="751" height="387" alt="image" src="https://github.com/user-attachments/assets/e6a5d255-44bc-45a1-950b-fd3cb4599f26" />
+
+Adding [Bryan Rovell], It shows the operation was addition, oldValue as 'No record found' as there was no value earlier.New Value shows the name of the user (Bryan Rovell)
+<img width="870" height="443" alt="image" src="https://github.com/user-attachments/assets/484284b6-846e-424c-b9c8-a53278f48c72" />
 
 
 Adding 2 users one by one:
 
-<img width="1903" height="353" alt="image" src="https://github.com/user-attachments/assets/512e77ed-9116-4027-8fd2-446654ef3891" />
+<img width="987" height="484" alt="image" src="https://github.com/user-attachments/assets/35dfe96a-c932-4f95-9c8e-bdb48b1c7b5f" />
 
 
 Removing 2 at once:
 
-<img width="1684" height="375" alt="image" src="https://github.com/user-attachments/assets/54c233de-62af-4e9e-948f-f23e55a155e5" />
+<img width="879" height="496" alt="image" src="https://github.com/user-attachments/assets/c83d4e01-f150-44cb-9078-9841072ec949" />
+
