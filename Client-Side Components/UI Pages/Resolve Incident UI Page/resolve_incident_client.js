@@ -1,0 +1,19 @@
+  function ResolveIncident(sysId) {
+      var rejectionReason = document.getElementById('resolution_reason').value;
+      var resolutionCode = document.getElementById('resolution_code').value;
+      var ga = new GlideAjax('ResolutionProcessor');
+      ga.addParam('sysparm_name', 'updateRecord');
+      ga.addParam('sysparm_record_id', sysId);
+      ga.addParam('sysparm_reason', rejectionReason);
+      ga.addParam('sysparm_resolution', resolutionCode);
+      ga.getXML(handleSuccessfulSubmit);
+      GlideDialogWindow.get().destroy();
+      return false;
+      function handleSuccessfulSubmit(answer) {
+          window.location.reload();
+      }
+  }
+  function closeDialog() {
+      GlideDialogWindow.get().destroy();
+      return false;
+  }
