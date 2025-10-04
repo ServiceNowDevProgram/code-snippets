@@ -1,4 +1,6 @@
-  function ResolveIncident(sysId) {
+// Below code will be used in client script of UI page as mentioned in README.md file
+
+function ResolveIncident(sysId) {
       var rejectionReason = document.getElementById('resolution_reason').value;
       var resolutionCode = document.getElementById('resolution_code').value;
       var ga = new GlideAjax('ResolutionProcessor');
