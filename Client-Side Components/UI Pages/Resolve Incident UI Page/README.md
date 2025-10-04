@@ -19,7 +19,7 @@ Copy the provided script into the Script field.
 Click Submit.
 
 /////////////////////////////////////////////////
-Navigate to system defintion > UI pages
+Navigate to system definition > UI pages
 Fill the HTML and client script
 Submit
 
