@@ -1,0 +1,13 @@
+.digital-clock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 200px;
+    margin: auto;
+    background-color: #000;
+    color: #fff;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 2em;
+    border-radius: 5px;
+}

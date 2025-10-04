@@ -4,6 +4,8 @@ Welcome to ServiceNow's Code Snippets community repository, managed by the Devel
 
 Inside this repository, you will find community submitted code-snippets and their variants for different use-cases.
 
+> Interested in our other ServiceNow Hacktoberfest projects? See the main repository [here](https://github.com/ServiceNowDevProgram/Hacktoberfest) or see our official blog post [here](https://devlink.sn/hacktoberfest).
+
 **Note:** ServiceNowDevProgram has many repositories that can be imported directly into ServiceNow, this is not one of them; This repository is meant to be edited directly in GitHub or any other Git-enabled IDE like VS Code.
 
 ## Disclaimer
@@ -25,6 +27,28 @@ We appreciate your participation and contributions to this community-driven proj
 🔔🔔🔔<br>
 **_CONTRIBUTORS must follow all guidelines in [CONTRIBUTING.md](CONTRIBUTING.md)_** or run the risk of having your Pull Requests labeled as spam.<br>
 🔔🔔🔔
+
+## Repository Organization
+
+The repository is organized into **6 major categories** that cover all aspects of ServiceNow development:
+
+### 📚 [Core ServiceNow APIs](Core%20ServiceNow%20APIs/)
+Essential ServiceNow JavaScript APIs and classes including GlideRecord, GlideAjax, GlideSystem, GlideDate, GlideDateTime, and other foundational APIs.
+
+### ⚙️ [Server-Side Components](Server-Side%20Components/)
+Server-side code including Background Scripts, Business Rules, Script Includes, Scheduled Jobs, Transform Map Scripts, and other server-executed components.
+
+### 🖥️ [Client-Side Components](Client-Side%20Components/)
+Client-side code including Client Scripts, Catalog Client Scripts, UI Actions, UI Scripts, UI Pages, and UX framework components.
+
+### 🚀 [Modern Development](Modern%20Development/)
+Modern ServiceNow development approaches including Service Portal, NOW Experience Framework, GraphQL implementations, and ECMAScript 2021 features.
+
+### 🔗 [Integration](Integration/)
+External system integrations, data import/export utilities, RESTMessageV2 examples, Mail Scripts, MIDServer utilities, and attachment handling.
+
+### 🎯 [Specialized Areas](Specialized%20Areas/)
+Domain-specific functionality including CMDB utilities, ITOM scripts, Performance Analytics, ATF Steps, Agile Development tools, and other specialized use cases.
 
 ## We invite you to contribute!
 

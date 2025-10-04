@@ -37,36 +37,56 @@ If you plan to submit another pull request while your original is still pending,
 
 ## Repository Structure
 
+**IMPORTANT**: The repository has been reorganized into major categories. All new contributions MUST follow this structure for PR approval.
+
 Please follow this directory structure when organizing your code snippets:
 
-- **Top-Level Folders**: These should represent categories of snippets (e.g., `fruits`, `vegetables`).
-- **Sub-Folders**: Each top-level folder should contain a sub-folder for **each code snippet**.
-- **Snippet Folder Contents**: Within each sub-folder, include:
-  - A `readme.md` file that describes the code snippet.
+- **Top-Level Categories**: These are fixed categories that represent major areas of ServiceNow development:
+  - `Core ServiceNow APIs/` - GlideRecord, GlideAjax, GlideSystem, GlideDate, etc.
+  - `Server-Side Components/` - Background Scripts, Business Rules, Script Includes, etc.
+  - `Client-Side Components/` - Client Scripts, Catalog Client Scripts, UI Actions, etc.
+  - `Modern Development/` - Service Portal, NOW Experience, GraphQL, ECMAScript 2021
+  - `Integration/` - RESTMessageV2, Import Sets, Mail Scripts, MIDServer, etc.
+  - `Specialized Areas/` - CMDB, ITOM, Performance Analytics, ATF Steps, etc.
+
+- **Sub-Categories**: Each top-level category contains sub-folders for specific ServiceNow technologies or use cases.
+- **Snippet Folders**: Each sub-category contains folders for **each code snippet**.
+- **Snippet Folder Contents**: Within each snippet folder, include:
+  - A `README.md` file that describes the code snippet.
   - Individual files for each variant of the code snippet.
 
-### Example Structure
+### New Structure Example
 
 ```
-.github
-fruits
-  ├── apples
-  │   ├── readme.md         # Description of the apples code snippet
-  │   ├── apples.js         # First code snippet for apples
-  │   └── fijiapples.js     # Variation of the apples snippet
-  └── kiwi
-      ├── readme.md         # Description of the kiwi code snippet
-      └── kiwi.js           # Code snippet for kiwi
-vegetables
-  ├── carrots
-  │   ├── readme.md         # Description of the carrots code snippet
-  │   └── carrots.js        # Code snippet for carrots
-  └── potatoes
-      ├── readme.md         # Description of the potatoes code snippet
-      ├── potatoes.js       # Original code snippet for potatoes
-      ├── yukongoldpotato.js # Variant for Yukon Gold potatoes
-      └── tatertots.js      # Variant for tater tots
+Core ServiceNow APIs/
+  ├── GlideRecord/
+  │   ├── Query Performance Optimization/
+  │   │   ├── README.md         # Description of the optimization snippet
+  │   │   ├── basic_query.js    # Basic query example
+  │   │   └── optimized_query.js # Performance-optimized version
+  │   └── Reference Field Handling/
+  │       ├── README.md         # Description of reference handling
+  │       └── reference_query.js # Reference field query example
+  └── GlideAjax/
+      ├── Async Data Loading/
+      │   ├── README.md         # Description of async loading
+      │   ├── client_script.js  # Client-side implementation
+      │   └── script_include.js # Server-side Script Include
+Server-Side Components/
+  ├── Business Rules/
+  │   ├── Auto Assignment Logic/
+  │   │   ├── README.md         # Description of auto assignment
+  │   │   └── assignment_rule.js # Business rule implementation
 ```
+
+### Category Placement Guidelines
+
+- **Core ServiceNow APIs**: All Glide* APIs and core ServiceNow JavaScript APIs
+- **Server-Side Components**: Code that runs on the server (Business Rules, Background Scripts, etc.)
+- **Client-Side Components**: Code that runs in the browser (Client Scripts, UI Actions, etc.)
+- **Modern Development**: Modern ServiceNow development approaches and frameworks
+- **Integration**: External system integrations, data import/export, and communication
+- **Specialized Areas**: Domain-specific functionality (CMDB, ITOM, Testing, etc.)
 
 ## Final Checklist
 
