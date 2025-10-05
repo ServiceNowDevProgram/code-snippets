@@ -8,7 +8,6 @@
 
 [![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat-square)](CONTRIBUTING.md)
 [![Hacktoberfest](https://img.shields.io/badge/Hacktoberfest-Participating-orange?style=flat-square)](https://github.com/ServiceNowDevProgram/Hacktoberfest)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](LICENSE)
 
 [Explore Snippets](#-repository-structure) · [Contribute](#-how-to-contribute) · [Join Community](https://sndevs.com)
 
@@ -101,6 +100,19 @@ We'd love your contributions! Here's how to get started:
 4. **Commit** your changes (`git commit -m 'Add amazing snippet for X'`)
 5. **Push** to your branch (`git push origin feature/amazing-snippet`)
 6. **Open** a Pull Request
+
+## 🌐 Contribute from the Web (No Setup Needed!)
+
+You can contribute directly from your browser — no cloning required!
+
+1. Click **Fork** at the top-right corner of this page
+2. Open the folder where you want to add or edit a file
+3. Click **Add file → Create new file** (or edit an existing one)
+4. Scroll down, add a **commit message**, and select  
+   > "**Create a new branch for this commit and start a pull request**"
+5. Click **Propose changes → Create pull request**
+
+🎉 That’s it — your contribution will be reviewed soon!
 
 ### 📝 Contribution Guidelines
 
