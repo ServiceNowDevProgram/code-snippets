@@ -1,8 +1,12 @@
 ![Code Snippets Banner](https://github.com/ServiceNowDevProgram/code-snippets/assets/31702109/f9fa072a-4c0c-426b-8eed-200c6616ff60)
 
+# ServiceNow Code Snippets Repository
+
 Welcome to ServiceNow's Code Snippets community repository, managed by the Developer Program and the sndevs Slack community.
 
 Inside this repository, you will find community submitted code-snippets and their variants for different use-cases.
+
+**[📝 Contribution Guidelines](CONTRIBUTING.md)** | **[📚 Browse Categories](#repository-organization)** | **[🔍 How to Use](#how-to-use-this-repository)**
 
 > Interested in our other ServiceNow Hacktoberfest projects? See the main repository [here](https://github.com/ServiceNowDevProgram/Hacktoberfest) or see our official blog post [here](https://devlink.sn/hacktoberfest).
 
@@ -28,6 +32,25 @@ We appreciate your participation and contributions to this community-driven proj
 **_CONTRIBUTORS must follow all guidelines in [CONTRIBUTING.md](CONTRIBUTING.md)_** or run the risk of having your Pull Requests labeled as spam.<br>
 🔔🔔🔔
 
+## Table of Contents
+
+- [How to Use This Repository](#how-to-use-this-repository)
+- [Repository Organization](#repository-organization)
+- [Finding Snippets](#finding-snippets)
+- [Folder Structure](#folder-structure)
+- [Contributing](#we-invite-you-to-contribute)
+- [Disclaimer](#disclaimer)
+
+## How to Use This Repository
+
+This repository contains code snippets that you can use in your ServiceNow instance. Here's how to make the most of it:
+
+1. **Browse by Category**: Navigate through the [six major categories](#repository-organization) to find snippets relevant to your needs.
+2. **Copy and Adapt**: Once you find a useful snippet, copy the code and adapt it to your specific use case in your ServiceNow instance.
+3. **Read the Documentation**: Each snippet folder contains a README.md file that explains how the snippet works and how to implement it.
+4. **Search by Topic**: Use GitHub's search functionality to find snippets by keywords (e.g., "GlideRecord", "REST", "UI Action").
+5. **Contribute Your Own**: If you have a useful snippet, consider [contributing](#we-invite-you-to-contribute) to help others.
+
 ## Repository Organization
 
 The repository is organized into **6 major categories** that cover all aspects of ServiceNow development:
@@ -50,16 +73,61 @@ External system integrations, data import/export utilities, RESTMessageV2 exampl
 ### 🎯 [Specialized Areas](Specialized%20Areas/)
 Domain-specific functionality including CMDB utilities, ITOM scripts, Performance Analytics, ATF Steps, Agile Development tools, and other specialized use cases.
 
+## Finding Snippets
+
+There are several ways to find the snippets you need:
+
+1. **By Category**: Browse the six major categories listed above.
+2. **By Search**: Use GitHub's search functionality with keywords like:
+   - API names: `GlideRecord`, `GlideSystem`, `GlideAjax`
+   - Component types: `Business Rule`, `Client Script`, `UI Action`
+   - Functionality: `REST`, `SOAP`, `Import`, `Export`
+   - Use cases: `Authentication`, `Notification`, `Workflow`
+
+3. **By Tags**: Many snippets include common keywords in their README files that can be searched.
+
+## Folder Structure
+
+The repository follows a consistent structure to make navigation easier:
+
+```
+Top-Level Category/
+  ├── Sub-Category/
+  │   ├── Specific Snippet/
+  │   │   ├── README.md         # Description and usage instructions
+  │   │   ├── snippet_file.js   # The actual code snippet
+  │   │   └── variant.js        # Variations of the snippet (if applicable)
+```
+
+For example:
+```
+Core ServiceNow APIs/
+  ├── GlideRecord/
+  │   ├── Query Performance Optimization/
+  │   │   ├── README.md
+  │   │   ├── basic_query.js
+  │   │   └── optimized_query.js
+```
+
 ## We invite you to contribute!
+
+We welcome contributions from the ServiceNow developer community! Your knowledge and experience can help others solve common challenges.
 
 To contribute, just follow these steps:
 
 1. Fork this repo (you get a point just by forking!)
 2. Create a new branch on your fork
-3. Add/Update the repo
+3. Add/Update the repo following our [folder structure guidelines](#folder-structure)
 4. Submit a pull request!
 
-That's it! More detailed contribution instructions can be found [here](CONTRIBUTING.md)
+That's it! **For detailed contribution instructions, please read our [CONTRIBUTING.md](CONTRIBUTING.md) guide before submitting.**
+
+### What makes a good contribution?
+
+- **Useful snippets** that solve common ServiceNow development challenges
+- **Well-documented code** with clear comments explaining how it works
+- **Proper organization** following the repository structure
+- **Variations** of snippets for different use cases when applicable
 
 ## Leaderboard
 
