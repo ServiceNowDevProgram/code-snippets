@@ -1,5 +1,12 @@
 ![Code Snippets Banner](https://github.com/ServiceNowDevProgram/code-snippets/assets/31702109/f9fa072a-4c0c-426b-8eed-200c6616ff60)
 
+<div align="center">
+
+[![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat-square)](CONTRIBUTING.md)
+[![Hacktoberfest](https://img.shields.io/badge/Hacktoberfest-Participating-orange?style=flat-square)](https://github.com/ServiceNowDevProgram/Hacktoberfest)
+
+</div>
+
 # ServiceNow Code Snippets Repository
 
 Welcome to ServiceNow's Code Snippets community repository, managed by the Developer Program and the sndevs Slack community.
@@ -113,12 +120,16 @@ Core ServiceNow APIs/
 
 We welcome contributions from the ServiceNow developer community! Your knowledge and experience can help others solve common challenges.
 
-To contribute, just follow these steps:
+## 🌐 Contribute from the Web (No Setup Needed!)
 
-1. Fork this repo (you get a point just by forking!)
-2. Create a new branch on your fork
-3. Add/Update the repo following our [folder structure guidelines](#folder-structure)
-4. Submit a pull request!
+This repository has been approved by Hacktoberfest in spirit of learning source control and getting started in your open-source journey. You can contribute directly from your browser without needing a ServiceNow instance:
+
+1. Click **Fork** at the top-right corner of this page
+2. Open the folder where you want to add or edit a file
+3. Click **Add file → Create new file** (or edit an existing one)
+4. Scroll down, add a **commit message**, and select  
+   > "**Create a new branch for this commit and start a pull request**"
+5. Click **Propose changes → Create pull request**
 
 That's it! **For detailed contribution instructions, please read our [CONTRIBUTING.md](CONTRIBUTING.md) guide before submitting.**
 
