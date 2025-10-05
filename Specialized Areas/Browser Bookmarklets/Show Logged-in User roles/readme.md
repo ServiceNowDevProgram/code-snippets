@@ -16,3 +16,6 @@ A simple, client-side bookmarklet to display the current ServiceNow user's detai
 4.  Paste the code into the **URL** or **Address** field of the bookmark
 5.  Save the bookmark
 6.  While on any ServiceNow page, click the bookmark to activate the modal
+
+<img width="1899" height="761" alt="image" src="https://github.com/user-attachments/assets/6dd8e92a-f905-4516-b1be-61e32a4de35c" />
+
