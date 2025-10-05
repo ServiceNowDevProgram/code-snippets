@@ -1,0 +1,18 @@
+# ServiceNow User Info Bookmarklet
+
+A simple, client-side bookmarklet to display the current ServiceNow user's details in a pop-up modal. It's designed for developers, testers, and administrators who need to quickly check a user's name, sys_id, and full list of assigned roles
+
+## Features
+
+* **Displays Key User Info**: Shows Full Name, User Name, and User ID (sys_id)
+* **Shows All Roles**: Lists the complete, sorted array of roles, including inherited roles
+
+
+## How to Use
+
+1.  Create a new bookmark in your browser
+2.  For the name, enter something memorable like **SN User Info**
+3.  Copy the code from the block below
+4.  Paste the code into the **URL** or **Address** field of the bookmark
+5.  Save the bookmark
+6.  While on any ServiceNow page, click the bookmark to activate the modal
