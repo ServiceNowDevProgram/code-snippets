@@ -1,0 +1,1 @@
+In certain scenarios, the same approver might appear multiple times in the approval flow for a Change or Request. This code snippet ensures that if an approver has already approved the request once, any subsequent approval requests assigned to them are automatically marked as approved.
