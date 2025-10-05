@@ -7,8 +7,7 @@ Dynamically change the background color of any choice field on a form based on t
 1. Create an OnChange client script on the desired choice field.
 2. Replace `'your_field_name'` in the script with your actual field name.
 3. Update the `colorMap` with relevant backend choice values and colors.
-4. Optionally update the `labelMap` for tooltips.
-5. Save and test on the form.
+4. Save and test on the form.
 
 ## Key Points
 - Works with any choice field
