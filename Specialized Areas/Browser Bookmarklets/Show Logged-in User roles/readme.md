@@ -12,7 +12,7 @@ A simple, client-side bookmarklet to display the current ServiceNow user's detai
 
 1.  Create a new bookmark in your browser
 2.  For the name, enter something memorable like **SN User Info**
-3.  Copy the code from user-info-bookmarklet.js
+3.  Copy the code from user_info_bookmarklet.js
 4.  Paste the code into the **URL** or **Address** field of the bookmark
 5.  Save the bookmark
 6.  While on any ServiceNow page, click the bookmark to activate the modal
