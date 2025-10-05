@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ApprovalWidgetApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ServiceNow Approval Widget Preview</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
+
+    <style>
+/* ServiceNow Widget CSS Converted to Standard CSS */
+
+/* Hide default filter buttons (Irrelevant for standalone HTML, kept for completeness) */
+#sysapproval_approver-load-filter-button,
+#sysapproval_approver-save-filter-button,
+#sysapproval_approver-sort-filter-button,
+#sysapproval_approver-close-filter-button,
+#sysapproval_approver-add-new-section,
+.filter-footer,
+.or-divider {
+  display: none !important;
+}
+
+/* Container Styling */
+#maindiv {
+  border: 1px solid #d3d3d3;
+  border-radius: 8px;
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 20px; /* Added padding for better viewing */
+}
+
+#my_approval {
+  background-color: #f5f5f5;
+  padding: 12px 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  border-radius: 8px; /* Added border-radius */
+}
+
+#my_approval h4 { /* Changed h3 to h4 based on your HTML */
+  margin: 0;
+  font-weight: 600;
+  color: #333;
+  font-size: 18px;
+  padding-bottom: 6px;
+}
+
+/* Table Styling */
+.table {
+  border: 1px solid #dcdcdc;
+  border-radius: 6px;
+  background-color: #fff;
+  margin-top: 15px; /* Added margin for separation */
+}
+
+.table thead th {
+  background-color: #f0f0f0;
+  font-weight: bold;
+  text-align: left;
+  padding: 8px;
+  border-bottom: 2px solid #d3d3d3;
+}
+
+.table tbody td {
+  padding: 10px;
+  vertical-align: middle;
+  border-top: 1px solid #e0e0e0;
+}
+
+/* Action buttons group */
+.action-buttons {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.action-buttons .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border-radius: 50%;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+  transition: transform 0.2s ease;
+}
+
+.action-buttons .btn:hover {
+  transform: scale(1.1);
+}
+
+/* Pagination Styling */
+.pagination > li > a {
+  color: #007bff;
+  border: 1px solid #ddd;
+  padding: 6px 12px;
+}
+
+.pagination > li.active > a {
+  background-color: #007bff;
+  color: #fff;
+  border-color: #007bff;
+}
+
+.pagination > li.disabled > a {
+  color: #999;
+  cursor: not-allowed;
+}
+
+/* Button colors and sizes */
+.btn {
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 6px;
+  padding: 6px 14px;
+  transition: all 0.2s ease;
+  border: none;
+}
+
+.btn:hover, .btn:focus {
+  opacity: 1.9;
+  transform: translateY(-2px);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.35);
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: #fff;
+  margin-left: 10px;
+}
+
+.btn-warning, .btn-danger {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.btn-info {
+  background-color: #17a2b8;
+  color: #fff;
+}
+
+.btn-default {
+  background-color: #6c757d;
+  color: #fff;
+}
+
+.mt-2 .btn {
+  min-width: 160px;
+  margin-right: 8px;
+  margin-bottom:10px;
+}
+
+.action-buttons .btn-success {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.action-buttons .btn-danger {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.action-buttons .btn-info {
+  background-color: #17a2b8;
+  color: #fff;
+}
+
+#record {
+  cursor: pointer;
+}
+
+/* Remove duplicate bulk action buttons outside the panel */
+#bulkapp {
+    display: none;
+}
+    </style>
+</head>
+<body ng-controller="ApprovalWidgetController as c">
+
+<div id="maindiv">
+    <div>
+        <div id='my_approval'>
+            <h4>My Pending Approvals </h4>
+        </div>
+
+        <div ng-if="data.approvals.length === 0" class="alert alert-info">
+            <p>No pending approvals found.</p>
+        </div>
+
+        <form ng-if="data.approvals.length > 0">
+            <div class="mt-2">
+                <div class="panel panel-{{::options.color}} b" ng-if="data.showApprovals">
+                    <div class="panel-heading">
+                        <h3 class="h4 panel-title">
+                            My Approvals
+                        </h3>
+                    </div>
+
+                    <div class="panel-body">
+
+                        <div ng-if="data.approvals.length > 0" class="mb-3">
+                            <button class="btn btn-primary" ng-click="c.bulkAction('approve')">Approve Selected</button>
+                            <button class="btn btn-warning" ng-click="c.bulkAction('reject')">Reject Selected</button>
+                        </div>
+
+                        <div ng-if="data.approvals.length === 0" class="alert alert-info">
+                            <p>No pending approvals found.</p>
+                        </div>
+
+                        <form ng-if="data.approvals.length > 0">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th><input type="checkbox" ng-model="c.selectAll" ng-change="c.toggleAll()" /></th>
+                                        <th>Approval Task</th>
+                                        <th>Requester</th>
+                                        <th>Created</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="approval in data.approvals">
+                                        <td><input type="checkbox" ng-model="approval.selected" /></td>
+                                        <td>
+                                            <a ng-href="javascript:void(0)" ng-click="c.open_record(approval.sys_id)">
+                                                {{ approval.task.number }} - {{ approval.task.short_description }}
+                                            </a>
+                                        </td>
+                                        <td>{{ approval.task.opened_by }}</td>
+                                        <td>{{ approval.task.start_date }}</td>
+
+                                        <td>
+                                            <button class="btn btn-success btn-sm" ng-click="c.processAction(approval.sys_id, 'approve')" title="Approve">
+                                                <i class="fa fa-check"></i>
+                                            </button>
+                                            <button class="btn btn-danger btn-sm" ng-click="c.processAction(approval.sys_id, 'reject')" title="Reject">
+                                                <i class="fa fa-times"></i>
+                                            </button>
+                                            <button class="btn btn-info btn-sm" ng-click="c.openModal(approval.sys_id)" title="More Info">
+                                                <i class="fa fa-info"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <div class="panel-footer clearfix" ng-if="data.pagination.showPagination">
+                                <a href ng-click="c.changePage(data.pagination.currentPage - 1)" ng-show="data.pagination.currentPage > 1" class="pull-left btn btn-sm btn-default">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                                <a href ng-click="c.changePage(data.pagination.currentPage + 1)" ng-show="data.pagination.currentPage < data.pagination.totalPages" class="pull-right btn btn-sm btn-default">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                </div>
+
+            <div class="text-center mt-3" ng-if="data.totalPages > 1">
+                <ul class="pagination">
+                    <li ng-class="{disabled: data.page === 1}">
+                        <a href ng-click="c.changePage(data.page - 1)">« Prev</a>
+                    </li>
+                    <li ng-repeat="n in [].constructor(data.totalPages) track by $index" ng-class="{active: ($index + 1) === data.page}">
+                        <a href ng-click="c.changePage($index + 1)">{{$index + 1}}</a>
+                    </li>
+                    <li ng-class="{disabled: data.page === data.totalPages}">
+                        <a href ng-click="c.changePage(data.page + 1)">Next »</a>
+                    </li>
+                </ul>
+            </div>
+        </form>
+    </div>
+
+    <script type="text/ng-template" id="moreInfoModal.html">
+        <div class="modal-header">
+            <h4 class="modal-title">Request More Information</h4>
+        </div>
+        <div class="modal-body">
+            <div class="form-group">
+                <label for="moreInfoComments">Comments</label>
+                <textarea id="moreInfoComments"
+                    class="form-control"
+                    ng-model="c.data.more_info_comments"
+                    placeholder="Enter the information you require..."
+                    rows="4"></textarea>
+                <div ng-if="c.error" class="alert alert-danger">{{c.error}}</div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-default" ng-click="c.closeModal()">Cancel</button>
+            <button class="btn btn-primary" ng-click="c.submitMoreInfo()">Submit</button>
+        </div>
+    </script>
+</div>
+
+<script>
+    // Initialize the Angular application and inject dependencies
+    angular.module('ApprovalWidgetApp', ['ui.bootstrap'])
+        .controller('ApprovalWidgetController', ['$scope', '$uibModal', function($scope, $uibModal) {
+            var c = this;
+
+            // --- Dummy Data & Setup (Simulating Server Script Initial Load) ---
+            $scope.data = {
+                // Dummy approvals data
+                approvals: [
+                    {
+                        sys_id: 'a1b2c3d4e5f6g7h8i9j0',
+                        selected: false,
+                        task: {
+                            number: 'RITM001001',
+                            short_description: 'Request for New Laptop (MacBook Pro)',
+                            opened_by: 'John Doe',
+                            start_date: '2025-10-01'
+                        },
+                        // The original HTML had two different data structures, using the second one for display
+                        approvering_num: 'RITM001001',
+                        approving_short_description: 'Request for New Laptop (MacBook Pro)',
+                        requester: 'John Doe',
+                        created: '2025-10-01'
+                    },
+                    {
+                        sys_id: 'b1c2d3e4f5g6h7i8j9k0',
+                        selected: false,
+                        task: {
+                            number: 'CHG0005001',
+                            short_description: 'Upgrade Database Server RAM',
+                            opened_by: 'Jane Smith',
+                            start_date: '2025-09-28'
+                        },
+                        approvering_num: 'CHG0005001',
+                        approving_short_description: 'Upgrade Database Server RAM',
+                        requester: 'Jane Smith',
+                        created: '2025-09-28'
+                    },
+                     {
+                        sys_id: 'l3m4n5o6p7q8r9s0t1u2',
+                        selected: false,
+                        task: {
+                            number: 'RITM001002',
+                            short_description: 'Request for Software License (Adobe Creative Cloud)',
+                            opened_by: 'Peter Jones',
+                            start_date: '2025-10-05'
+                        },
+                        approvering_num: 'RITM001002',
+                        approving_short_description: 'Request for Software License (Adobe Creative Cloud)',
+                        requester: 'Peter Jones',
+                        created: '2025-10-05'
+                    }
+                ],
+                showApprovals: true,
+                totalPages: 3,
+                page: 1,
+                pagination: {
+                    showPagination: true,
+                    currentPage: 1,
+                    totalPages: 3,
+                    hasPrevious: true,
+                    hasNext: true
+                },
+                more_info_comments: '',
+                Record_sys_id: '',
+            };
+            c.options = { color: 'default' }; // For panel-default styling
+            c.error = '';
+
+            // --- Server Update Simulation (Simulating c.server.update()) ---
+            // In a real widget, this sends an 'input' object to the server script and updates 'data'.
+            // Here, we simulate the action and update the $scope.data directly.
+            c.server = {
+                update: function() {
+                    return {
+                        then: function(callback) {
+                            var response = { data: { success: false } }; // Default response
+
+                            // Handle Bulk Actions
+                            if ($scope.data.bulkSysIds && $scope.data.bulkActionType) {
+                                var action = $scope.data.bulkActionType;
+                                $scope.data.bulkSysIds.forEach(function(sysId) {
+                                    // Remove the approved/rejected item from the list
+                                    $scope.data.approvals = $scope.data.approvals.filter(function(item) {
+                                        return item.sys_id !== sysId;
+                                    });
+                                });
+                                alert('Simulated Bulk ' + action.toUpperCase() + ' for ' + $scope.data.bulkSysIds.length + ' item(s).');
+                                $scope.data.bulkSysIds = null;
+                                $scope.data.bulkActionType = null;
+                                response.data.success = true;
+                            }
+                            
+                            // Handle Single Actions
+                            if ($scope.data.SysId && $scope.data.Action) {
+                                var action = $scope.data.Action;
+                                var sysId = $scope.data.SysId;
+                                // Remove the approved/rejected item from the list
+                                $scope.data.approvals = $scope.data.approvals.filter(function(item) {
+                                    return item.sys_id !== sysId;
+                                });
+                                alert('Simulated Single ' + action.toUpperCase() + ' for ' + sysId);
+                                $scope.data.SysId = null;
+                                $scope.data.Action = null;
+                                response.data.success = true;
+                            }
+                            
+                            // Handle More Info Action
+                            if ($scope.data.action_type === 'more_info') {
+                                alert('Simulated More Info Request for ' + $scope.data.more_info_sys_id + ' with comment: "' + $scope.data.more_info_comments_to_send + '"');
+                                // In a real widget, the server might remove it from the list here too
+                                $scope.data.approvals = $scope.data.approvals.filter(function(item) {
+                                    return item.sys_id !== $scope.data.more_info_sys_id;
+                                });
+                                response.data.success = true;
+                                $scope.data.action_type = null; // Clear action
+                            }
+
+
+                            if (callback) {
+                                callback(response);
+                            }
+                        }
+                    };
+                }
+            };
+            
+            // --- Client Script Functions ---
+
+            // Pagination (Simplified)
+            c.changePage = function(page) {
+                if (page < 1 || page > $scope.data.totalPages) return;
+                $scope.data.page = page;
+                $scope.data.pagination.currentPage = page;
+                // In a real widget, you'd call c.server.update() here to fetch new data
+                alert('Simulated change to page ' + page + '. No new data fetched in this demo.');
+            };
+
+            // Toggle All Checkboxes
+            c.toggleAll = function() {
+                angular.forEach($scope.data.approvals, function(item) {
+                    item.selected = c.selectAll;
+                });
+            };
+            
+            // Single Action (Approve/Reject)
+            c.processAction = function(sys_id, action) {
+                $scope.data.SysId = sys_id;
+                $scope.data.Action = action;
+                c.server.update().then(function(response) {
+                    // Update the view after action is processed
+                    if (response.data.success) {
+                        // The server simulation updates the approvals array
+                        // No need for spUtil.addInfoMessage in a local demo, alert is used in simulation
+                    }
+                    $scope.data.Action = '';
+                    $scope.data.SysId = '';
+                });
+            };
+
+            // Bulk Action (Approve Selected/Reject Selected)
+            c.bulkAction = function(action) {
+                var selectedItems = $scope.data.approvals.filter(function(item) {
+                    return item.selected;
+                });
+
+                if (selectedItems.length === 0) {
+                    alert("No records selected.");
+                    return;
+                }
+
+                var sysIds = selectedItems.map(function(item) {
+                    return item.sys_id;
+                });
+
+                $scope.data.bulkSysIds = sysIds;
+                $scope.data.bulkActionType = action;
+                c.server.update();
+            };
+
+            // Open Record (Placeholder)
+            c.open_record = function(id) {
+                alert('Simulated record opening for sys_id: ' + id);
+            };
+
+            // Modal control
+            c.openModal = function(my_id) {
+                $scope.c.data.Record_sys_id = my_id; // Set record ID on the scope
+                $scope.c.data.more_info_comments = '';
+                c.error = '';
+
+                c.modalInstance = $uibModal.open({
+                    templateUrl: 'moreInfoModal.html',
+                    scope: $scope
+                });
+            };
+
+            c.closeModal = function() {
+                if (c.modalInstance) {
+                    c.modalInstance.dismiss('cancel');
+                }
+            };
+
+            // Submit "More Info Required"
+            c.submitMoreInfo = function() {
+                $scope.data.approval_comment = $scope.data.more_info_comments;
+
+                if (!$scope.data.approval_comment) {
+                    c.error = "Please enter comments detailing the required information.";
+                    return;
+                }
+                c.error = ''; // Clear error if validation passes
+
+                // Set additional fields for server simulation
+                $scope.data.action_type = 'more_info';
+                $scope.data.more_info_sys_id = $scope.data.Record_sys_id;
+                $scope.data.more_info_comments_to_send = $scope.data.approval_comment;
+
+                c.server.update().then(function(response) {
+                    if (response.data && response.data.success) {
+                        // No need for spUtil.addInfoMessage, alert used in simulation
+                    }
+                    $scope.data.more_info_comments = '';
+                    $scope.data.approval_comment = '';
+                    c.closeModal();
+                });
+            };
+        }]);
+</script>
+
+</body>
+</html>
