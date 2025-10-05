@@ -1,6 +1,6 @@
 Description:
 This UI Action enables users to generate and download the current record in PDF format from the workspaces. It is particularly useful in the Incident table for PIR (Post-Incident Review) documents after resolution.
-Currenty we don't have any option to export the record in the PDF fromat from Workspace. Users must go to the native/classic view to export the record.
+Currenty we don't have any option to export the record in the PDF format from Workspace. Users must go to the native/classic view to export the record.
 
 Pre-requisite:
 A dedicated form view must be created containing all relevant fields such as Resolution Code, Resolution Notes, Assignment Group, Assigned To, and others required for comprehensive reporting.
