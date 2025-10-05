@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+    <g:ui_form>
+        <table>
+            <tr>
+                <td style="width:25%">
+                    <g:form_label>
+                        Additional note:
+                    </g:form_label>
+                </td>
+                <td style="width:60%">
+                    <input type="text" aria-label="Print your name"   name="notes" id="notes" maxlength="25"/>
+                </td>
+            </tr>
+            <tr>
+                <td style="width:25%">
+                    <g:form_label>
+                        Manager :
+                    </g:form_label>
+                </td>
+                <td style="width:60%">
+                    <g:ui_reference name="user_ref" id="user_ref" query="user_nameSTARTSWITHA" table="sys_user"/>
+                </td>
+            </tr>
+            <tr>
+                <td style="width:25%">
+                    <g:form_label>
+                        Confirm category :
+                    </g:form_label>
+                </td>
+                <td style="width:60%">
+                    <g:ui_choicelist name="my_category" id="my_category" table="incident" mandatory="true"
+                        field="category" query="active=true"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <g:dialog_buttons_ok_cancel ok_id="submitData" ok="return continueOK()" ok_type="button"
+                        ok_text="${gs.getMessage('Okay')}" ok_style_class="btn btn-primary" cancel_type="button" cancel_id="cancelData"
+                        cancel_style_class="btn-btn-default" cancel="return continueCancel()"/>
+                </td>
+            </tr>
+        </table>
+    </g:ui_form>
+</j:jelly>
