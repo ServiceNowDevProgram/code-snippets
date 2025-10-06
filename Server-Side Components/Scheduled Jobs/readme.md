@@ -1,0 +1,1 @@
+Find out all the cases with the difference in their create date and current date and put them in different buckets of their age. Then you can report on the aging. With this you will be able to run the Bucket Group reporting on tables without using PA.
