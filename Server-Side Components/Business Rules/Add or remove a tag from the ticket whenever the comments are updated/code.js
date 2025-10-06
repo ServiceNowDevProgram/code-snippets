@@ -1,25 +1,39 @@
-//Business Rule: After update on the incident table
-//Condition: Additional comments changes
-//Create on global Tag record ex: Comments added
+// Business Rule: After Update on Incident table
+// Condition: Changes to Additional Comments field
+// Purpose: Add or remove a tag based on whether the update was made by the caller
 
-(function executeRule(current, previous /*null when async*/ ) {
+(function executeRule(current, previous /*null when async*/) {
 
-    var caller = current.caller_id.user_name;
-// Add tag to the incident record if the comments is updated by the caller
-    if (current.sys_updated_by == caller) {
-        var add_tag_entry = new GlideRecord('label_entry');
-        add_tag_entry.initialize();
-        add_tag_entry.label = '<sys_id  of the Tag>';
-        add_tag_entry.table = 'incident';
-        add_tag_entry.table_key = current.sys_id;
-        add_tag_entry.insert();
+    // Replace this with the actual sys_id of the Tag record (e.g., for "Comments added")
+    var TAG_SYS_ID = '<sys_id_of_the_Tag>';
+
+    var callerUsername = current.caller_id.user_name;
+    var updatedBy = current.sys_updated_by;
+
+    if (updatedBy == callerUsername) {
+        // Add tag if caller added the comment
+        var tagGR = new GlideRecord('label_entry');
+        tagGR.addQuery('label', TAG_SYS_ID);
+        tagGR.addQuery('table_key', current.sys_id);
+        tagGR.query();
+
+        if (!tagGR.hasNext()) {
+            var addTag = new GlideRecord('label_entry');
+            addTag.initialize();
+            addTag.label = TAG_SYS_ID;
+            addTag.table = 'incident';
+            addTag.table_key = current.sys_id;
+            addTag.insert();
+        }
     } else {
-// Remove tag from the incident record if the agent responds back to the caller
-        var remove_tag_entry = new GlideRecord('label_entry');
-        remove_tag_entry.addEncodedQuery("label=<sys_id of the Tag>^table_key=" + current.sys_id);
-        remove_tag_entry.query();
-        if (remove_tag_entry.next()) {
-            remove_tag_entry.deleteRecord();
+        // Remove tag if someone else (e.g., fulfiller) responded
+        var removeTag = new GlideRecord('label_entry');
+        removeTag.addQuery('label', TAG_SYS_ID);
+        removeTag.addQuery('table_key', current.sys_id);
+        removeTag.query();
+
+        while (removeTag.next()) {
+            removeTag.deleteRecord();
         }
     }
 
