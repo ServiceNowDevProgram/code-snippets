@@ -1,19 +1,21 @@
-//Business Rule: before update on the incident table
-//Condition: changing state to 'In Progress'
-(function executeRule(current, previous /*null when async*/) {
-    var checklistGR = new GlideRecord("checklist");
-    checklistGR.addQuery("document", current.sys_id);
-    checklistGR.query();
+// Business Rule: Before Update on Incident table
+// Condition: current.state == 2 (In Progress)
 
-    while (checklistGR.next()) {
+(function executeRule(current, previous /*null when async*/) {
+    // Only run if state is changing to 'In Progress'
+    if (current.state == 2 && previous.state != 2) {
+
+        // Query checklist items tied to this record that are not complete
         var itemGR = new GlideRecord("checklist_item");
-        itemGR.addQuery("checklist", checklistGR.sys_id);
-        itemGR.addQuery("complete", false);
+        itemGR.addQuery("document", current.sys_id);      // Matches the current record
+        itemGR.addQuery("complete", false);               // Only incomplete items
         itemGR.query();
 
+        // If any incomplete item exists, abort the action
         if (itemGR.hasNext()) {
-            gs.addErrorMessage('Checklist has incomplete items. Please complete all before assigning it back.');
+            gs.addErrorMessage("This record has incomplete checklist items. Please complete them before proceeding.");
             current.setAbortAction(true);
         }
     }
 })(current, previous);
+
