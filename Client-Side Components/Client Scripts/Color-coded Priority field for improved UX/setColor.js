@@ -1,5 +1,7 @@
 function onChange(control, oldValue, newValue, isLoading) {
+  if (isLoading) return; // Skip when loading the form
 
+  // Map backend choice values to colors
   var colorMap = {
     '1': '#e74c3c',  // Critical - strong red
     '2': '#e67e22',  // High - bright orange
@@ -8,8 +10,10 @@ function onChange(control, oldValue, newValue, isLoading) {
     '5': '#27ae60'   // Planning - green
   };
 
-  var priorityField = g_form.getControl('priority');
-  if (!priorityField) return;
+  // Replace 'priority' with your field name
+  var fieldControl = g_form.getControl('priority');
+  if (!fieldControl) return;
 
-  priorityField.style.backgroundColor = colorMap[newValue] || '';
+  // Apply background color based on selected value
+  fieldControl.style.backgroundColor = colorMap[newValue] || '';
 }
