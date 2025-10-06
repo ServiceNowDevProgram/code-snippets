@@ -1,0 +1,26 @@
+//Populate Incident Assignment group based on Category
+//When user selects catgeory then business rule script it will populate assignment group related to the category
+//Before BR
+(function executeRule(current, previous /*null when async*/) {
+
+	// mapping cat to assignment group
+	if (!current.category){
+		retrun;
+	}
+	var catToGroup = {
+		'hardware':'Hardware',
+		'software':'Software',
+		'network':'Network',
+		'database':'Database'
+	};
+	var groupName= catToGroup[current.category];
+	if(!groupName){
+		return; //exit if category is not mapped
+	}
+var grpName =new GlideRecord('sys_user_group');
+grpName.addQuery('name',groupName);
+grpName.query();
+if (grpName.next()){
+	current.assignment_group = grpName.sys_id;
+}
+})(current, previous);
