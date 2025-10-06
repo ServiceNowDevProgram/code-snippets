@@ -15,6 +15,7 @@ Glide AJAX enabled: checked
 
 **Implementation:**
 Place this script on the Problem table with the condition that it triggers on change of the Parent field. When the selected parent record is from the Incident table, it fetches field values from the Incident using GlideAjax and sets them on the Problem form.
+
 Fields Mapped:
 •	Configuration Item
 •	Priority
