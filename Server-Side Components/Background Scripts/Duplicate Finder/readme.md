@@ -31,29 +31,42 @@ Designed to be executed via **Scripts - Background** or as a **Fix Script**, thi
 var tableName = 'incident'; // Change this to your table
 var fieldName = 'caller_id'; // Change this to your field
 
-if (!tableName || !fieldName) {
-  gs.error('Table name and field name must be provided.');
-} else {
-  var ga = new GlideAggregate(tableName);
-  ga.addAggregate('COUNT');
-  ga.groupBy(fieldName);
-  ga.query();
+// --- Validation ---
+if (!gs.tableExists(tableName)) {
+  gs.error('❌ Table "' + tableName + '" does not exist.');
+  return;
+}
 
-  var hasDuplicates = false;
-  gs.print(`Duplicate values found in table: ${tableName}, field: ${fieldName}\n`);
+var gr = new GlideRecord(tableName);
+gr.initialize();
+if (!gr.isValidField(fieldName)) {
+  gs.error('❌ Field "' + fieldName + '" does not exist on table "' + tableName + '".');
+  return;
+}
 
-  while (ga.next()) {
-    var count = parseInt(ga.getAggregate('COUNT'), 10);
-    if (count > 1) {
-      hasDuplicates = true;
-      gs.print(`Value: ${ga.getValue(fieldName)} | Count: ${count}`);
-    }
-  }
+// --- Find Duplicates ---
+var ga = new GlideAggregate(tableName);
+ga.addAggregate('COUNT', fieldName);
+ga.groupBy(fieldName);
+ga.addHaving('COUNT', '>', 1);
+ga.addNotNullQuery(fieldName);
+ga.query();
 
-  if (!hasDuplicates) {
-    gs.print('No duplicates found.');
+var hasDuplicates = false;
+gs.info('🔍 Checking duplicates in table: ' + tableName + ', field: ' + fieldName);
+
+while (ga.next()) {
+  var count = parseInt(ga.getAggregate('COUNT', fieldName), 10);
+  if (count > 1) {
+    hasDuplicates = true;
+    gs.info('⚠️ Value: ' + ga.getDisplayValue(fieldName) + ' | Count: ' + count);
   }
 }
+
+if (!hasDuplicates) {
+  gs.info('✅ No duplicates found for "' + fieldName + '" on "' + tableName + '".');
+}
+
 
 🛠️ How to Use
 
@@ -99,17 +112,6 @@ Server-Side Components/
 ✔️ Code is focused, relevant, and self-contained
 ✔️ Does not include XML exports or sensitive data
 ✔️ Uses ServiceNow-native APIs (GlideAggregate)
-
-👨‍💻 Author
-
-Contributor: @Shweyy123
-Pull Request: #1846
-Script Name: duplicate_finder.js
-Compatibility: Applicable to any ServiceNow version supporting GlideAggregate
-
-📘 License
-
-This script is open-source and provided for educational and development use. Always test in sub-production environments before applying to production data.
 
 🧩 Optional Enhancements
 
