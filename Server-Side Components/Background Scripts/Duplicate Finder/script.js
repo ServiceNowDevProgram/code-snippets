@@ -1,64 +1,52 @@
-// Update ONLY below values to find duplicates
-var tableName = 'incident'; // ADD: Table you want for duplicates
-var fieldName = 'short_description';	// ADD: Field that you want to check for duplicates
+// Duplicate Record Finder
+// Usage: Run in Scripts - Background or as a Fix Script
+// Update the variables 'tableName' and 'fieldName' below before running
+
+var tableName = 'incident';      // Set your target table here
+var fieldName = 'short_description';  // Set the target field to check duplicates
 
 findDuplicates(tableName, fieldName);
 
 function findDuplicates(tableName, fieldName) {
-    /**************************************/
-    /*** Basic error handling on inputs ***/
-    /**************************************/
-
-    // Check if table exists
+    // Validate that the table exists
     if (!gs.tableExists(tableName)) {
-        // MODIFIED: Switched to string concatenation
         gs.info('Table "' + tableName + '" does not exist.');
         return;
     }
 
-    // Check if field exists
+    // Validate that the field exists on the table
     var gr = new GlideRecord(tableName);
     gr.initialize();
     if (!gr.isValidField(fieldName)) {
-        gs.print('No field called "' + fieldName + '" on the "' + tableName + '" table.');
+        gs.info('Field "' + fieldName + '" does not exist on table "' + tableName + '".');
         return;
     }
 
-    /***************************************/
-    /*********** Find duplicates ***********/
-    /***************************************/
-    var duplicateJson = {}; // Store the duplicate records
-    var duplicateGroupCount = 0; // Counts the number of groups of duplicates
+    // Prepare GlideAggregate to find duplicates
+    var ga = new GlideAggregate(tableName);
+    ga.addAggregate('COUNT', fieldName);
+    ga.groupBy(fieldName);
+    ga.addHaving('COUNT', '>', 1);        // More than 1 means duplicates exist
+    ga.addNotNullQuery(fieldName);        // Ignore null or empty values
+    ga.query();
 
-    var duplicateAggregate = new GlideAggregate(tableName);
-    duplicateAggregate.addAggregate('COUNT', fieldName);
-    duplicateAggregate.groupBy(fieldName);
-    duplicateAggregate.addHaving('COUNT', '>', 1); // More than 1 means it is a duplicate
-    duplicateAggregate.addNotNullQuery(fieldName); // Ignore records where the field is empty
-    duplicateAggregate.query();
+    var duplicateCount = 0;
+    var duplicates = {};
 
-    while (duplicateAggregate.next()) {
-        duplicateGroupCount++;
-        var fieldValue = duplicateAggregate.getValue(fieldName);
-        var countInGroup = duplicateAggregate.getAggregate('COUNT', fieldName);
-        duplicateJson[fieldValue] = countInGroup;
+    while (ga.next()) {
+        var value = ga.getValue(fieldName);
+        var count = parseInt(ga.getAggregate('COUNT', fieldName), 10);
+        duplicates[value] = count;
+        duplicateCount++;
     }
 
-    /***************************************/
-    /********** Print the results **********/
-    /***************************************/
-
-    // No duplicates found
-    if (Object.keys(duplicateJson).length === 0) {
-        gs.print('No duplicates found for field "' + fieldName + '" on table "' + tableName + '".');
+    if (duplicateCount === 0) {
+        gs.info('No duplicates found for field "' + fieldName + '" on table "' + tableName + '".');
         return;
     }
 
-    // Duplicates were found
-    gs.print("Found " + duplicateGroupCount + " groups of duplicates:");
-    
-    for (var key in duplicateJson) {
-        gs.print('Value "' + key + '" has ' + duplicateJson[key] + ' occurrences.');
+    gs.info('Found ' + duplicateCount + ' groups of duplicates for field "' + fieldName + '" on table "' + tableName + '":');
+    for (var val in duplicates) {
+        gs.info('Value "' + val + '" occurs ' + duplicates[val] + ' times.');
     }
 }
-
