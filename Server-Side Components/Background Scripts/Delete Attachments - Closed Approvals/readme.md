@@ -1,0 +1,2 @@
+Many organizations still prefer copying over the attachments from RITM or any ticket type that has approval required to its corresponding approvals by using GlideSysAttachment.copy() 
+This ideally makes sense till the time approval is needed however, when approvals are actioned (approved/rejected) there is no need for attachments to stay on the approval record till eternity (it will be stored at its ticket level). Use this script as a scheduled script to remove attachments from closed (approved/rejected) approval records and help consume less storage.
