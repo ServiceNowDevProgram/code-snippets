@@ -5,7 +5,7 @@ If the dashboard has more reports i.e 20+, then it'll take a considerable amount
 To reduce the manual effort, we can use this custom logic to share all the reports from the particular dashboard at a time.
 
 **Pre-requisite:**
-A database view which shows all the reports shared with atleast one dashboard need to be created. 
+A database view which shows the reports shared with atleast one dashboard need to be created. 
 ServiceNow community article link which explains how to build one..(Thanks to Adam Stout for this)
 https://www.servicenow.com/community/performance-analytics-blog/view-reports-on-a-dashboard-and-dashboards-using-a-report/ba-p/2271548
 
