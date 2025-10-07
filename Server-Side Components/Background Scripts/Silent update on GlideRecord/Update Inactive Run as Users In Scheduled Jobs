@@ -1,0 +1,13 @@
+/* This script will tackel the healthscan finding.
+Active user will replace inactibe run as users.
+*/
+
+var activeUser = gs.getProperty('active.run.as.user'); // sys_id of active user.
+var schJobs = new GlideRecord('sysauto'); // Scheduled jon table, same scripts can be used for sysauto_pa table
+schJobs.addEncodedQuery('run_as.active=false');
+schJobs.query();
+while (schJobs.next()) {
+    schJobs.setValue('run_as', activeUser);
+    schJobs.autoSysFields(false);
+    schJobs.update();
+}
