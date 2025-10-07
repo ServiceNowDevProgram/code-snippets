@@ -12,7 +12,7 @@ function onChange(control, oldValue, newValue, isLoading, isTemplate) {
       daysToAdd = 3; 
     else if(g_form.getValue('type') =='emergency')
       daysToAdd = 1;
-    var ga = new GlideAjax("addBusinessDays"); //Calling the script include
+    var ga = new GlideAjax("addBusinessDays"); //Calling the add business days script include, which is in the Server-Side Components/Script Includes/Add Business Days/addBusinessDays.js
     ga.addParam('sysparm_name', 'addDays');
     ga.addParam('sysparm_days', daysToAdd); 
     ga.addParam('sysparm_date', newValue);
