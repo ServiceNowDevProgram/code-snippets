@@ -4,6 +4,8 @@ This can be used anywhere within the server side scripts like fix scripts, backg
 
 **Pre-requisite:**
 A schedule record with valid schedule entries should be created in the cmn_schedule table
+A business hours value per day need to be configured
+In this sample, the business hours per day is configured as 8 hours i.e 9AM - 5PM.
 
 **Sample:**
 var daysToAdd = 4; // No of days need to be added
@@ -11,4 +13,4 @@ var script = new CaclculateDueDate().calculateDueDate(new GlideDateTime(),daysTo
 gs.print(script);
 
 **Output:**
-*** Script: 2025-10-09 11:23:34
+*** Script: 2025-10-13 13:56:07
