@@ -2,6 +2,8 @@
 This was a client requirement, where for a particular group they wanted a task generated to log some internal extra work they were doing, during some of their internal transition.
 This was done through a scheduled job (daily) for the required period and then the scheduled job was deactivated.
 
+This can be further used in scenarios where organizations want to log some extra work in a different record.
+
 sys_id in script is of the group being used.
 */
 
