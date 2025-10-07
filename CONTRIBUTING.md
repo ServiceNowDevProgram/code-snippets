@@ -31,42 +31,77 @@ If you plan to submit another pull request while your original is still pending,
 - **Descriptive Pull Request Titles**: Your pull request must have explicit and descriptive titles that accurately represent the changes made.
 - **Scope Adherence**: Changes that fall outside the described scope will result in the entire pull request being rejected.
 - **Quality Over Quantity**: Low-effort or spam pull requests will be marked accordingly.
-- **Expanded Snippets**: Code snippets reused from the [ServiceNow Documentation](https://docs.servicenow.com/) or [API References](https://developer.servicenow.com/dev.do#!/reference/) are acceptable only if they are expanded in a meaningful way (e.g., with additional context, documentation, or variations). Remember: *“QUANTITY IS FUN, QUALITY IS KEY.”*
+- **Expanded Snippets**: Code snippets reused from the [ServiceNow Documentation](https://docs.servicenow.com/) or [API References](https://developer.servicenow.com/dev.do#!/reference/) are acceptable only if they are expanded in a meaningful way (e.g., with additional context, documentation, or variations). Remember: *"QUANTITY IS FUN, QUALITY IS KEY."*
 - **Relevance**: Code should be relevant to ServiceNow Developers.
 - **ES2021 Compatibility**: While ES2021 is allowed, we encourage you to disclose if your code is using ES2021 features, as not everyone may be working with ES2021-enabled applications.
 
+## Core Documentation File Changes
+
+**IMPORTANT**: For changes to core documentation files (README.md, CONTRIBUTING.md, LICENSE, etc.), contributors must:
+
+1. **Submit an Issue First**: Before making any changes to core documentation files, create an issue describing:
+   - What you intend to edit
+   - Why the change is needed
+   - Your proposed approach
+
+2. **Get Assignment**: Wait to be assigned to the issue by a maintainer before submitting a PR.
+
+3. **Reference the Issue**: Include the issue number in your PR title and description.
+
+This process helps prevent merge conflicts when multiple contributors want to update the same documentation files and ensures all changes align with the project's direction.
+
 ## Repository Structure
+
+**IMPORTANT**: The repository has been reorganized into major categories. All new contributions MUST follow this structure for PR approval.
 
 Please follow this directory structure when organizing your code snippets:
 
-- **Top-Level Folders**: These should represent categories of snippets (e.g., `fruits`, `vegetables`).
-- **Sub-Folders**: Each top-level folder should contain a sub-folder for **each code snippet**.
-- **Snippet Folder Contents**: Within each sub-folder, include:
-  - A `readme.md` file that describes the code snippet.
+- **Top-Level Categories**: These are fixed categories that represent major areas of ServiceNow development:
+  - `Core ServiceNow APIs/` - GlideRecord, GlideAjax, GlideSystem, GlideDate, etc.
+  - `Server-Side Components/` - Background Scripts, Business Rules, Script Includes, etc.
+  - `Client-Side Components/` - Client Scripts, Catalog Client Scripts, UI Actions, etc.
+  - `Modern Development/` - Service Portal, NOW Experience, GraphQL, ECMAScript 2021
+  - `Integration/` - RESTMessageV2, Import Sets, Mail Scripts, MIDServer, etc.
+  - `Specialized Areas/` - CMDB, ITOM, Performance Analytics, ATF Steps, etc.
+
+- **Sub-Categories**: Each top-level category contains sub-folders for specific ServiceNow technologies or use cases.
+- **Snippet Folders**: Each sub-category contains folders for **each code snippet**.
+- **Snippet Folder Contents**: Within each snippet folder, include:
+  - A `README.md` file that describes the code snippet.
   - Individual files for each variant of the code snippet.
 
-### Example Structure
+### New Structure Example
 
 ```
-.github
-fruits
-  ├── apples
-  │   ├── readme.md         # Description of the apples code snippet
-  │   ├── apples.js         # First code snippet for apples
-  │   └── fijiapples.js     # Variation of the apples snippet
-  └── kiwi
-      ├── readme.md         # Description of the kiwi code snippet
-      └── kiwi.js           # Code snippet for kiwi
-vegetables
-  ├── carrots
-  │   ├── readme.md         # Description of the carrots code snippet
-  │   └── carrots.js        # Code snippet for carrots
-  └── potatoes
-      ├── readme.md         # Description of the potatoes code snippet
-      ├── potatoes.js       # Original code snippet for potatoes
-      ├── yukongoldpotato.js # Variant for Yukon Gold potatoes
-      └── tatertots.js      # Variant for tater tots
+Core ServiceNow APIs/
+  ├── GlideRecord/
+  │   ├── Query Performance Optimization/
+  │   │   ├── README.md         # Description of the optimization snippet
+  │   │   ├── basic_query.js    # Basic query example
+  │   │   └── optimized_query.js # Performance-optimized version
+  │   └── Reference Field Handling/
+  │       ├── README.md         # Description of reference handling
+  │       └── reference_query.js # Reference field query example
+  └── GlideAjax/
+      ├── Async Data Loading/
+      │   ├── README.md         # Description of async loading
+      │   ├── client_script.js  # Client-side implementation
+      │   └── script_include.js # Server-side Script Include
+Server-Side Components/
+  ├── Business Rules/
+  │   ├── Auto Assignment Logic/
+  │   │   ├── README.md         # Description of auto assignment
+  │   │   └── assignment_rule.js # Business rule implementation
 ```
+
+### Category Placement Guidelines
+
+- **Core ServiceNow APIs**: All Glide* APIs and core ServiceNow JavaScript APIs
+- **Server-Side Components**: Code that runs on the server (Business Rules, Background Scripts, etc.)
+- **Client-Side Components**: Code that runs in the browser (Client Scripts, UI Actions, etc.)
+- **Modern Development**: Modern ServiceNow development approaches and frameworks
+- **Integration**: External system integrations, data import/export, and communication
+- **Specialized Areas**: Domain-specific functionality (CMDB, ITOM, Testing, etc.)
 
 ## Final Checklist
 
