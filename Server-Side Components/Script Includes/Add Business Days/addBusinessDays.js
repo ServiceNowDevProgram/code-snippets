@@ -1,4 +1,4 @@
-// Takes the number of days as a parameter
+// Takes the number of days as a parameter, and the start date
 var addBusinessDays = Class.create();
 var schedule = new GlideSchedule('090eecae0a0a0b260077e1dfa71da828');
 addBusinessDays.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
