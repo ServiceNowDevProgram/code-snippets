@@ -1,3 +1,7 @@
+/* This script will glide all active incidents assigned to a particular group and create incident task with same group.
+    This make use of applyEncodedQuery.
+*/
+
 1.In any GlideRecord query retrieve query using getEncodedQuery()
 
 2.Apply this encoded query to create/update records (you can apply this query to other tables if query is appropriate).
