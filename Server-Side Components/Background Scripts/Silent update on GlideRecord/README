@@ -1,0 +1,3 @@
+This Script will help to improve healthscan score.
+Inactive users set as "Run as" in scheduled jobs are flagged as health scan findings.
+This script will update the inactive users will active user set in system proprty.
