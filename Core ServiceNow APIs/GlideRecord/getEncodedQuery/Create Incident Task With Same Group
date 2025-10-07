@@ -1,12 +1,12 @@
 var incRec = new GlideRecord('incident');
-incRec.addEncodedQuery('assignment_group=287ee6fea9fe198100ada7950d0b1b73^active=true'); // encoded Query to get incients assigned to particular group
+incRec.addEncodedQuery('assignment_group=287ee6fea9fe198100ada7950d0b1b73^active=true'); // sys_id of assignment group is used. Return active incidents assigned to group.
 incRec.query();
-var eQry = incRec.getEncodedQuery();
+var eQry = incRec.getEncodedQuery(); // return the encoded query, applied above.
 
 while(incRec.next()){
 	var iTask = new GlideRecord('incident_task');
 	iTask.initialize();
-	iTask.applyEncodedQuery(eQry);
+	iTask.applyEncodedQuery(eQry); // applies the encoded query fields to new incident task record.
 	iTask.setValue('incident', incRec.getUniqueValue());
 	iTask.insert();
 }
