@@ -1,6 +1,6 @@
-# Fixscript for autonumbering issues
-# This script will be run in global using scripts Background
-# Update the tableName per requirement
+// Fix script for autonumbering issues
+// This script will be run in global using scripts Background
+// Update the tableName per requirement
 
 var nm = new NumberManager(tableName);
 
@@ -15,8 +15,6 @@ grTableName.orderBy('sys_created_on');
 grTableName.query();
 
 while (grTableName.next()) {
-	
-grTableName.number = 
-nm.getNextObjNumberPadded();
-	
-grTableName.update();
+	grTableName.number = nm.getNextObjNumberPadded();
+	grTableName.update();
+}
