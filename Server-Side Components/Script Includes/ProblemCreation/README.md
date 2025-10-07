@@ -1,2 +1,3 @@
-This script is a ServiceNow Business Rule that automatically creates a Problem record whenever an Incident is created with the category set to "hardware".
-It helps in ensuring that hardware-related incidents are tracked and analyzed properly through Problem Management.
+This script is a ServiceNow Business Rule that creates a Problem record whenever an Incident is created with the category "hardware".
+
+Note: Not every hardware-related incident requires a problem record — this script is just an example to show how such automation can be set up.
