@@ -1,5 +1,5 @@
 # PR Description: 
-<replace this with your description>
+replace this with your description
 
 # Pull Request Checklist
 
