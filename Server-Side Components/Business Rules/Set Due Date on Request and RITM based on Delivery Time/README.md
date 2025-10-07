@@ -17,6 +17,5 @@ To address this, create two business rules to set due dates of RITM and Request:
 
 **Benefits:**
 - Ensures accurate due dates for both RITMs and Requests.
-- Improves SLA tracking and reporting.
 - Enhances user satisfaction by aligning expectations with actual delivery timelines.
 - Reduces manual intervention and customization in flows.
