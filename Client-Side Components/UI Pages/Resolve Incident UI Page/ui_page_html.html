@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+    <g:evaluate var="jvar_sys_id" expression="RP.getWindowProperties().get('sysparm_record_id')" />
+    <div>
+        <p>
+            <label for="resolution_reason">Enter the Resolution Notes</label>
+            <textarea id="resolution_reason" name="resolution_reason" class="form-control" rows="4" cols="80"></textarea>
+        </p>
+        <p>
+            <label for="resolution_code">Select the Resolution Code</label>
+            <select id="resolution_code" name="resolution_code" class="form-control">
+                <option value="None">None</option>
+                <option value="No resolution provided">No resolution provided</option>
+                <option value="Resolved by request">Resolved by request</option>
+                <option value="Resolved by caller">Resolved by caller</option>
+                <option value="Solution provided">Solution provided</option>
+                <option value="Duplicate">Duplicate</option>
+                <option value="Resolved by change">Resolved by change</option>
+                <option value="Workaround provided">Workaround provided</option>
+                <option value="Known error">Known error</option>
+                <option value="Resolved by problem">Resolved by problem</option>
+                <option value="User error">User error</option>
+            </select>
+        </p>
+        <g:dialog_buttons_ok_cancel ok_text="${gs.getMessage('Submit')}" ok_title="${gs.getMessage('Submit')}" ok="return ResolveIncidentOnsubmit('${jvar_sys_id}');" ok_style_class="btn btn-primary" cancel_text="${gs.getMessage('Cancel')}" cancel_title="${gs.getMessage('Cancel')}" cancel="return closeDialog(); disable" />
+    </div>
+</j:jelly>

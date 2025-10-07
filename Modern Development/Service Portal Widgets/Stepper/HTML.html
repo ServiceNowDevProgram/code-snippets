@@ -1,0 +1,28 @@
+<!-- Main container for the stepper component -->
+<div class="stepper-container">
+  <!-- Stepper wrapper with flex layout -->
+  <div class="stepper">
+    <!-- Loop through each step in the data.steps array -->
+    <div ng-repeat="step in data.steps track by $index" class="stepper-step">
+      <!-- Circle element showing step number or checkmark -->
+      <div class="stepper-circle" ng-class="{
+        'completed': $index < data.currentStep,
+        'active': $index === data.currentStep
+      }">
+        <!-- Show checkmark icon for completed steps -->
+        <i ng-if="$index < data.currentStep" class="fa fa-check"></i>
+        <!-- Show step number for current and future steps -->
+        <span ng-if="$index >= data.currentStep">{{$index + 1}}</span>
+      </div>
+      <!-- Label text for each step -->
+      <span class="stepper-label" ng-class="{
+        'completed': $index < data.currentStep,
+        'active': $index === data.currentStep
+      }">
+        {{step}}
+      </span>
+      <!-- Connecting line between steps (hidden for last step) -->
+      <div class="stepper-line" ng-if="!$last"></div>
+    </div>
+  </div>
+</div>
