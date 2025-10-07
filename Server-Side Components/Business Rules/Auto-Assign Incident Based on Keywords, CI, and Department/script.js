@@ -1,3 +1,5 @@
+//Before Insert Business Rule
+
 (function executeRule(current, previous) {
 
     //  Keyword-based assignment
