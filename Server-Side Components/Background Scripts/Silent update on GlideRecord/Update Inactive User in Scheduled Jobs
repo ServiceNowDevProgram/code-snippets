@@ -4,4 +4,6 @@ schJobs.addEncodedQuery('run_as.active=false');
 schJobs.query();
 while (schJobs.next()) {
     schJobs.setValue('run_as', activeUser);
+    schJobs.autoSysFields(false);
     schJobs.update();
+}
