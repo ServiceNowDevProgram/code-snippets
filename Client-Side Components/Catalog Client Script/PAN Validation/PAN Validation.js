@@ -4,7 +4,7 @@ function onChange(control, oldValue, newValue, isLoading, isTemplate) {
     }
     var panNumber = g_form.getValue("pan_number"); //Get the PAN card information
     var panRegex = /^[A-Z]{5}[0-9]{4}[A-Z]{1}$/; // Regex for the PAN Card
-    var panRegexAllCases = new RegExp(panRegex, "gim"); // Regex for checking PAN card in all cases(capital, lower,mixed) and multiline text fields.
+    var panRegexAllCases = new RegExp(panRegex, "gim"); // Regex for checking PAN card in all cases(UPPER,lower,miXeD) and multiline text fields.
 
     if (panRegexAllCases.test(panNumber)) {
         g_form.showFieldMsg("pan_number", "Valid PAN card number.", true); //Valid PAN card enterd populates this message 
