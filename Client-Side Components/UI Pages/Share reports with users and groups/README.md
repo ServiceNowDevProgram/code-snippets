@@ -13,3 +13,5 @@ https://www.servicenow.com/community/performance-analytics-blog/view-reports-on-
 1. UI Page: It contains Jelly script (HTML), Client script and Processing script. Used to capture the user/group info and share the rports with them.
 2. UI Action(Client): Created on the Dashboards (pa_dashboards) table. Used to open the UI page as apopup/modal window
 
+This UI action is visible on the dashboard properties page (image attached)
+
