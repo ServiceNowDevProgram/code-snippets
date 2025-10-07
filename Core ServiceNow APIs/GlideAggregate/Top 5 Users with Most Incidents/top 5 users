@@ -1,0 +1,14 @@
+var ga = new GlideAggregate('incident');
+ga.addAggregate('COUNT', 'sys_id');
+ga.groupBy('caller_id');
+ga.orderByAggregate('COUNT','sys_id');
+ga.setLimit(4);
+ga.query();
+
+
+while (ga.next()) {
+    var count = ga.getAggregate('COUNT', 'sys_id');  //get the count
+    var userName = ga.getDisplayValue('caller_id');//get user's userName
+
+	gs.log('user: ' + userName + ', Incident count: ' + count);//print out the result
+}
