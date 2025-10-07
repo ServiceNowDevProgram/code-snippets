@@ -44,7 +44,7 @@ function groupShare(dashboard_id, group_id) {
 }
 
 function userShare(dashboard_id, user_id) {
-    var db_view = new GlideRecord('u_dashboard_reports');
+    var db_view = new GlideRecord('u_reports_shared_with_dashboard');
     db_view.addEncodedQuery('repstat_report_sys_id!=^dt_dashboard=' + dashboard_id);
     db_view.query();
     while (db_view.next()) {
