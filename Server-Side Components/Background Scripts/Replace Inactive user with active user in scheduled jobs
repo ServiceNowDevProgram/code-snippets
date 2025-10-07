@@ -1,0 +1,8 @@
+var activeUser = gs.getProperty('active.user.id'); // property containing active user sys_id
+var schJobs = new GlideRecord('sysauto'); // Scheduled jon table, same scripts can be used for sysauto_pa table
+schJobs.addEncodedQuery('run_as.active=false');
+schJobs.query();
+while (schJobs.next()) {
+    schJobs.setValue('run_as', activeUser);
+    schJobs.update();
+}
