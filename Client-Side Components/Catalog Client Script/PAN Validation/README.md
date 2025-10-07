@@ -1,3 +1,10 @@
+Enhancement 7th october 2025.
+************************
+1. This code can now be used to validate PAN card in multiline text fields.
+2. This code can now validate PAN in upper, lower, mixed cases.
+3. This will provide more flexibility to users to add pan number as it is valid in both lower and upper cases.
+***********************
+
 PAN is a ten-digit unique alphanumeric number issued by the Income Tax Department.
 Indian PAN (Permanent Account Number) card based on its standardized format. 
 A PAN number is a unique 10-character alphanumeric identifier issued by the Indian government, and it follows a specific structure:
