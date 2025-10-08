@@ -3,6 +3,7 @@
 This script is a bookmarklet that injects a draggable modal into a form with a tiny mce editor and buttons to insert the html to the journal fields on the form.
 
 The dependency for tinymce is loaded from the instance itself and a html field does not need to be present on the form. 
+
 ---
 
 ## 📸 Screenshots
