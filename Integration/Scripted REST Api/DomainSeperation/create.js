@@ -1,12 +1,6 @@
 /**
- * -----------------------------------------------------------------------------
- * Hacktoberfest Contribution - ServiceNow Scripted REST API
- * -----------------------------------------------------------------------------
- * DISCLAIMER:
- * This script was developed and tested on a **ServiceNow Personal Developer Instance (PDI)**
- * as part of a Hacktoberfest contribution.
  *
- * It is provided for **educational and demonstration purposes only**.
+ * This script is provided for **educational and demonstration purposes only**.
  * Please thoroughly **test in a dedicated development environment**
  * before deploying to production.
  *
@@ -96,3 +90,4 @@
 
   response.setBody(result);
 })(request, response);
+
