@@ -16,7 +16,7 @@ Active : True
             ignore = true;
             gs.error("File is empty. Hence aborting the transformation");
 
-			// Creating a ticket to the Help desk team
+			// Creating a ticket to the fulfillment team. This step is optional.
             var incident = new GlideRecord('incident');
             incident.initialize();
             incident.short_description = "Import failed due to empty file";
