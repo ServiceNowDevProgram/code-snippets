@@ -27,6 +27,8 @@ Incomplete validations or documentation
 Unnotified team members before system changes finalize
 
 
-Please find the screenshot attached for clarity.
+Please find the screenshots attached for clarity.
 <img width="1562" height="671" alt="image" src="https://github.com/user-attachments/assets/5c8db22f-4297-47e5-a76d-764f033329f2" />
+<img width="1500" height="572" alt="image" src="https://github.com/user-attachments/assets/74753ba0-38e6-4125-9396-435e205e6230" />
+
 
