@@ -1,37 +1,53 @@
-// Function to check for duplicates in a specified field of a given table
-function DupCheck(table, field) {
-    var arr = [];
-    var gr = new GlideAggregate(table);
+/**
+ * Function to find duplicate records in any table based on a specified field.
+ * Returns an array of values from specified output fields for records with duplicate field values.
+ *
+ * @param {string} tableName - Name of the table to search.
+ * @param {string} fieldName - Field to check for duplicates.
+ * @param {Array} outputFields - Array of field names to include in the output.
+ */
+function findDuplicateRecords(tableName, fieldName, outputFields) {
+    var outputValues = [];
 
-    // Aggregate count of the specified field and group by it
-    gr.addAggregate('COUNT', field);
-    gr.groupBy(field);
-    gr.addHaving('COUNT', '>', 1);
-    gr.query();
+    // Count occurrences of the field and group by it (fieldName)
+    var aggregateGR = new GlideAggregate(tableName);
+    aggregateGR.addAggregate('COUNT', fieldName);
+    aggregateGR.groupBy(fieldName);
+    aggregateGR.addHaving('COUNT', '>', 1); // Corrected HTML entity
+    aggregateGR.query();
 
-    gs.info("Please find the duplicates from the " + table + " for the field " + field + " below:");
+    // Loop through each group with duplicate values
+    while (aggregateGR.next()) {
+        var duplicateValue = aggregateGR.getValue(fieldName);
+        var recordGR = new GlideRecord(tableName);
 
-    // Loop through each group with duplicate counts
-    while (gr.next()) {
-        var duplicateValue = gr.getValue(field);
-        var kb = new GlideRecord(table);
+        // Query for records with the duplicate value
+        recordGR.addQuery(fieldName, duplicateValue);
+        recordGR.addActiveQuery(); // Standard active filter
+        recordGR.query();
 
-        // Query for active records matching the duplicate value
-        kb.addQuery(field, duplicateValue);
-        kb.addQuery('active', 'true');
-        kb.query();
+        // Collect and log duplicate records
+        while (recordGR.next()) {
+            var outputEntry = {};
+            for (var i = 0; i < outputFields.length; i++) {
+                var field = outputFields[i];
+                outputEntry[field] = recordGR.getValue(field);
+            }
+            outputValues.push(outputEntry);
 
-        // Collect and log the duplicates
-        while (kb.next()) {
-            arr.push(kb.sys_id.toString());
-            gs.info('--> Number: {0}, and its Sys ID: {1}', [kb.number, kb.sys_id]);
+            //optional: log per duplicate record
+            gs.info('--> Duplicate record: ' + JSON.stringify(outputEntry));
         }
     }
 
-    // Optionally return the array of sys_ids for further processing
-    gs.info("array of sys_id's : " + arr);
-    return arr;
+    // Log the array of output values
+    gs.info("Duplicate records: " + JSON.stringify(outputValues));
+
+    return outputValues;
 }
 
-// Call the function to check for duplicates in the incident table
-DupCheck("kb_knowledge", "short_description");
+/**
+ * === USAGE ===
+ * Customize the table, field to check for duplicate values, and output fields below to run the duplicate check.
+ */
+findDuplicateRecords("kb_knowledge", "short_description", ["number", "sys_id", "short_description"]);
