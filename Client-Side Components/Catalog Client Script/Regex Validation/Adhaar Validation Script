@@ -1,8 +1,10 @@
 function onSubmit() {
-    /*
+
+    g_form.hideFieldMsg('adhaar'); // hide previous field mesage.
+ 	/*
 	Adhaar validation script.
 	*/
-    g_form.hideFieldMsg('adhaar');
+
     var adhrNum = g_form.getValue('adhaar'); // adhaar variable name
     var adharReg = /^[2-9][0-9]{3}[0-9]{4}[0-9]{4}$/; // adhaar regex
     var regex = new RegExp(adharReg);
