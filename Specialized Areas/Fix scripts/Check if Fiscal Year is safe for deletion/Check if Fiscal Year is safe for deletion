@@ -1,0 +1,47 @@
+// Enter in the display name of the Fiscal Year such as "FY26" or "FY32" to validate.
+var fiscalYear = "FY24";
+
+var fiscalGr = new GlideRecord("fiscal_period")
+fiscalGr.addEncodedQuery("name=" + fiscalYear);
+fiscalGr.query();
+
+if (fiscalGr.next()) {
+
+  var fyId = fiscalGr.getUniqueValue();
+  var isValidDeletion = true;
+  var tableDetections = [];
+
+  var grDictionary = new GlideRecord("sys_dictionary");
+  grDictionary.addEncodedQuery("reference=fiscal_period");
+  grDictionary.query();
+  while(grDictionary.next()) {
+
+    if (grDictionary.getValue("name") == "fiscal_period")
+      continue;
+
+    var tableGr = new GlideRecord(grDictionary.getValue("name"));
+    tableGr.addEncodedQuery(grDictionary.getValue("element") + ".fiscal_year=" + fyId);
+    tableGr.setLimit(1);
+    tableGr.query();
+    if (tableGr.next()) {
+      isValidDeletion = false;
+      if (tableDetections.indexOf(grDictionary.getValue("name")) == -1) {
+        tableDetections.push(grDictionary.getValue("name"));
+      }
+    }
+
+  }
+
+  if (isValidDeletion) {
+    gs.info("No Fiscal Period data found for this year.");
+    gs.info("High chance it should be safe unless data exists and is blocked from a query BR or other access controls.");
+    gs.info("Confirm with customer before proceeding with any deletions for testing.");
+  } else {
+    gs.info("DO NOT DELETE FISCAL PERIODS FOR " + fiscalYear + "!");
+    gs.info("Deletion will cause broken references and corruption.");
+    gs.info("Fiscal data is used in the following tables: " + tableDetections.join(" | "));
+  }
+
+} else {
+  gs.info("Fiscal Period does not exist, make sure the Name entered is a valid Fiscal Period")
+}
