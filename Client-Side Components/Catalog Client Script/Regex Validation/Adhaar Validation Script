@@ -3,7 +3,7 @@ function onSubmit() {
     g_form.hideFieldMsg('adhaar'); // hide previous field mesage.
     /*
     Adhaar validation script.
-	
+	Adhaar is a 12 digit unique identification number issues by UIDAI in India for Indian Residents.
     /^[2-9][0-9]{3}[0-9]{4}[0-9]{4}$/
     // ^ → Start of the string
     // [2-9] → The first digit must be between 2 and 9
