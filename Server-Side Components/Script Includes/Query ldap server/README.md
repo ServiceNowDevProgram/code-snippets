@@ -6,7 +6,7 @@ Query server from serverside script using script include LDAPQuery
 
 # Example 1: get one entry
 
-```
+```javascript
 var result = new LDAPquery()
 	.setRDN('')                                      //set relative start 
 	.setFilter('uid=einstein')                       //set filter
@@ -21,7 +21,7 @@ output:
 
 # Example 2: get the iterable for query
 
-```
+```javascript
 var result = new LDAPquery()
 	.setRDN('ou=scientists') 
 	.setPagination(1000)                              //set how many records per page
