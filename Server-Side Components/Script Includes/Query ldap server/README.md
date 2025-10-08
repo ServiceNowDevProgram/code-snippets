@@ -13,10 +13,10 @@ var result = new LDAPquery()
 	.setConfig('2fd003c083e07e10557ff0d6feaad3d7')   //set the sys_id for ldap_server_config record
 	.getOne();                                       //returns first entry as js object
 gs.info(result.telephoneNumber);
-
+```
+```
 output:
 *** Script: 314-159-2653
-
 ```
 
 # Example 2: get the iterable for query
@@ -32,7 +32,8 @@ var item;
 while (item = result.next()) {
 	gs.info(JSON.stringify(j2js(item), null, 2)); //note that next returns a java object, hence the j2js to convert to js
 }
-
+```
+```
 output:
 *** Script: {
   "dn": "ou=scientists,dc=example,dc=com",
@@ -51,5 +52,4 @@ output:
   "cn": "Italians"
 }
 LDAP SEARCH: >>Next Page 
-
 ```
