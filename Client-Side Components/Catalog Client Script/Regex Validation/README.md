@@ -3,7 +3,7 @@
 *****************
 8th october:
 This script will validate valid Adhaar number.
-Adhaar is a 12 digit unique identification number issues by UIDAI in India.
+Adhaar is a 12 digit unique identification number issues by UIDAI in India for Indian Residents.
 The script will validate Adhaar through regex and if it is not valid, variable is cleared with field message.
 
 *****************
