@@ -1,14 +1,8 @@
----
-# PR Description:
-
-This pull request adds a Scripted REST API for ServiceNow that creates Incident records in the domain and company of the authenticated user. The API was developed as part of a Hacktoberfest 2025 contribution and is intended for educational and demonstration purposes. The `create` method ensures incidents are scoped to the user's domain, supporting multi-tenancy and domain separation best practices.
----
-
 # ServiceNow Scripted REST API for creating incdents in the correct company/domain
 
 ## Overview
 
-This repository contains a **Scripted REST API** developed for **ServiceNow** as part of a Hacktoberfest 2025 contribution. The API allows authenticated users to create new **Incident** records within their own domain and company context.
+The API allows authenticated users to create new **Incident** records within their own domain and company context.
 
 > **DISCLAIMER**  
 > This script was developed and tested on a **ServiceNow Personal Developer Instance (PDI)**.  
@@ -25,7 +19,37 @@ This repository contains a **Scripted REST API** developed for **ServiceNow** as
 
 ---
 
-## Script Details
+## Prerequisites & Dependencies
+
+Before using or testing this Scripted REST API, ensure the following conditions are met:
+
+1. **Domain Separation Plugin**
+
+   - The **Domain Separation** plugin must be activated on your instance.
+   - This enables `sys_domain` references and ensures incidents are created within the correct domain context.
+
+2. **Core Data Setup**
+
+   - Ensure valid entries exist in the **core_company** table.
+   - Each company should have an associated **domain** record in the **sys_domain** table.
+   - These relationships are critical for correct domain assignment during incident creation.
+
+3. **User Configuration**
+
+   - The user invoking this API must:
+     - Belong to a specific domain.
+     - Have the **snc_platform_rest_api_access** role to access Scripted REST APIs.
+   - Users must also have ACL permissions to:
+     - **Read** from the `sys_user` table.
+     - **Insert** into the `incident` table.
+
+4. **Instance Configuration**
+   - Tested and validated on a **ServiceNow Personal Developer Instance (PDI)**.
+   - Other environments should be configured with equivalent domain and company data for consistent results.
+
+---
+
+## Information
 
 - **Author**: Anasuya Rampalli ([anurampalli](https://github.com/anurampalli))
 - **Version**: 1.0
@@ -92,3 +116,4 @@ Content-Type: application/json
 - Check the `incident` table for newly created records.
 
 ---
+
