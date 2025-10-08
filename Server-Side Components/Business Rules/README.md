@@ -25,3 +25,8 @@ This automation ensures that Change Managers and implementers are reminded befor
 Missing required closure tasks
 Incomplete validations or documentation
 Unnotified team members before system changes finalize
+
+
+Please find the screenshot attached for clarity.
+<img width="1562" height="671" alt="image" src="https://github.com/user-attachments/assets/5c8db22f-4297-47e5-a76d-764f033329f2" />
+
