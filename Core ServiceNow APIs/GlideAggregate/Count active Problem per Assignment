@@ -1,0 +1,9 @@
+var probCount = new GlideAggregate('problem');
+probCount.addActiveQuery(); 
+probCount.groupBy('assignment_group');
+probCount.addAggregate('COUNT');
+probCount.query();
+while(probCount.next())
+{
+    gs.print("Count of Problem records :" +probCount.getAggregate('COUNT') + " " + "Per Assignment Group :" + probCount.getDisplayValue('assignment_group'));
+}
