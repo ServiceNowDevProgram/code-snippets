@@ -10,8 +10,9 @@ If the incoming file is empty due to an issue in the source application, all exi
 
 To prevent this, implement an "onStart" transform script that checks whether the import set contains any data before proceeding with the transformation. If it is found to be empty, the script should:
 
-    Abort the transformation process.
+1. Abort the transformation process.
+2. Automatically raise a ticket to the responsible team for investigation.(Optional)
 
-    Automatically raise a ticket to the responsible team for investigation.(optional - not configured in this solution)
 
+   
 This ensures that the existing vendor data in ServiceNow remains unchanged until the issue is resolved.
