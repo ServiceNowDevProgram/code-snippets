@@ -17,5 +17,8 @@
 - Adds a temporary CSS class (`.mandatory-glow`) to all mandatory fields.
 - Click again to remove the highlights.
 
+**Sample screenshot**
+<img width="1882" height="674" alt="image" src="https://github.com/user-attachments/assets/1320c9c3-976d-4bf0-92d5-e051825dbe6c" />
+
 
 
