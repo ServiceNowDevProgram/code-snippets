@@ -1,7 +1,7 @@
 function onChange(control, oldValue, newValue, isLoading, isTemplate) {
-    if (isLoading || isTemplate || newValue === '') {
-        return;
-    }
+   if (isLoading || newValue === '') {
+      return;
+   }
 
     // Check if all mandatory fields are filled
     if (!g_form.mandatoryCheck()) {
