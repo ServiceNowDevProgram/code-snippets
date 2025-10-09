@@ -1,7 +1,25 @@
-This script helps to find out duplicate records in the table and returns an array of the duplicate records sys_id's.
+# Duplicate Records Scripts Overview
 
-In this example I have shown how to find out records in knowledge table.
+# Duplicate Records.js
 
-All you need to do is use the call the function with the table and field values as shown below:
-DupCheck("kb_knowledge", "short_description");
-where "DupCheck" is the function, "kb_knowledge" is the table name and "short_description" is the field based on which your duplicates will be found.
+This script identifies duplicate values in a specific field of a fixed table (`incident`) and logs how many times each duplicate occurs.
+
+- Uses `GlideAggregate` to count and group by the `number` field.
+- Logs each duplicate record directly to the console.
+- Limited to the `incident` table and `number` field.
+- No output array is returned; results are only printed.
+
+---
+
+# Duplicate Records for any table based on field.js
+
+This script finds duplicate records in **any table** based on a specified field and returns an array of values from fields you choose.
+
+- Uses `GlideAggregate` to detect duplicates and `GlideRecord` to retrieve full record details.
+- Function name: `findDuplicateRecords`
+- Accepts three parameters:
+  - `tableName`: the table to search
+  - `fieldName`: the field to check for duplicates
+  - `outputFields`: an array of field names to include in the output
+- Logs each duplicate record as a structured JSON object.
+- Returns a readable array of objects containing the specified output fields.
