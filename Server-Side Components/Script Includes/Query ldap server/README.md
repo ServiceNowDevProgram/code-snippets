@@ -1,4 +1,5 @@
 # Query ldap server by config sys_id
+Interact with GlideLDAP using a fluent wrapper. Handy for querying ldap server for non-persistent data for example via remote tables.
 
 # How to use it?
 Configure LDAP server in *ldap_server_config* table
