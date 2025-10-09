@@ -11,18 +11,11 @@
         taskGR.query();
 
         while (taskGR.next()) {
-            // Reassign to user's manager if available
-            if (current.manager) {
-                taskGR.assigned_to = current.manager;
-                gs.info("Task " + taskGR.number + " reassigned to manager " + current.manager.name);
-            } else {
-                // Fallback to default group
-                taskGR.assignment_group = 'YOUR_DEFAULT_GROUP_SYS_ID';
-                gs.info("Task " + taskGR.number + " reassigned to default group.");
-            }
-
+            // Add a work note to notify assignment group
+            taskGR.work_notes = "Assigned user '" + current.name + "' is inactive. Please take necessary action.";
             taskGR.update();
-        }
+
+            gs.info("Work note added to task " + taskGR.number);
     }
 
 })(current, previous);
