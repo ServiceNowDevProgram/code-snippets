@@ -1,4 +1,6 @@
 Merge Duplicate User Records Automatically
+
+
 Automatically detects and merges duplicate User records in ServiceNow based on the email address.
 
 Ensures data integrity and prevents duplicate entries.
