@@ -19,7 +19,7 @@ function replacewithActiveManager() {
     */
     function getOlderGroupMember(grp) {
         var getUser = new GlideRecord('sys_user_grmember'); // Glide group member table
-        getUser.addEncodedQuery('user.active=true^group=' + grp.getUniqueValue()); // encoded query to get group member
+        getUser.addEncodedQuery('user.active=true^group=' + grp.getUniqueValue()); // encoded query to get group member.
         getUser.orderByAsc('sys_created_on'); // get oldest added group member
         getUser.query();
         if (getUser.next())
