@@ -1,2 +1,5 @@
-This script will check if the manager of the group is member of the group. 
-If the manager is not member, it will add the manager to the group. 
+***********
+This Script Will Check If The Manager Is Member Of The Group. 
+If The Manager Is Not Member, It Will Add The Manager To The Group. 
+This Script Will Only Target Active Groups With Non Empty Manager Value. 
+***********
