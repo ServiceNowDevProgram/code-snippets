@@ -1,0 +1,134 @@
+﻿name: Validate Folder Structure
+
+on:
+  pull_request_target:
+    branches:
+      - main
+
+permissions:
+  contents: read
+  pull-requests: write
+
+concurrency:
+  group: folder-structure-${{ github.event.pull_request.number || github.run_id }}
+  cancel-in-progress: true
+
+jobs:
+  structure:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout base repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Cache validation script
+        run: cp .github/scripts/validate-structure.js "$RUNNER_TEMP/validate-structure.js"
+
+      - name: Fetch pull request head
+        id: fetch_head
+        env:
+          PR_REMOTE_URL: https://github.com/${{ github.event.pull_request.head.repo.full_name }}.git
+          PR_HEAD_REF: ${{ github.event.pull_request.head.ref }}
+        run: |
+          git remote remove pr >/dev/null 2>&1 || true
+          git remote add pr "$PR_REMOTE_URL"
+          if git fetch pr "$PR_HEAD_REF":pr-head --no-tags; then
+            git checkout pr-head
+            git fetch origin "${{ github.event.pull_request.base.ref }}"
+            echo "fetched=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "::warning::Unable to fetch fork repository. Skipping structure validation."
+            echo "fetched=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Use Node.js 18
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Validate folder layout
+        if: ${{ steps.fetch_head.outputs.fetched == 'true' }}
+        id: validate
+        run: |
+          set -euo pipefail
+
+          tmp_output=$(mktemp)
+          tmp_error=$(mktemp)
+
+          set +e
+          node "$RUNNER_TEMP/validate-structure.js" origin/${{ github.event.pull_request.base.ref }}...HEAD >"$tmp_output" 2>"$tmp_error"
+          status=$?
+          set -e
+
+          cat "$tmp_output"
+          cat "$tmp_error" >&2
+
+          if grep -q 'Folder structure violations found' "$tmp_output" "$tmp_error"; then
+            # Save validation output for use in PR comment
+            cat "$tmp_output" "$tmp_error" > "$RUNNER_TEMP/validation_output.txt"
+            echo "status=failed" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          if [ $status -ne 0 ]; then
+            echo "::warning::Structure validation skipped because the diff could not be evaluated (exit code $status)."
+            echo "status=skipped" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          echo "status=passed" >> "$GITHUB_OUTPUT"
+
+      - name: Close pull request on failure
+        if: ${{ steps.validate.outputs.status == 'failed' }}
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ github.token }}
+          script: |
+            const pullNumber = context.payload.pull_request.number;
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+
+            const fs = require('fs');
+            const output = fs.readFileSync(process.env.RUNNER_TEMP + '/validation_output.txt', 'utf8');
+
+            let commentBody = `Thank you for your contribution. However, it doesn't comply with our contributing guidelines.\n\n`;
+
+            // Check if the error is about invalid file/folder names
+            if (output.includes('Names cannot end with a period') ||
+                output.includes('Names cannot end with a space') ||
+                output.includes('is a reserved name on Windows') ||
+                output.includes('Contains characters that are invalid')) {
+              commentBody += `**❌ Invalid File/Folder Names Detected**\n\n`;
+              commentBody += `Your contribution contains file or folder names that will break when syncing to local file systems (especially Windows):\n\n`;
+              commentBody += `\`\`\`\n${output}\n\`\`\`\n\n`;
+              commentBody += `**Common issues:**\n`;
+              commentBody += `- Folder/file names ending with a period (.) - not allowed on Windows\n`;
+              commentBody += `- Folder/file names ending with spaces - not allowed on Windows\n`;
+              commentBody += `- Reserved names like CON, PRN, AUX, NUL, COM1-9, LPT1-9 - not allowed on Windows\n`;
+              commentBody += `- Invalid characters: < > : " | ? * or control characters\n\n`;
+              commentBody += `Please rename these files/folders to be compatible with all operating systems.\n\n`;
+            } else {
+              commentBody += `As a reminder, the general requirements (as outlined in the [CONTRIBUTING.md file](https://github.com/ServiceNowDevProgram/code-snippets/blob/main/CONTRIBUTING.md)) are the following: follow the folder+subfolder guidelines and include a README.md file explaining what the code snippet does.\n\n`;
+              commentBody += `**Validation errors:**\n\`\`\`\n${output}\n\`\`\`\n\n`;
+            }
+
+            commentBody += `Review your contribution against the guidelines and make the necessary adjustments. Closing this for now. Once you make additional changes, feel free to re-open this Pull Request or create a new one.`;
+
+            await github.rest.issues.createComment({
+              owner,
+              repo,
+              issue_number: pullNumber,
+              body: commentBody.trim()
+            });
+
+            await github.rest.pulls.update({
+              owner,
+              repo,
+              pull_number: pullNumber,
+              state: 'closed'
+            });
+
+      - name: Mark job as failed if validation failed
+        if: ${{ steps.validate.outputs.status == 'failed' }}
+        run: exit 1
