@@ -1,6 +1,6 @@
 # 🧹 ServiceNow Dormant User Cleanup
 
-A lightweight **ServiceNow Background Script** to automatically **deactivate users** who haven't logged in for a specified number of days.
+**ServiceNow Background Script** to automatically **deactivate users** who haven't logged in for a specified number of days.
 
 ## 🚀 Usage
 1. Navigate to **System Definition → Scripts - Background**.  
