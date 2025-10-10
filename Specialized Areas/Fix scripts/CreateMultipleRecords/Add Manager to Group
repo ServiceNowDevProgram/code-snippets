@@ -1,20 +1,21 @@
-*/
+/*
 Check if mamager is part of group.
-Add Manager to group
+Add Manager to group.
 */
 var memCheck = new GlideRecord('sys_user_group'); // Glide group Table
+memCheck.addActiveQuery(); // target only active groups
 memCheck.query();
-while(memCheck.next())
-{
-if(!memCheck.getRefRecord('manager).isMemberOf(memCheck.getIniqueValue()) //check if manager is member of group
-addManagerToGrp(memCheck.getValue('manager'),memCheck.getIniqueValue());  // call function to add mamager to group
+while (memCheck.next()) {
+    if (!memCheck.getRefRecord('manager').isMemberOf(memCheck.getIniqueValue())) //check if manager is member of group
+        addManagerToGrp(memCheck.getValue('manager'), memCheck.getIniqueValue()); // call function to add mamager to group
 }
 /*
 input: managerVale type: sys_id, groupVal, type : sys_id
+Function will add manager as group member.
 */
-function(managerVal,groupVal){
-var grpInsert = new GlideRecord('sys_user_grmrmber');
-grpInsert.user = managerVal;
-grpInsert.group = groupVal;
-grpInsert.insert();
+function addManagerToGrp(managerVal, groupVal) {
+    var grpInsert = new GlideRecord('sys_user_grmember'); // Glide group member table
+    grpInsert.user = managerVal;
+    grpInsert.group = groupVal;
+    grpInsert.insert(); // add user to group
 }
