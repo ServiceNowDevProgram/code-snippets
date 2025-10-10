@@ -6,7 +6,7 @@ var memCheck = new GlideRecord('sys_user_group'); // Glide group Table
 memCheck.addActiveQuery(); // target only active groups
 memCheck.query();
 while (memCheck.next()) {
-    if (!memCheck.getRefRecord('manager').isMemberOf(memCheck.getIniqueValue())) //check if manager is member of group
+    if (!memCheck.getRefRecord('manager').isMemberOf(memCheck.getUniqueValue())) //check if manager is member of group
         addManagerToGrp(memCheck.getValue('manager'), memCheck.getIniqueValue()); // call function to add mamager to group
 }
 /*
