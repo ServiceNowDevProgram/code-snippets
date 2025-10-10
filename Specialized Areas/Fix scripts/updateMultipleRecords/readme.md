@@ -4,4 +4,5 @@ This script will query the group table and look for groups with inactive members
 Logs: If no active members are there in group //gs.info("Group " + grp.name + " does not have any active user");
 
 After manager is replaced : gs.info("Group " + inactiveMgrGrp.name + " manager changed to " + getOlderGroupMember(inactiveMgrGrp).name);
+
 *************
