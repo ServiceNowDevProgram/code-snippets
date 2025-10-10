@@ -24,3 +24,8 @@ The primary goal of the Catalog Item Explorer widget is to serve as a valuable l
 7. **Quick Search Placeholder:** Define the placeholder message for the Quick Search field to align with your portal's user interface.
 8. **Widget Title:** Customize the title of the widget to match its purpose within your Service Portal.
 9. **Copyright Display:** Choose whether to display copyright information in the bottom right corner of the widget.
+
+## Latest Update (v1.21):
+- **Support for the external URL content items.
+- **The default target window changed to "_self" (same window).
+- **Option to open an item in the new window added at the end of the row.
