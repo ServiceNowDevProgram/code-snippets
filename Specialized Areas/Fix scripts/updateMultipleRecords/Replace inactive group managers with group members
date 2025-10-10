@@ -8,6 +8,7 @@ function replacewithActiveManager() {
     inactiveMgrGrp.query();
     while (inactiveMgrGrp.next()) {
         inactiveMgrGrp.setValue('manager', getOlderGroupMember(inactiveMgrGrp).sys_id); // set inactive manager with active group member.
+        inactiveMgrGrp.autoSysFields(false);
         inactiveMgrGrp.update();
         gs.info("Group " + inactiveMgrGrp.name + " manager changed to " + getOlderGroupMember(inactiveMgrGrp).name);
     }
