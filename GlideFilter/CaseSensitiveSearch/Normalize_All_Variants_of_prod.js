@@ -2,11 +2,13 @@
 (function normalizeProdWithGlideFilter() {
     var changeGR = new GlideRecord('change_request');
     changeGR.addNotNullQuery('u_environment');
+    var normalizeProdFilter = 'u_environment=prod';
+    changeGR.addEncodedQuery(normalizeProdFilter);
     changeGR.query();
 
-    var filter = new GlideFilter('u_environment=prod', 'normalizeProdFilter');
-    filter.setCaseSensitive(false);         // Match any case variant of "prod"
-    filter.setEnforceSecurity(true);        // Enforce ACLs
+    var filter = new GlideFilter(normalizeProdFilter, 'filterCondition');
+    filter.setCaseSensitive(false); // Match any case variant of "prod"
+    filter.setEnforceSecurity(true); // Enforce ACLs
 
     var updated = 0;
 
@@ -21,5 +23,5 @@
             }
         }
     }
-    gs.info('✔️ Environment normalization completed. Total updated: ' + updated);
+    gs.info('Environment normalization completed. Total updated: ' + updated);
 })();
