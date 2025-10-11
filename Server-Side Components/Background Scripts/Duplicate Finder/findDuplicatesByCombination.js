@@ -1,7 +1,7 @@
 /**
-*	Finds and reports records that have duplicate values across a combination of specified fields instead of a single field
-*	Useful for finding for example duplicate items where unique key is not just 1 field
-*/
+ *	Finds and reports records that have duplicate values across a combination of specified fields instead of a single field
+ *	Useful for finding for example duplicate items where unique key is not just 1 field
+ */
 
 // --- UPDATE ONLY THE VALUES BELOW ---
 var tableName = 'cmdb_model'; // ADD: The table you want to check for duplicates.
@@ -60,33 +60,73 @@ function findDuplicateCombinations(tableName, fieldNames) {
     while (duplicateAggregate.next()) {
         duplicateGroupCount++;
         var combinationDisplay = [];
+        var queryParams = [];
 
         for (var k = 0; k < fieldNames.length; k++) {
             var fieldName = fieldNames[k];
             var fieldValue = duplicateAggregate.getDisplayValue(fieldName) || duplicateAggregate.getValue(fieldName);
+            var actualValue = duplicateAggregate.getValue(fieldName);
             combinationDisplay.push(fieldName + ': "' + fieldValue + '"');
+            queryParams.push({
+                field: fieldName,
+                value: actualValue
+            });
         }
 
         var displayKey = combinationDisplay.join(', ');
         var countInGroup = duplicateAggregate.getAggregate('COUNT');
-        duplicateJson[displayKey] = countInGroup;
+        duplicateJson[displayKey] = {
+            count: countInGroup,
+            queryParams: queryParams
+        };
     }
 
-    /***************************************/
-    /*** Print the Results             ***/
-    /***************************************/
+    /***************************************************/
+    /*** Print the Results & Fetch sys_id's          ***/
+    /***************************************************/
 
-    // No duplicates found
     var fieldCombinationString = '"' + fieldNames.join('", "') + '"';
+
     if (Object.keys(duplicateJson).length === 0) {
         gs.print('No duplicates found for the field combination [' + fieldCombinationString + '] on table "' + tableName + '".');
         return;
     }
 
-    // Duplicates were found
-    gs.print("Found " + duplicateGroupCount + " groups of duplicates based on the combination [" + fieldCombinationString + "]:");
+    gs.print('');
+    gs.print('======================================================');
+    gs.print('DUPLICATE COMBINATIONS REPORT');
+    gs.print('------------------------------------------------------');
+    gs.print('Table: ' + tableName);
+    gs.print('Found ' + duplicateGroupCount + ' groups of duplicate records.');
+    gs.print('======================================================\n');
 
+    var groupNumber = 1;
     for (var key in duplicateJson) {
-        gs.print('Combination {' + key + '} has ' + duplicateJson[key] + ' occurrences.');
+        var groupData = duplicateJson[key];
+
+        gs.print('Group ' + groupNumber + ':');
+        gs.print('  - Occurrences: ' + groupData.count);
+        gs.print('  - Combination:');
+
+        var fields = key.split(', ');
+        for (var i = 0; i < fields.length; i++) {
+            gs.print('    - ' + fields[i]);
+        }
+
+        gs.print("  - Duplicate sys_id's:");
+
+        // Perform the second query to get the sys_id's for this specific group
+        var rec = new GlideRecord(tableName);
+        for (var q = 0; q < groupData.queryParams.length; q++) {
+            var query = groupData.queryParams[q];
+            rec.addQuery(query.field, query.value);
+        }
+        rec.query();
+
+        while (rec.next()) {
+            gs.print('    - ' + rec.getUniqueValue());
+        }
+        gs.print('');
+        groupNumber++;
     }
 }
