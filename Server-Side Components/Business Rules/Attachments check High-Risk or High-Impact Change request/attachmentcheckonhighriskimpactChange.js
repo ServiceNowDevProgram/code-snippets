@@ -7,11 +7,14 @@
 
     if (isHighImpact || isHighRisk) {
 
-        var attachment = new GlideRecord('sys_attachment');
+        var attachmentCount = 0;
+        var attachment = new GlideAggregate('sys_attachment');
         attachment.addQuery('table_sys_id', current.sys_id);
+        attachment.addAggregate('COUNT');
         attachment.query();
-
-        var attachmentCount = attachment.getRowCount();
+        if (attachment.next()) {
+            attachmentCount = attachment.getAggregate('COUNT');
+        }
 
         if (attachmentCount < minAttachments) {
 
