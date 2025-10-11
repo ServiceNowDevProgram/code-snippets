@@ -1,59 +1,113 @@
-# How to contribute
+# How to Contribute
 
-To contribute, just follow these steps:
+We welcome contributions to the **ServiceNow Developer Program's Code Snippets Repository**! Follow these steps to get involved:
 
-1. Fork this repo
-2. Create a new branch (name it according to what functionality you are adding). From the main branch dropdown, switch to your new branch. 
-3. Add, edit, or re-organize Code Snippets by editing folders and files and commiting them to your forked repository
-4. Submit a pull request to the main branch of `ServiceNowDevProgram / code-snippets`
-  - Pull requests should have a title/comment that describes what is being added/changed
-  - Pull requests should only contain files that are relevant to what is said in the pull request's title and description
-  - Files should not be XML exports of ServiceNow records.
+## Steps to Contribute
 
-That's it! A developer advocate or an sndevs designated approver will review your pull request and if approved, merge it into this repo for everyone's benefit!
+1. **Fork the Repository**: Click the "Fork" button on the top right of this page to create your own copy of the repository.
 
-**Note on multiple submissions**: If you plan on doing another pull request and your original pull request hasn't been approved+merged yet, make sure to create a new branch in your forked repo first.
+2. **Create a New Branch**: 
+   - Name your branch according to the functionality you are adding (e.g., `feature/new-snippet` or `bugfix/fix-issue`).
+   - Switch to your new branch from the main branch dropdown.
 
-## General requirements
+3. **Add or Edit Code Snippets**:
+   - Navigate to the appropriate folders and files to add, edit, or reorganize code snippets.
+   - Commit your changes to your forked repository.
 
-- Pull request descriptions must be explicit and descriptive to what is being changed.
-- Changes that are not within the scope of the description will result in the entire PR being rejected
-- Low effort/spam Pull Requests will be marked as spam accordingly.
-- Code snippets (re-)used from [Docs](https://docs.servicenow.com/) or [API references](https://developer.servicenow.com/dev.do#!/reference/) are only acceptable if they are expanded in a meaningful way (e.g. extended script and/or documentation) - remember: *"QUANTITY IS FUN, QUALITY IS KEY"*
-- Code should be relevant to ServiceNow Developers
-- ES2021 is allowed, but since not everyone is necessarily working on ES2021 enabled apps, we encourage you to disclose/warn users using your code about this.
+4. **Submit a Pull Request**:
+   - Go to the original repository and click on the "Pull Requests" tab.
+   - Click "New Pull Request" and select your branch.
+   - Ensure your pull request has a descriptive title and comment that outlines what changes you made.
+   - Only include files relevant to the changes described in the pull request title and description.
+   - Avoid submitting XML exports of ServiceNow records.
 
-## Follow this structure
+That's it! A Developer Advocate or a designated approver from the ServiceNow Dev Program will review your pull request. If approved, it will be merged into the main repository for everyone's benefit!
 
-- **Top level folders** (besides the .github folder) are `CATEGORIES` of snippets.
-- Within each top level folder/category, will be a **sub-folder** for `EACH CODE SNIPPET`
-- Within each sub-folder/code snippet folder, will be one readme.md file to describe the code snippet and then all variants of that code snippet as their own file.
+### Note on Multiple Submissions
+If you plan to submit another pull request while your original is still pending, make sure to create a new branch in your forked repository first.
 
-### Example Structure
+## General Requirements
 
-- `.github` folder
-- `fruits` folder
-  - `apples` folder
-    - `readme.md` file describing the apples code snippet
-    - `apples.js` first file with code snippet
-    - `fijiapples.js` a second file that has a slight variation that distinguishes a separate use-case
-  - `kiwi` folder
-    - `readme.md` file describing the kiwi code snippet
-    - `kiwi.js` file with code snippet
-- `vegetables` folder
-  - `carrots` folder
-    - `readme.md` file describing the vegetables code snippet
-    - `carrots.js` first file with code snippet
-  - `potatos` folder
-    - `readme.md` file describing the potatos code snippet
-    - `potatos.js` file with original code snippet
-    - `yukongoldpotato.js` file that is similar to potato.js but is for yukon gold potatos specifically
-    - `tatertots.js` file that is similar to potato.js but is for when you need the result to be tater tots
+- **Descriptive Pull Request Titles**: Your pull request must have explicit and descriptive titles that accurately represent the changes made.
+- **Scope Adherence**: Changes that fall outside the described scope will result in the entire pull request being rejected.
+- **Quality Over Quantity**: Low-effort or spam pull requests will be marked accordingly.
+- **Expanded Snippets**: Code snippets reused from the [ServiceNow Documentation](https://docs.servicenow.com/) or [API References](https://developer.servicenow.com/dev.do#!/reference/) are acceptable only if they are expanded in a meaningful way (e.g., with additional context, documentation, or variations). Remember: *"QUANTITY IS FUN, QUALITY IS KEY."*
+- **Relevance**: Code should be relevant to ServiceNow Developers.
+- **ES2021 Compatibility**: While ES2021 is allowed, we encourage you to disclose if your code is using ES2021 features, as not everyone may be working with ES2021-enabled applications.
 
-## REMEMBER
+## Core Documentation File Changes
 
-Before you submit your pull request, all code snippet files should:
+**IMPORTANT**: For changes to core documentation files (README.md, CONTRIBUTING.md, LICENSE, etc.), contributors must:
 
-- Be in a matching folder
-- That folder should be in a category folder
-- Your code snippet should be accompanied by a readme.md file to describe it
+1. **Submit an Issue First**: Before making any changes to core documentation files, create an issue describing:
+   - What you intend to edit
+   - Why the change is needed
+   - Your proposed approach
+
+2. **Get Assignment**: Wait to be assigned to the issue by a maintainer before submitting a PR.
+
+3. **Reference the Issue**: Include the issue number in your PR title and description.
+
+This process helps prevent merge conflicts when multiple contributors want to update the same documentation files and ensures all changes align with the project's direction.
+
+## Repository Structure
+
+**IMPORTANT**: The repository has been reorganized into major categories. All new contributions MUST follow this structure for PR approval.
+
+Please follow this directory structure when organizing your code snippets:
+
+- **Top-Level Categories**: These are fixed categories that represent major areas of ServiceNow development:
+  - `Core ServiceNow APIs/` - GlideRecord, GlideAjax, GlideSystem, GlideDate, etc.
+  - `Server-Side Components/` - Background Scripts, Business Rules, Script Includes, etc.
+  - `Client-Side Components/` - Client Scripts, Catalog Client Scripts, UI Actions, etc.
+  - `Modern Development/` - Service Portal, NOW Experience, GraphQL, ECMAScript 2021
+  - `Integration/` - RESTMessageV2, Import Sets, Mail Scripts, MIDServer, etc.
+  - `Specialized Areas/` - CMDB, ITOM, Performance Analytics, ATF Steps, etc.
+
+- **Sub-Categories**: Each top-level category contains sub-folders for specific ServiceNow technologies or use cases.
+- **Snippet Folders**: Each sub-category contains folders for **each code snippet**.
+- **Snippet Folder Contents**: Within each snippet folder, include:
+  - A `README.md` file that describes the code snippet.
+  - Individual files for each variant of the code snippet.
+
+### New Structure Example
+
+```
+Core ServiceNow APIs/
+  ├── GlideRecord/
+  │   ├── Query Performance Optimization/
+  │   │   ├── README.md         # Description of the optimization snippet
+  │   │   ├── basic_query.js    # Basic query example
+  │   │   └── optimized_query.js # Performance-optimized version
+  │   └── Reference Field Handling/
+  │       ├── README.md         # Description of reference handling
+  │       └── reference_query.js # Reference field query example
+  └── GlideAjax/
+      ├── Async Data Loading/
+      │   ├── README.md         # Description of async loading
+      │   ├── client_script.js  # Client-side implementation
+      │   └── script_include.js # Server-side Script Include
+Server-Side Components/
+  ├── Business Rules/
+  │   ├── Auto Assignment Logic/
+  │   │   ├── README.md         # Description of auto assignment
+  │   │   └── assignment_rule.js # Business rule implementation
+```
+
+### Category Placement Guidelines
+
+- **Core ServiceNow APIs**: All Glide* APIs and core ServiceNow JavaScript APIs
+- **Server-Side Components**: Code that runs on the server (Business Rules, Background Scripts, etc.)
+- **Client-Side Components**: Code that runs in the browser (Client Scripts, UI Actions, etc.)
+- **Modern Development**: Modern ServiceNow development approaches and frameworks
+- **Integration**: External system integrations, data import/export, and communication
+- **Specialized Areas**: Domain-specific functionality (CMDB, ITOM, Testing, etc.)
+
+## Final Checklist
+
+Before submitting your pull request, ensure that:
+- All code snippet files are in the appropriate folders.
+- Each folder is correctly placed within its category.
+- Your code snippet is accompanied by a `readme.md` file that describes it.
+
+Thank you for contributing! Your efforts help create a richer resource for the ServiceNow development community.
