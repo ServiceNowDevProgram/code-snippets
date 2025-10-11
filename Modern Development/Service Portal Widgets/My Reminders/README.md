@@ -24,3 +24,8 @@ A simple custom ServiceNow Service Portal widget for viewing and creating person
 1.  Open your target portal page in the Service Portal Designer.
 2.  Find your widget in the "Widgets" filter on the left.
 3.  Drag and dropp the widget onto the page.
+
+## Screenshots
+<img width="1831" height="396" alt="image" src="https://github.com/user-attachments/assets/bdb124a8-9634-4884-8d4b-cfb79225f07e" />
+<img width="1728" height="731" alt="image" src="https://github.com/user-attachments/assets/9bef4295-0321-4806-a4e5-465d80881bdc" />
+
