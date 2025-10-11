@@ -1,0 +1,12 @@
+<div class="faq-widget">
+    <h2>Frequently Asked Questions</h2>
+    <div ng-repeat="faq in faqs" class="faq-item">
+        <div class="faq-question" ng-click="faq.show = !faq.show">
+            <h3>{{ faq.question }}</h3>
+            <span ng-class="{'arrow-up': faq.show, 'arrow-down': !faq.show}"></span>
+        </div>
+        <div class="faq-answer" ng-show="faq.show">
+            <p>{{ faq.answer }}</p>
+        </div>
+    </div>
+</div>
