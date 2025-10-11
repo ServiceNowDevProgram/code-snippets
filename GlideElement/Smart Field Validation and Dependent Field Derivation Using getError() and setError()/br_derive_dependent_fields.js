@@ -19,7 +19,6 @@
 
     // Proceed only if no prior validation error
     var desc = current.getValue('short_description').toLowerCase();
-    gs.info('[BR:200 - Derive] Validation passed. Deriving dependent fields...');
 
     // Example 1: Derive category
     if (desc.includes('server')) {
@@ -42,7 +41,5 @@
     } else {
         current.impact = 3; // Low
     }
-
-    gs.info('[BR:200 - Derive] Fields updated → Category: ' + current.category + ', Subcategory: ' + current.subcategory + ', Impact: ' + current.impact);
 
 })(current, previous);
