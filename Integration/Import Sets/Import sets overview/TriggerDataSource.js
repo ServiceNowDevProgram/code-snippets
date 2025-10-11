@@ -1,6 +1,6 @@
 triggerDataSource: function() {
 
-    var dataSourceSysId = gs.getProperty('ds.tag.based.sys.id'); //Store the sysId of DataSource
+    var dataSourceSysId = gs.getProperty('ds.tag.based.sys.id'); //Store the sysId of DataSource from system property
 
     var grDataSource = new GlideRecord('sys_data_source');
     if (grDataSource.get(dataSourceSysId)) {
