@@ -15,7 +15,7 @@ permissions:
 
 jobs:
   call:
-    uses: ServiceNowDevProgram/Hacktoberfest/.github/workflows/unassign-stale.yml@b8c3f56
+    uses: ServiceNowDevProgram/Hacktoberfest/.github/workflows/unassign-stale.yml@b8c3f56f94d96f263420e2c051d91b791c9494d8
     with:
       enabled:         ${{ inputs.enabled }}
       max_age_minutes: ${{ inputs.max_age_minutes }}
