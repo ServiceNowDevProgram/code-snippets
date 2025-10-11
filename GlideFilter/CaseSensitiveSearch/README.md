@@ -49,3 +49,28 @@ if (filter.match(gr, true)) {
 ✅ ACL-aware
 ✅ Easier to maintain
 ✅ Consistent with UI filters
+
+## GlideFilter Utility
+
+🧠 **Why Use GlideFilter?**
+
+| Feature                         | GlideFilter | Regex / If |
+|---------------------------------|-------------|------------|
+| Security-aware (ACLs)          | ✅ Yes      | ❌ No      |
+| Case sensitivity toggle         | ✅ Yes      | ⚠️ Manual  |
+| UI-like filter syntax           | ✅ Yes      | ❌ No      |
+| Easy to read                    | ✅ Yes      | ❌ No      |
+| Scalable & reusable             | ✅ Yes      | ❌ No      |
+| Compound condition support       | ✅ Yes      | ⚠️ Complex to build |
+
+💡 **Use Cases**
+- Normalizing environment values (prod, dev, test)
+- Standardizing priority or category values
+- Filtering GlideRecords based on secure, compound conditions
+- Any script where you're mimicking UI filter logic in code
+
+🛠️ **How to Use**
+1. Go to **System Definition** → **Scripts - Background**.
+2. Paste the script above.
+3. Click **Run Script**.
+4. Check **System Logs** (gs.info) to verify updates.
