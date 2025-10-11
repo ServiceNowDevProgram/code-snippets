@@ -45,3 +45,7 @@ For example, to find models with the same name, model number and manufacturer
 var tableName = 'cmdb_model';
 var fieldNames = ['name', 'model_number', 'manufacturer'];
 ```
+
+### Sample output
+<img width="518" height="483" alt="image" src="https://github.com/user-attachments/assets/b5508bd8-4a3d-4478-95bd-fc6f770d4de2" />
+
