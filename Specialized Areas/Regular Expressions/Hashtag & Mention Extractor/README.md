@@ -92,3 +92,5 @@ TagExtractorUtils.prototype = {
 })(inputs, outputs);
 ```
 5. Use this **Action** in your flow to extract tags by passing the text to it as a parameter.
+
+<sub>🤖 This contribution was partially created with the help of AI.</sub>
