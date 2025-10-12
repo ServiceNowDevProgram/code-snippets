@@ -8,5 +8,5 @@ Zoom - in catalog item image on mouse hover.
 Zoom - in catalog item short description on mouse hover.
 */
 .sc-cat-item-short-description:hover{
-  transform: scale(1.2) translateX(15rem); /* 120% zoom nad 15rem right shift*/
+  transform: scale(1.2) translateX(15rem); /* 120% zoom and 15rem right shift*/
 }
