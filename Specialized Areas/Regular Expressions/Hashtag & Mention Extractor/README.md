@@ -20,15 +20,14 @@ A simple yet useful **ServiceNow Background Script** that extracts all hashtags 
 The logic is **self-contained** within a single function block - no dependencies or external calls.  
 You can easily **copy and adjust it** to fit different contexts:
 - Use it inside a **Business Rule**, **Script Include**, or **Flow Action Script** (see additional instructions below).  
-- Replace the sample `demoData` with a field value (e.g., `current.comments`) to analyze live data.  
-- Adjust the regex to detect other patterns (emails, incident reference, etc.). See comments in the code for examples.  
+- Replace the sample `demoData` with a field value (e.g., `current.description`) to analyze the data.  
+- Adjust the regex to detect other patterns (emails, incident reference, etc.). See comments in the code for the additional examples.  
 
 ---
 
 ### 🔧 Possible Extensions
-- Parse live table data (`sys_journal_field`, `kb_knowledge`) instead of static text.  
+- Parse table data (`sys_journal_field`, `kb_knowledge`) instead of static text.  
 - Store extracted tags in a custom table for analytics.  
-- Schedule a nightly “Top Tags” report with **Flow Designer** or **PA Widgets**.  
 
 ---
 
@@ -58,6 +57,8 @@ TagExtractorUtils.prototype = {
     type: 'TagExtractorUtils'
 };
 ```
+5. Use it as any other script include.
+
 #### Use in Business Rule with a couple of custom text fields
 
 1. Go to **Business Rules** in the Application Navigator.  
