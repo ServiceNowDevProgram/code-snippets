@@ -1,19 +1,11 @@
-function onLoad() {
-    var fieldName = 'description';
+function onChange(control, oldValue, newValue, isLoading, isTemplate) {
+    if (isLoading || newValue === oldValue) {
+        return;
+    }
 
-    // Clear any existing messages on load
-    g_form.hideFieldMsg(fieldName, true);
+    var wordCount = newValue.trim().split(/\s+/).length;
+    var message = 'Word Count: ' + (newValue ? wordCount : 0);
+    var messageType = (wordCount > 150) ? 'error' : 'info';
 
-    g_form.getControl(fieldName).addEventListener('input', function() {
-        var fieldValue = g_form.getValue(fieldName).trim();
-        var wordCount = fieldValue ? fieldValue.split(/\s+/).length : 0;
-        
-        var message = 'Word Count: ' + wordCount;
-        var type = (wordCount > 150) ? 'error' : 'info';  // red for error, greenish for info
-        
-        // Clear previous message before showing new one
-        g_form.hideFieldMsg(fieldName, true);
-        
-        g_form.showFieldMessage(fieldName, message, type);
-    });
+    g_form.showFieldMsg('description', message, messageType);
 }
