@@ -2,8 +2,6 @@
 
 A simple yet useful **ServiceNow Background Script** that extracts all hashtags (`#example`) and mentions (`@user`) from any text input using regular expressions.
 
-This script demonstrates how to apply JavaScript RegEx in server-side ServiceNow logic to parse, analyze, or extend user-generated text - ideal for text-analysis demos or lightweight automation projects.
-
 ---
 
 ### 💡 Example Use Cases
