@@ -14,8 +14,10 @@ while(userRecord.next()) {
     userRoles.query();
     
     if(!userGroups.hasNext() && !userRoles.hasNext()) {
-        orphanedUsers.push(userRecord.user_name.toString());
+        // Using getValue() instead of direct field access
+        orphanedUsers.push(userRecord.getValue('user_name'));
     }
 }
 
 gs.print('Orphaned Users: ' + orphanedUsers.join(', '));
+
