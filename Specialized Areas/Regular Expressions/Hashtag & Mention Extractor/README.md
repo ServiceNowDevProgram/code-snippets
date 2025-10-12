@@ -59,7 +59,7 @@ TagExtractorUtils.prototype = {
 ```
 5. Use it as any other script include.
 
-#### Use in Business Rule with a couple of custom text fields
+#### Use in Business Rule with a couple of custom text fields and previously created script include
 
 1. Go to **Business Rules** in the Application Navigator.  
 2. Click **New**, choose a table (e.g., `sc_task`, `incident`).  
@@ -76,7 +76,7 @@ TagExtractorUtils.prototype = {
 
 })(current, previous);
 ```
-#### Use in Flow Action Script
+#### Use in Flow Action Script and previously created script include
 
 1. Go to **Flow Designer > Action** and click **New Action**.  
 2. Give it a name like `Extract Tags from Text`.  
