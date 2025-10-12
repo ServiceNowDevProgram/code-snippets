@@ -1,9 +1,9 @@
 /**
- * Custom CSS for ServiceNow Code Snippets GitHub Pages
- * Additional styles and overrides
+ * Improved Custom CSS for ServiceNow Code Snippets GitHub Pages
+ * Enhancements for performance, maintainability, and accessibility
  */
 
-/* Custom scrollbar */
+/* === Scrollbar Styling === */
 ::-webkit-scrollbar {
     width: 8px;
     height: 8px;
@@ -16,46 +16,44 @@
 ::-webkit-scrollbar-thumb {
     background: var(--border-color);
     border-radius: 4px;
+    transition: background-color 0.3s ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {
     background: var(--text-muted);
 }
 
-/* Selection styling */
-::selection {
-    background: var(--primary-color);
-    color: white;
-}
-
+/* === Text Selection Styling === */
+::selection,
 ::-moz-selection {
     background: var(--primary-color);
-    color: white;
+    color: #fff;
 }
 
-/* Focus styles for accessibility */
-*:focus {
+/* === Focus Styles for Accessibility === */
+*:focus-visible {
     outline: 2px solid var(--primary-color);
     outline-offset: 2px;
 }
 
+/* Skip link for keyboard users */
 .skip-link {
     position: absolute;
     top: -40px;
     left: 6px;
     background: var(--primary-color);
-    color: white;
+    color: #fff;
     padding: 8px;
     text-decoration: none;
-    transition: top 0.3s;
+    transition: top 0.3s ease;
     z-index: 1000;
 }
 
-.skip-link:focus {
+.skip-link:focus-visible {
     top: 6px;
 }
 
-/* Animation classes */
+/* === Animations === */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -86,22 +84,27 @@
 }
 
 .fade-in {
-    animation: fadeIn 0.6s ease-out;
+    animation: fadeIn 0.6s ease-out forwards;
 }
 
 .slide-in {
-    animation: slideIn 0.5s ease-out;
+    animation: slideIn 0.5s ease-out forwards;
 }
 
 .pulse-hover:hover {
     animation: pulse 0.3s ease-in-out;
 }
 
-/* Loading states */
+/* Loading skeleton shimmer */
 .loading-skeleton {
-    background: linear-gradient(90deg, var(--bg-secondary) 25%, var(--border-light) 50%, var(--bg-secondary) 75%);
+    background: linear-gradient(
+        90deg,
+        var(--bg-secondary) 25%,
+        var(--border-light) 50%,
+        var(--bg-secondary) 75%
+    );
     background-size: 200% 100%;
-    animation: loading 1.5s infinite;
+    animation: loading 1.5s infinite linear;
 }
 
 @keyframes loading {
@@ -113,9 +116,10 @@
     }
 }
 
-/* Code syntax highlighting enhancements */
+/* === Code Syntax Highlighting Enhancements === */
 pre[class*="language-"] {
     position: relative;
+    padding-top: 1.5rem; /* add padding to accommodate label */
 }
 
 pre[class*="language-"]::before {
@@ -124,11 +128,12 @@ pre[class*="language-"]::before {
     top: 0;
     right: 0;
     background: var(--primary-color);
-    color: white;
+    color: #fff;
     padding: 0.25rem 0.5rem;
     font-size: 0.75rem;
     text-transform: uppercase;
     border-bottom-left-radius: 4px;
+    user-select: none;
 }
 
 /* Copy code button */
@@ -143,18 +148,22 @@ pre[class*="language-"]::before {
     font-size: 0.75rem;
     cursor: pointer;
     opacity: 0;
-    transition: opacity 0.2s ease;
+    transition: opacity 0.2s ease, background-color 0.2s ease;
+    user-select: none;
 }
 
-.code-preview:hover .code-copy-btn {
+.code-preview:hover .code-copy-btn,
+.code-copy-btn:focus-visible {
     opacity: 1;
 }
 
-.code-copy-btn:hover {
+.code-copy-btn:hover,
+.code-copy-btn:focus-visible {
     background: var(--bg-secondary);
+    outline: none;
 }
 
-/* Search enhancements */
+/* === Search Suggestions === */
 .search-suggestions {
     position: absolute;
     top: 100%;
@@ -177,8 +186,10 @@ pre[class*="language-"]::before {
     transition: background-color 0.2s ease;
 }
 
-.search-suggestion:hover {
+.search-suggestion:hover,
+.search-suggestion:focus-visible {
     background: var(--bg-secondary);
+    outline: none;
 }
 
 .search-suggestion:last-child {
@@ -195,10 +206,10 @@ pre[class*="language-"]::before {
     color: var(--text-secondary);
 }
 
-/* Mobile enhancements */
+/* === Responsive and Mobile Enhancements === */
 @media (max-width: 768px) {
     .mobile-hidden {
-        display: none;
+        display: none !important;
     }
     
     .mobile-menu-toggle {
@@ -208,6 +219,14 @@ pre[class*="language-"]::before {
         font-size: 1.5rem;
         color: var(--text-primary);
         cursor: pointer;
+        padding: 0.5rem;
+        transition: color 0.2s ease;
+    }
+    
+    .mobile-menu-toggle:hover,
+    .mobile-menu-toggle:focus-visible {
+        color: var(--primary-color);
+        outline: none;
     }
     
     .nav-content {
@@ -229,7 +248,7 @@ pre[class*="language-"]::before {
     
     .mobile-menu.open {
         display: block;
-        animation: slideIn 0.3s ease-out;
+        animation: slideIn 0.3s ease-out forwards;
     }
     
     .mobile-menu-item {
@@ -238,52 +257,51 @@ pre[class*="language-"]::before {
         text-decoration: none;
         color: var(--text-primary);
         display: block;
+        transition: background-color 0.2s ease;
     }
     
     .mobile-menu-item:last-child {
         border-bottom: none;
     }
     
-    .mobile-menu-item:hover {
+    .mobile-menu-item:hover,
+    .mobile-menu-item:focus-visible {
         background: var(--bg-secondary);
+        outline: none;
     }
 }
 
-/* Print styles */
+/* === Print Styles === */
 @media print {
     .header,
     .nav,
     .search-section,
     .footer {
-        display: none;
+        display: none !important;
     }
     
     .main-content {
-        max-width: none;
-        padding: 0;
+        max-width: none !important;
+        padding: 0 !important;
     }
     
-    .category-card {
-        break-inside: avoid;
-        page-break-inside: avoid;
-    }
-    
+    .category-card,
     .code-preview {
         break-inside: avoid;
         page-break-inside: avoid;
     }
     
     pre {
-        white-space: pre-wrap;
-        word-wrap: break-word;
+        white-space: pre-wrap !important;
+        word-wrap: break-word !important;
     }
 }
 
-/* High contrast mode support */
+/* === High Contrast Mode Support === */
 @media (prefers-contrast: high) {
     :root {
-        --border-color: #000000;
-        --border-light: #333333;
+        --border-color: #000;
+        --border-light: #333;
         --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.8);
         --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.8);
         --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.8);
@@ -298,7 +316,7 @@ pre[class*="language-"]::before {
     }
 }
 
-/* Reduced motion support */
+/* === Reduced Motion Support === */
 @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
@@ -310,13 +328,13 @@ pre[class*="language-"]::before {
     }
 }
 
-/* Utility classes */
+/* === Utility Classes === */
 .text-center { text-align: center; }
 .text-left { text-align: left; }
 .text-right { text-align: right; }
 
-.hidden { display: none; }
-.visible { display: block; }
+.hidden { display: none !important; }
+.visible { display: block !important; }
 
 .mt-1 { margin-top: 0.25rem; }
 .mt-2 { margin-top: 0.5rem; }
