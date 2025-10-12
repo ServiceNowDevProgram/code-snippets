@@ -1,11 +1,12 @@
 # PR Description: 
-
+replace this with your description
 
 # Pull Request Checklist
 
 ## Overview
+- [x] Put an x inside of the square brackets to check each item.
 - [ ] I have read and understood the [CONTRIBUTING.md](CONTRIBUTING.md) guidelines
-- [ ] My pull request has a descriptive title that accurately reflects the changes
+- [ ] My pull request has a descriptive title that accurately reflects the changes and the description has been filled in above.
 - [ ] I've included only files relevant to the changes described in the PR title and description
 - [ ] I've created a new branch in my forked repository for this contribution
 

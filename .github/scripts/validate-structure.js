@@ -49,6 +49,34 @@ function validateFilePath(filePath) {
   const normalized = filePath.replace(/\\/g, '/');
   const segments = normalized.split('/');
 
+  // Check for invalid characters that break local file systems
+  for (let i = 0; i < segments.length; i++) {
+    const segment = segments[i];
+
+    // Check for trailing periods (invalid on Windows)
+    if (segment.endsWith('.')) {
+      return `Invalid folder/file name '${segment}' in path '${normalized}': Names cannot end with a period (.) as this breaks local file system sync on Windows.`;
+    }
+
+    // Check for trailing spaces (invalid on Windows)
+    if (segment.endsWith(' ')) {
+      return `Invalid folder/file name '${segment}' in path '${normalized}': Names cannot end with a space as this breaks local file system sync on Windows.`;
+    }
+
+    // Check for reserved Windows names
+    const reservedNames = ['CON', 'PRN', 'AUX', 'NUL', 'COM1', 'COM2', 'COM3', 'COM4', 'COM5', 'COM6', 'COM7', 'COM8', 'COM9', 'LPT1', 'LPT2', 'LPT3', 'LPT4', 'LPT5', 'LPT6', 'LPT7', 'LPT8', 'LPT9'];
+    const nameWithoutExt = segment.split('.')[0].toUpperCase();
+    if (reservedNames.includes(nameWithoutExt)) {
+      return `Invalid folder/file name '${segment}' in path '${normalized}': '${nameWithoutExt}' is a reserved name on Windows and will break local file system sync.`;
+    }
+
+    // Check for invalid characters (Windows and general file system restrictions)
+    const invalidChars = /[<>:"|?*\x00-\x1F]/;
+    if (invalidChars.test(segment)) {
+      return `Invalid folder/file name '${segment}' in path '${normalized}': Contains characters that are invalid on Windows file systems (< > : " | ? * or control characters).`;
+    }
+  }
+
   if (!allowedCategories.has(segments[0])) {
     return null;
   }

@@ -1,0 +1,2 @@
+The purpose of this code is to conditionally apply a specific label (label_entry) to an Incident when the person updating the record is the same as the caller. If the update is made by someone else, the label is removed.
+This mechanism helps fulfillers quickly identify caller driven updates, enabling faster and more targeted responses. Additionally, it can be leveraged in reporting to track caller engagement.
