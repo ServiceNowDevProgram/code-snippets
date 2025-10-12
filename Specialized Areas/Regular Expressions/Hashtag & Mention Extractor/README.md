@@ -21,9 +21,7 @@ The logic is **self-contained** within a single function block - no dependencies
 You can easily **copy and adjust it** to fit different contexts:
 - Use it inside a **Business Rule**, **Script Include**, or **Flow Action Script**.  
 - Replace the sample `demoData` with a field value (e.g., `current.comments`) to analyze live data.  
-- Adjust the regex to detect other patterns (emails, keywords, etc.).  
-
-This makes it a **plug-and-play snippet** for any ServiceNow application or table that requires quick text pattern recognition.
+- Adjust the regex to detect other patterns (emails, incident reference, etc.). See comments in the code for examples.  
 
 ---
 
@@ -31,3 +29,66 @@ This makes it a **plug-and-play snippet** for any ServiceNow application or tabl
 - Parse live table data (`sys_journal_field`, `kb_knowledge`) instead of static text.  
 - Store extracted tags in a custom table for analytics.  
 - Schedule a nightly “Top Tags” report with **Flow Designer** or **PA Widgets**.  
+
+#### Additional Instructions:
+##### Use in Script Include
+
+1. Go to **Script Includes** in the Application Navigator.  
+2. Click **New**, and name it (e.g., `TagExtractorUtils`).  
+3. Set the following options:  
+   - **Client Callable**: `false`  
+   - **Accessible from**: `All application scopes`  
+4. Paste this code:
+
+```javascript
+var TagExtractorUtils = Class.create();
+TagExtractorUtils.prototype = {
+    initialize: function () {},
+
+    extract: function (text) {
+        var result = {
+            hashtags: text.match(/#[A-Za-z0-9_]+/g),
+            mentions: text.match(/@[A-Za-z0-9_]+/g)
+        };
+        return result;
+    },
+
+    type: 'TagExtractorUtils'
+};
+```
+#### Use in Business Rule with a couple of custom text fields
+
+### ✅ Use in Business Rule
+
+1. Go to **Business Rules** in the Application Navigator.  
+2. Click **New**, choose a table (e.g., `sc_task`, `incident`).  
+3. Set **When** to `before`, `after`, or `async` (usually `async`).  
+4. In the **Script** section, call your tag-extracting logic:
+
+```javascript
+(function executeRule(current, previous /*null when async*/) {
+    var text = current.short_description + ' ' + current.description;
+    var tags = new TagExtractorUtils().extract(text);
+
+    current.u_hashtags = tags.hashtags.join(', ');
+    current.u_mentions = tags.mentions.join(', ');
+
+})(current, previous);
+```
+#### ✅ Use in Flow Action Script
+
+1. Go to **Flow Designer > Action** and click **New Action**.  
+2. Give it a name like `Extract Tags from Text`.  
+3. Add an **Input** (e.g., `input_text` of type String).  
+4. Add a **Script step**, then paste the script there:
+
+```javascript
+(function execute(inputs, outputs) {
+    var text = inputs.input_text || '';
+    var tags = new TagExtractorUtils().extract(text);
+
+    outputs.hashtags = tags.hashtags.join(', ');
+    outputs.mentions = tags.mentions.join(', ');
+})(inputs, outputs);
+```
+5. Use this **Action** in your flow to extract tags by passing the text to it as a parameter.
