@@ -73,7 +73,7 @@ TagExtractorUtils.prototype = {
 
 })(current, previous);
 ```
-#### ✅ Use in Flow Action Script
+#### Use in Flow Action Script
 
 1. Go to **Flow Designer > Action** and click **New Action**.  
 2. Give it a name like `Extract Tags from Text`.  
