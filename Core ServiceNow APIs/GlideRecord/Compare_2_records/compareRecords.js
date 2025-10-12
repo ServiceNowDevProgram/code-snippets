@@ -1,6 +1,6 @@
 /**
  * Compare two records in a ServiceNow table field-by-field.
- * Logs all field differences between the two records.
+ * Logs all field differences between the two records, including display values.
  *
  * Usage:
  * compareRecords('incident', 'sys_id_1_here', 'sys_id_2_here');
@@ -21,11 +21,18 @@ function compareRecords(table, sys_id1, sys_id2) {
     for (var i = 0; i < fields.size(); i++) {
         var field = fields.get(i);
         var fieldName = field.getName();
+
         var val1 = rec1.getValue(fieldName);
         var val2 = rec2.getValue(fieldName);
 
+        var disp1 = rec1.getDisplayValue(fieldName);
+        var disp2 = rec2.getDisplayValue(fieldName);
+
         if (val1 != val2) {
-            gs.info(fieldName + ': "' + val1 + '" vs "' + val2 + '"');
+            gs.info(
+                fieldName + ': Backend -> "' + val1 + '" vs "' + val2 + '", ' +
+                'Display -> "' + disp1 + '" vs "' + disp2 + '"'
+            );
         }
     }
 
