@@ -53,13 +53,3 @@
 ## Result
 <img width="1838" height="922" alt="image" src="https://github.com/user-attachments/assets/14c29e0a-ad88-411e-b7ca-1c82eaeaf324" />
 
-
-## Contributing
-
-Contributions, improvements, and pull requests are welcome. Please follow these guidelines:
-
-* Fork the repo and create feature branches for changes.
-* Keep the macro CSS minimal and well-commented.
-* Include screenshots and a short description for visual changes.
-
-If you want help adapting this macro to your instance (Next Experience / Workspaces / Service Portal), open an issue or reach out via the repository.
