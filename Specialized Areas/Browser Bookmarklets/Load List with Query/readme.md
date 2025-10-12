@@ -17,5 +17,11 @@ The Workaround:
 By adding a sysparm_query to the URL, the list will be filtered appropriately.  The above encoded query resolves like this when added to the end of a URL:
 https://instancename.service-now.com/now/nav/ui/classic/params/target/sc_request_list.do%3Fsysparm_query%3Du_addressLIKEmain%2520st
 
+Where sc_rquest is the table name
+u_address is the field name to query on
+and the rest is the encoded query
+
 When doing this, you will see the correct filter reflected in the breadcrumb, but here is the best part - now when you expand the filter via the funnel icon, 'contains' is a valid operator, so you can change the text/value to whatever else you are looking for!
 While this is a simple example, passing in a complex encoded query with ANDs and ORs will also work to filter the records and update the filter where building the filter manually is limited.
+
+This bookmarklet is formatted to open a new tab when logged into an instance. 
