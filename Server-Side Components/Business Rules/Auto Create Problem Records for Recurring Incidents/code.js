@@ -2,13 +2,13 @@
     if (!current.cmdb_ci)
         return;
 
-    var gr = new GlideAggregate('incident');
-    gr.addQuery('cmdb_ci', current.cmdb_ci);
-    gr.addQuery('sys_created_on', '>=', gs.daysAgoStart(1));
-    gr.addAggregate('COUNT');
-    gr.query();
+    var ck = new GlideAggregate('incident');
+    ck.addQuery('cmdb_ci', current.cmdb_ci);
+    ck.addQuery('sys_created_on', '>=', gs.daysAgoStart(1));
+    ck.addAggregate('COUNT');
+    ck.query();
 
-    if (gr.next() && gr.getAggregate('COUNT') >= 5) {
+    if (ck.next() && ck.getAggregate('COUNT') >= 5) {
         var problemGR = new GlideRecord('problem');
         problemGR.addQuery('cmdb_ci', current.cmdb_ci);
         problemGR.addQuery('state', '<', 8); // Not Closed
