@@ -30,6 +30,8 @@ You can easily **copy and adjust it** to fit different contexts:
 - Store extracted tags in a custom table for analytics.  
 - Schedule a nightly “Top Tags” report with **Flow Designer** or **PA Widgets**.  
 
+---
+
 ### Additional Instructions:
 #### Use in Script Include
 
