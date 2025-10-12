@@ -1,4 +1,5 @@
-// Code to CreateMultipleRecords in any Glide Record Table for demonstrations
-//Navigate to Scripts Background / System Definition > Scripts - Background
-// Enter Code snippet and update the place holder values Table name, number of records to create, and optional fields to set or use defaults.
-// Run the script
+***********
+This Script Will Check If The Manager Is Member Of The Group. 
+If The Manager Is Not Member, It Will Add The Manager To The Group. 
+This Script Will Only Target Active Groups With Non Empty Manager Value. 
+***********

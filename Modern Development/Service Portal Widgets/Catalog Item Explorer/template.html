@@ -31,22 +31,29 @@
     </div>
     <!-- Item List -->
     <ul role="rowgroup" class="list-group padder-l-none padder-r-none">
-        <li class="list-group-item" ng-repeat="item in c.displayItems | limitTo:c.data.itemsPerPage" style="margin:0;"
-            ng-click="c.openUrl(item.itemId)">
-            <div role="cell" class="padder-l-none padder-r-none main-column">
-                <div class="primary-display">
-                    {{item.name}}
-                </div>
-                <small class="text-muted">
-                    <div class="secondary-display">
-                        <span>{{item.description}}</span>
-                    </div>
-                </small>
-            </div>
-        </li>
-    </ul>
+      <li class="list-group-item" ng-repeat="item in c.displayItems | limitTo:c.data.itemsPerPage" ng-click="c.openUrl(item.itemId, item.externalUrl)">
+          <div role="cell" class="padder-l-none padder-r-none main-column">
+              <div class="primary-display">
+                  {{item.name}}
+              </div>
+              <small class="text-muted">
+                  <div class="secondary-display">
+                      <span>{{item.description}}</span>
+                  </div>
+              </small>
+          </div>
+          <!-- Item Type -->
+          <div role="cell" class="item-type-column text-muted">
+              {{item.type}}
+          </div>
+          <!-- External Redirect -->	
+          <div role="cell external-redirect-cell" ng-click="c.openUrl(item.itemId, item.externalUrl, true); $event.stopPropagation();">
+              <i class="fa fa-external-link" aria-hidden="true"></i>              
+          </div>
+      </li>
+	</ul>
     <!-- Pagination -->
-    <div class="panels-container" ng-if="c.isMultiplePage" style="display: flex; justify-content: center;">
+    <div class="panels-container" ng-if="c.isMultiplePage">
         <uib-pagination total-items="c.filteredCatalogItems.length" ng-model="c.data.currentPage"
             ng-change="c.pageChanged()" items-per-page="c.data.itemsPerPage" max-size="c.data.maxPagesInPaginator"
             boundary-links="c.data.showBoundaryLinks">
@@ -54,5 +61,5 @@
     </div>
     <!-- Panel Footer -->
     <div class="panel-footer">Total items found:
-        {{c.filteredCatalogItems.length}}<span class="copyright" ng-show="c.data.showCopyright">&copy; 2023 Ivan Betev</span></div>
+        {{c.filteredCatalogItems.length}}<span class="copyright" ng-show="c.data.showCopyright">&copy; 2025 Ivan Betev</span></div>
 </div>

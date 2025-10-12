@@ -1,0 +1,90 @@
+var projectId = '<SYS ID of Project (pm_project)>';
+
+var instanceName = gs.getProperty('instance_name');
+
+gs.info('Ensure you have clicked the "Calculate Completion Estimates" related link on the Project form to sync up the EAC with the latest data.');
+gs.info('');
+var fiscalCal = new ITFM_FiscalCalendar();
+var fiscalObject = fiscalCal.validatePeriods();
+var parsedFiscalObject = JSON.parse(fiscalObject);
+
+if (parsedFiscalObject.type == "Error") {
+gs.info('Fiscal Calendar is not valid which may cause issues with the expected EAC calculation:');
+gs.info(parsedFiscalObject.msg);
+}
+
+var currentFiscalPeriod = new FinancialsForPPM().getCurrentFiscalPeriod();
+var currentFiscalPeriodId = JSON.parse(currentFiscalPeriod).fiscal_period;
+var grFP = new GlideRecord('fiscal_period');
+grFP.get(currentFiscalPeriodId);
+
+var startDate = grFP.getValue('start_date_time');
+var year = startDate.substring(0,4);
+var month = startDate.substring(4,6);
+var day = startDate.substring(6,8);
+var date = year + "-" + month + "-" + day;
+
+gs.info('');
+gs.info('The current Fiscal Period is named "' + grFP.getDisplayValue() + '" and the Sys ID  is ' + currentFiscalPeriodId);
+
+gs.info('');
+gs.info('EAC calculation: Total actual costs from previous months + Total planned cost from the current and future months');
+
+var capexFuture = 0;
+var opexFuture = 0;
+var capexActual = 0;
+var opexActual = 0;
+
+var aggCapexFuture = new GlideAggregate('cost_plan_breakdown');
+aggCapexFuture.addAggregate('SUM', 'cost_default_currency');
+aggCapexFuture.addEncodedQuery("breakdown_type=task^task=" + projectId + "^expense_type=capex^fiscal_period.fiscal_start_date_time>=javascript:gs.dateGenerate('" + date + "','00:00:00')");
+aggCapexFuture.setGroup(false);
+aggCapexFuture.query();
+if (aggCapexFuture.next()) {
+capexFuture = aggCapexFuture.getAggregate('SUM', 'cost_default_currency');
+gs.info('');
+gs.info('Capex Future Costs: ' + aggCapexFuture.getAggregate('SUM', 'cost_default_currency'));
+gs.info("https://" + instanceName + ".service-now.com/" + "cost_plan_breakdown_list.do?sysparm_query=breakdown_type%3Dtask%5Etask%3D" + projectId + "%5Eexpense_type%3Dcapex%5Efiscal_period.fiscal_start_date_time%3E%3Djavascript%3Ags.dateGenerate('" + date + "'%2C'00%3A00%3A00')&sysparm_view=");
+}
+
+var aggOpexFuture = new GlideAggregate('cost_plan_breakdown');
+aggOpexFuture.addAggregate('SUM', 'cost_default_currency');
+aggOpexFuture.addEncodedQuery("breakdown_type=task^task=" + projectId + "^expense_type=opex^fiscal_period.fiscal_start_date_time>=javascript:gs.dateGenerate('" + date + "','00:00:00')");
+aggOpexFuture.setGroup(false);
+aggOpexFuture.query();
+if (aggOpexFuture.next()) {
+opexFuture = aggOpexFuture.getAggregate('SUM', 'cost_default_currency');
+gs.info('');
+gs.info('Opex Future Costs: ' + aggOpexFuture.getAggregate('SUM', 'cost_default_currency'));
+gs.info("https://" + instanceName + ".service-now.com/" + "cost_plan_breakdown_list.do?sysparm_query=breakdown_type%3Dtask%5Etask%3D" + projectId + "%5Eexpense_type%3Dopex%5Efiscal_period.fiscal_start_date_time%3E%3Djavascript%3Ags.dateGenerate('" + date + "'%2C'00%3A00%3A00')&sysparm_view=");
+}
+
+var aggCapexActual = new GlideAggregate('cost_plan_breakdown');
+aggCapexActual.addAggregate('SUM', 'actual');
+aggCapexActual.addEncodedQuery("breakdown_type=task^task=" + projectId + "^expense_type=capex^fiscal_period.fiscal_start_date_time<javascript:gs.dateGenerate('" + date + "','00:00:00')");
+aggCapexActual.setGroup(false);
+aggCapexActual.query();
+if (aggCapexActual.next()) {
+capexActual = aggCapexActual.getAggregate('SUM', 'actual');
+gs.info('');
+gs.info('Capex Past Actual Costs: ' + aggCapexActual.getAggregate('SUM', 'actual'));
+gs.info("https://" + instanceName + ".service-now.com/" + "cost_plan_breakdown_list.do?sysparm_query=breakdown_type%3Dtask%5Etask%3D" + projectId + "%5Eexpense_type%3Dcapex%5Efiscal_period.fiscal_start_date_time%3Cjavascript%3Ags.dateGenerate('" + date + "'%2C'00%3A00%3A00')&sysparm_view=");
+}
+
+var aggOpexActual = new GlideAggregate('cost_plan_breakdown');
+aggOpexActual.addAggregate('SUM', 'actual');
+aggOpexActual.addEncodedQuery("breakdown_type=task^task=" + projectId + "^expense_type=opex^fiscal_period.fiscal_start_date_time<javascript:gs.dateGenerate('" + date + "','00:00:00')");
+aggOpexActual.setGroup(false);
+aggOpexActual.query();
+if (aggOpexActual.next()) {
+opexActual = aggOpexActual.getAggregate('SUM', 'actual');
+gs.info('');
+gs.info('Opex Past Actual Costs: ' + aggOpexActual.getAggregate('SUM', 'actual'));
+gs.info("https://" + instanceName + ".service-now.com/" + "cost_plan_breakdown_list.do?sysparm_query=breakdown_type%3Dtask%5Etask%3D" + projectId + "%5Eexpense_type%3Dopex%5Efiscal_period.fiscal_start_date_time%3Cjavascript%3Ags.dateGenerate('" + date + "'%2C'00%3A00%3A00')&sysparm_view=");
+}
+
+gs.info('');
+gs.info('Plugged into the formula (CapexNowAndFuture + OpexNowAndFuture + CapexPastActuals + OpexPastActuals) = EAC');
+gs.info(Number(capexFuture) + ' + ' + Number(opexFuture) + ' + ' + Number(capexActual) + ' + ' + Number(opexActual) + ' = EAC');
+var sum = Number(capexFuture) + Number(opexFuture) + Number(capexActual) + Number(opexActual);
+gs.info('Expected EAC = ' + sum);
