@@ -6,20 +6,20 @@ This script demonstrates how to apply JavaScript RegEx in server-side ServiceNow
 
 ---
 
-## 💡 Example Use Cases
-- Automatically identify hashtags and mentions in **incident comments**, **knowledge articles**, or **survey feedback**.  
-- Build internal analytics to track trending topics like `#VPN`, `#email`, or `#network`.  
+### 💡 Example Use Cases
+- Automatically identify hashtags and mentions in **incident comments**, **knowledge articles**, or **survey feedback**.
+- Extract tags or mentions from user input in Catalog Items/Record Producers to populate hidden variables or drive logic.
 
 ---
-## 🚀 How to Run
+### 🚀 How to Run
 1. In your ServiceNow instance, navigate to **System Definition → Scripts – Background**.  
-2. Paste the script from this repository.  
+2. Paste the script from this repository and adjust it according to your needs.  
 3. Click **Run Script**.  
 
 ---
 
-## 📦 Reusability
-The logic is **self-contained** within a single function block — no dependencies or external calls.  
+### 📦 Reusability
+The logic is **self-contained** within a single function block - no dependencies or external calls.  
 You can easily **copy and adjust it** to fit different contexts:
 - Use it inside a **Business Rule**, **Script Include**, or **Flow Action Script**.  
 - Replace the sample `demoData` with a field value (e.g., `current.comments`) to analyze live data.  
@@ -29,7 +29,7 @@ This makes it a **plug-and-play snippet** for any ServiceNow application or tabl
 
 ---
 
-## 🔧 Possible Extensions
+### 🔧 Possible Extensions
 - Parse live table data (`sys_journal_field`, `kb_knowledge`) instead of static text.  
 - Store extracted tags in a custom table for analytics.  
 - Schedule a nightly “Top Tags” report with **Flow Designer** or **PA Widgets**.  
