@@ -2,7 +2,8 @@
 
 function onSubmit() {
     var emailField = g_form.getValue('email');
-    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    //Comprehensive email regex pattern
+    var emailPattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
     if (!emailPattern.test(emailField)) {
         g_form.addErrorMessage('Please enter a valid email address.');
