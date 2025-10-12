@@ -1,0 +1,60 @@
+This XML file does not appear to have any style information associated with it. The document tree is shown below.
+<unload unload_date="2023-06-16 10:43:05">
+<sys_ui_action action="INSERT_OR_UPDATE">
+<action_name>copy_variable_set</action_name>
+<active>true</active>
+<client>false</client>
+<client_script_v2>
+<![CDATA[ function onClick(g_form) { } ]]>
+</client_script_v2>
+<comments/>
+<condition/>
+<form_action>true</form_action>
+<form_button>true</form_button>
+<form_button_v2>false</form_button_v2>
+<form_context_menu>false</form_context_menu>
+<form_link>false</form_link>
+<form_menu_button_v2>false</form_menu_button_v2>
+<form_style/>
+<format_for_configurable_workspace>false</format_for_configurable_workspace>
+<hint/>
+<isolate_script>false</isolate_script>
+<list_action>false</list_action>
+<list_banner_button>false</list_banner_button>
+<list_button>false</list_button>
+<list_choice>false</list_choice>
+<list_context_menu>false</list_context_menu>
+<list_link>false</list_link>
+<list_save_with_form_button>false</list_save_with_form_button>
+<list_style/>
+<messages/>
+<name>Copy Variable Set</name>
+<onclick/>
+<order>100</order>
+<script>
+<![CDATA[ //set some new default values var setName = current.title; current.title = 'Copy of ' + setName; current.sys_scope = gs.getCurrentApplicationId(); current.sys_policy = ""; //insert a copy of the variable set var oldid = current.sys_id.toString(); var newid = current.insert(); if (newid) { var allVars = {}; createVariables(oldid, newid); createCatalogClientScript(oldid, newid); createCatalogUiPolicy(oldid, newid); } //creates a copy of the variables and associates them to the new variable set function createVariables(oldid, newid) { var vars = new GlideRecord('item_option_new'); vars.addQuery('variable_set', oldid); vars.addActiveQuery(); vars.query(); while (vars.next()) { var varoldid = vars.sys_id.toString(); vars.variable_set = newid; var varnewid = vars.insert(); allVars['IO:' + varoldid] = 'IO:' + varnewid.toString(); var qc = new GlideRecord('question_choice'); qc.addQuery('question', varoldid); qc.query(); while (qc.next()) { qc.question = varnewid; qc.insert(); } } } //creates a copy of the client scripts and associates to the variable set. function createCatalogClientScript(oldid, newid) { var ccs = new GlideRecord('catalog_script_client'); ccs.addQuery('variable_set', oldid); ccs.addActiveQuery(); ccs.query(); while (ccs.next()) { ccs.variable_set = newid; ccs.insert(); } } //creates a copy of the UI Policies and associates them to the new variable set function createCatalogUiPolicy(oldid, newid) { var cup = new GlideRecord('catalog_ui_policy'); cup.addQuery('variable_set', oldid); cup.addActiveQuery(); cup.query(); while (cup.next()) { var uipoldid = cup.sys_id.toString(); cup.variable_set = newid; var newuip = cup.insert(); var cupa = new GlideRecord('catalog_ui_policy_action'); cupa.addQuery('ui_policy', uipoldid); cupa.query(); while (cupa.next()) { cupa.ui_policy = newuip; cupa.variable_set = newid; var cv = cupa.catalog_variable; cupa.catalog_variable = allVars[cv]; cupa.insert(); } } } //Return the user to the new variable set record action.setRedirectURL(current); ]]>
+</script>
+<show_insert>true</show_insert>
+<show_multiple_update>false</show_multiple_update>
+<show_query>false</show_query>
+<show_update>true</show_update>
+<sys_class_name>sys_ui_action</sys_class_name>
+<sys_created_by>DHR9657</sys_created_by>
+<sys_created_on>2022-03-07 07:33:19</sys_created_on>
+<sys_domain>global</sys_domain>
+<sys_domain_path>/</sys_domain_path>
+<sys_id>cd0ad092dbc2051005edd9fcd396195a</sys_id>
+<sys_mod_count>8</sys_mod_count>
+<sys_name>Copy Variable Set</sys_name>
+<sys_overrides display_value=""/>
+<sys_package display_value="Global" source="global">global</sys_package>
+<sys_policy/>
+<sys_scope display_value="Global">global</sys_scope>
+<sys_update_name>sys_ui_action_cd0ad092dbc2051005edd9fcd396195a</sys_update_name>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2023-06-16 10:42:52</sys_updated_on>
+<table>item_option_new_set</table>
+<ui11_compatible>true</ui11_compatible>
+<ui16_compatible>false</ui16_compatible>
+</sys_ui_action>
+</unload>
