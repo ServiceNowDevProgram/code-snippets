@@ -30,8 +30,8 @@ You can easily **copy and adjust it** to fit different contexts:
 - Store extracted tags in a custom table for analytics.  
 - Schedule a nightly “Top Tags” report with **Flow Designer** or **PA Widgets**.  
 
-#### Additional Instructions:
-##### Use in Script Include
+### Additional Instructions:
+#### Use in Script Include
 
 1. Go to **Script Includes** in the Application Navigator.  
 2. Click **New**, and name it (e.g., `TagExtractorUtils`).  
