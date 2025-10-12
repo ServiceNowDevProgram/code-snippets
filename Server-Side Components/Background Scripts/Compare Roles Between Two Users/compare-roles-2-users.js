@@ -1,43 +1,79 @@
-(function(){
-	
-	// false - only directly assigned roles
-	// true - roles inherited from other roles or groups
-	var include_inherited_roles = false;
-	
-	// Username of the two users we want to compare roles agaist
-	var username_a = "abel.tuter";
-	var username_b = "abraham.lincoln";
+(function() {
+    // Configuration: Set to true to include inherited roles, false for directly assigned roles only
+    var includeInheritedRoles = false;
 
-	var set_a = [];
-	var set_b = [];
-	
-	// Query for user A's roles
-	var gr_user_a = new GlideRecord("sys_user_has_role");
-	gr_user_a.addQuery("user.user_name", username_a);
-	if(!include_inherited_roles)
-		gr_user_a.addQuery("inherited", false);
-	gr_user_a.addQuery("state","active");
-	gr_user_a.query();
-	while(gr_user_a.next())
-		set_a.push(gr_user_a.role.name.toString());
-	
-	
-	// Query for user B's roles
-	var gr_user_b = new GlideRecord("sys_user_has_role");
-	gr_user_b.addQuery("user.user_name", username_b);
-	if(!include_inherited_roles)
-		gr_user_b.addQuery("inherited", false);
-	gr_user_b.addQuery("state","active");
-	gr_user_b.query();
-	while(gr_user_b.next())
-		set_b.push(gr_user_b.role.name.toString());
-	
-	// Roles that A has that B does not have
-	var a_not_b = set_a.concat(set_b).filter( function(value, index, self){return set_b.indexOf(value) < 0;} );
-	// Roles that B has that A does not have
-	var b_not_a = set_a.concat(set_b).filter( function(value, index, self){return set_a.indexOf(value) < 0;} );
-	// Roles that both A and B have
-	var a_intersect_b = set_a.concat(set_b).filter( function(value, index, self){return set_b.indexOf(value) >= 0 && set_a.indexOf(value) >= 0;} ).filter(function(value, index, self){return self.indexOf(value) === index;});
-	
-	gs.print("\n-Exclusive Role(s) to " + username_a + ":\n\t" + a_not_b.join("\n\t") + "\n\n-Exclusive Role(s) to " + username_b + ":\n\t" + b_not_a.join("\n\t") + "\n\n-Shared Roles:\n\t" + a_intersect_b.join("\n\t"));
+    // Usernames to compare replace abel.tuter and abraham.lincoln with the user names you want to compare
+    var usernameA = "abel.tuter";
+    var usernameB = "abraham.lincoln";
+
+    /**
+     * Fetch active roles for a given user.
+     * @param {string} username - The username to query roles for.
+     * @param {boolean} includeInherited - Whether to include inherited roles.
+     * @returns {Array} - Array of unique role names.
+     */
+    function getUserRoles(username, includeInherited) {
+        var roles = [];
+        var gr = new GlideRecord("sys_user_has_role");
+        gr.addQuery("user.user_name", username);
+        if (!includeInherited) {
+            gr.addQuery("inherited", false);
+        }
+        gr.addQuery("state", "active");
+        gr.query();
+        while (gr.next()) {
+            var roleName = gr.role.name.toString();
+            // Ensure uniqueness
+            if (roles.indexOf(roleName) === -1) {
+                roles.push(roleName);
+            }
+        }
+        return roles;
+    }
+
+    /**
+     * Get items in list1 that are not in list2.
+     * @param {Array} list1
+     * @param {Array} list2
+     * @returns {Array}
+     */
+    function difference(list1, list2) {
+        var result = [];
+        for (var i = 0; i < list1.length; i++) {
+            if (list2.indexOf(list1[i]) === -1) {
+                result.push(list1[i]);
+            }
+        }
+        return result;
+    }
+
+    /**
+     * Get items that exist in both lists.
+     * @param {Array} list1
+     * @param {Array} list2
+     * @returns {Array}
+     */
+    function intersection(list1, list2) {
+        var result = [];
+        for (var i = 0; i < list1.length; i++) {
+            if (list2.indexOf(list1[i]) !== -1 && result.indexOf(list1[i]) === -1) {
+                result.push(list1[i]);
+            }
+        }
+        return result;
+    }
+
+    // Fetch roles for both users
+    var rolesUserA = getUserRoles(usernameA, includeInheritedRoles);
+    var rolesUserB = getUserRoles(usernameB, includeInheritedRoles);
+
+    // Compare roles
+    var exclusiveToA = difference(rolesUserA, rolesUserB);
+    var exclusiveToB = difference(rolesUserB, rolesUserA);
+    var sharedRoles = intersection(rolesUserA, rolesUserB);
+
+    // Output results
+    gs.info("\nExclusive Role(s) to " + usernameA + ":\n\t" + exclusiveToA.join("\n\t"));
+    gs.info("\nExclusive Role(s) to " + usernameB + ":\n\t" + exclusiveToB.join("\n\t"));
+    gs.info("\nShared Role(s):\n\t" + sharedRoles.join("\n\t"));
 })();
