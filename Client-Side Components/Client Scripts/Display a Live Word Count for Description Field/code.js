@@ -1,17 +1,19 @@
 function onLoad() {
-    var field = g_form.getControl('description');
-    var counter = document.createElement('div');
-    counter.id = 'desc_word_counter';
-    counter.style.marginTop = '5px';
-    field.parentNode.appendChild(counter);
+    var fieldName = 'description';
 
-    field.addEventListener('input', function() {
-        var wordCount = field.value.trim().split(/\s+/).length;
-        counter.innerText = 'Word Count: ' + (field.value ? wordCount : 0);
-        if (wordCount > 150) {
-            counter.style.color = 'red';
-        } else {
-            counter.style.color = 'green';
-        }
+    // Clear any existing messages on load
+    g_form.hideFieldMsg(fieldName, true);
+
+    g_form.getControl(fieldName).addEventListener('input', function() {
+        var fieldValue = g_form.getValue(fieldName).trim();
+        var wordCount = fieldValue ? fieldValue.split(/\s+/).length : 0;
+        
+        var message = 'Word Count: ' + wordCount;
+        var type = (wordCount > 150) ? 'error' : 'info';  // red for error, greenish for info
+        
+        // Clear previous message before showing new one
+        g_form.hideFieldMsg(fieldName, true);
+        
+        g_form.showFieldMessage(fieldName, message, type);
     });
 }
