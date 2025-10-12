@@ -8,6 +8,7 @@ It’s useful for debugging, verifying data after imports, or checking differenc
 ## Working 
 The script:
 1. Retrieves two records using their `sys_id`.
+2. Includes or Excludes the system fields.
 2. Iterates over all fields in the record.
 3. Logs any fields where the values differ.
 
@@ -21,7 +22,7 @@ If used in a scoped application, ensure that the target table is accessible from
 Run this script in a **Background Script** or **Fix Script**:
 
 ```js
-compareRecords('incident', 'sys_id_1_here', 'sys_id_2_here');
+compareRecords('incident', 'sys_id_1_here', 'sys_id_2_here', false);
 ```
 ---
 ## Example Output
