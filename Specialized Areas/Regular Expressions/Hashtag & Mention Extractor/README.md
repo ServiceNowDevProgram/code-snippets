@@ -32,7 +32,7 @@ You can easily **copy and adjust it** to fit different contexts:
 
 ---
 
-### Additional Instructions:
+### ℹ️ Additional Instructions:
 #### Use in Script Include
 
 1. Go to **Script Includes** in the Application Navigator.  
