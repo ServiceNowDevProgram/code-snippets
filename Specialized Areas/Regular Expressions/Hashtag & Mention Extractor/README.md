@@ -19,7 +19,7 @@ A simple yet useful **ServiceNow Background Script** that extracts all hashtags 
 ### 📦 Reusability
 The logic is **self-contained** within a single function block - no dependencies or external calls.  
 You can easily **copy and adjust it** to fit different contexts:
-- Use it inside a **Business Rule**, **Script Include**, or **Flow Action Script** (see [Additional Instructions](#additional-instructions)).  
+- Use it inside a **Business Rule**, **Script Include**, or **Flow Action Script** (see [Additional Instructions](##additional-instructions)).  
 - Replace the sample `demoData` with a field value (e.g., `current.comments`) to analyze live data.  
 - Adjust the regex to detect other patterns (emails, incident reference, etc.). See comments in the code for examples.  
 
