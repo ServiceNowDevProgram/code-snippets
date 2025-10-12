@@ -58,8 +58,6 @@ TagExtractorUtils.prototype = {
 ```
 #### Use in Business Rule with a couple of custom text fields
 
-### ✅ Use in Business Rule
-
 1. Go to **Business Rules** in the Application Navigator.  
 2. Click **New**, choose a table (e.g., `sc_task`, `incident`).  
 3. Set **When** to `before`, `after`, or `async` (usually `async`).  
