@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false"
+	xmlns:j="jelly:core"
+	xmlns:g="glide"
+	xmlns:j2="null"
+	xmlns:g2="null">
+	<style>
+ .touch_scroll{
+ background:url("/formbg.png");
+ background-size:cover;
+ background-position:center;
+ }
+ label{
+ font-weight:600;
+ font-size:16px;
+ 
+ }
+ .btn-default{
+ background:#fff;
+ } 
+ table,form,.section,.tabs2_section {
+ background:transparent !important;
+ }
+ </style>
+</j:jelly>

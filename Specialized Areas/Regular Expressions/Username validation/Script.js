@@ -4,6 +4,14 @@ function onSubmit() {
 
     // Define the regex pattern for a strong username
     var usernamePattern = /^[a-zA-Z][a-zA-Z0-9]{5,}$/;
+    
+    // Regex explanation:
+    // ^           : Start of string
+    // [a-zA-Z]    : First character must be a letter
+    // [a-zA-Z0-9] : Remaining characters can be letters or digits
+    // {5,}        : At least 5 more characters (total minimum length = 6)
+    // $           : End of string
+
 
     // Validate the username against the pattern
     if (!usernamePattern.test(username)) {
