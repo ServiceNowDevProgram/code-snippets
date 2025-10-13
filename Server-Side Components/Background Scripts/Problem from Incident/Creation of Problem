@@ -1,0 +1,32 @@
+var CreateProblemFromIncident = Class.create();
+CreateProblemFromIncident.prototype = {
+    initialize: function() {
+    },
+
+    createProblem: function(incidentSysId) {
+        var incidentGR = new GlideRecord('incident');
+        if (!incidentGR.get(incidentSysId)) {
+            gs.error('Incident not found: ' + incidentSysId);
+            return null;
+        }
+
+        var problemGR = new GlideRecord('problem');
+        problemGR.initialize();
+        problemGR.short_description = 'Problem related to: ' + incidentGR.short_description;
+        problemGR.description = 'Derived from Incident ' + incidentGR.number + ': ' + incidentGR.description;
+        problemGR.impact = incidentGR.impact;
+        problemGR.urgency = incidentGR.urgency;
+        problemGR.priority = incidentGR.priority;
+        problemGR.cmdb_ci = incidentGR.cmdb_ci;
+        problemGR.opened_by = gs.getUserID();
+        problemGR.insert();
+
+        // Link the incident to the problem
+        incidentGR.problem_id = problemGR.sys_id;
+        incidentGR.update();
+
+        return problemGR.sys_id;
+    },
+
+    type: 'CreateProblemFromIncident'
+};
