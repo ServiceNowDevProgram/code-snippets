@@ -1,5 +1,6 @@
 (function executeRule(current, previous /*null when async*/ ) {
     /*
+    Runs : After insert/update on condition "manager changes".
     Insert : When Group is created, manager is added to group.
     Update : When group manager is changed, it is added to group.
     */
