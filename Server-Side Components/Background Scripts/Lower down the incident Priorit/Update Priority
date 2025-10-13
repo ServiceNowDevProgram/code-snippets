@@ -1,0 +1,17 @@
+
+    var gr = new GlideRecord('incident');
+    gr.addQuery('priority', 1); // P1 incidents
+    gr.query();
+
+    var count = 0;
+    while (gr.next()) {
+        gr.impact = 2; // Medium
+        gr.urgency = 2; // Medium
+        gr.priority = 3; // P3
+        gr.update();
+        gs.info('Updated Incident to P3: ' + gr.number);
+        count++;
+    }
+
+    gs.info('Total P1 Incidents Updated to P3: ' + count);
+
