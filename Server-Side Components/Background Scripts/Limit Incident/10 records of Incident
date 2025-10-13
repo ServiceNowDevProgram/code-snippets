@@ -1,0 +1,6 @@
+var op = new GlideRecord('Incident');
+op.setLimit(10);
+op.query();
+if(op.next()){
+gs.print('10 Records of Incident are :"+ op.number);
+}
