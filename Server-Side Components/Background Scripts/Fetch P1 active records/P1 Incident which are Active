@@ -1,0 +1,13 @@
+
+    var gr = new GlideRecord('incident');
+    gr.addQuery('active', true);
+    gr.addQuery('priority', 1); // P1
+    gr.query();
+
+    var count = 0;
+    while (gr.next()) {
+        gs.info('Active P1 Incident: ' + gr.number + ' | Short Description: ' + gr.short_description);
+        count++;
+    }
+
+    gs.info('Total Active P1 Incidents Found: ' + count);
