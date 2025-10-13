@@ -1,0 +1,15 @@
+(function() {
+    var incidentGR = new GlideRecord('incident');
+    incidentGR.initialize();
+    incidentGR.short_description = 'Critical system outage';
+    incidentGR.description = 'All users are unable to access the core application. Immediate attention required.';
+    incidentGR.impact = 1; // High
+    incidentGR.urgency = 1; // High
+    incidentGR.priority = 1; // P1
+    incidentGR.category = 'network'; // Example category
+    incidentGR.assignment_group = 'NETWORK_SUPPORT'; // Replace with actual group sys_id or name
+    incidentGR.caller_id = gs.getUserID(); // Current user
+    incidentGR.insert();
+
+    gs.info('P1 Incident created: ' + incidentGR.number);
+})();
