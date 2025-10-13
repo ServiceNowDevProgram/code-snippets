@@ -133,6 +133,35 @@ This repository has been approved by Hacktoberfest in spirit of learning source 
 
 That's it! **For detailed contribution instructions, please read our [CONTRIBUTING.md](CONTRIBUTING.md) guide before submitting.**
 
+
+📝 Code Snippet Submission Template
+
+To help maintain consistency, please use the following structure when adding a new snippet:
+
+Snippet Name: <Descriptive name>
+Category: <Core APIs | Server-Side | Client-Side | Modern Development | Integration | Specialized Areas>
+Description: <Brief summary of what the snippet does>
+Usage: <Step-by-step instructions to use the snippet>
+Code File(s): 
+  - snippet_file.js   # main snippet
+  - variant.js       # optional variants
+Tags: <keywords to help search>
+Author: <Your GitHub username>
+
+
+Example:
+
+Snippet Name: GlideRecord Query Optimization
+Category: Core APIs
+Description: Shows how to optimize GlideRecord queries for better performance.
+Usage: Copy the snippet into a Background Script or Script Include and adjust table/fields as needed.
+Code File(s): 
+  - basic_query.js
+  - optimized_query.js
+Tags: GlideRecord, Performance, Optimization
+Author: @yourusername
+
+
 ### What makes a good contribution?
 
 - **Useful snippets** that solve common ServiceNow development challenges
