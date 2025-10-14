@@ -25,10 +25,11 @@ var obj = {
 }
 
 gs.info(GlideStringUtil.base64Encode(JSON.stringify(obj)))
-
+/*
 *** Script: eyJpc190aGlzX2FfcmVwbGFjZW1lbnRfZm9yX2FfbG9zdF9vcl9icm9rZW5faXBob25lIjoieWVzIiwid2hhdF93YXNfdGhlX29yaWdpbmFsX3Bob25lX251bWJlciI6IjEyMzQ1Njc5ODAiLCJtb250aGx5X2RhdGFfYWxsb3dhbmNlIjoiVW5saW1pdGVkIiwiY29sb3IiOiJyZWQiLCJzdG9yYWdlIjoiMjU2In0=
 -->
 https://{instancename}.service-now.com/esc?id=sc_cat_item&sys_id=ec80c13297968d1021983d1e6253af32&data=eyJpc190aGlzX2FfcmVwbGFjZW1lbnRfZm9yX2FfbG9zdF9vcl9icm9rZW5faXBob25lIjoieWVzIiwid2hhdF93YXNfdGhlX29yaWdpbmFsX3Bob25lX251bWJlciI6IjEyMzQ1Njc5ODAiLCJtb250aGx5X2RhdGFfYWxsb3dhbmNlIjoiVW5saW1pdGVkIiwiY29sb3IiOiJyZWQiLCJzdG9yYWdlIjoiMjU2In0%3D
+*/
 var arr = {
 	"b3bf8ec283683210557ff0d6feaad327": 1,
 	"bbbf8ec283683210557ff0d6feaad326": 2,
@@ -37,8 +38,9 @@ var arr = {
 	"fbbf8ec283683210557ff0d6feaad325": "it is good"
 }
 gs.print(GlideStringUtil.base64Encode(JSON.stringify(arr)))
-
+/*
 *** Script: eyJiM2JmOGVjMjgzNjgzMjEwNTU3ZmYwZDZmZWFhZDMyNyI6MSwiYmJiZjhlYzI4MzY4MzIxMDU1N2ZmMGQ2ZmVhYWQzMjYiOjIsImI3YmY4ZWMyODM2ODMyMTA1NTdmZjBkNmZlYWFkMzI3IjozLCJiZmJmOGVjMjgzNjgzMjEwNTU3ZmYwZDZmZWFhZDMyNiI6NCwiZmJiZjhlYzI4MzY4MzIxMDU1N2ZmMGQ2ZmVhYWQzMjUiOiJpdCBpcyBnb29kIn0=
 -->
 https://{instancename}.service-now.com/esc?id=take_survey&type_id=cf6e97d35d371200964f58e4abb23f18&data=eyJiM2JmOGVjMjgzNjgzMjEwNTU3ZmYwZDZmZWFhZDMyNyI6MSwiYmJiZjhlYzI4MzY4MzIxMDU1N2ZmMGQ2ZmVhYWQzMjYiOjIsImI3YmY4ZWMyODM2ODMyMTA1NTdmZjBkNmZlYWFkMzI3IjozLCJiZmJmOGVjMjgzNjgzMjEwNTU3ZmYwZDZmZWFhZDMyNiI6NCwiZmJiZjhlYzI4MzY4MzIxMDU1N2ZmMGQ2ZmVhYWQzMjUiOiJpdCBpcyBnb29kIn0%3D
+*/
 ```
