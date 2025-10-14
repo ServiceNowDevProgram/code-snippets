@@ -34,7 +34,7 @@ Using this API, they simply call one REST endpoint for each definition — no ma
 
 ---
 
-## ⚙️ Scripted REST API Details
+## Scripted REST API Details
 
 | Property | Value |
 |-----------|--------|
@@ -57,7 +57,7 @@ Using this API, they simply call one REST endpoint for each definition — no ma
 
 ---
 
-## 🧾 Example Input (POST Body)
+## Example Input (POST Body)
 
 ```json
 {
@@ -85,7 +85,7 @@ Using this API, they simply call one REST endpoint for each definition — no ma
 }
 
 
-Example Output:
+## Example Output:
 {
   "catalog_sys_id": "b2f6329cdb6d0010355b5fb4ca9619e2",
   "message": "Catalog item created successfully!"
