@@ -13,6 +13,6 @@ while (kbArt.next()) {
     var imgRegex = /<img([\w\W]+?)>/; // Regex for checking img tag.
     var regex = new RegExp(imgRegex); // forming regex using SN.
     if (kbArt.getValue('text') && regex.test(kbArt.getValue('text'))) { // if article body is not empty and has image tag.
-        gs.info("Raghav Image is found in KB Article: " + kbArt.getValue('number'));
+        gs.info("Image is found in KB Article: " + kbArt.getValue('number'));
     }
 }
