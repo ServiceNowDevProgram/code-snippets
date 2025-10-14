@@ -1,4 +1,4 @@
-# Compare Two Records Using GlideRecord (Global Scope)
+# Comparing 2 records and identify differences
 
 This snippet compares two records from the same table in ServiceNow field-by-field using the **GlideRecord API**.  
 It’s useful for debugging, verifying data after imports, or checking differences between two similar records.
