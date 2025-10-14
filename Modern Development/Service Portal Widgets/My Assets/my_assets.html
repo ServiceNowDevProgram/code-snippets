@@ -1,0 +1,45 @@
+<div class="panel panel-default my-assets-widget">
+  <div class="panel-heading d-flex justify-content-between align-items-center">
+    <h4 class="panel-title mb-0">
+      <i class="fa fa-desktop text-primary"></i> My Assets
+    </h4>
+    <span class="badge badge-primary">{{data.recordCount}} Asset(s)</span>
+  </div>
+
+  <div class="panel-body" ng-if="data.assets.length > 0">
+    <div class="table-responsive">
+      <table class="table table-hover table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th>Asset Name</th>
+            <th>Assigned To</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="asset in data.assets">
+            <td>
+              <i class="fa fa-laptop text-secondary"></i>
+              <a href="nav_to.do?uri=alm_hardware.do?sys_id={{asset.sysid}}" 
+                 class="asset-link">
+                 {{asset.display}}
+              </a>
+            </td>
+            <td>{{asset.assigned_to}}</td>
+            <td>
+              <a href="nav_to.do?uri=alm_hardware.do?sys_id={{asset.sysid}}" 
+                 class="btn btn-sm btn-outline-primary">
+                 <i class="fa fa-eye"></i> View
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="panel-body text-center text-muted" ng-if="data.assets.length == 0">
+    <i class="fa fa-info-circle fa-2x mb-2"></i>
+    <p>No assets assigned to you.</p>
+  </div>
+</div>
