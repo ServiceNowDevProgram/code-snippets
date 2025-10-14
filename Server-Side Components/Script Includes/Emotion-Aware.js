@@ -1,0 +1,1 @@
+//Imagine: whenever a user submits a ticket (Incident, HR Case, etc.), the system analyzes the tone of the message — like frustrated, urgent, calm, confused — and automatically adjusts the ticket priority, or routes it to a specific team (like “Empathy Response Desk
