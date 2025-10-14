@@ -3,9 +3,9 @@
   var gr = new GlideAggregate('incident');
   gr.addAggregate('COUNT');
   gr._query();
-  if (gr.next()) {			
-    return gr.getAggregate('COUNT'); // pass the step
+  if (gr.next()) {
     stepResult.setOutputMessage("Successfully Calculated the Count");
+	return gr.getAggregate('COUNT'); // pass the step
   } else { 
     stepResult.setOutputMessage("Failed to Count");
     return false; // fail the step

@@ -31,9 +31,24 @@ If you plan to submit another pull request while your original is still pending,
 - **Descriptive Pull Request Titles**: Your pull request must have explicit and descriptive titles that accurately represent the changes made.
 - **Scope Adherence**: Changes that fall outside the described scope will result in the entire pull request being rejected.
 - **Quality Over Quantity**: Low-effort or spam pull requests will be marked accordingly.
-- **Expanded Snippets**: Code snippets reused from the [ServiceNow Documentation](https://docs.servicenow.com/) or [API References](https://developer.servicenow.com/dev.do#!/reference/) are acceptable only if they are expanded in a meaningful way (e.g., with additional context, documentation, or variations). Remember: *“QUANTITY IS FUN, QUALITY IS KEY.”*
+- **Expanded Snippets**: Code snippets reused from the [ServiceNow Documentation](https://docs.servicenow.com/) or [API References](https://developer.servicenow.com/dev.do#!/reference/) are acceptable only if they are expanded in a meaningful way (e.g., with additional context, documentation, or variations). Remember: *"QUANTITY IS FUN, QUALITY IS KEY."*
 - **Relevance**: Code should be relevant to ServiceNow Developers.
 - **ES2021 Compatibility**: While ES2021 is allowed, we encourage you to disclose if your code is using ES2021 features, as not everyone may be working with ES2021-enabled applications.
+
+## Core Documentation File Changes
+
+**IMPORTANT**: For changes to core documentation files (README.md, CONTRIBUTING.md, LICENSE, etc.), contributors must:
+
+1. **Submit an Issue First**: Before making any changes to core documentation files, create an issue describing:
+   - What you intend to edit
+   - Why the change is needed
+   - Your proposed approach
+
+2. **Get Assignment**: Wait to be assigned to the issue by a maintainer before submitting a PR.
+
+3. **Reference the Issue**: Include the issue number in your PR title and description.
+
+This process helps prevent merge conflicts when multiple contributors want to update the same documentation files and ensures all changes align with the project's direction.
 
 ## Repository Structure
 
