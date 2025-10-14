@@ -20,7 +20,7 @@ This helps in faster triaging and routing tickets to the right support teams.
     var util = new global.RootCausePredictor();
     var cat = util.predict(current.description);
     current.u_root_cause = cat;
-    current.work_notes = "🔍 Auto-classified as: " + cat.toUpperCase();
+    current.work_notes = "Auto-classified as: " + cat.toUpperCase();
 })(current);
 
 --------------
