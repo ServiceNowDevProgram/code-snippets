@@ -1,4 +1,4 @@
-# Comparing 2 records and identify differences
+# Comparing 2 records and identify differences 
 
 This snippet compares two records from the same table in ServiceNow field-by-field using the **GlideRecord API**.  
 It’s useful for debugging, verifying data after imports, or checking differences between two similar records.
@@ -25,6 +25,7 @@ Run this script in a **Background Script** or **Fix Script**:
 compareRecords('incident', 'sys_id_1_here', 'sys_id_2_here', false);
 ```
 ---
+
 ## Example Output
 ```js
 short_description: "Printer not working" vs "Printer offline"
