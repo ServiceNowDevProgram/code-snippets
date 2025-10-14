@@ -12,12 +12,12 @@ function topN(pTable, pColumn, pCount) {
     var i = 0;
     var stdout = [];
     var responseTime = [];
-    stdout.push('\nTop ' + pCount + ' ' + pColumn + ' values from ' + pTable + '\n');
+    stdout.push('\nTop ' + pCount + ' ' + pColumn + ' values from ' + pTable + '\n'); // creates a readable header line that will be show in the script output Rg. Top 10 url values from syslog_transaction 
     while (ga.next() && (i++ < pCount)) {
         stdout.push('\n\n********** Execution Details for the column ' + ga.getValue(pColumn) + ' **********\n');
-        var result1 = getResponseTimeDetails(pTable, 'type=scheduler^sys_created_onONLast 15 minutes@javascript:gs.beginningOfLast15Minutes()@javascript:gs.endOfLast15Minutes()^url=' + ga.getValue(pColumn));
-        stdout.push('Executed total number of times : ' + ga.getValue(pColumn) + ' ' + ga.getAggregate('COUNT', pColumn));
-        stdout.push('\nTop 10 response times : ' + result1);
+        var result1 = getResponseTimeDetails(pTable, 'type=scheduler^sys_created_onONLast 15 minutes@javascript:gs.beginningOfLast15Minutes()@javascript:gs.endOfLast15Minutes()^url=' + ga.getValue(pColumn)); // get output for job executed last 15min
+        stdout.push('Executed total number of times : ' + ga.getValue(pColumn) + ' ' + ga.getAggregate('COUNT', pColumn)); // this will give result like last 15 min how many time a particular job has been executed EG. 'JOB: Check Glide Service Status' executed 'n' times
+        stdout.push('\nTop 10 response times : ' + result1); // this willl return the response time 
     }
     gs.print(stdout.join("\n"));
 }
