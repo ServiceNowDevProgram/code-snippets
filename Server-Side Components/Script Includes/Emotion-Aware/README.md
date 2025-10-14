@@ -14,3 +14,16 @@ If frustration or urgency is detected, the system dynamically increases the **pr
    - Optionally, notifies the support team for urgent or frustrated cases  
 
 ---
+## How It Trigger Script Include Via Business Rule 
+1. Create object of Script Include (Accessible from all scopes)
+    var util = new global.EmotionAnalyzer();
+
+----
+## Example line as input and output
+| User Input                             | Detected Emotion | Auto Priority | Output                |
+| -------------------------------------- | ---------------- | ------------- | --------------------- |
+| “Laptop crashed again, no one helps!”  | Negative         | 1 (Critical)  | Escalate to VIP queue |
+| “Thank you, system working great now!” | Positive         | 4 (Low)       | No action             |
+| “Need help resetting my password.”     | Neutral          | 3 (Moderate)  | Normal SLA            |
+
+
