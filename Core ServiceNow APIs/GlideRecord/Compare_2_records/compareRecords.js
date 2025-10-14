@@ -1,4 +1,5 @@
 /**
+ * Comparing 2 records and identify differences (GlideRecord)
  * Compare two records in a ServiceNow table field-by-field.
  * Logs all field differences between the two records, including display values.
  * 
