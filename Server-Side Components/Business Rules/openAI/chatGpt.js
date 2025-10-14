@@ -4,7 +4,7 @@ ServiceNow will automatically send a text prompt (like short description or work
 to OpenAI ChatGPT API, get the response, and save it back to a field (like u_ai_summary)*/
 
 -----
-//Script
+//Business Rule Script (After Insert)
     try {
         // Build the prompt dynamically from the record
         var userPrompt = "Summarize this issue in one sentence: " + current.short_description;
