@@ -22,10 +22,11 @@
     /* Get Catalog ID */
     var catalogsId = $sp.getParameter("used_catalog") || options.used_catalog;
     
-    /* Get all catalog items */
+    /* Get all catalog items which are active and not marked hidden on service portal */
     var catalogItems = new GlideRecordSecure('sc_cat_item');
     catalogItems.addQuery('sc_catalogs', 'IN', catalogsId);
     catalogItems.addQuery('active', true);
+	catalogItems.addQuery('hide_sp', false);
     catalogItems.orderBy('name');
     catalogItems.query();
 
@@ -51,6 +52,7 @@
             itemId: catalogItems.getUniqueValue(),
             name: catalogItems.getValue('name'),
             description: catalogItems.getValue('short_description'),
+			type: catalogItems.getDisplayValue('sys_class_name'),
 			externalUrl: extUrl
         });
     }
@@ -59,39 +61,37 @@
     data.catalogCategories = getUniqueFirstLetters(data.catalogItems);
 
     function getUniqueFirstLetters(strings) {
-        /* Create an empty array to store the first letters */
-        var firstLetters = [];
+        /* Create an object to store unique first letters */ 
+		var firstLettersMap = {};
 
-        /* Iterate over the input array of strings */
-        for (var i = 0; i < strings.length; i++) {
-            /* Get the first letter of the current string */
-            var firstLetter = strings[i].name.charAt(0);
-            var exists = false;
+		/* Iterate over the input array of strings */ 
+		for (var i = 0; i < strings.length; i++) {
+				/* Get the first letter of the current string and convert it to uppercase */ 
+				var firstLetter = strings[i].name.charAt(0).toUpperCase();
 
-            /* Check if the letter already exists in the array */
-            for (var j = 0; j < firstLetters.length; j++) {
-                if (firstLetters[j].letter === firstLetter.toUpperCase()) {
-                    exists = true;
-                    break;
-                }
-            }
+				/* Use the letter as a key in the object to ensure uniqueness */ 
+				if (!firstLettersMap[firstLetter]) {
+						firstLettersMap[firstLetter] = true;
+				}
+		}
 
-            /* Check if the first letter already exist in the array */
-            if (!exists) {
-                /* If not add it */ 
-                firstLetters.push({
-                    letter: firstLetter,
-                    selected: false
-                });
-            }
-        }
+		/* Convert the object keys to an array of objects */ 
+		var firstLetters = [];
+		for (var letter in firstLettersMap) {
+				if (firstLettersMap.hasOwnProperty(letter)) {
+						firstLetters.push({
+								letter: letter,
+								selected: false
+						});
+				}
+		}
 
-        /* Sort the array of objects, otherwise the simplier version of sort might be used */
-        firstLetters.sort(function (a, b) {
-            return a.letter.localeCompare(b.letter);
-        });
+		/* Sort the array of objects */ 
+		firstLetters.sort(function (a, b) {
+				return a.letter.localeCompare(b.letter);
+		});
 
-        /* Return the sorted array of unique first letters */
-        return firstLetters;
+		/* Return the sorted array of unique first letters */ 
+		return firstLetters;
     }
 })();
