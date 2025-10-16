@@ -1,0 +1,10 @@
+var UserUtils = Class.create();
+UserUtils.prototype = Object.extendsObject(AbstractAjaxProcessor, {
+    isMemberOf: function() {
+        var groupName = this.getParameter('sysparm_group_name');
+        var isMember = gs.getUser().isMemberOf(groupName);
+        return isMember.toString();
+    },
+
+    type: 'UserUtils'
+});
