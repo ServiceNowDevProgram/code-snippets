@@ -34,7 +34,7 @@ ObjectStructure = {
 Example Usage
 /*
 var obj = {
-    endPoint: 'https://dev204127.service-now.com/api/now/table/problem',
+    endPoint: 'https://instancename.service-now.com/api/now/table/problem',
     queryParams: {
         sysparm_query: 'active=true',
         sysparm_limit: 2,
