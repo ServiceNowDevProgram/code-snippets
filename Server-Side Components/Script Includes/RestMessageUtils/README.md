@@ -21,7 +21,6 @@ ObjectStructure = {
         key2: 'value'
     },
     requestHeaders: {
-
     },
     authType: 'CHOICES among [BasicCreds,BasicAuthProfile,APIKEY]',
     authProfile: 'sysid of auth profile if authtype is selected as BasicAuthProfile',
