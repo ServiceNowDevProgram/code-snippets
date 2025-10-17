@@ -5,6 +5,7 @@ This is a vital User Experience (UX) enhancement that helps agents and users wri
 
 Name	Live_Character_Counter_ShortDesc_OnLoad	
 Table	: Custom Table or Incident
-Type	onLoad	
+Type	onChange 
+Field : Description 
 UI Type	All	
 Isolate Script	false
