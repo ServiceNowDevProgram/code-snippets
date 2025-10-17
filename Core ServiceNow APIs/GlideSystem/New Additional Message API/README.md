@@ -3,3 +3,6 @@ addHighMessage()
 addLowMessage()
 addModerateMessage()
 addSuccessMessage()
+
+<img width="1277" height="192" alt="image" src="https://github.com/user-attachments/assets/4a824bbb-92d0-4108-ab73-bdc263404c5a" />
+
