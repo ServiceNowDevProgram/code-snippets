@@ -1,15 +1,23 @@
-var gr = new GlideRecord('sn_customerservice_case');
-gr.addQuery('parent', current.sys_id);
-gr.query();
-var counter = 0;
-while (gr.next()) {
-    if (gr.state != 3) {
-        gr.resolution_code = '16';
-        gr.close_notes = 'This case was auto closed from the parent case.';
-        gr.state = '3';
-        gr.update();
-        counter++;
+(function executeAction() {
+    var grCase = new GlideRecord('sn_customerservice_case');
+    grCase.addQuery('parent', current.sys_id);
+    grCase.query();
+    
+    var counter = 0;
+    while (grCase.next()) {
+        if (grCase.state != 3) { // 3 = Closed
+            grCase.resolution_code = '16';
+            grCase.close_notes = 'This case was auto closed from the parent case.';
+            grCase.state = 3;
+            grCase.update();
+            counter++;
+        }
     }
-}
-gs.addInfoMessage(counter + ' cases have been closed.');
-action.setRedirectURL(current);
+
+    //  Show info message only if any cases were closed
+    if (counter > 0) {
+        gs.addInfoMessage(counter + ' child case(s) have been closed.');
+    }
+
+    action.setRedirectURL(current);
+})();
