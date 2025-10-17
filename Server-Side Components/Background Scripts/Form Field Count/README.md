@@ -1,1 +1,11 @@
-This background or fix script will list forms that have more than a certain number of fields (starting threshold is 30, but can be changed on line 2).  It looks through all form sections, and excludes container starts and splits.  Forms / sections with more than 30(?) fields will appear on the Health Scan / Impact report as a possible performance impact, causing the form to take a noticeable amount of time to load.
+## Description
+
+Analyzes all forms in the instance and reports any with field counts exceeding the threshold (default: 30 fields). The script counts fields across all form sections and excludes container elements like splits and container starts.
+
+## Usage
+
+1. Navigate to **System Definition > Scripts - Background**
+2. Copy and paste the script code
+3. (Optional) Modify `maxFields` variable to set your threshold
+4. Click **Run script**
+
