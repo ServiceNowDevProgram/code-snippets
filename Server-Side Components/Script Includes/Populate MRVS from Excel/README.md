@@ -9,7 +9,7 @@ the actual binary content.
 
 **Example used-**
 
-The excel has two columns "ID" and "Name" to store employee details. MRVS also has the same variable names.
+The excel has two columns "Id" and "Name" to store employee details. MRVS also has the variable name as "employee_id" and "employee_name".
 
 
 
