@@ -1,0 +1,7 @@
+function test()
+{
+var dialog = new GlideModal('rich_text_modal'); 
+dialog.setTitle('Rich Text Editor'); 
+dialog.setSize('500','500');
+dialog.render();
+}
