@@ -6,4 +6,4 @@ Name	json_formatter_macro
 Active	true	
 Type	XML
 
-Navigate to **System UI > UI** Macros and create a new record named json_formatter_macro
+Navigate to **System UI > UI** Macros and create a new record named json_formatter_macro , Use XML Attached File as Script
