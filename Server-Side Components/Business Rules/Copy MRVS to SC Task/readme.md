@@ -1,0 +1,1 @@
+Use the script as Business Rule script on Catalog Task table which runs After Insert and will copy all MRVS values from RITM to Catalog Task for quick actions at the Catalog Task itself for reviewing and getting the work completed.
