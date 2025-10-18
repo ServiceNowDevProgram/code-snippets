@@ -14,4 +14,4 @@ Reusable across multiple tables (Incident, Change, Problem).
 
 Easily configurable for different CI-to-field mappings.
 
-This project is ideal for ITSM teams, ServiceNow developers, and Hacktoberfest contributors who want a lightweight, practical automation solution.
+T
