@@ -1,0 +1,77 @@
+<div class="ticket-counter-widget">
+  <div class="widget-header">
+    <h3>🎫 Live Ticket Monitor</h3>
+    <button class="refresh-btn" ng-click="c.refresh()" ng-class="{'spinning': c.isRefreshing}">
+      🔄
+    </button>
+  </div>
+  
+  <div class="counter-grid">
+    <!-- Critical Priority -->
+    <div class="counter-card critical" ng-click="c.viewTickets('1')">
+      <div class="counter-icon">🔴</div>
+      <div class="counter-number" ng-class="{'pulse': c.newCritical}">
+        {{c.counts.critical || 0}}
+      </div>
+      <div class="counter-label">Critical</div>
+      <div class="counter-change" ng-if="c.changes.critical > 0">
+        +{{c.changes.critical}} new
+      </div>
+    </div>
+    
+    <!-- High Priority -->
+    <div class="counter-card high" ng-click="c.viewTickets('2')">
+      <div class="counter-icon">🟠</div>
+      <div class="counter-number">
+        {{c.counts.high || 0}}
+      </div>
+      <div class="counter-label">High</div>
+      <div class="counter-change" ng-if="c.changes.high > 0">
+        +{{c.changes.high}} new
+      </div>
+    </div>
+    
+    <!-- Medium Priority -->
+    <div class="counter-card medium" ng-click="c.viewTickets('3')">
+      <div class="counter-icon">🟡</div>
+      <div class="counter-number">
+        {{c.counts.medium || 0}}
+      </div>
+      <div class="counter-label">Medium</div>
+      <div class="counter-change" ng-if="c.changes.medium > 0">
+        +{{c.changes.medium}} new
+      </div>
+    </div>
+    
+    <!-- Low Priority -->
+    <div class="counter-card low" ng-click="c.viewTickets('4')">
+      <div class="counter-icon">🟢</div>
+      <div class="counter-number">
+        {{c.counts.low || 0}}
+      </div>
+      <div class="counter-label">Low</div>
+      <div class="counter-change" ng-if="c.changes.low > 0">
+        +{{c.changes.low}} new
+      </div>
+    </div>
+  </div>
+  
+  <div class="widget-footer">
+    <div class="last-update">
+      Last updated: {{c.lastUpdate | date:'HH:mm:ss'}}
+    </div>
+    <div class="auto-refresh">
+      <label>
+        <input type="checkbox" ng-model="c.autoRefresh" ng-change="c.toggleAutoRefresh()">
+        Auto-refresh (30s)
+      </label>
+    </div>
+  </div>
+  
+  <!-- Sound Toggle -->
+  <div class="sound-toggle">
+    <button ng-click="c.toggleSound()" ng-class="{'active': c.soundEnabled}">
+      {{c.soundEnabled ? '🔊' : '🔇'}}
+    </button>
+  </div>
+</div>

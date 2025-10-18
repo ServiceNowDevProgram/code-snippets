@@ -1,0 +1,86 @@
+function($scope) {
+  var c = this;
+  c.form = {};
+  c.editing = false;
+  c.delegateField = { displayValue: '', value: '', name: 'delegate' };
+
+  c.$onInit = function() {
+    c.data = c.data || {};
+    c.form = {
+      approvals: false,
+      assignments: false,
+      notifications: false,
+      invitations: false
+    };
+  };
+
+  function pad(n){ return n<10 ? '0'+n : n; }
+
+  function localToGlide(local) {
+    if (!local) return '';
+    var d = new Date(local);
+    return d.getFullYear() + '-' + pad(d.getMonth()+1) + '-' + pad(d.getDate())
+      + ' ' + pad(d.getHours()) + ':' + pad(d.getMinutes()) + ':' + pad(d.getSeconds());
+  }
+
+  c.saveDelegate = function() {
+    c.form.delegate = c.delegateField.value;
+    c.form.starts = localToGlide(c.form.starts_local);
+    c.form.ends = localToGlide(c.form.ends_local);
+
+    c.data.action = 'save_delegate';
+    c.data.record = angular.copy(c.form);
+
+    c.server.update().then(function() {
+      c.data.action = undefined;
+      c.resetForm();
+      c.server.get().then(function(response) {
+        c.data = response.data;
+      });
+    }, function() {
+      alert('Failed to save delegate.');
+    });
+  };
+
+  c.edit = function(sys_id) {
+    c.server.get().then(function(response) {
+      c.data = response.data;
+      var rec = c.data.delegates.find(function(x){ return x.sys_id === sys_id; }) || {};
+      c.editing = true;
+      c.form = {
+        sys_id: rec.sys_id,
+        approvals: !!rec.approvals,
+        assignments: !!rec.assignments,
+        notifications: !!rec.notifications,
+        invitations: !!rec.invitations,
+        starts_local: rec.starts_value ? new Date(rec.starts_value.replace(' ', 'T')) : null,
+        ends_local: rec.ends_value ? new Date(rec.ends_value.replace(' ', 'T')) : null
+      };
+      c.delegateField.value = rec.delegate_sys_id || rec.delegate;
+      c.delegateField.displayValue = rec.delegate_display;
+    });
+  };
+
+  c.deleteDelegate = function() {
+    if (!c.form.sys_id) return;
+    if (!confirm('Delete delegate record?')) return;
+    c.data.action = 'delete_delegate';
+    c.data.sys_id = c.form.sys_id;
+    c.server.update().then(function() {
+      c.data.action = undefined;
+      c.resetForm();
+      c.server.get().then(function(response) { c.data = response.data; });
+    });
+  };
+
+  c.resetForm = function() {
+    c.editing = false;
+    c.form = {
+      approvals: false,
+      assignments: false,
+      notifications: false,
+      invitations: false
+    };
+    c.delegateField = { displayValue: '', value: '', name: 'delegate' };
+  };
+}
