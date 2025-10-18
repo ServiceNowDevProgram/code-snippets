@@ -28,7 +28,7 @@
     // SLAs Breached Today
     var grSLA = new GlideAggregate('task_sla');
     grSLA.addAggregate('COUNT');
-    grSLA.addQuery('breach_time', '>=', todayStart);
+    grSLA.addQuery('planned_end_time', '>=', todayStart); //Breach time is the field Label
     grSLA.addQuery('stage', 'breached');
     grSLA.query();
     grSLA.next();
