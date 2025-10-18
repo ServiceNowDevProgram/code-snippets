@@ -13,11 +13,10 @@ This script audits Access Control Lists (ACLs) in your ServiceNow instance to id
 
 ## Usage
 
-1. Navigate to **System Definition > Script Includes** in your ServiceNow instance.
+1. Navigate to **System Definition >Scheduled jobs** in your ServiceNow instance.
 2. Create a new Script Include named `ACL_Audit_Utility`.
-3. Paste the contents of `ACL_Audit_Utility.js` into the script field.
-4. Ensure the script is set to **Active** and **Accessible from all application scopes**.
-5. Run the script manually or schedule it using a **Scheduled Job**.
+3. Paste the contents of `code.js` into the script field.
+
 
 ## Notes
 
