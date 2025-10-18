@@ -4,7 +4,7 @@
     var currencyCode = current.budget_currency ? current.budget_currency.toString().substring(0, 3) : '';
 
     // Convert the annual budget value to a float
-    var amount = parseFloat(current.annual_budget);
+    var amount = parseFloat(current.annual_budget);//annual_budget is filed where we can enter amount
 
     // Validate input: If currency code is missing or amount is not a valid number, clear the USD field and exit
     if (!currencyCode || isNaN(amount)) {
