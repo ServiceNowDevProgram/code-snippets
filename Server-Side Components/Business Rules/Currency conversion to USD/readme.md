@@ -6,7 +6,7 @@ Validation: Ensures both the currency code and amount are valid before proceedin
 Currency Check: If the currency is already USD, it bypasses conversion.
 Exchange Rate Lookup: Retrieves the most recent exchange rates for both the source currency and USD.
 Conversion Logic: Applies the formula
-USD Amount=(Original AmountSource Rate)×USD Rate\text{USD Amount} = \left(\frac{\text{Original Amount}}{\text{Source Rate}}\right) \times \text{USD Rate}USD Amount=(Source RateOriginal Amount​)×USD Rate
+USD Amount=(Original AmountSource Rate)×USD Rate\text{USD Amount} = \left(\frac{\text{Original Amount}}{\text{Source Rate}}\right) \times \text{USD Rate}USD Amount=(Source RateOriginal Amount​)×USD Rate.
 Error Handling: Clears the USD field if any required data is missing or invalid.
 
 This script ensures accurate and up-to-date currency conversion for budgeting purposes and is well-commented for maintainability and clarity.
