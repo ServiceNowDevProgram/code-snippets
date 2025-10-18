@@ -1,3 +1,3 @@
-This tool dynamically identifies dependencies across multiple ServiceNow tables such as Incidents, Problems, Changes, and CMDB CIs, and alerts users or teams if a record update might impact other related records.
+The Cross-Table Dependency Analyzer is a custom ServiceNow solution designed to dynamically detect and analyze dependencies across multiple tables such as Incidents, Problems, Changes, and Configuration Items (CIs). This tool ensures that updates to one record do not inadvertently impact related records across the system, providing better visibility, risk mitigation, and proactive management.
 
-Unlike OOB impact analysis, this is dynamic, real-time, and customizable for any relationships your organization cares about.
+Unlike out-of-the-box (OOB) impact analysis, this solution is fully customizable, real-time, and developer-driven, making it suitable for organizations with complex IT processes or interdependent services.
