@@ -14,4 +14,3 @@ Reusable across multiple tables (Incident, Change, Problem).
 
 Easily configurable for different CI-to-field mappings.
 
-T
