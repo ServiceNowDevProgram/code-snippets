@@ -9,7 +9,7 @@
     var reg = />([a-zA-Z].*)<\//; // regex to check if strings are directly added in HTML Template
     var regex = new RegExp(reg);
     if (regex.test(current.getValue('template'))) {
-        gs.addInfoMessage("Please use standard inernationalisation methods for strings like ${string} or define the string in server using gs.getMessage('string)" + "");
+        gs.addInfoMessage("Please use standard inernationalisation methods for strings like ${string} or define the string in server using gs.getMessage('string')");
         current.setAbortAction(true);
     }
 
