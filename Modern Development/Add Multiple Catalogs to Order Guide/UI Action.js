@@ -1,6 +1,6 @@
 /*
 onClick function name : addToOrderGuide
-The UI action will prompt UI page to select order guide. 
+The UI action will prompt UI page to select order guide and variable set. 
 */
 function addToOrderGuide() {
     var items = g_list.getChecked();
