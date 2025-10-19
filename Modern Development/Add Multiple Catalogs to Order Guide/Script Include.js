@@ -1,8 +1,8 @@
 var AddtoOG = Class.create();
 AddtoOG.prototype = Object.extendsObject(AbstractAjaxProcessor, {
     addToOrderGuide: function() {
-        var msgArrNotAdded = [];
-        var msgArrAdded = [];
+        var msgArrNotAdded = []; // array to store not added catalog items.
+        var msgArrAdded = []; // array to store added catalog items.
         var msg = '';
         var item = this.getParameter('sysparm_itemList').toString().split(',');
         var order_guide = this.getParameter('sysparm_og');
@@ -13,7 +13,7 @@ AddtoOG.prototype = Object.extendsObject(AbstractAjaxProcessor, {
             var itemBckName = itemName.name.toString().replace(/[^a-zA-Z0-9]/g, "_");
             // check if item is present in order guide
             var checkStatus = new GlideRecord('sc_cat_item_guide_items');
-            checkStatus.addQuery('guide', order_guide); //software order guide
+            checkStatus.addQuery('guide', order_guide);
             checkStatus.addQuery('item', item[i]);
             checkStatus.query();
             if (checkStatus.next()) {
