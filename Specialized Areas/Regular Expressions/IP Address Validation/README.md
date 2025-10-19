@@ -1,4 +1,6 @@
-The regex in `getIP4OrIPV6address.js` validates both IPv4 and IPv6 addresses in input text.
+This snippet extracts IPv4 and IPv6 addresses from free text. For single-value validation, see `validateIPInput.js` and `Validate IPv6 Address/script.js`.
+
+The regex in `getIP4OrIPV6address.js` finds both IPv4 and IPv6 addresses within arbitrary text content.
 
 IPv6 coverage includes:
 - Full addresses like `2001:0db8:85a3:0000:0000:8a2e:0370:7334`

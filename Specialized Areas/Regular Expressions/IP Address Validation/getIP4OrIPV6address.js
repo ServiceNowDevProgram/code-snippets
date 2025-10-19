@@ -1,3 +1,5 @@
+// Extracts IPv4 and IPv6 addresses from arbitrary text content
+// For single-value validation, use validateIPInput.js or Validate IPv6 Address/script.js
 extractIPAddresses: function(text) {
         var ipv4 = "(?:25[0-5]|2[0-4]\\d|1?\\d?\\d)(?:\\.(?:25[0-5]|2[0-4]\\d|1?\\d?\\d)){3}";
         var ipv6 = "("+
