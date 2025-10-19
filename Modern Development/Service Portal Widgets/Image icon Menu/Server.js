@@ -30,10 +30,10 @@
    
     // Menu Item 2
 
-    data.item_3_TITLE = options.item_3_title;
-    data.item_3_IMG = options.item_3_img;
-    data.item_3_URL = options.item_3_url;
-    data.item_3_TARGET = options.item_3_target;
+    data.item_2_TITLE = options.item_2_title;
+    data.item_2_IMG = options.item_2_img;
+    data.item_2_URL = options.item_2_url;
+    data.item_2_TARGET = options.item_2_target;
 
    
    
