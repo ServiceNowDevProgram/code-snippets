@@ -57,6 +57,7 @@ The User Impersonation Activity Logger provides the following capabilities:
 - GlideSystem API
 - GlideImpersonate API
 - gs.getSession()
+- GlideDateTime() API
 
 
 ## Category
