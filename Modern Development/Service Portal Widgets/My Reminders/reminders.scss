@@ -1,0 +1,29 @@
+.reminder-item {
+  border-left: 4px solid #337ab7; 
+  margin-bottom: 10px;
+  padding: 10px 15px;
+}
+
+.reminder-item h4 {
+  margin-top: 0;
+  font-weight: bold;
+  color: #333;
+}
+
+.reminder-item p {
+  margin-bottom: 5px;
+}
+
+.reminder-form-container {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.panel-heading + .panel-body {
+    padding-top: 20px;
+}
