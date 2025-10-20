@@ -1,0 +1,25 @@
+<div class="panel b panel-default">
+  <div class="panel-heading">
+    <h4 style="margin-top: 0; margin-bottom: 0;">
+      <span ng-if="::data.imgTitle">
+        <img ng-src="{{data.imgImage}}" class="header-image" />
+      </span>
+      <span class="header-title">{{data.imgTitle || "Image Icon Menu"}}</span>
+    </h4>
+  </div>
+  <div class="list-group">
+    <a class="list-group-item no-border" href="{{data.item_1_URL}}" target="{{data.item_1_TARGET}}">
+      <img ng-src="{{data.item_1_IMG}}" class="image-icon-item" />
+      <span class="image-icon-title">{{data.item_1_TITLE}}</span>
+    </a>
+ 
+
+    <a class="list-group-item no-border" href="{{data.item_2_URL}}" target="{{data.item_2_TARGET}}">
+      <img ng-src="{{data.item_2_IMG}}" class="image-icon-item" />
+      <span class="image-icon-title">{{data.item_2_TITLE}}</span>
+    </a>
+
+    
+  </div>
+</div>
+

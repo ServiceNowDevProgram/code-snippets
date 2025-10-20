@@ -1,0 +1,9 @@
+<div class="notification-wrapper">
+  <i class="fa fa-bell notification-icon" aria-hidden="true"></i>
+  <span 
+    class="notification-badge" 
+    ng-class="{'notification-pulse': c.hasNewNotification}" 
+    ng-if="c.hasNewNotification">
+    {{ c.badgeCount }}
+  </span>
+</div>

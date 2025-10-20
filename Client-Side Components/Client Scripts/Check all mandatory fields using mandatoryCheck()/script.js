@@ -1,19 +1,17 @@
 function onChange(control, oldValue, newValue, isLoading, isTemplate) {
-    if (isLoading || newValue === '') {
-        return;
-    }
+   if (isLoading || newValue === '') {
+      return;
+   }
 
-    //Client script, which shows how to use mandatoryCheck() function
-    //mandatoryCheck() allows validating if all mandatory fields are filled
-    //If all mandatory fields are filled it return true, otherwise it returns false
-
-    //Check if all mandatory fields are filled on record
+    // Check if all mandatory fields are filled
     if (!g_form.mandatoryCheck()) {
-
-        //Example action when not all mandatory fields are filled - display message and remove state field
+        //if not get all missing fields
         var missing = g_form.getMissingFields();
-        g_form.addInfoMessage("State field removed, because not all mandatory fields are filled: " + missing);
-        g_form.setDisplay('state', false);
+        //Info message displaying the fields that are missing
+        g_form.addInfoMessage("Please complete the following mandatory fields: " + missing.join(", "));
+        //go through missing fields and flash them
+        missing.forEach(function (fieldName) {
+            g_form.flash(fieldName, "#FFFACD",0); // Flash to draw attention
+        });
     }
-
 }
