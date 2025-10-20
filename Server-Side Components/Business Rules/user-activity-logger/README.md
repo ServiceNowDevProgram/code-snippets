@@ -64,11 +64,7 @@ ActivityLogger.prototype = {
 - GlideDateTime API
 - gs (GlideSystem) API
 
-## Author
 
-**Ashvin**
-- GitHub: [@ashvin2005](https://github.com/ashvin2005)
-- LinkedIn: [ashvin-tiwari](https://linkedin.com/in/ashvin-tiwari)
 
 ## Category
 
