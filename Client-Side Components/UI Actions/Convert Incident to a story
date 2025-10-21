@@ -1,0 +1,4 @@
+# Incident-to-Story Conversion UI Action
+
+As a ServiceNow admin, I want to be able to convert cidents or Tasks into Development Stories with a single UI action so that operational issues 
+can be seamlessly ansitioned into Agile work items for remediation and platform improvement.
