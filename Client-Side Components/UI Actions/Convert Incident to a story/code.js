@@ -7,7 +7,7 @@ gr.short_description = current.short_description; // Copy short description
 gr.description = current.description;       // Copy full description
 gr.type = "Fix";                                  // Set story type to 'Fix'
 
-// Assign caller as both requirements owner and tester
+// Assign caller as tester
 gr.u_tester = current.caller_id;
 
 // Link story to originating incident
