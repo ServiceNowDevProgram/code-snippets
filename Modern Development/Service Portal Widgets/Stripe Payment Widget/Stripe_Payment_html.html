@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Subscribe to Premium Plan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class="main-container">
+      <!-- Left: Order Summary -->
+      <div class="order-summary">
+        <div class="logo-section">
+          <div class="logo">Order Summary</div>
+          <div class="logo-text"></div>
+        </div>
+
+        <div class="product-info">
+          <h1 class="product-title">{{c.data.productname}}</h1>
+          <p class="product-description">{{c.data.productdesc}}</p>
+
+          <div class="price-display">
+            <span class="price-amount">{{c.data.total_amount}}</span>
+            <span class="price-period">{{c.data.billing_cycle}}</span>
+          </div>
+        </div>
+
+        <div class="order-breakdown" onclick="toggleBreakdown()">
+          <div class="breakdown-toggle">
+            <div class="breakdown-header">
+              <span>Order Breakdown</span>
+              <div class="breakdown-icon" id="breakdown-icon">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                  <path
+                    d="M2.5 4.5L6 8L9.5 4.5"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <div class="breakdown-content expanded" id="breakdown-content">
+            <div class="breakdown-inner">
+              <div class="breakdown-item">
+                <div class="item-details">
+                  <div class="item-name">{{c.data.productname}}</div>
+                  <div class="item-description">{{c.data.productedition}}</div>
+                </div>
+                <div class="item-price">{{c.data.productcost}} (Per Unit)</div>
+              </div>
+
+              <div class="breakdown-item">
+                <div class="item-details">
+                  <div class="item-name">Users</div>
+                  <div class="item-description"></div>
+                </div>
+                <div class="item-price">{{c.data.total_users}}</div>
+              </div>
+
+              <div ng-if="c.data.promo_code" class="breakdown-item">
+                <div class="item-details">
+                  <div class="item-name">Promocode</div>
+                  <div class="item-description">{{c.data.promo_code}}</div>
+                </div>
+                <div class="item-price"><p>{{c.data.discount_amount}}</p></div>
+              </div>
+
+              <div class="breakdown-item">
+                <div class="item-details">
+                  <div class="item-name">Subtotal</div>
+                </div>
+                <div class="item-price">{{c.data.total_amount}}</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="total-section">
+            <div class="total-row">
+              <div class="total-label">Total</div>
+              <div class="total-amount">{{c.data.total_amount}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Payment Form -->
+      <div class="payment-section">
+        <div class="payment-header">
+          <h2 class="payment-title">Payment details</h2>
+          <p class="payment-subtitle">
+            Complete your subscription to get started
+          </p>
+        </div>
+
+        <form id="payment-form">
+          <div class="form-section">
+            <div class="form-group">
+              <label for="email" class="form-label">Email address</label>
+              <input
+                id="email"
+                type="email"
+                class="form-input"
+                placeholder="you@company.com"
+                autocomplete="email"
+                required
+              />
+              <div id="email-error" class="error-message"></div>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <div class="form-group">
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  margin-bottom: 8px;
+                "
+              >
+                <label class="form-label">Card information</label>
+                <div class="card-icons">
+                  <img
+                    src="https://js.stripe.com/v3/fingerprinted/img/visa-729c05c240c4bdb47b03ac81d9945bfe.svg"
+                    alt="Visa"
+                    class="card-icon"
+                  />
+                  <img
+                    src="https://js.stripe.com/v3/fingerprinted/img/mastercard-4d8844094130711885b5e41b28c9848f.svg"
+                    alt="Mastercard"
+                    class="card-icon"
+                  />
+                  <img
+                    src="https://js.stripe.com/v3/fingerprinted/img/amex-a49b82f46c5cd6a96a6e418a6ca1717c.svg"
+                    alt="American Express"
+                    class="card-icon"
+                  />
+                </div>
+              </div>
+              <div id="stripe-card-number" class="stripe-element"></div>
+              <div id="card-number-errors" class="error-message"></div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <div id="stripe-card-expiry" class="stripe-element"></div>
+                <div id="card-expiry-errors" class="error-message"></div>
+              </div>
+              <div class="form-group">
+                <div id="stripe-card-cvc" class="stripe-element"></div>
+                <div id="card-cvc-errors" class="error-message"></div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="cardholder-name" class="form-label"
+                >Cardholder name</label
+              >
+              <input
+                id="cardholder-name"
+                type="text"
+                class="form-input"
+                placeholder="Full name on card"
+                autocomplete="cc-name"
+                required
+              />
+              <div id="cardholder-error" class="error-message"></div>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <div class="form-group">
+              <label class="form-label">Billing address</label>
+              <div id="address-element" class="stripe-element"></div>
+              <div id="address-errors" class="error-message"></div>
+            </div>
+          </div>
+          <!--
+          <div id="card-errors" class="error-message"></div>
+          <div id="success-message" class="success-message"></div>
+ -->
+          <button id="submit-btn" type="submit" class="submit-button">
+            <span id="button-text">Subscribe now</span>
+            <span id="loading-spinner" style="display: none">
+              <svg
+                class="animate-spin"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="10"
+                  stroke="currentColor"
+                  stroke-width="4"
+                  opacity="0.25"
+                />
+                <path
+                  fill="currentColor"
+                  opacity="0.75"
+                  d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                />
+              </svg>
+              Processing...
+            </span>
+          </button>
+
+          <div class="security-note">
+            <svg
+              class="security-icon"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+              ></path>
+            </svg>
+            Your payment information is secure and encrypted
+          </div>
+        </form>
+      </div>
+    </div>
+    <sp-widget ng-if="c.data.record" widget="c.data.childWidget"></sp-widget>
+
+    <script>
+      function toggleBreakdown() {
+        const content = document.getElementById("breakdown-content");
+        const icon = document.getElementById("breakdown-icon");
+
+        content.classList.toggle("expanded");
+        icon.classList.toggle("expanded");
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        // Remove onLoad from HTML and initialize collapsed state
+        const content = document.getElementById("breakdown-content");
+        content.classList.remove("expanded"); // Ensure initially collapsed
+
+        // Enhanced form validation
+        const emailInput = document.getElementById("email");
+        const cardholderInput = document.getElementById("cardholder-name");
+        const form = document.getElementById("payment-form");
+
+        // Email validation
+        emailInput.addEventListener("blur", validateEmail);
+        emailInput.addEventListener("input", clearEmailError);
+
+        // Cardholder validation
+        cardholderInput.addEventListener("blur", validateCardholder);
+        cardholderInput.addEventListener("input", clearCardholderError);
+
+        // Form submission
+        form.addEventListener("submit", handleSubmit);
+
+        function validateEmail() {
+          const email = emailInput.value.trim();
+          const emailError = document.getElementById("email-error");
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+          if (email && !emailRegex.test(email)) {
+            emailError.textContent = "Please enter a valid email address";
+            emailInput.style.borderColor = "#dc2626";
+          } else if (!email) {
+            emailError.textContent = "Email address is required";
+            emailInput.style.borderColor = "#dc2626";
+          } else {
+            emailError.textContent = "";
+            emailInput.style.borderColor = "#10b981";
+          }
+        }
+
+        function clearEmailError() {
+          document.getElementById("email-error").textContent = "";
+          emailInput.style.borderColor = "#e6ebf1";
+        }
+
+        function validateCardholder() {
+          const name = cardholderInput.value.trim();
+          const cardholderError = document.getElementById("cardholder-error");
+
+          if (!name) {
+            cardholderError.textContent = "Cardholder name is required";
+            cardholderInput.style.borderColor = "#dc2626";
+          } else {
+            cardholderError.textContent = "";
+            cardholderInput.style.borderColor = "#10b981";
+          }
+        }
+
+        function clearCardholderError() {
+          document.getElementById("cardholder-error").textContent = "";
+          cardholderInput.style.borderColor = "#e6ebf1";
+        }
+
+        function handleSubmit(e) {
+          e.preventDefault();
+
+          const submitBtn = document.getElementById("submit-btn");
+          const buttonText = document.getElementById("button-text");
+          const loadingSpinner = document.getElementById("loading-spinner");
+          const successMessage = document.getElementById("success-message");
+
+          // Validate form
+          validateEmail();
+          validateCardholder();
+
+          const hasErrors =
+            document.querySelectorAll(".error-message").length > 0;
+          if (hasErrors) return;
+
+          // Show loading state
+          submitBtn.disabled = true;
+          buttonText.style.display = "none";
+          loadingSpinner.style.display = "flex";
+
+          // Simulate payment processing
+          setTimeout(() => {
+            submitBtn.disabled = false;
+            buttonText.style.display = "block";
+            loadingSpinner.style.display = "none";
+            successMessage.textContent =
+              "Payment successful! Welcome to Premium Plan.";
+          }, 2500);
+        }
+      });
+    </script>
+  </body>
+</html>
