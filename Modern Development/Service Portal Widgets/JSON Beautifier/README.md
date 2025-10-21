@@ -1,12 +1,11 @@
 ## JSON Beautifier Widget
 
-The attached widget can be used to have a floating link widget on the portal homepage when clicks opens a specific catalog item or a record producer. 
-This can be used to gather feedback using a catalog item or create incidents from the portal.
+The JSON Beautifier widget is a developer-focused tool designed to make working with JSON in ServiceNow fast, easy and efficient. It helps admins, developers and testers handles JSON payloads from APIs, Integration etc.
 
-Simply add this widget to the portal homepage anywhere and you can find this present on the side of the homepage. Refer screenshot.
-
-![A test image](demo.JPG)
-
-
-*Note: You need to update the sys_id of your catalog item. Refer HTML in the .js widget file.*
+## Benefits
+- Reduces time spent manually formatting or checking JSON.
+- Helps identify error or differences between JSOn payload quickly
+  
+## Output
+![A test image](demo.png)
 
