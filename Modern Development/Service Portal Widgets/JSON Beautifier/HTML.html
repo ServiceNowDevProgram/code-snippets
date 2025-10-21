@@ -1,0 +1,21 @@
+<div class="container p-3">
+  <h3>JSON Beautifier</h3>
+  <div class="form-group mt-3">
+    <label>Paste JSON Here</label>
+    <textarea class="form-control" rows="8" ng-model="rawJson" placeholder='{"key":"value"}'></textarea>
+  </div>
+  <div class="mt-2">
+    <button class="btn btn-primary btn-sm mr-1" ng-click="beautifyJSON()">
+       Beautify
+    </button>
+  </div>
+  <div class="mt-3" ng-if="error">
+    <div class="alert alert-danger">
+          {{error}}
+    </div>
+  </div>
+  <div class="mt-3" ng-if="formattedJson">
+    <label>Formatted JSON:</label>
+    <pre class="bg-light p-3" style="overflow-x:auto">{{formattedJson}}</pre>
+  </div>
+</div>
