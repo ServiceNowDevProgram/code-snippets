@@ -8,4 +8,6 @@ Automatically assigns incidents to the correct assignment group based on:
 
 3.Caller’s department.
 
+Assigns incidents to groups based on category
+
 Incidents should be routed automatically without manual intervention.
