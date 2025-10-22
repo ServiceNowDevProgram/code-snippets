@@ -110,4 +110,7 @@ Before submitting your pull request, ensure that:
 - Each folder is correctly placed within its category.
 - Your code snippet is accompanied by a `readme.md` file that describes it.
 
+
+Add auto-assign incident script based on category
 Thank you for contributing! Your efforts help create a richer resource for the ServiceNow development community.
+
