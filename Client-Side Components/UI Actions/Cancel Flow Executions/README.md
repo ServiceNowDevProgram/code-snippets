@@ -35,6 +35,11 @@ Add the given script to your UI Action:
 4. The same can be used in Business rules as well based on trigger conditions
 
 
+### Visibility for  UI Action
+
+In certain scenarios, it may be necessary to restrict the visibility of this operation to specific user groups. For example, only HR administrators or members of a designated group (e.g., "X Group") should have access to this functionality. These requirements can be addressed by configuring the **Condition** field in the UI Action. You can tailor the conditions to align with your specific use case, ensuring that only authorized users can execute this operation. One edge case about not having an active flow execution can also be handled in the condition which will restrict the visibility if no active flow execution is present.
+
+
 ## Dependencies
 
 - `sn_fd.FlowAPI`
