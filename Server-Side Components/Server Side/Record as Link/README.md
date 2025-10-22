@@ -1,6 +1,6 @@
 # Record as a Link Utility
 
-The **Record as a Link Utility** is a versatile tool designed to dynamically render records as clickable links in any HTML field. for any table. This utility allows you to choose specific fields to display, making it ideal for use cases such as notifications, generating PDFs, and more.
+The **Record as a Link Utility** is a versatile tool designed to dynamically render records as clickable links in any HTML field for any table. This utility allows you to choose specific fields to display, making it ideal for use cases such as notifications, generating PDFs, and more.
 
 ## Features
 
@@ -21,7 +21,7 @@ Use the utility as used given code and merge it with other html. example attache
 
 ## Example Usage for PDF Generation
 
-```
+```javascript 
 var recordToLinkUtil = new RecordToHTML("incident", "1c741bd70b2322007518478d83673af3",
 "incident: ${number}-${short_description}",true);
 
@@ -38,6 +38,5 @@ var recordToLinkUtil = new RecordToHTML("incident", "1c741bd70b2322007518478d836
      fileName,
      ''
  );
-
  ```
 
