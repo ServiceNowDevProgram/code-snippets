@@ -44,3 +44,7 @@ while (ciGR.next()) {
 }
 
 gs.info('Auto-populate complete. Total CIs updated: ' + updatedCount);
+
+
+
+//This script is used in ServiceNow to automatically fill in the missing manufacturer information for Configuration Items (CIs) in the CMDB (Configuration Management Database).
