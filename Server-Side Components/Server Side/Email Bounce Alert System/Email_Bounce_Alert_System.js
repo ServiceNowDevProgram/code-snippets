@@ -27,6 +27,14 @@
     // --- Step 2: Convert the email body into plain text ---
     var body = current.body.toString().replaceAll('"', '');
 
+    (function execute(inputs, outputs) {
+    var inc = new GlideRecord('incident');
+    if (inc.get(inputs.incident_sys_id) && inc.priority == 1) {
+        gs.eventQueue('incident.high_priority', inc, inc.caller_id, 'High priority incident detected');
+    }
+})(inputs, outputs);
+
+
     // --- Step 3: Extract email addresses from the content ---
     var extractedEmails = extractEmails(body);
 
