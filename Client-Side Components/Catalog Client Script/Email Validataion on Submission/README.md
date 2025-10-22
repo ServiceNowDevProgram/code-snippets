@@ -1,36 +1,39 @@
-## Add on Submission Email Validation for Catalog Items
+# ServiceNow Email Validation - onSubmit Script
 
-### Summary
-Implements onSubmit email validation client script that prevents incorrect email entries from being submitted when a user submits a catalog item.
+## Overview
+Email validation client script for ServiceNow catalog items that checks the email format when the user submits a form. This ensures that only valid email addresses are submitted and helps maintain data accuracy.
 
-### Changes
-- **onSubmit Validation Script**: Email format validated during catalog item submission.
-- **Dedicated README**: Implementation guide for catalog form submission validation.
+## Features
+- Validates email during form submission
+- Displays clear error messages near the field
+- User-friendly feedback with examples
+- Lightweight and client-side — no server calls required
 
-### Features
-- Prevents form submission if email format is invalid
-- Dynamic error/success messages
-- Uses regex pattern for standard email format
-- Lightweight and fully client-side — no server calls
+## Implementation
+1. Navigate to **Service Catalog > Catalog Client Scripts**
+2. Click **New** to create a new script
+3. Select your **Catalog Item**
+4. Set **Type** to **onSubmit**
+5. Set **Variable name** to your email field variable
+6. Set UI Type to All
+7. Replace `email_field_name` with actual variable name in script
+8. Paste the script code
+9. Check **Active** checkbox
+10. Save
 
-### User Experience
-- **Invalid email**: Red error message with example format
-- **Valid email**: Form submission proceeds normally
-- **Empty field**: No validation triggered
-- Reduces user frustration on submission
+## Validation Rules
+- Required format: `user@domain.com`
+- Accepts: letters, numbers, dots (.), underscores (_), hyphens (-)
+- Minimum 2-character top-level domain
 
-### Benefits
-- Ensures only valid email addresses are submitted
-- Errors corrected before form submission
-- Better data quality in catalog requests
-- Reduces form abandonment rates
+## User Experience
+- **Invalid Input**: Red error message displayed below field
+- **Valid Input**: Form submission proceeds normally
+- **Empty Field**: No validation performed
+- **While Loading**: No validation triggered
 
-### Testing Checklist
-- [ ] Valid email formats proceed with form submission normally
-- [ ] Invalid formats display error message
-- [ ] Messages clear dynamically on input change
-- [ ] No validation during form load
-- [ ] Empty fields handled correctly
-
-### Setup
-Replace `'email_field_name'` with actual variable name in script before deployment.
+## Benefits
+- Prevents submission of incorrect email formats
+- Provides errors(if any) before form submission
+- Improves data quality
+- Enhances overall user experience
