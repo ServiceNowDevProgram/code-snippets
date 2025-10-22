@@ -1,24 +1,100 @@
-Convert Active Incidents to JSON – ServiceNow
-Overview
+# Active Incidents JSON Export – ServiceNow
 
-This script fetches all active Incident records from your ServiceNow instance and converts them into a JSON format. The JSON output is easy to read and can be used for reporting, integration, or debugging purposes.
+This repository contains **two approaches** to fetch active incidents from ServiceNow and convert them to JSON. Both use `GlideRecord` but differ in flexibility and readability.
 
-By converting records to JSON, you can quickly share structured data with external systems, automate processes, or use it in scripts and dashboards.
+---
 
-Features
+## 1. Simple Approach
 
-Retrieves all active incidents from the incident table.
+This method fetches a **fixed set of fields** and converts them directly to JSON.
 
-Dynamically extracts selected fields (configurable).
+```javascript
+var incidents = [];
+var gr = new GlideRecord('incident');
+gr.addQuery('active', true);
+gr.query();
+while (gr.next()) {
+    incidents.push({
+        number: gr.number.toString(),
+        short_description: gr.short_description.toString(),
+        state: gr.state.toString(),
+        assigned_to: gr.assigned_to.getDisplayValue('name'),
+        created_on: gr.sys_created_on.getDisplayValue()
+    });
+}
 
-Automatically resolves reference fields to display values.
+var jsonOutput = JSON.stringify(incidents);
+gs.info(jsonOutput);
+```
 
-Adds human-readable state labels (e.g., "New", "In Progress", "Resolved").
+### ✅ Pros
+- Simple and easy to implement
+- Works fine for a fixed set of fields
+- Direct JSON output
 
-Outputs pretty-printed JSON for easy readability.
+### ❌ Cons
+- Fields are hard-coded → not reusable for other tables
+- Reference fields handling is not dynamic
+- Numeric state values are not human-readable
 
-Configuration
+---
 
-Table Name: Set the tableName variable to the table you want to extract records from.
+## 2. Flexible & Dynamic Approach
 
-Fields to Include: Update the fieldsToInclude array to include the fields you need in the JSON. For example:
+This method allows dynamic fields, handles reference fields, and adds human-readable state labels.
+
+```javascript
+var tableName = 'incident';
+var fieldsToInclude = ['number', 'short_description', 'state', 'assigned_to', 'sys_created_on'];
+var incidentList = [];
+
+var gr = new GlideRecord(tableName);
+gr.addQuery('active', true);
+gr.query();
+
+while (gr.next()) {
+    var incidentObj = {};
+    
+    fieldsToInclude.forEach(function(field) {
+        if (gr.isValidField(field) && gr[field].getRefRecord) {
+            incidentObj[field] = gr[field].getDisplayValue();
+        } else if (gr.isValidField(field)) {
+            incidentObj[field] = gr[field].toString();
+        } else {
+            incidentObj[field] = null;
+        }
+    });
+
+    // Map numeric state to human-readable label
+    var stateMap = {
+        '1': 'New',
+        '2': 'In Progress',
+        '3': 'On Hold',
+        '6': 'Resolved',
+        '7': 'Closed'
+    };
+    incidentObj.state_label = stateMap[incidentObj.state] || 'Unknown';
+
+    incidentList.push(incidentObj);
+}
+
+var jsonOutput = JSON.stringify(incidentList, null, 2);
+gs.info("Here's your JSON for active incidents:\n" + jsonOutput);
+```
+
+### ✅ Pros
+- Dynamic → easily reusable for any table and fields
+- Handles reference fields gracefully
+- Adds human-readable state labels
+- JSON is formatted for readability
+- Checks `isValidField` to prevent errors
+
+### ❌ Cons
+- Slightly more complex than the simple version
+- Requires manual mapping for fields like state labels
+
+
+## Summary
+
+- **Simple Approach**: Best for quick tasks with fixed fields
+- **Flexible Approach**: Best for reusable scripts, handling dynamic tables, reference fields, and human-readable output
