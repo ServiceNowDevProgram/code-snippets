@@ -1,10 +1,11 @@
-function bulkUpdate('incident', 'active=true^priority=3',) {
+// Bulk update function to update records in any table
+function bulkUpdate(table, query, data) {
     if (!table || !query || typeof data !== 'object') {
         gs.error("Invalid parameters provided to bulkUpdate function.");
         return;
     }
 
-    var gr = new GlideRecord(incident);
+    var gr = new GlideRecord(table);
     gr.addEncodedQuery(query);
     gr.query();
 
@@ -25,3 +26,10 @@ function bulkUpdate('incident', 'active=true^priority=3',) {
 
     gs.info("Bulk update completed. Total records updated: " + count);
 }
+
+// Call the function to update incidents:
+// Where active = true, priority = 3, and category = network
+bulkUpdate('incident', 'active=true^priority=1^category=Hardware', {
+    state: 2, // Typically "In Progress"
+    comments: 'Updated via bulk update script'
+});
