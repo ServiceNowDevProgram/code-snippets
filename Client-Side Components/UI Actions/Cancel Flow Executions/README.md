@@ -51,6 +51,7 @@ function cancelRunningFlows() {
 1. Open the record where you want to cancel the associated flows.
 2. Click on the **Cancel Flow** UI Action button.
 3. The system will identify and cancel all running flows for the current record.
+4. The same can be used in Business rules as well based on trigger conditions
 
 
 ## Dependencies
