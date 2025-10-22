@@ -26,3 +26,4 @@ Explanation:
     * Searches the sys_user_has_role table
     * Deletes all roles assigned to the user
 6. Logs the total number of users processed.
+7. 
