@@ -1,0 +1,79 @@
+# GitHub Pages Configuration for ServiceNow Code Snippets
+
+# Site settings
+title: "ServiceNow Code Snippets"
+description: "Community-driven collection of ServiceNow development code examples and utilities from the ServiceNow Developer Program."
+url: "https://servicenowdevprogram.github.io"
+baseurl: "/code-snippets"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+theme: minima
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Collections for organizing content
+collections:
+  core-apis:
+    output: true
+    permalink: /:collection/:name/
+  server-side:
+    output: true
+    permalink: /:collection/:name/
+  client-side:
+    output: true
+    permalink: /:collection/:name/
+  modern-dev:
+    output: true
+    permalink: /:collection/:name/
+  integration:
+    output: true
+    permalink: /:collection/:name/
+  specialized:
+    output: true
+    permalink: /:collection/:name/
+
+# Default layouts
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+# Exclude files from processing
+exclude:
+  - README.md
+  - CONTRIBUTING.md
+  - CLAUDE.md
+  - .gitignore
+  - .github/
+  - node_modules/
+  - vendor/
+
+# Include files
+include:
+  - _pages
+  - assets
+
+# SEO settings
+logo: /assets/images/servicenow-logo.png
+social:
+  name: ServiceNow Developer Program
+  links:
+    - https://github.com/ServiceNowDevProgram
+    - https://developer.servicenow.com
+
+# GitHub settings
+github:
+  repository_url: https://github.com/ServiceNowDevProgram/code-snippets

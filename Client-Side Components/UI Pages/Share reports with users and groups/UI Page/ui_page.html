@@ -1,0 +1,34 @@
+<!--
+UI Page details 
+Name: sj_share_reports
+Category: General
+-->
+
+<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+<g:ui_form>
+    <input type="hidden" id="key" name="key" value="${sysparm_key}"/>
+    <input type="hidden" id="cancelled" name="cancelled" value="false"/>
+ 
+ 
+    <div class="modal-body">
+        <div class="row form-section form-group">
+            <div class="control-label">
+                <div><p><b> Select the group: </b></p></div>
+                <div>              
+                    <g:ui_reference name="group" id="group" query="active=true" table="sys_user_group" field="name"/>
+                </div>
+                <div><p><b> Select the user: </b></p></div>
+                <div>              
+                    <g:ui_reference name="user" id="user" query="active=true" table="sys_user" field="name;user_name;email"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="modal-footer">
+        <button class="btn-primary btn" style="min-width:5em" onclick="return onSubmit();" name="submit" id="submit">Share</button>
+        <button class="btn-danger btn" style="min-width:5em" onclick="return onCancel();" name="cancel" id="cancel">Cancel</button>
+    </footer>
+</g:ui_form>
+ 
+</j:jelly>
