@@ -72,4 +72,6 @@ Created as first Contribution for ServiceNow Hacktoberfest 2025 🎃
 MIT License
 
 ## Screenshots
+<img width="3024" height="536" alt="image" src="https://github.com/user-attachments/assets/3ae408db-175f-4281-a9d7-f21df16314e7" />
+
 
