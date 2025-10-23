@@ -76,11 +76,6 @@ Completed: 1,089 (87.3%)
 Abandoned: 158 (12.7%)
 Average Daily Conversations: 41.6
 
-=== Recommendations ===
-
-🔍 Review 2 topic(s) with high abandonment rates
-📢 Low engagement - consider promoting VA to increase awareness
-```
 
 ## Configuration Options
 
