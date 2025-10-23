@@ -18,5 +18,4 @@ The **Record as a Link Utility** is a versatile tool designed to dynamically ren
 
 Use the utility as used given code and merge it with other html. example attached for reference.
 
-=
 
