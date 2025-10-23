@@ -38,14 +38,12 @@
     var userStats = {};
     var departmentStats = {};
     var timeStats = { morning: 0, afternoon: 0, evening: 0, night: 0 };
-    var abandonmentReasons = {};
     var totalAbandoned = 0;
     var totalCompleted = 0;
     
     // Process each conversation
     conversations.query();
     while (conversations.next()) {
-        var topicId = conversations.getValue('topic');
         var topicName = conversations.topic.getDisplayValue() || 'Unknown Topic';
         var userId = conversations.getValue('user');
         var state = conversations.getValue('state');
@@ -203,30 +201,6 @@
     gs.info('Abandoned: ' + totalAbandoned + ' (' + ((totalAbandoned / totalConversations) * 100).toFixed(1) + '%)');
     gs.info('Average Daily Conversations: ' + (totalConversations / config.daysToAnalyze).toFixed(1));
     
-    // Recommendations
-    gs.info('');
-    gs.info('=== Recommendations ===');
-    gs.info('');
-    
-    var highAbandonTopics = topicArray.filter(function(t) {
-        return parseFloat(t.abandonRate) > 30 && t.total >= config.minConversations;
-    });
-    
-    if (highAbandonTopics.length > 0) {
-        gs.info('🔍 Review ' + highAbandonTopics.length + ' topic(s) with high abandonment rates');
-    }
-    
-    if (timeStats.night > (totalConversations * 0.1)) {
-        gs.info('🌙 Significant night-time usage detected (' + timeStats.night + ' conversations) - consider 24/7 support topics');
-    }
-    
-    if (totalUsers > 0 && (totalConversations / totalUsers) < 2) {
-        gs.info('📢 Low engagement (avg ' + (totalConversations / totalUsers).toFixed(1) + ' conversations/user) - consider promoting VA to increase awareness');
-    }
-    
-    if ((totalCompleted / totalConversations) > 0.85) {
-        gs.info('✅ High completion rate (' + ((totalCompleted / totalConversations) * 100).toFixed(1) + '%) - VA is performing well!');
-    }
     
     gs.info('');
     gs.info('=== Analysis Complete ===');
