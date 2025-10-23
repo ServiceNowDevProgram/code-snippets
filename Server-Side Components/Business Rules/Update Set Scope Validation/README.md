@@ -35,8 +35,11 @@ This business rule is useful for ensuring that updates in an update set adhere t
 Use the following script in the **Script** field:
 
 ```javascript
+(function executeRule(current, previous /*null when async*/) {
+
+	// Add attached code here
  
-// Add Attached code here
+})(current, previous);
 
 ```
 
