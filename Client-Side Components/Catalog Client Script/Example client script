@@ -1,0 +1,40 @@
+function onChange(control, oldValue, newValue, isLoading, isTemplate) {
+    if ( newValue == '') {
+      return;
+    }
+    
+    var department = g_form.getValue('u_department');
+    
+    // Clear all of the choices from the What needed field choice list
+    g_form.clearOptions('u_department');
+    
+    // If the value of the Request type field is hr, add
+    // two hr choices and other to the department field choice list
+    if(newValue == 'hr'){
+      g_form.addOption('u_department','hr','Human Resources');
+      g_form.addOption('u_department','finance','Finance');
+      g_form.addOption('u_department','legal','Legal');
+    }
+    // If the value of the Request type field is finance, add
+    // two facilities choices and other to the What needed field
+    // choice list
+    if(newValue == 'finance'){
+      g_form.addOption('u_department",'finance','Budget');
+      g_form.addOption('u_department','finance','Disbursement');
+      g_form.addOption('u_department','other','Other');
+    }
+    // If the value of the Request type field is legal, add
+    // two legal choices and other to the What needed field
+    // choice list
+    if(newValue == 'legal'){
+      g_form.addOption('u_department','leg1','Legal issue');
+      g_form.addOption('u_department','leg2','Land issue');
+      g_form.addOption('u_department','other','Other');
+    }
+    
+    // If the form is loading and it is not a new record, set the u_what_needed value to the
+    // value from the record before it was loaded
+    if(isLoading && !g_form.isNewRecord()){
+      g_form.setValue('u_department', department);
+    }
+  }
