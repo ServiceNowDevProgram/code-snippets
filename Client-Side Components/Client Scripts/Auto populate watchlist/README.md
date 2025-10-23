@@ -1,4 +1,4 @@
-## Automatically Update Watch List When Assigned-To Changes
+## Automatically Populate Watch List When Assigned-To Changes
 
 When the **Assigned To** field changes, this client script updates the **Watch list** to include the **Opened By**, **previous assignees**, and **new assignee**.  
 - Help maintains visibility of all users involved in the ticket’s ownership history.  
