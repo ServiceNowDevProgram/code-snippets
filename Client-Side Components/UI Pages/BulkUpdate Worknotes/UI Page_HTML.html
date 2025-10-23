@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+    <j2:set var="jvar_hide_response_time" value="true" />
+    <html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css" />
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+        <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+        <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
+    </head>
+
+    <body>
+        <!-- Alert Message -->
+        <div id="primary-message" style="display:none;" class="alert alert-primary" role="alert">
+
+        </div>
+        <div id="error-message" style="display:none;" class="alert alert-danger" role="alert">
+            Error - An error has occurred when trying to update Work Notes.
+        </div>
+        <div id="warning-message-invalid-entry" style="display:none;" class="alert alert-warning" role="alert">
+            Warning - Invalid list of Incident Tickets or Work Note field. Please try again.
+        </div>
+        <div id="warning-message-invalid-tickets-valid-entry" style="display:none;" class="alert alert-warning" role="alert">
+
+        </div>
+
+        <!-- Bulk Update Work Notes Form -->
+        <div id="form-div" class="container mt-3">
+
+            <g:ui_form>
+                <div class="mb-3 mt-3">
+                    <label class="text-lg" for="ticket_list">Incident Ticket List</label>
+                    <input type="text" class="form-control text-sm" id="ticket_list" placeholder="Enter list of Incident Tickets, separated by commas. (Example: INC001001, INC001002, ...)" name="ticket_list" required="true" />
+                </div>
+                <div class="mb-3">
+                    <label class="text-lg" for="work_note_to_apply">Work Note to Apply</label>
+                    <textarea type="text" class="form-control text-sm" id="work_note_to_apply" placeholder="Enter work note to apply here." name="work_note_to_apply" required="true" rows="6" />
+                </div>
+                <div class="d-grid gap-2 col-6 mx-auto">
+                    <button id="submit-btn" class="btn btn-primary btn-lg text-lg"  onclick="bulkupdate()">Submit</button>
+                    <button id="spinner-btn" style="display:none" class="btn btn-primary btn-lg text-lg" type="button" disabled="true">
+                        <span class="spinner-border spinner-border-lg me-2" role="status" aria-hidden="true"></span>
+                        Loading...
+                    </button>
+                </div>
+            </g:ui_form>
+
+
+        </div>
+    </body>
+    <style>
+        textarea {
+            resize: none;
+        }
+
+        .text-lg {
+            //font-size: 1.125rem;
+            font-size: large;
+            line-height: 1.75rem;
+        }
+
+        .text-md {
+            //font-size: 1rem;
+            font-size: medium;
+            line-height: 1.5rem;
+        }
+
+        .text-sm {
+            //font-size: .75rem;
+            font-size: small;
+            line-height: 1rem;
+        }
+
+        .text-xs {
+            //font-size: .75rem;
+            font-size: smaller;
+            line-height: 1rem;
+        }
+    </style>
+
+    </html>
+</j:jelly>
