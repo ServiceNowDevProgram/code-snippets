@@ -10,3 +10,13 @@
         }
     }
 })(current, previous);
+
+(function execute(inputs, outputs) {
+    var inc = new GlideRecord('incident');
+    if (inc.get(inputs.incident_sys_id)) {
+        if (inc.priority == 1) inc.assignment_group = 'Network Support';
+        else inc.assignment_group = 'Helpdesk';
+        inc.update();
+    }
+})(inputs, outputs);
+
