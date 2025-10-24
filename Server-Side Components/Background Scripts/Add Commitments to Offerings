@@ -1,0 +1,500 @@
+// ============================================================================
+// ServiceNow Background Script
+// Purpose: Loop through portfolio services, get offerings, and add service 
+//          commitments with dry-run and validation
+// ============================================================================
+
+(function() {
+    
+    // ========================================================================
+    // CONFIGURATION SECTION - UPDATE THESE VALUES
+    // ========================================================================
+    
+    var CONFIG = {
+        // REQUIRED: Portfolio System ID
+        // Example: '8c968a94877a6650cc6b1fc83cbb3573'
+        // Where to find: Navigate to Service Portfolio → Copy sys_id from spm_service_portfolio.list
+        PORTFOLIO_SYS_ID: '8c968a94877a6650cc6b1fc83cbb3573',
+        
+        // REQUIRED: Service Commitments to Add (array of names)
+        // Example: ['INC P4 Response (1h)', 'INC P4 Resolution (40h)']
+        // Where to find: Service Commitment table → copy exact names
+        SERVICE_COMMITMENTS_TO_ADD: [
+            'INC P4 Response (1h)',
+            'INC P4 Resolution (40h)'
+        ],
+        
+        // OPTIONAL: Enable dry-run mode (no database updates)
+        // true = simulate only, false = execute and save
+        DRY_RUN: true,
+        
+        // OPTIONAL: Filter by operational status
+        // Set to true to only process operational services/offerings
+        FILTER_OPERATIONAL_ONLY: false,
+        
+        // OPTIONAL: Skip existing commitment relationships
+        // true = skip if already linked, false = attempt update
+        SKIP_EXISTING: true
+    };
+    
+    // ========================================================================
+    // EXECUTION CONTEXT & STATE TRACKING
+    // ========================================================================
+    
+    var ExecutionContext = {
+        dryRun: CONFIG.DRY_RUN,
+        startTime: new Date(),
+        stats: {
+            servicesFound: 0,
+            servicesProcessed: 0,
+            offeringsFound: 0,
+            offeringsProcessed: 0,
+            commitmentsFound: 0,
+            commitmentsCreated: 0,
+            relationsSkipped: 0,
+            relationsCreated: 0,
+            relationsFailed: 0,
+            errorsEncountered: 0
+        },
+        validationErrors: [],
+        processLog: []
+    };
+    
+    // ========================================================================
+    // VALIDATION FUNCTIONS
+    // ========================================================================
+    
+    /**
+     * Validate configuration before execution
+     */
+    function validateConfiguration() {
+        gs.info('🔍 Validating configuration...');
+        
+        var errors = [];
+        
+        // Validate Portfolio System ID
+        if (!CONFIG.PORTFOLIO_SYS_ID || CONFIG.PORTFOLIO_SYS_ID.trim() === '') {
+            errors.push('❌ PORTFOLIO_SYS_ID is empty or missing');
+        } else if (CONFIG.PORTFOLIO_SYS_ID.length !== 32) {
+            errors.push('⚠️  PORTFOLIO_SYS_ID appears invalid (expected 32 characters, got ' + 
+                       CONFIG.PORTFOLIO_SYS_ID.length + ')');
+        }
+        
+        // Validate Service Commitments Array
+        if (!CONFIG.SERVICE_COMMITMENTS_TO_ADD || 
+            !Array.isArray(CONFIG.SERVICE_COMMITMENTS_TO_ADD) || 
+            CONFIG.SERVICE_COMMITMENTS_TO_ADD.length === 0) {
+            errors.push('❌ SERVICE_COMMITMENTS_TO_ADD must be a non-empty array');
+        } else {
+            for (var i = 0; i < CONFIG.SERVICE_COMMITMENTS_TO_ADD.length; i++) {
+                var commitment = CONFIG.SERVICE_COMMITMENTS_TO_ADD[i];
+                if (typeof commitment !== 'string' || commitment.trim() === '') {
+                    errors.push('❌ SERVICE_COMMITMENTS_TO_ADD[' + i + 
+                               '] is empty or not a string');
+                }
+            }
+        }
+        
+        // Check if Portfolio exists
+        if (CONFIG.PORTFOLIO_SYS_ID && CONFIG.PORTFOLIO_SYS_ID.length === 32) {
+            var portfolioGR = new GlideRecord('spm_portfolio');
+            portfolioGR.addQuery('sys_id', CONFIG.PORTFOLIO_SYS_ID);
+            portfolioGR.query();
+            
+            if (!portfolioGR.next()) {
+                errors.push('❌ Portfolio not found with sys_id: ' + CONFIG.PORTFOLIO_SYS_ID);
+            } else {
+                logInfo('✅ Portfolio found: ' + portfolioGR.getDisplayValue('name'));
+            }
+        }
+        
+        return errors;
+    }
+    
+    // ========================================================================
+    // LOGGING FUNCTIONS
+    // ========================================================================
+    
+    function logInfo(message) {
+        gs.info(message);
+        ExecutionContext.processLog.push('[INFO] ' + message);
+    }
+    
+    function logWarn(message) {
+        gs.warn(message);
+        ExecutionContext.processLog.push('[WARN] ' + message);
+    }
+    
+    function logError(message) {
+        gs.error(message);
+        ExecutionContext.processLog.push('[ERROR] ' + message);
+        ExecutionContext.stats.errorsEncountered++;
+    }
+    
+    // ========================================================================
+    // CORE BUSINESS LOGIC
+    // ========================================================================
+    
+    /**
+     * Main execution function
+     */
+    function executeProcess() {
+        try {
+            logInfo('═══════════════════════════════════════════════════════════════');
+            logInfo('🚀 Starting Portfolio Offerings Service Commitments Process');
+            logInfo('📅 Execution Time: ' + ExecutionContext.startTime);
+            logInfo('🔄 Mode: ' + (ExecutionContext.dryRun ? 'DRY-RUN (No changes)' : 'LIVE (Changes will be saved)'));
+            logInfo('═══════════════════════════════════════════════════════════════');
+            
+            // Step 1: Validate configuration
+            var validationErrors = validateConfiguration();
+            if (validationErrors.length > 0) {
+                logError('Configuration validation failed:');
+                for (var i = 0; i < validationErrors.length; i++) {
+                    logError('  ' + validationErrors[i]);
+                }
+                return false;
+            }
+            logInfo('✅ Configuration validation passed');
+            
+            // Step 2: Get all services from portfolio
+            var services = getServicesFromPortfolio(CONFIG.PORTFOLIO_SYS_ID);
+            ExecutionContext.stats.servicesFound = services.length;
+            
+            if (services.length === 0) {
+                logWarn('⚠️  No services found in portfolio');
+                return true;
+            }
+            
+            logInfo('✅ Found ' + services.length + ' service(s) in portfolio');
+            
+            // Step 3: Process each service and its offerings
+            for (var i = 0; i < services.length; i++) {
+                var service = services[i];
+                ExecutionContext.stats.servicesProcessed++;
+                
+                logInfo('');
+                logInfo('📦 [Service ' + (i + 1) + '/' + services.length + '] Processing: ' + 
+                       service.name + ' (ID: ' + service.sys_id + ')');
+                
+                // Get offerings for this service
+                var offerings = getOfferingsForService(service.sys_id);
+                ExecutionContext.stats.offeringsFound += offerings.length;
+                
+                if (offerings.length === 0) {
+                    logInfo('  ℹ️  No offerings found for this service');
+                    continue;
+                }
+                
+                logInfo('  ✅ Found ' + offerings.length + ' offering(s)');
+                
+                // Process each offering
+                for (var j = 0; j < offerings.length; j++) {
+                    var offering = offerings[j];
+                    ExecutionContext.stats.offeringsProcessed++;
+                    
+                    logInfo('  📋 [Offering ' + (j + 1) + '/' + offerings.length + '] ' + 
+                           offering.name + ' (ID: ' + offering.sys_id + ')');
+                    
+                    // Add service commitments to this offering
+                    var result = addServiceCommitmentsToOffering(
+                        offering.sys_id, 
+                        CONFIG.SERVICE_COMMITMENTS_TO_ADD
+                    );
+                }
+            }
+            
+            return true;
+            
+        } catch (error) {
+            logError('Fatal error in main process: ' + error.message);
+            logError('Stack trace: ' + error.stack);
+            return false;
+        }
+    }
+    
+    /**
+     * Get all services from a portfolio
+     */
+    function getServicesFromPortfolio(portfolioSysId) {
+        var services = [];
+        
+        try {
+            var serviceGR = new GlideRecord('cmdb_ci_service_business');
+            serviceGR.addQuery('spm_service_portfolio', portfolioSysId);
+            
+            if (CONFIG.FILTER_OPERATIONAL_ONLY) {
+                serviceGR.addQuery('operational_status', 'operational');
+            }
+            
+            serviceGR.query();
+            
+            while (serviceGR.next()) {
+                services.push({
+                    sys_id: serviceGR.getUniqueValue(),
+                    name: serviceGR.getDisplayValue('name'),
+                    number: serviceGR.getDisplayValue('number')
+                });
+            }
+            
+        } catch (error) {
+            logError('Error querying services: ' + error.message);
+        }
+        
+        return services;
+    }
+    
+    /**
+     * Get all offerings for a specific service
+     */
+    function getOfferingsForService(serviceSysId) {
+        var offerings = [];
+        
+        try {
+            var offeringGR = new GlideRecord('service_offering');
+            offeringGR.addQuery('parent', serviceSysId);
+            
+            if (CONFIG.FILTER_OPERATIONAL_ONLY) {
+                offeringGR.addQuery('operational_status', 'operational');
+            }
+            
+            offeringGR.query();
+            
+            while (offeringGR.next()) {
+                offerings.push({
+                    sys_id: offeringGR.getUniqueValue(),
+                    name: offeringGR.getDisplayValue('name'),
+                    number: offeringGR.getDisplayValue('number')
+                });
+            }
+            
+        } catch (error) {
+            logError('Error querying offerings: ' + error.message);
+        }
+        
+        return offerings;
+    }
+    
+    /**
+     * Add service commitments to a specific offering
+     */
+    function addServiceCommitmentsToOffering(offeringSysId, commitmentNames) {
+        var result = {
+            offering: offeringSysId,
+            processed: 0,
+            created: 0,
+            skipped: 0,
+            failed: 0
+        };
+        
+        try {
+            for (var i = 0; i < commitmentNames.length; i++) {
+                var commitmentName = commitmentNames[i].trim();
+                
+                if (commitmentName === '') {
+                    logWarn('    ⚠️  Empty commitment name, skipping');
+                    result.skipped++;
+                    continue;
+                }
+                
+                // Get or create service commitment
+                var commitmentSysId = getOrCreateServiceCommitment(commitmentName);
+                
+                if (!commitmentSysId) {
+                    logError('    ❌ Failed to get/create commitment: ' + commitmentName);
+                    result.failed++;
+                    continue;
+                }
+                
+                result.processed++;
+                
+                // Check if relationship already exists
+                if (CONFIG.SKIP_EXISTING && offeringCommitmentExists(offeringSysId, commitmentSysId)) {
+                    logInfo('    ⏭️  Skipped - already linked: ' + commitmentName);
+                    result.skipped++;
+                    ExecutionContext.stats.relationsSkipped++;
+                    continue;
+                }
+                
+                // Create relationship
+                if (ExecutionContext.dryRun) {
+                    logInfo('    [DRY-RUN] Would create relationship: ' + commitmentName);
+                    result.created++;
+                    ExecutionContext.stats.relationsCreated++;
+                } else {
+                    var relationshipId = createOfferingCommitmentRelationship(
+                        offeringSysId, 
+                        commitmentSysId, 
+                        commitmentName,
+                        i
+                    );
+                    
+                    if (relationshipId) {
+                        logInfo('    ✅ Created relationship: ' + commitmentName);
+                        result.created++;
+                        ExecutionContext.stats.relationsCreated++;
+                    } else {
+                        logError('    ❌ Failed to create relationship: ' + commitmentName);
+                        result.failed++;
+                        ExecutionContext.stats.relationsFailed++;
+                    }
+                }
+            }
+            
+        } catch (error) {
+            logError('Error adding commitments to offering: ' + error.message);
+        }
+        
+        return result;
+    }
+    
+    /**
+     * Get or create service commitment by name
+     */
+    function getOrCreateServiceCommitment(commitmentName) {
+        try {
+            // Try to find existing commitment
+            var commitmentGR = new GlideRecord('service_commitment');
+            commitmentGR.addQuery('name', commitmentName);
+            commitmentGR.query();
+            
+            if (commitmentGR.next()) {
+                logInfo('      ℹ️  Found existing commitment: ' + commitmentName);
+                ExecutionContext.stats.commitmentsFound++;
+                return commitmentGR.getUniqueValue();
+            }
+            
+            // Create new commitment
+            if (ExecutionContext.dryRun) {
+                logInfo('      [DRY-RUN] Would create commitment: ' + commitmentName);
+                ExecutionContext.stats.commitmentsCreated++;
+                return 'DRY_RUN_ID_' + Date.now(); // Return pseudo-ID for dry-run
+            } else {
+                logInfo('      Creating new commitment: ' + commitmentName);
+                var newCommitmentGR = new GlideRecord('service_commitment');
+                newCommitmentGR.initialize();
+                newCommitmentGR.setValue('name', commitmentName);
+                newCommitmentGR.setValue('short_description', 'Auto-created: ' + commitmentName);
+                newCommitmentGR.setValue('operational_status', 'operational');
+                
+                var newCommitmentId = newCommitmentGR.insert();
+                
+                if (newCommitmentId) {
+                    logInfo('      ✅ Created commitment: ' + commitmentName);
+                    ExecutionContext.stats.commitmentsCreated++;
+                    return newCommitmentId;
+                } else {
+                    logError('      ❌ Failed to create commitment: ' + commitmentName);
+                    return null;
+                }
+            }
+            
+        } catch (error) {
+            logError('Error getting/creating commitment: ' + error.message);
+            return null;
+        }
+    }
+    
+    /**
+     * Create offering-commitment relationship
+     */
+    function createOfferingCommitmentRelationship(offeringSysId, commitmentSysId, commitmentName, order) {
+        try {
+            var relationshipGR = new GlideRecord('service_offering_commitment');
+            relationshipGR.initialize();
+            relationshipGR.setValue('service_offering', offeringSysId);
+            relationshipGR.setValue('service_commitment', commitmentSysId);
+            relationshipGR.setValue('order', (order + 1) * 100);
+            
+            var relationshipId = relationshipGR.insert();
+            
+            if (relationshipId) {
+                return relationshipId;
+            } else {
+                return null;
+            }
+            
+        } catch (error) {
+            logError('Error creating relationship: ' + error.message);
+            return null;
+        }
+    }
+    
+    /**
+     * Check if offering-commitment relationship already exists
+     */
+    function offeringCommitmentExists(offeringSysId, commitmentSysId) {
+        try {
+            var relationshipGR = new GlideRecord('service_offering_commitment');
+            relationshipGR.addQuery('service_offering', offeringSysId);
+            relationshipGR.addQuery('service_commitment', commitmentSysId);
+            relationshipGR.query();
+            
+            return relationshipGR.hasNext();
+            
+        } catch (error) {
+            logError('Error checking relationship: ' + error.message);
+            return false;
+        }
+    }
+    
+    // ========================================================================
+    // EXECUTION SUMMARY & REPORTING
+    // ========================================================================
+    
+    function generateExecutionSummary() {
+        var executionTime = new Date() - ExecutionContext.startTime;
+        
+        logInfo('');
+        logInfo('═══════════════════════════════════════════════════════════════');
+        logInfo('📊 EXECUTION SUMMARY');
+        logInfo('═══════════════════════════════════════════════════════════════');
+        logInfo('');
+        logInfo('⏱️  Execution Time: ' + executionTime + ' ms');
+        logInfo('🔄 Mode: ' + (ExecutionContext.dryRun ? '🟡 DRY-RUN' : '🟢 LIVE'));
+        logInfo('');
+        logInfo('📈 STATISTICS:');
+        logInfo('  Services Found:       ' + ExecutionContext.stats.servicesFound);
+        logInfo('  Services Processed:   ' + ExecutionContext.stats.servicesProcessed);
+        logInfo('  Offerings Found:      ' + ExecutionContext.stats.offeringsFound);
+        logInfo('  Offerings Processed:  ' + ExecutionContext.stats.offeringsProcessed);
+        logInfo('  Commitments Found:    ' + ExecutionContext.stats.commitmentsFound);
+        logInfo('  Commitments Created:  ' + ExecutionContext.stats.commitmentsCreated);
+        logInfo('  Relationships Skipped: ' + ExecutionContext.stats.relationsSkipped);
+        logInfo('  Relationships Created: ' + ExecutionContext.stats.relationsCreated);
+        logInfo('  Relationships Failed:  ' + ExecutionContext.stats.relationsFailed);
+        logInfo('  Errors Encountered:   ' + ExecutionContext.stats.errorsEncountered);
+        logInfo('');
+        logInfo('═══════════════════════════════════════════════════════════════');
+        
+        if (ExecutionContext.dryRun) {
+            logInfo('✅ DRY-RUN COMPLETE - No changes were made to the database');
+            logInfo('📌 Review results above and set DRY_RUN: false to execute');
+        } else {
+            if (ExecutionContext.stats.errorsEncountered === 0) {
+                logInfo('✅ EXECUTION COMPLETE - All changes have been saved');
+            } else {
+                logWarn('⚠️  EXECUTION COMPLETE - Some errors occurred');
+            }
+        }
+        logInfo('');
+    }
+    
+    // ========================================================================
+    // MAIN EXECUTION
+    // ========================================================================
+    
+    try {
+        var success = executeProcess();
+        generateExecutionSummary();
+        
+        if (!success) {
+            gs.error('⛔ Execution failed - see log for details');
+        }
+        
+    } catch (error) {
+        gs.error('❌ Critical error: ' + error.message);
+        gs.error(error.stack);
+    }
+    
+})();
