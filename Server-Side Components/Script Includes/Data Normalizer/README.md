@@ -1,0 +1,1 @@
+DataNormalizer is a reusable Script Include for standardizing and cleaning data in ServiceNow. It normalizes names, emails, phone numbers, addresses, and dates, ensuring consistent formatting across modules. It supports server-side and client-side (GlideAjax) calls.

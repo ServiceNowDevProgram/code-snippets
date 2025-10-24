@@ -1,0 +1,20 @@
+.header-image, .image-icon-item {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  margin-right: 1rem;
+}
+
+.header-title {
+  font-size: 20px;
+}
+
+a.list-group-item {
+  display: flex;
+  align-items: center;
+}
+
+.image-icon-title {
+  color: #01b8f2;
+  font-weight: bold;
+}

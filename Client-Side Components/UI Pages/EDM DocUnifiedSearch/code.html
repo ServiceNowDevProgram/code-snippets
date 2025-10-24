@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+	<input type="hidden" id="cancelled" name="cancelled" value="false"/>
+	
+	<g:requires name="styles/heisenberg/heisenberg_all.css" includes="true" />
+	<g:requires name="scripts/lib/jquery_includes.js" />
+	<g:requires name="scripts/heisenberg/heisenberg_all.js" />
+    <g:include_script src="bootstrap.min.jsdbx"/>
+    <style>
+		form {
+		width: 600px;
+		margin: 20px auto 30px auto;
+		border: 1px solid rgba(0,0,0,0.2);
+		padding: 35px;
+		box-shadow: 0 1px 5px rgba(0,0,0,0.3);
+		border-radius: 3px;
+		}
+		
+		label {
+		padding-top: 7px;
+		}
+		
+		.col-sm-9 {
+		padding-left: inherit;
+		padding-right: inherit;
+		}
+		
+		.has-error {
+		color: #f95050;
+		}
+		
+		.form-control.has-error {
+		color: #f95050;
+		border: 1px solid #f95050;
+		}
+		
+		.footer-buttons {
+		display: block;
+		text-align: right;
+		}
+		.table-hover tbody tr:hover > th {
+			background-color: #D1D119!important;
+		}
+		#quicksearch_results {
+		padding: 20px 40px;
+		border-top: 1px solid #e8e8e8;
+		}
+        .form-group {
+			margin-left: 15px;
+		}
+		
+		.iframe-placeholder {
+		    background: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 100% 100%"><text fill="%23000000" x="50%" y="50%" font-family="\'Lucida Grande\', sans-serif" font-size="24" text-anchor="middle">LOADING...</text></svg>') 0px 0px no-repeat;
+		}
+		.vertical-alignment-helper {
+		display:table;
+		height: 100%;
+		width: 100%;
+		pointer-events:none;
+		}
+		.vertical-align-center {
+		display: table-cell;
+		vertical-align: middle;
+		pointer-events:none;
+		}
+		.modal-content {
+		/* Bootstrap sets the size of the modal in the modal-dialog class, we need to inherit it */
+		width:inherit;
+		max-width:inherit; /* For Bootstrap 4 - to avoid the modal window stretching 
+		full width */
+		height:inherit;
+		/* To center horizontally */
+		margin: 0 auto;
+		pointer-events:all;
+		}
+	</style>
+	
+	<g:ui_form>
+		
+		<fieldset>
+			<h2 style="margin-top: 0;">Employee Documents Search</h2>
+			<div style="font-size: small;padding-left: 0px;color: gray;">Search files by Employee, Document Type , HR Case</div>
+			<h3 style="margin-bottom: 15px;">Specify one of</h3>
+	
+			<div class="row form-group">
+				<label for="quicksearch_term" class="control-label col-sm-3">Employee</label>
+				<span class="col-sm-9 form-field">			
+					<g:ui_reference name="quicksearch_assigned" query="emailISNOTEMPTY" id="quicksearch_assign" table="sys_user" />
+				</span>
+			</div>	
+			
+			<div class="row form-group">
+				<label class="col-sm-3 control-label" for="quicksearch_table">Employee ID</label>
+
+				<span class="col-sm-9 form-field">
+					<input id="quicksearch_emp" class="form-control" type="text" name="quicksearch_emp" onkeyup="triggerTheOne('quicksearch_emp');" />
+				</span>
+			</div>
+			<!--div class="row form-group">
+				<label for="quicksearch_term" class="control-label col-sm-3">Most Recent Login User</label>
+				<span class="col-sm-9 form-field">			
+					<g:ui_reference name="quicksearch_most" query="active=true" id="quicksearch_most_recent" table="sys_user" />
+				</span>
+   </div-->	
+			<!--div class="row form-group">
+				<label class="col-sm-3 control-label" for="quicksearch_ip_address" id="lbl_ip_address">Serial Number</label>
+
+				<span class="col-sm-9 form-field">
+					<input id="quicksearch_ip_address" class="form-control" type="text" placeholder="Enter an exact IPv4 address" name="quicksearch_term" onChange="validateIP();" onkeyup="triggerTheOne('quicksearch_ip_address');" />
+				</span>
+   </div-->
+			<!--div class="row form-group">
+				<label class="col-sm-3 control-label" for="quicksearch_table">Document Type</label>
+
+				<span class="col-sm-9 form-field">
+					<input id="quicksearch_serial" class="form-control" type="text" placeholder="Enter Document Type" name="quicksearch_serial" onkeyup="triggerTheOne('quicksearch_serial');" />
+				</span>
+   </div-->
+				<div class="row form-group">
+				<label for="quicksearch_term" class="control-label col-sm-3">Document Type</label>
+				<span class="col-sm-9 form-field">			
+					<g:ui_reference name="quicksearch_doc" query="active=true" id="quicksearch_doc" table="sn_hr_ef_document_type" />
+				</span>
+			</div>	
+			<!--div class="row form-group">
+				<label for="quicksearch_term" class="control-label col-sm-3">Asset Tag</label>
+				<span class="col-sm-9 form-field">
+					<input id="quicksearch_asset_tag" class="form-control" type="text" placeholder="Enter asset tag" name="quicksearch_asset_tag" onkeyup="triggerTheOne('quicksearch_asset_tag');" />
+				</span>
+   </div-->
+				<div class="row form-group">
+				<label for="quicksearch_term" class="control-label col-sm-3">HR Case</label>
+				<span class="col-sm-9 form-field">			
+					<g:ui_reference name="quicksearch_case" query="active=true" id="quicksearch_case" table="sn_hr_core_case" />
+				</span>
+			</div>	
+			
+		
+            <div class="row form-group">
+				<!--<div class="col-sm-3"></div>-->
+                <div class="col-sm-12">
+						<span class="input-group-checkbox">
+							<input id="quicksearch_active_only" class="checkbox" type="checkbox" checked="true" name="quicksearch_active_only"  />
+							<!--label for="quicksearch_active_only" class="checkbox-label">Exclude Retired</label-->
+						</span>
+                </div>
+            </div>
+			
+		</fieldset>
+		    <tr id="dialogbuttons">
+        <td colspan="3" align="right" style="padding-right:10px;">
+            <g:dialog_buttons_ok_cancel ok="return actionOK();" cancel="cancel();"/>
+        </td>
+    </tr>
+
+
+		
+	</g:ui_form>
+
+</j:jelly>

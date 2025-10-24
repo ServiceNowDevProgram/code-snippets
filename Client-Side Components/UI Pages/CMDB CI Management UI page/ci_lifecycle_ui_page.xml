@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+ <!--basic style for html element-->
+    <style>
+        .ci-lifecycle-container {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+        }
+        .card {
+            width: 400px;
+            margin: 20px auto;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+        .card-header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 16px;
+            font-size: 18px;
+        }
+        .card-footer, .card-body {
+            padding: 16px;
+        }
+        button {
+            padding: 10px;
+            font-size: 14px;
+            color: #FFFFFF;
+            background-color: #3cb371;
+            border: none;
+            cursor: pointer;
+            margin: 5px;
+        }
+        #ci_input {
+            padding: 5px;
+            width: 100%;
+        }
+        #ci_search {
+            margin-left: 1rem;
+            padding: 15px;
+            width: 30%;
+            cursor: pointer;
+            border-radius: 10px;
+            background-color: yellow;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px auto;
+            font-size: 16px;
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+            width: 30%;
+        }
+        .card-footer {
+            background-color: #f9f9f9;
+            border-top: 1px solid #ddd;
+            display: flex;
+            justify-content: center;
+        }
+	</style> 
+  <!-- end of styling -->
+    <div class="ci-lifecycle-container"> <!-- container -->
+        <div class="ci-lifecycle-header"> <!-- header -->
+            <h1>CI Lifecycle Management</h1> <!-- header title -->
+            <!-- search input box and search button -->
+            <div style="display:flex;">  
+                <input type="text" name="ci_input" id="ci_input"  placeholder="Enter CI Id ..." />
+                <button id="ci_search" name="ci_search"  onClick="searchCI()">Search CI</button>
+            </div>
+            <!-- end of search -->
+            <!-- Display Configuration item details -->
+            <div id="ci-info" style="display:none;">
+                <div class="card" >
+                    <div class="card-header">
+                        Configuration Item
+                    </div>
+                    <div class="card-body" >
+                        <table>
+                            <tr>
+                                <th style="">Serial No</th>
+                                <td id="serial_number"></td>
+                            </tr>
+                            <tr>
+                                <th style="">Name</th>
+                                <td id="ci_name" ></td>
+                            </tr>
+                            <tr>
+                                <th>CI class</th>
+                                <td id='ci_class'></td>
+                            </tr>
+                            <tr>
+                                <th>Status</th>
+                                <td id="ci_install_status"></td>
+                            </tr>
+
+                        </table>
+
+
+                    </div>
+                    <!-- end -->
+
+            <!-- button to change configuration item install status -->
+            <div class="card-footer" style="">
+              <!--stolen-->
+              <button id="ci_Stolen" name="ci_Stolen"  onClick="UpdateCI(8)">Stolen</button>
+              <!--retired-->
+              <button id="ci_Retired" name="ci_Retired"  onClick="UpdateCI(7)">Retire CI
+              </button>
+
+              <!--In stock-->
+              <button id="ci_InStock" name="ci_InStock"  onClick="UpdateCI(6)">In Stock
+              </button>
+              <!--In Maintainance-->
+              <button class="ci_InMaintenance" id="ci_InMaintenance" onclick="UpdateCI(3)" >In maintainace</button>
+            </div>
+            <!-- end -->
+
+            </div>
+
+            </div>
+        </div>
+    </div>
+
+
+</j:jelly>

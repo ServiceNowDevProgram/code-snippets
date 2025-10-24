@@ -1,0 +1,1 @@
+The script identifies tasks that haven’t been updated for a set period, sends reminder notifications to assigned users, and, if still inactive after additional time, automatically closes them. This helps keep task lists current and reduces manual follow-ups.

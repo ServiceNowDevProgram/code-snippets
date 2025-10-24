@@ -1,0 +1,82 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Delegates</h3>
+  </div>
+  <div class="panel-body">
+    <div ng-if="!c.data.delegates.length" class="alert alert-info text-center">
+      You have no active delegates.
+    </div>
+
+    <ul class="list-group" ng-if="c.data.delegates.length > 0">
+      <li class="list-group-item delegate-item" ng-repeat="d in c.data.delegates">
+        <h4>{{d.delegate_display}}</h4>
+        <p class="text-muted">
+          <strong>User:</strong> {{d.user_display}} <br/>
+          <strong>Starts:</strong> {{d.starts_display || 'N/A'}} <br/>
+          <strong>Ends:</strong> {{d.ends_display || 'N/A'}}
+        </p>
+        <p>
+          <strong>Notifications:</strong>
+          <span ng-if="d.approvals"> Approvals</span>
+          <span ng-if="d.assignments"> Assignments</span>
+          <span ng-if="d.notifications"> All</span>
+          <span ng-if="d.invitations"> Invitations</span>
+        </p>
+        <div class="btn-row">
+          <button class="btn btn-sm btn-default" ng-click="c.edit(d.sys_id)">
+            <i class="fa fa-edit"></i> Edit
+          </button>
+        </div>
+      </li>
+    </ul>
+
+    <hr/>
+
+    <div class="delegate-form-container">
+      <h4 ng-if="!c.editing">Create a New Delegate</h4>
+      <h4 ng-if="c.editing">Edit Delegate</h4>
+
+      <form name="delegateForm" ng-submit="c.saveDelegate()">
+        <!-- User is not editable: recorded as current user server-side -->
+
+        <div class="form-group">
+          <label for="delegate">Delegate <span class="text-danger">*</span></label>
+          <sn-record-picker field="c.delegateField" table="'sys_user'" display-field="'name'" value-field="'sys_id'" search-fields="'name,email'" page-size="10" placeholder="Search delegate..." required></sn-record-picker>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Starts</label>
+              <input type="datetime-local" class="form-control" ng-model="c.form.starts_local" />
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Ends</label>
+              <input type="datetime-local" class="form-control" ng-model="c.form.ends_local" />
+            </div>
+          </div>
+        </div>
+
+        <div class="checkboxes form-group">
+          <label class="checkbox-inline"><input type="checkbox" ng-model="c.form.approvals"> Approvals</label>
+          <label class="checkbox-inline"><input type="checkbox" ng-model="c.form.assignments"> Assignments</label>
+          <label class="checkbox-inline"><input type="checkbox" ng-model="c.form.notifications"> All notifications</label>
+          <label class="checkbox-inline"><input type="checkbox" ng-model="c.form.invitations"> Meeting invitations</label>
+        </div>
+
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary" ng-disabled="delegateForm.$invalid">
+            <i class="fa" ng-class="{'fa-plus-circle': !c.editing, 'fa-save': c.editing}"></i>
+            {{c.editing ? 'Save' : 'Create'}}
+          </button>
+          <button type="button" class="btn btn-default" ng-click="c.resetForm()">New</button>
+          <button type="button" class="btn btn-danger" ng-if="c.editing" ng-click="c.deleteDelegate()">
+            <i class="fa fa-trash"></i> Delete
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

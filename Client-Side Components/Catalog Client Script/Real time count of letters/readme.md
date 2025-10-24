@@ -1,0 +1,1 @@
+This onChange Catalog Client Script displays the current character count for a text field and enforces a maximum limit by showing error messages and making the field mandatory to prevent form submission when exceeded.

@@ -1,0 +1,55 @@
+(function() {
+    // Get ticket counts by priority
+    data.counts = {};
+    
+    try {
+        // Count Critical (Priority 1)
+        var criticalGR = new GlideAggregate('incident');
+        criticalGR.addQuery('priority', '1');
+        criticalGR.addQuery('active', true);
+        criticalGR.addAggregate('COUNT');
+        criticalGR.query();
+        if (criticalGR.next()) {
+            data.counts.critical = parseInt(criticalGR.getAggregate('COUNT'));
+        }
+        
+        // Count High (Priority 2)
+        var highGR = new GlideAggregate('incident');
+        highGR.addQuery('priority', '2');
+        highGR.addQuery('active', true);
+        highGR.addAggregate('COUNT');
+        highGR.query();
+        if (highGR.next()) {
+            data.counts.high = parseInt(highGR.getAggregate('COUNT'));
+        }
+        
+        // Count Medium (Priority 3)
+        var mediumGR = new GlideAggregate('incident');
+        mediumGR.addQuery('priority', '3');
+        mediumGR.addQuery('active', true);
+        mediumGR.addAggregate('COUNT');
+        mediumGR.query();
+        if (mediumGR.next()) {
+            data.counts.medium = parseInt(mediumGR.getAggregate('COUNT'));
+        }
+        
+        // Count Low (Priority 4)
+        var lowGR = new GlideAggregate('incident');
+        lowGR.addQuery('priority', '4');
+        lowGR.addQuery('active', true);
+        lowGR.addAggregate('COUNT');
+        lowGR.query();
+        if (lowGR.next()) {
+            data.counts.low = parseInt(lowGR.getAggregate('COUNT'));
+        }
+        
+    } catch (e) {
+        gs.error('Error in Live Ticket Counter: ' + e.message);
+        data.counts = {
+            critical: 0,
+            high: 0,
+            medium: 0,
+            low: 0
+        };
+    }
+})();

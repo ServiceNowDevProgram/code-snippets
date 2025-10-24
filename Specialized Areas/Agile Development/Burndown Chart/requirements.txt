@@ -1,0 +1,7 @@
+jpholiday==0.1.10
+matplotlib==3.9.2
+numpy==2.0.2
+pandas==2.2.3
+pytz==2024.2
+requests==2.32.3
+urllib3==1.26.13
