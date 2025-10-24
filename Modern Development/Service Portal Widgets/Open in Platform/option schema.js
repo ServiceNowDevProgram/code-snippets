@@ -16,7 +16,8 @@
 "type":"json",
 "label":"Define Table Workspace JSON Mapping",
 "value":{
-  "sn_grc_issue":"risk/privacy"
+  "sn_grc_issue":"risk/privacy",
+  "sn_si_incident":"sir"
 }
 }
 ]
