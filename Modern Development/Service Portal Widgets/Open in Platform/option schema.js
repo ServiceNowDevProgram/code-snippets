@@ -6,9 +6,17 @@
 "default_value":"Open in Platform"
 },
 {
-"name":"open_in_sow",
+"name":"open_in_workspace",
 "type":"string",
-"label":"Name for SOW Button",
-"default_value":"Open in SOW"
+"label":"Name for Workspace Button",
+"default_value":"Open In workspace"
+},
+{
+"name":"define_workspace",
+"type":"json",
+"label":"Define Table Workspace JSON Mapping",
+"value":{
+  "sn_grc_issue":"risk/privacy"
+}
 }
 ]
