@@ -12,5 +12,4 @@ to the variable.
 
 We can create an After Insert Business Rule on the sc_req_item table that automatically reassigns such attachments to the corresponding RITM.
 
-This rule will run only for RITMs created from specific catalog items as defined in the filter condition of BR and query the sys_attachment table for records where
-table_sys_id matches the current RITM’s sys_id, and table_name equals 'ZZ_YYsc_cat_item_producer' and update the table_name to 'sc_req_item'.
+This rule will run only for RITMs created from specific catalog items, as defined in the filter condition of BR, and retrieve the attachment record from the sys_attachment table using the attachment variable value. It will then update the table_name to 'sc_req_item'.
