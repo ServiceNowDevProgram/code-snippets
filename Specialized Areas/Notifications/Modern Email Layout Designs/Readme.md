@@ -26,7 +26,7 @@ This layout provides a professional and dynamic look for system emails such as a
 
 ### ⚙️ Installation
 
-1. Navigate to **System Notification → Email Layouts → New**
+1. Navigate to **System Policy → Email → Email Layout** → New
 2. Paste the HTML layout above into the content field
 3. Save and name it **"Modern Notification Layout"**
 4. Assign this layout to your email notifications (under "Layout" field)
