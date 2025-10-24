@@ -26,6 +26,23 @@ When a Work Order is created from an Incident:
 
 This behavior aligns with existing ITSM hold logic for Problem and Change processes
 
+## Prerequisites
+
+#### Ensure FSM Application Plugin is Installed
+- This customization requires the Field Service Management (FSM) plugin to be installed and active in ServiceNow instance  
+- Search for Field Service Management plugin **com.snc.work_management** and install
+- FSM provides the **Work Order [wm_order]** table
+  
+#### Create a Custom Field on the Incident Table
+- Create Custom Reference Field on Incident table with label name **Work Order** [u_work_order] and select Type as **Reference**   
+- Reference to Table Work Order [wm_order]  
+- Save and add this field to the **Incident form** under the **Related Records** section
+
+#### Add Custom Choice in On Hold Reason Field
+- Navigate to hold_reason field on Incident table
+- Configure dictionary and add **Awaiting Field Work Order** with value set as 2 and sequence as 5  
+- Save the new choice to make it selectable in the *Hold Reason* field.
+
 ---
 ### Creating an Incident
 ![Create_Incident](Populate_WorkOrder_Number_1.png)
