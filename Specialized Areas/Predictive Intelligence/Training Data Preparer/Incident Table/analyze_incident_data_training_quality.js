@@ -36,7 +36,7 @@
         var field = new GlideRecord('sys_dictionary');
         field.addQuery('name', 'IN', tables.join(','));
         field.query();
-            // Removed printout of all available fields
+
     }
 
     printAllFields('incident');
