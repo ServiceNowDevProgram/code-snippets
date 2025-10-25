@@ -14,4 +14,5 @@
         var rate = breached ? ((breached / total) * 100).toFixed(2) : 0;
         gs.info(ga.getDisplayValue('task.assignment_group') + ': ' + rate + '% breached (' + breached + '/' + total + ')');
     }
+    
 })();
