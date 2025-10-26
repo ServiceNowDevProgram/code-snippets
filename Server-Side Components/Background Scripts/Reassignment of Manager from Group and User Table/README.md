@@ -18,13 +18,13 @@ Automatically reassigns all groups and users managed by a retiring manager to a 
 
 ---
 
-### Background Script Execution 
+### Example Of Group Table Record Before Script Execution 
 
 ![Manager Reassignment](BackGroundScript_UpdateManager_Replace_2.png)
 
 ---
 
-### Example Of Group Table Record Before Script Execution
+### Background Script Execution 
 
 ![Manager Reassignment](BackGroundScript_UpdateManager_Replace_3.png)
 
