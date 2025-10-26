@@ -72,33 +72,112 @@ CostOptimizationAnalyzer.prototype = {
         var threshold = gs.getProperty('cost.analyzer.integration.threshold', '30');
         var cutoffDate = gs.daysAgoStart(parseInt(threshold));
         
-        // Check REST Messages
-        var restGr = new GlideRecord('sys_rest_message');
-        restGr.query();
+        // Check IntegrationHub Spoke usage
+        var unusedSpokes = this.findUnusedSpokes(cutoffDate);
+        redundantIntegrations = redundantIntegrations.concat(unusedSpokes);
         
-        while (restGr.next()) {
-            var lastUsed = this.getIntegrationLastUsed(restGr.sys_id.toString(), 'rest');
-            if (lastUsed && lastUsed < cutoffDate) {
-                redundantIntegrations.push({
-                    name: restGr.name.toString(),
-                    type: 'REST',
-                    endpoint: restGr.endpoint.toString(),
-                    lastUsed: lastUsed,
-                    status: 'Potentially Unused'
-                });
-            }
-        }
+        // Check SOAP Web Services
+        var unusedSoap = this.findUnusedSoapServices(cutoffDate);
+        redundantIntegrations = redundantIntegrations.concat(unusedSoap);
         
-        // Check for duplicate endpoints
+        // Check for duplicate endpoints (still valuable)
         var duplicates = this.findDuplicateEndpoints();
         redundantIntegrations = redundantIntegrations.concat(duplicates);
         
         return redundantIntegrations;
     },
     
-    getIntegrationLastUsed: function(integrationId, type) {
-        var logGr = new GlideRecord('syslog');
-        logGr.addQuery('message', 'CONTAINS', integrationId);
+    findUnusedSpokes: function(cutoffDate) {
+        var unusedSpokes = [];
+        
+        // Get all installed spokes
+        var spokeGr = new GlideRecord('sys_app');
+        spokeGr.addQuery('source', 'sn_app_store');
+        spokeGr.addQuery('name', 'CONTAINS', 'spoke');
+        spokeGr.query();
+        
+        while (spokeGr.next()) {
+            var spokeId = spokeGr.sys_id.toString();
+            var spokeName = spokeGr.name.toString();
+            
+            // Check usage in ua_ih_usage table
+            var usageGr = new GlideRecord('ua_ih_usage');
+            usageGr.addQuery('spoke', spokeId);
+            usageGr.addQuery('sys_created_on', '>=', cutoffDate);
+            usageGr.setLimit(1);
+            usageGr.query();
+            
+            if (!usageGr.hasNext()) {
+                // No recent usage found
+                var lastUsage = this.getLastSpokeUsage(spokeId);
+                unusedSpokes.push({
+                    name: spokeName,
+                    type: 'IntegrationHub Spoke',
+                    spokeId: spokeId,
+                    lastUsed: lastUsage,
+                    status: 'Potentially Unused'
+                });
+            }
+        }
+        
+        return unusedSpokes;
+    },
+    
+    getLastSpokeUsage: function(spokeId) {
+        var usageGr = new GlideRecord('ua_ih_usage');
+        usageGr.addQuery('spoke', spokeId);
+        usageGr.orderByDesc('sys_created_on');
+        usageGr.setLimit(1);
+        usageGr.query();
+        
+        if (usageGr.next()) {
+            return usageGr.sys_created_on.getDisplayValue();
+        }
+        return 'Never used';
+    },
+    
+    findUnusedSoapServices: function(cutoffDate) {
+        var unusedSoap = [];
+        
+        var soapGr = new GlideRecord('sys_web_service');
+        soapGr.query();
+        
+        while (soapGr.next()) {
+            var soapId = soapGr.sys_id.toString();
+            var soapName = soapGr.name.toString();
+            
+            // Check if SOAP service has been used recently
+            var usageCount = this.getSoapUsageCount(soapId, cutoffDate);
+            if (usageCount === 0) {
+                unusedSoap.push({
+                    name: soapName,
+                    type: 'SOAP Web Service',
+                    endpoint: soapGr.endpoint.toString(),
+                    lastUsed: this.getLastSoapUsage(soapId),
+                    status: 'Potentially Unused'
+                });
+            }
+        }
+        
+        return unusedSoap;
+    },
+    
+    getSoapUsageCount: function(soapId, cutoffDate) {
+        var usageGr = new GlideAggregate('sys_soap_log');
+        usageGr.addQuery('web_service', soapId);
+        usageGr.addQuery('sys_created_on', '>=', cutoffDate);
+        usageGr.addAggregate('COUNT');
+        usageGr.query();
+        
+        if (usageGr.next()) {
+            return parseInt(usageGr.getAggregate('COUNT'));
+        }
+        return 0;
+    },
+    
+    getLastSoapUsage: function(soapId) {
+        var logGr = new GlideRecord('sys_soap_log');
+        logGr.addQuery('web_service', soapId);
         logGr.orderByDesc('sys_created_on');
         logGr.setLimit(1);
         logGr.query();
@@ -106,7 +185,7 @@ CostOptimizationAnalyzer.prototype = {
         if (logGr.next()) {
             return logGr.sys_created_on.getDisplayValue();
         }
-        return null;
+        return 'Never used';
     },
     
     findDuplicateEndpoints: function() {
@@ -147,7 +226,7 @@ CostOptimizationAnalyzer.prototype = {
             var recordCount = this.getTableRecordCount(tableName);
             
             if (recordCount > parseInt(threshold)) {
-                var sizeInfo = this.estimateTableSize(tableName, recordCount);
+                var sizeInfo = this.getActualTableSize(tableName, recordCount);
                 oversizedTables.push({
                     table: tableName,
                     recordCount: recordCount,
@@ -162,7 +241,7 @@ CostOptimizationAnalyzer.prototype = {
         systemTables.forEach(function(tableName) {
             var recordCount = this.getTableRecordCount(tableName);
             if (recordCount > parseInt(threshold)) {
-                var sizeInfo = this.estimateTableSize(tableName, recordCount);
+                var sizeInfo = this.getActualTableSize(tableName, recordCount);
                 oversizedTables.push({
                     table: tableName,
                     recordCount: recordCount,
@@ -190,9 +269,25 @@ CostOptimizationAnalyzer.prototype = {
         return 0;
     },
     
-    estimateTableSize: function(tableName, recordCount) {
-        var avgRecordSize = 2; // KB per record (estimate)
-        var sizeGB = (recordCount * avgRecordSize) / (1024 * 1024);
+    getActualTableSize: function(tableName, recordCount) {
+        var sizeGB = 0;
+        
+        // Get actual table size from sys_physical_table_stats
+        var statsGr = new GlideRecord('sys_physical_table_stats');
+        statsGr.addQuery('table_name', tableName);
+        statsGr.orderByDesc('sys_created_on');
+        statsGr.setLimit(1);
+        statsGr.query();
+        
+        if (statsGr.next()) {
+            // Convert bytes to GB
+            var sizeBytes = parseInt(statsGr.size_bytes || 0);
+            sizeGB = sizeBytes / (1024 * 1024 * 1024);
+        } else {
+            // Fallback to estimate if stats not available
+            var avgRecordSize = 2; // KB per record (estimate)
+            sizeGB = (recordCount * avgRecordSize) / (1024 * 1024);
+        }
         
         var recommendation = 'Consider archiving old records';
         if (tableName === 'sys_audit') {
@@ -235,4 +330,4 @@ CostOptimizationAnalyzer.prototype = {
     },
     
     type: 'CostOptimizationAnalyzer'
-};
+}
