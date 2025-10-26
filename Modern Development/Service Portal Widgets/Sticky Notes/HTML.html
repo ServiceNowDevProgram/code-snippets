@@ -11,7 +11,7 @@
     <div class="note-meta">{{n.created_on | date:'short'}}</div>
   </div>
      <div class="add-note-box">
-    <textarea ng-model="c.data.message" placeholder="Enter value..." class="form-control" />
+    <textarea ng-model="c.data.text" placeholder="Enter value..." class="form-control" />
     <br>
     <div class="note-controls">
       <select ng-model="c.data.newColor" class="form-control input-sm">
@@ -22,6 +22,3 @@
       </select>
     <button class="btn btn-primary" ng-click="c.add()"><i class="fa fa-floppy-o"></i> Add </button>
 </div>
-
-
-
