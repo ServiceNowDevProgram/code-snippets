@@ -1,0 +1,23 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "C:/Users/ameet/AppData/Local/Arduino15/packages/esp8266/hardware/esp8266/*/cores/esp8266",
+                "C:/Users/ameet/AppData/Local/Arduino15/packages/esp8266/hardware/esp8266/*/libraries/**",
+                "C:/Users/ameet/AppData/Local/Arduino15/packages/esp8266/hardware/esp8266/*/tools/sdk/include",
+                "C:/Users/ameet/Documents/Arduino/libraries/**"
+            ],
+            "defines": [
+                "ARDUINO=10819",
+                "ESP8266"
+            ],
+            "compilerPath": "C:/Users/ameet/AppData/Local/Arduino15/packages/esp8266/tools/xtensa-lx106-elf-gcc/*/bin/xtensa-lx106-elf-g++.exe",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "gcc-x64"
+        }
+    ],
+    "version": 4
+}
