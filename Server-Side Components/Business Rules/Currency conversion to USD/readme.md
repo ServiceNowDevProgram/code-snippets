@@ -1,0 +1,5 @@
+This script is designed to automatically convert the value of the Annual Budget field (annual_budget) from its original currency to USD. It uses the fx_currency and fx_rate tables to fetch the latest exchange rates and performs the conversion only when valid data is available. 🔍 Key Features:
+
+Field Focus: Converts the annual_budget field based on the currency specified in budget_currency. Validation: Ensures both the currency code and amount are valid before proceeding. Currency Check: If the currency is already USD, it bypasses conversion. Exchange Rate Lookup: Retrieves the most recent exchange rates for both the source currency and USD. Conversion Logic: Applies the formula USD Amount=(Original AmountSource Rate)×USD Rate\text{USD Amount} = \left(\frac{\text{Original Amount}}{\text{Source Rate}}\right) \times \text{USD Rate}USD Amount=(Source RateOriginal Amount​)×USD Rate. Error Handling: Clears the USD field if any required data is missing or invalid.
+
+This script ensures accurate and up-to-date currency conversion for budgeting purposes and is well-commented for maintainability and clarity
