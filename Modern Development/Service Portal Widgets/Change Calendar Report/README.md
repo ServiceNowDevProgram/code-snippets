@@ -1,4 +1,4 @@
-#  Report ITS Change Request: Change Calendar Widget
+#  Report IT Change Request: Change Calendar Widget
 
 A **Service Portal widget** for displaying interactive **Change Request Calendar Reports** in ServiceNow.
 This widget embeds a ServiceNow report, allows visual exploration of change data, and enhances user experience through color-coded legends and a modal view for detailed record insights.
