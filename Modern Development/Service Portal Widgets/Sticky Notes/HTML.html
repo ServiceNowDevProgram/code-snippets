@@ -1,0 +1,24 @@
+ <div class="container sticky-notes-widget">
+      <h4><i class="fa fa-sticky-note"></i> My Sticky Notes</h4> 
+  <div class="sticky-note" ng-repeat="n in c.data.notes track by n.sys_id"
+       ng-style="{'background-color': n.color}">
+    <div class="note-toolbar">
+      <button class="btn btn-xs btn-link text-danger" ng-click="c.remove(n.sys_id)">
+        <i class="fa fa-trash"></i>
+      </button>
+    </div>
+    <div class="note-content">{{n.text}}</div>
+    <div class="note-meta">{{n.created_on | date:'short'}}</div>
+  </div>
+     <div class="add-note-box">
+    <textarea ng-model="c.data.text" placeholder="Enter value..." class="form-control" />
+    <br>
+    <div class="note-controls">
+      <select ng-model="c.data.newColor" class="form-control input-sm">
+        <option value="#fff59d">Yellow</option>
+        <option value="#b3e5fc">Blue</option>
+        <option value="#c8e6c9">Green</option>
+        <option value="#f8bbd0">Pink</option>
+      </select>
+    <button class="btn btn-primary" ng-click="c.add()"><i class="fa fa-floppy-o"></i> Add </button>
+</div>
