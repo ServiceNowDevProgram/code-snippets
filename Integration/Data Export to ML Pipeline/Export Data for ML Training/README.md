@@ -27,4 +27,5 @@ This snippet shows how to export incident data from ServiceNow and feed it into 
 
 ## Requirements
 - ServiceNow instance with REST API access
+- Python 3.8+ with requests library
 - API credentials (username/password or OAuth token)
