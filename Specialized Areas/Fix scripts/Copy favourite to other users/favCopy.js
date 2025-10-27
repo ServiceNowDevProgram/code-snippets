@@ -5,7 +5,7 @@ var fav = new GlideRecord("sys_ui_bookmark");
 fav.get(srcFav);
 
 var portalFavRec = new GlideRecord("sp_favorite");
-portalFavRec.get(portalFav); 
+portalFavRec.get(portalFav);  // glide record of favorite record.
 
 var users = new GlideRecord("sys_user");
 users.addEncodedQuery(userCriteria);
