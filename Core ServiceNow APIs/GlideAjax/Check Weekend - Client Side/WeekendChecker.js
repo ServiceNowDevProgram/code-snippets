@@ -10,3 +10,19 @@ DateUtilityAjax.prototype = Object.extendsObject(AbstractAjaxProcessor, {
   
     type: 'DateUtilityAjax'
 });
+
+//Client Script - GlideAjax
+function onLoad() {
+    var ga = new GlideAjax('DateUtilityAjax');
+    ga.addParam('sysparm_name', 'isWeekend');
+    
+    ga.getXMLAnswer(function(answer) {
+        var isWeekend = (answer === 'true');
+        
+        if (isWeekend) {
+            g_form.addInfoMessage('Server reports it’s the weekend - some actions are restricted.');
+        } else {
+            g_form.addInfoMessage('Weekday detected - normal operations available.');
+        }
+    });
+}
