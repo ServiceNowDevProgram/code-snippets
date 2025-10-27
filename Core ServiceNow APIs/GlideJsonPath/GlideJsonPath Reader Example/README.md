@@ -1,5 +1,6 @@
 Parse JSON with GlideJsonPath
 This script demonstrates how to use the GlideJsonPath API in ServiceNow to parse a complex JSON string and extract specific data. In this example, it efficiently retrieves an array of player names from a nested JSON structure representing cricket team information.
+
 Overview
 The script performs the following actions:
 Initializes GlideJsonPath: A new instance of GlideJsonPath is created, passing the target JSON string as a parameter.
