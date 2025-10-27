@@ -41,7 +41,7 @@ Uses a Background Script to:
 
 ---
 
-### Check The result from Background Script
+### Cross Checking The result from output of Script Run
 
 ![Duplicate Client Script Audit Output](Backgroundscript_clientscript_duplicate_1.png)
 
