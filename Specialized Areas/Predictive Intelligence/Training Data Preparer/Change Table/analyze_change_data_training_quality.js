@@ -6,71 +6,35 @@
 // No Training Required: Analyzes existing data without ML
 // ========================================
 
+// ========================================
+// PI Training Data Quality Analyzer (Simplified)
+// ========================================
+// Purpose: Analyze incident data quality for Predictive Intelligence training
+// Use Case: Identify data quality issues before training ML models
+// No Training Required: Analyzes existing data without ML
+// ========================================
+
 (function analyzeTrainingDataQuality() {
-    // Print all fields that exist on the incident table and its parents
+    // Print all fields that exist on the incident table and its parents (simplified)
     function printAllFields(tableName) {
-        var tables = [tableName];
-        var currentTable = tableName;
-        while (currentTable) {
-            var tableRec = new GlideRecord('sys_db_object');
-            tableRec.addQuery('name', currentTable);
-            tableRec.query();
-            if (tableRec.next()) {
-                var parentSysId = tableRec.getValue('super_class');
-                if (parentSysId && parentSysId != '') {
-                    var parentRec = new GlideRecord('sys_db_object');
-                    if (parentRec.get(parentSysId)) {
-                        var parentName = parentRec.getValue('name');
-                        tables.push(parentName);
-                        currentTable = parentName;
-                    } else {
-                        currentTable = null;
-                    }
-                } else {
-                    currentTable = null;
-                }
-            } else {
-                currentTable = null;
-            }
+        var gr = new GlideRecord(tableName);
+        var elements = gr.getElements();
+        gs.info('Fields for table: ' + tableName);
+        for (var i = 0; i < elements.size(); i++) {
+            gs.info(elements.get(i).getName());
         }
-        var field = new GlideRecord('sys_dictionary');
-        field.addQuery('name', 'IN', tables.join(','));
-        field.query();
-            // Removed printout of all available fields
+    }
+    // printAllFields('incident');
+
+    // Helper: check if field exists in table hierarchy (simplified)
+    function fieldExists(tableName, fieldName) {
+        var gr = new GlideRecord(tableName);
+        return gr.isValidField(fieldName);
     }
 
-    printAllFields('incident');
-    // Helper: check if field exists in table hierarchy
-    function fieldExists(tableName, fieldName) {
-        var tables = [tableName];
-        var currentTable = tableName;
-        while (currentTable) {
-            var tableRec = new GlideRecord('sys_db_object');
-            tableRec.addQuery('name', currentTable);
-            tableRec.query();
-            if (tableRec.next()) {
-                var parentSysId = tableRec.getValue('super_class');
-                if (parentSysId && parentSysId != '') {
-                    var parentRec = new GlideRecord('sys_db_object');
-                    if (parentRec.get(parentSysId)) {
-                        var parentName = parentRec.getValue('name');
-                        tables.push(parentName);
-                        currentTable = parentName;
-                    } else {
-                        currentTable = null;
-                    }
-                } else {
-                    currentTable = null;
-                }
-            } else {
-                currentTable = null;
-            }
-        }
-        var field = new GlideRecord('sys_dictionary');
-        field.addQuery('element', fieldName);
-        field.addQuery('name', 'IN', tables.join(','));
-        field.query();
-        return field.hasNext();
+    // Print table ancestors (if SNC.TableEditor available)
+    if (typeof SNC !== 'undefined' && SNC.TableEditor && SNC.TableEditor.getTableAncestors) {
+        gs.info('Ancestors of incident: ' + SNC.TableEditor.getTableAncestors('incident'));
     }
     
     // ============================================
@@ -339,38 +303,7 @@
             total = parseInt(totalGr.getAggregate('COUNT'));
         }
         
-        // Helper: check if field exists in table hierarchy
-        function fieldExists(tableName, fieldName) {
-            var tables = [tableName];
-            var currentTable = tableName;
-            while (currentTable) {
-                var tableRec = new GlideRecord('sys_db_object');
-                tableRec.addQuery('name', currentTable);
-                tableRec.query();
-                if (tableRec.next()) {
-                    var parentSysId = tableRec.getValue('super_class');
-                    if (parentSysId && parentSysId != '') {
-                        var parentRec = new GlideRecord('sys_db_object');
-                        if (parentRec.get(parentSysId)) {
-                            var parentName = parentRec.getValue('name');
-                            tables.push(parentName);
-                            currentTable = parentName;
-                        } else {
-                            currentTable = null;
-                        }
-                    } else {
-                        currentTable = null;
-                    }
-                } else {
-                    currentTable = null;
-                }
-            }
-            var field = new GlideRecord('sys_dictionary');
-            field.addQuery('element', fieldName);
-            field.addQuery('name', 'IN', tables.join(','));
-            field.query();
-            return field.hasNext();
-        }
+        // ...existing code...
 
         // Check each field, skip if not present
         for (var f = 0; f < config.keyFields.length; f++) {
@@ -572,43 +505,6 @@
         return score;
     }
     
-    function generateRecommendations(stats, completeness, textQuality, timeAnalysis) {
-        var recs = [];
-        
-        // Check volume
-        if (stats.resolved < 100) {
-            recs.push('Increase training data volume - aim for 100+ resolved incidents');
-        }
-        
-        // Check field completeness
-        for (var field in completeness) {
-            if (completeness[field].percentage < 50) {
-                recs.push('Improve ' + field + ' completeness (currently ' + 
-                         completeness[field].percentage.toFixed(0) + '%)');
-            }
-        }
-        
-        // Check text quality
-        if (textQuality.description.goodQualityPct < 70) {
-            recs.push('Encourage more detailed incident descriptions (20+ characters)');
-        }
-        
-        if (textQuality.closeNotes.goodQualityPct < 70) {
-            recs.push('Improve close notes quality - require detailed resolution steps (50+ characters)');
-        }
-        
-        // Check resolution times
-        if (timeAnalysis.tooQuickPct > 30) {
-            recs.push('Filter out quick resolutions (<5 min) - may be duplicates or invalid data');
-            recs.push('Add filter: resolved_at > opened_at + 5 minutes');
-        }
-        
-        // Check category diversity
-        if (stats.resolved > 0 && stats.resolved < 50) {
-            recs.push('Collect more diverse incident data across different categories');
-        }
-        
-        return recs;
-    }
+    
     
 })();

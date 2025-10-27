@@ -1,0 +1,42 @@
+.sticky-notes-widget {
+  padding: 10px;
+}
+
+.sticky-note {
+  display: inline-block;
+  width: 220px;
+  min-height: 100px;
+  margin: 8px;
+  padding: 10px;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  vertical-align: top;
+  font-size: 13px;
+  white-space: pre-wrap;
+}
+
+.note-toolbar {
+  text-align: right;
+  margin-bottom: 3px;
+}
+
+.note-content {
+  font-weight: 500;
+  color: #333;
+}
+
+.note-meta {
+  margin-top: 6px;
+  font-size: 11px;
+  color: #666;
+}
+
+.add-note-box {
+  margin-top: 20px;
+}
+
+.note-controls {
+  display: flex;
+  gap: 5px;
+  margin-top: 5px;
+}
