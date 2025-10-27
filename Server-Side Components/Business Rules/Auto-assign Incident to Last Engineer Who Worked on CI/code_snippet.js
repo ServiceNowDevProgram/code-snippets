@@ -5,5 +5,9 @@
   hist.addQuery('cmdb_ci', current.cmdb_ci);
   hist.orderByDesc('resolved_at');
   hist.query();
-  if (hist.next()) current.assigned_to = hist.resolved_by;
+  if (hist.next()) {
+    if(hist.resolved_by.active == true){
+    current.assigned_to = hist.resolved_by;
+  }
+  }
 })(current, previous);
