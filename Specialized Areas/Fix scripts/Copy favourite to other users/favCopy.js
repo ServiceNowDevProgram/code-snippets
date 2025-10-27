@@ -4,8 +4,8 @@ var userCriteria = ""; // Add an encoded query of users from sys_user table
 var fav = new GlideRecord("sys_ui_bookmark");
 fav.get(srcFav);
 
-var portalFav = new GlideRecord("sp_favorite");
-portalFav.get(portalFav); 
+var portalFavRec = new GlideRecord("sp_favorite");
+portalFavRec.get(portalFav); 
 
 var users = new GlideRecord("sys_user");
 users.addEncodedQuery(userCriteria);
@@ -22,14 +22,15 @@ while(users.next()) {
   newFav.setValue("user",users.sys_id);
   newFav.insert();
 
-  createPortalFav(users);
+  createPortalFav(users); // function to create portal favorites
 }
 function createPortalFav(userRec){
   var newPortalFav = new GlideRecord("sp_favorite");
   newPortalFav.initialize();
-  newPortalFav.setValue('user',portalFav.user);
-  newPortalFav.setValue('reference_table',portalFav.reference_table);
-  newPortalFav.setValue('reference_document',portalFav.reference_document);
+  newPortalFav.setValue('user',userRec.user);
+  newPortalFav.setValue('reference_table',portalFavRec.reference_table);
+  newPortalFav.setValue('reference_document',portalFavRec.reference_document);
+  newPortalFav.setWorkflow(false); // OOB Sscript include take the logged-in user to check the duplicate records so workflow false restricts the SI to run.
   newPortalFav.insert();
 }
 
