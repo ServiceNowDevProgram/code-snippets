@@ -39,9 +39,9 @@ for (var i = 0; i < targetUserSysIds.length; i++) {
             newMember.group = groupId;
             newMember.insert();
 
-            gs.info('✅ Added user [' + targetUserId + '] to group [' + groupId + ']');
+            gs.info('Added user [' + targetUserId + '] to group [' + groupId + ']');
         } else {
-            gs.info('ℹ️ User [' + targetUserId + '] already in group [' + groupId + ']');
+            gs.info('User [' + targetUserId + '] already in group [' + groupId + ']');
         }
     }
 }
