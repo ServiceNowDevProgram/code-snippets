@@ -1,5 +1,5 @@
 var srcFav = ""; // Add the sys_id of the favourite to copy, from sys_ui_bookmark table
-var portalFav = ""; // Add the sys_id of the favourite to copy, from sp_favorite table
+var portalFav = ""; // Add the sys_id of the favourite to copy, from sp_favorite table.
 var userCriteria = ""; // Add an encoded query of users from sys_user table
 var fav = new GlideRecord("sys_ui_bookmark");
 fav.get(srcFav);
