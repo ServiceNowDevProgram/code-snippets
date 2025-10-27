@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .email-form {
+      background: #fff;
+      padding: 20px 25px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      width: 850px;
+    }
+
+    .email-form h2 {
+      text-align: center;
+      margin-bottom: 15px;
+      color: #333;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+      color: #555;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+      font-size: 14px;
+    }
+
+    textarea {
+      resize: none;
+      height: 100px;
+    }
+
+    button {
+      width: 100%;
+      background-color: #007bff;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      margin-top: 15px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+<body>
+
+ <!-- Getting the sys_id From the Form UI View -->
+    <g:evaluate var="jvar_sysId" expression="RP.getWindowProperties().get('sysparm_sys_id')" />
+
+
+	   <!-- GlideRecord Query to current INC Ticket -->
+
+    <g:evaluate jelly="true" object="true" var="jvar_gr">
+        var gr_inc = new GlideRecord('incident');
+        gr_inc.addQuery('sys_id', '${jvar_sysId}');
+        gr_inc.query();
+        gr_inc;
+    </g:evaluate>
+
+    <j:while test="${gr_inc.next()}">
+        <j:set var="jvar_short_desc" value="${gr_inc.getValue('short_description')}"></j:set>
+        <j:set var="jvar_num" value="${gr_inc.getValue('number')}"></j:set>
+        <j:set var="jvar_email" value="${gr_inc.caller_id.email}"></j:set>
+    </j:while>
+
+
+  <g:ui_form>
+    <!-- <h2>Send Email</h2> -->
+    
+    <label for="to">To Caller:</label>
+    <input type="email" id="to" name="to" value="${jvar_email}" placeholder="Caller recipient email" />
+
+    <label for="bcc">CC:</label>
+    <input type="email" id="cc" name="cc" placeholder="Enter CC email" />
+
+    <label for="subject">Subject:</label>
+    <input type="text" id="subject" name="subject" value="${jvar_short_desc}" placeholder="Short Description will be poulated" />
+
+    <label for="body">Body:</label>
+    <textarea id="body" name="body" placeholder="Body to send email" >${jvar_num}</textarea>
+
+    <button type="submit">Send</button>
+	</g:ui_form>
+</body>
+
+</j:jelly>
