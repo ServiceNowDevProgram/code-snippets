@@ -19,4 +19,4 @@ This widget enhances the user experience by automatically converting emojis code
 		":tada:":🎉
 ## Output
 
-
+![Emoji Output](emoji.png)
