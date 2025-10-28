@@ -1,3 +1,0 @@
-var v = new GlideJsonPath('{"lib":{"jsonpath":{"cricket":{"name":"India","players":["Rohit","Dhoni","Kholi"]}}}}'); 
-var l = v.read("$['lib']['jsonpath']['cricket']['players'][*]");
-
