@@ -1,0 +1,12 @@
+function onSubmit() {
+    //Type appropriate comment here, and begin script below
+    var description = g_form.getValue('description');
+	var status = g_form.getValue('status');
+
+    if ((!description) || (status == 'completed')) {
+        g_form.addErrorMessage('Please provide Description Value, Description Cannot be empty');
+
+        return false;
+    }
+
+}
