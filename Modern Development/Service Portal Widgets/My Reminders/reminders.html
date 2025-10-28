@@ -1,0 +1,85 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">My Reminders</h3>
+  </div>
+  <div class="panel-body">
+    <div ng-if="!c.data.reminders.length" class="alert alert-info text-center">
+      You have no active reminders.
+    </div>
+
+    <ul class="list-group" ng-if="c.data.reminders.length > 0">
+      <li class="list-group-item reminder-item" ng-repeat="reminder in c.data.reminders">
+        <h4>{{reminder.subject}}</h4>
+        <p class="text-muted">
+          <strong>Task:</strong> {{reminder.task_display || 'N/A'}} <br/>
+          <strong>Action:</strong> Send an {{reminder.using}} {{reminder.remind_me}} minutes before {{reminder.field_display}}.
+        </p>
+        <p ng-if="reminder.notes"><strong>Notes:</strong> {{reminder.notes}}</p>
+      </li>
+    </ul>
+
+    <hr/>
+
+    <div class="reminder-form-container">
+      <h4>Create a New Reminder</h4>
+      <form name="reminderForm" ng-submit="c.createReminder()">
+        <div class="form-group">
+          <label for="task">Task (Optional)</label>
+          <sn-record-picker field="c.taskField" table="'task'" display-field="'number'" value-field="'sys_id'" search-fields="'number,short_description'" page-size="10" placeholder="Search for a task..."></sn-record-picker>
+        </div>
+
+        <div class="form-group">
+          <label for="subject">Subject <span class="text-danger">*</span></label>
+          <input type="text" id="subject" class="form-control" ng-model="c.newReminder.subject" required>
+        </div>
+
+        <div class="form-group">
+          <label for="notes">Notes</label>
+          <textarea id="notes" class="form-control" ng-model="c.newReminder.notes" rows="3"></textarea>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="remind_me">Remind Me... <span class="text-danger">*</span></label>
+              <select id="remind_me" class="form-control" ng-model="c.newReminder.remind_me" required>
+                <option value="" disabled selected>-- Select Time --</option>
+                <option value="15">15 Minutes</option>
+                <option value="30">30 Minutes</option>
+                <option value="60">1 Hour</option>
+                <option value="120">2 Hours</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="field">...Before <span class="text-danger">*</span></label>
+              <select id="field" class="form-control" ng-model="c.newReminder.field" required>
+                <option value="" disabled selected>-- Select Date Field --</option>
+                <option value="activity_due">Activity Due</option>
+                <option value="due_date">Due Date</option>
+                <option value="follow_up">Follow Up</option>
+                <option value="sla_due">SLA Due</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="using">Using... <span class="text-danger">*</span></label>
+          <select id="using" class="form-control" ng-model="c.newReminder.using" required>
+            <option value="" disabled selected>-- Select Method --</option>
+            <option value="email">Send an email</option>
+            <option value="outlook">Outlook calendar invite</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary" ng-disabled="reminderForm.$invalid">
+            <i class="fa fa-plus-circle"></i> Create Reminder
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

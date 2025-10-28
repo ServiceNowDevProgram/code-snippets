@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="col-md-6">
+    <label class="form-label">Select Table</label>
+    <sn-record-picker 
+                      field="tablename" 
+                      table="'sys_db_object'" 
+                      display-field="'label'" 
+                      value-field="'sys_id'" 
+                      search-fields="'label'" 
+                      page-size="100">
+    </sn-record-picker>
+  </div>
+
+  <!-- After a table is chosen, show record selector -->
+  <div class="col-md-6" ng-show="selectedTable && recorddisplayValue">
+    <label class="form-label">Select Record</label>
+    <sn-record-picker 
+                      field="record" 
+                      table="selectedTable" 
+                      display-field="recorddisplayValue" 
+                      value-field="'sys_id'"
+                      search-fields="recorddisplayValue"
+                      page-size="100">
+    </sn-record-picker>
+  </div>
+</div>

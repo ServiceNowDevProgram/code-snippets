@@ -1,0 +1,41 @@
+.my-assets-widget {
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  overflow: hidden;
+}
+
+.my-assets-widget .panel-heading {
+  background: linear-gradient(90deg, #0078d4, #005fa3);
+  color: #fff;
+  padding: 12px 16px;
+  font-weight: 500;
+}
+
+.my-assets-widget .panel-heading .badge {
+  background-color: #fff;
+  color: #005fa3;
+  font-weight: 600;
+}
+
+.my-assets-widget .table {
+  margin-bottom: 0;
+}
+
+.my-assets-widget .table-hover tbody tr:hover {
+  background-color: #f2f8ff;
+  cursor: pointer;
+}
+
+.my-assets-widget .asset-link {
+  font-weight: 500;
+  color: #0078d4;
+  text-decoration: none;
+}
+
+.my-assets-widget .asset-link:hover {
+  text-decoration: underline;
+}
+
+.my-assets-widget .panel-body.text-center {
+  padding: 30px;
+}

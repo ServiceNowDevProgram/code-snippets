@@ -1,0 +1,52 @@
+.report-widget-wrap {
+			background:#fff;
+			padding:15px;
+			margin: 0 0 15px 0;
+			}
+			
+			.report-widget-title {
+			padding: $sp-space--xl;
+			font-weight:bold;
+			margin-top: 0;
+			margin-bottom: 0;
+			font-family: $now-sp-font-family-sans-serif;
+			color: $text-color;
+			font-size: $font-size-h4;
+			
+			}
+			
+			.highcharts-container g.highcharts-button *,
+			.highcharts-container image.hc-image {
+			transition: fill-opacity 0.3s linear, stroke-opacity 0.3s linear, opacity 0.3s linear;
+			fill-opacity: 0;
+			stroke-opacity: 0;
+			opacity:0;
+			}
+			
+			.highcharts-container:hover g.highcharts-button *,
+			.highcharts-container:hover image.hc-image {
+			fill-opacity: 1;
+			stroke-opacity: 1;
+			opacity:1;
+			}
+			
+			.highcharts-legend-item span::after,
+			.highcharts-legend-item::after {
+			content: "\200E";
+			}
+			
+			table.wide .pivot_cell,
+			table.wide .pivot_caption,
+			table.wide .pivot_caption_dark {
+			padding: 3px 5px;
+			}
+            .highlight-wrap {
+                display: none;
+            }
+
+            .fc-week-number {
+                width: 42px;
+                background-color: #ededed;
+            }
+            
+		

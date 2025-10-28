@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client-Side Components | ServiceNow Code Snippets</title>
+    <meta name="description" content="Browser-executed ServiceNow code components including Client Scripts, Catalog Client Scripts, UI Actions, and client-side development patterns.">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Syntax Highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+    
+    <!-- Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        /* Reuse the CSS from core-apis.html */
+        :root {
+            --primary-color: #1a73e8;
+            --secondary-color: #34a853;
+            --accent-color: #fbbc04;
+            --danger-color: #ea4335;
+            
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8f9fa;
+            --bg-tertiary: #e8f0fe;
+            
+            --text-primary: #202124;
+            --text-secondary: #5f6368;
+            --text-muted: #80868b;
+            
+            --border-color: #dadce0;
+            --border-light: #f1f3f4;
+            
+            --shadow-sm: 0 1px 2px 0 rgba(60,64,67,0.3), 0 1px 3px 1px rgba(60,64,67,0.15);
+            --shadow-md: 0 1px 2px 0 rgba(60,64,67,0.3), 0 2px 6px 2px rgba(60,64,67,0.15);
+            --shadow-lg: 0 2px 4px -1px rgba(60,64,67,0.3), 0 4px 8px 0 rgba(60,64,67,0.15);
+            
+            --border-radius: 8px;
+            --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --font-mono: 'JetBrains Mono', 'SF Mono', Monaco, 'Cascadia Code', monospace;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-primary: #121212;
+                --bg-secondary: #1e1e1e;
+                --bg-tertiary: #2d2d2d;
+                
+                --text-primary: #e8eaed;
+                --text-secondary: #9aa0a6;
+                --text-muted: #5f6368;
+                
+                --border-color: #3c4043;
+                --border-light: #2d2d2d;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        .nav {
+            background: var(--bg-primary);
+            border-bottom: 1px solid var(--border-light);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .nav-brand i {
+            color: var(--primary-color);
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .breadcrumb a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        /* Header */
+        .page-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 3rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .page-header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .page-header-icon {
+            width: 64px;
+            height: 64px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: var(--border-radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+        }
+
+        /* Main Content */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .subcategories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .subcategory-card {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .subcategory-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-color);
+        }
+
+        .subcategory-header {
+            background: var(--bg-secondary);
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .subcategory-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .subcategory-description {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .subcategory-content {
+            padding: 1.5rem;
+        }
+
+        .view-all-btn {
+            width: 100%;
+            padding: 1rem;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: var(--border-radius);
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .view-all-btn:hover {
+            background: #1557b0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2rem;
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .nav-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .main-content {
+                padding: 2rem 1rem;
+            }
+            
+            .subcategories-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-content">
+            <a href="../index.html" class="nav-brand">
+                <i class="fas fa-code"></i>
+                ServiceNow Code Snippets
+            </a>
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>Client-Side Components</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="page-header-content">
+            <h1>
+                <div class="page-header-icon">
+                    <i class="fas fa-desktop"></i>
+                </div>
+                Client-Side Components
+            </h1>
+            <p>
+                Browser-executed ServiceNow code components including Client Scripts, Catalog Client Scripts, UI Actions, 
+                and other client-side development patterns for enhancing user experience and form behavior.
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Subcategories -->
+        <div class="subcategories-grid">
+            <!-- Categories will be loaded dynamically -->
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    
+    <script>
+        // GitHub API configuration
+        const GITHUB_API_BASE = 'https://api.github.com';
+        const REPO = 'ServiceNowDevProgram/code-snippets';
+        const BRANCH = 'main';
+
+        function openGitHubFolder(path) {
+            const encodedPath = encodeURIComponent(path);
+            const githubUrl = `https://github.com/${REPO}/tree/${BRANCH}/${encodedPath}`;
+            window.open(githubUrl, '_blank');
+        }
+
+        // Category descriptions for client-side components
+        const categoryDescriptions = {
+            'Client Scripts': 'Form behavior, validation, and user interaction scripts',
+            'Catalog Client Script': 'Service Catalog item and variable set client scripts',
+            'UI Actions': 'Custom buttons and form actions for user workflows',
+            'UI Scripts': 'Global client-side utility libraries and functions',
+            'UI Pages': 'Custom user interface pages and layouts',
+            'UI Macros': 'Reusable UI components and templates',
+            'UX Client Scripts': 'NOW Experience UI client-side scripting',
+            'UX Client Script Include': 'NOW Experience reusable client libraries',
+            'UX Data Broker Transform': 'Data transformation for NOW Experience components'
+        };
+
+        function loadAllSubcategories() {
+            // Hardcoded list of all Client-Side Component categories
+            const subcategories = [
+                'Client Scripts', 'Catalog Client Script', 'UI Actions', 'UI Scripts',
+                'UI Pages', 'UI Macros', 'UX Client Scripts', 'UX Client Script Include', 'UX Data Broker Transform'
+            ];
+            
+            // Generate the subcategory cards
+            const subcategoriesGrid = document.querySelector('.subcategories-grid');
+            
+            // Clear existing content
+            subcategoriesGrid.innerHTML = '';
+            
+            // Create cards for all subcategories
+            subcategories.forEach((subcategory) => {
+                const card = createSubcategoryCard(subcategory);
+                subcategoriesGrid.appendChild(card);
+            });
+        }
+
+        function createSubcategoryCard(subcategory) {
+            const card = document.createElement('div');
+            card.className = 'subcategory-card';
+            card.onclick = () => openGitHubFolder(`Client-Side Components/${subcategory}`);
+            
+            const description = categoryDescriptions[subcategory] || 'Client-side development utilities and patterns';
+            
+            card.innerHTML = `
+                <div class="subcategory-header">
+                    <h3 class="subcategory-title">${subcategory}</h3>
+                    <p class="subcategory-description">${description}</p>
+                </div>
+                <div class="subcategory-content">
+                    <button class="view-all-btn">View ${subcategory} Examples on GitHub</button>
+                </div>
+            `;
+            
+            return card;
+        }
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize syntax highlighting
+            Prism.highlightAll();
+            
+            // Load all subcategories
+            loadAllSubcategories();
+        });
+    </script>
+    <!-- Footer will be loaded by footer.js -->
+    <script src="../assets/footer.js" data-auto-init data-root-page="false"></script>
+</body>
+</html>

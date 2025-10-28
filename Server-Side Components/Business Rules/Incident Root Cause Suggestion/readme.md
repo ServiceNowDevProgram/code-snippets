@@ -1,0 +1,1 @@
+Automatically suggests potential root causes for incidents by analyzing past incidents with similar short descriptions or descriptions. This helps agents resolve incidents faster and reduces repetitive investigation effort.

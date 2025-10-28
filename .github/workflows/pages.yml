@@ -1,0 +1,95 @@
+# GitHub Pages deployment workflow
+name: Deploy GitHub Pages
+
+on:
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  # Build and optimize job
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install build dependencies
+        run: |
+          npm init -y
+          npm install --save-dev html-minifier-terser clean-css-cli terser html-validate
+
+      - name: Validate HTML files
+        run: |
+          echo "Validating HTML files..."
+          npx html-validate *.html pages/*.html || echo "HTML validation completed with warnings"
+
+      - name: Optimize assets
+        run: |
+          echo "Optimizing HTML files..."
+          # Create backup directory
+          mkdir -p .backup
+          
+          # Minify HTML files (preserve original structure)
+          find . -name "*.html" -not -path "./node_modules/*" -not -path "./.backup/*" | while read file; do
+            echo "Minifying: $file"
+            npx html-minifier-terser \
+              --collapse-whitespace \
+              --remove-comments \
+              --remove-optional-tags \
+              --remove-redundant-attributes \
+              --remove-script-type-attributes \
+              --remove-style-link-type-attributes \
+              --minify-css \
+              --minify-js \
+              "$file" -o "$file.tmp" && mv "$file.tmp" "$file"
+          done
+          
+          # Minify CSS files if any exist
+          if find . -name "*.css" -not -path "./node_modules/*" -not -path "./.backup/*" | grep -q .; then
+            echo "Optimizing CSS files..."
+            find . -name "*.css" -not -path "./node_modules/*" -not -path "./.backup/*" | while read file; do
+              echo "Minifying: $file"
+              npx cleancss "$file" -o "$file"
+            done
+          fi
+          
+          # Remove build dependencies from final artifact
+          rm -rf node_modules package*.json
+
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+
+  # Deployment job
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

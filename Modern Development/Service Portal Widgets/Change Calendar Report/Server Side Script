@@ -1,0 +1,130 @@
+(function() {
+    options.report_id = options.report_id || '';
+
+    if (options.report_id !== '') {
+        var reportGr = new GlideRecord('sys_report');
+        reportGr.get(options.report_id);
+        if (reportGr.canRead())
+            options.title = reportGr.getDisplayValue('title');
+    }
+
+    var chartHelpers = chartHelpers || {};
+    chartHelpers.i18n = chartHelpers.i18n || {};
+
+    chartHelpers.i18n.selectReport = gs.getMessage('Select a report in widget options!');
+    chartHelpers.i18n.building = gs.getMessage('Building chart, please wait...');
+    chartHelpers.i18n.total = gs.getMessage('Total');
+    chartHelpers.i18n.maxCells = gs.getMessage('The size of the pivot table is too big. Use filters to reduce it or switch to a modern browser.');
+    chartHelpers.i18n.chartGenerationError = gs.getMessage('An error occurred while generating chart. Please try again later.');
+
+    chartHelpers.i18n.showAsHeatmap = gs.getMessage('Show data as a heatmap visualization');
+    chartHelpers.i18n.showAsMarkers = gs.getMessage('Show data using latitude and longitude');
+    chartHelpers.i18n.saveAsJpg = gs.getMessage('Save as JPEG');
+    chartHelpers.i18n.saveAsPng = gs.getMessage('Save as PNG');
+    chartHelpers.i18n.highlightBasedOn = gs.getMessage('Highlight based on:');
+    chartHelpers.i18n.isRTL = GlideI18NStyle().getDirection().equals('rtl');
+    chartHelpers.i18n.weekNumberTitle = gs.getMessage('Week');
+    chartHelpers.i18n.weekNumberTitleShort = gs.getMessage('Week');
+    chartHelpers.i18n.seeMoreEvents = gs.getMessage('See {0} more events');
+    chartHelpers.i18n.viewEventsInList = gs.getMessage('View {0} events in a list');
+    chartHelpers.i18n.viewAllEventsInList = gs.getMessage('View all events in a list');
+    chartHelpers.i18n.viewAllRecords = gs.getMessage('View all records');
+    chartHelpers.i18n.none = gs.getMessage('None');
+    chartHelpers.i18n.plusMany = gs.getMessage('+ many');
+    chartHelpers.i18n.plusMore = gs.getMessage('+ {0} more');
+    chartHelpers.i18n.buttonText = {
+        prevYear: "",
+        nextYear: "",
+        today: gs.getMessage('today'),
+        year: gs.getMessage('year'),
+        month: gs.getMessage('month'),
+        week: gs.getMessage('week'),
+        day: gs.getMessage('day')
+    };
+    chartHelpers.i18n.allDayHtml = gs.getMessage('all-day');
+    chartHelpers.i18n.daysNames = [
+        gs.getMessage('Sunday'),
+        gs.getMessage('Monday'),
+        gs.getMessage('Tuesday'),
+        gs.getMessage('Wednesday'),
+        gs.getMessage('Thursday'),
+        gs.getMessage('Friday'),
+        gs.getMessage('Saturday')
+    ];
+    chartHelpers.i18n.dayNamesShort = [
+        gs.getMessage('Sun'),
+        gs.getMessage('Mon'),
+        gs.getMessage('Tue'),
+        gs.getMessage('Wed'),
+        gs.getMessage('Thu'),
+        gs.getMessage('Fri'),
+        gs.getMessage('Sat')
+    ];
+    chartHelpers.i18n.monthNames = [
+        gs.getMessage('January'),
+        gs.getMessage('February'),
+        gs.getMessage('March'),
+        gs.getMessage('April'),
+        gs.getMessage('May'),
+        gs.getMessage('June'),
+        gs.getMessage('July'),
+        gs.getMessage('August'),
+        gs.getMessage('September'),
+        gs.getMessage('October'),
+        gs.getMessage('November'),
+        gs.getMessage('December')
+    ];
+    chartHelpers.i18n.monthNamesShort = [
+        gs.getMessage('Jan'),
+        gs.getMessage('Feb'),
+        gs.getMessage('Mar'),
+        gs.getMessage('Apr'),
+        gs.getMessage('May'),
+        gs.getMessage('Jun'),
+        gs.getMessage('Jul'),
+        gs.getMessage('Aug'),
+        gs.getMessage('Sep'),
+        gs.getMessage('Oct'),
+        gs.getMessage('Nov'),
+        gs.getMessage('Dec')
+    ];
+    chartHelpers.i18n.none = gs.getMessage('-- None --');
+    chartHelpers.i18n.groupBy = gs.getMessage('Group by');
+    chartHelpers.i18n.groupByTitle = gs.getMessage('Select a different group by field');
+    chartHelpers.i18n.stackBy = gs.getMessage('Stacked by');
+    chartHelpers.i18n.stackByTitle = gs.getMessage('Select a different stacked by field');
+    chartHelpers.device = {};
+    chartHelpers.device.type = GlideMobileExtensions.getDeviceType();
+
+    chartHelpers.systemParams = {
+        firstDay: (gs.getProperty("glide.ui.date_format.first_day_of_week", 2) - 1) % 7,
+        defaultDate: SNC.ReportUtil.getNowTimeInUSFormat(),
+        maxEventsDisplayedPerCell: gs.getProperty("glide.report.calendar.max_events_displayed_per_cell", 3),
+        maxMoreEventsPerDay: gs.getProperty("glide.report.calendar.max_more_events_per_day", 30),
+        defaultEventDuration: gs.getProperty("glide.report.calendar.default_event_duration", "01:00:00"),
+        maxDaysBack: gs.getProperty("glide.report.calendar.max_days_back", 30),
+        enablePreviewOnHover: gs.getProperty("glide.report.calendar.enable_preview_on_hover", true)
+    };
+
+    data.rectangleId = gs.generateGUID();
+    data.ch = chartHelpers;
+
+//Passing Change Details to Client Controller to show data in the modal on Click
+// From here
+    if (input && input.action === 'getChangeDetails' && input.sys_id) {
+        var gr = new GlideRecord('change_request');
+        if (gr.get(input.sys_id)) {
+            data.changeDetails = {
+                number: gr.getValue('number'),
+                short_description: gr.getValue('short_description') || 'No short description',
+				description:gr.getValue('description') ||'No description'
+            };
+        } else {
+            data.changeDetails = {
+                error: 'Record not found'
+            };
+        }
+    }
+// Till here
+
+})();
