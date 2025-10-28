@@ -1,0 +1,86 @@
+<p></p>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+  }
+  .container {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    background: #ffffff;
+    padding: 0;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  .header {
+    background: #004080;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+  }
+  .header img {
+    max-width: 150px;
+  }
+  .subject {
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 10px;
+  }
+  .content {
+    padding: 24px;
+    color: #333;
+    line-height: 1.6;
+    font-size: 15px;
+  }
+  .button {
+    display: inline-block;
+    padding: 10px 18px;
+    margin-top: 15px;
+    background: #004080;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  .footer {
+    background: #f4f4f4;
+    text-align: center;
+    padding: 16px;
+    font-size: 12px;
+    color: #666;
+    border-top: 1px solid #e2e2e2;
+  }
+  a {
+    color: #004080;
+    text-decoration: none;
+  }
+</style>
+
+<div class="container">
+  <!-- Header -->
+  <div class="header">
+    <img src="${URI_REF}/travel_logo.png" alt="Logo" width="120" height="40" />
+  </div>
+
+  <!-- Body -->
+  <div class="content">
+    ${notification.body}
+
+    <p style="margin-top: 30px; font-size: 13px; color: #777">
+      If you have any questions, contact
+      <a href="mailto:support@company.com">support@company.com</a>.
+    </p>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    Travel & Expense. All Rights
+    Reserved.<br />
+    <br />
+    <a href="${NOTIF_UNSUB}">Unsubscribe</a> |
+    <a href="${NOTIF_PREFS}">Manage Preferences</a>
+  </div>
+</div>

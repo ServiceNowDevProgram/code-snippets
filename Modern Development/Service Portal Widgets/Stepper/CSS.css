@@ -1,0 +1,75 @@
+/* Main container styling with padding and rounded corners */
+.stepper-container {
+  padding: 16px;
+  border-radius: 8px;
+}
+
+/* Flex container for horizontal stepper layout */
+.stepper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Individual step container with flex properties */
+.stepper-step {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  position: relative;
+}
+
+/* Circular step indicator base styling */
+.stepper-circle {
+  width: 40px;
+  height: 40px;
+  background: #e0e0e0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 20px;
+  color: #fff;
+}
+
+/* Green background for completed steps */
+.stepper-circle.completed {
+  background: #43A047;
+}
+
+/* Blue background with border for active step */
+.stepper-circle.active {
+  background: #4285f4;
+  border: 3px solid #1976d2;
+}
+
+/* Step label text styling */
+.stepper-label {
+  margin-left: 12px;
+  font-size: 20px;
+  color: #333;
+  opacity: 0.7;
+  font-weight: normal;
+}
+
+/* Enhanced styling for completed and active step labels */
+.stepper-label.completed,
+.stepper-label.active {
+  color: #222;
+  font-weight: bold;
+  opacity: 1;
+}
+
+/* Connecting line between steps */
+.stepper-line {
+  height: 2px;
+  background: #e0e0e0;
+  flex: 1;
+  margin: 0 16px;
+}
+
+/* Hide line after the last step */
+.stepper-step:last-child .stepper-line {
+  display: none;
+}

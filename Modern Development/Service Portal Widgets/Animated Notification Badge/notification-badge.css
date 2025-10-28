@@ -1,0 +1,35 @@
+.notification-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.notification-icon {
+  font-size: 24px;
+  color: #333;
+}
+
+.notification-badge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background-color: #e74c3c;
+  color: white;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 50%;
+  font-weight: bold;
+  animation-duration: 0.6s;
+  animation-fill-mode: both;
+}
+
+.notification-pulse {
+  animation-name: pulseScale;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes pulseScale {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}

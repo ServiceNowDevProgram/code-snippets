@@ -1,0 +1,118 @@
+api.controller = function($scope, $interval, spModal, $window) {
+    var c = this;
+    
+    // Initialize
+    c.counts = {};
+    c.changes = {};
+    c.lastUpdate = new Date();
+    c.isRefreshing = false;
+    c.autoRefresh = true;
+    c.soundEnabled = true;
+    c.newCritical = false;
+    var refreshInterval;
+    
+    // Load initial data
+    c.$onInit = function() {
+        c.counts = c.data.counts || {};
+        c.previousCounts = angular.copy(c.counts);
+        c.startAutoRefresh();
+    };
+    
+    // Refresh data
+    c.refresh = function() {
+        c.isRefreshing = true;
+        
+        c.server.get().then(function(response) {
+            var newCounts = response.data.counts;
+            
+            // Calculate changes
+            c.changes = {
+                critical: (newCounts.critical || 0) - (c.counts.critical || 0),
+                high: (newCounts.high || 0) - (c.counts.high || 0),
+                medium: (newCounts.medium || 0) - (c.counts.medium || 0),
+                low: (newCounts.low || 0) - (c.counts.low || 0)
+            };
+            
+            // Check for new critical tickets
+            if (c.changes.critical > 0) {
+                c.newCritical = true;
+                if (c.soundEnabled) {
+                    c.playAlertSound();
+                }
+                
+                // Remove pulse animation after 3 seconds
+                $interval(function() {
+                    c.newCritical = false;
+                }, 3000, 1);
+            }
+            
+            // Update counts
+            c.counts = newCounts;
+            c.lastUpdate = new Date();
+            c.isRefreshing = false;
+        });
+    };
+    
+    // Auto-refresh toggle
+    c.toggleAutoRefresh = function() {
+        if (c.autoRefresh) {
+            c.startAutoRefresh();
+        } else {
+            c.stopAutoRefresh();
+        }
+    };
+    
+    // Start auto-refresh
+    c.startAutoRefresh = function() {
+        if (refreshInterval) {
+            $interval.cancel(refreshInterval);
+        }
+        
+        refreshInterval = $interval(function() {
+            c.refresh();
+        }, 30000); // 30 seconds
+    };
+    
+    // Stop auto-refresh
+    c.stopAutoRefresh = function() {
+        if (refreshInterval) {
+            $interval.cancel(refreshInterval);
+        }
+    };
+    
+    // Play sound alert
+    c.playAlertSound = function() {
+        var audio = new Audio('data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmwhBSqA0fPTgjMGHm7A7+OZRQ0PVq/m77BdGAg+ltryxnMpBSl+zPLaizsIGGS57OibUBELTqXh8bllHAU2jdXwyH0vBSZ8yfDajkULEFau5u+wXRgIPpXa8sZzKQUpfszy2Ys7CBhkuezom1ARDEyl4fG5ZRwFNo3V8Mh9LwUmfMnw2o5FDBFWrebvsF0YCD6V2vLGcykFKX7M8tmLOwgYZLns6JtQEQxMpeHxuWUcBTaN1fDIfS8FJnzJ8NqORQwRVq3m77BdGAg+ldryx3MpBSl+zPLaizsIGGS57OmbUBEMTKXh8bllHAU2jdXwyH0vBSZ8yfDajkUMEVat5u+wXRgIPpXa8sZzKQUpfszy2Ys7CBhkuezom1ARDEyl4fG5ZRwFNo3V8Mh9LwUmfMnw2o5FDBFWrebvsF0YCD6V2vLGcykFKX7M8tmLOwgYZLns6JtQEQxMpeHxuWUcBTaN1fDIfS8FJnzJ8NqORQwRVq3m77BdGAg=');
+        audio.play().catch(function(e) {
+            console.log('Could not play sound:', e);
+        });
+    };
+    
+    // Toggle sound
+    c.toggleSound = function() {
+        c.soundEnabled = !c.soundEnabled;
+        if (c.soundEnabled) {
+            spModal.alert('🔊 Sound alerts enabled');
+        } else {
+            spModal.alert('🔇 Sound alerts disabled');
+        }
+    };
+    
+    // View tickets by priority
+    c.viewTickets = function(priority) {
+        var priorityNames = {
+            '1': 'Critical',
+            '2': 'High',
+            '3': 'Medium',
+            '4': 'Low'
+        };
+        
+        // Navigate to filtered list
+        $window.location.href = '/incident_list.do?sysparm_query=priority=' + priority + '^active=true';
+    };
+    
+    // Cleanup on destroy
+    c.$onDestroy = function() {
+        c.stopAutoRefresh();
+    };
+};

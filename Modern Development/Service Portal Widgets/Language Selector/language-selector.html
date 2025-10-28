@@ -1,0 +1,6 @@
+<div class="lang-selector">
+  <select ng-model="c.selected"
+          ng-options="l.code as (l.flag + ' ' + l.label) for l in c.languages"
+          ng-change="c.changeLang()">
+  </select>
+</div>

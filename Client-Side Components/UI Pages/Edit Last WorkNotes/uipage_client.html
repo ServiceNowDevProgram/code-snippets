@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+    <div style="display:flex; flex-direction:column;">
+        <textarea id='commenttext' style="width:100%; margin-bottom:10px" name="w3review" rows="4" cols="50"></textarea>
+        <g:dialog_buttons_ok_cancel ok_text="${gs.getMessage('Submit')}" ok_title="${gs.getMessage('Submit')}" ok="return submitComment();" ok_style_class="btn btn-primary" cancel_text="${gs.getMessage('Cancel')}" cancel_title="${gs.getMessage('Cancel')}" cancel="return closeDialog(); disable" />
+    </div>
+</j:jelly>

@@ -1,0 +1,47 @@
+<h3>
+  Describe the new location
+</h3>
+<div class="form-group">
+	<div class="btn-group" uib-dropdown>
+		<button id="cityRef" type="button" class="btn btn-info" uib-dropdown-toggle>
+			{{locations.city.name}}&nbsp;<span class="caret"></span>
+		</button>
+		<ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="cityRef">
+			<li ng-repeat="city in c.locations.available.city" role="menuitem" ng-click="c.changeCity(city.sys_id)"><a href="#">{{city.name}}</a></li>
+			<li class="divider"></li>
+			<li role="menuitem" ng-click="c.notListedModal('city')"><a href="#">City not listed</a></li>
+		</ul>
+  </div>
+	<div class="btn-group" uib-dropdown>
+		<button id="buildingRef" type="button" class="btn btn-info" uib-dropdown-toggle ng-disabled="locations.city.sys_id === '-1'">
+			{{locations['building/structure'].name}}&nbsp;<span class="caret"></span>
+		</button>
+		<ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="buildingRef">
+      <li ng-repeat="building in c.locations.available['building/structure']" role="menuitem" ng-click="c.changeBuilding(building.sys_id)"><a href="#">{{building.name}}</a></li>
+			<li class="divider"></li>
+			<li role="menuitem" ng-click="c.notListedModal('building/structure')"><a href="#">Building not listed</a></li>
+		</ul>
+  </div>
+ 	<div class="btn-group" uib-dropdown>
+		<button id="floorRef" type="button" class="btn btn-info" uib-dropdown-toggle ng-disabled="locations['building/structure'].sys_id === '-1'">
+			{{locations.floor.name}}&nbsp;<span class="caret"></span>
+		</button>
+		<ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="floorRef">
+      <li ng-repeat="floor in c.locations.available.floor" role="menuitem" ng-click="c.changeFloor(floor.sys_id)"><a href="#">{{floor.name}}</a></li>
+			<li class="divider"></li>
+			<li role="menuitem" ng-click="c.notListedModal('floor')"><a href="#">Floor not listed</a></li>
+		</ul>
+  </div>
+	<div class="btn-group" uib-dropdown>
+		<button id="zoneRef" type="button" class="btn btn-info" uib-dropdown-toggle ng-disabled="locations.floor.sys_id === '-1'">
+			{{locations.zone.name}}&nbsp;<span class="caret"></span>
+		</button>
+		<ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="zoneRef">
+      <li ng-repeat="zone in c.locations.available.zone" role="menuitem" ng-click="c.changeZone(zone.sys_id)"><a href="#">{{zone.name}}</a></li>
+			<li class="divider"></li>
+			<li role="menuitem" ng-click="c.notListedModal('zone')"><a href="#">Corridor not listed</a></li>
+		</ul>
+  </div>
+  <input id="roomRef" class="location-picker-input" type="text" placeholder="Room name" ng-disabled="!c.allSelected()" ng-model="locations.room" ng-blur="c.changeRoom()"/>
+  <button type="button" class="btn btn-success" ng-click="c.addNewLocation()" ng-disabled="locations.room === ''">Add to the list</button>
+</div>

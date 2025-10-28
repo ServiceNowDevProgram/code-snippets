@@ -1,0 +1,31 @@
+<div ng-if="true" class="wrapper-md row no-margin" role="region" data-label="Attachments"
+   aria-label="${Attachments}">
+   <div
+      ng-class="{'flex-center attachment-height': c.isNative == 'true', 'flex-start': c.isNative != 'true'}">
+      <div ng-if="!submitting && !submitted" style="font-weight:normal;cursor:default;margin-bottom:2rem;">
+         <sp-attachment-button ng-if="::!showDragAndDrop()" modal="true"
+            required="{{data.mandatory_attachment}}"></sp-attachment-button>
+         <sp-attachment-button ng-if="::showDragAndDrop()" modal="true"
+            required="{{data.mandatory_attachment}}"
+            ng-class="{'hidden-xs': false, 'hidden-sm': true, 'hidden-md': true, 'hidden-lg': true}"></sp-attachment-button>
+         <span class="fa fa-asterisk mandatory" ng-if="data.mandatory_attachment"
+            ng-class="{'mandatory-filled': data.mandatory_attachment && (data.attachment_submitted || attachments.length > 0)}"
+            style="vertical-align:super" aria-hidden="true"></span>
+         <span ng-class="{'attachment-text' : options.native_mobile == 'true'}" aria-hidden="true">${Add
+         attachments}</span>
+      </div>
+   </div>
+   <div ng-if="::showDragAndDrop()" class="panel panel-{{options.color}} b drag-and-drop-area"
+      ng-class="{'hidden-xs': true}" aria-hidden="true">
+      <sp-attachment-picker on-file-pick="dropFiles($files)"></sp-attachment-picker>
+   </div>
+   <span ng-if="attachmentUploadInProgress">
+      ${Uploading attachments}
+      <div class="sp-loading-indicator la-sm" style="color:black;display:inline">
+         <div></div>
+         <div></div>
+         <div></div>
+      </div>
+   </span>
+   <now-attachments-list template="sp_attachment_single_line"></now-attachments-list>
+</div>
