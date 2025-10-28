@@ -1,9 +1,11 @@
 (function executeRule(current, previous /*null when async*/ ) {
-    // This Business Rule runs 'before' a record is deleted from the 'sn_compliance_policy' table.
-    // Its purpose is to prevent a policy from being deleted if it is currently linked to any active controls.
-    // This helps maintain data integrity and prevents the creation of orphaned or invalidated compliance records.
+    // This Business Rule runs 'before' a record is updated on the 'sn_compliance_policy' table.
+    // Its purpose is to prevent a policy from being retired if it is currently linked to any active Control Objectives.
+    // This enforces a proper decommissioning process, ensuring that Control Objectives are delinked.
+    // before the policy that governs them, thereby preventing compliance gaps.
+    // The condition for this rule would be: 'State' changes to 'Retired'.
 
- 
+    // Instantiate a GlideAggregate object on the many-to-many (m2m) table
     // 'sn_compliance_m2m_policy_policy_statement'. This table links policies (via the 'document' field)
     // to control statements (via the 'content' field). Using GlideAggregate is more
     // performant than GlideRecord for counting records, as it performs the aggregation
@@ -11,7 +13,7 @@
     var grControlAggregate = new GlideAggregate('sn_compliance_m2m_policy_policy_statement');
     
     // Add a query to filter for records in the m2m table where the 'document' field matches
-    // the sys_id of the policy record currently being deleted.
+    // the sys_id of the policy record currently being retired.
     grControlAggregate.addQuery('document', current.getUniqueValue());
     
     // Add a second query using 'dot-walking' to filter for records where the related
@@ -38,12 +40,12 @@
 
     // Check if the count of active controls is greater than zero.
     if (activeControlCount > 0) {
-        // If active controls were found, add an error message to display to the user.
+        // If active control objectives were found, add an error message to display to the user.
         // The message includes the count for better clarity.
-        gs.addErrorMessage('Cannot delete this policy because it has ' + activeControlCount + ' active controls linked to it.');
+        gs.addErrorMessage('Cannot retire this policy because it has ' + activeControlCount + ' active control objectives linked to it. All control objectives must be delinked first.');
         
-        // This crucial line aborts the current database transaction (the delete operation).
-        // It prevents the policy record from being deleted.
+        // This crucial line aborts the current database transaction (the update operation).
+        // It prevents the policy record from being marked as 'Retired'.
         current.setAbortAction(true);
     }
 
