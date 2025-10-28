@@ -1,0 +1,1 @@
+We are creating a new GlideRecord object for the 'problem' table, initializing it, setting the values for the 'category', 'short_description', and 'description' fields, and then inserting a new record into the 'probelm' table with the specified values. In problem table a new record will be created
