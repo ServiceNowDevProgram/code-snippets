@@ -1,4 +1,4 @@
-Calculate the due date based on the Priority
+**Calculate the due date based on the Priority**
 
 Script Type: UI Action, Table: incident, Form button: True, Show update: True, Condition: (current.due_date == '' && current.priority != '5'), OnClick: functionName()
 
@@ -11,9 +11,9 @@ Schedule Entry - Name:  Christmas Day, Type: Exclude, Show as: Busy, When: 24-12
 Schedule Entry - Name:  Thanksgiving Day, Type: Exclude, Show as: Busy, When: 26-11-2025, To: 27-11-2025
 Schedule Entry - Name:  Diwali, Type: Exclude, Show as: Busy, When: 19-10-2025, To: 20-10-2025
 
-Goal: To Calculate Due-Date based on Priority with some conditions.
+**Goal:** To Calculate Due-Date based on Priority with some conditions.
 
-Walk through of code: So in this use case the UI Action is been used and then Script Include for server calculate is used.So the main to calculate the due-date by the user trigger.
+**Walk through of code:** So in this use case the UI Action is been used and then Script Include for server calculate is used.So the main to calculate the due-date by the user trigger.
 
 UI Action- So this button will check the priority and check the due date field is empty or not if not then will fetch the value of "Priority" and "Created date" and pass the data to the Script Include for calculation once it gets the response will populate the value to the due_date field in the incident table and then update it.
 
@@ -23,10 +23,10 @@ Schedule & Schedule Entry- It is used for the P3 and P4 Priority which is mentio
 
 These are the use case which the above functionality works,
 
-1-> P1 - add 4hrs to the Created date
-2-> P2 - add 4hrs to the Created date but if it's exceed the working hrs of of 5 PM the add to the next day or if the is before the working hours of 8 AM set 5 PM to the same Created date.
-3-> P3 or P4 - Kind of low priority so add the due date to the next day but it should exclude the holidays and the weekend's and the populate the next business working day.
-4-> P5 - User manually will populate the due date based on the process.
+**1-> P1** - add 4hrs to the Created date
+**2-> P2 **- add 4hrs to the Created date but if it's exceed the working hrs of of 5 PM the add to the next day or if the is before the working hours of 8 AM set 5 PM to the same Created date.
+**3-> P3 or P4** - Kind of low priority so add the due date to the next day but it should exclude the holidays and the weekend's and the populate the next business working day.
+**4-> P5 **- User manually will populate the due date based on the process.
 
 The UI Action on the Incident Form
 <img width="815" height="382" alt="Button" src="https://github.com/user-attachments/assets/68876b10-e6e0-43b9-9ecf-f6eb95b7ef87" />
