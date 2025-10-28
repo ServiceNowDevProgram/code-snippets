@@ -11,22 +11,7 @@ How to use
 This script is intended to be used in a server-side context within a ServiceNow instance. Common use cases include:
 Scheduled Job: Run this script on a regular schedule (e.g., daily) to generate a report on aging incidents.
 Script Include: Incorporate the logic into a reusable function within a Script Include, allowing other scripts to call it.
-Fix Script: Execute the script as a one-off task to perform an analysis.
-Script
-javascript
-(function findOldestIncidents() {
-    var ga = new GlideAggregate('incident');
-    ga.addActiveQuery();
-    ga.addAggregate('MIN', 'opened_at');
-    ga.groupBy('assignment_group');
-    ga.query();
 
-    while (ga.next()) {
-        var group = ga.assignment_group.getDisplayValue();
-        var oldestIncidentDate = ga.getAggregate('MIN', 'opened_at');
-        gs.info("Oldest open incident for " + group + " was created on: " + oldestIncidentDate);
-    }
-})();
 Use code with caution.
 
 Installation
@@ -42,44 +27,7 @@ Navigate to System Definition > Script Includes.
 Click New.
 Name it (e.g., IncidentHelper).
 API Name: global.IncidentHelper
-Script:
-javascript
-var IncidentHelper = Class.create();
-IncidentHelper.prototype = {
-    initialize: function() {
-    },
 
-    findOldestIncidents: function() {
-        var ga = new GlideAggregate('incident');
-        ga.addActiveQuery();
-        ga.addAggregate('MIN', 'opened_at');
-        ga.groupBy('assignment_group');
-        ga.query();
-
-        var results = [];
-        while (ga.next()) {
-            var group = ga.assignment_group.getDisplayValue();
-            var oldestIncidentDate = ga.getAggregate('MIN', 'opened_at');
-            results.push({
-                group: group,
-                oldestIncidentDate: oldestIncidentDate
-            });
-        }
-        return results;
-    },
-
-    type: 'IncidentHelper'
-};
-Use code with caution.
-
-You can then call this function from other scripts. For example:
-javascript
-var helper = new IncidentHelper();
-var incidents = helper.findOldestIncidents();
-for (var i = 0; i < incidents.length; i++) {
-    gs.info("Oldest open incident for " + incidents[i].group + " was created on: " + incidents[i].oldestIncidentDate);
-}
-Use code with caution.
 
 Customization
 Change the output: Modify the gs.info() line to instead write to a custom log, send an email, or create a report.
