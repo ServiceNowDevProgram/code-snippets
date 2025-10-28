@@ -12,11 +12,27 @@
   tableRecord.query();
 
   while(tableRecord.next()) {
-    projectList.push(tableRecord.sys_id.toString());
+    recordList.push(tableRecord.sys_id.toString());
   }
 
+  //Condition check to make sure the record has a value to add to the arry in the correct spot, otherwise no reason to splice the array
+  if (current.{{insert name of integer field you want to sync}} != '') {
+    var index = current.{{insert name of integer field you want to sync}} - 1; //Making this one less so it will get added first
+      recordList.splice(index, 0, current.sys_id.toString()); //This will insert our record into the correct position it needs to be in the list
+  }
 
-
+  //Reassigning the integer sequentially
+  for (var i = 0; i < recordList.length; i++) {
+    if(recordList[i] == current.sys_id.toString()) {
+      current.{{insert name of integer field you want to sync}} = i + 1;
+    } else {
+        var updatedTableRecord = new GlideRecord(tableName);
+        if (updatedTableRecord.get(recordList[i])) {
+          updatedTableRecord.{{insert name of integer field you want to sync}} = i + 1;
+          updatedTableRecord.setWorkflow(false); //Setting the workflow false since we dont want the flow to get triggered since all we are doing is updating the integer field
+          updatedTableRecord.update()
+        }
+    }
 
 
 })(current, previous);
