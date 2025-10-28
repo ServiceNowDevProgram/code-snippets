@@ -6,71 +6,36 @@
 // No Training Required: Analyzes existing data without ML
 // ========================================
 
-(function analyzeTrainingDataQuality() {
-    // Print all fields that exist on the incident table and its parents
-    function printAllFields(tableName) {
-        var tables = [tableName];
-        var currentTable = tableName;
-        while (currentTable) {
-            var tableRec = new GlideRecord('sys_db_object');
-            tableRec.addQuery('name', currentTable);
-            tableRec.query();
-            if (tableRec.next()) {
-                var parentSysId = tableRec.getValue('super_class');
-                if (parentSysId && parentSysId != '') {
-                    var parentRec = new GlideRecord('sys_db_object');
-                    if (parentRec.get(parentSysId)) {
-                        var parentName = parentRec.getValue('name');
-                        tables.push(parentName);
-                        currentTable = parentName;
-                    } else {
-                        currentTable = null;
-                    }
-                } else {
-                    currentTable = null;
-                }
-            } else {
-                currentTable = null;
-            }
-        }
-        var field = new GlideRecord('sys_dictionary');
-        field.addQuery('name', 'IN', tables.join(','));
-        field.query();
+// ========================================
+// PI Training Data Quality Analyzer (Simplified)
+// ========================================
+// Purpose: Analyze incident data quality for Predictive Intelligence training
+// Use Case: Identify data quality issues before training ML models
+// No Training Required: Analyzes existing data without ML
+// ========================================
 
+(function analyzeTrainingDataQuality() {
+    // Print all fields that exist on the incident table and its parents (simplified)
+    function printAllFields(tableName) {
+        var gr = new GlideRecord(tableName);
+        var elements = gr.getElements();
+        gs.info('Fields for table: ' + tableName);
+        for (var i = 0; i < elements.size(); i++) {
+            gs.info(elements.get(i).getName());
+        }
     }
 
     printAllFields('incident');
-    // Helper: check if field exists in table hierarchy
+
+    // Helper: check if field exists in table hierarchy (simplified)
     function fieldExists(tableName, fieldName) {
-        var tables = [tableName];
-        var currentTable = tableName;
-        while (currentTable) {
-            var tableRec = new GlideRecord('sys_db_object');
-            tableRec.addQuery('name', currentTable);
-            tableRec.query();
-            if (tableRec.next()) {
-                var parentSysId = tableRec.getValue('super_class');
-                if (parentSysId && parentSysId != '') {
-                    var parentRec = new GlideRecord('sys_db_object');
-                    if (parentRec.get(parentSysId)) {
-                        var parentName = parentRec.getValue('name');
-                        tables.push(parentName);
-                        currentTable = parentName;
-                    } else {
-                        currentTable = null;
-                    }
-                } else {
-                    currentTable = null;
-                }
-            } else {
-                currentTable = null;
-            }
-        }
-        var field = new GlideRecord('sys_dictionary');
-        field.addQuery('element', fieldName);
-        field.addQuery('name', 'IN', tables.join(','));
-        field.query();
-        return field.hasNext();
+        var gr = new GlideRecord(tableName);
+        return gr.isValidField(fieldName);
+    }
+
+    // Print table ancestors (if SNC.TableEditor available)
+    if (typeof SNC !== 'undefined' && SNC.TableEditor && SNC.TableEditor.getTableAncestors) {
+        gs.info('Ancestors of incident: ' + SNC.TableEditor.getTableAncestors('incident'));
     }
     
     // ============================================
@@ -339,38 +304,7 @@
             total = parseInt(totalGr.getAggregate('COUNT'));
         }
         
-        // Helper: check if field exists in table hierarchy
-        function fieldExists(tableName, fieldName) {
-            var tables = [tableName];
-            var currentTable = tableName;
-            while (currentTable) {
-                var tableRec = new GlideRecord('sys_db_object');
-                tableRec.addQuery('name', currentTable);
-                tableRec.query();
-                if (tableRec.next()) {
-                    var parentSysId = tableRec.getValue('super_class');
-                    if (parentSysId && parentSysId != '') {
-                        var parentRec = new GlideRecord('sys_db_object');
-                        if (parentRec.get(parentSysId)) {
-                            var parentName = parentRec.getValue('name');
-                            tables.push(parentName);
-                            currentTable = parentName;
-                        } else {
-                            currentTable = null;
-                        }
-                    } else {
-                        currentTable = null;
-                    }
-                } else {
-                    currentTable = null;
-                }
-            }
-            var field = new GlideRecord('sys_dictionary');
-            field.addQuery('element', fieldName);
-            field.addQuery('name', 'IN', tables.join(','));
-            field.query();
-            return field.hasNext();
-        }
+        // ...existing code...
 
         // Check each field, skip if not present
         for (var f = 0; f < config.keyFields.length; f++) {
