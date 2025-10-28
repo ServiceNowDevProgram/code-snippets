@@ -29,37 +29,7 @@ At the bottom of file , a sample Script Include Code is given , check for the re
 
 ---
 
-## 💻 UI Action Script
 
-```javascript
-function onClickQR() {
-    generateQRCodeForAsset(g_sysId); // get the sys_id of the selected record
-}
-
-function generateQRCodeForAsset(sys_id) {
-    var ga = new GlideAjax('GenerateAssetQR'); // Script Include reference
-    ga.addParam('sysparm_name', 'getAssetQRData');
-    ga.addParam('sysparm_sys_id', sys_id);
-
-    ga.getXMLAnswer(function(response) {
-        var qrData = response;
-        var qrURL = 'https://qrickit.com/api/qr.php?d=' + encodeURIComponent(qrData) + '&addtext=Get Asset Data';
-
-        var modalHTML = `
-            <div style="text-align:center">
-                <img id="qrCodeImage" src="${qrURL}" alt="QR Code" style="margin-bottom:10px;" />
-                <p>Scan to view asset details</p>
-            </div>
-        `;
-
-        var gModal = new GlideModal("QR Code");
-        gModal.setTitle('Asset QR Code');
-        gModal.setWidth(500);
-        gModal.renderWithContent(modalHTML);
-    });
-}
-
-```
 **Note :**
 1) As the UI action calls a Script Include , in this folder no script include is present
 2) You can modify script include part as required(i.e Which fields are to be shown when QR is scanned)
