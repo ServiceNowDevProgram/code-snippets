@@ -1,7 +1,7 @@
 (function executeRule(current, previous /*null when async*/ ) {
     // This Business Rule runs 'before' a record is updated on the 'sn_compliance_policy' table.
-    // Its purpose is to prevent a policy from being retired if it is currently linked to any active controls.
-    // This enforces a proper decommissioning process, ensuring that controls are retired
+    // Its purpose is to prevent a policy from being retired if it is currently linked to any active Control Objective.
+    // This enforces a proper decommissioning process, ensuring that Control Objective are delinked.
     // before the policy that governs them, thereby preventing compliance gaps.
     // The condition for this rule would be: 'State' changes to 'Retired'.
 
@@ -18,7 +18,7 @@
     
     // Add a second query using 'dot-walking' to filter for records where the related
     // control statement ('content' field) is currently active. This ensures only active
-    // controls are considered.
+    // Control Objective are considered.
     grControlAggregate.addQuery('content.active', true);
     
     // Set the aggregate function to COUNT. This tells the database to return the total
@@ -28,7 +28,7 @@
     // Execute the database query.
     grControlAggregate.query();
 
-    // Initialize a variable to store the count of active controls.
+    // Initialize a variable to store the count of active Control Objective.
     var activeControlCount = 0;
     
     // Check if the query returned any results. If it did, retrieve the count.
@@ -38,11 +38,11 @@
         activeControlCount = grControlAggregate.getAggregate('COUNT');
     }
 
-    // Check if the count of active controls is greater than zero.
+    // Check if the count of active Control Objective is greater than zero.
     if (activeControlCount > 0) {
-        // If active controls were found, add an error message to display to the user.
+        // If active Control Objective were found, add an error message to display to the user.
         // The message includes the count for better clarity.
-        gs.addErrorMessage('Cannot retire this policy because it has ' + activeControlCount + ' active controls linked to it. All controls must be retired first.');
+        gs.addErrorMessage('Cannot retire this policy because it has ' + activeControlCount + ' active Control Objective linked to it. All Control Objective must be delinked first.');
         
         // This crucial line aborts the current database transaction (the update operation).
         // It prevents the policy record from being marked as 'Retired'.
