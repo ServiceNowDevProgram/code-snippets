@@ -1,5 +1,6 @@
 <div>
- <span ng-if="::data.role==true">
-   <a href="{{::data.url}}" target='_blank'class='btn btn-default'>{{::options.button_text}}</a>
- </span>
+  <span class="btn-cntr" ng-if="::data.role==true">
+    <a href="{{::data.platform_url}}" target='_blank'class='btn btn-default'>{{::options.open_in_platform}}</a><br> <!--Platform button configuration-->
+    <a href="{{::data.workspace_url}}" target='_blank'class='btn btn-default'>{{::options.open_in_workspace}}</a>  <!--Workspace button-->
+  </span>
 </div>
