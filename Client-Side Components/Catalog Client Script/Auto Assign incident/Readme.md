@@ -1,0 +1,1 @@
+This project automatically assigns incidents to different support groups based on the time of day. For example, incidents created during day shift are assigned to the Day Support Group, while those created during night shift go to the Night Support Group. This ensures timely handling and reduces manual routing.
