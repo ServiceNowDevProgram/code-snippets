@@ -40,6 +40,6 @@ while (ga.next()) {
   var state = ga.getValue('state');
   var count = ga.getValue('COUNT');
 
-  gs.info("There are a total of: " + count + " Incidents with a priority of " + priorityValue + " and in a state of " + incident_staates[state]);
+  gs.info("There are a total of: " + count + " Incidents with a priority of " + priorityValue + " and in a state of " + incident_states[state]);
   
 }
