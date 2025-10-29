@@ -5,7 +5,8 @@
 
   var gr = new GlideRecord('sc_request');
   gr.addQuery('sys_created_on', '<=', cutoffDate);
-  gr.addQuery('active', false); // Only archive closed requests
+  //gr.addQuery('active', false); // Only archive closed requests
+  gr.addQuery('state', 'IN', 'closed_complete,closed_incomplete');
   gr.query();
 
   while (gr.next()) {
