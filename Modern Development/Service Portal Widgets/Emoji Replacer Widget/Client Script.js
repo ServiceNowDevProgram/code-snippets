@@ -1,4 +1,4 @@
-api.controller=function($scope,$sce) {
+api.controller=function($scope) {
   /* widget controller */
   var c = this;
 	
@@ -20,6 +20,6 @@ api.controller=function($scope,$sce) {
 			var regex = new RegExp(key.replace(/([.*+?^${}()|\[\]\/\\])/g,"\\$1"),'g');
 			text = text.replace(regex,c.emojiMap[key]);
 		}
-		c.outputText= $sce.trustAsHtml(text);
+		c.outputText= text;
 	}
 };
