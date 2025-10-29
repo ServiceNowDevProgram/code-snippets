@@ -1,0 +1,20 @@
+// Scheduled Script Execution | Runs weekly
+(function() {
+    var agg = new GlideAggregate('task_sla');
+    agg.addAggregate('COUNT');
+    agg.addQuery('stage', 'breached');
+    agg.groupBy('u_service');
+    agg.query();
+
+    var report = new GlideRecord('u_weekly_sla_report');
+    while (agg.next()) {
+        var rec = new GlideRecord('u_weekly_sla_report');
+        rec.initialize();
+        rec.u_service = agg.u_service;
+        rec.u_breach_count = agg.getAggregate('COUNT');
+        rec.u_report_date = gs.nowDateTime();
+        rec.insert();
+    }
+
+    gs.info('Weekly SLA report generated successfully');
+})();
