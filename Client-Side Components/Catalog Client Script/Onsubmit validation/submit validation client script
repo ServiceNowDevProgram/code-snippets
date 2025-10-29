@@ -5,7 +5,6 @@ function onSubmit() {
     var qty = g_form.getValue('quantity');
 
    
-
     var ga = new GlideAjax('HardwareValidationUtils');
     ga.addParam('sysparm_name', 'validateHardware');
     ga.addParam('sysparm_hardware', hardware);
