@@ -1,0 +1,1 @@
+This project enhances a Service Catalog item by allowing users to upload supporting documents (e.g., ID proof, approval letters) and validating them before the request is submitted. It ensures compliance, completeness, and proper documentation for sensitive or regulated requests.
