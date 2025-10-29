@@ -4,7 +4,6 @@ var FIELD_TO_UPDATE = 'state'; // Field to update
 var NEW_VALUE = '1'; // Value to set
 
 var successCount = 0;
-var errorCount = 0;
 //using gs.info for best logging
 gs.info('[Bulk Update Started] Table: ' + TABLE + ' | Filter: ' + FILTER, 'BulkUpdate');
 
