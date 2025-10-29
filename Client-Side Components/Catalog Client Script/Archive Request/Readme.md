@@ -1,0 +1,1 @@
+This project introduces an automated process to archive old Service Catalog requests after a defined period (e.g., 90 days). It helps keep the request tables clean, improves performance, and ensures compliance with data retention policies.
