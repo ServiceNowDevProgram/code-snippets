@@ -1,3 +1,7 @@
+**Enhancement**
+1. This code will create the sp favorites of the selected users along with the sys_ui_bookmarks.
+2. The entry will be made in "sp_favorite" through new **createPortalFav** function.
+
 You can use this script to take an existing favaourite from the sys_ui_bookmark table and create a copy of it for any number of users.
 Can be useful when onboarding new staff, doing testing, etc.
 
