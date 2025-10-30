@@ -1,0 +1,1 @@
+When marking a group as inactive, verify that there are no open tickets assigned to it from 'incident', 'problem', 'change_request' tables. If any open tickets are found, abort the deactivation process.
