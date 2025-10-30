@@ -16,7 +16,7 @@ function onChange(control, oldValue, newValue, isLoading) {
   function updateUserFields(response) {
     var returnedData = JSON.parse(response);
     g_form.setValue("email", returnedData.email);
-    g_form.setValue("location", returnedData.location);
+    g_form.setValue("department", returnedData.department);
     g_form.setValue("title", returnedData.title);
     g_form.setValue("phone", returnedData.phone);
   }
