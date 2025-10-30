@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="jelly:html" xmlns:g2="glide.ui">
+    
+    <g:evaluate var="jvar_field_name" expression="RP.getWindowProperties().get('fieldName')" />
+
+    <button type="button" 
+            onclick="openJsonViewer('${jvar_field_name}');" 
+            title="View and Format JSON" 
+            class="btn btn-default btn-sm">
+        <span class="icon-code"></span> JSON Viewer
+    </button>
+    
+    <script>
+        function openJsonViewer(fieldName) {
+            var jsonValue = g_form.getValue(fieldName);
+            var gm = new GlideModal('json_viewer_ui_page', false); // Replace 'json_viewer_ui_page' with your actual UI Page or Widget ID
+            gm.setTitle('JSON Data Viewer & Formatter for Field: ' + fieldName);
+            gm.setPreference('json_data', jsonValue);
+            gm.setSize(900);
+            gm.render();
+        }
+    </script>
+</j:jelly>

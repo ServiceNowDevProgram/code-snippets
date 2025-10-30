@@ -1,0 +1,101 @@
+function($scope, $uibModal, $timeout, spUtil) {
+    var c = this;
+    var reportId = c.options.report_id || '';
+    c.rectangleId = c.widget.rectangle_id || c.data.rectangleId;
+    c.showTitle = (c.options.show_title === true || c.options.show_title === 'true');
+    c.title = c.options.title || '';
+
+    if (c.options.widget_parameters) {
+        c.initialMessage = c.data.ch.i18n.building;
+        window.chartHelpers = window.chartHelpers || {};
+        $.extend(window.chartHelpers, c.data.ch);
+
+        $timeout(function() {
+            var targetEl = $("#report-widget-" + c.rectangleId);
+            embedReportById(targetEl, reportId);
+
+            $timeout(function() {
+                targetEl.off('click', 'a[href*="change_request.do?sys_id"]');
+
+                targetEl.on('click', 'a[href*="change_request.do?sys_id"]', function(event) {
+                    event.preventDefault();
+                    var href = $(this).attr('href') || '';
+                    var match = href.match(/sys_id=([a-f0-9]{32})/i);
+                    var sysId = match ? match[1] : '';
+
+                    var modalData = {
+                        number: '',
+                        short_description: '',
+                        description: '',
+                        sys_id: sysId
+                    };
+
+                    // Open modal immediately
+                    $uibModal.open({
+                        controller: function($scope, $uibModalInstance, $sce) {
+                            $scope.data = modalData;
+
+                            $scope.getTrustedDescription = function() {
+                                if (!$scope.data.description) return '';
+                                var text = $scope.data.description;
+
+                                // Convert line breaks to <br>
+                                text = text.replace(/\n/g, '<br>');
+
+                                // Convert URLs to links
+                                var urlRegex = /(\bhttps?:\/\/[^\s<]+)/gi;
+                                text = text.replace(urlRegex, function(url) {
+                                    return '<a href="' + url + '" target="_blank" rel="noopener noreferrer">' + url + '</a>';
+                                });
+
+                                // Convert emails to mailto links
+                                var emailRegex = /([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6})/gi;
+                                text = text.replace(emailRegex, function(email) {
+                                    return '<a href="mailto:' + email + '">' + email + '</a>';
+                                });
+
+                                return $sce.trustAsHtml(text);
+                            };
+
+                            $scope.close = function() {
+                                $uibModalInstance.dismiss('cancel');
+                            };
+                        },
+                        resolve: {
+                            $sce: function() {
+                                return angular.injector(['ng']).get('$sce');
+                            }
+                        },
+                        template: '<div class="modal-header">' +
+                            '<h4 class="modal-title">Change Details</h4>' +
+                            '</div>' +
+                            '<div class="modal-body">' +
+                            '<p><strong>Change Number:</strong> {{data.number}}</p>' +
+                            '<p><strong>Short Description:</strong> {{data.short_description}}</p>' +
+                            '<p><strong>Description:</strong></p>' +
+                            '<p ng-bind-html="getTrustedDescription()"></p>' +
+                            '</div>' +
+                            '<div class="modal-footer">' +
+                            '<a class="btn btn-primary" ng-href="/change_request.do?sys_id={{data.sys_id}}" target="_blank">View Record</a>' +
+                            '<button class="btn btn-default" ng-click="close()">Close</button>' +
+                            '</div>'
+                    });
+
+                    // Populate modal data via server
+                    spUtil.get(c.widget.sys_id, {
+                        action: 'getChangeDetails',
+                        sys_id: sysId
+                    }).then(function(response) {
+                        if (response.data.changeDetails && !response.data.changeDetails.error) {
+                            modalData.number = response.data.changeDetails.number;
+                            modalData.short_description = response.data.changeDetails.short_description;
+                            modalData.description = response.data.changeDetails.description;
+                        }
+                    });
+                });
+            }, 1000);
+        });
+    } else {
+        c.initialMessage = c.data.ch.i18n.selectReport;
+    }
+}
