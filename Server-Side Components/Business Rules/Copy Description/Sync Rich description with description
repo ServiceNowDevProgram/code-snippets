@@ -1,0 +1,14 @@
+(function executeRule(current, previous /*null when async*/) {
+	var description = current.getValue("description");
+	if (description.indexOf("\t") >= 0) {
+		description = description.replace(/\t/g, '&emsp;&emsp;');
+	}
+	
+	var lines = description.split("\n");
+	
+	var rich_description = lines.map(function(line) {
+		return '<p>' + line + '</p>';
+	}).join("");
+
+	current.rich_description = rich_description;
+})(current, previous);
