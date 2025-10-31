@@ -1,0 +1,9 @@
+var gr = new GlideRecord('sys_user');
+gr.addNotNullQuery('mobile_phone');
+gr.query();
+
+while (gr.next()) {
+  gr.mobile_phone = "";
+  gr.setWorkflow(false);
+  gr.update();
+}
