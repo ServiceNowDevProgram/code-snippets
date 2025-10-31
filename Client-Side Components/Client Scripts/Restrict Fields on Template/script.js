@@ -1,5 +1,5 @@
 /*
-Type: OnChnage
+Type: onChnage
 Table: sys_template
 Field: Template
 */
