@@ -1,0 +1,14 @@
+var gr = new GlideRecord('sys_user');
+gr.addQuery('active', false);
+gr.query();
+
+while (gr.next()) {
+  var login = new GlideRecord('syslog');
+  login.addQuery('user', gr.sys_id);
+  login.query();
+
+  if (!login.hasNext()) {
+    gs.print('Deleting inactive user: ' + gr.name);
+    gr.deleteRecord();
+  }
+}
