@@ -1,0 +1,52 @@
+var op = new GlideRecord('sys_user');
+op.addEncodedQuery('nameSTARTSWITHBow Ruggeri'); // Filter
+op.query();
+
+while (op.next()) {
+    var userSysId = op.getValue('sys_id');
+    var userName = op.getDisplayValue('name');
+
+    //Remove user from all groups
+    var groupMemberGR = new GlideRecord('sys_user_grmember');
+    groupMemberGR.addQuery('user', userSysId);
+    groupMemberGR.query();
+
+    var removedGroups = false;
+    while (groupMemberGR.next()) {
+        groupMemberGR.deleteRecord();
+        removedGroups = true;
+    }
+
+    if (removedGroups) {
+        gs.print('Removed groups for: ' + userName);
+    } else {
+        gs.print('No groups to remove for: ' + userName);
+    }
+
+    //Remove all roles
+    var roleGR = new GlideRecord('sys_user_has_role');
+    roleGR.addQuery('user', userSysId);
+    roleGR.query();
+
+    var removedRoles = false;
+    while (roleGR.next()) {
+        roleGR.deleteRecord();
+        removedRoles = true;
+    }
+
+    if (removedRoles) {
+        gs.print('Removed roles for: ' + userName);
+    } else {
+        gs.print('No roles to remove for: ' + userName);
+    }
+
+    //'snc_internal' role
+    var newRoleGR = new GlideRecord('sys_user_has_role');
+    newRoleGR.initialize();
+    newRoleGR.user = userSysId;
+    newRoleGR.role = '5108ea6ac3bc7210dffb1cedd4013191'; //snc_internal
+    newRoleGR.insert();
+
+    gs.print('Assigned snc_internal role to: ' + userName);
+    
+}
