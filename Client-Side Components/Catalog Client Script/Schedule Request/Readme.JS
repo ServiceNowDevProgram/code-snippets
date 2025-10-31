@@ -1,0 +1,1 @@
+This project allows users to schedule a Service Catalog request for a future date and time. Instead of submitting immediately, the request is stored and automatically submitted later using a Scheduled Job

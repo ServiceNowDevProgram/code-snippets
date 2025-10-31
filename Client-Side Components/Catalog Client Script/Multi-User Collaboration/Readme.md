@@ -1,0 +1,1 @@
+This project introduces a collaboration feature for Service Catalog requests, allowing multiple users to contribute to a single request. It’s ideal for scenarios like team onboarding, shared resource provisioning, or cross-functional workflows.

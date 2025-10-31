@@ -1,0 +1,1 @@
+This project adds a dynamic preview feature to Service Catalog items, allowing users to see the full approval chain before submitting a request. It improves transparency, reduces confusion, and helps users understand who will be involved in the approval process based on their selections.

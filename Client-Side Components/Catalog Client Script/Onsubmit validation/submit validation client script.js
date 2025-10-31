@@ -1,0 +1,29 @@
+function onSubmit() {
+    
+
+    var hardware = g_form.getValue('hardware_name');
+    var qty = g_form.getValue('quantity');
+
+   
+    var ga = new GlideAjax('HardwareValidationUtils');
+    ga.addParam('sysparm_name', 'validateHardware');
+    ga.addParam('sysparm_hardware', hardware);
+    ga.addParam('sysparm_quantity', qty);
+
+    
+    ga.getXMLAnswer(function(response) {
+        
+
+        if (response !== 'OK') {
+            alert(response);
+            
+            g_form.addErrorMessage(response); // Optional inline error
+            g_form.setSubmit(false); // Prevent submission in Service Portal
+        } else {
+          
+            g_form.setSubmit(true); // Allow submission
+        }
+    });
+
+    return false; 
+}
