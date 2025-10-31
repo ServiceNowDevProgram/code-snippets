@@ -1,0 +1,3 @@
+Schedule Job for Approval Reminder
+
+Send the notificaiton to the approver on every 4th day and 8th day, if the approval record is still in the requested state.
