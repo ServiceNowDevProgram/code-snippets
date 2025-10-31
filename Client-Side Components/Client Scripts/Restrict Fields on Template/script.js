@@ -8,7 +8,7 @@ function onChange(control, oldValue, newValue, isLoading, isTemplate) {
         return;
     }
     if (g_form.getValue('table') == 'incident') { // table on which sys_template is being created.
-        var fields = ['active', 'comments']; // array of fields to be restricted.
+        var fields = ['active', 'comments']; // array of fields to be restricted while template creation.
         for (var i = 0; i < fields.length; i++) {
             if (newValue.indexOf(fields[i]) > -1) {
                 alert("You Cannot Add " + fields[i]); // alert if user selects the restricted field.
