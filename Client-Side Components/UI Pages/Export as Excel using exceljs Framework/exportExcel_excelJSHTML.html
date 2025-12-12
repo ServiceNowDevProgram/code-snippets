@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+<script src="https://unpkg.com/exceljs/dist/exceljs.min.js"></script>
+<button onclick="generateExcel()">Generate Excel</button>
+
+<script>
+function generateExcel() {
+    var workbook = new ExcelJS.Workbook();
+    var worksheet = workbook.addWorksheet('My Sheet');
+	
+	// Sample JSON data
+var jsonData = {
+  "employees": [
+    {
+      "name": "John Doe",
+      "age": 30,
+      "position": "Manager"
+    },
+    {
+      "name": "Jane Smith",
+      "age": 25,
+      "position": "Developer"
+    },
+    {
+      "name": "Bob Johnson",
+      "age": 45,
+      "position": "Salesperson"
+    }
+  ]
+};
+worksheet.addRow(['Name', 'Age', 'Position']);
+	jsonData.employees.forEach(function(employee) {
+  worksheet.addRow([employee.name, employee.age, employee.position]);
+});
+
+
+    // Set cell colors
+    worksheet.getCell('A1').font = {
+		color:{argb: 'FFFF0000'} // red
+    };
+    worksheet.getCell('B1').fill = {
+        type: 'pattern',
+        pattern: 'solid',
+        fgColor: {argb: 'FF00FF00'} // green
+    };
+    worksheet.getCell('C1').fill = {
+        type: 'pattern',
+        pattern: 'solid',
+        fgColor: {argb: 'FF0000FF'} // blue
+    };
+
+    // Generate Excel file and download it
+    workbook.xlsx.writeBuffer().then(function(buffer) {
+        var blob = new Blob([buffer], {type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'});
+        var url = URL.createObjectURL(blob);
+        var link = document.createElement('a');
+        link.href = url;
+        link.download = 'my_file.xlsx';
+        link.click();
+    });
+}
+</script>
+
+
+</j:jelly>
