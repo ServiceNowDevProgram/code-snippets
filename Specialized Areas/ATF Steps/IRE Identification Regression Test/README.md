@@ -26,7 +26,7 @@ The step calls `sn_cmdb.IdentificationEngine.createOrUpdateCI()`, which is what 
 
 ## Tested
 
-On a personal developer instance (release Brazil). As an ATF step, all IRE expectations passed and ATF rolled back the CIs it created. The two count checks failed in that run only because the test had been created while a scoped application was selected (see below). The same checks run in the global scope as a background script all passed: INSERT then NO_CHANGE for the same computer, UPDATE with the same sys_id after a rename, a new CI for a new serial number, and `MISSING_MATCHING_ATTRIBUTES` without identifying attributes.
+On a personal developer instance (release Brazil), with the test created in the global scope: all four specs passed, and ATF rolled back the CIs the test created. A first run of a test that had been created while a scoped application was selected failed the two count checks (see Requirements).
 
 ## Requirements
 
