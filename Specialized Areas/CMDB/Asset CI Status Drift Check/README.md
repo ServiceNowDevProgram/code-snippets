@@ -4,7 +4,13 @@ A read-only background script that finds hardware assets whose CI has a differen
 
 ## Why
 
-ServiceNow keeps `alm_hardware.install_status` and the `install_status` of the linked CI in sync. Which asset status (and substatus) leads to which CI status is configured in the table `alm_asset_ci_state_mapping`. The sync runs in business rules, so every update that skips them breaks it without a trace, for example `setWorkflow(false)` in fix scripts or imports that write with business rules turned off. The result is a CMDB that says "Installed" for a laptop the asset record shows as "In stock", and reports that disagree depending on which table they use.
+ServiceNow syncs the status between a hardware asset and its CI. Which asset status (and substatus) leads to which CI status is configured in the table `alm_asset_ci_state_mapping`, and each row has a direction: asset to CI, CI to asset, or both. The two records still drift apart, for example:
+
+- An integration or Discovery writes the CI status, and no mapping row syncs that status back to the asset.
+- A fix script or an import writes with business rules turned off (`setWorkflow(false)`), so the sync does not run at all.
+- The platform creates assets for existing CIs, and the new asset starts as In use instead of taking the status of the CI.
+
+The result is a CMDB that says "Installed" for a laptop the asset record shows as "In stock", and reports that disagree depending on which table they use.
 
 ## How it works
 
@@ -24,7 +30,7 @@ Run `asset_ci_status_drift.js` in Scripts - Background, or put the function into
 
 ## Example output
 
-From a personal developer instance (release Brazil) with the out-of-box demo data:
+From a personal developer instance (release Brazil) with the out-of-box demo data plus 197 hardware assets from my own test data:
 
 ```
 Asset/CI status drift on alm_hardware: 1091 assets with CI checked, 120 with a CI status that does not match the mapping, 0 with a status that has no mapping.
@@ -40,10 +46,10 @@ Asset/CI status drift on alm_hardware: 1091 assets with CI checked, 120 with a C
 
 ## Fixing the drift
 
-The script only reports. Decide per group which side is right, then update the wrong side to the value from the mapping with business rules enabled, so the platform logic runs as it normally would. Avoid `setWorkflow(false)` for this, because that is how the drift usually starts.
+The script only reports. Decide per group which side is right, then update the wrong side to the value from the mapping with business rules enabled, so the platform logic runs as it normally would. Avoid `setWorkflow(false)` for this, because it skips the sync.
 
 ## Notes
 
-- Newer releases also sync `hardware_status` and `hardware_substatus` on `cmdb_ci_hardware` through `alm_hardware_state_mapping`. This script checks `install_status` only.
+- Hardware CIs have a second pair of status fields, `hardware_status` and `hardware_substatus` on `cmdb_ci_hardware`, which are synced with the asset through `alm_hardware_state_mapping`. This script checks `install_status` only, so a drift in Hardware Status is not reported.
 - `GlideAggregate` groups by the dot-walked field `ci.install_status`, which keeps the check fast on large tables.
 - ES5 only, no ES2021 features.
